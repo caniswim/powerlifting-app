@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
+
+@theme {
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #111111;
+  --color-bg-tertiary: #1a1a1a;
+  --color-bg-card: #161616;
+  --color-bg-input: #1e1e1e;
+  --color-border: #2a2a2a;
+  --color-border-light: #333333;
+  --color-text-primary: #e5e5e5;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #6b6b6b;
+  --color-accent-gold: #D4A017;
+  --color-accent-gold-bright: #E8B930;
+  --color-accent-red: #DC2626;
+  --color-accent-red-dim: #991B1B;
+  --color-accent-green: #16A34A;
+  --color-accent-green-dim: #15803D;
+  --color-accent-blue: #2563EB;
+  --color-pr-glow: #D4A017;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Barlow Condensed', sans-serif;
+}
+
+html {
+  font-family: var(--font-display);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  overscroll-behavior: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.pr-glow {
+  box-shadow: 0 0 12px 2px var(--color-pr-glow), 0 0 4px 1px var(--color-pr-glow);
+  animation: pr-pulse 2s ease-in-out infinite;
+}
+
+@keyframes pr-pulse {
+  0%, 100% { box-shadow: 0 0 12px 2px var(--color-pr-glow), 0 0 4px 1px var(--color-pr-glow); }
+  50% { box-shadow: 0 0 20px 4px var(--color-pr-glow), 0 0 8px 2px var(--color-pr-glow); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
