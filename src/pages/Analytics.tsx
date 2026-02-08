@@ -33,16 +33,16 @@ const LIFT_LABELS: Record<string, string> = {
 };
 
 const MUSCLE_GROUP_LABELS: Record<MuscleGroup, string> = {
-  quads: 'Quadriceps',
-  'glúteos': 'Gluteos',
+  quads: 'Quadríceps',
+  'glúteos': 'Glúteos',
   erectors: 'Eretores',
   hamstrings: 'Hamstrings',
   peito: 'Peito',
   'deltóide_anterior': 'Delt. Ant.',
   'deltóide_posterior': 'Delt. Post.',
   'deltóide_lateral': 'Delt. Lat.',
-  'tríceps': 'Triceps',
-  'bíceps': 'Biceps',
+  'tríceps': 'Tríceps',
+  'bíceps': 'Bíceps',
   costas: 'Costas',
 };
 
@@ -510,7 +510,7 @@ export default function Analytics() {
             </ChartCard>
 
             {/* Volume Tracking: Actual vs Target */}
-            <ChartCard title="VOLUME: REAL vs ALVO (ULTIMA SEMANA)">
+            <ChartCard title="VOLUME: REAL vs ALVO (ÚLTIMA SEMANA)">
               {latestWeekVolume.length > 0 ? (
                 <div className="space-y-2">
                   {latestWeekVolume
@@ -586,7 +586,7 @@ export default function Analytics() {
                     <thead>
                       <tr className="border-b border-border">
                         <th className="text-left text-[10px] font-display font-semibold tracking-wider uppercase text-text-muted px-4 py-2">
-                          Exercicio
+                          Exercício
                         </th>
                         <th className="text-right text-[10px] font-display font-semibold tracking-wider uppercase text-text-muted px-2 py-2">
                           Peso
@@ -681,7 +681,7 @@ function EmptyState() {
         SEM DADOS
       </p>
       <p className="text-xs font-display text-text-muted">
-        Complete treinos para ver sua progressao e estatisticas aqui.
+        Complete treinos para ver sua progressão e estatísticas aqui.
       </p>
     </div>
   );

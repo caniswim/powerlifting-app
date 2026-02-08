@@ -88,7 +88,7 @@ export default function Settings() {
       <div className="max-w-lg mx-auto px-4 pt-6 space-y-6">
         {/* Header */}
         <h1 className="text-2xl font-bold font-display text-accent-gold tracking-wider uppercase">
-          Configuracoes
+          Configurações
         </h1>
 
         {/* Profile Section */}
@@ -183,7 +183,7 @@ export default function Settings() {
                          : 'bg-accent-gold text-bg-primary hover:bg-accent-gold-bright active:scale-[0.98]'
                      }`}
         >
-          {saved ? 'Salvo!' : 'Salvar Alteracoes'}
+          {saved ? 'Salvo!' : 'Salvar Alterações'}
         </button>
 
         {/* Data Management */}
@@ -242,7 +242,7 @@ export default function Settings() {
             Sobre
           </h2>
           <div className="flex justify-between items-center">
-            <span className="text-sm font-display text-text-secondary">Versao</span>
+            <span className="text-sm font-display text-text-secondary">Versão</span>
             <span className="text-sm font-mono text-text-muted">{APP_VERSION}</span>
           </div>
         </section>
@@ -263,7 +263,7 @@ export default function Settings() {
             </h3>
             <p className="text-sm text-text-secondary font-display leading-relaxed">
               Isso vai apagar <span className="text-text-primary font-semibold">todos</span> os seus dados:
-              treinos, recordes e perfil. Essa acao nao pode ser desfeita.
+              treinos, recordes e perfil. Essa ação não pode ser desfeita.
             </p>
             <div className="flex gap-3 pt-2">
               <button

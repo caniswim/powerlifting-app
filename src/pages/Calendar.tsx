@@ -23,10 +23,10 @@ async function loadProgramData(): Promise<PrescribedWeek[]> {
 // ---------------------------------------------------------------------------
 
 const MACROCYCLES = [
-  { id: 1, label: 'MAC 1', desc: 'Foundation Hypertrophy', weeks: '1-13' },
-  { id: 2, label: 'MAC 2', desc: 'Hypertrophy + Strength', weeks: '14-26' },
-  { id: 3, label: 'MAC 3', desc: 'Second Hypertrophic', weeks: '27-39' },
-  { id: 4, label: 'MAC 4', desc: 'Strength + Realization', weeks: '40-52' },
+  { id: 1, label: 'MAC 1', desc: 'Fundação Hipertrófica', weeks: '1-13' },
+  { id: 2, label: 'MAC 2', desc: 'Hipertrofia + Força', weeks: '14-26' },
+  { id: 3, label: 'MAC 3', desc: 'Segundo Ciclo Hipertrófico', weeks: '27-39' },
+  { id: 4, label: 'MAC 4', desc: 'Força + Realização', weeks: '40-52' },
 ];
 
 const BLOCK_TYPE_COLORS: Record<BlockType, { accent: string; bg: string; border: string }> = {
@@ -38,20 +38,20 @@ const BLOCK_TYPE_COLORS: Record<BlockType, { accent: string; bg: string; border:
 };
 
 const BLOCK_TYPE_LABELS: Record<BlockType, string> = {
-  accumulation: 'ACUMULACAO',
-  transmutation: 'TRANSMUTACAO',
-  intensification: 'INTENSIFICACAO',
-  realization: 'REALIZACAO',
+  accumulation: 'ACUMULAÇÃO',
+  transmutation: 'TRANSMUTAÇÃO',
+  intensification: 'INTENSIFICAÇÃO',
+  realization: 'REALIZAÇÃO',
   deload: 'DELOAD',
 };
 
 const DAY_SHORT_LABELS = ['SEG', 'TER', 'QUI', 'SEX'];
 
 const DAY_TYPE_LABELS: Record<string, string> = {
-  squat_emphasis: 'Squat Emphasis',
-  bench_emphasis: 'Bench Emphasis',
-  deadlift_emphasis: 'Deadlift Emphasis',
-  bench_volume: 'Bench Volume',
+  squat_emphasis: 'Ênfase Agachamento',
+  bench_emphasis: 'Ênfase Supino',
+  deadlift_emphasis: 'Ênfase Deadlift',
+  bench_volume: 'Volume Supino',
 };
 
 // ---------------------------------------------------------------------------
@@ -141,7 +141,7 @@ export default function Calendar() {
         {/* Header */}
         <header className="mb-6">
           <h1 className="text-2xl font-bold font-display text-accent-gold tracking-wider uppercase">
-            Programacao
+            Programação
           </h1>
           <p className="text-text-muted font-display text-sm mt-1">
             Semana atual: <span className="font-mono text-text-secondary">{currentWeek}</span> / 52
@@ -328,11 +328,11 @@ function DayDetailModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm"
+      className="fixed inset-0 z-[60] flex items-end justify-center bg-black/60 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-lg bg-bg-card border-t border-border rounded-t-2xl animate-fade-in max-h-[85vh] overflow-y-auto"
+        className="w-full max-w-lg bg-bg-card border-t border-border rounded-t-2xl animate-fade-in max-h-[80vh] overflow-y-auto overscroll-contain"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
@@ -380,7 +380,7 @@ function DayDetailModal({
         </div>
 
         {/* Block Objective */}
-        <div className="px-4 pb-6 pt-2">
+        <div className="px-4 pb-8 pt-2">
           <div className="bg-bg-tertiary rounded-lg p-3 border border-border">
             <p className="text-[10px] font-display font-bold text-text-muted tracking-wider uppercase mb-1">
               Objetivo do Bloco

@@ -1,16 +1,17 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import { calculateE1RM } from '../utils/calculations';
+import { calculateE1RM, estimateE1RMWeighted, suggestWeight } from '../utils/calculations';
+import type { LoadSuggestion } from '../utils/calculations';
 import {
   getCurrentWeek,
   getWorkouts,
   saveWorkout,
   getRecordForExercise,
   saveRecord,
-  getLastWeightForExercise,
+  getRecentPerformances,
 } from '../services/storage';
-import { exerciseNames } from '../data/exerciseMuscleMap';
+import { exerciseNames, exerciseEquipment, equipmentIncrement } from '../data/exerciseMuscleMap';
 import type {
   PrescribedWeek,
   PrescribedDay,
@@ -49,6 +50,7 @@ export default function Workout() {
   const [showNotes, setShowNotes] = useState(false);
   const [showAddExercise, setShowAddExercise] = useState(false);
   const [prFlash, setPrFlash] = useState<string | null>(null);
+  const [suggestion, setSuggestion] = useState<LoadSuggestion | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Input state for current set
@@ -141,13 +143,7 @@ export default function Workout() {
   }
 
   function prefillInputs(exercise: ExerciseLog, setIdx: number) {
-    const lastWeight = getLastWeightForExercise(exercise.exerciseId);
-    // Check previous set in this workout for weight
-    const prevSet = setIdx > 0 ? exercise.sets[setIdx - 1] : null;
-    const weight = prevSet?.completed ? prevSet.weight : lastWeight || 0;
-    setInputWeight(weight);
-
-    // Parse prescribed reps (take lower bound)
+    // Parse prescribed reps (take lower bound for conservative suggestion)
     const repRange = exercise.prescribedReps.split('-');
     const targetReps = parseInt(repRange[0]) || 0;
     setInputReps(targetReps);
@@ -156,6 +152,37 @@ export default function Workout() {
     const rpeRange = exercise.prescribedRPE.split('-');
     const targetRPE = parseFloat(rpeRange[0]) || 7;
     setInputRPE(targetRPE);
+
+    // Set 2+: use previous set's weight (straight sets)
+    const prevSet = setIdx > 0 ? exercise.sets[setIdx - 1] : null;
+    if (prevSet?.completed) {
+      setInputWeight(prevSet.weight);
+      setSuggestion(null);
+      return;
+    }
+
+    // Set 1: smart suggestion from e1RM back-calculation
+    const performances = getRecentPerformances(exercise.exerciseId, 3);
+    if (performances.length > 0) {
+      const estimatedE1RM = estimateE1RMWeighted(performances);
+      const equipment = exerciseEquipment[exercise.exerciseId] || 'barbell';
+      const increment = equipmentIncrement[equipment];
+      const suggested = suggestWeight(estimatedE1RM, targetReps, targetRPE, increment);
+
+      if (suggested > 0) {
+        setInputWeight(suggested);
+        setSuggestion({
+          weight: suggested,
+          basedOnE1RM: Math.round(estimatedE1RM * 10) / 10,
+          sessionsUsed: performances.length,
+        });
+        return;
+      }
+    }
+
+    // Fallback: no history
+    setInputWeight(0);
+    setSuggestion(null);
   }
 
   function selectDay(dayType: DayType) {
@@ -501,9 +528,17 @@ export default function Workout() {
               <div className="space-y-4 border-t border-border pt-4">
                 {/* Weight input */}
                 <div>
-                  <label className="text-xs font-display font-semibold tracking-wider uppercase text-text-muted block mb-1">
-                    PESO (KG)
-                  </label>
+                  <div className="flex items-center justify-between mb-1">
+                    <label className="text-xs font-display font-semibold tracking-wider uppercase text-text-muted">
+                      PESO (KG)
+                    </label>
+                    {suggestion && activeSetIdx === 0 && (
+                      <span className="text-[10px] font-mono text-accent-blue">
+                        e1RM {suggestion.basedOnE1RM} · {suggestion.sessionsUsed}
+                        {suggestion.sessionsUsed === 1 ? ' sessão' : ' sessões'}
+                      </span>
+                    )}
+                  </div>
                   <div className="flex items-center gap-2">
                     <button
                       type="button"

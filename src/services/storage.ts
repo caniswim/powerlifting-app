@@ -121,6 +121,42 @@ export function resetAllData(): void {
   localStorage.removeItem(KEYS.CURRENT_WEEK);
 }
 
+// Recent performances for load suggestion (best set per session, most recent first)
+export function getRecentPerformances(
+  exerciseId: string,
+  limit = 3
+): { weight: number; reps: number; rpe: number; e1rm: number; date: string }[] {
+  const workouts = getWorkouts()
+    .filter((w) => w.completed)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  const performances: { weight: number; reps: number; rpe: number; e1rm: number; date: string }[] = [];
+
+  for (const workout of workouts) {
+    if (performances.length >= limit) break;
+    for (const exercise of workout.exercises) {
+      if (exercise.exerciseId === exerciseId) {
+        const completedSets = exercise.sets.filter((s) => s.completed && s.weight > 0);
+        if (completedSets.length > 0) {
+          const bestSet = completedSets.reduce((best, s) =>
+            s.e1rm > best.e1rm ? s : best
+          );
+          performances.push({
+            weight: bestSet.weight,
+            reps: bestSet.reps,
+            rpe: bestSet.rpe,
+            e1rm: bestSet.e1rm,
+            date: workout.date,
+          });
+        }
+        break;
+      }
+    }
+  }
+
+  return performances;
+}
+
 // Last weight used for an exercise
 export function getLastWeightForExercise(exerciseId: string): number | null {
   const workouts = getWorkouts()

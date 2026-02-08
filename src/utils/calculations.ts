@@ -35,6 +35,55 @@ export function getWeekRPEProgression(weekInBlock: number, blockType: string): n
   return progression[Math.min(weekInBlock, progression.length - 1)];
 }
 
+export interface ExercisePerformance {
+  weight: number;
+  reps: number;
+  rpe: number;
+  e1rm: number;
+  date: string;
+}
+
+export interface LoadSuggestion {
+  weight: number;
+  basedOnE1RM: number;
+  sessionsUsed: number;
+}
+
+const WEIGHTED_AVERAGES: Record<number, number[]> = {
+  1: [1],
+  2: [0.6, 0.4],
+  3: [0.5, 0.3, 0.2],
+};
+
+export function estimateE1RMWeighted(performances: ExercisePerformance[]): number {
+  if (performances.length === 0) return 0;
+  if (performances.length === 1) return performances[0].e1rm;
+
+  const weights = WEIGHTED_AVERAGES[Math.min(performances.length, 3)] || WEIGHTED_AVERAGES[3];
+  let sum = 0;
+  let totalWeight = 0;
+  for (let i = 0; i < Math.min(performances.length, 3); i++) {
+    sum += performances[i].e1rm * weights[i];
+    totalWeight += weights[i];
+  }
+  return sum / totalWeight;
+}
+
+export function suggestWeight(
+  estimatedE1RM: number,
+  targetReps: number,
+  targetRPE: number,
+  roundingIncrement: number
+): number {
+  if (estimatedE1RM <= 0 || targetReps <= 0) return 0;
+  const rir = 10 - targetRPE;
+  const effectiveReps = targetReps + rir;
+  const rawWeight = estimatedE1RM / (1 + 0.0333 * effectiveReps);
+
+  if (roundingIncrement <= 0) return Math.round(rawWeight);
+  return Math.round(rawWeight / roundingIncrement) * roundingIncrement;
+}
+
 export function formatWeight(weight: number): string {
   return weight % 1 === 0 ? weight.toString() : weight.toFixed(1);
 }

@@ -1,5 +1,47 @@
 import type { ExerciseMuscleMap } from '../types';
 
+export type EquipmentType = 'barbell' | 'machine' | 'dumbbell' | 'bodyweight';
+
+export const exerciseEquipment: Record<string, EquipmentType> = {
+  agachamento_low_bar: 'barbell',
+  deadlift_sumo: 'barbell',
+  supino_wide_grip: 'barbell',
+  good_morning: 'barbell',
+  hack_squat: 'machine',
+  leg_extension: 'machine',
+  leg_press: 'machine',
+  pause_squat: 'barbell',
+  front_squat: 'barbell',
+  spoto_press: 'barbell',
+  close_grip_bench: 'barbell',
+  larsen_press: 'barbell',
+  pin_press: 'barbell',
+  db_press_inclinado: 'dumbbell',
+  db_press_flat: 'dumbbell',
+  remada_barra: 'barbell',
+  remada_apoio_peito: 'barbell',
+  face_pull: 'machine',
+  elevacao_lateral: 'dumbbell',
+  rosca: 'barbell',
+  triceps_isolado: 'machine',
+  back_extension: 'bodyweight',
+  block_deadlift: 'barbell',
+  deficit_deadlift_sumo: 'barbell',
+  seated_good_morning: 'barbell',
+  pause_deadlift_sumo: 'barbell',
+  feet_up_bench: 'barbell',
+  rosca_martelo: 'dumbbell',
+  triceps_testa: 'barbell',
+  triceps_pulley: 'machine',
+};
+
+export const equipmentIncrement: Record<EquipmentType, number> = {
+  barbell: 2.5,
+  machine: 5,
+  dumbbell: 2,
+  bodyweight: 0,
+};
+
 export const exerciseMuscleMap: ExerciseMuscleMap = {
   agachamento_low_bar: { quads: 1.0, 'glúteos': 0.5, erectors: 0.5 },
   deadlift_sumo: { 'glúteos': 1.0, quads: 0.5, erectors: 0.5, hamstrings: 0.5 },
