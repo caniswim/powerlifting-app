@@ -1,5 +1,7 @@
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
+import { Home, Dumbbell, CalendarDays, BarChart3, Settings2 } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
 const Dashboard = lazy(() => import('./pages/Dashboard'))
 const Workout = lazy(() => import('./pages/Workout'))
@@ -7,12 +9,12 @@ const Calendar = lazy(() => import('./pages/Calendar'))
 const Analytics = lazy(() => import('./pages/Analytics'))
 const Settings = lazy(() => import('./pages/Settings'))
 
-const navItems = [
-  { path: '/', label: 'HOME', icon: '⬡' },
-  { path: '/workout', label: 'TREINO', icon: '◆' },
-  { path: '/calendar', label: 'PLANO', icon: '▦' },
-  { path: '/analytics', label: 'DADOS', icon: '◈' },
-  { path: '/settings', label: 'CONFIG', icon: '⚙' },
+const navItems: { path: string; label: string; icon: LucideIcon }[] = [
+  { path: '/', label: 'HOME', icon: Home },
+  { path: '/workout', label: 'TREINO', icon: Dumbbell },
+  { path: '/calendar', label: 'PLANO', icon: CalendarDays },
+  { path: '/analytics', label: 'DADOS', icon: BarChart3 },
+  { path: '/settings', label: 'CONFIG', icon: Settings2 },
 ]
 
 function LoadingSpinner() {
@@ -56,7 +58,7 @@ function App() {
                   }`
                 }
               >
-                <span className="text-lg leading-none">{item.icon}</span>
+                <item.icon size={20} strokeWidth={2} />
                 <span>{item.label}</span>
               </NavLink>
             ))}

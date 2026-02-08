@@ -4,6 +4,7 @@ import { getProfile, getWorkouts, getRecords, getCurrentWeek } from '../services
 import { calculateDOTS } from '../utils/calculations';
 import { exerciseNames } from '../data/exerciseMuscleMap';
 import type { AthleteProfile, PersonalRecord, PrescribedWeek } from '../types';
+import { Zap, Battery, BedDouble, Check, Circle, Minus } from 'lucide-react';
 
 // Lazy import programData to avoid blocking if not yet generated
 let programDataCache: PrescribedWeek[] | null = null;
@@ -134,7 +135,7 @@ export default function Dashboard() {
         {/* Deload Warning */}
         {isNextDeload && (
           <div className="bg-accent-blue/10 border border-accent-blue/30 rounded-lg p-3 flex items-center gap-3">
-            <span className="text-accent-blue text-lg">⚡</span>
+            <Zap size={20} className="text-accent-blue flex-shrink-0" />
             <div>
               <p className="text-sm font-display font-semibold text-accent-blue uppercase tracking-wider">
                 Próxima semana: DELOAD
@@ -149,7 +150,7 @@ export default function Dashboard() {
         {/* Current Deload Banner */}
         {weekData?.isDeload && (
           <div className="bg-accent-blue/10 border border-accent-blue/30 rounded-lg p-3 flex items-center gap-3">
-            <span className="text-accent-blue text-2xl">◇</span>
+            <Battery size={24} className="text-accent-blue flex-shrink-0" />
             <div>
               <p className="text-sm font-display font-semibold text-accent-blue uppercase tracking-wider">
                 SEMANA DE DELOAD
@@ -250,7 +251,7 @@ export default function Dashboard() {
           </div>
         ) : (
           <div className="bg-bg-card border border-border rounded-lg p-6 text-center">
-            <div className="text-2xl mb-2">◇</div>
+            <BedDouble size={24} className="text-text-muted mb-2" />
             <div className="text-sm font-display font-semibold text-text-secondary uppercase tracking-wider">
               DIA DE DESCANSO
             </div>
@@ -315,8 +316,8 @@ export default function Dashboard() {
                   <div className="text-[10px] font-display font-semibold tracking-wider">
                     {day}
                   </div>
-                  <div className="text-lg mt-0.5">
-                    {isCompleted ? '✓' : isToday ? '◆' : '·'}
+                  <div className="flex items-center justify-center mt-0.5">
+                    {isCompleted ? <Check size={18} /> : isToday ? <Circle size={10} fill="currentColor" /> : <Minus size={14} />}
                   </div>
                 </div>
               );

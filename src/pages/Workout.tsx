@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { calculateE1RM, estimateE1RMWeighted, suggestWeight } from '../utils/calculations';
 import type { LoadSuggestion } from '../utils/calculations';
 import {
@@ -376,7 +377,7 @@ export default function Workout() {
               onClick={() => navigate('/')}
               className="text-text-muted font-display text-sm"
             >
-              ← Voltar
+              <ArrowLeft size={16} className="inline mr-1" />Voltar
             </button>
             <div className="text-xs font-mono text-text-muted">
               {completedSets}/{totalSets} séries
@@ -757,7 +758,7 @@ export default function Workout() {
         {/* Workout complete */}
         {workout.completed && (
           <div className="bg-accent-green/10 border border-accent-green/30 rounded-lg p-6 text-center space-y-3 animate-fade-in">
-            <div className="text-2xl">◆</div>
+            <CheckCircle2 size={32} className="text-accent-green" />
             <div className="text-lg font-display font-bold text-accent-green uppercase tracking-wider">
               Treino Concluído
             </div>
