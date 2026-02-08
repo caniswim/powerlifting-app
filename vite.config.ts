@@ -14,20 +14,26 @@ export default defineConfig({
         name: 'PowerLifting Tracker',
         short_name: 'PLTracker',
         description: 'Periodização anual de powerlifting',
+        id: '/',
+        start_url: '/',
+        scope: '/',
         theme_color: '#0a0a0a',
         background_color: '#0a0a0a',
         display: 'standalone',
         orientation: 'portrait',
+        categories: ['fitness', 'health'],
         icons: [
           {
             src: 'pwa-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any'
           },
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any'
           }
         ]
       },

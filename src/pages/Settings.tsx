@@ -250,9 +250,35 @@ export default function Settings() {
 
       {/* Reset Confirmation Modal */}
       {showResetModal && (
+        <ResetModal onClose={() => setShowResetModal(false)} onReset={handleReset} />
+      )}
+    </div>
+  );
+}
+
+function ResetModal({ onClose, onReset }: { onClose: () => void; onReset: () => void }) {
+  // Lock body scroll on iOS when modal is open
+  useEffect(() => {
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.overflow = '';
+      window.scrollTo(0, scrollY);
+    };
+  }, []);
+
+  return (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4"
-          onClick={() => setShowResetModal(false)}
+          onClick={onClose}
         >
           <div
             className="bg-bg-card border border-border rounded-lg p-6 max-w-sm w-full space-y-4 animate-fade-in"
@@ -267,7 +293,7 @@ export default function Settings() {
             </p>
             <div className="flex gap-3 pt-2">
               <button
-                onClick={() => setShowResetModal(false)}
+                onClick={onClose}
                 className="flex-1 h-11 bg-bg-input border border-border-light rounded-md
                            font-display text-sm text-text-primary uppercase tracking-wider
                            hover:border-text-muted transition-colors"
@@ -275,7 +301,7 @@ export default function Settings() {
                 Cancelar
               </button>
               <button
-                onClick={handleReset}
+                onClick={onReset}
                 className="flex-1 h-11 bg-accent-red rounded-md font-display text-sm
                            text-white font-semibold uppercase tracking-wider
                            hover:bg-accent-red/90 active:scale-[0.98] transition-all"
@@ -285,8 +311,6 @@ export default function Settings() {
             </div>
           </div>
         </div>
-      )}
-    </div>
   );
 }
 

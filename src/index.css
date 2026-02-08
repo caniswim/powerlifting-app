@@ -28,13 +28,45 @@ html {
   font-family: var(--font-display);
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
+  color-scheme: dark;
   -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   min-height: 100dvh;
   overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Prevent iOS auto-zoom on input focus (must be >= 16px) */
+input, select, textarea {
+  font-size: max(16px, 1em);
+}
+
+/* Improve tap responsiveness — remove 300ms delay */
+button, a, [role="button"], input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Prevent long-press callout on non-text interactive elements */
+button, a, [role="button"], img {
+  -webkit-touch-callout: none;
+}
+
+/* Standalone mode: account for safe areas on notch/dynamic island devices */
+@media (display-mode: standalone) {
+  body {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Prevent text selection on UI elements during interaction */
+button, [role="button"], nav {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

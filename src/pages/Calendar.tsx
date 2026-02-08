@@ -325,6 +325,24 @@ function DayDetailModal({
 }) {
   const colors = BLOCK_TYPE_COLORS[week.blockType];
 
+  // Lock body scroll on iOS when modal is open
+  useEffect(() => {
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.overflow = '';
+      window.scrollTo(0, scrollY);
+    };
+  }, []);
+
   return (
     <div
       className="fixed inset-0 z-[60] flex items-end justify-center bg-black/60 backdrop-blur-sm"
@@ -332,6 +350,7 @@ function DayDetailModal({
     >
       <div
         className="w-full max-w-lg bg-bg-card border-t border-border rounded-t-2xl animate-fade-in max-h-[80vh] overflow-y-auto overscroll-contain"
+        style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}

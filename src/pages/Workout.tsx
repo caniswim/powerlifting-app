@@ -370,7 +370,7 @@ export default function Workout() {
   return (
     <div ref={containerRef} className="min-h-screen bg-bg-primary pb-4">
       {/* Top Bar */}
-      <div className="sticky top-0 z-40 bg-bg-secondary border-b border-border">
+      <div className="sticky top-0 z-40 bg-bg-secondary border-b border-border" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
         <div className="max-w-lg mx-auto px-4 py-2">
           <div className="flex justify-between items-center">
             <button
