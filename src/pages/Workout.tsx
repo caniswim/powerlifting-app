@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import { ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Pencil } from 'lucide-react';
 import { calculateE1RM, estimateE1RMWeighted, suggestWeight } from '../utils/calculations';
 import type { LoadSuggestion } from '../utils/calculations';
 import {
@@ -10,6 +10,7 @@ import {
   saveWorkout,
   getRecordForExercise,
   saveRecord,
+  recalculateRecord,
   getRecentPerformances,
 } from '../services/storage';
 import { exerciseNames, exerciseEquipment, equipmentIncrement } from '../data/exerciseMuscleMap';
@@ -58,6 +59,12 @@ export default function Workout() {
   const [inputWeight, setInputWeight] = useState(0);
   const [inputReps, setInputReps] = useState(0);
   const [inputRPE, setInputRPE] = useState(7);
+
+  // Edit modal state
+  const [editingSet, setEditingSet] = useState<{ exIdx: number; setIdx: number } | null>(null);
+  const [editWeight, setEditWeight] = useState(0);
+  const [editReps, setEditReps] = useState(0);
+  const [editRPE, setEditRPE] = useState(7);
 
   useEffect(() => {
     loadWorkout();
@@ -185,6 +192,82 @@ export default function Workout() {
     setInputWeight(0);
     setSuggestion(null);
   }
+
+  function openEditSet(exIdx: number, setIdx: number) {
+    const set = workout!.exercises[exIdx].sets[setIdx];
+    setEditWeight(set.weight);
+    setEditReps(set.reps);
+    setEditRPE(set.rpe);
+    setEditingSet({ exIdx, setIdx });
+  }
+
+  const saveEditSet = useCallback(() => {
+    if (!workout || !editingSet) return;
+    const { exIdx, setIdx } = editingSet;
+    const exerciseId = workout.exercises[exIdx].exerciseId;
+    const newE1rm = calculateE1RM(editWeight, editReps, editRPE);
+
+    // Build updated workout with edited set
+    const updatedWorkout = { ...workout };
+    const exercises = [...updatedWorkout.exercises];
+    const exercise = { ...exercises[exIdx] };
+    const sets = [...exercise.sets];
+
+    sets[setIdx] = {
+      ...sets[setIdx],
+      weight: editWeight,
+      reps: editReps,
+      rpe: editRPE,
+      e1rm: newE1rm,
+      isPR: false,
+    };
+
+    exercise.sets = sets;
+    exercises[exIdx] = exercise;
+    updatedWorkout.exercises = exercises;
+
+    // Save so recalculateRecord sees updated data
+    saveWorkout(updatedWorkout);
+    recalculateRecord(exerciseId);
+
+    // Re-evaluate isPR flags for this exercise in current workout
+    const otherWorkouts = getWorkouts().filter((w) => w.id !== workout.id);
+    let bestFromOthers = 0;
+    for (const w of otherWorkouts) {
+      for (const ex of w.exercises) {
+        if (ex.exerciseId !== exerciseId) continue;
+        for (const s of ex.sets) {
+          if (s.completed && s.e1rm > bestFromOthers) bestFromOthers = s.e1rm;
+        }
+      }
+    }
+
+    let runningBest = bestFromOthers;
+    for (let i = 0; i < sets.length; i++) {
+      if (!sets[i].completed) continue;
+      if (sets[i].e1rm > runningBest) {
+        sets[i] = { ...sets[i], isPR: true };
+        runningBest = sets[i].e1rm;
+      } else {
+        sets[i] = { ...sets[i], isPR: false };
+      }
+    }
+
+    exercise.sets = sets;
+    exercises[exIdx] = exercise;
+    updatedWorkout.exercises = exercises;
+
+    setWorkout(updatedWorkout);
+    saveWorkout(updatedWorkout);
+
+    // Flash if edited set is now a PR
+    if (sets[setIdx].isPR) {
+      setPrFlash(exerciseId);
+      setTimeout(() => setPrFlash(null), 3000);
+    }
+
+    setEditingSet(null);
+  }, [workout, editingSet, editWeight, editReps, editRPE]);
 
   function selectDay(dayType: DayType) {
     if (!weekData) return;
@@ -505,22 +588,28 @@ export default function Workout() {
             {/* Completed sets table */}
             {currentExercise.sets.some((s) => s.completed) && (
               <div className="space-y-1">
-                {currentExercise.sets.filter((s) => s.completed).map((set) => (
-                  <div
-                    key={set.setNumber}
-                    className={`flex justify-between items-center px-2 py-1 rounded text-xs ${
-                      set.isPR ? 'bg-accent-gold/10 text-accent-gold' : 'text-text-muted'
-                    }`}
-                  >
-                    <span className="font-mono">S{set.setNumber}</span>
-                    <span className="font-mono font-bold">
-                      {set.weight}kg × {set.reps} @{set.rpe}
-                    </span>
-                    <span className="font-mono">
-                      {set.e1rm.toFixed(1)}{set.isPR ? ' PR' : ''}
-                    </span>
-                  </div>
-                ))}
+                {currentExercise.sets.map((set, i) =>
+                  set.completed ? (
+                    <button
+                      key={i}
+                      onClick={() => openEditSet(activeExIdx, i)}
+                      className={`flex justify-between items-center w-full px-2 py-1.5 rounded text-xs transition-colors ${
+                        set.isPR
+                          ? 'bg-accent-gold/10 text-accent-gold active:bg-accent-gold/20'
+                          : 'text-text-muted active:bg-bg-tertiary'
+                      }`}
+                    >
+                      <span className="font-mono">S{set.setNumber}</span>
+                      <span className="font-mono font-bold">
+                        {set.weight}kg × {set.reps} @{set.rpe}
+                      </span>
+                      <span className="font-mono flex items-center gap-1.5">
+                        {set.e1rm.toFixed(1)}{set.isPR ? ' PR' : ''}
+                        <Pencil size={10} className="opacity-40" />
+                      </span>
+                    </button>
+                  ) : null
+                )}
               </div>
             )}
 
@@ -754,6 +843,185 @@ export default function Workout() {
             </div>
           </div>
         )}
+
+        {/* Edit Set Modal */}
+        {editingSet && (() => {
+          const editE1RM = editWeight > 0 && editReps > 0 ? calculateE1RM(editWeight, editReps, editRPE) : 0;
+          const editExercise = workout.exercises[editingSet.exIdx];
+          const editRecord = getRecordForExercise(editExercise.exerciseId);
+          const editWouldBePR = editE1RM > (editRecord?.e1rm || 0) && editE1RM > 0;
+
+          return (
+            <div className="fixed inset-0 z-50 flex items-end justify-center">
+              {/* Backdrop */}
+              <div
+                className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                onClick={() => setEditingSet(null)}
+              />
+
+              {/* Sheet */}
+              <div
+                className="relative w-full max-w-lg bg-bg-card border-t border-border rounded-t-2xl p-4 space-y-4 animate-slide-up"
+                style={{ paddingBottom: 'max(2rem, env(safe-area-inset-bottom))' }}
+              >
+                {/* Handle */}
+                <div className="flex justify-center">
+                  <div className="w-10 h-1 bg-border rounded-full" />
+                </div>
+
+                {/* Header */}
+                <div className="text-center">
+                  <div className="text-xs font-display font-semibold text-text-muted uppercase tracking-wider">
+                    Editar Série {editingSet.setIdx + 1}
+                  </div>
+                  <div className="text-sm font-display font-bold text-text-primary uppercase tracking-wider">
+                    {editExercise.exerciseName}
+                  </div>
+                </div>
+
+                {/* Weight input */}
+                <div>
+                  <label className="text-xs font-display font-semibold tracking-wider uppercase text-text-muted block mb-1">
+                    PESO (KG)
+                  </label>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setEditWeight(Math.max(0, editWeight - 2.5))}
+                      className="w-12 h-14 bg-bg-tertiary border border-border rounded-lg text-text-secondary font-bold text-xl active:bg-border"
+                    >
+                      −
+                    </button>
+                    <input
+                      type="number"
+                      inputMode="decimal"
+                      value={editWeight || ''}
+                      onChange={(e) => setEditWeight(parseFloat(e.target.value) || 0)}
+                      className="flex-1 h-14 bg-bg-input border border-border-light rounded-lg text-center font-mono font-bold text-3xl text-text-primary focus:border-accent-gold focus:outline-none"
+                      onFocus={(e) => e.target.select()}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setEditWeight(editWeight + 2.5)}
+                      className="w-12 h-14 bg-bg-tertiary border border-border rounded-lg text-text-secondary font-bold text-xl active:bg-border"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                {/* Reps input */}
+                <div>
+                  <label className="text-xs font-display font-semibold tracking-wider uppercase text-text-muted block mb-1">
+                    REPS
+                  </label>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setEditReps(Math.max(1, editReps - 1))}
+                      className="w-12 h-14 bg-bg-tertiary border border-border rounded-lg text-text-secondary font-bold text-xl active:bg-border"
+                    >
+                      −
+                    </button>
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      value={editReps || ''}
+                      onChange={(e) => setEditReps(parseInt(e.target.value) || 0)}
+                      className="flex-1 h-14 bg-bg-input border border-border-light rounded-lg text-center font-mono font-bold text-3xl text-text-primary focus:border-accent-gold focus:outline-none"
+                      onFocus={(e) => e.target.select()}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setEditReps(editReps + 1)}
+                      className="w-12 h-14 bg-bg-tertiary border border-border rounded-lg text-text-secondary font-bold text-xl active:bg-border"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                {/* RPE selector */}
+                <div>
+                  <label className="text-xs font-display font-semibold tracking-wider uppercase text-text-muted block mb-1">
+                    RPE
+                  </label>
+                  <div className="flex flex-wrap gap-1.5">
+                    {RPE_VALUES.map((rpe) => {
+                      const isSelected = editRPE === rpe;
+                      const color =
+                        rpe >= 9.5
+                          ? 'bg-accent-red text-white'
+                          : rpe >= 9
+                          ? 'bg-accent-red-dim text-white'
+                          : rpe >= 8
+                          ? 'bg-accent-gold text-black'
+                          : rpe >= 7
+                          ? 'bg-accent-green-dim text-white'
+                          : 'bg-bg-tertiary text-text-secondary';
+                      return (
+                        <button
+                          key={rpe}
+                          type="button"
+                          onClick={() => setEditRPE(rpe)}
+                          className={`min-w-[42px] h-11 rounded-lg font-mono text-sm font-bold transition-all ${
+                            isSelected
+                              ? `${color} ring-2 ring-white/30 scale-105`
+                              : 'bg-bg-input text-text-muted hover:bg-bg-tertiary'
+                          }`}
+                        >
+                          {rpe}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* e1RM preview */}
+                {editE1RM > 0 && (
+                  <div className={`text-center py-2 rounded-lg ${
+                    editWouldBePR ? 'bg-accent-gold/10 border border-accent-gold/30' : 'bg-bg-tertiary'
+                  }`}>
+                    <span className="text-xs font-display text-text-muted uppercase tracking-wider">
+                      e1RM:{' '}
+                    </span>
+                    <span className={`text-xl font-mono font-bold ${
+                      editWouldBePR ? 'text-accent-gold' : 'text-text-primary'
+                    }`}>
+                      {editE1RM.toFixed(1)}
+                    </span>
+                    {editWouldBePR && (
+                      <span className="text-xs font-display text-accent-gold ml-2 uppercase tracking-wider">
+                        NOVO PR!
+                      </span>
+                    )}
+                  </div>
+                )}
+
+                {/* Action buttons */}
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setEditingSet(null)}
+                    className="flex-1 h-12 bg-bg-tertiary border border-border rounded-lg font-display font-semibold text-sm text-text-muted uppercase tracking-wider active:bg-border transition-colors"
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    onClick={saveEditSet}
+                    disabled={editWeight <= 0 || editReps <= 0}
+                    className={`flex-1 h-12 rounded-lg font-display font-bold text-sm uppercase tracking-wider transition-all ${
+                      editWeight <= 0 || editReps <= 0
+                        ? 'bg-bg-tertiary text-text-muted'
+                        : 'bg-accent-gold text-black active:scale-[0.98]'
+                    }`}
+                  >
+                    Salvar
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Workout complete */}
         {workout.completed && (
