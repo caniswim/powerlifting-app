@@ -1,4 +1,5 @@
 import type { WorkoutLog, PersonalRecord, AthleteProfile } from '../types';
+import { writeToOPFS, readFromOPFS, clearOPFS, requestPersistentStorage } from './opfs';
 
 const KEYS = {
   WORKOUTS: 'pl_workouts',
@@ -6,6 +7,55 @@ const KEYS = {
   PROFILE: 'pl_profile',
   CURRENT_WEEK: 'pl_current_week',
 } as const;
+
+const ALL_KEYS = Object.values(KEYS);
+
+// ---------------------------------------------------------------------------
+// OPFS sync (debounced — writes at most once every 2s)
+// ---------------------------------------------------------------------------
+
+let syncTimer: ReturnType<typeof setTimeout> | null = null;
+
+function scheduleSyncToOPFS(): void {
+  if (syncTimer) clearTimeout(syncTimer);
+  syncTimer = setTimeout(() => {
+    const snapshot: Record<string, string | null> = {};
+    for (const key of ALL_KEYS) {
+      snapshot[key] = localStorage.getItem(key);
+    }
+    writeToOPFS(JSON.stringify(snapshot));
+  }, 2_000);
+}
+
+// ---------------------------------------------------------------------------
+// Init — restore from OPFS if localStorage is empty
+// ---------------------------------------------------------------------------
+
+export async function initStorage(): Promise<void> {
+  await requestPersistentStorage();
+
+  const hasData = ALL_KEYS.some((k) => localStorage.getItem(k) !== null);
+  if (hasData) return;
+
+  const backup = await readFromOPFS();
+  if (!backup) return;
+
+  try {
+    const snapshot = JSON.parse(backup) as Record<string, string | null>;
+    for (const key of ALL_KEYS) {
+      const value = snapshot[key];
+      if (value != null) {
+        localStorage.setItem(key, value);
+      }
+    }
+  } catch {
+    // corrupt backup — ignore
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Core helpers
+// ---------------------------------------------------------------------------
 
 function getItem<T>(key: string, fallback: T): T {
   try {
@@ -19,6 +69,7 @@ function getItem<T>(key: string, fallback: T): T {
 
 function setItem<T>(key: string, value: T): void {
   localStorage.setItem(key, JSON.stringify(value));
+  scheduleSyncToOPFS();
 }
 
 // Workouts
@@ -108,6 +159,7 @@ export function importData(json: string): boolean {
     if (data.records) setItem(KEYS.RECORDS, data.records);
     if (data.profile) setItem(KEYS.PROFILE, data.profile);
     if (data.currentWeek) setItem(KEYS.CURRENT_WEEK, data.currentWeek);
+    scheduleSyncToOPFS();
     return true;
   } catch {
     return false;
@@ -119,6 +171,7 @@ export function resetAllData(): void {
   localStorage.removeItem(KEYS.RECORDS);
   localStorage.removeItem(KEYS.PROFILE);
   localStorage.removeItem(KEYS.CURRENT_WEEK);
+  clearOPFS();
 }
 
 // Recent performances for load suggestion (best set per session, most recent first)
