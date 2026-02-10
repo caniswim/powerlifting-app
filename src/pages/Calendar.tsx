@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useStorage } from '../contexts/StorageContext';
-import type { PrescribedWeek, PrescribedDay, PrescribedExercise, WorkoutLog } from '../types';
+import type { PrescribedWeek, PrescribedDay, PrescribedExercise, WorkoutLog, BlockType } from '../types';
 import { Check, X } from 'lucide-react';
 import { blockTypeColors, blockTypeLabels } from '../domain/blockTypeConfig';
 import { dayTypePtLabels } from '../domain/dayTypeLabels';
@@ -32,7 +32,7 @@ const MACROCYCLES = [
   { id: 4, label: 'MAC 4', desc: 'Força + Realização', weeks: '40-52' },
 ];
 
-const DAY_SHORT_LABELS = ['SEG', 'TER', 'QUI', 'SEX'];
+const DAY_SHORT_LABELS = ['SQ', 'BP', 'DL', 'BV'];
 
 // ---------------------------------------------------------------------------
 // Types

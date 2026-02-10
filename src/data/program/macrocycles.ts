@@ -25,7 +25,7 @@ export function accSquatDay(weekIdx: number, opts?: {
   const quadCompReps = o.quadCompoundReps ?? '10-12';
   const legExtSets = o.legExtSets ?? volScale4(3, weekIdx);
 
-  return day('squat_emphasis', 'Segunda — Lower: Squat Emphasis', [
+  return day('squat_emphasis', 'Lower: Squat Emphasis', [
     ex('agachamento_low_bar', mainSets, mainReps, mainRpe),
     ex(gmId, gmSets, gmReps, '7-8'),
     ex(quadComp, volScale4(3, weekIdx), quadCompReps, '8-9'),
@@ -48,7 +48,7 @@ export function accBenchDay(weekIdx: number, opts?: {
   const varReps = o.variationReps ?? '6-8';
   const rowSets = o.rowSets ?? volScale4(3, weekIdx);
 
-  return day('bench_emphasis', 'Terça — Upper: Bench Emphasis', [
+  return day('bench_emphasis', 'Upper: Bench Emphasis', [
     ex('supino_wide_grip', mainSets, mainReps, mainRpe),
     ex(varId, varSets, varReps, '7-8'),
     ex('remada_barra', rowSets, '8-10', '7-8'),
@@ -76,7 +76,7 @@ export function accDeadliftDay(weekIdx: number, opts?: {
   const lpReps = o.legPressReps ?? '10-15';
   const gmId = o.gmId ?? 'good_morning';
 
-  return day('deadlift_emphasis', 'Quinta — Lower: Deadlift Emphasis', [
+  return day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
     ex('deadlift_sumo', mainSets, mainReps, mainRpe),
     ex(secId, secSets, secReps, '7'),
     ex(lpId, lpSets, lpReps, '8-9'),
@@ -103,7 +103,7 @@ export function accBenchVolDay(weekIdx: number, opts?: {
   const triId = o.tricepsId ?? 'triceps_isolado';
   const roscaId = o.roscaId ?? 'rosca';
 
-  return day('bench_volume', 'Sexta — Upper: Bench Volume', [
+  return day('bench_volume', 'Upper: Bench Volume', [
     ex(varId, varSets, varReps, varRpe),
     ex(dbId, 3, '8-12', '8'),
     ex(rowId, rowSets, '10-12', '8'),
@@ -116,7 +116,7 @@ export function accBenchVolDay(weekIdx: number, opts?: {
 // --- DELOAD day factories ---
 
 export function deloadSquatDay(): PrescribedDay {
-  return day('squat_emphasis', 'Segunda — Lower: Squat Emphasis (Deload)', [
+  return day('squat_emphasis', 'Lower: Squat Emphasis (Deload)', [
     ex('agachamento_low_bar', 2, '5', '5-6'),
     ex('good_morning', 2, '8', '5-6'),
     ex('hack_squat', 2, '10', '5-6'),
@@ -125,7 +125,7 @@ export function deloadSquatDay(): PrescribedDay {
 }
 
 export function deloadBenchDay(): PrescribedDay {
-  return day('bench_emphasis', 'Terça — Upper: Bench Emphasis (Deload)', [
+  return day('bench_emphasis', 'Upper: Bench Emphasis (Deload)', [
     ex('supino_wide_grip', 2, '5', '5-6'),
     ex('spoto_press', 2, '6', '5-6'),
     ex('remada_barra', 2, '8', '5-6'),
@@ -134,7 +134,7 @@ export function deloadBenchDay(): PrescribedDay {
 }
 
 export function deloadDeadliftDay(): PrescribedDay {
-  return day('deadlift_emphasis', 'Quinta — Lower: Deadlift Emphasis (Deload)', [
+  return day('deadlift_emphasis', 'Lower: Deadlift Emphasis (Deload)', [
     ex('deadlift_sumo', 2, '3', '5-6'),
     ex('pause_squat', 2, '5', '5-6'),
     ex('leg_press', 2, '10', '5-6'),
@@ -142,7 +142,7 @@ export function deloadDeadliftDay(): PrescribedDay {
 }
 
 export function deloadBenchVolDay(): PrescribedDay {
-  return day('bench_volume', 'Sexta — Upper: Bench Volume (Deload)', [
+  return day('bench_volume', 'Upper: Bench Volume (Deload)', [
     ex('close_grip_bench', 2, '6', '5-6'),
     ex('db_press_flat', 2, '8', '5-6'),
     ex('remada_apoio_peito', 2, '10', '5-6'),
@@ -248,24 +248,24 @@ export function buildMac1(): PrescribedWeek[] {
         : 'Transmutação leve — redução de volume, aumento de intensidade. Preparação para teste de e1RM.',
       false,
       [
-        day('squat_emphasis', 'Segunda — Lower: Squat Emphasis', [
+        day('squat_emphasis', 'Lower: Squat Emphasis', [
           ex('agachamento_low_bar', setsMain, repsMain, rpeMain, isTestWeek ? 'Teste e1RM: single @ RPE 9' : undefined),
           ex('good_morning', 3, '6-8', '7-8'),
           ex('hack_squat', 3, '8-10', '8'),
           ...(isTestWeek ? [] : [ex('leg_extension', 3, '12-15', '8')]),
         ]),
-        day('bench_emphasis', 'Terça — Upper: Bench Emphasis', [
+        day('bench_emphasis', 'Upper: Bench Emphasis', [
           ex('supino_wide_grip', setsMain, repsMain, rpeMain, isTestWeek ? 'Teste e1RM: single @ RPE 9' : undefined),
           ex('spoto_press', 3, '4-6', '7-8'),
           ex('remada_barra', 3, '8-10', '7-8'),
           ex('face_pull', 3, '15-20', '7'),
         ]),
-        day('deadlift_emphasis', 'Quinta — Lower: Deadlift Emphasis', [
+        day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', setsMain, repsMain, rpeMain, isTestWeek ? 'Teste e1RM: single @ RPE 9' : undefined),
           ex('pause_squat', 3, '4-6', '7'),
           ...(isTestWeek ? [] : [ex('leg_press', 3, '10-12', '8')]),
         ]),
-        day('bench_volume', 'Sexta — Upper: Bench Volume', [
+        day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, isTestWeek ? '3-5' : '4-6', isTestWeek ? '8' : '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '10-12', '8'),
@@ -293,14 +293,14 @@ export function buildMac2(): PrescribedWeek[] {
       'Acumulação com especificidade — variações competitivas (pause squat, spoto press, deficit DL). Good mornings mais pesados.',
       false,
       [
-        day('squat_emphasis', 'Segunda — Lower: Squat Emphasis', [
+        day('squat_emphasis', 'Lower: Squat Emphasis', [
           ex('agachamento_low_bar', 4, '5-7', rpeMap[i]),
           ex('pause_squat', 3, '4-6', '7-8', 'Variação competitiva'),
           ex('good_morning', volScale4(3, i), '6-8', '7-8', 'Mais pesado que Mac 1'),
           ex('leg_extension', 3, '12-15', '8-9'),
           ex('back_extension', 3, '10-12', '7'),
         ]),
-        day('bench_emphasis', 'Terça — Upper: Bench Emphasis', [
+        day('bench_emphasis', 'Upper: Bench Emphasis', [
           ex('supino_wide_grip', 4, '5-7', rpeMap[i]),
           ex('spoto_press', 3, '4-6', '7-8', 'Variação competitiva'),
           ex('remada_barra', volScale4(3, i), '8-10', '7-8'),
@@ -308,14 +308,14 @@ export function buildMac2(): PrescribedWeek[] {
           ex('face_pull', 3, '15-20', '7'),
           ex('rosca', 3, '10-15', '7'),
         ]),
-        day('deadlift_emphasis', 'Quinta — Lower: Deadlift Emphasis', [
+        day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', 4, '5-7', rpeMap[i]),
           ex('deficit_deadlift_sumo', 3, '3-5', '7-8', 'Variação competitiva'),
           ex('block_deadlift', volScale4(3, i), '3-5', '7-8'),
           ex('leg_press', 3, '10-12', '8'),
           ex('good_morning', 3, '8-10', '7', 'Light'),
         ]),
-        day('bench_volume', 'Sexta — Upper: Bench Volume', [
+        day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', volScale4(3, i), '5-7', '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', volScale4(3, i), '10-12', '8'),
@@ -339,26 +339,26 @@ export function buildMac2(): PrescribedWeek[] {
       'Transmutação — redução de reps, aumento de intensidade. Variações pesadas (spoto 3x3, pause squat 3x4). Manter MEV em acessórios.',
       false,
       [
-        day('squat_emphasis', 'Segunda — Lower: Squat Emphasis', [
+        day('squat_emphasis', 'Lower: Squat Emphasis', [
           ex('agachamento_low_bar', mainSets, '3-5', rpeMap[i]),
           ex('pause_squat', 3, '3-4', '8', 'Pesado — variação competitiva'),
           ex('good_morning', 3, '6-8', '7-8'),
           ex('leg_extension', 3, '12-15', '8'),
         ]),
-        day('bench_emphasis', 'Terça — Upper: Bench Emphasis', [
+        day('bench_emphasis', 'Upper: Bench Emphasis', [
           ex('supino_wide_grip', mainSets, '3-5', rpeMap[i]),
           ex('spoto_press', 3, '3-4', '8', 'Pesado — variação competitiva'),
           ex('remada_barra', 3, '6-8', '7-8'),
           ex('db_press_inclinado', 3, '8-10', '8'),
           ex('face_pull', 3, '15-20', '7'),
         ]),
-        day('deadlift_emphasis', 'Quinta — Lower: Deadlift Emphasis', [
+        day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', mainSets, '3-5', rpeMap[i]),
           ex('block_deadlift', 3, '3-5', '7-8'),
           ex('leg_press', 3, '10-12', '8'),
           ex('good_morning', 3, '8-10', '7', 'Light'),
         ]),
-        day('bench_volume', 'Sexta — Upper: Bench Volume', [
+        day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, '4-6', '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '8'),
@@ -386,23 +386,23 @@ export function buildMac2(): PrescribedWeek[] {
         : 'Intensificação — volume mínimo, intensidade alta. Acessórios apenas para manutenção.',
       false,
       [
-        day('squat_emphasis', 'Segunda — Lower: Squat Emphasis', [
+        day('squat_emphasis', 'Lower: Squat Emphasis', [
           ex('agachamento_low_bar', mainSets, mainReps, rpeMap[i], isTestWeek ? 'Teste e1RM: single @ RPE 9-9.5' : undefined),
           ex('good_morning', 3, '6-8', '7'),
           ...(isTestWeek ? [] : [ex('hack_squat', 3, '8-10', '8')]),
         ]),
-        day('bench_emphasis', 'Terça — Upper: Bench Emphasis', [
+        day('bench_emphasis', 'Upper: Bench Emphasis', [
           ex('supino_wide_grip', mainSets, mainReps, rpeMap[i], isTestWeek ? 'Teste e1RM: single @ RPE 9-9.5' : undefined),
           ex('spoto_press', 2, '3-5', '7-8'),
           ex('remada_barra', 3, '6-8', '7'),
           ex('face_pull', 3, '15-20', '7'),
         ]),
-        day('deadlift_emphasis', 'Quinta — Lower: Deadlift Emphasis', [
+        day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', mainSets, mainReps, rpeMap[i], isTestWeek ? 'Teste e1RM: single @ RPE 9-9.5' : undefined),
           ex('block_deadlift', 3, '2-4', '7-8'),
           ...(isTestWeek ? [] : [ex('leg_press', 3, '10-12', '8')]),
         ]),
-        day('bench_volume', 'Sexta — Upper: Bench Volume', [
+        day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, '3-5', '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '7-8'),
@@ -463,7 +463,7 @@ export function buildMac3(): PrescribedWeek[] {
 
   // Week 31 — Deload
   weeks.push(makeDeloadWeek(31, 3, 'Deload 5', 'Recuperação ativa — reduzir fadiga do bloco 3A.', {
-    squat: day('squat_emphasis', 'Segunda — Lower: Squat Emphasis (Deload)', [
+    squat: day('squat_emphasis', 'Lower: Squat Emphasis (Deload)', [
       ex('agachamento_low_bar', 2, '5', '5-6'),
       ex('seated_good_morning', 2, '8', '5-6'),
       ex('leg_press', 2, '10', '5-6'),
@@ -529,26 +529,26 @@ export function buildMac3(): PrescribedWeek[] {
       'Transmutação Mac 3 — redução de volume, aumento de intensidade. Variações competitivas pesadas.',
       false,
       [
-        day('squat_emphasis', 'Segunda — Lower: Squat Emphasis', [
+        day('squat_emphasis', 'Lower: Squat Emphasis', [
           ex('agachamento_low_bar', mainSets, '3-5', rpeMap[i]),
           ex('pause_squat', 3, '3-5', '8'),
           ex('seated_good_morning', 3, '6-8', '7-8'),
           ex('leg_extension', 3, '12-15', '8'),
         ]),
-        day('bench_emphasis', 'Terça — Upper: Bench Emphasis', [
+        day('bench_emphasis', 'Upper: Bench Emphasis', [
           ex('supino_wide_grip', mainSets, '3-5', rpeMap[i]),
           ex('larsen_press', 3, '3-5', '8', 'Variação competitiva pesada'),
           ex('remada_barra', 3, '6-8', '7-8'),
           ex('db_press_inclinado', 3, '8-10', '8'),
           ex('face_pull', 3, '15-20', '7'),
         ]),
-        day('deadlift_emphasis', 'Quinta — Lower: Deadlift Emphasis', [
+        day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', mainSets, '3-5', rpeMap[i]),
           ex('deficit_deadlift_sumo', 3, '3-5', '7-8'),
           ex('leg_press', 3, '10-12', '8'),
           ex('good_morning', 3, '8-10', '7', 'Light'),
         ]),
-        day('bench_volume', 'Sexta — Upper: Bench Volume', [
+        day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, '4-6', '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '8'),
@@ -579,26 +579,26 @@ export function buildMac4(): PrescribedWeek[] {
       'Transmutação de força — intensidade moderada-alta com volume de manutenção (~8-10 sets/semana em acessórios).',
       false,
       [
-        day('squat_emphasis', 'Segunda — Lower: Squat Emphasis', [
+        day('squat_emphasis', 'Lower: Squat Emphasis', [
           ex('agachamento_low_bar', mainSets, '3-5', rpeMap[i]),
           ex('good_morning', 3, '6-8', '7-8'),
           ex('hack_squat', 3, '8-10', '8'),
           ex('leg_extension', 3, '12-15', '8'),
         ]),
-        day('bench_emphasis', 'Terça — Upper: Bench Emphasis', [
+        day('bench_emphasis', 'Upper: Bench Emphasis', [
           ex('supino_wide_grip', mainSets, '3-5', rpeMap[i]),
           ex('spoto_press', 3, '3-5', '8'),
           ex('remada_barra', 3, '6-8', '7-8'),
           ex('db_press_inclinado', 3, '8-10', '8'),
           ex('face_pull', 3, '15-20', '7'),
         ]),
-        day('deadlift_emphasis', 'Quinta — Lower: Deadlift Emphasis', [
+        day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', mainSets, '3-5', rpeMap[i]),
           ex('block_deadlift', 3, '3-5', '7-8'),
           ex('leg_press', 3, '10-12', '8'),
           ex('good_morning', 3, '8-10', '7', 'Light'),
         ]),
-        day('bench_volume', 'Sexta — Upper: Bench Volume', [
+        day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, '4-6', '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '8'),
@@ -623,23 +623,23 @@ export function buildMac4(): PrescribedWeek[] {
       'Intensificação — cargas próximas do máximo. Block deadlift pesado. Acessórios mínimos.',
       false,
       [
-        day('squat_emphasis', 'Segunda — Lower: Squat Emphasis', [
+        day('squat_emphasis', 'Lower: Squat Emphasis', [
           ex('agachamento_low_bar', mainSets, mainReps, rpeMap[i]),
           ex('pause_squat', 2, '2-3', '8'),
           ex('good_morning', 3, '6-8', '7'),
         ]),
-        day('bench_emphasis', 'Terça — Upper: Bench Emphasis', [
+        day('bench_emphasis', 'Upper: Bench Emphasis', [
           ex('supino_wide_grip', mainSets, mainReps, rpeMap[i]),
           ex('spoto_press', 2, '2-3', '8'),
           ex('remada_barra', 3, '6-8', '7'),
           ex('face_pull', 3, '15-20', '7'),
         ]),
-        day('deadlift_emphasis', 'Quinta — Lower: Deadlift Emphasis', [
+        day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', mainSets, mainReps, rpeMap[i]),
           ex('block_deadlift', 3, '2', '8-9', 'Pesado'),
           ex('good_morning', 3, '8-10', '7', 'Light'),
         ]),
-        day('bench_volume', 'Sexta — Upper: Bench Volume', [
+        day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, '3-5', '7-8'),
           ex('db_press_flat', 3, '8-10', '7-8'),
           ex('remada_apoio_peito', 3, '8-10', '7'),
@@ -660,22 +660,22 @@ export function buildMac4(): PrescribedWeek[] {
     'Semana de openers — singles a RPE 8 para calibrar cargas do teste.',
     false,
     [
-      day('squat_emphasis', 'Segunda — Lower: Squat Emphasis', [
+      day('squat_emphasis', 'Lower: Squat Emphasis', [
         ex('agachamento_low_bar', 3, '1', '8', 'Openers: singles @ RPE 8'),
         ex('pause_squat', 2, '2', '7'),
         ex('good_morning', 2, '6-8', '7'),
       ]),
-      day('bench_emphasis', 'Terça — Upper: Bench Emphasis', [
+      day('bench_emphasis', 'Upper: Bench Emphasis', [
         ex('supino_wide_grip', 3, '1', '8', 'Openers: singles @ RPE 8'),
         ex('spoto_press', 2, '2', '7'),
         ex('remada_barra', 2, '6-8', '7'),
         ex('face_pull', 2, '15', '6'),
       ]),
-      day('deadlift_emphasis', 'Quinta — Lower: Deadlift Emphasis', [
+      day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
         ex('deadlift_sumo', 3, '1', '8', 'Openers: singles @ RPE 8'),
         ex('block_deadlift', 2, '2', '7'),
       ]),
-      day('bench_volume', 'Sexta — Upper: Bench Volume', [
+      day('bench_volume', 'Upper: Bench Volume', [
         ex('close_grip_bench', 2, '3', '7'),
         ex('db_press_flat', 2, '8', '7'),
         ex('remada_apoio_peito', 2, '8', '7'),
@@ -689,16 +689,16 @@ export function buildMac4(): PrescribedWeek[] {
     'SEMANA DE TESTE — 1RM nos três levantamentos competitivos.',
     false,
     [
-      day('squat_emphasis', 'Segunda — Lower: 1RM Squat', [
+      day('squat_emphasis', 'Lower: 1RM Squat', [
         ex('agachamento_low_bar', 5, '1', '10', '1RM Test: aquecer progressivamente até máximo'),
       ]),
-      day('bench_emphasis', 'Terça — Upper: 1RM Bench', [
+      day('bench_emphasis', 'Upper: 1RM Bench', [
         ex('supino_wide_grip', 5, '1', '10', '1RM Test: aquecer progressivamente até máximo'),
       ]),
-      day('deadlift_emphasis', 'Quinta — Lower: 1RM Deadlift', [
+      day('deadlift_emphasis', 'Lower: 1RM Deadlift', [
         ex('deadlift_sumo', 5, '1', '10', '1RM Test: aquecer progressivamente até máximo'),
       ]),
-      day('bench_volume', 'Sexta — Upper: Recovery', [
+      day('bench_volume', 'Upper: Recovery', [
         ex('db_press_flat', 2, '8', '6', 'Recuperação leve'),
         ex('remada_apoio_peito', 2, '8', '6'),
         ex('face_pull', 2, '15', '6'),

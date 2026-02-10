@@ -145,7 +145,7 @@ export default function Workout() {
   );
   const progressPercent = totalSets > 0 ? (completedSets / totalSets) * 100 : 0;
   const currentE1RM = inputWeight > 0 && inputReps > 0 ? calculateE1RM(inputWeight, inputReps, inputRPE) : 0;
-  const currentRecord = storage.getRecordForExercise(currentExercise?.exerciseId || '');
+  const currentRecord = storage.getRecordForExercise(currentExercise?.exerciseId || '') ?? null;
   const wouldBePR = currentE1RM > (currentRecord?.e1rm || 0) && currentE1RM > 0;
   const sessionIndex = storage.getSessionIndex();
 
