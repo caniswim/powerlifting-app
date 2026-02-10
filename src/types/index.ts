@@ -8,12 +8,15 @@ export interface SetLog {
   isPR: boolean;
 }
 
-export interface ExerciseLog {
+export interface ExercisePrescription {
   exerciseId: string;
   exerciseName: string;
   prescribedSets: number;
   prescribedReps: string;
   prescribedRPE: string;
+}
+
+export interface ExerciseLog extends ExercisePrescription {
   sets: SetLog[];
   notes?: string;
   skipped?: boolean;
@@ -32,6 +35,25 @@ export interface WorkoutLog {
   completed: boolean;
   startedAt?: string;
   completedAt?: string;
+}
+
+export interface WorkoutSummary {
+  id: string;
+  date: string;
+  weekNumber: number;
+  macrocycle: number;
+  blockName: string;
+  blockType: BlockType;
+  dayType: DayType;
+  completed: boolean;
+  completedAt?: string;
+}
+
+export interface WorkoutExercises {
+  exercises: ReadonlyArray<{
+    exerciseId: string;
+    sets: ReadonlyArray<{ completed: boolean }>;
+  }>;
 }
 
 export type BlockType = 'accumulation' | 'transmutation' | 'intensification' | 'realization' | 'deload';

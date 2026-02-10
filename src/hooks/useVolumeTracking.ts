@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { exerciseMuscleMap } from '../data/exerciseMuscleMap';
+import { muscleGroupLabels } from '../domain/muscleGroupLabels';
 import type { WorkoutLog, MuscleGroup } from '../types';
 
 export interface VolumeData {
@@ -7,20 +8,6 @@ export interface VolumeData {
   actual: number;
   label: string;
 }
-
-const muscleGroupLabels: Record<MuscleGroup, string> = {
-  quads: 'Quadríceps',
-  'glúteos': 'Glúteos',
-  erectors: 'Eretores',
-  hamstrings: 'Hamstrings',
-  peito: 'Peito',
-  'deltóide_anterior': 'Delt. Anterior',
-  'deltóide_posterior': 'Delt. Posterior',
-  'deltóide_lateral': 'Delt. Lateral',
-  'tríceps': 'Tríceps',
-  'bíceps': 'Bíceps',
-  costas: 'Costas',
-};
 
 export function calculateWeeklyVolume(workouts: WorkoutLog[]): VolumeData[] {
   const volumeMap: Partial<Record<MuscleGroup, number>> = {};

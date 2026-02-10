@@ -1,3 +1,5 @@
+import type { BlockType } from '../types';
+
 export function calculateE1RM(weight: number, reps: number, rpe: number): number {
   if (weight <= 0 || reps <= 0) return 0;
   const rir = 10 - rpe;
@@ -23,15 +25,15 @@ export function calculateDOTS(bodyweight: number, total: number, isMale = true):
   return Math.round((500 / denominator) * total * 100) / 100;
 }
 
-export function getWeekRPEProgression(weekInBlock: number, blockType: string): number {
+export function getWeekRPEProgression(weekInBlock: number, blockType: BlockType): number {
   if (blockType === 'deload') return 5.5;
-  const baseMap: Record<string, number[]> = {
+  const baseMap: Record<Exclude<BlockType, 'deload'>, number[]> = {
     accumulation: [7, 7.5, 8, 8.5],
     transmutation: [8, 8, 8.5, 8.5],
     intensification: [8.5, 8.5, 9, 9],
     realization: [8, 9, 9.5, 6],
   };
-  const progression = baseMap[blockType] || baseMap.accumulation;
+  const progression = baseMap[blockType];
   return progression[Math.min(weekInBlock, progression.length - 1)];
 }
 

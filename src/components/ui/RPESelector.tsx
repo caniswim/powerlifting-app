@@ -1,17 +1,11 @@
+import { getRPEColor } from '../../domain/rpe';
+
 const RPE_VALUES = [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10];
 
 interface RPESelectorProps {
   value: number;
   onChange: (value: number) => void;
   target?: string;
-}
-
-function getRPEColor(rpe: number): string {
-  if (rpe >= 9.5) return 'bg-accent-red text-white';
-  if (rpe >= 9) return 'bg-accent-red-dim text-white';
-  if (rpe >= 8) return 'bg-accent-gold text-black';
-  if (rpe >= 7) return 'bg-accent-green-dim text-white';
-  return 'bg-bg-tertiary text-text-secondary';
 }
 
 export function RPESelector({ value, onChange, target }: RPESelectorProps) {

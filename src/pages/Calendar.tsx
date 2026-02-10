@@ -1,7 +1,9 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { getCurrentWeek, getWorkouts } from '../services/storage';
-import type { PrescribedWeek, PrescribedDay, PrescribedExercise, BlockType, WorkoutLog } from '../types';
+import { useStorage } from '../contexts/StorageContext';
+import type { PrescribedWeek, PrescribedDay, PrescribedExercise, WorkoutLog } from '../types';
 import { Check, X } from 'lucide-react';
+import { blockTypeColors, blockTypeLabels } from '../domain/blockTypeConfig';
+import { dayTypePtLabels } from '../domain/dayTypeLabels';
 
 // ---------------------------------------------------------------------------
 // Data loader
@@ -30,30 +32,7 @@ const MACROCYCLES = [
   { id: 4, label: 'MAC 4', desc: 'Força + Realização', weeks: '40-52' },
 ];
 
-const BLOCK_TYPE_COLORS: Record<BlockType, { accent: string; bg: string; border: string }> = {
-  accumulation: { accent: 'text-accent-green', bg: 'bg-accent-green/10', border: 'border-accent-green/30' },
-  transmutation: { accent: 'text-accent-gold', bg: 'bg-accent-gold/10', border: 'border-accent-gold/30' },
-  intensification: { accent: 'text-accent-red', bg: 'bg-accent-red/10', border: 'border-accent-red/30' },
-  realization: { accent: 'text-accent-red', bg: 'bg-accent-red/10', border: 'border-accent-red/30' },
-  deload: { accent: 'text-accent-blue', bg: 'bg-accent-blue/10', border: 'border-accent-blue/30' },
-};
-
-const BLOCK_TYPE_LABELS: Record<BlockType, string> = {
-  accumulation: 'ACUMULAÇÃO',
-  transmutation: 'TRANSMUTAÇÃO',
-  intensification: 'INTENSIFICAÇÃO',
-  realization: 'REALIZAÇÃO',
-  deload: 'DELOAD',
-};
-
 const DAY_SHORT_LABELS = ['SEG', 'TER', 'QUI', 'SEX'];
-
-const DAY_TYPE_LABELS: Record<string, string> = {
-  squat_emphasis: 'Ênfase Agachamento',
-  bench_emphasis: 'Ênfase Supino',
-  deadlift_emphasis: 'Ênfase Deadlift',
-  bench_volume: 'Volume Supino',
-};
 
 // ---------------------------------------------------------------------------
 // Types
@@ -71,6 +50,7 @@ interface Block {
 // ---------------------------------------------------------------------------
 
 export default function Calendar() {
+  const storage = useStorage();
   const [allWeeks, setAllWeeks] = useState<PrescribedWeek[]>([]);
   const [currentWeek, setCurrentWeek] = useState(1);
   const [completedWorkouts, setCompletedWorkouts] = useState<WorkoutLog[]>([]);
@@ -78,10 +58,12 @@ export default function Calendar() {
   const [selectedDay, setSelectedDay] = useState<{ week: PrescribedWeek; day: PrescribedDay } | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const sessionIndex = storage.getSessionIndex();
+
   useEffect(() => {
-    const cw = getCurrentWeek();
+    const cw = Math.floor(sessionIndex / 4) + 1;
     setCurrentWeek(cw);
-    setCompletedWorkouts(getWorkouts().filter((w) => w.completed));
+    setCompletedWorkouts(storage.getWorkouts().filter((w) => w.completed));
 
     // Auto-select the macrocycle containing the current week
     const macroForCurrentWeek = cw <= 13 ? 1 : cw <= 26 ? 2 : cw <= 39 ? 3 : 4;
@@ -146,6 +128,7 @@ export default function Calendar() {
           </h1>
           <p className="text-text-muted font-display text-sm mt-1">
             Semana atual: <span className="font-mono text-text-secondary">{currentWeek}</span> / 52
+            <span className="ml-2 font-mono text-text-muted">· Sessão {sessionIndex + 1} / 208</span>
           </p>
         </header>
 
@@ -180,7 +163,7 @@ export default function Calendar() {
         {/* Blocks */}
         <div className="space-y-6">
           {blocks.map((block) => {
-            const colors = BLOCK_TYPE_COLORS[block.type];
+            const colors = blockTypeColors[block.type];
             return (
               <div
                 key={block.name}
@@ -189,7 +172,7 @@ export default function Calendar() {
                 {/* Block Header */}
                 <div className={`flex items-center gap-3 mb-3`}>
                   <div className={`px-2 py-0.5 rounded text-[10px] font-bold font-display tracking-widest uppercase ${colors.bg} ${colors.accent} border ${colors.border}`}>
-                    {BLOCK_TYPE_LABELS[block.type]}
+                    {blockTypeLabels[block.type]}
                   </div>
                   <h2 className="font-display font-semibold text-text-primary text-sm tracking-wide">
                     {block.name}
@@ -323,7 +306,7 @@ function DayDetailModal({
   isCompleted: boolean;
   onClose: () => void;
 }) {
-  const colors = BLOCK_TYPE_COLORS[week.blockType];
+  const colors = blockTypeColors[week.blockType];
 
   // Lock body scroll on iOS when modal is open
   useEffect(() => {
@@ -363,7 +346,7 @@ function DayDetailModal({
               <div className="flex items-center gap-2 mb-1">
                 <span className="font-mono text-xs font-bold text-text-secondary">W{week.weekNumber}</span>
                 <div className={`px-1.5 py-0.5 rounded text-[9px] font-bold font-display tracking-widest uppercase ${colors.bg} ${colors.accent} border ${colors.border}`}>
-                  {BLOCK_TYPE_LABELS[week.blockType]}
+                  {blockTypeLabels[week.blockType]}
                 </div>
                 {isCompleted && (
                   <span className="text-[9px] font-display font-bold text-accent-green bg-accent-green/10 px-1.5 py-0.5 rounded tracking-wider">
@@ -375,7 +358,7 @@ function DayDetailModal({
                 {day.dayLabel}
               </h3>
               <p className="text-text-muted text-xs font-display mt-0.5">
-                {DAY_TYPE_LABELS[day.dayType] ?? day.dayType}
+                {dayTypePtLabels[day.dayType] ?? day.dayType}
               </p>
             </div>
             <button

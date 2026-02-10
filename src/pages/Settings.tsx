@@ -1,25 +1,22 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { calculateDOTS } from '../utils/calculations';
-import {
-  getProfile,
-  saveProfile,
-  getCurrentWeek,
-  setCurrentWeek,
-  exportAllData,
-  importData,
-  resetAllData,
-} from '../services/storage';
+import { useStorage } from '../contexts/StorageContext';
 import type { AthleteProfile } from '../types';
 
-const APP_VERSION = '1.0.0';
+const APP_VERSION = '1.1.0';
 
 export default function Settings() {
-  const [profile, setProfile] = useState<AthleteProfile>(getProfile);
-  const [week, setWeek] = useState<number>(getCurrentWeek);
+  const storage = useStorage();
+  const [profile, setProfile] = useState<AthleteProfile>(() => storage.getProfile());
+  const [sessionIdx, setSessionIdx] = useState<number>(() => storage.getSessionIndex());
   const [showResetModal, setShowResetModal] = useState(false);
   const [importStatus, setImportStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [saved, setSaved] = useState(false);
+  const [updateStatus, setUpdateStatus] = useState<'idle' | 'checking' | 'updating' | 'up-to-date' | 'error'>('idle');
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const derivedWeek = Math.floor(sessionIdx / 4) + 1;
+  const derivedDayIndex = sessionIdx % 4;
 
   // Auto-calculate total and DOTS when profile values change
   useEffect(() => {
@@ -39,14 +36,15 @@ export default function Settings() {
     const total = profile.squat1RM + profile.bench1RM + profile.deadlift1RM;
     const dots = calculateDOTS(profile.bodyweight, total);
     const updated = { ...profile, total, dots };
-    saveProfile(updated);
-    setCurrentWeek(week);
+    storage.saveProfile(updated);
+    storage.setSessionIndex(sessionIdx);
+    storage.setCurrentWeek(Math.floor(sessionIdx / 4) + 1);
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
-  }, [profile, week]);
+  }, [profile, sessionIdx, storage]);
 
   const handleExport = () => {
-    const data = exportAllData();
+    const data = storage.exportAllData();
     const blob = new Blob([data], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -62,10 +60,10 @@ export default function Settings() {
     const reader = new FileReader();
     reader.onload = (ev) => {
       const text = ev.target?.result as string;
-      const ok = importData(text);
+      const ok = storage.importData(text);
       if (ok) {
-        setProfile(getProfile());
-        setWeek(getCurrentWeek());
+        setProfile(storage.getProfile());
+        setSessionIdx(storage.getSessionIndex());
         setImportStatus('success');
       } else {
         setImportStatus('error');
@@ -77,10 +75,58 @@ export default function Settings() {
   };
 
   const handleReset = () => {
-    resetAllData();
-    setProfile(getProfile());
-    setWeek(getCurrentWeek());
+    storage.resetAllData();
+    setProfile(storage.getProfile());
+    setSessionIdx(0);
     setShowResetModal(false);
+  };
+
+  const handleUpdate = async () => {
+    if (!('serviceWorker' in navigator)) {
+      setUpdateStatus('error');
+      setTimeout(() => setUpdateStatus('idle'), 3000);
+      return;
+    }
+
+    setUpdateStatus('checking');
+
+    try {
+      const registration = await navigator.serviceWorker.getRegistration();
+      if (!registration) {
+        setUpdateStatus('error');
+        setTimeout(() => setUpdateStatus('idle'), 3000);
+        return;
+      }
+
+      await registration.update();
+
+      const waiting = registration.waiting;
+      if (waiting) {
+        setUpdateStatus('updating');
+        waiting.postMessage({ type: 'SKIP_WAITING' });
+        // Reload after the new SW takes over
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          window.location.reload();
+        });
+        // Fallback reload if controllerchange doesn't fire
+        setTimeout(() => window.location.reload(), 2000);
+      } else if (registration.installing) {
+        setUpdateStatus('updating');
+        registration.installing.addEventListener('statechange', (e) => {
+          const sw = e.target as ServiceWorker;
+          if (sw.state === 'installed') {
+            sw.postMessage({ type: 'SKIP_WAITING' });
+            setTimeout(() => window.location.reload(), 1000);
+          }
+        });
+      } else {
+        setUpdateStatus('up-to-date');
+        setTimeout(() => setUpdateStatus('idle'), 3000);
+      }
+    } catch {
+      setUpdateStatus('error');
+      setTimeout(() => setUpdateStatus('idle'), 3000);
+    }
   };
 
   return (
@@ -150,26 +196,29 @@ export default function Settings() {
           </div>
         </section>
 
-        {/* Week Selector */}
+        {/* Session Index Selector */}
         <section className="bg-bg-card border border-border rounded-lg p-4 space-y-4">
           <h2 className="text-xs font-display font-semibold text-accent-gold uppercase tracking-wider">
-            Semana de Treino
+            Posição no Programa
           </h2>
           <div className="flex items-center gap-3">
             <label className="text-sm font-display text-text-secondary uppercase tracking-wider flex-shrink-0">
-              Semana Atual
+              Sessão
             </label>
             <input
               type="number"
-              min={1}
-              max={52}
-              value={week}
-              onChange={(e) => setWeek(Math.max(1, Math.min(52, parseInt(e.target.value) || 1)))}
+              min={0}
+              max={207}
+              value={sessionIdx}
+              onChange={(e) => setSessionIdx(Math.max(0, Math.min(207, parseInt(e.target.value) || 0)))}
               className="w-24 h-11 bg-bg-input border border-border-light rounded-md text-center
                          font-mono text-lg text-text-primary focus:outline-none focus:border-accent-gold
                          transition-colors"
             />
-            <span className="text-xs text-text-muted font-mono">/ 52</span>
+            <span className="text-xs text-text-muted font-mono">/ 207</span>
+          </div>
+          <div className="text-xs font-mono text-text-muted">
+            Semana {derivedWeek} / 52 — Dia {derivedDayIndex + 1} de 4
           </div>
         </section>
 
@@ -237,14 +286,34 @@ export default function Settings() {
         </section>
 
         {/* App Info */}
-        <section className="bg-bg-card border border-border rounded-lg p-4">
-          <h2 className="text-xs font-display font-semibold text-accent-gold uppercase tracking-wider mb-2">
+        <section className="bg-bg-card border border-border rounded-lg p-4 space-y-3">
+          <h2 className="text-xs font-display font-semibold text-accent-gold uppercase tracking-wider">
             Sobre
           </h2>
           <div className="flex justify-between items-center">
             <span className="text-sm font-display text-text-secondary">Versão</span>
             <span className="text-sm font-mono text-text-muted">{APP_VERSION}</span>
           </div>
+          <button
+            onClick={handleUpdate}
+            disabled={updateStatus === 'checking' || updateStatus === 'updating'}
+            className={`w-full h-11 rounded-md font-display text-sm uppercase tracking-wider
+                       transition-colors active:scale-[0.98] ${
+                         updateStatus === 'checking' || updateStatus === 'updating'
+                           ? 'bg-bg-tertiary text-text-muted border border-border'
+                           : updateStatus === 'up-to-date'
+                           ? 'bg-accent-green/20 text-accent-green border border-accent-green/30'
+                           : updateStatus === 'error'
+                           ? 'bg-accent-red/20 text-accent-red border border-accent-red/30'
+                           : 'bg-bg-input border border-border-light text-text-primary hover:border-accent-gold'
+                       }`}
+          >
+            {updateStatus === 'checking' ? 'Verificando...'
+              : updateStatus === 'updating' ? 'Atualizando...'
+              : updateStatus === 'up-to-date' ? 'App atualizado!'
+              : updateStatus === 'error' ? 'Erro ao verificar'
+              : 'Verificar Atualização'}
+          </button>
         </section>
       </div>
 

@@ -1,48 +1,42 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getProfile, getWorkouts, getRecords, getCurrentWeek } from '../services/storage';
+import { useStorage } from '../contexts/StorageContext';
+import { getSessionData, getNextTrainingDate, shouldShowRestWarning } from '../data/programData';
 import { calculateDOTS } from '../utils/calculations';
 import { exerciseNames } from '../data/exerciseMuscleMap';
-import type { AthleteProfile, PersonalRecord, PrescribedWeek } from '../types';
-import { Zap, Battery, BedDouble, Check, Circle, Minus } from 'lucide-react';
+import type { AthleteProfile, PersonalRecord, PrescribedWeek, PrescribedDay } from '../types';
+import { Zap, Battery, Check, Circle, Minus } from 'lucide-react';
+import { dayTypeShortLabels } from '../domain/dayTypeLabels';
+import { blockTypeLabels, blockTypeBadgeClass } from '../domain/blockTypeConfig';
 
-// Lazy import programData to avoid blocking if not yet generated
-let programDataCache: PrescribedWeek[] | null = null;
-async function loadProgramData() {
-  if (programDataCache) return programDataCache;
-  try {
-    const mod = await import('../data/programData');
-    programDataCache = mod.programData;
-    return programDataCache;
-  } catch {
-    return [];
-  }
-}
-
-const dayNames = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
-const dayTypeLabels = {
-  squat_emphasis: 'LOWER — Squat',
-  bench_emphasis: 'UPPER — Bench',
-  deadlift_emphasis: 'LOWER — Deadlift',
-  bench_volume: 'UPPER — Volume',
-} as const;
+const CYCLE_LABELS = ['SQT', 'BNC', 'DLF', 'VOL'];
 
 export default function Dashboard() {
-  const [profile, setProfile] = useState<AthleteProfile>(getProfile);
-  const [currentWeek, setCurrentWeek] = useState(getCurrentWeek);
-  const [weekData, setWeekData] = useState<PrescribedWeek | null>(null);
+  const storage = useStorage();
+  const [profile, setProfile] = useState<AthleteProfile>(() => storage.getProfile());
+  const [sessionIndex, setSessionIdx] = useState(() => storage.getSessionIndex());
+  const [nextSession, setNextSession] = useState<{ week: PrescribedWeek; day: PrescribedDay; weekNumber: number; dayIndex: number } | null>(null);
   const [recentPRs, setRecentPRs] = useState<PersonalRecord[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isNextDeload, setIsNextDeload] = useState(false);
+  const [recommendedDate, setRecommendedDate] = useState<Date | null>(null);
+  const [isRestDay, setIsRestDay] = useState(false);
+  const [lastWorkoutDateStr, setLastWorkoutDateStr] = useState<string | null>(null);
+
+  const currentWeek = Math.floor(sessionIndex / 4) + 1;
+  const cyclePosition = sessionIndex % 4; // 0-3 within current 4-session cycle
 
   useEffect(() => {
-    const p = getProfile();
+    const p = storage.getProfile();
     const total = p.squat1RM + p.bench1RM + p.deadlift1RM;
     const dots = calculateDOTS(p.bodyweight, total);
     setProfile({ ...p, total, dots });
-    setCurrentWeek(getCurrentWeek());
+
+    const idx = storage.getSessionIndex();
+    setSessionIdx(idx);
 
     // Load records from last 30 days
-    const records = getRecords();
+    const records = storage.getRecords();
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
     const recent = records.filter(
@@ -50,39 +44,45 @@ export default function Dashboard() {
     );
     setRecentPRs(recent);
 
-    // Load program data
-    loadProgramData().then((data) => {
-      const week = data.find((w) => w.weekNumber === getCurrentWeek());
-      setWeekData(week || null);
-      setLoading(false);
-    });
+    // Load session data
+    const session = getSessionData(idx);
+    setNextSession(session);
+
+    // Check rest / recommended date
+    const lastCompleted = storage.getLastCompletedWorkout();
+    if (lastCompleted) {
+      setLastWorkoutDateStr(lastCompleted.date);
+      const recDate = getNextTrainingDate(lastCompleted.date, lastCompleted.dayIndex);
+      setRecommendedDate(recDate);
+      setIsRestDay(shouldShowRestWarning(lastCompleted.date, lastCompleted.dayIndex));
+    }
+
+    // Check if next week is deload
+    if (session) {
+      import('../data/programData').then((mod) => {
+        const nextWeekNum = session.weekNumber + 1;
+        const nextWeek = mod.programData.find((w) => w.weekNumber === nextWeekNum);
+        setIsNextDeload(nextWeek?.isDeload ?? false);
+      });
+    }
+
+    setLoading(false);
   }, []);
 
-  const today = new Date().getDay();
-  const todayDayType = today === 1 ? 'squat_emphasis'
-    : today === 2 ? 'bench_emphasis'
-    : today === 4 ? 'deadlift_emphasis'
-    : today === 5 ? 'bench_volume'
-    : null;
+  const formatDate = (d: Date) => {
+    const days = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'];
+    return `${days[d.getDay()]}, ${d.getDate().toString().padStart(2, '0')}/${(d.getMonth() + 1).toString().padStart(2, '0')}`;
+  };
 
-  const todayWorkout = useMemo(() => {
-    if (!weekData || !todayDayType) return null;
-    return weekData.days.find((d) => d.dayType === todayDayType) || null;
-  }, [weekData, todayDayType]);
-
-  const [isNextDeload, setIsNextDeload] = useState(false);
-  useEffect(() => {
-    loadProgramData().then((data) => {
-      const nextWeek = data.find((w) => w.weekNumber === currentWeek + 1);
-      setIsNextDeload(nextWeek?.isDeload ?? false);
-    });
-  }, [currentWeek]);
-
-  // Check completed workouts this week
-  const weekWorkouts = getWorkouts().filter((w) => w.weekNumber === currentWeek);
-  const completedToday = weekWorkouts.some(
-    (w) => w.dayType === todayDayType && w.completed
-  );
+  const formatLastWorkout = (dateStr: string) => {
+    const d = new Date(dateStr);
+    const now = new Date();
+    const diffMs = now.getTime() - d.getTime();
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    if (diffDays === 0) return 'Hoje';
+    if (diffDays === 1) return 'Ontem';
+    return `${diffDays} dias atrás`;
+  };
 
   if (loading) {
     return (
@@ -91,6 +91,8 @@ export default function Dashboard() {
       </div>
     );
   }
+
+  const programComplete = sessionIndex >= 208;
 
   return (
     <div className="min-h-screen bg-bg-primary pb-20">
@@ -107,26 +109,19 @@ export default function Dashboard() {
             <span className="text-sm font-display text-text-secondary">
               / 52
             </span>
+            <span className="text-xs font-mono text-text-muted ml-2">
+              Sessão {sessionIndex + 1}/208
+            </span>
           </div>
-          {weekData && (
+          {nextSession && (
             <div className="flex items-center gap-2 mt-1">
               <span className={`inline-flex items-center px-2 py-0.5 text-xs font-display font-semibold tracking-wider uppercase border rounded ${
-                weekData.isDeload
-                  ? 'bg-accent-blue/20 text-accent-blue border-accent-blue/30'
-                  : weekData.blockType === 'accumulation'
-                  ? 'bg-accent-green/20 text-accent-green border-accent-green/30'
-                  : weekData.blockType === 'transmutation'
-                  ? 'bg-accent-gold/20 text-accent-gold border-accent-gold/30'
-                  : 'bg-accent-red/20 text-accent-red border-accent-red/30'
+                blockTypeBadgeClass[nextSession.week.blockType]
               }`}>
-                {weekData.blockType === 'accumulation' ? 'ACUMULAÇÃO' :
-                 weekData.blockType === 'transmutation' ? 'TRANSMUTAÇÃO' :
-                 weekData.blockType === 'intensification' ? 'INTENSIFICAÇÃO' :
-                 weekData.blockType === 'realization' ? 'REALIZAÇÃO' :
-                 'DELOAD'}
+                {blockTypeLabels[nextSession.week.blockType]}
               </span>
               <span className="text-xs text-text-muted font-display">
-                Macro {weekData.macrocycle} — {weekData.blockName}
+                Macro {nextSession.week.macrocycle} — {nextSession.week.blockName}
               </span>
             </div>
           )}
@@ -148,7 +143,7 @@ export default function Dashboard() {
         )}
 
         {/* Current Deload Banner */}
-        {weekData?.isDeload && (
+        {nextSession?.week.isDeload && (
           <div className="bg-accent-blue/10 border border-accent-blue/30 rounded-lg p-3 flex items-center gap-3">
             <Battery size={24} className="text-accent-blue flex-shrink-0" />
             <div>
@@ -204,62 +199,71 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Today's Workout */}
-        {todayDayType ? (
+        {/* Next Workout Card */}
+        {!programComplete && nextSession ? (
           <div className="bg-bg-card border border-border rounded-lg p-4 space-y-3">
             <div className="flex justify-between items-center">
               <div>
                 <div className="text-[10px] font-display font-semibold tracking-wider uppercase text-text-muted">
-                  {dayNames[today]} — HOJE
+                  PRÓXIMO TREINO
                 </div>
                 <div className="text-sm font-display font-bold text-text-primary uppercase tracking-wider mt-0.5">
-                  {dayTypeLabels[todayDayType]}
+                  {dayTypeShortLabels[nextSession.day.dayType]}
                 </div>
               </div>
-              {completedToday && (
-                <span className="inline-flex items-center px-2 py-0.5 text-xs font-display font-semibold tracking-wider uppercase border rounded bg-accent-green/20 text-accent-green border-accent-green/30">
-                  CONCLUÍDO
-                </span>
+              {recommendedDate && (
+                <div className="text-right">
+                  <div className="text-[10px] font-display font-semibold tracking-wider uppercase text-text-muted">
+                    RECOMENDADO
+                  </div>
+                  <div className={`text-xs font-mono font-semibold ${isRestDay ? 'text-accent-gold' : 'text-accent-green'}`}>
+                    {formatDate(recommendedDate)}
+                  </div>
+                </div>
               )}
             </div>
 
-            {todayWorkout && (
-              <div className="space-y-1.5 border-t border-border pt-3">
-                {todayWorkout.exercises.map((ex, i) => (
-                  <div key={i} className="flex justify-between items-center text-sm">
-                    <span className="text-text-secondary font-display truncate pr-2">
-                      {ex.exerciseName}
-                    </span>
-                    <span className="text-text-muted font-mono text-xs whitespace-nowrap">
-                      {ex.sets}×{ex.reps} @{ex.rpe}
-                    </span>
-                  </div>
-                ))}
+            {lastWorkoutDateStr && (
+              <div className="text-xs font-mono text-text-muted">
+                Último treino: {formatLastWorkout(lastWorkoutDateStr)}
               </div>
             )}
+
+            {/* Exercise preview */}
+            <div className="space-y-1.5 border-t border-border pt-3">
+              {nextSession.day.exercises.map((ex, i) => (
+                <div key={i} className="flex justify-between items-center text-sm">
+                  <span className="text-text-secondary font-display truncate pr-2">
+                    {ex.exerciseName}
+                  </span>
+                  <span className="text-text-muted font-mono text-xs whitespace-nowrap">
+                    {ex.sets}x{ex.reps} @{ex.rpe}
+                  </span>
+                </div>
+              ))}
+            </div>
 
             <Link
               to="/workout"
               className={`block w-full h-14 rounded-lg font-display font-bold text-lg uppercase tracking-wider text-center leading-[3.5rem] transition-all ${
-                completedToday
-                  ? 'bg-bg-tertiary text-text-muted border border-border'
+                isRestDay
+                  ? 'bg-accent-gold/20 text-accent-gold border border-accent-gold/40'
                   : 'bg-accent-gold text-black hover:bg-accent-gold-bright active:scale-[0.98]'
               }`}
             >
-              {completedToday ? 'VER TREINO' : 'INICIAR TREINO'}
+              {isRestDay ? 'TREINAR (DIA DE DESCANSO)' : 'INICIAR TREINO'}
             </Link>
           </div>
-        ) : (
-          <div className="bg-bg-card border border-border rounded-lg p-6 text-center">
-            <BedDouble size={24} className="text-text-muted mb-2" />
-            <div className="text-sm font-display font-semibold text-text-secondary uppercase tracking-wider">
-              DIA DE DESCANSO
+        ) : programComplete ? (
+          <div className="bg-bg-card border border-accent-gold/30 rounded-lg p-6 text-center">
+            <div className="text-lg font-display font-bold text-accent-gold uppercase tracking-wider">
+              PROGRAMA COMPLETO!
             </div>
             <div className="text-xs text-text-muted font-display mt-1">
-              Caminhada 20-45min. Mobilidade opcional.
+              Todas as 208 sessões foram concluídas.
             </div>
           </div>
-        )}
+        ) : null}
 
         {/* Recent PRs */}
         {recentPRs.length > 0 && (
@@ -285,39 +289,32 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Week Progress */}
+        {/* Cycle Progress (4-session cycle) */}
         <div className="bg-bg-card border border-border rounded-lg p-4">
           <div className="text-[10px] font-display font-semibold tracking-wider uppercase text-text-muted mb-3">
-            PROGRESSO DA SEMANA
+            PROGRESSO DO CICLO
           </div>
           <div className="grid grid-cols-4 gap-2">
-            {['SEG', 'TER', 'QUI', 'SEX'].map((day, i) => {
-              const dayTypes = ['squat_emphasis', 'bench_emphasis', 'deadlift_emphasis', 'bench_volume'] as const;
-              const isCompleted = weekWorkouts.some(
-                (w) => w.dayType === dayTypes[i] && w.completed
-              );
-              const isToday =
-                (today === 1 && i === 0) ||
-                (today === 2 && i === 1) ||
-                (today === 4 && i === 2) ||
-                (today === 5 && i === 3);
+            {CYCLE_LABELS.map((label, i) => {
+              const isCompleted = i < cyclePosition;
+              const isCurrent = i === cyclePosition;
 
               return (
                 <div
-                  key={day}
+                  key={label}
                   className={`text-center py-2 rounded border ${
                     isCompleted
                       ? 'bg-accent-green/20 border-accent-green/30 text-accent-green'
-                      : isToday
+                      : isCurrent
                       ? 'bg-accent-gold/10 border-accent-gold/30 text-accent-gold'
                       : 'bg-bg-tertiary border-border text-text-muted'
                   }`}
                 >
                   <div className="text-[10px] font-display font-semibold tracking-wider">
-                    {day}
+                    {label}
                   </div>
                   <div className="flex items-center justify-center mt-0.5">
-                    {isCompleted ? <Check size={18} /> : isToday ? <Circle size={10} fill="currentColor" /> : <Minus size={14} />}
+                    {isCompleted ? <Check size={18} /> : isCurrent ? <Circle size={10} fill="currentColor" /> : <Minus size={14} />}
                   </div>
                 </div>
               );
@@ -326,13 +323,13 @@ export default function Dashboard() {
         </div>
 
         {/* Block Objective */}
-        {weekData && !weekData.isDeload && (
+        {nextSession && !nextSession.week.isDeload && (
           <div className="bg-bg-card border border-border rounded-lg p-4">
             <div className="text-[10px] font-display font-semibold tracking-wider uppercase text-text-muted mb-1">
               OBJETIVO DO BLOCO
             </div>
             <p className="text-sm text-text-secondary font-display leading-relaxed">
-              {weekData.blockObjective}
+              {nextSession.week.blockObjective}
             </p>
           </div>
         )}
