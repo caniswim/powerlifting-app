@@ -9,10 +9,10 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'pwa-192x192.png', 'pwa-512x512.png'],
       manifest: {
-        name: 'PowerLifting Tracker',
-        short_name: 'PLTracker',
+        name: 'Prime Lift',
+        short_name: 'Prime Lift',
         description: 'Periodização anual de powerlifting',
         id: '/',
         start_url: '/',
