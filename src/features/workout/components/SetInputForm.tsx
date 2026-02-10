@@ -1,4 +1,4 @@
-import { getRPEColor } from '../../../domain/rpe';
+import { getRPEColor, getRIRText } from '../../../domain/rpe';
 import type { LoadSuggestion } from '../../../utils/calculations';
 import type { ExerciseLog, PersonalRecord } from '../../../types';
 
@@ -174,6 +174,9 @@ export function SetInputForm({
                   </button>
                 );
               })}
+            </div>
+            <div className="text-xs font-mono text-text-muted mt-1.5 text-center">
+              {getRIRText(inputRPE)}
             </div>
           </div>
 

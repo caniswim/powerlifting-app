@@ -1,4 +1,4 @@
-import { getRPEColor } from '../../../domain/rpe';
+import { getRPEColor, getRIRText } from '../../../domain/rpe';
 import { calculateE1RM } from '../../../utils/calculations';
 import { useStorage } from '../../../contexts/StorageContext';
 import type { ExerciseLog } from '../../../types';
@@ -148,6 +148,9 @@ export function SetEditSheet({
                 </button>
               );
             })}
+          </div>
+          <div className="text-xs font-mono text-text-muted mt-1.5 text-center">
+            {getRIRText(editRPE)}
           </div>
         </div>
 
