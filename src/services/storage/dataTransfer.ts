@@ -4,6 +4,8 @@ import { getWorkouts } from './workoutRepository';
 import { getRecords } from './recordRepository';
 import { getProfile } from './profileRepository';
 import { getCurrentWeek, getSessionIndex, ensureSessionIndexMigrated } from './sessionManager';
+import { getPreSurveys, getPostSurveys } from './surveyRepository';
+import { getAllFeedback } from './feedbackRepository';
 
 export function exportAllData(): string {
   return JSON.stringify({
@@ -12,6 +14,9 @@ export function exportAllData(): string {
     profile: getProfile(),
     currentWeek: getCurrentWeek(),
     sessionIndex: getSessionIndex(),
+    preSurveys: getPreSurveys(),
+    postSurveys: getPostSurveys(),
+    aiFeedback: getAllFeedback(),
     exportDate: new Date().toISOString(),
   }, null, 2);
 }
@@ -30,6 +35,9 @@ export function importData(json: string): boolean {
       localStorage.removeItem(KEYS.SESSION_INDEX);
       ensureSessionIndexMigrated();
     }
+    if (data.preSurveys) setItem(KEYS.PRE_SURVEYS, data.preSurveys);
+    if (data.postSurveys) setItem(KEYS.POST_SURVEYS, data.postSurveys);
+    if (data.aiFeedback) setItem(KEYS.AI_FEEDBACK, data.aiFeedback);
     scheduleSyncToOPFS();
     return true;
   } catch {
@@ -43,5 +51,9 @@ export function resetAllData(): void {
   localStorage.removeItem(KEYS.PROFILE);
   localStorage.removeItem(KEYS.CURRENT_WEEK);
   localStorage.removeItem(KEYS.SESSION_INDEX);
+  localStorage.removeItem(KEYS.PRE_SURVEYS);
+  localStorage.removeItem(KEYS.POST_SURVEYS);
+  localStorage.removeItem(KEYS.AI_FEEDBACK);
+  localStorage.removeItem(KEYS.API_KEY);
   clearOPFS();
 }

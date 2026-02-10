@@ -121,3 +121,70 @@ export type MuscleGroup =
   | 'costas';
 
 export type ExerciseMuscleMap = Record<string, Partial<Record<MuscleGroup, number>>>;
+
+// Pain
+export type PainRegion =
+  | 'lower_back' | 'upper_back'
+  | 'left_knee' | 'right_knee'
+  | 'left_shoulder' | 'right_shoulder'
+  | 'left_hip' | 'right_hip'
+  | 'left_elbow' | 'right_elbow'
+  | 'left_wrist' | 'right_wrist'
+  | 'neck' | 'other';
+
+export interface PainEntry {
+  region: PainRegion;
+  intensity: number; // 1-10
+}
+
+// Pre-Workout Survey
+export interface PreWorkoutSurvey {
+  workoutId: string;
+  date: string;
+  sleepQuality: number;     // 1-10
+  sleepHours: number;       // 0-14, step 0.5
+  energyLevel: number;      // 1-10
+  stressLevel: number;      // 1-10
+  motivation: number;       // 1-10
+  hasPain: boolean;
+  painEntries: PainEntry[];
+  supplements: {
+    creatine: boolean;
+    protein: boolean;
+    preWorkoutMeal: boolean;
+  };
+  skipped: boolean;
+}
+
+// Post-Workout Survey
+export type StrengthPerception = 'below' | 'normal' | 'above';
+export type PlanAdherence = 'full' | 'partial' | 'none';
+
+export interface PostWorkoutSurvey {
+  workoutId: string;
+  date: string;
+  sessionQuality: number;     // 1-10
+  sessionRPE: number;         // 1-10
+  strengthPerception: StrengthPerception;
+  planAdherence: PlanAdherence;
+  adherenceReason?: string;
+  hasNewPain: boolean;
+  painEntries: PainEntry[];
+  pumpRating?: number;        // 1-5
+  notes?: string;
+  skipped: boolean;
+}
+
+// AI Feedback
+export type FeedbackPeriod = 'daily' | 'weekly' | 'monthly' | 'quarterly';
+
+export interface AIFeedback {
+  id: string;
+  workoutId?: string;
+  date: string;
+  period: FeedbackPeriod;
+  weekNumber?: number;
+  macrocycle?: number;
+  content: string;
+  status: 'pending' | 'completed' | 'failed';
+}

@@ -6,6 +6,10 @@ export const KEYS = {
   PROFILE: 'pl_profile',
   CURRENT_WEEK: 'pl_current_week',
   SESSION_INDEX: 'pl_session_index',
+  PRE_SURVEYS: 'pl_pre_surveys',
+  POST_SURVEYS: 'pl_post_surveys',
+  AI_FEEDBACK: 'pl_ai_feedback',
+  API_KEY: 'pl_api_key',
 } as const;
 
 export const ALL_KEYS = Object.values(KEYS);

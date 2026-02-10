@@ -1,4 +1,4 @@
-import type { WorkoutLog, PersonalRecord, AthleteProfile } from '../types';
+import type { WorkoutLog, PersonalRecord, AthleteProfile, PreWorkoutSurvey, PostWorkoutSurvey, AIFeedback, FeedbackPeriod } from '../types';
 
 export interface IStorageService {
   // Workouts
@@ -29,4 +29,25 @@ export interface IStorageService {
   exportAllData(): string;
   importData(json: string): boolean;
   resetAllData(): void;
+
+  // Surveys
+  getPreSurveys(): PreWorkoutSurvey[];
+  savePreSurvey(survey: PreWorkoutSurvey): void;
+  getPreSurveyForWorkout(workoutId: string): PreWorkoutSurvey | undefined;
+  getRecentPreSurveys(limit?: number): PreWorkoutSurvey[];
+  getPostSurveys(): PostWorkoutSurvey[];
+  savePostSurvey(survey: PostWorkoutSurvey): void;
+  getPostSurveyForWorkout(workoutId: string): PostWorkoutSurvey | undefined;
+  getRecentPostSurveys(limit?: number): PostWorkoutSurvey[];
+
+  // Feedback
+  getAllFeedback(): AIFeedback[];
+  saveFeedback(feedback: AIFeedback): void;
+  getFeedbackByPeriod(period: FeedbackPeriod): AIFeedback[];
+  getFeedbackForWorkout(workoutId: string): AIFeedback | undefined;
+  getPendingFeedback(): AIFeedback[];
+
+  // Settings
+  getApiKey(): string;
+  setApiKey(key: string): void;
 }

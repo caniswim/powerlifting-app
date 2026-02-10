@@ -8,6 +8,12 @@ import type { AthleteProfile, PersonalRecord, PrescribedWeek, PrescribedDay } fr
 import { Zap, Battery, Check, Circle, Minus } from 'lucide-react';
 import { dayTypeShortLabels } from '../domain/dayTypeLabels';
 import { blockTypeLabels, blockTypeBadgeClass } from '../domain/blockTypeConfig';
+import { useSurveyTrends } from '../features/feedback/hooks/useSurveyTrends';
+import { useFeedbackHistory } from '../features/feedback/hooks/useFeedbackHistory';
+import { ReadinessIndicator } from '../features/feedback/components/ReadinessIndicator';
+import { TrendSparklines } from '../features/feedback/components/TrendSparklines';
+import { AlertsBanner } from '../features/feedback/components/AlertsBanner';
+import { AIFeedbackCard } from '../features/feedback/components/AIFeedbackCard';
 
 const CYCLE_LABELS = ['SQT', 'BNC', 'DLF', 'VOL'];
 
@@ -25,6 +31,9 @@ export default function Dashboard() {
 
   const currentWeek = Math.floor(sessionIndex / 4) + 1;
   const cyclePosition = sessionIndex % 4; // 0-3 within current 4-session cycle
+
+  const trends = useSurveyTrends();
+  const feedbackHistory = useFeedbackHistory();
 
   useEffect(() => {
     const p = storage.getProfile();
@@ -264,6 +273,16 @@ export default function Dashboard() {
             </div>
           </div>
         ) : null}
+
+        {/* Feedback & Readiness Section */}
+        {trends.hasSurveyData && (
+          <>
+            <ReadinessIndicator trends={trends} />
+            {trends.alerts.length > 0 && <AlertsBanner alerts={trends.alerts} />}
+            {feedbackHistory.latestDaily && <AIFeedbackCard feedback={feedbackHistory.latestDaily} />}
+            {trends.hasEnoughData && <TrendSparklines data={trends.sparklineData} />}
+          </>
+        )}
 
         {/* Recent PRs */}
         {recentPRs.length > 0 && (

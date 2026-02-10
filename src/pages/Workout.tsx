@@ -13,6 +13,9 @@ import { CompletedSetsList } from '../features/workout/components/CompletedSetsL
 import { SetInputForm } from '../features/workout/components/SetInputForm';
 import { SetEditSheet } from '../features/workout/components/SetEditSheet';
 import { AddExercisePanel } from '../features/workout/components/AddExercisePanel';
+import { useWorkoutSurveys } from '../features/workout/hooks/useWorkoutSurveys';
+import { PreWorkoutSurveySheet } from '../features/survey/components/PreWorkoutSurveySheet';
+import { PostWorkoutSurveySheet } from '../features/survey/components/PostWorkoutSurveySheet';
 
 export default function Workout() {
   const navigate = useNavigate();
@@ -46,6 +49,7 @@ export default function Workout() {
   );
 
   const restWarning = useRestWarning();
+  const surveys = useWorkoutSurveys(workout);
 
   // --- Loading ---
   if (loading) {
@@ -134,6 +138,11 @@ export default function Workout() {
         <p className="text-text-muted font-display">Nenhum treino disponível.</p>
       </div>
     );
+  }
+
+  // --- Pre-workout Survey ---
+  if (surveys.phase === 'pre' && workout) {
+    return <PreWorkoutSurveySheet workoutId={workout.id} onSubmit={surveys.submitPreSurvey} onSkip={surveys.skipPreSurvey} />;
   }
 
   // --- Derived state ---
@@ -283,8 +292,13 @@ export default function Workout() {
           />
         )}
 
+        {/* Post-workout Survey */}
+        {workout.completed && surveys.phase === 'post' && (
+          <PostWorkoutSurveySheet workoutId={workout.id} onSubmit={surveys.submitPostSurvey} onSkip={surveys.skipPostSurvey} />
+        )}
+
         {/* Workout complete */}
-        {workout.completed && (
+        {workout.completed && surveys.phase === 'done' && (
           <div className="bg-accent-green/10 border border-accent-green/30 rounded-lg p-6 text-center space-y-3 animate-fade-in">
             <CheckCircle2 size={32} className="text-accent-green" />
             <div className="text-lg font-display font-bold text-accent-green uppercase tracking-wider">

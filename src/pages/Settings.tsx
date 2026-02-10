@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { Eye, EyeOff } from 'lucide-react';
 import { calculateDOTS } from '../utils/calculations';
 import { useStorage } from '../contexts/StorageContext';
 import type { AthleteProfile } from '../types';
@@ -13,6 +14,8 @@ export default function Settings() {
   const [importStatus, setImportStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [saved, setSaved] = useState(false);
   const [updateStatus, setUpdateStatus] = useState<'idle' | 'checking' | 'updating' | 'up-to-date' | 'error'>('idle');
+  const [apiKey, setApiKeyState] = useState(() => storage.getApiKey());
+  const [showApiKey, setShowApiKey] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const derivedWeek = Math.floor(sessionIdx / 4) + 1;
@@ -39,9 +42,10 @@ export default function Settings() {
     storage.saveProfile(updated);
     storage.setSessionIndex(sessionIdx);
     storage.setCurrentWeek(Math.floor(sessionIdx / 4) + 1);
+    storage.setApiKey(apiKey);
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
-  }, [profile, sessionIdx, storage]);
+  }, [profile, sessionIdx, apiKey, storage]);
 
   const handleExport = () => {
     const data = storage.exportAllData();
@@ -219,6 +223,41 @@ export default function Settings() {
           </div>
           <div className="text-xs font-mono text-text-muted">
             Semana {derivedWeek} / 52 — Dia {derivedDayIndex + 1} de 4
+          </div>
+        </section>
+
+        {/* API Key Section */}
+        <section className="bg-bg-card border border-border rounded-lg p-4 space-y-4">
+          <h2 className="text-xs font-display font-semibold text-accent-gold uppercase tracking-wider">
+            Feedback com IA
+          </h2>
+          <div className="space-y-2">
+            <label className="text-sm font-display text-text-secondary uppercase tracking-wider">
+              Chave API OpenRouter
+            </label>
+            <div className="flex gap-2">
+              <input
+                type={showApiKey ? 'text' : 'password'}
+                value={apiKey}
+                onChange={(e) => setApiKeyState(e.target.value)}
+                placeholder="sk-or-..."
+                className="flex-1 h-11 bg-bg-input border border-border-light rounded-md px-3
+                           font-mono text-sm text-text-primary focus:outline-none focus:border-accent-gold
+                           transition-colors"
+              />
+              <button
+                type="button"
+                onClick={() => setShowApiKey(!showApiKey)}
+                className="w-11 h-11 bg-bg-input border border-border-light rounded-md
+                           text-text-muted hover:text-text-primary transition-colors
+                           flex items-center justify-center"
+              >
+                {showApiKey ? <EyeOff size={16} /> : <Eye size={16} />}
+              </button>
+            </div>
+            <p className="text-[10px] text-text-muted font-display">
+              Para feedback de IA após cada sessão (opcional)
+            </p>
           </div>
         </section>
 

@@ -4,3 +4,6 @@ export { getRecords, saveRecord, getRecordForExercise, recalculateRecord } from 
 export { getProfile, saveProfile } from './profileRepository';
 export { getCurrentWeek, setCurrentWeek, getSessionIndex, setSessionIndex } from './sessionManager';
 export { exportAllData, importData, resetAllData } from './dataTransfer';
+export { getPreSurveys, savePreSurvey, getPreSurveyForWorkout, getRecentPreSurveys, getPostSurveys, savePostSurvey, getPostSurveyForWorkout, getRecentPostSurveys } from './surveyRepository';
+export { getAllFeedback, saveFeedback, getFeedbackByPeriod, getFeedbackForWorkout, getPendingFeedback } from './feedbackRepository';
+export { getApiKey, setApiKey } from './settingsRepository';

@@ -6,6 +6,10 @@ import {
   getProfile, saveProfile,
   getCurrentWeek, setCurrentWeek, getSessionIndex, setSessionIndex,
   exportAllData, importData, resetAllData,
+  getPreSurveys, savePreSurvey, getPreSurveyForWorkout, getRecentPreSurveys,
+  getPostSurveys, savePostSurvey, getPostSurveyForWorkout, getRecentPostSurveys,
+  getAllFeedback, saveFeedback, getFeedbackByPeriod, getFeedbackForWorkout, getPendingFeedback,
+  getApiKey, setApiKey,
 } from './storage/index';
 
 export class LocalStorageService implements IStorageService {
@@ -28,4 +32,19 @@ export class LocalStorageService implements IStorageService {
   exportAllData = exportAllData;
   importData = importData;
   resetAllData = resetAllData;
+  getPreSurveys = getPreSurveys;
+  savePreSurvey = savePreSurvey;
+  getPreSurveyForWorkout = getPreSurveyForWorkout;
+  getRecentPreSurveys = getRecentPreSurveys;
+  getPostSurveys = getPostSurveys;
+  savePostSurvey = savePostSurvey;
+  getPostSurveyForWorkout = getPostSurveyForWorkout;
+  getRecentPostSurveys = getRecentPostSurveys;
+  getAllFeedback = getAllFeedback;
+  saveFeedback = saveFeedback;
+  getFeedbackByPeriod = getFeedbackByPeriod;
+  getFeedbackForWorkout = getFeedbackForWorkout;
+  getPendingFeedback = getPendingFeedback;
+  getApiKey = getApiKey;
+  setApiKey = setApiKey;
 }
