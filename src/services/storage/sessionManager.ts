@@ -26,9 +26,19 @@ export function migrateSessionIndex(): void {
   const workouts = getWorkouts().filter((w) => w.completed && w.weekNumber === currentWeek);
 
   const dayOrder: string[] = ['squat_emphasis', 'bench_emphasis', 'arms_shoulders', 'deadlift_emphasis', 'bench_volume', 'arms_shoulders'];
+
+  // Count how many of each dayType have been completed
+  const typeCounts: Record<string, number> = {};
+  for (const w of workouts) {
+    typeCounts[w.dayType] = (typeCounts[w.dayType] || 0) + 1;
+  }
+
+  // Walk through dayOrder, consuming counts to handle duplicate arms_shoulders
+  const usedCounts: Record<string, number> = {};
   let completedCount = 0;
   for (const dt of dayOrder) {
-    if (workouts.some((w) => w.dayType === dt)) {
+    usedCounts[dt] = (usedCounts[dt] || 0) + 1;
+    if ((typeCounts[dt] || 0) >= usedCounts[dt]) {
       completedCount++;
     } else {
       break;

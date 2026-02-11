@@ -1,4 +1,4 @@
-import type { DayType, PrescribedWeek, PrescribedDay } from '../types';
+import type { PrescribedWeek, PrescribedDay } from '../types';
 import { programData } from '../data/program/index';
 
 /** Days per week in the training cycle */
@@ -51,18 +51,4 @@ export function shouldShowRestWarning(lastWorkoutDate: string, lastDayIndex: num
   const now = new Date();
   now.setHours(0, 0, 0, 0);
   return now < recommended;
-}
-
-/** @deprecated Use getSessionData() with session index instead */
-export function getCurrentDayType(): DayType | null {
-  const dayOfWeek = new Date().getDay(); // 0=Sun, 1=Mon, ...
-  switch (dayOfWeek) {
-    case 1: return 'squat_emphasis';
-    case 2: return 'bench_emphasis';
-    case 3: return 'arms_shoulders';
-    case 4: return 'deadlift_emphasis';
-    case 5: return 'bench_volume';
-    case 6: return 'arms_shoulders';
-    default: return null;
-  }
 }

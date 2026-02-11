@@ -6,7 +6,7 @@ import {
   getSessionIndex,
 } from '../services/storage';
 import { exerciseNames } from '../data/exerciseMuscleMap';
-import { getSessionData } from '../data/programData';
+import { getSessionData, TOTAL_SESSIONS } from '../data/programData';
 import type {
   PrescribedWeek,
   PrescribedDay,
@@ -54,7 +54,7 @@ export function useWorkoutSession(
     try {
       const sessionIndex = getSessionIndex();
 
-      if (sessionIndex >= 312) {
+      if (sessionIndex >= TOTAL_SESSIONS) {
         setProgramComplete(true);
         setLoading(false);
         return;
@@ -72,6 +72,7 @@ export function useWorkoutSession(
       const existingWorkouts = getWorkouts();
       const existingToday = existingWorkouts.find(
         (w) => w.weekNumber === weekNumber && w.dayType === day.dayType && !w.completed
+          && w.exercises[0]?.exerciseId === day.exercises[0]?.exerciseId
       );
 
       if (existingToday) {
@@ -116,6 +117,7 @@ export function useWorkoutSession(
         prescribedSets: ex.sets,
         prescribedReps: ex.reps,
         prescribedRPE: ex.rpe,
+        ...(ex.supersetGroup ? { supersetGroup: ex.supersetGroup } : {}),
         sets: Array.from({ length: ex.sets }, (_, i) => ({
           setNumber: i + 1,
           weight: 0,

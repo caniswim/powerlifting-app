@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useStorage } from '../contexts/StorageContext';
-import { getSessionData, getNextTrainingDate, shouldShowRestWarning } from '../data/programData';
+import { getSessionData, getNextTrainingDate, shouldShowRestWarning, DAYS_PER_WEEK, TOTAL_SESSIONS } from '../data/programData';
 import { calculateDOTS } from '../utils/calculations';
 import { exerciseNames } from '../data/exerciseMuscleMap';
 import type { AthleteProfile, PersonalRecord, PrescribedWeek, PrescribedDay } from '../types';
@@ -15,7 +15,7 @@ import { TrendSparklines } from '../features/feedback/components/TrendSparklines
 import { AlertsBanner } from '../features/feedback/components/AlertsBanner';
 import { AIFeedbackCard } from '../features/feedback/components/AIFeedbackCard';
 
-const CYCLE_LABELS = ['SQT', 'BNC', 'ARM', 'DLF', 'VOL', 'ARM'];
+const CYCLE_LABELS = ['SQT', 'BNC', 'AR1', 'DLF', 'VOL', 'AR2'];
 
 export default function Dashboard() {
   const storage = useStorage();
@@ -29,8 +29,8 @@ export default function Dashboard() {
   const [isRestDay, setIsRestDay] = useState(false);
   const [lastWorkoutDateStr, setLastWorkoutDateStr] = useState<string | null>(null);
 
-  const currentWeek = Math.floor(sessionIndex / 6) + 1;
-  const cyclePosition = sessionIndex % 6; // 0-5 within current 6-session cycle
+  const currentWeek = Math.floor(sessionIndex / DAYS_PER_WEEK) + 1;
+  const cyclePosition = sessionIndex % DAYS_PER_WEEK; // 0-5 within current 6-session cycle
 
   const trends = useSurveyTrends();
   const feedbackHistory = useFeedbackHistory();
@@ -101,7 +101,7 @@ export default function Dashboard() {
     );
   }
 
-  const programComplete = sessionIndex >= 312;
+  const programComplete = sessionIndex >= TOTAL_SESSIONS;
 
   return (
     <div className="min-h-screen bg-bg-primary pb-20">
@@ -119,7 +119,7 @@ export default function Dashboard() {
               / 52
             </span>
             <span className="text-xs font-mono text-text-muted ml-2">
-              Sessão {sessionIndex + 1}/312
+              Sessão {sessionIndex + 1}/{TOTAL_SESSIONS}
             </span>
           </div>
           {nextSession && (
@@ -221,7 +221,7 @@ export default function Dashboard() {
                     {dayTypeShortLabels[nextSession.day.dayType]}
                   </span>
                   {nextSession.day.dayType === 'arms_shoulders' && (
-                    <span className="text-[9px] font-display font-bold text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded tracking-wider ml-1">
+                    <span className="text-[9px] font-display font-bold text-accent-purple bg-accent-purple/10 px-1.5 py-0.5 rounded tracking-wider ml-1">
                       MINI ~20min
                     </span>
                   )}
@@ -276,7 +276,7 @@ export default function Dashboard() {
               PROGRAMA COMPLETO!
             </div>
             <div className="text-xs text-text-muted font-display mt-1">
-              Todas as 312 sessões foram concluídas.
+              Todas as {TOTAL_SESSIONS} sessões foram concluídas.
             </div>
           </div>
         ) : null}
@@ -331,8 +331,8 @@ export default function Dashboard() {
                   className={`text-center py-2 rounded border ${
                     isCompleted
                       ? 'bg-accent-green/20 border-accent-green/30 text-accent-green'
-                      : isCurrent && label === 'ARM'
-                      ? 'bg-purple-500/10 border-purple-500/30 text-purple-400'
+                      : isCurrent && (label === 'AR1' || label === 'AR2')
+                      ? 'bg-accent-purple/10 border-accent-purple/30 text-accent-purple'
                       : isCurrent
                       ? 'bg-accent-gold/10 border-accent-gold/30 text-accent-gold'
                       : 'bg-bg-tertiary border-border text-text-muted'

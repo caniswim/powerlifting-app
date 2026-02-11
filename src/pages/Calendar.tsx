@@ -4,6 +4,7 @@ import type { PrescribedWeek, PrescribedDay, PrescribedExercise, WorkoutLog, Blo
 import { Check, X } from 'lucide-react';
 import { blockTypeColors, blockTypeLabels } from '../domain/blockTypeConfig';
 import { dayTypePtLabels } from '../domain/dayTypeLabels';
+import { DAYS_PER_WEEK, TOTAL_SESSIONS } from '../services/scheduling';
 
 // ---------------------------------------------------------------------------
 // Data loader
@@ -32,7 +33,7 @@ const MACROCYCLES = [
   { id: 4, label: 'MAC 4', desc: 'Força + Realização', weeks: '40-52' },
 ];
 
-const DAY_SHORT_LABELS = ['SQ', 'BP', 'AR', 'DL', 'BV', 'AR'];
+const DAY_SHORT_LABELS = ['SQ', 'BP', 'A1', 'DL', 'BV', 'A2'];
 
 // ---------------------------------------------------------------------------
 // Types
@@ -55,13 +56,13 @@ export default function Calendar() {
   const [currentWeek, setCurrentWeek] = useState(1);
   const [completedWorkouts, setCompletedWorkouts] = useState<WorkoutLog[]>([]);
   const [activeMacro, setActiveMacro] = useState(1);
-  const [selectedDay, setSelectedDay] = useState<{ week: PrescribedWeek; day: PrescribedDay } | null>(null);
+  const [selectedDay, setSelectedDay] = useState<{ week: PrescribedWeek; day: PrescribedDay; dayIndex: number } | null>(null);
   const [loading, setLoading] = useState(true);
 
   const sessionIndex = storage.getSessionIndex();
 
   useEffect(() => {
-    const cw = Math.floor(sessionIndex / 6) + 1;
+    const cw = Math.floor(sessionIndex / DAYS_PER_WEEK) + 1;
     setCurrentWeek(cw);
     setCompletedWorkouts(storage.getWorkouts().filter((w) => w.completed));
 
@@ -96,18 +97,32 @@ export default function Calendar() {
     return Array.from(blockMap.values());
   }, [allWeeks, activeMacro]);
 
-  // Set of completed week+dayType combos for quick lookup
-  const completedSet = useMemo(() => {
-    const set = new Set<string>();
+  // Map of completed counts per week+dayType (handles duplicate arms_shoulders)
+  const completedCounts = useMemo(() => {
+    const counts = new Map<string, number>();
     for (const w of completedWorkouts) {
-      set.add(`${w.weekNumber}-${w.dayType}`);
+      const key = `${w.weekNumber}-${w.dayType}`;
+      counts.set(key, (counts.get(key) || 0) + 1);
     }
-    return set;
+    return counts;
   }, [completedWorkouts]);
 
   const isDayCompleted = useCallback(
-    (weekNum: number, dayType: string) => completedSet.has(`${weekNum}-${dayType}`),
-    [completedSet],
+    (weekNum: number, dayType: string, dayIndex: number) => {
+      const key = `${weekNum}-${dayType}`;
+      const completedCount = completedCounts.get(key) || 0;
+      // Count how many days of this type appear at or before this index
+      const weekData = allWeeks.find((w) => w.weekNumber === weekNum);
+      if (!weekData) return false;
+      let typeOccurrence = 0;
+      for (let i = 0; i <= dayIndex; i++) {
+        if (i < weekData.days.length && weekData.days[i].dayType === dayType) {
+          typeOccurrence++;
+        }
+      }
+      return completedCount >= typeOccurrence;
+    },
+    [completedCounts, allWeeks],
   );
 
   if (loading) {
@@ -128,7 +143,7 @@ export default function Calendar() {
           </h1>
           <p className="text-text-muted font-display text-sm mt-1">
             Semana atual: <span className="font-mono text-text-secondary">{currentWeek}</span> / 52
-            <span className="ml-2 font-mono text-text-muted">· Sessão {sessionIndex + 1} / 312</span>
+            <span className="ml-2 font-mono text-text-muted">· Sessão {sessionIndex + 1} / {TOTAL_SESSIONS}</span>
           </p>
         </header>
 
@@ -223,19 +238,19 @@ export default function Calendar() {
                         {/* Day Indicators */}
                         <div className="flex gap-1">
                           {w.days.map((d, i) => {
-                            const completed = isDayCompleted(w.weekNumber, d.dayType);
+                            const completed = isDayCompleted(w.weekNumber, d.dayType, i);
                             const isMini = d.dayType === 'arms_shoulders';
                             return (
                               <button
                                 key={`${d.dayType}-${i}`}
-                                onClick={() => setSelectedDay({ week: w, day: d })}
+                                onClick={() => setSelectedDay({ week: w, day: d, dayIndex: i })}
                                 className={`flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded transition-all ${
                                   completed
                                     ? isMini
-                                      ? 'bg-purple-500/15 hover:bg-purple-500/25'
+                                      ? 'bg-accent-purple/15 hover:bg-accent-purple/25'
                                       : 'bg-accent-green/15 hover:bg-accent-green/25'
                                     : isMini
-                                      ? 'bg-purple-500/10 hover:bg-purple-500/15'
+                                      ? 'bg-accent-purple/10 hover:bg-accent-purple/15'
                                       : isDeload
                                         ? 'bg-accent-blue/5 hover:bg-accent-blue/10'
                                         : 'bg-bg-tertiary hover:bg-bg-input'
@@ -243,16 +258,16 @@ export default function Calendar() {
                               >
                                 <span className={`text-[8px] font-display font-semibold ${
                                   completed
-                                    ? isMini ? 'text-purple-400' : 'text-accent-green'
-                                    : isMini ? 'text-purple-400/70' : 'text-text-muted'
+                                    ? isMini ? 'text-accent-purple' : 'text-accent-green'
+                                    : isMini ? 'text-accent-purple/70' : 'text-text-muted'
                                 }`}>
                                   {DAY_SHORT_LABELS[i]}
                                 </span>
                                 {completed ? (
-                                  <Check size={11} className={isMini ? 'text-purple-400' : 'text-accent-green'} strokeWidth={3} />
+                                  <Check size={11} className={isMini ? 'text-accent-purple' : 'text-accent-green'} strokeWidth={3} />
                                 ) : (
                                   <div className={`w-1.5 h-1.5 rounded-full ${
-                                    isMini ? 'bg-purple-400/40' : isDeload ? 'bg-accent-blue/40' : 'bg-text-muted/30'
+                                    isMini ? 'bg-accent-purple/40' : isDeload ? 'bg-accent-blue/40' : 'bg-text-muted/30'
                                   }`} />
                                 )}
                               </button>
@@ -273,13 +288,13 @@ export default function Calendar() {
           <div className="flex items-center justify-between mb-2">
             <span className="text-text-muted font-display text-xs tracking-wide uppercase">Progresso Geral</span>
             <span className="font-mono text-xs text-text-secondary">
-              {completedWorkouts.length} / {allWeeks.length * 6}
+              {completedWorkouts.length} / {allWeeks.length * DAYS_PER_WEEK}
             </span>
           </div>
           <div className="w-full h-1.5 bg-bg-tertiary rounded-full overflow-hidden">
             <div
               className="h-full bg-accent-gold rounded-full transition-all duration-500"
-              style={{ width: `${Math.min(100, (completedWorkouts.length / (allWeeks.length * 6)) * 100)}%` }}
+              style={{ width: `${Math.min(100, (completedWorkouts.length / (allWeeks.length * DAYS_PER_WEEK)) * 100)}%` }}
             />
           </div>
         </div>
@@ -290,7 +305,7 @@ export default function Calendar() {
         <DayDetailModal
           week={selectedDay.week}
           day={selectedDay.day}
-          isCompleted={isDayCompleted(selectedDay.week.weekNumber, selectedDay.day.dayType)}
+          isCompleted={isDayCompleted(selectedDay.week.weekNumber, selectedDay.day.dayType, selectedDay.dayIndex)}
           onClose={() => setSelectedDay(null)}
         />
       )}
@@ -356,7 +371,7 @@ function DayDetailModal({
                   {blockTypeLabels[week.blockType]}
                 </div>
                 {day.dayType === 'arms_shoulders' && (
-                  <span className="text-[9px] font-display font-bold text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded tracking-wider border border-purple-500/20">
+                  <span className="text-[9px] font-display font-bold text-accent-purple bg-accent-purple/10 px-1.5 py-0.5 rounded tracking-wider border border-accent-purple/20">
                     MINI ~20min
                   </span>
                 )}
@@ -413,13 +428,13 @@ function DayDetailModal({
 function ExerciseRow({ exercise, index }: { exercise: PrescribedExercise; index: number }) {
   return (
     <div className={`bg-bg-tertiary rounded-lg p-3 border border-border ${
-      exercise.supersetGroup ? 'border-l-2 border-l-purple-500/60' : ''
+      exercise.supersetGroup ? 'border-l-2 border-l-accent-purple/60' : ''
     }`}>
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             {exercise.supersetGroup ? (
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-purple-500/20 text-purple-400 text-[10px] font-mono font-bold flex-shrink-0">
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-accent-purple/20 text-accent-purple text-[10px] font-mono font-bold flex-shrink-0">
                 {exercise.supersetGroup}
               </span>
             ) : (

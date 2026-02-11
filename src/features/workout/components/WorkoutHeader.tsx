@@ -1,5 +1,6 @@
 import { ArrowLeft } from 'lucide-react';
 import { dayTypeLabels } from '../../../domain/dayTypeLabels';
+import { TOTAL_SESSIONS } from '../../../services/scheduling';
 import type { WorkoutLog, PrescribedWeek } from '../../../types';
 
 interface WorkoutHeaderProps {
@@ -34,7 +35,7 @@ export function WorkoutHeader({
               <ArrowLeft size={16} className="inline mr-1" />Voltar
             </button>
             <div className="text-xs font-mono text-text-muted">
-              Sessão {sessionIndex + 1}/312 · {completedSets}/{totalSets} séries
+              Sessão {sessionIndex + 1}/{TOTAL_SESSIONS} · {completedSets}/{totalSets} séries
             </div>
             {workout.completed && (
               <span className="text-xs font-display font-semibold text-accent-green uppercase tracking-wider">
@@ -65,7 +66,7 @@ export function WorkoutHeader({
           </div>
           <div className="flex items-center gap-2">
             {workout.dayType === 'arms_shoulders' && (
-              <span className="inline-flex items-center px-2 py-0.5 text-xs font-display font-semibold tracking-wider uppercase border rounded bg-purple-500/10 text-purple-400 border-purple-500/20">
+              <span className="inline-flex items-center px-2 py-0.5 text-xs font-display font-semibold tracking-wider uppercase border rounded bg-accent-purple/10 text-accent-purple border-accent-purple/20">
                 MINI ~20min
               </span>
             )}

@@ -42,3 +42,12 @@ registerExercise({ id: 'triceps_overhead_cabo', name: 'Tríceps Overhead Cabo', 
 registerExercise({ id: 'elevacao_lateral_cabo', name: 'Elevação Lateral (cabo)', equipment: 'machine', muscleMap: { 'deltóide_lateral': 1.0 } });
 registerExercise({ id: 'elevacao_posterior', name: 'Elevação Posterior (DB)', equipment: 'dumbbell', muscleMap: { 'deltóide_posterior': 1.0 } });
 registerExercise({ id: 'face_pull_banda', name: 'Face Pull (banda)', equipment: 'bodyweight', muscleMap: { 'deltóide_posterior': 1.0 } });
+
+// --- Mac 3 rotation exercises ---
+registerExercise({ id: 'rosca_21s', name: 'Rosca 21s', equipment: 'barbell', muscleMap: { 'bíceps': 1.0 } });
+registerExercise({ id: 'triceps_banco', name: 'Tríceps Banco', equipment: 'bodyweight', muscleMap: { 'tríceps': 1.0 } });
+registerExercise({ id: 'dip_maquina', name: 'Dip Máquina', equipment: 'machine', muscleMap: { 'tríceps': 1.0, 'peito': 0.3 } });
+registerExercise({ id: 'kickback', name: 'Kickback Pesado', equipment: 'dumbbell', muscleMap: { 'tríceps': 1.0 } });
+registerExercise({ id: 'peck_deck_invertido', name: 'Peck-Deck Invertido', equipment: 'machine', muscleMap: { 'deltóide_posterior': 1.0 } });
+registerExercise({ id: 'elevacao_lateral_maquina', name: 'Elevação Lateral (máquina)', equipment: 'machine', muscleMap: { 'deltóide_lateral': 1.0 } });
+registerExercise({ id: 'band_pull_apart', name: 'Band Pull-Apart', equipment: 'bodyweight', muscleMap: { 'deltóide_posterior': 1.0 } });

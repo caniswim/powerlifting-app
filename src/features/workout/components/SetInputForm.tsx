@@ -43,7 +43,7 @@ export function SetInputForm({
       <div>
         <div className="flex items-center gap-2">
           {exercise.supersetGroup && (
-            <span className="inline-flex items-center justify-center w-6 h-6 rounded bg-purple-500/20 text-purple-400 text-xs font-mono font-bold flex-shrink-0">
+            <span className="inline-flex items-center justify-center w-6 h-6 rounded bg-accent-purple/20 text-accent-purple text-xs font-mono font-bold flex-shrink-0">
               {exercise.supersetGroup}
             </span>
           )}

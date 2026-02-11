@@ -3,8 +3,9 @@ import { Eye, EyeOff } from 'lucide-react';
 import { calculateDOTS } from '../utils/calculations';
 import { useStorage } from '../contexts/StorageContext';
 import type { AthleteProfile } from '../types';
+import { DAYS_PER_WEEK, TOTAL_SESSIONS } from '../services/scheduling';
 
-const APP_VERSION = '1.1.0';
+const APP_VERSION = '1.2.0';
 
 export default function Settings() {
   const storage = useStorage();
@@ -18,8 +19,8 @@ export default function Settings() {
   const [showApiKey, setShowApiKey] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const derivedWeek = Math.floor(sessionIdx / 6) + 1;
-  const derivedDayIndex = sessionIdx % 6;
+  const derivedWeek = Math.floor(sessionIdx / DAYS_PER_WEEK) + 1;
+  const derivedDayIndex = sessionIdx % DAYS_PER_WEEK;
 
   // Auto-calculate total and DOTS when profile values change
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function Settings() {
     const updated = { ...profile, total, dots };
     storage.saveProfile(updated);
     storage.setSessionIndex(sessionIdx);
-    storage.setCurrentWeek(Math.floor(sessionIdx / 6) + 1);
+    storage.setCurrentWeek(Math.floor(sessionIdx / DAYS_PER_WEEK) + 1);
     storage.setApiKey(apiKey);
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
@@ -212,17 +213,17 @@ export default function Settings() {
             <input
               type="number"
               min={0}
-              max={311}
+              max={TOTAL_SESSIONS - 1}
               value={sessionIdx}
-              onChange={(e) => setSessionIdx(Math.max(0, Math.min(311, parseInt(e.target.value) || 0)))}
+              onChange={(e) => setSessionIdx(Math.max(0, Math.min(TOTAL_SESSIONS - 1, parseInt(e.target.value) || 0)))}
               className="w-24 h-11 bg-bg-input border border-border-light rounded-md text-center
                          font-mono text-lg text-text-primary focus:outline-none focus:border-accent-gold
                          transition-colors"
             />
-            <span className="text-xs text-text-muted font-mono">/ 311</span>
+            <span className="text-xs text-text-muted font-mono">/ {TOTAL_SESSIONS - 1}</span>
           </div>
           <div className="text-xs font-mono text-text-muted">
-            Semana {derivedWeek} / 52 — Dia {derivedDayIndex + 1} de 6
+            Semana {derivedWeek} / 52 — Dia {derivedDayIndex + 1} de {DAYS_PER_WEEK}
           </div>
         </section>
 

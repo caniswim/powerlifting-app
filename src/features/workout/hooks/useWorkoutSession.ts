@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useStorage } from '../../../contexts/StorageContext';
 import { exerciseNames } from '../../../data/exerciseMuscleMap';
-import { getSessionData } from '../../../data/programData';
+import { getSessionData, TOTAL_SESSIONS } from '../../../data/programData';
 import type {
   PrescribedWeek,
   PrescribedDay,
@@ -52,7 +52,7 @@ export function useWorkoutSession(
     try {
       const sessionIndex = storage.getSessionIndex();
 
-      if (sessionIndex >= 312) {
+      if (sessionIndex >= TOTAL_SESSIONS) {
         setProgramComplete(true);
         setLoading(false);
         return;
@@ -70,6 +70,7 @@ export function useWorkoutSession(
       const existingWorkouts = storage.getWorkouts();
       const existingToday = existingWorkouts.find(
         (w) => w.weekNumber === weekNumber && w.dayType === day.dayType && !w.completed
+          && w.exercises[0]?.exerciseId === day.exercises[0]?.exerciseId
       );
 
       if (existingToday) {

@@ -28,9 +28,34 @@ export function getLastCompletedWorkout(): { date: string; dayIndex: number } | 
   if (workouts.length === 0) return null;
 
   const last = workouts[0];
-  const dayTypes: string[] = ['squat_emphasis', 'bench_emphasis', 'deadlift_emphasis', 'bench_volume'];
-  const dayIndex = dayTypes.indexOf(last.dayType);
 
+  // Determine dayIndex by matching completed workouts in the same week to day slots.
+  // arms_shoulders appears twice (index 2 and 5), so indexOf alone is ambiguous.
+  const sameWeekWorkouts = workouts
+    .filter((w) => w.weekNumber === last.weekNumber)
+    .sort((a, b) => new Date(a.completedAt || a.date).getTime() - new Date(b.completedAt || b.date).getTime());
+
+  const dayOrder: string[] = ['squat_emphasis', 'bench_emphasis', 'arms_shoulders', 'deadlift_emphasis', 'bench_volume', 'arms_shoulders'];
+
+  // Match completed workouts to day slots in order
+  const usedSlots = new Set<number>();
+  for (const w of sameWeekWorkouts) {
+    for (let i = 0; i < dayOrder.length; i++) {
+      if (!usedSlots.has(i) && dayOrder[i] === w.dayType) {
+        usedSlots.add(i);
+        if (w.id === last.id) {
+          return {
+            date: last.completedAt || last.date,
+            dayIndex: i,
+          };
+        }
+        break;
+      }
+    }
+  }
+
+  // Fallback
+  const dayIndex = dayOrder.indexOf(last.dayType);
   return {
     date: last.completedAt || last.date,
     dayIndex: dayIndex >= 0 ? dayIndex : 0,

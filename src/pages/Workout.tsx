@@ -16,6 +16,7 @@ import { AddExercisePanel } from '../features/workout/components/AddExercisePane
 import { useWorkoutSurveys } from '../features/workout/hooks/useWorkoutSurveys';
 import { PreWorkoutSurveySheet } from '../features/survey/components/PreWorkoutSurveySheet';
 import { PostWorkoutSurveySheet } from '../features/survey/components/PostWorkoutSurveySheet';
+import { TOTAL_SESSIONS } from '../services/scheduling';
 
 export default function Workout() {
   const navigate = useNavigate();
@@ -70,7 +71,7 @@ export default function Workout() {
             Programa Completo!
           </h1>
           <p className="text-sm text-text-secondary font-display">
-            Todas as 312 sessões do programa de 52 semanas foram concluídas.
+            Todas as {TOTAL_SESSIONS} sessões do programa de 52 semanas foram concluídas.
           </p>
           <button
             onClick={() => navigate('/')}
@@ -197,7 +198,7 @@ export default function Workout() {
               >
                 {ex.supersetGroup ? (
                   <span className="flex items-center gap-0.5">
-                    <span className="text-[9px] text-purple-400 font-mono">{ex.supersetGroup}</span>
+                    <span className="text-[9px] text-accent-purple font-mono">{ex.supersetGroup}</span>
                     {i + 1}
                   </span>
                 ) : (
@@ -210,8 +211,8 @@ export default function Workout() {
 
         {/* Mini-session rest tip */}
         {workout.dayType === 'arms_shoulders' && !workout.completed && (
-          <div className="bg-purple-500/10 border border-purple-500/20 rounded-lg px-3 py-2 flex items-center gap-2">
-            <span className="text-purple-400 text-xs font-display font-semibold tracking-wider uppercase">
+          <div className="bg-accent-purple/10 border border-accent-purple/20 rounded-lg px-3 py-2 flex items-center gap-2">
+            <span className="text-accent-purple text-xs font-display font-semibold tracking-wider uppercase">
               Descanso: 60-90s entre supersets
             </span>
           </div>
