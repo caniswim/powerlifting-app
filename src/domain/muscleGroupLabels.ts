@@ -12,4 +12,5 @@ export const muscleGroupLabels: Record<MuscleGroup, string> = {
   'tríceps': 'Tríceps',
   'bíceps': 'Bíceps',
   costas: 'Costas',
+  braquial: 'Braquial',
 };

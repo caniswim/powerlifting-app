@@ -32,7 +32,7 @@ const MACROCYCLES = [
   { id: 4, label: 'MAC 4', desc: 'Força + Realização', weeks: '40-52' },
 ];
 
-const DAY_SHORT_LABELS = ['SQ', 'BP', 'DL', 'BV'];
+const DAY_SHORT_LABELS = ['SQ', 'BP', 'AR', 'DL', 'BV', 'AR'];
 
 // ---------------------------------------------------------------------------
 // Types
@@ -61,7 +61,7 @@ export default function Calendar() {
   const sessionIndex = storage.getSessionIndex();
 
   useEffect(() => {
-    const cw = Math.floor(sessionIndex / 4) + 1;
+    const cw = Math.floor(sessionIndex / 6) + 1;
     setCurrentWeek(cw);
     setCompletedWorkouts(storage.getWorkouts().filter((w) => w.completed));
 
@@ -128,7 +128,7 @@ export default function Calendar() {
           </h1>
           <p className="text-text-muted font-display text-sm mt-1">
             Semana atual: <span className="font-mono text-text-secondary">{currentWeek}</span> / 52
-            <span className="ml-2 font-mono text-text-muted">· Sessão {sessionIndex + 1} / 208</span>
+            <span className="ml-2 font-mono text-text-muted">· Sessão {sessionIndex + 1} / 312</span>
           </p>
         </header>
 
@@ -224,28 +224,35 @@ export default function Calendar() {
                         <div className="flex gap-1">
                           {w.days.map((d, i) => {
                             const completed = isDayCompleted(w.weekNumber, d.dayType);
+                            const isMini = d.dayType === 'arms_shoulders';
                             return (
                               <button
-                                key={d.dayType}
+                                key={`${d.dayType}-${i}`}
                                 onClick={() => setSelectedDay({ week: w, day: d })}
                                 className={`flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded transition-all ${
                                   completed
-                                    ? 'bg-accent-green/15 hover:bg-accent-green/25'
-                                    : isDeload
-                                      ? 'bg-accent-blue/5 hover:bg-accent-blue/10'
-                                      : 'bg-bg-tertiary hover:bg-bg-input'
+                                    ? isMini
+                                      ? 'bg-purple-500/15 hover:bg-purple-500/25'
+                                      : 'bg-accent-green/15 hover:bg-accent-green/25'
+                                    : isMini
+                                      ? 'bg-purple-500/10 hover:bg-purple-500/15'
+                                      : isDeload
+                                        ? 'bg-accent-blue/5 hover:bg-accent-blue/10'
+                                        : 'bg-bg-tertiary hover:bg-bg-input'
                                 }`}
                               >
-                                <span className={`text-[9px] font-display font-semibold ${
-                                  completed ? 'text-accent-green' : 'text-text-muted'
+                                <span className={`text-[8px] font-display font-semibold ${
+                                  completed
+                                    ? isMini ? 'text-purple-400' : 'text-accent-green'
+                                    : isMini ? 'text-purple-400/70' : 'text-text-muted'
                                 }`}>
                                   {DAY_SHORT_LABELS[i]}
                                 </span>
                                 {completed ? (
-                                  <Check size={12} className="text-accent-green" strokeWidth={3} />
+                                  <Check size={11} className={isMini ? 'text-purple-400' : 'text-accent-green'} strokeWidth={3} />
                                 ) : (
                                   <div className={`w-1.5 h-1.5 rounded-full ${
-                                    isDeload ? 'bg-accent-blue/40' : 'bg-text-muted/30'
+                                    isMini ? 'bg-purple-400/40' : isDeload ? 'bg-accent-blue/40' : 'bg-text-muted/30'
                                   }`} />
                                 )}
                               </button>
@@ -266,13 +273,13 @@ export default function Calendar() {
           <div className="flex items-center justify-between mb-2">
             <span className="text-text-muted font-display text-xs tracking-wide uppercase">Progresso Geral</span>
             <span className="font-mono text-xs text-text-secondary">
-              {completedWorkouts.length} / {allWeeks.length * 4}
+              {completedWorkouts.length} / {allWeeks.length * 6}
             </span>
           </div>
           <div className="w-full h-1.5 bg-bg-tertiary rounded-full overflow-hidden">
             <div
               className="h-full bg-accent-gold rounded-full transition-all duration-500"
-              style={{ width: `${Math.min(100, (completedWorkouts.length / (allWeeks.length * 4)) * 100)}%` }}
+              style={{ width: `${Math.min(100, (completedWorkouts.length / (allWeeks.length * 6)) * 100)}%` }}
             />
           </div>
         </div>
@@ -348,6 +355,11 @@ function DayDetailModal({
                 <div className={`px-1.5 py-0.5 rounded text-[9px] font-bold font-display tracking-widest uppercase ${colors.bg} ${colors.accent} border ${colors.border}`}>
                   {blockTypeLabels[week.blockType]}
                 </div>
+                {day.dayType === 'arms_shoulders' && (
+                  <span className="text-[9px] font-display font-bold text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded tracking-wider border border-purple-500/20">
+                    MINI ~20min
+                  </span>
+                )}
                 {isCompleted && (
                   <span className="text-[9px] font-display font-bold text-accent-green bg-accent-green/10 px-1.5 py-0.5 rounded tracking-wider">
                     COMPLETO
@@ -400,17 +412,25 @@ function DayDetailModal({
 
 function ExerciseRow({ exercise, index }: { exercise: PrescribedExercise; index: number }) {
   return (
-    <div className="bg-bg-tertiary rounded-lg p-3 border border-border">
+    <div className={`bg-bg-tertiary rounded-lg p-3 border border-border ${
+      exercise.supersetGroup ? 'border-l-2 border-l-purple-500/60' : ''
+    }`}>
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-[10px] text-text-muted">{index + 1}.</span>
+            {exercise.supersetGroup ? (
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-purple-500/20 text-purple-400 text-[10px] font-mono font-bold flex-shrink-0">
+                {exercise.supersetGroup}
+              </span>
+            ) : (
+              <span className="font-mono text-[10px] text-text-muted">{index + 1}.</span>
+            )}
             <h4 className="font-display font-semibold text-text-primary text-sm truncate">
               {exercise.exerciseName}
             </h4>
           </div>
           {exercise.notes && (
-            <p className="text-text-muted text-[11px] font-display mt-0.5 ml-5 italic">
+            <p className="text-text-muted text-[11px] font-display mt-0.5 ml-7 italic">
               {exercise.notes}
             </p>
           )}

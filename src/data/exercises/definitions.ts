@@ -11,9 +11,9 @@ registerExercise({ id: 'pause_squat', name: 'Pause Squat', equipment: 'barbell',
 registerExercise({ id: 'front_squat', name: 'Front Squat', equipment: 'barbell', muscleMap: { quads: 1.0, erectors: 0.5 } });
 registerExercise({ id: 'spoto_press', name: 'Spoto Press', equipment: 'barbell', muscleMap: { peito: 1.0, 'tríceps': 0.5 } });
 registerExercise({ id: 'close_grip_bench', name: 'Close-Grip Bench', equipment: 'barbell', muscleMap: { 'tríceps': 1.0, peito: 0.5 } });
-registerExercise({ id: 'larsen_press', name: 'Larsen Press', equipment: 'barbell', muscleMap: { peito: 1.0, 'deltóide_anterior': 0.5 } });
+registerExercise({ id: 'larsen_press', name: 'Larsen Press', equipment: 'barbell', muscleMap: { peito: 1.0, 'deltóide_anterior': 0.5, 'tríceps': 0.5 } });
 registerExercise({ id: 'pin_press', name: 'Pin Press', equipment: 'barbell', muscleMap: { peito: 0.5, 'tríceps': 1.0 } });
-registerExercise({ id: 'db_press_inclinado', name: 'DB Press Inclinado', equipment: 'dumbbell', muscleMap: { peito: 1.0, 'deltóide_anterior': 0.5 } });
+registerExercise({ id: 'db_press_inclinado', name: 'DB Press Inclinado', equipment: 'dumbbell', muscleMap: { peito: 1.0, 'deltóide_anterior': 0.5, 'tríceps': 0.5 } });
 registerExercise({ id: 'db_press_flat', name: 'DB Press Flat', equipment: 'dumbbell', muscleMap: { peito: 1.0, 'tríceps': 0.5 } });
 registerExercise({ id: 'remada_barra', name: 'Remada com Barra', equipment: 'barbell', muscleMap: { costas: 1.0, 'bíceps': 0.5 } });
 registerExercise({ id: 'remada_apoio_peito', name: 'Remada Apoio Peito', equipment: 'barbell', muscleMap: { costas: 1.0, 'bíceps': 0.5 } });
@@ -27,6 +27,18 @@ registerExercise({ id: 'deficit_deadlift_sumo', name: 'Deficit Deadlift Sumo', e
 registerExercise({ id: 'seated_good_morning', name: 'Seated Good Morning', equipment: 'barbell', muscleMap: { erectors: 1.0 } });
 registerExercise({ id: 'pause_deadlift_sumo', name: 'Pause Deadlift Sumo', equipment: 'barbell', muscleMap: { quads: 0.5, 'glúteos': 1.0, erectors: 0.5, hamstrings: 0.5 } });
 registerExercise({ id: 'feet_up_bench', name: 'Feet-Up Bench', equipment: 'barbell', muscleMap: { peito: 1.0, 'tríceps': 0.5 } });
-registerExercise({ id: 'rosca_martelo', name: 'Rosca Martelo', equipment: 'dumbbell', muscleMap: { 'bíceps': 1.0 } });
+registerExercise({ id: 'rosca_martelo', name: 'Rosca Martelo', equipment: 'dumbbell', muscleMap: { 'bíceps': 1.0, 'braquial': 1.0 } });
 registerExercise({ id: 'triceps_testa', name: 'Tríceps Testa', equipment: 'barbell', muscleMap: { 'tríceps': 1.0 } });
 registerExercise({ id: 'triceps_pulley', name: 'Tríceps Pulley', equipment: 'machine', muscleMap: { 'tríceps': 1.0 } });
+
+// --- New isolation exercises for Arms & Shoulders mini-sessions ---
+registerExercise({ id: 'rosca_inclinada', name: 'Rosca Inclinada (DB)', equipment: 'dumbbell', muscleMap: { 'bíceps': 1.0 } });
+registerExercise({ id: 'rosca_scott', name: 'Rosca Scott', equipment: 'machine', muscleMap: { 'bíceps': 1.0 } });
+registerExercise({ id: 'rosca_barra', name: 'Rosca Barra EZ', equipment: 'barbell', muscleMap: { 'bíceps': 1.0 } });
+registerExercise({ id: 'rosca_cabo', name: 'Rosca Cabo', equipment: 'machine', muscleMap: { 'bíceps': 1.0 } });
+registerExercise({ id: 'triceps_frances', name: 'Tríceps Francês', equipment: 'dumbbell', muscleMap: { 'tríceps': 1.0 } });
+registerExercise({ id: 'triceps_corda', name: 'Tríceps Corda', equipment: 'machine', muscleMap: { 'tríceps': 1.0 } });
+registerExercise({ id: 'triceps_overhead_cabo', name: 'Tríceps Overhead Cabo', equipment: 'machine', muscleMap: { 'tríceps': 1.0 } });
+registerExercise({ id: 'elevacao_lateral_cabo', name: 'Elevação Lateral (cabo)', equipment: 'machine', muscleMap: { 'deltóide_lateral': 1.0 } });
+registerExercise({ id: 'elevacao_posterior', name: 'Elevação Posterior (DB)', equipment: 'dumbbell', muscleMap: { 'deltóide_posterior': 1.0 } });
+registerExercise({ id: 'face_pull_banda', name: 'Face Pull (banda)', equipment: 'bodyweight', muscleMap: { 'deltóide_posterior': 1.0 } });

@@ -52,7 +52,7 @@ export function useWorkoutSession(
     try {
       const sessionIndex = storage.getSessionIndex();
 
-      if (sessionIndex >= 208) {
+      if (sessionIndex >= 312) {
         setProgramComplete(true);
         setLoading(false);
         return;
@@ -114,6 +114,7 @@ export function useWorkoutSession(
         prescribedSets: ex.sets,
         prescribedReps: ex.reps,
         prescribedRPE: ex.rpe,
+        ...(ex.supersetGroup ? { supersetGroup: ex.supersetGroup } : {}),
         sets: Array.from({ length: ex.sets }, (_, i) => ({
           setNumber: i + 1,
           weight: 0,

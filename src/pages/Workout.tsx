@@ -70,7 +70,7 @@ export default function Workout() {
             Programa Completo!
           </h1>
           <p className="text-sm text-text-secondary font-display">
-            Todas as 208 sessões do programa de 52 semanas foram concluídas.
+            Todas as 312 sessões do programa de 52 semanas foram concluídas.
           </p>
           <button
             onClick={() => navigate('/')}
@@ -195,11 +195,27 @@ export default function Workout() {
                     : 'bg-bg-card text-text-secondary border border-border'
                 }`}
               >
-                {i + 1}
+                {ex.supersetGroup ? (
+                  <span className="flex items-center gap-0.5">
+                    <span className="text-[9px] text-purple-400 font-mono">{ex.supersetGroup}</span>
+                    {i + 1}
+                  </span>
+                ) : (
+                  i + 1
+                )}
               </button>
             );
           })}
         </div>
+
+        {/* Mini-session rest tip */}
+        {workout.dayType === 'arms_shoulders' && !workout.completed && (
+          <div className="bg-purple-500/10 border border-purple-500/20 rounded-lg px-3 py-2 flex items-center gap-2">
+            <span className="text-purple-400 text-xs font-display font-semibold tracking-wider uppercase">
+              Descanso: 60-90s entre supersets
+            </span>
+          </div>
+        )}
 
         {/* PR Flash */}
         {prFlash && <PRFlashBanner exerciseId={prFlash} e1rm={currentE1RM} />}

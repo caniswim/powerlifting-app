@@ -25,6 +25,7 @@ const MUSCLE_BAR_COLORS: Record<string, string> = {
   'tríceps': '#8B5CF6',
   'bíceps': '#06B6D4',
   costas: '#84CC16',
+  braquial: '#A78BFA',
 };
 
 interface VolumeStackedChartProps {

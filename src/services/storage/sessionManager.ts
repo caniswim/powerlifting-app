@@ -1,5 +1,6 @@
 import { getItem, setItem, KEYS } from './core';
 import { getWorkouts } from './workoutRepository';
+import { DAYS_PER_WEEK, TOTAL_SESSIONS } from '../scheduling';
 
 export function getCurrentWeek(): number {
   return getItem<number>(KEYS.CURRENT_WEEK, 1);
@@ -14,17 +15,17 @@ export function getSessionIndex(): number {
 }
 
 export function setSessionIndex(index: number): void {
-  const clamped = Math.max(0, Math.min(207, index));
+  const clamped = Math.max(0, Math.min(TOTAL_SESSIONS - 1, index));
   setItem(KEYS.SESSION_INDEX, clamped);
   // Keep currentWeek in sync
-  setItem(KEYS.CURRENT_WEEK, Math.floor(clamped / 4) + 1);
+  setItem(KEYS.CURRENT_WEEK, Math.floor(clamped / DAYS_PER_WEEK) + 1);
 }
 
 export function migrateSessionIndex(): void {
   const currentWeek = getItem<number>(KEYS.CURRENT_WEEK, 1);
   const workouts = getWorkouts().filter((w) => w.completed && w.weekNumber === currentWeek);
 
-  const dayOrder: string[] = ['squat_emphasis', 'bench_emphasis', 'deadlift_emphasis', 'bench_volume'];
+  const dayOrder: string[] = ['squat_emphasis', 'bench_emphasis', 'arms_shoulders', 'deadlift_emphasis', 'bench_volume', 'arms_shoulders'];
   let completedCount = 0;
   for (const dt of dayOrder) {
     if (workouts.some((w) => w.dayType === dt)) {
@@ -34,8 +35,8 @@ export function migrateSessionIndex(): void {
     }
   }
 
-  const sessionIndex = (currentWeek - 1) * 4 + completedCount;
-  setItem(KEYS.SESSION_INDEX, Math.max(0, Math.min(207, sessionIndex)));
+  const sessionIndex = (currentWeek - 1) * DAYS_PER_WEEK + completedCount;
+  setItem(KEYS.SESSION_INDEX, Math.max(0, Math.min(TOTAL_SESSIONS - 1, sessionIndex)));
 }
 
 export function ensureSessionIndexMigrated(): void {

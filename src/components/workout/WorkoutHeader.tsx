@@ -34,7 +34,7 @@ export function WorkoutHeader({
               <ArrowLeft size={16} className="inline mr-1" />Voltar
             </button>
             <div className="text-xs font-mono text-text-muted">
-              Sessão {sessionIndex + 1}/208 · {completedSets}/{totalSets} séries
+              Sessão {sessionIndex + 1}/312 · {completedSets}/{totalSets} séries
             </div>
             {workout.completed && (
               <span className="text-xs font-display font-semibold text-accent-green uppercase tracking-wider">

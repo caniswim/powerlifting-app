@@ -38,6 +38,10 @@ export function accBenchDay(weekIdx: number, opts?: {
   mainSets?: number; mainReps?: string; mainRpe?: string;
   variationId?: string; variationSets?: number; variationReps?: string;
   rowSets?: number;
+  facePullSets?: number; facePullRpe?: string;
+  lateralId?: string; lateralSets?: number; lateralReps?: string; lateralRpe?: string;
+  roscaId?: string; roscaSets?: number; roscaReps?: string; roscaRpe?: string;
+  tricepsId?: string; tricepsSets?: number; tricepsReps?: string; tricepsRpe?: string;
 }): PrescribedDay {
   const o = opts ?? {};
   const mainSets = o.mainSets ?? volScale4(3, weekIdx);
@@ -53,8 +57,10 @@ export function accBenchDay(weekIdx: number, opts?: {
     ex(varId, varSets, varReps, '7-8'),
     ex('remada_barra', rowSets, '8-10', '7-8'),
     ex('db_press_inclinado', 3, '10-12', '8'),
-    ex('face_pull', 3, '15-20', '7'),
-    ex('rosca', volScale4(2, weekIdx), '10-15', '7-8'),
+    ex('face_pull', o.facePullSets ?? volScale4(3, weekIdx), '15-20', o.facePullRpe ?? '8'),
+    ex(o.lateralId ?? 'elevacao_lateral', o.lateralSets ?? volScale4(3, weekIdx), o.lateralReps ?? '12-15', o.lateralRpe ?? '8'),
+    ex(o.roscaId ?? 'rosca', o.roscaSets ?? volScale4(3, weekIdx), o.roscaReps ?? '10-15', o.roscaRpe ?? '8'),
+    ex(o.tricepsId ?? 'triceps_testa', o.tricepsSets ?? volScale4(3, weekIdx), o.tricepsReps ?? '10-15', o.tricepsRpe ?? '8'),
   ]);
 }
 
@@ -89,8 +95,9 @@ export function accBenchVolDay(weekIdx: number, opts?: {
   variationId?: string; variationSets?: number; variationReps?: string; variationRpe?: string;
   dbPressId?: string;
   rowId?: string; rowSets?: number;
-  tricepsId?: string;
-  roscaId?: string;
+  tricepsId?: string; tricepsSets?: number; tricepsReps?: string; tricepsRpe?: string;
+  roscaId?: string; roscaSets?: number; roscaReps?: string; roscaRpe?: string;
+  lateralSets?: number; lateralReps?: string; lateralRpe?: string;
 }): PrescribedDay {
   const o = opts ?? {};
   const varId = o.variationId ?? 'close_grip_bench';
@@ -100,16 +107,16 @@ export function accBenchVolDay(weekIdx: number, opts?: {
   const dbId = o.dbPressId ?? 'db_press_flat';
   const rowId = o.rowId ?? 'remada_apoio_peito';
   const rowSets = o.rowSets ?? volScale4(3, weekIdx);
-  const triId = o.tricepsId ?? 'triceps_isolado';
-  const roscaId = o.roscaId ?? 'rosca';
+  const triId = o.tricepsId ?? 'triceps_frances';
+  const roscaId = o.roscaId ?? 'rosca_martelo';
 
   return day('bench_volume', 'Upper: Bench Volume', [
     ex(varId, varSets, varReps, varRpe),
     ex(dbId, 3, '8-12', '8'),
     ex(rowId, rowSets, '10-12', '8'),
-    ex('elevacao_lateral', 3, '12-15', '7-8'),
-    ex(triId, 3, '10-15', '7-8'),
-    ex(roscaId, volScale4(2, weekIdx), '10-15', '7-8'),
+    ex('elevacao_lateral', o.lateralSets ?? volScale4(3, weekIdx), o.lateralReps ?? '12-15', o.lateralRpe ?? '8'),
+    ex(triId, o.tricepsSets ?? volScale4(3, weekIdx), o.tricepsReps ?? '10-15', o.tricepsRpe ?? '8'),
+    ex(roscaId, o.roscaSets ?? volScale4(3, weekIdx), o.roscaReps ?? '10-15', o.roscaRpe ?? '8'),
   ]);
 }
 
@@ -150,6 +157,64 @@ export function deloadBenchVolDay(): PrescribedDay {
   ]);
 }
 
+// --- Arms & Shoulders mini-session factories ---
+
+export function armsShouldersDayA(weekIdx: number, opts?: {
+  bicepsId?: string; bicepsReps?: string;
+  tricepsId?: string; tricepsReps?: string;
+  lateralId?: string; lateralReps?: string;
+  posteriorId?: string; posteriorReps?: string;
+}): PrescribedDay {
+  const o = opts ?? {};
+  const sets = weekIdx >= 2 ? 4 : 3;
+  const rpeMap = ['8', '8.5', '9', '9'];
+  const rpe = rpeMap[weekIdx] ?? '8';
+
+  return day('arms_shoulders', 'Mini: Arms & Shoulders A', [
+    ex(o.bicepsId ?? 'rosca_inclinada', sets, o.bicepsReps ?? '10-12', rpe, undefined, 'A'),
+    ex(o.tricepsId ?? 'triceps_corda', sets, o.tricepsReps ?? '12-15', rpe, undefined, 'A'),
+    ex(o.lateralId ?? 'elevacao_lateral', sets, o.lateralReps ?? '12-15', rpe, undefined, 'B'),
+    ex(o.posteriorId ?? 'elevacao_posterior', sets, o.posteriorReps ?? '15-20', rpe, undefined, 'B'),
+  ]);
+}
+
+export function armsShouldersDayB(weekIdx: number, opts?: {
+  bicepsId?: string; bicepsReps?: string;
+  tricepsId?: string; tricepsReps?: string;
+  lateralId?: string; lateralReps?: string;
+  posteriorId?: string; posteriorReps?: string;
+}): PrescribedDay {
+  const o = opts ?? {};
+  const sets = weekIdx >= 2 ? 4 : 3;
+  const rpeMap = ['8', '8.5', '9', '9'];
+  const rpe = rpeMap[weekIdx] ?? '8';
+
+  return day('arms_shoulders', 'Mini: Arms & Shoulders B', [
+    ex(o.bicepsId ?? 'rosca_scott', sets, o.bicepsReps ?? '10-12', rpe, undefined, 'A'),
+    ex(o.tricepsId ?? 'triceps_overhead_cabo', sets, o.tricepsReps ?? '10-15', rpe, undefined, 'A'),
+    ex(o.lateralId ?? 'elevacao_lateral_cabo', sets, o.lateralReps ?? '12-15', rpe, undefined, 'B'),
+    ex(o.posteriorId ?? 'face_pull', sets, o.posteriorReps ?? '15-20', rpe, undefined, 'B'),
+  ]);
+}
+
+export function deloadArmsDayA(): PrescribedDay {
+  return day('arms_shoulders', 'Mini: Arms & Shoulders A (Deload)', [
+    ex('rosca_inclinada', 2, '10-12', '5-6', undefined, 'A'),
+    ex('triceps_corda', 2, '12-15', '5-6', undefined, 'A'),
+    ex('elevacao_lateral', 2, '12-15', '5-6', undefined, 'B'),
+    ex('elevacao_posterior', 2, '15-20', '5-6', undefined, 'B'),
+  ]);
+}
+
+export function deloadArmsDayB(): PrescribedDay {
+  return day('arms_shoulders', 'Mini: Arms & Shoulders B (Deload)', [
+    ex('rosca_scott', 2, '10-12', '5-6', undefined, 'A'),
+    ex('triceps_overhead_cabo', 2, '10-15', '5-6', undefined, 'A'),
+    ex('elevacao_lateral_cabo', 2, '12-15', '5-6', undefined, 'B'),
+    ex('face_pull', 2, '15-20', '5-6', undefined, 'B'),
+  ]);
+}
+
 export function makeDeloadWeek(
   weekNumber: number,
   macrocycle: number,
@@ -160,13 +225,17 @@ export function makeDeloadWeek(
     bench?: PrescribedDay;
     deadlift?: PrescribedDay;
     benchVol?: PrescribedDay;
+    armsA?: PrescribedDay;
+    armsB?: PrescribedDay;
   },
 ): PrescribedWeek {
   return week(weekNumber, macrocycle, blockName, 'deload', objective, true, [
     overrides?.squat ?? deloadSquatDay(),
     overrides?.bench ?? deloadBenchDay(),
+    overrides?.armsA ?? deloadArmsDayA(),
     overrides?.deadlift ?? deloadDeadliftDay(),
     overrides?.benchVol ?? deloadBenchVolDay(),
+    overrides?.armsB ?? deloadArmsDayB(),
   ]);
 }
 
@@ -186,8 +255,10 @@ export function buildMac1(): PrescribedWeek[] {
       [
         accSquatDay(i),
         accBenchDay(i),
+        armsShouldersDayA(i),
         accDeadliftDay(i),
         accBenchVolDay(i),
+        armsShouldersDayB(i),
       ],
     ));
   }
@@ -213,6 +284,12 @@ export function buildMac1(): PrescribedWeek[] {
           variationSets: 3,
           variationReps: '5-7',
         }),
+        armsShouldersDayA(i, {
+          bicepsId: 'rosca_martelo', bicepsReps: '10-12',
+          tricepsId: 'triceps_testa', tricepsReps: '10-12',
+          lateralId: 'elevacao_lateral_cabo', lateralReps: '12-15',
+          posteriorId: 'face_pull', posteriorReps: '15-20',
+        }),
         accDeadliftDay(i, {
           mainSets: volScale4(3, i),
           secondaryId: 'pause_squat',
@@ -225,6 +302,12 @@ export function buildMac1(): PrescribedWeek[] {
           variationReps: '6-8',
           tricepsId: 'triceps_testa',
           roscaId: 'rosca_martelo',
+        }),
+        armsShouldersDayB(i, {
+          bicepsId: 'rosca_cabo', bicepsReps: '12-15',
+          tricepsId: 'triceps_pulley', tricepsReps: '12-15',
+          lateralId: 'elevacao_lateral', lateralReps: '15-20',
+          posteriorId: 'elevacao_posterior', posteriorReps: '15-20',
         }),
       ],
     ));
@@ -258,7 +341,16 @@ export function buildMac1(): PrescribedWeek[] {
           ex('supino_wide_grip', setsMain, repsMain, rpeMain, isTestWeek ? 'Teste e1RM: single @ RPE 9' : undefined),
           ex('spoto_press', 3, '4-6', '7-8'),
           ex('remada_barra', 3, '8-10', '7-8'),
-          ex('face_pull', 3, '15-20', '7'),
+          ex('face_pull', 3, '15-20', '8'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('rosca', 3, '10-15', '8'),
+          ex('triceps_testa', 3, '10-15', '8'),
+        ]),
+        day('arms_shoulders', 'Mini: Arms & Shoulders A', [
+          ex('rosca_inclinada', 3, '10-12', '8-9', undefined, 'A'),
+          ex('triceps_corda', 3, '12-15', '8-9', undefined, 'A'),
+          ex('elevacao_lateral', 3, '12-15', '8-9', undefined, 'B'),
+          ex('elevacao_posterior', 3, '15-20', '8-9', undefined, 'B'),
         ]),
         day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', setsMain, repsMain, rpeMain, isTestWeek ? 'Teste e1RM: single @ RPE 9' : undefined),
@@ -269,7 +361,15 @@ export function buildMac1(): PrescribedWeek[] {
           ex('close_grip_bench', 3, isTestWeek ? '3-5' : '4-6', isTestWeek ? '8' : '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '10-12', '8'),
-          ex('elevacao_lateral', 3, '12-15', '7'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('triceps_frances', 3, '10-15', '8'),
+          ex('rosca_martelo', 3, '10-15', '8'),
+        ]),
+        day('arms_shoulders', 'Mini: Arms & Shoulders B', [
+          ex('rosca_scott', 3, '10-12', '8-9', undefined, 'A'),
+          ex('triceps_overhead_cabo', 3, '10-15', '8-9', undefined, 'A'),
+          ex('elevacao_lateral_cabo', 3, '12-15', '8-9', undefined, 'B'),
+          ex('face_pull', 3, '15-20', '8-9', undefined, 'B'),
         ]),
       ],
     ));
@@ -305,9 +405,17 @@ export function buildMac2(): PrescribedWeek[] {
           ex('spoto_press', 3, '4-6', '7-8', 'Variação competitiva'),
           ex('remada_barra', volScale4(3, i), '8-10', '7-8'),
           ex('db_press_inclinado', 3, '8-10', '8'),
-          ex('face_pull', 3, '15-20', '7'),
-          ex('rosca', 3, '10-15', '7'),
+          ex('face_pull', volScale4(3, i), '15-20', '8'),
+          ex('elevacao_lateral', volScale4(3, i), '12-15', '8'),
+          ex('rosca', volScale4(3, i), '10-15', '8'),
+          ex('triceps_testa', volScale4(3, i), '10-15', '8'),
         ]),
+        armsShouldersDayA(i, {
+          bicepsId: 'rosca_inclinada', bicepsReps: '8-12',
+          tricepsId: 'triceps_frances', tricepsReps: '8-12',
+          lateralId: 'elevacao_lateral', lateralReps: '12-15',
+          posteriorId: 'elevacao_posterior', posteriorReps: '12-15',
+        }),
         day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', 4, '5-7', rpeMap[i]),
           ex('deficit_deadlift_sumo', 3, '3-5', '7-8', 'Variação competitiva'),
@@ -319,10 +427,16 @@ export function buildMac2(): PrescribedWeek[] {
           ex('close_grip_bench', volScale4(3, i), '5-7', '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', volScale4(3, i), '10-12', '8'),
-          ex('elevacao_lateral', 3, '12-15', '7-8'),
-          ex('triceps_isolado', 3, '10-15', '7-8'),
-          ex('rosca', 2, '10-15', '7'),
+          ex('elevacao_lateral', volScale4(3, i), '12-15', '8'),
+          ex('triceps_isolado', volScale4(3, i), '10-15', '8'),
+          ex('rosca_martelo', volScale4(3, i), '10-15', '8'),
         ]),
+        armsShouldersDayB(i, {
+          bicepsId: 'rosca_barra', bicepsReps: '8-12',
+          tricepsId: 'triceps_corda', tricepsReps: '10-15',
+          lateralId: 'elevacao_lateral_cabo', lateralReps: '12-15',
+          posteriorId: 'face_pull', posteriorReps: '15-20',
+        }),
       ],
     ));
   }
@@ -350,8 +464,17 @@ export function buildMac2(): PrescribedWeek[] {
           ex('spoto_press', 3, '3-4', '8', 'Pesado — variação competitiva'),
           ex('remada_barra', 3, '6-8', '7-8'),
           ex('db_press_inclinado', 3, '8-10', '8'),
-          ex('face_pull', 3, '15-20', '7'),
+          ex('face_pull', 3, '15-20', '8'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('rosca', 3, '10-15', '8'),
+          ex('triceps_testa', 3, '10-15', '8'),
         ]),
+        armsShouldersDayA(i, {
+          bicepsId: 'rosca_martelo', bicepsReps: '10-12',
+          tricepsId: 'triceps_overhead_cabo', tricepsReps: '10-15',
+          lateralId: 'elevacao_lateral', lateralReps: '12-15',
+          posteriorId: 'elevacao_posterior', posteriorReps: '15-20',
+        }),
         day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', mainSets, '3-5', rpeMap[i]),
           ex('block_deadlift', 3, '3-5', '7-8'),
@@ -362,9 +485,16 @@ export function buildMac2(): PrescribedWeek[] {
           ex('close_grip_bench', 3, '4-6', '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '8'),
-          ex('elevacao_lateral', 3, '12-15', '7'),
-          ex('triceps_isolado', 3, '10-12', '7-8'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('triceps_isolado', 3, '10-12', '8'),
+          ex('rosca_martelo', 3, '10-15', '8'),
         ]),
+        armsShouldersDayB(i, {
+          bicepsId: 'rosca_martelo', bicepsReps: '10-12',
+          tricepsId: 'triceps_overhead_cabo', tricepsReps: '10-15',
+          lateralId: 'elevacao_lateral', lateralReps: '12-15',
+          posteriorId: 'elevacao_posterior', posteriorReps: '15-20',
+        }),
       ],
     ));
   }
@@ -395,7 +525,16 @@ export function buildMac2(): PrescribedWeek[] {
           ex('supino_wide_grip', mainSets, mainReps, rpeMap[i], isTestWeek ? 'Teste e1RM: single @ RPE 9-9.5' : undefined),
           ex('spoto_press', 2, '3-5', '7-8'),
           ex('remada_barra', 3, '6-8', '7'),
-          ex('face_pull', 3, '15-20', '7'),
+          ex('face_pull', 3, '15-20', '8'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('rosca', 3, '10-15', '8'),
+          ex('triceps_testa', 3, '10-15', '8'),
+        ]),
+        day('arms_shoulders', 'Mini: Arms & Shoulders A', [
+          ex('rosca_martelo', 3, '10-12', '8-9', undefined, 'A'),
+          ex('triceps_overhead_cabo', 3, '10-15', '8-9', undefined, 'A'),
+          ex('elevacao_lateral', 3, '12-15', '8-9', undefined, 'B'),
+          ex('elevacao_posterior', 3, '15-20', '8-9', undefined, 'B'),
         ]),
         day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', mainSets, mainReps, rpeMap[i], isTestWeek ? 'Teste e1RM: single @ RPE 9-9.5' : undefined),
@@ -406,7 +545,15 @@ export function buildMac2(): PrescribedWeek[] {
           ex('close_grip_bench', 3, '3-5', '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '7-8'),
-          ex('elevacao_lateral', 2, '12-15', '7'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('triceps_isolado', 3, '10-15', '8'),
+          ex('rosca_martelo', 3, '10-15', '8'),
+        ]),
+        day('arms_shoulders', 'Mini: Arms & Shoulders B', [
+          ex('rosca_martelo', 3, '10-12', '8-9', undefined, 'A'),
+          ex('triceps_overhead_cabo', 3, '10-15', '8-9', undefined, 'A'),
+          ex('elevacao_lateral', 3, '12-15', '8-9', undefined, 'B'),
+          ex('elevacao_posterior', 3, '15-20', '8-9', undefined, 'B'),
         ]),
       ],
     ));
@@ -442,6 +589,12 @@ export function buildMac3(): PrescribedWeek[] {
           variationSets: 3,
           variationReps: '6-8',
         }),
+        armsShouldersDayA(i, {
+          bicepsId: 'rosca_scott', bicepsReps: '10-12',
+          tricepsId: 'triceps_overhead_cabo', tricepsReps: '10-15',
+          lateralId: 'elevacao_lateral', lateralReps: '12-15',
+          posteriorId: 'face_pull_banda', posteriorReps: '15-20',
+        }),
         accDeadliftDay(i, {
           mainSets: volScale4(3, i),
           secondaryId: 'front_squat',
@@ -456,6 +609,12 @@ export function buildMac3(): PrescribedWeek[] {
           dbPressId: 'db_press_inclinado',
           tricepsId: 'triceps_pulley',
           roscaId: 'rosca_martelo',
+        }),
+        armsShouldersDayB(i, {
+          bicepsId: 'rosca_barra', bicepsReps: '10-12',
+          tricepsId: 'triceps_pulley', tricepsReps: '10-15',
+          lateralId: 'elevacao_lateral', lateralReps: '12-15',
+          posteriorId: 'elevacao_posterior', posteriorReps: '15-20',
         }),
       ],
     ));
@@ -493,6 +652,12 @@ export function buildMac3(): PrescribedWeek[] {
           variationReps: '5-7',
           rowSets: volScale4(3, i),
         }),
+        armsShouldersDayA(i, {
+          bicepsId: 'rosca_cabo', bicepsReps: '10-12',
+          tricepsId: 'triceps_overhead_cabo', tricepsReps: '10-15',
+          lateralId: 'elevacao_lateral', lateralReps: '12-15',
+          posteriorId: 'face_pull_banda', posteriorReps: '15-20',
+        }),
         accDeadliftDay(i, {
           mainSets: volScale4(4, i),
           secondaryId: 'pause_squat',
@@ -511,6 +676,12 @@ export function buildMac3(): PrescribedWeek[] {
           rowSets: volScale4(3, i),
           tricepsId: 'triceps_testa',
           roscaId: 'rosca',
+        }),
+        armsShouldersDayB(i, {
+          bicepsId: 'rosca_barra', bicepsReps: '10-12',
+          tricepsId: 'triceps_pulley', tricepsReps: '10-15',
+          lateralId: 'elevacao_lateral', lateralReps: '12-15',
+          posteriorId: 'elevacao_posterior', posteriorReps: '15-20',
         }),
       ],
     ));
@@ -540,7 +711,16 @@ export function buildMac3(): PrescribedWeek[] {
           ex('larsen_press', 3, '3-5', '8', 'Variação competitiva pesada'),
           ex('remada_barra', 3, '6-8', '7-8'),
           ex('db_press_inclinado', 3, '8-10', '8'),
-          ex('face_pull', 3, '15-20', '7'),
+          ex('face_pull', 3, '15-20', '8'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('rosca', 3, '10-15', '8'),
+          ex('triceps_testa', 3, '10-15', '8'),
+        ]),
+        day('arms_shoulders', 'Mini: Arms & Shoulders A', [
+          ex('rosca_scott', 3, '10-12', '8-9', undefined, 'A'),
+          ex('triceps_overhead_cabo', 3, '10-15', '8-9', undefined, 'A'),
+          ex('elevacao_lateral', 3, '12-15', '8-9', undefined, 'B'),
+          ex('face_pull_banda', 3, '15-20', '8-9', undefined, 'B'),
         ]),
         day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', mainSets, '3-5', rpeMap[i]),
@@ -552,8 +732,15 @@ export function buildMac3(): PrescribedWeek[] {
           ex('close_grip_bench', 3, '4-6', '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '8'),
-          ex('elevacao_lateral', 3, '12-15', '7'),
-          ex('triceps_pulley', 3, '10-12', '7-8'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('triceps_pulley', 3, '10-12', '8'),
+          ex('rosca_martelo', 3, '10-15', '8'),
+        ]),
+        day('arms_shoulders', 'Mini: Arms & Shoulders B', [
+          ex('rosca_barra', 3, '10-12', '8-9', undefined, 'A'),
+          ex('triceps_pulley', 3, '10-15', '8-9', undefined, 'A'),
+          ex('elevacao_lateral', 3, '12-15', '8-9', undefined, 'B'),
+          ex('elevacao_posterior', 3, '15-20', '8-9', undefined, 'B'),
         ]),
       ],
     ));
@@ -590,8 +777,12 @@ export function buildMac4(): PrescribedWeek[] {
           ex('spoto_press', 3, '3-5', '8'),
           ex('remada_barra', 3, '6-8', '7-8'),
           ex('db_press_inclinado', 3, '8-10', '8'),
-          ex('face_pull', 3, '15-20', '7'),
+          ex('face_pull', 3, '15-20', '8'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('rosca', 3, '10-15', '8'),
+          ex('triceps_testa', 3, '10-15', '8'),
         ]),
+        armsShouldersDayA(i),
         day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', mainSets, '3-5', rpeMap[i]),
           ex('block_deadlift', 3, '3-5', '7-8'),
@@ -602,9 +793,11 @@ export function buildMac4(): PrescribedWeek[] {
           ex('close_grip_bench', 3, '4-6', '7-8'),
           ex('db_press_flat', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '8'),
-          ex('elevacao_lateral', 3, '12-15', '7'),
-          ex('triceps_isolado', 3, '10-12', '7-8'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('triceps_isolado', 3, '10-12', '8'),
+          ex('rosca_martelo', 3, '10-15', '8'),
         ]),
+        armsShouldersDayB(i),
       ],
     ));
   }
@@ -615,6 +808,8 @@ export function buildMac4(): PrescribedWeek[] {
   // Block 4B — Intensification (Weeks 45-48)
   for (let i = 0; i < 4; i++) {
     const rpeMap = ['8.5', '8.5-9', '9', '9'];
+    const armsRpeMap = ['8', '8.5', '9', '9'];
+    const armsRpe = armsRpeMap[i];
     const mainSets = i < 2 ? 4 : 3;
     const mainReps = i < 2 ? '2-3' : '2';
 
@@ -632,7 +827,16 @@ export function buildMac4(): PrescribedWeek[] {
           ex('supino_wide_grip', mainSets, mainReps, rpeMap[i]),
           ex('spoto_press', 2, '2-3', '8'),
           ex('remada_barra', 3, '6-8', '7'),
-          ex('face_pull', 3, '15-20', '7'),
+          ex('face_pull', 3, '15-20', '8'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('rosca', 3, '10-15', '8'),
+          ex('triceps_testa', 3, '10-15', '8'),
+        ]),
+        day('arms_shoulders', 'Mini: Arms & Shoulders A', [
+          ex('rosca_inclinada', 3, '10-12', armsRpe, undefined, 'A'),
+          ex('triceps_corda', 3, '12-15', armsRpe, undefined, 'A'),
+          ex('elevacao_lateral', 3, '12-15', armsRpe, undefined, 'B'),
+          ex('elevacao_posterior', 3, '15-20', armsRpe, undefined, 'B'),
         ]),
         day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
           ex('deadlift_sumo', mainSets, mainReps, rpeMap[i]),
@@ -643,7 +847,15 @@ export function buildMac4(): PrescribedWeek[] {
           ex('close_grip_bench', 3, '3-5', '7-8'),
           ex('db_press_flat', 3, '8-10', '7-8'),
           ex('remada_apoio_peito', 3, '8-10', '7'),
-          ex('elevacao_lateral', 2, '12-15', '7'),
+          ex('elevacao_lateral', 3, '12-15', '8'),
+          ex('triceps_isolado', 3, '10-15', '8'),
+          ex('rosca_martelo', 3, '10-15', '8'),
+        ]),
+        day('arms_shoulders', 'Mini: Arms & Shoulders B', [
+          ex('rosca_scott', 3, '10-12', armsRpe, undefined, 'A'),
+          ex('triceps_overhead_cabo', 3, '10-15', armsRpe, undefined, 'A'),
+          ex('elevacao_lateral_cabo', 3, '12-15', armsRpe, undefined, 'B'),
+          ex('face_pull', 3, '15-20', armsRpe, undefined, 'B'),
         ]),
       ],
     ));
@@ -669,7 +881,13 @@ export function buildMac4(): PrescribedWeek[] {
         ex('supino_wide_grip', 3, '1', '8', 'Openers: singles @ RPE 8'),
         ex('spoto_press', 2, '2', '7'),
         ex('remada_barra', 2, '6-8', '7'),
-        ex('face_pull', 2, '15', '6'),
+        ex('face_pull', 2, '15', '7'),
+      ]),
+      day('arms_shoulders', 'Mini: Arms & Shoulders A', [
+        ex('rosca_inclinada', 2, '10-12', '7-8', undefined, 'A'),
+        ex('triceps_corda', 2, '12-15', '7-8', undefined, 'A'),
+        ex('elevacao_lateral', 2, '12-15', '7-8', undefined, 'B'),
+        ex('elevacao_posterior', 2, '15-20', '7-8', undefined, 'B'),
       ]),
       day('deadlift_emphasis', 'Lower: Deadlift Emphasis', [
         ex('deadlift_sumo', 3, '1', '8', 'Openers: singles @ RPE 8'),
@@ -679,6 +897,12 @@ export function buildMac4(): PrescribedWeek[] {
         ex('close_grip_bench', 2, '3', '7'),
         ex('db_press_flat', 2, '8', '7'),
         ex('remada_apoio_peito', 2, '8', '7'),
+      ]),
+      day('arms_shoulders', 'Mini: Arms & Shoulders B', [
+        ex('rosca_scott', 2, '10-12', '7-8', undefined, 'A'),
+        ex('triceps_overhead_cabo', 2, '10-15', '7-8', undefined, 'A'),
+        ex('elevacao_lateral_cabo', 2, '12-15', '7-8', undefined, 'B'),
+        ex('face_pull', 2, '15-20', '7-8', undefined, 'B'),
       ]),
     ],
   ));
@@ -695,6 +919,12 @@ export function buildMac4(): PrescribedWeek[] {
       day('bench_emphasis', 'Upper: 1RM Bench', [
         ex('supino_wide_grip', 5, '1', '10', '1RM Test: aquecer progressivamente até máximo'),
       ]),
+      day('arms_shoulders', 'Mini: Arms & Shoulders A', [
+        ex('rosca_inclinada', 2, '10-12', '7', undefined, 'A'),
+        ex('triceps_corda', 2, '12-15', '7', undefined, 'A'),
+        ex('elevacao_lateral', 2, '12-15', '7', undefined, 'B'),
+        ex('elevacao_posterior', 2, '15-20', '7', undefined, 'B'),
+      ]),
       day('deadlift_emphasis', 'Lower: 1RM Deadlift', [
         ex('deadlift_sumo', 5, '1', '10', '1RM Test: aquecer progressivamente até máximo'),
       ]),
@@ -702,6 +932,12 @@ export function buildMac4(): PrescribedWeek[] {
         ex('db_press_flat', 2, '8', '6', 'Recuperação leve'),
         ex('remada_apoio_peito', 2, '8', '6'),
         ex('face_pull', 2, '15', '6'),
+      ]),
+      day('arms_shoulders', 'Mini: Arms & Shoulders B', [
+        ex('rosca_scott', 2, '10-12', '7', undefined, 'A'),
+        ex('triceps_overhead_cabo', 2, '10-15', '7', undefined, 'A'),
+        ex('elevacao_lateral_cabo', 2, '12-15', '7', undefined, 'B'),
+        ex('face_pull', 2, '15-20', '7', undefined, 'B'),
       ]),
     ],
   ));

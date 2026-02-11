@@ -15,7 +15,7 @@ import { TrendSparklines } from '../features/feedback/components/TrendSparklines
 import { AlertsBanner } from '../features/feedback/components/AlertsBanner';
 import { AIFeedbackCard } from '../features/feedback/components/AIFeedbackCard';
 
-const CYCLE_LABELS = ['SQT', 'BNC', 'DLF', 'VOL'];
+const CYCLE_LABELS = ['SQT', 'BNC', 'ARM', 'DLF', 'VOL', 'ARM'];
 
 export default function Dashboard() {
   const storage = useStorage();
@@ -29,8 +29,8 @@ export default function Dashboard() {
   const [isRestDay, setIsRestDay] = useState(false);
   const [lastWorkoutDateStr, setLastWorkoutDateStr] = useState<string | null>(null);
 
-  const currentWeek = Math.floor(sessionIndex / 4) + 1;
-  const cyclePosition = sessionIndex % 4; // 0-3 within current 4-session cycle
+  const currentWeek = Math.floor(sessionIndex / 6) + 1;
+  const cyclePosition = sessionIndex % 6; // 0-5 within current 6-session cycle
 
   const trends = useSurveyTrends();
   const feedbackHistory = useFeedbackHistory();
@@ -101,7 +101,7 @@ export default function Dashboard() {
     );
   }
 
-  const programComplete = sessionIndex >= 208;
+  const programComplete = sessionIndex >= 312;
 
   return (
     <div className="min-h-screen bg-bg-primary pb-20">
@@ -119,7 +119,7 @@ export default function Dashboard() {
               / 52
             </span>
             <span className="text-xs font-mono text-text-muted ml-2">
-              Sessão {sessionIndex + 1}/208
+              Sessão {sessionIndex + 1}/312
             </span>
           </div>
           {nextSession && (
@@ -216,8 +216,15 @@ export default function Dashboard() {
                 <div className="text-[10px] font-display font-semibold tracking-wider uppercase text-text-muted">
                   PRÓXIMO TREINO
                 </div>
-                <div className="text-sm font-display font-bold text-text-primary uppercase tracking-wider mt-0.5">
-                  {dayTypeShortLabels[nextSession.day.dayType]}
+                <div className="flex items-center gap-2 mt-0.5">
+                  <span className="text-sm font-display font-bold text-text-primary uppercase tracking-wider">
+                    {dayTypeShortLabels[nextSession.day.dayType]}
+                  </span>
+                  {nextSession.day.dayType === 'arms_shoulders' && (
+                    <span className="text-[9px] font-display font-bold text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded tracking-wider ml-1">
+                      MINI ~20min
+                    </span>
+                  )}
                 </div>
               </div>
               {recommendedDate && (
@@ -269,7 +276,7 @@ export default function Dashboard() {
               PROGRAMA COMPLETO!
             </div>
             <div className="text-xs text-text-muted font-display mt-1">
-              Todas as 208 sessões foram concluídas.
+              Todas as 312 sessões foram concluídas.
             </div>
           </div>
         ) : null}
@@ -308,22 +315,24 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Cycle Progress (4-session cycle) */}
+        {/* Cycle Progress (6-session cycle) */}
         <div className="bg-bg-card border border-border rounded-lg p-4">
           <div className="text-[10px] font-display font-semibold tracking-wider uppercase text-text-muted mb-3">
             PROGRESSO DO CICLO
           </div>
-          <div className="grid grid-cols-4 gap-2">
+          <div className="grid grid-cols-6 gap-2">
             {CYCLE_LABELS.map((label, i) => {
               const isCompleted = i < cyclePosition;
               const isCurrent = i === cyclePosition;
 
               return (
                 <div
-                  key={label}
+                  key={`${label}-${i}`}
                   className={`text-center py-2 rounded border ${
                     isCompleted
                       ? 'bg-accent-green/20 border-accent-green/30 text-accent-green'
+                      : isCurrent && label === 'ARM'
+                      ? 'bg-purple-500/10 border-purple-500/30 text-purple-400'
                       : isCurrent
                       ? 'bg-accent-gold/10 border-accent-gold/30 text-accent-gold'
                       : 'bg-bg-tertiary border-border text-text-muted'

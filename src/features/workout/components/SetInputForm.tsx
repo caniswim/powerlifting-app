@@ -41,8 +41,15 @@ export function SetInputForm({
     }`}>
       {/* Exercise header */}
       <div>
-        <div className="text-lg font-display font-bold text-text-primary uppercase tracking-wider">
-          {exercise.exerciseName}
+        <div className="flex items-center gap-2">
+          {exercise.supersetGroup && (
+            <span className="inline-flex items-center justify-center w-6 h-6 rounded bg-purple-500/20 text-purple-400 text-xs font-mono font-bold flex-shrink-0">
+              {exercise.supersetGroup}
+            </span>
+          )}
+          <span className="text-lg font-display font-bold text-text-primary uppercase tracking-wider">
+            {exercise.exerciseName}
+          </span>
         </div>
         <div className="text-xs font-mono text-text-muted mt-0.5">
           Prescrito: {exercise.prescribedSets}x{exercise.prescribedReps} @ RPE{' '}

@@ -7,6 +7,7 @@ export function ex(
   reps: string,
   rpe: string,
   notes?: string,
+  supersetGroup?: string,
 ): PrescribedExercise {
   return {
     exerciseId,
@@ -15,6 +16,7 @@ export function ex(
     reps,
     rpe,
     ...(notes ? { notes } : {}),
+    ...(supersetGroup ? { supersetGroup } : {}),
   };
 }
 

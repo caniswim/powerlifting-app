@@ -9,11 +9,12 @@ const VOLUME_TARGETS: Partial<Record<MuscleGroup, number>> = {
   hamstrings: 10,
   peito: 16,
   'deltóide_anterior': 8,
-  'deltóide_posterior': 10,
-  'deltóide_lateral': 12,
-  'tríceps': 10,
-  'bíceps': 10,
+  'deltóide_posterior': 14,
+  'deltóide_lateral': 15,
+  'tríceps': 17,
+  'bíceps': 17,
   costas: 14,
+  braquial: 6,
 };
 
 interface VolumeTargetBarsProps {

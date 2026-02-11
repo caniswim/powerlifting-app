@@ -18,8 +18,8 @@ export default function Settings() {
   const [showApiKey, setShowApiKey] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const derivedWeek = Math.floor(sessionIdx / 4) + 1;
-  const derivedDayIndex = sessionIdx % 4;
+  const derivedWeek = Math.floor(sessionIdx / 6) + 1;
+  const derivedDayIndex = sessionIdx % 6;
 
   // Auto-calculate total and DOTS when profile values change
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function Settings() {
     const updated = { ...profile, total, dots };
     storage.saveProfile(updated);
     storage.setSessionIndex(sessionIdx);
-    storage.setCurrentWeek(Math.floor(sessionIdx / 4) + 1);
+    storage.setCurrentWeek(Math.floor(sessionIdx / 6) + 1);
     storage.setApiKey(apiKey);
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
@@ -212,17 +212,17 @@ export default function Settings() {
             <input
               type="number"
               min={0}
-              max={207}
+              max={311}
               value={sessionIdx}
-              onChange={(e) => setSessionIdx(Math.max(0, Math.min(207, parseInt(e.target.value) || 0)))}
+              onChange={(e) => setSessionIdx(Math.max(0, Math.min(311, parseInt(e.target.value) || 0)))}
               className="w-24 h-11 bg-bg-input border border-border-light rounded-md text-center
                          font-mono text-lg text-text-primary focus:outline-none focus:border-accent-gold
                          transition-colors"
             />
-            <span className="text-xs text-text-muted font-mono">/ 207</span>
+            <span className="text-xs text-text-muted font-mono">/ 311</span>
           </div>
           <div className="text-xs font-mono text-text-muted">
-            Semana {derivedWeek} / 52 — Dia {derivedDayIndex + 1} de 4
+            Semana {derivedWeek} / 52 — Dia {derivedDayIndex + 1} de 6
           </div>
         </section>
 

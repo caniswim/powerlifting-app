@@ -54,7 +54,7 @@ export function useWorkoutSession(
     try {
       const sessionIndex = getSessionIndex();
 
-      if (sessionIndex >= 208) {
+      if (sessionIndex >= 312) {
         setProgramComplete(true);
         setLoading(false);
         return;

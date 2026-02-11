@@ -14,6 +14,7 @@ export interface ExercisePrescription {
   prescribedSets: number;
   prescribedReps: string;
   prescribedRPE: string;
+  supersetGroup?: string;
 }
 
 export interface ExerciseLog extends ExercisePrescription {
@@ -57,7 +58,7 @@ export interface WorkoutExercises {
 }
 
 export type BlockType = 'accumulation' | 'transmutation' | 'intensification' | 'realization' | 'deload';
-export type DayType = 'squat_emphasis' | 'bench_emphasis' | 'deadlift_emphasis' | 'bench_volume';
+export type DayType = 'squat_emphasis' | 'bench_emphasis' | 'deadlift_emphasis' | 'bench_volume' | 'arms_shoulders';
 
 export interface PersonalRecord {
   exerciseId: string;
@@ -89,6 +90,7 @@ export interface PrescribedExercise {
   reps: string;
   rpe: string;
   notes?: string;
+  supersetGroup?: string;  // "A" | "B" etc. for superset pairing
 }
 
 export interface PrescribedDay {
@@ -118,7 +120,8 @@ export type MuscleGroup =
   | 'deltóide_lateral'
   | 'tríceps'
   | 'bíceps'
-  | 'costas';
+  | 'costas'
+  | 'braquial';
 
 export type ExerciseMuscleMap = Record<string, Partial<Record<MuscleGroup, number>>>;
 
