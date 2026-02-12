@@ -5,7 +5,7 @@ import { useStorage } from '../contexts/StorageContext';
 import type { AthleteProfile } from '../types';
 import { DAYS_PER_WEEK, TOTAL_SESSIONS } from '../services/scheduling';
 
-const APP_VERSION = '1.2.0';
+const APP_VERSION = '1.2.1';
 
 export default function Settings() {
   const storage = useStorage();
@@ -103,31 +103,24 @@ export default function Settings() {
         return;
       }
 
+      // With autoUpdate + clientsClaim, the new SW activates and claims immediately.
+      // controllerchange fires when a new SW takes over — reload to use new assets.
+      let updated = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        updated = true;
+        setUpdateStatus('updating');
+        window.location.reload();
+      }, { once: true });
+
       await registration.update();
 
-      const waiting = registration.waiting;
-      if (waiting) {
-        setUpdateStatus('updating');
-        waiting.postMessage({ type: 'SKIP_WAITING' });
-        // Reload after the new SW takes over
-        navigator.serviceWorker.addEventListener('controllerchange', () => {
-          window.location.reload();
-        });
-        // Fallback reload if controllerchange doesn't fire
-        setTimeout(() => window.location.reload(), 2000);
-      } else if (registration.installing) {
-        setUpdateStatus('updating');
-        registration.installing.addEventListener('statechange', (e) => {
-          const sw = e.target as ServiceWorker;
-          if (sw.state === 'installed') {
-            sw.postMessage({ type: 'SKIP_WAITING' });
-            setTimeout(() => window.location.reload(), 1000);
-          }
-        });
-      } else {
-        setUpdateStatus('up-to-date');
-        setTimeout(() => setUpdateStatus('idle'), 3000);
-      }
+      // Allow time for SW lifecycle (install → activate → claim → controllerchange)
+      setTimeout(() => {
+        if (!updated) {
+          setUpdateStatus('up-to-date');
+          setTimeout(() => setUpdateStatus('idle'), 3000);
+        }
+      }, 2000);
     } catch {
       setUpdateStatus('error');
       setTimeout(() => setUpdateStatus('idle'), 3000);
