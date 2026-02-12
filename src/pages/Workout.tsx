@@ -148,9 +148,9 @@ export default function Workout() {
 
   // --- Derived state ---
   const currentExercise = workout.exercises[activeExIdx];
-  const totalSets = workout.exercises.reduce((sum, ex) => sum + ex.sets.length, 0);
+  const totalSets = workout.exercises.reduce((sum, ex) => ex.skipped ? sum : sum + ex.sets.length, 0);
   const completedSets = workout.exercises.reduce(
-    (sum, ex) => sum + ex.sets.filter((s) => s.completed).length,
+    (sum, ex) => ex.skipped ? sum : sum + ex.sets.filter((s) => s.completed).length,
     0
   );
   const progressPercent = totalSets > 0 ? (completedSets / totalSets) * 100 : 0;

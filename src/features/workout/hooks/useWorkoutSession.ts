@@ -76,7 +76,7 @@ export function useWorkoutSession(
       if (existingToday) {
         setWorkout(existingToday);
         const exIdx = existingToday.exercises.findIndex(
-          (ex) => ex.sets.some((s) => !s.completed)
+          (ex) => !ex.skipped && ex.sets.some((s) => !s.completed)
         );
         if (exIdx >= 0) {
           setActiveExIdx(exIdx);
@@ -137,13 +137,25 @@ export function useWorkoutSession(
     const exercises = [...updatedWorkout.exercises];
     exercises[activeExIdx] = { ...exercises[activeExIdx], skipped: true };
     updatedWorkout.exercises = exercises;
+
+    const allDone = exercises.every((ex) => ex.skipped || ex.sets.every((s) => s.completed));
+    if (allDone) {
+      updatedWorkout.completed = true;
+      updatedWorkout.completedAt = new Date().toISOString();
+      storage.setSessionIndex(storage.getSessionIndex() + 1);
+    }
+
+    updatedWorkout.exercises = exercises;
     setWorkout(updatedWorkout);
     storage.saveWorkout(updatedWorkout);
 
-    if (activeExIdx < exercises.length - 1) {
-      setActiveExIdx(activeExIdx + 1);
-      setActiveSetIdx(0);
-      prefillInputs(exercises[activeExIdx + 1], 0);
+    if (!allDone) {
+      const nextIdx = exercises.findIndex((ex, i) => i > activeExIdx && !ex.skipped && ex.sets.some((s) => !s.completed));
+      if (nextIdx >= 0) {
+        setActiveExIdx(nextIdx);
+        setActiveSetIdx(0);
+        prefillInputs(exercises[nextIdx], 0);
+      }
     }
   }, [workout, activeExIdx, prefillInputs, storage]);
 

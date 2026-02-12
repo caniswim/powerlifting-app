@@ -159,7 +159,7 @@ export function useSetCompletion(
       setTimeout(() => setPrFlash(null), 3000);
     }
 
-    const allDone = exercises.every((ex) => ex.sets.every((s) => s.completed));
+    const allDone = exercises.every((ex) => ex.skipped || ex.sets.every((s) => s.completed));
     if (allDone) {
       updatedWorkout.completed = true;
       updatedWorkout.completedAt = new Date().toISOString();
@@ -172,10 +172,13 @@ export function useSetCompletion(
     if (activeSetIdx < sets.length - 1) {
       setActiveSetIdx(activeSetIdx + 1);
       prefillInputs(exercise, activeSetIdx + 1);
-    } else if (activeExIdx < exercises.length - 1) {
-      setActiveExIdx(activeExIdx + 1);
-      setActiveSetIdx(0);
-      prefillInputs(exercises[activeExIdx + 1], 0);
+    } else {
+      const nextIdx = exercises.findIndex((ex, i) => i > activeExIdx && !ex.skipped && ex.sets.some((s) => !s.completed));
+      if (nextIdx >= 0) {
+        setActiveExIdx(nextIdx);
+        setActiveSetIdx(0);
+        prefillInputs(exercises[nextIdx], 0);
+      }
     }
   }, [workout, activeExIdx, activeSetIdx, inputWeight, inputReps, inputRPE, setWorkout, setActiveExIdx, setActiveSetIdx, prefillInputs, storage]);
 
