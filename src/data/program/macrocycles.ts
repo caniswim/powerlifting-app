@@ -104,7 +104,7 @@ export function accBenchVolDay(weekIdx: number, opts?: {
   const varSets = o.variationSets ?? volScale4(3, weekIdx);
   const varReps = o.variationReps ?? '6-8';
   const varRpe = o.variationRpe ?? '7-8';
-  const dbId = o.dbPressId ?? 'db_press_flat';
+  const dbId = o.dbPressId ?? 'floor_press';
   const rowId = o.rowId ?? 'remada_apoio_peito';
   const rowSets = o.rowSets ?? volScale4(3, weekIdx);
   const triId = o.tricepsId ?? 'triceps_frances';
@@ -154,7 +154,7 @@ export function deloadDeadliftDay(): PrescribedDay {
 export function deloadBenchVolDay(): PrescribedDay {
   return day('bench_volume', 'Upper: Bench Volume (Deload)', [
     ex('close_grip_bench', 2, '6', '5-6'),
-    ex('db_press_flat', 2, '8', '5-6'),
+    ex('floor_press', 2, '8', '5-6'),
     ex('remada_apoio_peito', 2, '10', '5-6'),
     ex('elevacao_lateral', 2, '12', '5-6'),
     ex('triceps_frances', 2, '10', '5-6'),
@@ -364,7 +364,7 @@ export function buildMac1(): PrescribedWeek[] {
         ]),
         day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, isTestWeek ? '3-5' : '4-6', isTestWeek ? '8' : '7-8'),
-          ex('db_press_flat', 3, '8-10', '8'),
+          ex('floor_press', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '10-12', '8'),
           ex('elevacao_lateral', 3, '12-15', '8'),
           ex('triceps_frances', 3, '10-15', '8'),
@@ -430,7 +430,7 @@ export function buildMac2(): PrescribedWeek[] {
         ]),
         day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', volScale4(3, i), '5-7', '7-8'),
-          ex('db_press_flat', 3, '8-10', '8'),
+          ex('floor_press', 3, '8-10', '8'),
           ex('remada_apoio_peito', volScale4(3, i), '10-12', '8'),
           ex('elevacao_lateral', volScale4(3, i), '12-15', '8'),
           ex('triceps_frances', volScale4(3, i), '10-15', '8'),
@@ -488,7 +488,7 @@ export function buildMac2(): PrescribedWeek[] {
         ]),
         day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, '4-6', '7-8'),
-          ex('db_press_flat', 3, '8-10', '8'),
+          ex('floor_press', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '8'),
           ex('elevacao_lateral', 3, '12-15', '8'),
           ex('triceps_frances', 3, '10-12', '8'),
@@ -548,7 +548,7 @@ export function buildMac2(): PrescribedWeek[] {
         ]),
         day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, '3-5', '7-8'),
-          ex('db_press_flat', 3, '8-10', '8'),
+          ex('floor_press', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '7-8'),
           ex('elevacao_lateral', 3, '12-15', '8'),
           ex('triceps_frances', 3, '10-15', '8'),
@@ -676,7 +676,7 @@ export function buildMac3(): PrescribedWeek[] {
           variationId: 'larsen_press',
           variationSets: volScale4(3, i),
           variationReps: '6-8',
-          dbPressId: 'db_press_flat',
+          dbPressId: 'floor_press',
           rowId: 'remada_apoio_peito',
           rowSets: volScale4(3, i),
           tricepsId: 'triceps_testa',
@@ -735,7 +735,7 @@ export function buildMac3(): PrescribedWeek[] {
         ]),
         day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, '4-6', '7-8'),
-          ex('db_press_flat', 3, '8-10', '8'),
+          ex('floor_press', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '8'),
           ex('elevacao_lateral', 3, '12-15', '8'),
           ex('triceps_pulley', 3, '10-12', '8'),
@@ -796,7 +796,7 @@ export function buildMac4(): PrescribedWeek[] {
         ]),
         day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, '4-6', '7-8'),
-          ex('db_press_flat', 3, '8-10', '8'),
+          ex('floor_press', 3, '8-10', '8'),
           ex('remada_apoio_peito', 3, '8-10', '8'),
           ex('elevacao_lateral', 3, '12-15', '8'),
           ex('triceps_frances', 3, '10-12', '8'),
@@ -850,7 +850,7 @@ export function buildMac4(): PrescribedWeek[] {
         ]),
         day('bench_volume', 'Upper: Bench Volume', [
           ex('close_grip_bench', 3, '3-5', '7-8'),
-          ex('db_press_flat', 3, '8-10', '7-8'),
+          ex('floor_press', 3, '8-10', '7-8'),
           ex('remada_apoio_peito', 3, '8-10', '7'),
           ex('elevacao_lateral', 3, '12-15', '8'),
           ex('triceps_frances', 3, '10-15', '8'),
@@ -900,7 +900,7 @@ export function buildMac4(): PrescribedWeek[] {
       ]),
       day('bench_volume', 'Upper: Bench Volume', [
         ex('close_grip_bench', 2, '3', '7'),
-        ex('db_press_flat', 2, '8', '7'),
+        ex('floor_press', 2, '8', '7'),
         ex('remada_apoio_peito', 2, '8', '7'),
       ]),
       day('arms_shoulders', 'Mini: Arms & Shoulders B', [
@@ -934,7 +934,7 @@ export function buildMac4(): PrescribedWeek[] {
         ex('deadlift_sumo', 5, '1', '10', '1RM Test: aquecer progressivamente até máximo'),
       ]),
       day('bench_volume', 'Upper: Recovery', [
-        ex('db_press_flat', 2, '8', '6', 'Recuperação leve'),
+        ex('floor_press', 2, '8', '6', 'Recuperação leve'),
         ex('remada_apoio_peito', 2, '8', '6'),
         ex('face_pull', 2, '15', '6'),
       ]),

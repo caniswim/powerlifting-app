@@ -14,7 +14,7 @@ registerExercise({ id: 'close_grip_bench', name: 'Close-Grip Bench', equipment: 
 registerExercise({ id: 'larsen_press', name: 'Larsen Press', equipment: 'barbell', muscleMap: { peito: 1.0, 'deltóide_anterior': 0.5, 'tríceps': 0.5 } });
 registerExercise({ id: 'pin_press', name: 'Pin Press', equipment: 'barbell', muscleMap: { peito: 0.5, 'tríceps': 1.0 } });
 registerExercise({ id: 'db_press_inclinado', name: 'DB Press Inclinado', equipment: 'dumbbell', muscleMap: { peito: 1.0, 'deltóide_anterior': 0.5, 'tríceps': 0.5 } });
-registerExercise({ id: 'db_press_flat', name: 'DB Press Flat', equipment: 'dumbbell', muscleMap: { peito: 1.0, 'tríceps': 0.5 } });
+registerExercise({ id: 'floor_press', name: 'Floor Press', equipment: 'barbell', muscleMap: { peito: 1.0, 'tríceps': 0.75 } });
 registerExercise({ id: 'remada_barra', name: 'Remada com Barra', equipment: 'barbell', muscleMap: { costas: 1.0, 'bíceps': 0.5 } });
 registerExercise({ id: 'remada_apoio_peito', name: 'Remada Apoio Peito', equipment: 'barbell', muscleMap: { costas: 1.0, 'bíceps': 0.5 } });
 registerExercise({ id: 'face_pull', name: 'Face Pull', equipment: 'machine', muscleMap: { 'deltóide_posterior': 1.0 } });
