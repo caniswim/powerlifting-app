@@ -1,8 +1,9 @@
 import { useState, useCallback, useMemo } from 'react';
-import { estimateE1RMWeighted, suggestWeight, calculateAutoregulationFactor } from '../../../utils/calculations';
-import type { LoadSuggestion, ReadinessFactors } from '../../../utils/calculations';
+import { estimateE1RMWeighted, suggestWeight, getReadinessRecommendation } from '../../../utils/calculations';
+import type { LoadSuggestion, ReadinessRecommendation } from '../../../utils/calculations';
 import { useStorage } from '../../../contexts/StorageContext';
 import { exerciseEquipment, equipmentIncrement } from '../../../data/exerciseMuscleMap';
+import { useSurveyTrends } from '../../feedback/hooks/useSurveyTrends';
 import type { ExerciseLog } from '../../../types';
 
 export interface LoadSuggestionState {
@@ -10,9 +11,7 @@ export interface LoadSuggestionState {
   inputReps: number;
   inputRPE: number;
   suggestion: LoadSuggestion | null;
-  autoregFactor: number | null;
-  autoregLevel: string | null;
-  autoregRecommendation: string | null;
+  readinessRec: ReadinessRecommendation | null;
   setInputWeight: (w: number) => void;
   setInputReps: (r: number) => void;
   setInputRPE: (rpe: number) => void;
@@ -21,27 +20,20 @@ export interface LoadSuggestionState {
 
 export function useLoadSuggestion(): LoadSuggestionState {
   const storage = useStorage();
+  const trends = useSurveyTrends();
 
   const [inputWeight, setInputWeight] = useState(0);
   const [inputReps, setInputReps] = useState(0);
   const [inputRPE, setInputRPE] = useState(7);
   const [suggestion, setSuggestion] = useState<LoadSuggestion | null>(null);
 
-  // Calculate autoregulation factor from latest pre-workout survey
-  const autoregData = useMemo(() => {
-    const surveys = storage.getRecentPreSurveys(3);
-    if (surveys.length === 0) return null;
-    const latest = surveys[0];
-    const factors: ReadinessFactors = {
-      sleepQuality: latest.sleepQuality,
-      sleepHours: latest.sleepHours,
-      energyLevel: latest.energyLevel,
-      stressLevel: latest.stressLevel,
-      motivation: latest.motivation,
-      hasPain: latest.hasPain,
-    };
-    return calculateAutoregulationFactor(factors);
-  }, [storage]);
+  // Readiness recommendation from survey data (display only — does NOT change weights)
+  const readinessRec = useMemo(() => {
+    if (!trends.hasSurveyData) return null;
+    const latestPreSurveys = storage.getRecentPreSurveys(1);
+    const hasPain = latestPreSurveys.length > 0 && latestPreSurveys[0].hasPain;
+    return getReadinessRecommendation(trends.readinessScore, hasPain);
+  }, [trends, storage]);
 
   const prefillInputs = useCallback((exercise: ExerciseLog, setIdx: number) => {
     const repRange = exercise.prescribedReps.split('-');
@@ -60,18 +52,13 @@ export function useLoadSuggestion(): LoadSuggestionState {
       return;
     }
 
-    // Set 1: smart suggestion from e1RM back-calculation
+    // Set 1: smart suggestion from e1RM back-calculation (NO autoregulation adjustment)
     const performances = storage.getRecentPerformances(exercise.exerciseId, 3);
     if (performances.length > 0) {
       const estimatedE1RM = estimateE1RMWeighted(performances);
       const equipment = exerciseEquipment[exercise.exerciseId] || 'barbell';
       const increment = equipmentIncrement[equipment];
-
-      // Apply autoregulation factor if available
-      const factor = autoregData?.factor ?? 1;
-      const adjustedE1RM = estimatedE1RM * factor;
-
-      const suggested = suggestWeight(adjustedE1RM, targetReps, targetRPE, increment);
+      const suggested = suggestWeight(estimatedE1RM, targetReps, targetRPE, increment);
 
       if (suggested > 0) {
         setInputWeight(suggested);
@@ -87,16 +74,14 @@ export function useLoadSuggestion(): LoadSuggestionState {
     // Fallback: no history
     setInputWeight(0);
     setSuggestion(null);
-  }, [storage, autoregData]);
+  }, [storage]);
 
   return {
     inputWeight,
     inputReps,
     inputRPE,
     suggestion,
-    autoregFactor: autoregData?.factor ?? null,
-    autoregLevel: autoregData?.level ?? null,
-    autoregRecommendation: autoregData?.recommendation ?? null,
+    readinessRec,
     setInputWeight,
     setInputReps,
     setInputRPE,

@@ -1,8 +1,15 @@
 import { getRPEColor, getRIRText } from '../../../domain/rpe';
-import type { LoadSuggestion } from '../../../utils/calculations';
+import type { LoadSuggestion, ReadinessRecommendation } from '../../../utils/calculations';
 import type { ExerciseLog, PersonalRecord } from '../../../types';
 
 const RPE_VALUES = [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10];
+
+const readinessColors: Record<string, string> = {
+  high: 'bg-accent-green/10 border-accent-green/30 text-accent-green',
+  normal: 'bg-bg-tertiary border-border text-text-muted',
+  reduced: 'bg-accent-gold/10 border-accent-gold/30 text-accent-gold',
+  low: 'bg-accent-red/10 border-accent-red/30 text-accent-red',
+};
 
 interface SetInputFormProps {
   exercise: ExerciseLog;
@@ -14,8 +21,7 @@ interface SetInputFormProps {
   currentE1RM: number;
   currentRecord: PersonalRecord | null;
   wouldBePR: boolean;
-  autoregLevel?: string | null;
-  autoregFactor?: number | null;
+  readinessRec?: ReadinessRecommendation | null;
   onWeightChange: (w: number) => void;
   onRepsChange: (r: number) => void;
   onRPEChange: (rpe: number) => void;
@@ -32,8 +38,7 @@ export function SetInputForm({
   currentE1RM,
   currentRecord,
   wouldBePR,
-  autoregLevel,
-  autoregFactor,
+  readinessRec,
   onWeightChange,
   onRepsChange,
   onRPEChange,
@@ -65,6 +70,18 @@ export function SetInputForm({
           </div>
         )}
       </div>
+
+      {/* Readiness banner — transparent, shown only on first set, only when not 'normal' */}
+      {readinessRec && readinessRec.level !== 'normal' && activeSetIdx === 0 && (
+        <div className={`rounded-md border px-3 py-2 ${readinessColors[readinessRec.level]}`}>
+          <div className="text-[10px] font-display font-semibold tracking-wider uppercase">
+            Prontidão {readinessRec.label}
+          </div>
+          <div className="text-xs font-display mt-0.5 opacity-90">
+            {readinessRec.loadGuidance}
+          </div>
+        </div>
+      )}
 
       {/* Set indicators */}
       <div className="flex gap-1.5">
@@ -98,25 +115,12 @@ export function SetInputForm({
               <label className="text-xs font-display font-semibold tracking-wider uppercase text-text-muted">
                 PESO (KG)
               </label>
-              <div className="flex items-center gap-2">
-                {autoregLevel && autoregFactor && autoregFactor !== 1 && activeSetIdx === 0 && (
-                  <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${
-                    autoregLevel === 'optimal' ? 'bg-accent-gold/15 text-accent-gold' :
-                    autoregLevel === 'good' ? 'bg-accent-green/15 text-accent-green' :
-                    autoregLevel === 'moderate' ? 'bg-accent-blue/15 text-accent-blue' :
-                    autoregLevel === 'low' ? 'bg-accent-purple/15 text-accent-purple' :
-                    'bg-accent-red/15 text-accent-red'
-                  }`}>
-                    AUTO {autoregFactor > 1 ? '+' : ''}{((autoregFactor - 1) * 100).toFixed(0)}%
-                  </span>
-                )}
-                {suggestion && activeSetIdx === 0 && (
-                  <span className="text-[10px] font-mono text-accent-blue">
-                    e1RM {suggestion.basedOnE1RM} · {suggestion.sessionsUsed}
-                    {suggestion.sessionsUsed === 1 ? ' sessão' : ' sessões'}
-                  </span>
-                )}
-              </div>
+              {suggestion && activeSetIdx === 0 && (
+                <span className="text-[10px] font-mono text-accent-blue">
+                  e1RM {suggestion.basedOnE1RM} · {suggestion.sessionsUsed}
+                  {suggestion.sessionsUsed === 1 ? ' sessão' : ' sessões'}
+                </span>
+              )}
             </div>
             <div className="flex items-center gap-2">
               <button

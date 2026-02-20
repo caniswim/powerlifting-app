@@ -153,45 +153,73 @@ export function getStrengthClassColor(cls: StrengthClass): string {
   }
 }
 
-// ─── Autoregulation: Load Adjustment Factor ────────────────────────
-export interface ReadinessFactors {
-  sleepQuality: number;   // 1-10
-  sleepHours: number;     // 0-14
-  energyLevel: number;    // 1-10
-  stressLevel: number;    // 1-10
-  motivation: number;     // 1-10
-  hasPain: boolean;
+// ─── Readiness-Based Training Recommendations ─────────────────────
+// Uses the readinessScore (0-10) from useSurveyTrends as single source of truth.
+// NOT used to silently adjust loads — presented as transparent recommendation.
+//
+// Evidence basis:
+// - Subjective wellness questionnaires correlate with training performance
+//   (Saw et al., 2016, Sports Medicine)
+// - RPE-based autoregulation improves outcomes vs fixed programming
+//   (Helms et al., 2018, JSCR; Zourdos et al., 2016, JSCR)
+// - Sleep restriction impairs strength performance ~5-10%
+//   (Knowles et al., 2018, Sports Medicine)
+
+export type ReadinessLevel = 'high' | 'normal' | 'reduced' | 'low';
+
+export interface ReadinessRecommendation {
+  level: ReadinessLevel;
+  label: string;
+  loadGuidance: string;       // what to tell the athlete
+  volumeGuidance: string;
+  rpeAdjustment: number;      // suggested RPE shift (for display only)
+  rationale: string;          // brief scientific rationale
 }
 
-export function calculateAutoregulationFactor(factors: ReadinessFactors): {
-  factor: number;           // 0.80 - 1.05 multiplier
-  rpeAdjustment: number;    // -1.5 to +0.5
-  recommendation: string;
-  level: 'optimal' | 'good' | 'moderate' | 'low' | 'critical';
-} {
-  const readiness =
-    factors.sleepQuality * 0.25 +
-    factors.energyLevel * 0.25 +
-    factors.motivation * 0.15 +
-    (10 - factors.stressLevel) * 0.20 +
-    Math.min(factors.sleepHours / 8, 1) * 10 * 0.15;
+export function getReadinessRecommendation(readinessScore: number, hasPain: boolean): ReadinessRecommendation {
+  // Pain overrides: any active pain → always reduce
+  if (hasPain && readinessScore > 5) {
+    readinessScore = Math.min(readinessScore, 5);
+  }
 
-  const painPenalty = factors.hasPain ? 0.8 : 0;
-  const adjustedReadiness = Math.max(0, readiness - painPenalty);
-
-  if (adjustedReadiness >= 8.5) {
-    return { factor: 1.03, rpeAdjustment: 0.5, recommendation: 'Dia excelente. Pode buscar PRs.', level: 'optimal' };
+  if (readinessScore >= 8) {
+    return {
+      level: 'high',
+      label: 'ALTA',
+      loadGuidance: 'Mantenha ou avance conforme prescrição. Condições favoráveis para PRs se o programa permite.',
+      volumeGuidance: 'Volume prescrito. Pode adicionar 1 série de back-off se recuperação estiver boa.',
+      rpeAdjustment: 0,
+      rationale: 'Sono, energia e recuperação acima da média. Performance esperada próxima do pico.',
+    };
   }
-  if (adjustedReadiness >= 7) {
-    return { factor: 1.0, rpeAdjustment: 0, recommendation: 'Prontidão boa. Siga o plano normalmente.', level: 'good' };
+  if (readinessScore >= 6) {
+    return {
+      level: 'normal',
+      label: 'NORMAL',
+      loadGuidance: 'Siga o plano como prescrito. Sem necessidade de ajuste.',
+      volumeGuidance: 'Volume prescrito normalmente.',
+      rpeAdjustment: 0,
+      rationale: 'Indicadores dentro do normal. A maioria dos treinos devem ocorrer nesta faixa.',
+    };
   }
-  if (adjustedReadiness >= 5.5) {
-    return { factor: 0.95, rpeAdjustment: -0.5, recommendation: 'Prontidão moderada. Reduza 5% da carga e RPE.', level: 'moderate' };
+  if (readinessScore >= 4) {
+    return {
+      level: 'reduced',
+      label: 'REDUZIDA',
+      loadGuidance: 'Considere reduzir RPE alvo em 0.5-1 ponto. Mantenha técnica como prioridade.',
+      volumeGuidance: 'Reduza 1-2 séries dos exercícios principais. Mantenha acessórios leves.',
+      rpeAdjustment: -0.5,
+      rationale: 'Sono ou estresse comprometidos. Evidência sugere ~5% de queda na performance (Knowles et al., 2018).',
+    };
   }
-  if (adjustedReadiness >= 4) {
-    return { factor: 0.90, rpeAdjustment: -1.0, recommendation: 'Prontidão baixa. Reduza 10% e foque em técnica.', level: 'low' };
-  }
-  return { factor: 0.82, rpeAdjustment: -1.5, recommendation: 'Considere um dia de recuperação ativa ou descanso.', level: 'critical' };
+  return {
+    level: 'low',
+    label: 'BAIXA',
+    loadGuidance: 'Reduza RPE alvo em 1 ponto. Foque em movimento e técnica, não em números.',
+    volumeGuidance: 'Reduza volume em 30-50%. Considere recuperação ativa se persistir por 3+ dias.',
+    rpeAdjustment: -1,
+    rationale: 'Múltiplos indicadores comprometidos. Forçar carga com recuperação ruim aumenta risco de lesão e prejudica adaptação (Saw et al., 2016).',
+  };
 }
 
 // ─── Competition Attempt Selection ─────────────────────────────────
