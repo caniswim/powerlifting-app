@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useStorage } from '../contexts/StorageContext';
 import { getSessionData, getNextTrainingDate, shouldShowRestWarning, DAYS_PER_WEEK, TOTAL_SESSIONS } from '../data/programData';
-import { calculateDOTS } from '../utils/calculations';
+import { calculateDOTS, getStrengthClass, getStrengthClassColor } from '../utils/calculations';
+import { compareToWorldRecord } from '../data/worldRecords';
 import { exerciseNames } from '../data/exerciseMuscleMap';
 import type { AthleteProfile, PersonalRecord, PrescribedWeek, PrescribedDay } from '../types';
-import { Zap, Battery, Check, Circle, Minus } from 'lucide-react';
+import { Zap, Battery, Check, Circle, Minus, Trophy } from 'lucide-react';
 import { dayTypeShortLabels } from '../domain/dayTypeLabels';
 import { blockTypeLabels, blockTypeBadgeClass } from '../domain/blockTypeConfig';
 import { useSurveyTrends } from '../features/feedback/hooks/useSurveyTrends';
@@ -208,6 +209,43 @@ export default function Dashboard() {
           </div>
         </div>
 
+        {/* Strength Classification + World Record */}
+        {profile.total > 0 && (() => {
+          const strengthClass = getStrengthClass(profile.dots);
+          const classColor = getStrengthClassColor(strengthClass);
+          const comparison = compareToWorldRecord(profile.bodyweight, profile.squat1RM, profile.bench1RM, profile.deadlift1RM);
+          return (
+            <Link to="/performance" className="block">
+              <div className="bg-bg-card border border-border rounded-lg p-4 space-y-2">
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-2">
+                    <Trophy size={14} className={classColor} />
+                    <span className={`text-sm font-display font-bold uppercase tracking-wider ${classColor}`}>
+                      {strengthClass}
+                    </span>
+                  </div>
+                  {comparison && (
+                    <span className="text-xs font-mono text-text-muted">
+                      {comparison.total.percentage}% do WR ({comparison.weightClass})
+                    </span>
+                  )}
+                </div>
+                {comparison && (
+                  <div className="h-1.5 bg-bg-tertiary rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-accent-green via-accent-blue to-accent-gold rounded-full transition-all duration-700"
+                      style={{ width: `${Math.min(comparison.total.percentage, 100)}%` }}
+                    />
+                  </div>
+                )}
+                <div className="text-[10px] text-text-muted font-display">
+                  Toque para ver scores detalhados, recordes mundiais e preparação
+                </div>
+              </div>
+            </Link>
+          );
+        })()}
+
         {/* Next Workout Card */}
         {!programComplete && nextSession ? (
           <div className="bg-bg-card border border-border rounded-lg p-4 space-y-3">
@@ -361,6 +399,19 @@ export default function Dashboard() {
             </p>
           </div>
         )}
+
+        {/* Quick Link to Analytics */}
+        <Link
+          to="/analytics"
+          className="block bg-bg-card border border-border rounded-lg p-4 hover:border-accent-gold/30 transition-colors"
+        >
+          <div className="flex justify-between items-center">
+            <div className="text-xs font-display font-semibold tracking-wider uppercase text-text-muted">
+              ANALYTICS DETALHADO
+            </div>
+            <span className="text-xs font-display text-accent-gold">Ver gráficos →</span>
+          </div>
+        </Link>
       </div>
     </div>
   );

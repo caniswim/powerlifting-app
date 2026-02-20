@@ -27,6 +27,7 @@ export default function Workout() {
   const {
     inputWeight, inputReps, inputRPE,
     suggestion,
+    autoregFactor, autoregLevel,
     setInputWeight, setInputReps, setInputRPE,
     prefillInputs,
   } = loadSuggestion;
@@ -239,6 +240,8 @@ export default function Workout() {
               currentE1RM={currentE1RM}
               currentRecord={currentRecord}
               wouldBePR={wouldBePR}
+              autoregLevel={autoregLevel}
+              autoregFactor={autoregFactor}
               onWeightChange={setInputWeight}
               onRepsChange={setInputReps}
               onRPEChange={setInputRPE}

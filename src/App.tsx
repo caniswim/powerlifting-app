@@ -1,19 +1,20 @@
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
-import { Home, Dumbbell, CalendarDays, BarChart3, Settings2 } from 'lucide-react'
+import { Home, Dumbbell, CalendarDays, Trophy, Settings2 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 const Dashboard = lazy(() => import('./pages/Dashboard'))
 const Workout = lazy(() => import('./pages/Workout'))
 const Calendar = lazy(() => import('./pages/Calendar'))
 const Analytics = lazy(() => import('./pages/Analytics'))
+const Performance = lazy(() => import('./pages/Performance'))
 const Settings = lazy(() => import('./pages/Settings'))
 
 const navItems: { path: string; label: string; icon: LucideIcon }[] = [
   { path: '/', label: 'HOME', icon: Home },
   { path: '/workout', label: 'TREINO', icon: Dumbbell },
+  { path: '/performance', label: 'PERF', icon: Trophy },
   { path: '/calendar', label: 'PLANO', icon: CalendarDays },
-  { path: '/analytics', label: 'DADOS', icon: BarChart3 },
   { path: '/settings', label: 'CONFIG', icon: Settings2 },
 ]
 
@@ -38,6 +39,7 @@ function App() {
             <Route path="/workout" element={<Workout />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/analytics" element={<Analytics />} />
+            <Route path="/performance" element={<Performance />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
         </Suspense>

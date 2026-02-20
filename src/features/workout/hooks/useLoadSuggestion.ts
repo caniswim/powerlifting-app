@@ -1,6 +1,6 @@
-import { useState, useCallback } from 'react';
-import { estimateE1RMWeighted, suggestWeight } from '../../../utils/calculations';
-import type { LoadSuggestion } from '../../../utils/calculations';
+import { useState, useCallback, useMemo } from 'react';
+import { estimateE1RMWeighted, suggestWeight, calculateAutoregulationFactor } from '../../../utils/calculations';
+import type { LoadSuggestion, ReadinessFactors } from '../../../utils/calculations';
 import { useStorage } from '../../../contexts/StorageContext';
 import { exerciseEquipment, equipmentIncrement } from '../../../data/exerciseMuscleMap';
 import type { ExerciseLog } from '../../../types';
@@ -10,6 +10,9 @@ export interface LoadSuggestionState {
   inputReps: number;
   inputRPE: number;
   suggestion: LoadSuggestion | null;
+  autoregFactor: number | null;
+  autoregLevel: string | null;
+  autoregRecommendation: string | null;
   setInputWeight: (w: number) => void;
   setInputReps: (r: number) => void;
   setInputRPE: (rpe: number) => void;
@@ -23,6 +26,22 @@ export function useLoadSuggestion(): LoadSuggestionState {
   const [inputReps, setInputReps] = useState(0);
   const [inputRPE, setInputRPE] = useState(7);
   const [suggestion, setSuggestion] = useState<LoadSuggestion | null>(null);
+
+  // Calculate autoregulation factor from latest pre-workout survey
+  const autoregData = useMemo(() => {
+    const surveys = storage.getRecentPreSurveys(3);
+    if (surveys.length === 0) return null;
+    const latest = surveys[0];
+    const factors: ReadinessFactors = {
+      sleepQuality: latest.sleepQuality,
+      sleepHours: latest.sleepHours,
+      energyLevel: latest.energyLevel,
+      stressLevel: latest.stressLevel,
+      motivation: latest.motivation,
+      hasPain: latest.hasPain,
+    };
+    return calculateAutoregulationFactor(factors);
+  }, [storage]);
 
   const prefillInputs = useCallback((exercise: ExerciseLog, setIdx: number) => {
     const repRange = exercise.prescribedReps.split('-');
@@ -47,7 +66,12 @@ export function useLoadSuggestion(): LoadSuggestionState {
       const estimatedE1RM = estimateE1RMWeighted(performances);
       const equipment = exerciseEquipment[exercise.exerciseId] || 'barbell';
       const increment = equipmentIncrement[equipment];
-      const suggested = suggestWeight(estimatedE1RM, targetReps, targetRPE, increment);
+
+      // Apply autoregulation factor if available
+      const factor = autoregData?.factor ?? 1;
+      const adjustedE1RM = estimatedE1RM * factor;
+
+      const suggested = suggestWeight(adjustedE1RM, targetReps, targetRPE, increment);
 
       if (suggested > 0) {
         setInputWeight(suggested);
@@ -63,13 +87,16 @@ export function useLoadSuggestion(): LoadSuggestionState {
     // Fallback: no history
     setInputWeight(0);
     setSuggestion(null);
-  }, [storage]);
+  }, [storage, autoregData]);
 
   return {
     inputWeight,
     inputReps,
     inputRPE,
     suggestion,
+    autoregFactor: autoregData?.factor ?? null,
+    autoregLevel: autoregData?.level ?? null,
+    autoregRecommendation: autoregData?.recommendation ?? null,
     setInputWeight,
     setInputReps,
     setInputRPE,

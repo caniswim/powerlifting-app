@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
-import { calculateDOTS } from '../utils/calculations';
+import { calculateDOTS, calculateWilks2, calculateIPFGL, getStrengthClass, getStrengthClassColor } from '../utils/calculations';
 import { useStorage } from '../contexts/StorageContext';
 import type { AthleteProfile } from '../types';
 import { DAYS_PER_WEEK, TOTAL_SESSIONS } from '../services/scheduling';
@@ -189,6 +189,30 @@ export default function Settings() {
               </span>
               <span className="text-lg font-mono font-bold text-accent-gold">
                 {profile.dots.toFixed(1)}
+              </span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-sm font-display text-text-secondary uppercase tracking-wider">
+                WILKS-2
+              </span>
+              <span className="text-lg font-mono font-bold text-accent-gold">
+                {calculateWilks2(profile.bodyweight, profile.total).toFixed(1)}
+              </span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-sm font-display text-text-secondary uppercase tracking-wider">
+                IPF GL
+              </span>
+              <span className="text-lg font-mono font-bold text-accent-gold">
+                {calculateIPFGL(profile.bodyweight, profile.total).toFixed(1)}
+              </span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-sm font-display text-text-secondary uppercase tracking-wider">
+                Classificação
+              </span>
+              <span className={`text-lg font-display font-bold uppercase tracking-wider ${getStrengthClassColor(getStrengthClass(profile.dots))}`}>
+                {getStrengthClass(profile.dots)}
               </span>
             </div>
           </div>

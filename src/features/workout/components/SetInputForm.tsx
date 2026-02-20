@@ -14,6 +14,8 @@ interface SetInputFormProps {
   currentE1RM: number;
   currentRecord: PersonalRecord | null;
   wouldBePR: boolean;
+  autoregLevel?: string | null;
+  autoregFactor?: number | null;
   onWeightChange: (w: number) => void;
   onRepsChange: (r: number) => void;
   onRPEChange: (rpe: number) => void;
@@ -30,6 +32,8 @@ export function SetInputForm({
   currentE1RM,
   currentRecord,
   wouldBePR,
+  autoregLevel,
+  autoregFactor,
   onWeightChange,
   onRepsChange,
   onRPEChange,
@@ -94,12 +98,25 @@ export function SetInputForm({
               <label className="text-xs font-display font-semibold tracking-wider uppercase text-text-muted">
                 PESO (KG)
               </label>
-              {suggestion && activeSetIdx === 0 && (
-                <span className="text-[10px] font-mono text-accent-blue">
-                  e1RM {suggestion.basedOnE1RM} · {suggestion.sessionsUsed}
-                  {suggestion.sessionsUsed === 1 ? ' sessão' : ' sessões'}
-                </span>
-              )}
+              <div className="flex items-center gap-2">
+                {autoregLevel && autoregFactor && autoregFactor !== 1 && activeSetIdx === 0 && (
+                  <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${
+                    autoregLevel === 'optimal' ? 'bg-accent-gold/15 text-accent-gold' :
+                    autoregLevel === 'good' ? 'bg-accent-green/15 text-accent-green' :
+                    autoregLevel === 'moderate' ? 'bg-accent-blue/15 text-accent-blue' :
+                    autoregLevel === 'low' ? 'bg-accent-purple/15 text-accent-purple' :
+                    'bg-accent-red/15 text-accent-red'
+                  }`}>
+                    AUTO {autoregFactor > 1 ? '+' : ''}{((autoregFactor - 1) * 100).toFixed(0)}%
+                  </span>
+                )}
+                {suggestion && activeSetIdx === 0 && (
+                  <span className="text-[10px] font-mono text-accent-blue">
+                    e1RM {suggestion.basedOnE1RM} · {suggestion.sessionsUsed}
+                    {suggestion.sessionsUsed === 1 ? ' sessão' : ' sessões'}
+                  </span>
+                )}
+              </div>
             </div>
             <div className="flex items-center gap-2">
               <button
