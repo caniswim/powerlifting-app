@@ -5,7 +5,7 @@ import { useStorage } from '../contexts/StorageContext';
 import type { AthleteProfile } from '../types';
 import { DAYS_PER_WEEK, TOTAL_SESSIONS } from '../services/scheduling';
 
-const APP_VERSION = '1.2.1';
+const APP_VERSION = '1.2.2';
 
 export default function Settings() {
   const storage = useStorage();
