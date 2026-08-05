@@ -1,7 +1,16 @@
 import { useState, useCallback } from 'react';
 import { calculateE1RM } from '../../../utils/calculations';
 import { useStorage } from '../../../contexts/StorageContext';
-import type { WorkoutLog } from '../../../types';
+import { isExerciseDone } from './useWorkoutSession';
+import type { ExerciseLog, SetLog, SetSegmentLog, WorkoutLog } from '../../../types';
+
+export interface SetInputValues {
+  weight: number;
+  reps: number;
+  rpe: number;
+  seconds: number;
+  segments: SetSegmentLog[];
+}
 
 export interface SetEditState {
   editingSet: { exIdx: number; setIdx: number } | null;
@@ -22,6 +31,53 @@ export interface SetCompletionActions {
   saveEditSet: () => void;
 }
 
+/** Aquecimento e isometria não entram no cálculo de e1RM nem geram PR. */
+function countsForE1RM(set: SetLog): boolean {
+  return set.setType !== 'warmup' && set.unit !== 'seconds';
+}
+
+/**
+ * Próxima posição a focar. Em superset (A1/A2), alterna entre os exercícios do
+ * grupo a cada série, como o programa prescreve — em vez de esgotar A1 antes
+ * de começar A2.
+ */
+function nextPosition(
+  exercises: ExerciseLog[],
+  exIdx: number,
+  setIdx: number,
+): { exIdx: number; setIdx: number } | null {
+  const current = exercises[exIdx];
+  const group = current.supersetGroup;
+
+  if (group) {
+    const partners = exercises
+      .map((ex, i) => ({ ex, i }))
+      .filter(({ ex }) => ex.supersetGroup === group && !ex.skipped);
+    const pos = partners.findIndex((p) => p.i === exIdx);
+
+    for (let step = 1; step <= partners.length; step++) {
+      const candidate = partners[(pos + step) % partners.length];
+      const nextSet = candidate.ex.sets.findIndex((s) => !s.completed);
+      if (nextSet >= 0) return { exIdx: candidate.i, setIdx: nextSet };
+    }
+  }
+
+  if (setIdx < current.sets.length - 1) {
+    const nextSet = current.sets.findIndex((s, i) => i > setIdx && !s.completed);
+    if (nextSet >= 0) return { exIdx, setIdx: nextSet };
+  }
+
+  const nextExIdx = exercises.findIndex(
+    (ex, i) => i > exIdx && !ex.skipped && ex.sets.some((s) => !s.completed),
+  );
+  if (nextExIdx >= 0) {
+    const nextSet = exercises[nextExIdx].sets.findIndex((s) => !s.completed);
+    return { exIdx: nextExIdx, setIdx: nextSet >= 0 ? nextSet : 0 };
+  }
+
+  return null;
+}
+
 export function useSetCompletion(
   workout: WorkoutLog | null,
   setWorkout: (w: WorkoutLog) => void,
@@ -29,16 +85,14 @@ export function useSetCompletion(
   activeSetIdx: number,
   setActiveExIdx: (i: number) => void,
   setActiveSetIdx: (i: number) => void,
-  inputWeight: number,
-  inputReps: number,
-  inputRPE: number,
-  prefillInputs: (exercise: WorkoutLog['exercises'][number], setIdx: number) => void,
+  input: SetInputValues,
+  prefillInputs: (exercise: ExerciseLog, setIdx: number) => void,
+  onSetCompleted?: (restSec: number) => void,
 ): SetCompletionActions {
   const storage = useStorage();
 
   const [prFlash, setPrFlash] = useState<string | null>(null);
 
-  // Edit modal state
   const [editingSet, setEditingSet] = useState<{ exIdx: number; setIdx: number } | null>(null);
   const [editWeight, setEditWeight] = useState(0);
   const [editReps, setEditReps] = useState(0);
@@ -61,12 +115,12 @@ export function useSetCompletion(
     if (!workout || !editingSet) return;
     const { exIdx, setIdx } = editingSet;
     const exerciseId = workout.exercises[exIdx].exerciseId;
-    const newE1rm = calculateE1RM(editWeight, editReps, editRPE);
 
-    const updatedWorkout = { ...workout };
-    const exercises = [...updatedWorkout.exercises];
+    const exercises = [...workout.exercises];
     const exercise = { ...exercises[exIdx] };
     const sets = [...exercise.sets];
+    const eligible = countsForE1RM(sets[setIdx]);
+    const newE1rm = eligible ? calculateE1RM(editWeight, editReps, editRPE) : 0;
 
     sets[setIdx] = {
       ...sets[setIdx],
@@ -79,26 +133,26 @@ export function useSetCompletion(
 
     exercise.sets = sets;
     exercises[exIdx] = exercise;
-    updatedWorkout.exercises = exercises;
+    const updatedWorkout: WorkoutLog = { ...workout, exercises };
 
     storage.saveWorkout(updatedWorkout);
     storage.recalculateRecord(exerciseId);
 
-    // Re-evaluate isPR flags for this exercise in current workout
+    // Reavalia as flags de PR deste exercício contra o resto do histórico.
     const otherWorkouts = storage.getWorkouts().filter((w) => w.id !== workout.id);
     let bestFromOthers = 0;
     for (const w of otherWorkouts) {
       for (const ex of w.exercises) {
         if (ex.exerciseId !== exerciseId) continue;
         for (const s of ex.sets) {
-          if (s.completed && s.e1rm > bestFromOthers) bestFromOthers = s.e1rm;
+          if (s.completed && countsForE1RM(s) && s.e1rm > bestFromOthers) bestFromOthers = s.e1rm;
         }
       }
     }
 
     let runningBest = bestFromOthers;
     for (let i = 0; i < sets.length; i++) {
-      if (!sets[i].completed) continue;
+      if (!sets[i].completed || !countsForE1RM(sets[i])) continue;
       if (sets[i].e1rm > runningBest) {
         sets[i] = { ...sets[i], isPR: true };
         runningBest = sets[i].e1rm;
@@ -109,10 +163,10 @@ export function useSetCompletion(
 
     exercise.sets = sets;
     exercises[exIdx] = exercise;
-    updatedWorkout.exercises = exercises;
+    const finalWorkout: WorkoutLog = { ...workout, exercises };
 
-    setWorkout(updatedWorkout);
-    storage.saveWorkout(updatedWorkout);
+    setWorkout(finalWorkout);
+    storage.saveWorkout(finalWorkout);
 
     if (sets[setIdx].isPR) {
       setPrFlash(exerciseId);
@@ -124,42 +178,59 @@ export function useSetCompletion(
 
   const completeSet = useCallback(() => {
     if (!workout) return;
-    const e1rm = calculateE1RM(inputWeight, inputReps, inputRPE);
-    const exerciseId = workout.exercises[activeExIdx].exerciseId;
-    const currentRecord = storage.getRecordForExercise(exerciseId);
-    const isPR = e1rm > (currentRecord?.e1rm || 0);
 
-    const updatedWorkout = { ...workout };
-    const exercises = [...updatedWorkout.exercises];
+    const exercises = [...workout.exercises];
     const exercise = { ...exercises[activeExIdx] };
     const sets = [...exercise.sets];
+    const previous = sets[activeSetIdx];
+    const exerciseId = exercise.exerciseId;
+
+    const hasSegments = input.segments.length > 0;
+    const isTimed = previous.unit === 'seconds';
+    // Em séries segmentadas (dropset, 21s, unilateral) as reps registradas são
+    // a soma das sub-séries; o detalhe fica em `segments`.
+    const reps = hasSegments
+      ? input.segments.reduce((sum, s) => sum + (s.reps || 0), 0)
+      : input.reps;
+    const seconds = hasSegments
+      ? input.segments.reduce((sum, s) => sum + (s.seconds || 0), 0)
+      : input.seconds;
+    const weight = hasSegments ? (input.segments[0]?.weight ?? input.weight) : input.weight;
+
+    const eligible = countsForE1RM(previous);
+    const e1rm = eligible ? calculateE1RM(weight, reps, input.rpe) : 0;
+    const currentRecord = storage.getRecordForExercise(exerciseId);
+    const isPR = eligible && e1rm > 0 && e1rm > (currentRecord?.e1rm || 0);
+
     sets[activeSetIdx] = {
-      setNumber: activeSetIdx + 1,
-      weight: inputWeight,
-      reps: inputReps,
-      rpe: inputRPE,
+      ...previous,
+      weight,
+      reps,
+      rpe: input.rpe,
       e1rm,
       completed: true,
       isPR,
+      ...(isTimed || seconds > 0 ? { durationSec: seconds } : {}),
+      ...(hasSegments ? { segments: input.segments } : {}),
     };
     exercise.sets = sets;
     exercises[activeExIdx] = exercise;
-    updatedWorkout.exercises = exercises;
+    const updatedWorkout: WorkoutLog = { ...workout, exercises };
 
-    if (isPR && inputWeight > 0) {
+    if (isPR && weight > 0) {
       storage.saveRecord({
         exerciseId,
         e1rm,
-        weight: inputWeight,
-        reps: inputReps,
-        rpe: inputRPE,
+        weight,
+        reps,
+        rpe: input.rpe,
         date: new Date().toISOString(),
       });
       setPrFlash(exerciseId);
       setTimeout(() => setPrFlash(null), 3000);
     }
 
-    const allDone = exercises.every((ex) => ex.skipped || ex.sets.every((s) => s.completed));
+    const allDone = exercises.every(isExerciseDone);
     if (allDone) {
       updatedWorkout.completed = true;
       updatedWorkout.completedAt = new Date().toISOString();
@@ -169,18 +240,19 @@ export function useSetCompletion(
     setWorkout(updatedWorkout);
     storage.saveWorkout(updatedWorkout);
 
-    if (activeSetIdx < sets.length - 1) {
-      setActiveSetIdx(activeSetIdx + 1);
-      prefillInputs(exercise, activeSetIdx + 1);
-    } else {
-      const nextIdx = exercises.findIndex((ex, i) => i > activeExIdx && !ex.skipped && ex.sets.some((s) => !s.completed));
-      if (nextIdx >= 0) {
-        setActiveExIdx(nextIdx);
-        setActiveSetIdx(0);
-        prefillInputs(exercises[nextIdx], 0);
+    if (!allDone) {
+      onSetCompleted?.(previous.prescribed?.restSec ?? exercise.restSec ?? 0);
+      const next = nextPosition(exercises, activeExIdx, activeSetIdx);
+      if (next) {
+        setActiveExIdx(next.exIdx);
+        setActiveSetIdx(next.setIdx);
+        prefillInputs(exercises[next.exIdx], next.setIdx);
       }
     }
-  }, [workout, activeExIdx, activeSetIdx, inputWeight, inputReps, inputRPE, setWorkout, setActiveExIdx, setActiveSetIdx, prefillInputs, storage]);
+  }, [
+    workout, activeExIdx, activeSetIdx, input,
+    setWorkout, setActiveExIdx, setActiveSetIdx, prefillInputs, storage, onSetCompleted,
+  ]);
 
   return {
     prFlash,

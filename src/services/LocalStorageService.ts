@@ -5,6 +5,7 @@ import {
   getRecords, saveRecord, getRecordForExercise, recalculateRecord,
   getProfile, saveProfile,
   getCurrentWeek, setCurrentWeek, getSessionIndex, setSessionIndex,
+  getActiveProgramId, setActiveProgramId, resetProgramPosition,
   exportAllData, importData, resetAllData,
   getPreSurveys, savePreSurvey, getPreSurveyForWorkout, getRecentPreSurveys,
   getPostSurveys, savePostSurvey, getPostSurveyForWorkout, getRecentPostSurveys,
@@ -29,6 +30,9 @@ export class LocalStorageService implements IStorageService {
   setCurrentWeek = setCurrentWeek;
   getSessionIndex = getSessionIndex;
   setSessionIndex = setSessionIndex;
+  getActiveProgramId = getActiveProgramId;
+  setActiveProgramId = setActiveProgramId;
+  resetProgramPosition = resetProgramPosition;
   exportAllData = exportAllData;
   importData = importData;
   resetAllData = resetAllData;

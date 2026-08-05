@@ -1,6 +1,6 @@
 import { requestPersistentStorage, readFromOPFS } from '../opfs';
 import { ALL_KEYS } from './core';
-import { ensureSessionIndexMigrated } from './sessionManager';
+import { runMigrations } from './sessionManager';
 
 export async function initStorage(): Promise<void> {
   await requestPersistentStorage();
@@ -23,5 +23,5 @@ export async function initStorage(): Promise<void> {
     }
   }
 
-  ensureSessionIndexMigrated();
+  runMigrations();
 }

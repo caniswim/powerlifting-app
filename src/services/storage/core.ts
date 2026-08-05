@@ -10,6 +10,12 @@ export const KEYS = {
   POST_SURVEYS: 'pl_post_surveys',
   AI_FEEDBACK: 'pl_ai_feedback',
   API_KEY: 'pl_api_key',
+  /** Id do programa ativo. */
+  ACTIVE_PROGRAM: 'pl_active_program',
+  /** Posição por programa: Record<programId, sessionIndex>. */
+  PROGRAM_PROGRESS: 'pl_program_progress',
+  /** Versão do formato dos dados persistidos. */
+  SCHEMA_VERSION: 'pl_schema_version',
 } as const;
 
 export const ALL_KEYS = Object.values(KEYS);

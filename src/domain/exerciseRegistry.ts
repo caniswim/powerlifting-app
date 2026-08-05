@@ -1,4 +1,4 @@
-import type { MuscleGroup } from '../types';
+import type { MuscleGroup, PercentRef, RepUnit } from '../types';
 
 export type EquipmentType = 'barbell' | 'machine' | 'dumbbell' | 'bodyweight';
 
@@ -7,6 +7,14 @@ export interface ExerciseDefinition {
   name: string;
   equipment: EquipmentType;
   muscleMap: Partial<Record<MuscleGroup, number>>;
+  /** Levantamento de referência quando o programa prescreve em %1RM. */
+  percentRef?: PercentRef;
+  /** Executado um lado de cada vez. */
+  unilateral?: boolean;
+  /** Medido em segundos (isometrias) em vez de repetições. */
+  unit?: RepUnit;
+  /** Peso corporal: permite registrar a série com carga 0 (ou carga adicional). */
+  bodyweightLoadable?: boolean;
 }
 
 const registry = new Map<string, ExerciseDefinition>();
@@ -49,6 +57,21 @@ export function getExerciseMuscleMapAll(): Record<string, Partial<Record<MuscleG
     result[id] = def.muscleMap;
   }
   return result;
+}
+
+export function getExerciseUnit(id: string): RepUnit {
+  return registry.get(id)?.unit ?? 'reps';
+}
+
+export function isUnilateral(id: string): boolean {
+  return registry.get(id)?.unilateral ?? false;
+}
+
+/** Exercícios sem carga externa obrigatória (peso corporal, isometrias). */
+export function allowsZeroLoad(id: string): boolean {
+  const def = registry.get(id);
+  if (!def) return false;
+  return def.bodyweightLoadable === true || def.equipment === 'bodyweight' || def.unit === 'seconds';
 }
 
 export function getEquipmentIncrement(equipment: EquipmentType): number {

@@ -24,7 +24,7 @@ export default function Analytics() {
 
   const e1rmData = useE1rmChartData(filteredWorkouts);
   const totalData = useEstimatedTotal(filteredWorkouts);
-  const { volumeChartData, latestWeekVolume, activeMuscles } = useVolumeChartData(filteredWorkouts);
+  const { volumeChartData, latestWeekVolume, latestWeekTargets, latestWeek, activeMuscles } = useVolumeChartData(filteredWorkouts);
   const prRows = usePRTableData(workouts, records);
 
   return (
@@ -53,7 +53,7 @@ export default function Analytics() {
             <E1rmChart data={e1rmData} />
             <TotalChart data={totalData} />
             <VolumeStackedChart data={volumeChartData} activeMuscles={activeMuscles} />
-            <VolumeTargetBars volumeData={latestWeekVolume} />
+            <VolumeTargetBars volumeData={latestWeekVolume} targets={latestWeekTargets} weekNumber={latestWeek} />
             <PRTable rows={prRows} />
           </>
         )}

@@ -7,6 +7,15 @@ export const dayTypeLabels: Record<DayType, string> = {
   deadlift_emphasis: 'LOWER — Deadlift Emphasis',
   bench_volume: 'UPPER — Bench Volume',
   arms_shoulders: 'MINI — Arms & Shoulders',
+  fb_strength: 'FULL BODY — Strength Focus',
+  fb_continued_a: 'FULL BODY — Continued',
+  fb_hypertrophy: 'FULL BODY — Hypertrophy Focus',
+  fb_continued_b: 'FULL BODY — Continued',
+  arms_hypertrophy: 'ARM & HYPERTROPHY DAY',
+  lower_body: 'LOWER BODY — Focus',
+  upper_body: 'UPPER BODY — Focus',
+  lower_body_continued: 'LOWER BODY — Continued',
+  upper_body_continued: 'UPPER BODY — Continued',
 };
 
 // Short labels for dashboard
@@ -16,6 +25,15 @@ export const dayTypeShortLabels: Record<DayType, string> = {
   deadlift_emphasis: 'LOWER — Deadlift',
   bench_volume: 'UPPER — Volume',
   arms_shoulders: 'MINI — Arms',
+  fb_strength: 'FULL — Strength',
+  fb_continued_a: 'FULL — Continued',
+  fb_hypertrophy: 'FULL — Hypertrophy',
+  fb_continued_b: 'FULL — Continued',
+  arms_hypertrophy: 'ARMS — Hypertrophy',
+  lower_body: 'LOWER — Focus',
+  upper_body: 'UPPER — Focus',
+  lower_body_continued: 'LOWER — Continued',
+  upper_body_continued: 'UPPER — Continued',
 };
 
 // Portuguese labels for calendar
@@ -25,4 +43,31 @@ export const dayTypePtLabels: Record<DayType, string> = {
   deadlift_emphasis: 'Ênfase Deadlift',
   bench_volume: 'Volume Supino',
   arms_shoulders: 'Braços & Ombros',
+  fb_strength: 'Corpo Inteiro — Força',
+  fb_continued_a: 'Corpo Inteiro — Continuação',
+  fb_hypertrophy: 'Corpo Inteiro — Hipertrofia',
+  fb_continued_b: 'Corpo Inteiro — Continuação',
+  arms_hypertrophy: 'Braços & Hipertrofia',
+  lower_body: 'Inferiores',
+  upper_body: 'Superiores',
+  lower_body_continued: 'Inferiores — Continuação',
+  upper_body_continued: 'Superiores — Continuação',
+};
+
+/** Sigla de 2-3 letras para grades compactas (Dashboard, Calendar). */
+export const dayTypeAbbrev: Record<DayType, string> = {
+  squat_emphasis: 'SQT',
+  bench_emphasis: 'BNC',
+  deadlift_emphasis: 'DLF',
+  bench_volume: 'VOL',
+  arms_shoulders: 'ARM',
+  fb_strength: 'FB1',
+  fb_continued_a: 'FB2',
+  fb_hypertrophy: 'FB3',
+  fb_continued_b: 'FB4',
+  arms_hypertrophy: 'ARM',
+  lower_body: 'LO1',
+  upper_body: 'UP1',
+  lower_body_continued: 'LO2',
+  upper_body_continued: 'UP2',
 };

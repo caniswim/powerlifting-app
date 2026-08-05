@@ -5,7 +5,7 @@ export interface IStorageService {
   getWorkouts(): WorkoutLog[];
   saveWorkout(workout: WorkoutLog): void;
   getWorkoutsByWeek(weekNumber: number): WorkoutLog[];
-  getLastCompletedWorkout(): { date: string; dayIndex: number } | null;
+  getLastCompletedWorkout(): { date: string; dayIndex: number; sessionIndex?: number; programId?: string } | null;
   getRecentPerformances(exerciseId: string, limit?: number): { weight: number; reps: number; rpe: number; e1rm: number; date: string }[];
   getLastWeightForExercise(exerciseId: string): number | null;
 
@@ -22,8 +22,11 @@ export interface IStorageService {
   // Session
   getCurrentWeek(): number;
   setCurrentWeek(week: number): void;
-  getSessionIndex(): number;
-  setSessionIndex(index: number): void;
+  getSessionIndex(programId?: string): number;
+  setSessionIndex(index: number, programId?: string): void;
+  getActiveProgramId(): string;
+  setActiveProgramId(programId: string): void;
+  resetProgramPosition(programId?: string): void;
 
   // Data Transfer
   exportAllData(): string;

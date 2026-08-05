@@ -1,53 +1,77 @@
-import type { PrescribedWeek, PrescribedDay } from '../types';
-import { programData } from '../data/program/index';
+import type { PrescribedWeek, ProgramSession, TrainingProgram } from '../types';
+import { getProgram } from '../data/program/programs';
 
-/** Days per week in the training cycle */
-export const DAYS_PER_WEEK = 6;
-export const TOTAL_SESSIONS = 312; // 52 weeks × 6 days
+/**
+ * O programa ativo define quantas sessões existem e quantos dias tem cada
+ * semana — o Powerbuilding 2.0 alterna semanas de 5 e de 4 dias, então a
+ * posição do atleta não pode ser derivada de uma constante de dias por semana.
+ * A ordem de execução é a lista achatada de dias na ordem do programa.
+ */
 
-/** Rest days required after each session within a 6-day cycle (0-indexed dayIndex) */
-export const REST_DAYS_AFTER: Record<number, number> = {
-  0: 0, // Mon: After Squat -> Tue (train tomorrow)
-  1: 0, // Tue: After Bench -> Wed (train tomorrow)
-  2: 0, // Wed: After Arms A -> Thu (train tomorrow)
-  3: 0, // Thu: After Deadlift -> Fri (train tomorrow)
-  4: 0, // Fri: After Bench Vol -> Sat (train tomorrow)
-  5: 1, // Sat: After Arms B -> Mon (Sunday rest, train in 2 days)
-};
+const sessionCache = new WeakMap<TrainingProgram, ProgramSession[]>();
 
-export function getSessionData(sessionIndex: number): {
-  week: PrescribedWeek;
-  day: PrescribedDay;
-  weekNumber: number;
-  dayIndex: number;
-} | null {
-  if (sessionIndex < 0 || sessionIndex >= TOTAL_SESSIONS) return null;
+export function getSessions(programId?: string): ProgramSession[] {
+  const program = getProgram(programId);
+  const cached = sessionCache.get(program);
+  if (cached) return cached;
 
-  const weekNumber = Math.floor(sessionIndex / DAYS_PER_WEEK) + 1;
-  const dayIndex = sessionIndex % DAYS_PER_WEEK;
-  const week = programData.find((w) => w.weekNumber === weekNumber);
-  if (!week || dayIndex >= week.days.length) return null;
-
-  return {
-    week,
-    day: week.days[dayIndex],
-    weekNumber,
-    dayIndex,
-  };
+  const sessions: ProgramSession[] = [];
+  for (const week of program.weeks) {
+    week.days.forEach((day, dayIndex) => {
+      sessions.push({
+        sessionIndex: sessions.length,
+        weekNumber: week.weekNumber,
+        dayIndex,
+        week,
+        day,
+      });
+    });
+  }
+  sessionCache.set(program, sessions);
+  return sessions;
 }
 
-export function getNextTrainingDate(lastWorkoutDate: string, lastDayIndex: number): Date {
-  const restDays = REST_DAYS_AFTER[lastDayIndex] ?? 1;
-  const lastDate = new Date(lastWorkoutDate);
-  const next = new Date(lastDate);
+export function getTotalSessions(programId?: string): number {
+  return getSessions(programId).length;
+}
+
+export function getTotalWeeks(programId?: string): number {
+  return getProgram(programId).weeks.length;
+}
+
+export function getSessionData(sessionIndex: number, programId?: string): ProgramSession | null {
+  const sessions = getSessions(programId);
+  if (sessionIndex < 0 || sessionIndex >= sessions.length) return null;
+  return sessions[sessionIndex];
+}
+
+/** Índice da primeira sessão de uma semana — usado para navegar no calendário. */
+export function getSessionIndexForWeek(weekNumber: number, dayIndex = 0, programId?: string): number {
+  const found = getSessions(programId).find(
+    (s) => s.weekNumber === weekNumber && s.dayIndex === dayIndex,
+  );
+  return found ? found.sessionIndex : 0;
+}
+
+export function getWeeks(programId?: string): PrescribedWeek[] {
+  return getProgram(programId).weeks;
+}
+
+/** Dias de descanso sugeridos após a sessão indicada. */
+export function getRestDaysAfterSession(sessionIndex: number, programId?: string): number {
+  const session = getSessionData(sessionIndex, programId);
+  return session?.day.restDaysAfter ?? 1;
+}
+
+export function getNextTrainingDate(lastWorkoutDate: string, restDays: number): Date {
+  const next = new Date(lastWorkoutDate);
   next.setDate(next.getDate() + restDays + 1);
-  // Reset to start of day
   next.setHours(0, 0, 0, 0);
   return next;
 }
 
-export function shouldShowRestWarning(lastWorkoutDate: string, lastDayIndex: number): boolean {
-  const recommended = getNextTrainingDate(lastWorkoutDate, lastDayIndex);
+export function shouldShowRestWarning(lastWorkoutDate: string, restDays: number): boolean {
+  const recommended = getNextTrainingDate(lastWorkoutDate, restDays);
   const now = new Date();
   now.setHours(0, 0, 0, 0);
   return now < recommended;

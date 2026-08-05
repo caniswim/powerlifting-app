@@ -3,37 +3,9 @@ import { useStorage } from '../contexts/StorageContext';
 import type { PrescribedWeek, PrescribedDay, PrescribedExercise, WorkoutLog, BlockType } from '../types';
 import { Check, X } from 'lucide-react';
 import { blockTypeColors, blockTypeLabels } from '../domain/blockTypeConfig';
-import { dayTypePtLabels } from '../domain/dayTypeLabels';
-import { DAYS_PER_WEEK, TOTAL_SESSIONS } from '../services/scheduling';
-
-// ---------------------------------------------------------------------------
-// Data loader
-// ---------------------------------------------------------------------------
-
-let programDataCache: PrescribedWeek[] | null = null;
-async function loadProgramData(): Promise<PrescribedWeek[]> {
-  if (programDataCache) return programDataCache;
-  try {
-    const mod = await import('../data/programData');
-    programDataCache = mod.programData;
-    return programDataCache;
-  } catch {
-    return [];
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Constants
-// ---------------------------------------------------------------------------
-
-const MACROCYCLES = [
-  { id: 1, label: 'MAC 1', desc: 'Fundação Hipertrófica', weeks: '1-13' },
-  { id: 2, label: 'MAC 2', desc: 'Hipertrofia + Força', weeks: '14-26' },
-  { id: 3, label: 'MAC 3', desc: 'Segundo Ciclo Hipertrófico', weeks: '27-39' },
-  { id: 4, label: 'MAC 4', desc: 'Força + Realização', weeks: '40-52' },
-];
-
-const DAY_SHORT_LABELS = ['SQ', 'BP', 'A1', 'DL', 'BV', 'A2'];
+import { dayTypePtLabels, dayTypeAbbrev } from '../domain/dayTypeLabels';
+import { getSessionData, getTotalSessions, getWeeks } from '../services/scheduling';
+import { getProgram } from '../data/program/programs';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -46,34 +18,55 @@ interface Block {
   weeks: PrescribedWeek[];
 }
 
+/** Mesociclos derivados do próprio programa, em vez de uma lista fixa. */
+function deriveMacrocycles(weeks: PrescribedWeek[]) {
+  const byMacro = new Map<number, PrescribedWeek[]>();
+  for (const w of weeks) {
+    if (!byMacro.has(w.macrocycle)) byMacro.set(w.macrocycle, []);
+    byMacro.get(w.macrocycle)!.push(w);
+  }
+  return [...byMacro.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .map(([id, macroWeeks]) => ({
+      id,
+      label: `MAC ${id}`,
+      desc: macroWeeks[0].blockObjective,
+      weeks: `${macroWeeks[0].weekNumber}-${macroWeeks[macroWeeks.length - 1].weekNumber}`,
+    }));
+}
+
 // ---------------------------------------------------------------------------
 // Component
 // ---------------------------------------------------------------------------
 
 export default function Calendar() {
   const storage = useStorage();
-  const [allWeeks, setAllWeeks] = useState<PrescribedWeek[]>([]);
+  const programId = storage.getActiveProgramId();
+  const program = getProgram(programId);
+  const allWeeks = getWeeks(programId);
+  const totalSessions = getTotalSessions(programId);
+  const macrocycles = useMemo(() => deriveMacrocycles(allWeeks), [allWeeks]);
+
   const [currentWeek, setCurrentWeek] = useState(1);
   const [completedWorkouts, setCompletedWorkouts] = useState<WorkoutLog[]>([]);
-  const [activeMacro, setActiveMacro] = useState(1);
+  const [activeMacro, setActiveMacro] = useState(() => allWeeks[0]?.macrocycle ?? 1);
   const [selectedDay, setSelectedDay] = useState<{ week: PrescribedWeek; day: PrescribedDay; dayIndex: number } | null>(null);
   const [loading, setLoading] = useState(true);
 
   const sessionIndex = storage.getSessionIndex();
 
   useEffect(() => {
-    const cw = Math.floor(sessionIndex / DAYS_PER_WEEK) + 1;
+    const session = getSessionData(Math.min(sessionIndex, totalSessions - 1), programId);
+    const cw = session?.weekNumber ?? 1;
     setCurrentWeek(cw);
-    setCompletedWorkouts(storage.getWorkouts().filter((w) => w.completed));
-
-    // Auto-select the macrocycle containing the current week
-    const macroForCurrentWeek = cw <= 13 ? 1 : cw <= 26 ? 2 : cw <= 39 ? 3 : 4;
-    setActiveMacro(macroForCurrentWeek);
-
-    loadProgramData().then((data) => {
-      setAllWeeks(data);
-      setLoading(false);
-    });
+    // Só os treinos deste programa — logs de outro programa não podem marcar
+    // dias como concluídos por coincidência de semana + tipo de dia.
+    setCompletedWorkouts(
+      storage.getWorkouts().filter((w) => w.completed && (w.programId ?? 'legacy-52w') === programId),
+    );
+    setActiveMacro(session?.week.macrocycle ?? allWeeks[0]?.macrocycle ?? 1);
+    setLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Group weeks into blocks for the active macrocycle
@@ -142,14 +135,14 @@ export default function Calendar() {
             Programação
           </h1>
           <p className="text-text-muted font-display text-sm mt-1">
-            Semana atual: <span className="font-mono text-text-secondary">{currentWeek}</span> / 52
-            <span className="ml-2 font-mono text-text-muted">· Sessão {sessionIndex + 1} / {TOTAL_SESSIONS}</span>
+            {program.name} · Semana <span className="font-mono text-text-secondary">{currentWeek}</span> / {allWeeks.length}
+            <span className="ml-2 font-mono text-text-muted">· Sessão {Math.min(sessionIndex + 1, totalSessions)} / {totalSessions}</span>
           </p>
         </header>
 
         {/* Macrocycle Tabs */}
         <div className="flex gap-2 mb-6 overflow-x-auto scrollbar-none pb-1">
-          {MACROCYCLES.map((mac) => {
+          {macrocycles.map((mac) => {
             const isActive = mac.id === activeMacro;
             return (
               <button
@@ -171,7 +164,7 @@ export default function Calendar() {
         {/* Macrocycle Description */}
         <div className="mb-6 px-1">
           <p className="text-text-secondary font-display text-sm">
-            {MACROCYCLES.find((m) => m.id === activeMacro)?.desc}
+            {macrocycles.find((m) => m.id === activeMacro)?.desc}
           </p>
         </div>
 
@@ -239,7 +232,7 @@ export default function Calendar() {
                         <div className="flex gap-1">
                           {w.days.map((d, i) => {
                             const completed = isDayCompleted(w.weekNumber, d.dayType, i);
-                            const isMini = d.dayType === 'arms_shoulders';
+                            const isMini = d.dayType === 'arms_shoulders' || d.dayType === 'arms_hypertrophy';
                             return (
                               <button
                                 key={`${d.dayType}-${i}`}
@@ -261,7 +254,7 @@ export default function Calendar() {
                                     ? isMini ? 'text-accent-purple' : 'text-accent-green'
                                     : isMini ? 'text-accent-purple/70' : 'text-text-muted'
                                 }`}>
-                                  {DAY_SHORT_LABELS[i]}
+                                  {dayTypeAbbrev[d.dayType]}
                                 </span>
                                 {completed ? (
                                   <Check size={11} className={isMini ? 'text-accent-purple' : 'text-accent-green'} strokeWidth={3} />
@@ -288,13 +281,13 @@ export default function Calendar() {
           <div className="flex items-center justify-between mb-2">
             <span className="text-text-muted font-display text-xs tracking-wide uppercase">Progresso Geral</span>
             <span className="font-mono text-xs text-text-secondary">
-              {completedWorkouts.length} / {allWeeks.length * DAYS_PER_WEEK}
+              {completedWorkouts.length} / {totalSessions}
             </span>
           </div>
           <div className="w-full h-1.5 bg-bg-tertiary rounded-full overflow-hidden">
             <div
               className="h-full bg-accent-gold rounded-full transition-all duration-500"
-              style={{ width: `${Math.min(100, (completedWorkouts.length / (allWeeks.length * DAYS_PER_WEEK)) * 100)}%` }}
+              style={{ width: `${Math.min(100, (completedWorkouts.length / totalSessions) * 100)}%` }}
             />
           </div>
         </div>
@@ -375,6 +368,11 @@ function DayDetailModal({
                     MINI ~20min
                   </span>
                 )}
+                {day.dayType === 'arms_hypertrophy' && (
+                  <span className="text-[9px] font-display font-bold text-accent-purple bg-accent-purple/10 px-1.5 py-0.5 rounded tracking-wider border border-accent-purple/20">
+                    ARM DAY
+                  </span>
+                )}
                 {isCompleted && (
                   <span className="text-[9px] font-display font-bold text-accent-green bg-accent-green/10 px-1.5 py-0.5 rounded tracking-wider">
                     COMPLETO
@@ -386,6 +384,7 @@ function DayDetailModal({
               </h3>
               <p className="text-text-muted text-xs font-display mt-0.5">
                 {dayTypePtLabels[day.dayType] ?? day.dayType}
+                {day.restNote ? ` · ${day.restNote}` : ''}
               </p>
             </div>
             <button
@@ -425,6 +424,10 @@ function DayDetailModal({
 // Exercise Row
 // ---------------------------------------------------------------------------
 
+/**
+ * Uma linha da tabela do programa, com todas as colunas do material de origem:
+ * aquecimento, séries × reps, %1RM, RPE, descanso e a nota completa.
+ */
 function ExerciseRow({ exercise, index }: { exercise: PrescribedExercise; index: number }) {
   return (
     <div className={`bg-bg-tertiary rounded-lg p-3 border border-border ${
@@ -434,8 +437,8 @@ function ExerciseRow({ exercise, index }: { exercise: PrescribedExercise; index:
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             {exercise.supersetGroup ? (
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded bg-accent-purple/20 text-accent-purple text-[10px] font-mono font-bold flex-shrink-0">
-                {exercise.supersetGroup}
+              <span className="inline-flex items-center justify-center px-1 h-5 rounded bg-accent-purple/20 text-accent-purple text-[10px] font-mono font-bold flex-shrink-0">
+                {exercise.supersetGroup}{exercise.supersetOrder ?? ''}
               </span>
             ) : (
               <span className="font-mono text-[10px] text-text-muted">{index + 1}.</span>
@@ -443,9 +446,21 @@ function ExerciseRow({ exercise, index }: { exercise: PrescribedExercise; index:
             <h4 className="font-display font-semibold text-text-primary text-sm truncate">
               {exercise.exerciseName}
             </h4>
+            {exercise.optional && (
+              <span className="px-1 py-0.5 rounded bg-bg-card text-text-muted text-[8px] font-display uppercase tracking-wider flex-shrink-0">
+                Opt
+              </span>
+            )}
+          </div>
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-1 ml-7 text-[10px] font-mono text-text-muted">
+            {exercise.warmupSets ? <span>{exercise.warmupSets} aquec.</span> : null}
+            {exercise.percent1RM && <span className="text-accent-gold">{exercise.percent1RM}</span>}
+            {exercise.restLabel && <span>desc. {exercise.restLabel}</span>}
+            {exercise.perSide && <span className="text-accent-purple">cada lado</span>}
+            {exercise.alternatives?.length ? <span>ou {exercise.alternatives.join(' / ')}</span> : null}
           </div>
           {exercise.notes && (
-            <p className="text-text-muted text-[11px] font-display mt-0.5 ml-7 italic">
+            <p className="text-text-muted text-[11px] font-display mt-1 ml-7 italic leading-relaxed">
               {exercise.notes}
             </p>
           )}

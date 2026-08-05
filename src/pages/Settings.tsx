@@ -3,12 +3,14 @@ import { Eye, EyeOff } from 'lucide-react';
 import { calculateDOTS } from '../utils/calculations';
 import { useStorage } from '../contexts/StorageContext';
 import type { AthleteProfile } from '../types';
-import { DAYS_PER_WEEK, TOTAL_SESSIONS } from '../services/scheduling';
+import { getSessionData, getTotalSessions, getTotalWeeks } from '../services/scheduling';
+import { listPrograms } from '../data/program/programs';
 
-const APP_VERSION = '1.2.2';
+const APP_VERSION = '1.3.0';
 
 export default function Settings() {
   const storage = useStorage();
+  const [programId, setProgramId] = useState<string>(() => storage.getActiveProgramId());
   const [profile, setProfile] = useState<AthleteProfile>(() => storage.getProfile());
   const [sessionIdx, setSessionIdx] = useState<number>(() => storage.getSessionIndex());
   const [showResetModal, setShowResetModal] = useState(false);
@@ -19,8 +21,12 @@ export default function Settings() {
   const [showApiKey, setShowApiKey] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const derivedWeek = Math.floor(sessionIdx / DAYS_PER_WEEK) + 1;
-  const derivedDayIndex = sessionIdx % DAYS_PER_WEEK;
+  const totalSessions = getTotalSessions(programId);
+  const totalWeeks = getTotalWeeks(programId);
+  const derivedSession = getSessionData(Math.min(sessionIdx, totalSessions - 1), programId);
+  const derivedWeek = derivedSession?.weekNumber ?? 1;
+  const derivedDayIndex = derivedSession?.dayIndex ?? 0;
+  const derivedDaysInWeek = derivedSession?.week.days.length ?? 0;
 
   // Auto-calculate total and DOTS when profile values change
   useEffect(() => {
@@ -41,12 +47,18 @@ export default function Settings() {
     const dots = calculateDOTS(profile.bodyweight, total);
     const updated = { ...profile, total, dots };
     storage.saveProfile(updated);
-    storage.setSessionIndex(sessionIdx);
-    storage.setCurrentWeek(Math.floor(sessionIdx / DAYS_PER_WEEK) + 1);
+    storage.setActiveProgramId(programId);
+    storage.setSessionIndex(sessionIdx, programId);
     storage.setApiKey(apiKey);
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
-  }, [profile, sessionIdx, apiKey, storage]);
+  }, [profile, sessionIdx, programId, apiKey, storage]);
+
+  const handleProgramChange = (id: string) => {
+    setProgramId(id);
+    // Cada programa guarda a própria posição — troca não perde o progresso.
+    setSessionIdx(storage.getSessionIndex(id));
+  };
 
   const handleExport = () => {
     const data = storage.exportAllData();
@@ -173,6 +185,16 @@ export default function Settings() {
               value={profile.deadlift1RM}
               onChange={(v) => handleProfileChange('deadlift1RM', v)}
             />
+            {/* O Powerbuilding 2.0 prescreve o desenvolvimento em %1RM (75%, 77.5-82.5%). */}
+            <InputField
+              label="Desenvolvimento"
+              unit="kg"
+              value={profile.ohp1RM ?? 0}
+              onChange={(v) => handleProfileChange('ohp1RM', v)}
+            />
+            <p className="text-[10px] font-display text-text-muted -mt-1">
+              O desenvolvimento não entra no total, mas é usado nas cargas prescritas em %1RM.
+            </p>
 
             {/* Calculated values */}
             <div className="border-t border-border pt-3 flex justify-between items-center">
@@ -194,29 +216,70 @@ export default function Settings() {
           </div>
         </section>
 
-        {/* Session Index Selector */}
+        {/* Program selector + position */}
         <section className="bg-bg-card border border-border rounded-lg p-4 space-y-4">
           <h2 className="text-xs font-display font-semibold text-accent-gold uppercase tracking-wider">
-            Posição no Programa
+            Programa
           </h2>
-          <div className="flex items-center gap-3">
-            <label className="text-sm font-display text-text-secondary uppercase tracking-wider flex-shrink-0">
-              Sessão
-            </label>
-            <input
-              type="number"
-              min={0}
-              max={TOTAL_SESSIONS - 1}
-              value={sessionIdx}
-              onChange={(e) => setSessionIdx(Math.max(0, Math.min(TOTAL_SESSIONS - 1, parseInt(e.target.value) || 0)))}
-              className="w-24 h-11 bg-bg-input border border-border-light rounded-md text-center
-                         font-mono text-lg text-text-primary focus:outline-none focus:border-accent-gold
-                         transition-colors"
-            />
-            <span className="text-xs text-text-muted font-mono">/ {TOTAL_SESSIONS - 1}</span>
+          <div className="space-y-2">
+            {listPrograms().map((p) => (
+              <button
+                key={p.id}
+                type="button"
+                onClick={() => handleProgramChange(p.id)}
+                className={`w-full text-left rounded-lg border p-3 transition-colors ${
+                  programId === p.id
+                    ? 'bg-accent-gold/10 border-accent-gold/40'
+                    : 'bg-bg-tertiary border-border hover:border-accent-gold/30'
+                }`}
+              >
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className={`text-sm font-display font-semibold ${
+                    programId === p.id ? 'text-accent-gold' : 'text-text-primary'
+                  }`}>
+                    {p.name}
+                  </span>
+                  <span className="text-[10px] font-mono text-text-muted flex-shrink-0">
+                    {p.weeks.length} sem · {getTotalSessions(p.id)} sessões
+                  </span>
+                </div>
+                {p.author && (
+                  <div className="text-[10px] font-display text-text-muted">{p.author}</div>
+                )}
+                <p className="text-[11px] font-display text-text-secondary leading-relaxed mt-1">
+                  {p.description}
+                </p>
+              </button>
+            ))}
           </div>
-          <div className="text-xs font-mono text-text-muted">
-            Semana {derivedWeek} / 52 — Dia {derivedDayIndex + 1} de {DAYS_PER_WEEK}
+
+          <div className="border-t border-border pt-3 space-y-2">
+            <div className="flex items-center gap-3">
+              <label className="text-sm font-display text-text-secondary uppercase tracking-wider flex-shrink-0">
+                Sessão
+              </label>
+              <input
+                type="number"
+                min={0}
+                max={totalSessions - 1}
+                value={sessionIdx}
+                onChange={(e) => setSessionIdx(Math.max(0, Math.min(totalSessions - 1, parseInt(e.target.value) || 0)))}
+                className="w-24 h-11 bg-bg-input border border-border-light rounded-md text-center
+                           font-mono text-lg text-text-primary focus:outline-none focus:border-accent-gold
+                           transition-colors"
+              />
+              <span className="text-xs text-text-muted font-mono">/ {totalSessions - 1}</span>
+            </div>
+            <div className="text-xs font-mono text-text-muted">
+              Semana {derivedWeek} / {totalWeeks} — Dia {derivedDayIndex + 1} de {derivedDaysInWeek}
+            </div>
+            <button
+              type="button"
+              onClick={() => setSessionIdx(0)}
+              className="text-[11px] font-display uppercase tracking-wider text-text-muted hover:text-accent-gold"
+            >
+              Recomeçar programa do zero
+            </button>
           </div>
         </section>
 

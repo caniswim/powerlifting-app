@@ -17,7 +17,11 @@ export function calculateWeeklyVolume(workouts: WorkoutLog[]): VolumeData[] {
       const muscleMapping = exerciseMuscleMap[exercise.exerciseId];
       if (!muscleMapping) continue;
 
-      const completedSets = exercise.sets.filter((s) => s.completed).length;
+      // Aquecimento não é volume de trabalho. Séries unilaterais contam uma vez
+      // por par (esquerda + direita), como manda a contagem usual de séries.
+      const completedSets = exercise.sets.filter(
+        (s) => s.completed && s.setType !== 'warmup',
+      ).length;
 
       for (const [muscle, fraction] of Object.entries(muscleMapping)) {
         const mg = muscle as MuscleGroup;

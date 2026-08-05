@@ -2,13 +2,16 @@ import { useState, useEffect, useCallback } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useStorage } from '../../../contexts/StorageContext';
 import { exerciseNames } from '../../../data/exerciseMuscleMap';
-import { getSessionData, TOTAL_SESSIONS } from '../../../data/programData';
+import { getSessionData, getTotalSessions } from '../../../data/programData';
+import { buildSetPlan } from '../../../domain/setPlan';
+import { getExercise } from '../../../domain/exerciseRegistry';
 import type {
   PrescribedWeek,
-  PrescribedDay,
+  PrescribedExercise,
+  ProgramSession,
+  SetLog,
   WorkoutLog,
   ExerciseLog,
-  DayType,
 } from '../../../types';
 
 export interface WorkoutSessionState {
@@ -28,6 +31,66 @@ export interface WorkoutSessionState {
   skipExercise: () => void;
   addExtraExercise: (exerciseId: string) => void;
   updateExerciseNotes: (notes: string) => void;
+  swapExerciseVariation: (exerciseId: string, exerciseName: string) => void;
+}
+
+/** Séries que precisam estar completas para o treino terminar (aquecimento é opcional). */
+export function isRequiredSet(set: SetLog): boolean {
+  return set.setType !== 'warmup';
+}
+
+export function isExerciseDone(ex: ExerciseLog): boolean {
+  return ex.skipped === true || ex.sets.filter(isRequiredSet).every((s) => s.completed);
+}
+
+function emptySet(setNumber: number): SetLog {
+  return { setNumber, weight: 0, reps: 0, rpe: 0, e1rm: 0, completed: false, isPR: false };
+}
+
+/** Converte um bloco de prescrição do programa no exercício executável da sessão. */
+export function toExerciseLog(ex: PrescribedExercise): ExerciseLog {
+  const setPlan = buildSetPlan(ex);
+  const percentRef = ex.percentRef ?? getExercise(ex.exerciseId)?.percentRef;
+
+  // A variação padrão fica na primeira posição para o atleta poder voltar a ela.
+  const variations = ex.alternatives?.length
+    ? [
+        { exerciseId: ex.exerciseId, name: ex.exerciseName },
+        ...ex.alternatives.map((name, i) => ({
+          exerciseId: ex.alternativeIds?.[i] ?? ex.exerciseId,
+          name,
+        })),
+      ]
+    : undefined;
+
+  return {
+    exerciseId: ex.exerciseId,
+    exerciseName: ex.exerciseName,
+    prescribedSets: ex.sets,
+    prescribedReps: ex.reps,
+    prescribedRPE: ex.rpe,
+    ...(ex.supersetGroup ? { supersetGroup: ex.supersetGroup } : {}),
+    ...(ex.supersetOrder ? { supersetOrder: ex.supersetOrder } : {}),
+    ...(ex.blockId ? { blockId: ex.blockId } : {}),
+    ...(ex.rawLabel ? { rawLabel: ex.rawLabel } : {}),
+    ...(ex.notes ? { prescribedNotes: ex.notes } : {}),
+    ...(ex.warmupSets ? { warmupSets: ex.warmupSets } : {}),
+    ...(ex.restSec !== undefined ? { restSec: ex.restSec, restLabel: ex.restLabel } : {}),
+    ...(ex.percent1RM ? { percent1RM: ex.percent1RM } : {}),
+    ...(percentRef ? { percentRef } : {}),
+    ...(ex.perSide ? { perSide: true } : {}),
+    ...(ex.optional ? { optional: true } : {}),
+    ...(ex.unit ? { unit: ex.unit } : {}),
+    ...(variations ? { variations } : {}),
+    setPlan,
+    sets: setPlan.map((p) => ({
+      ...emptySet(p.setNumber),
+      setType: p.type,
+      ...(p.unit !== 'reps' ? { unit: p.unit } : {}),
+      ...(p.perSide ? { perSide: true } : {}),
+      prescribed: p,
+    })),
+  };
 }
 
 export function useWorkoutSession(
@@ -46,37 +109,42 @@ export function useWorkoutSession(
 
   useEffect(() => {
     loadWorkout();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  async function loadWorkout() {
+  function loadWorkout() {
     try {
-      const sessionIndex = storage.getSessionIndex();
+      const programId = storage.getActiveProgramId();
+      const sessionIndex = storage.getSessionIndex(programId);
 
-      if (sessionIndex >= TOTAL_SESSIONS) {
+      if (sessionIndex >= getTotalSessions(programId)) {
         setProgramComplete(true);
         setLoading(false);
         return;
       }
 
-      const sessionData = getSessionData(sessionIndex);
-      if (!sessionData) {
+      const session = getSessionData(sessionIndex, programId);
+      if (!session) {
         setLoading(false);
         return;
       }
 
-      const { week, day, weekNumber } = sessionData;
-      setWeekData(week);
+      setWeekData(session.week);
 
-      const existingWorkouts = storage.getWorkouts();
-      const existingToday = existingWorkouts.find(
-        (w) => w.weekNumber === weekNumber && w.dayType === day.dayType && !w.completed
-          && w.exercises[0]?.exerciseId === day.exercises[0]?.exerciseId
+      // Sessão em andamento: casada pela posição no programa, não por
+      // heurística de tipo de dia (o mesmo dayType pode repetir na semana).
+      const existingToday = storage.getWorkouts().find(
+        (w) => !w.completed
+          && (w.programId ?? programId) === programId
+          && (w.sessionIndex !== undefined
+            ? w.sessionIndex === sessionIndex
+            : w.weekNumber === session.weekNumber && w.dayType === session.day.dayType),
       );
 
       if (existingToday) {
         setWorkout(existingToday);
         const exIdx = existingToday.exercises.findIndex(
-          (ex) => !ex.skipped && ex.sets.some((s) => !s.completed)
+          (ex) => !ex.skipped && ex.sets.some((s) => !s.completed),
         );
         if (exIdx >= 0) {
           setActiveExIdx(exIdx);
@@ -85,7 +153,7 @@ export function useWorkoutSession(
           prefillInputs(existingToday.exercises[exIdx], setIdx >= 0 ? setIdx : 0);
         }
       } else {
-        const newWorkout = createWorkoutFromPlan(day, week, weekNumber, day.dayType);
+        const newWorkout = createWorkoutFromPlan(session, programId);
         setWorkout(newWorkout);
         prefillInputs(newWorkout.exercises[0], 0);
       }
@@ -95,37 +163,20 @@ export function useWorkoutSession(
     setLoading(false);
   }
 
-  function createWorkoutFromPlan(
-    plan: PrescribedDay,
-    week: PrescribedWeek,
-    currentWeek: number,
-    dayType: DayType
-  ): WorkoutLog {
+  function createWorkoutFromPlan(session: ProgramSession, programId: string): WorkoutLog {
+    const { week, day } = session;
     return {
       id: uuidv4(),
       date: new Date().toISOString(),
-      weekNumber: currentWeek,
+      programId,
+      weekNumber: session.weekNumber,
       macrocycle: week.macrocycle,
       blockName: week.blockName,
       blockType: week.blockType,
-      dayType,
-      exercises: plan.exercises.map((ex) => ({
-        exerciseId: ex.exerciseId,
-        exerciseName: ex.exerciseName,
-        prescribedSets: ex.sets,
-        prescribedReps: ex.reps,
-        prescribedRPE: ex.rpe,
-        ...(ex.supersetGroup ? { supersetGroup: ex.supersetGroup } : {}),
-        sets: Array.from({ length: ex.sets }, (_, i) => ({
-          setNumber: i + 1,
-          weight: 0,
-          reps: 0,
-          rpe: 0,
-          e1rm: 0,
-          completed: false,
-          isPR: false,
-        })),
-      })),
+      dayType: day.dayType,
+      dayIndex: session.dayIndex,
+      sessionIndex: session.sessionIndex,
+      exercises: day.exercises.map(toExerciseLog),
       completed: false,
       startedAt: new Date().toISOString(),
     };
@@ -133,24 +184,24 @@ export function useWorkoutSession(
 
   const skipExercise = useCallback(() => {
     if (!workout) return;
-    const updatedWorkout = { ...workout };
-    const exercises = [...updatedWorkout.exercises];
+    const exercises = [...workout.exercises];
     exercises[activeExIdx] = { ...exercises[activeExIdx], skipped: true };
-    updatedWorkout.exercises = exercises;
+    const updatedWorkout: WorkoutLog = { ...workout, exercises };
 
-    const allDone = exercises.every((ex) => ex.skipped || ex.sets.every((s) => s.completed));
+    const allDone = exercises.every(isExerciseDone);
     if (allDone) {
       updatedWorkout.completed = true;
       updatedWorkout.completedAt = new Date().toISOString();
       storage.setSessionIndex(storage.getSessionIndex() + 1);
     }
 
-    updatedWorkout.exercises = exercises;
     setWorkout(updatedWorkout);
     storage.saveWorkout(updatedWorkout);
 
     if (!allDone) {
-      const nextIdx = exercises.findIndex((ex, i) => i > activeExIdx && !ex.skipped && ex.sets.some((s) => !s.completed));
+      const nextIdx = exercises.findIndex(
+        (ex, i) => i > activeExIdx && !ex.skipped && ex.sets.some((s) => !s.completed),
+      );
       if (nextIdx >= 0) {
         setActiveExIdx(nextIdx);
         setActiveSetIdx(0);
@@ -162,48 +213,49 @@ export function useWorkoutSession(
   const addExtraExercise = useCallback(
     (exerciseId: string) => {
       if (!workout) return;
-      const name = exerciseNames[exerciseId] || exerciseId;
-      const newExercise: ExerciseLog = {
+      const extra: PrescribedExercise = {
         exerciseId,
-        exerciseName: name,
-        prescribedSets: 3,
-        prescribedReps: '8-12',
-        prescribedRPE: '8',
-        sets: Array.from({ length: 3 }, (_, i) => ({
-          setNumber: i + 1,
-          weight: 0,
-          reps: 0,
-          rpe: 0,
-          e1rm: 0,
-          completed: false,
-          isPR: false,
-        })),
+        exerciseName: exerciseNames[exerciseId] || exerciseId,
+        sets: 3,
+        reps: '8-12',
+        rpe: '8',
+        warmupSets: 0,
+        blockId: `extra-${uuidv4().slice(0, 8)}`,
       };
       const updatedWorkout = {
         ...workout,
-        exercises: [...workout.exercises, newExercise],
+        exercises: [...workout.exercises, toExerciseLog(extra)],
       };
       setWorkout(updatedWorkout);
       storage.saveWorkout(updatedWorkout);
       setShowAddExercise(false);
     },
-    [workout, storage]
+    [workout, storage],
   );
 
   const updateExerciseNotes = useCallback(
     (notes: string) => {
       if (!workout) return;
-      const updated = { ...workout };
-      const exercises = [...updated.exercises];
-      exercises[activeExIdx] = {
-        ...exercises[activeExIdx],
-        notes,
-      };
-      updated.exercises = exercises;
+      const exercises = [...workout.exercises];
+      exercises[activeExIdx] = { ...exercises[activeExIdx], notes };
+      const updated = { ...workout, exercises };
       setWorkout(updated);
       storage.saveWorkout(updated);
     },
-    [workout, activeExIdx, storage]
+    [workout, activeExIdx, storage],
+  );
+
+  /** Troca o exercício por uma das variações que o programa permite. */
+  const swapExerciseVariation = useCallback(
+    (exerciseId: string, exerciseName: string) => {
+      if (!workout) return;
+      const exercises = [...workout.exercises];
+      exercises[activeExIdx] = { ...exercises[activeExIdx], exerciseId, exerciseName };
+      const updated = { ...workout, exercises };
+      setWorkout(updated);
+      storage.saveWorkout(updated);
+    },
+    [workout, activeExIdx, storage],
   );
 
   return {
@@ -223,5 +275,6 @@ export function useWorkoutSession(
     skipExercise,
     addExtraExercise,
     updateExerciseNotes,
+    swapExerciseVariation,
   };
 }

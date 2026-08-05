@@ -1,12 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useStorage } from '../contexts/StorageContext';
-import { getSessionData, getNextTrainingDate, shouldShowRestWarning, DAYS_PER_WEEK, TOTAL_SESSIONS } from '../data/programData';
+import {
+  getSessionData,
+  getNextTrainingDate,
+  shouldShowRestWarning,
+  getRestDaysAfterSession,
+  getTotalSessions,
+  getTotalWeeks,
+  getProgram,
+} from '../data/programData';
 import { calculateDOTS } from '../utils/calculations';
 import { exerciseNames } from '../data/exerciseMuscleMap';
-import type { AthleteProfile, PersonalRecord, PrescribedWeek, PrescribedDay } from '../types';
+import type { AthleteProfile, PersonalRecord, ProgramSession } from '../types';
 import { Zap, Battery, Check, Circle, Minus } from 'lucide-react';
-import { dayTypeShortLabels } from '../domain/dayTypeLabels';
+import { dayTypeShortLabels, dayTypeAbbrev } from '../domain/dayTypeLabels';
 import { blockTypeLabels, blockTypeBadgeClass } from '../domain/blockTypeConfig';
 import { useSurveyTrends } from '../features/feedback/hooks/useSurveyTrends';
 import { useFeedbackHistory } from '../features/feedback/hooks/useFeedbackHistory';
@@ -15,13 +23,14 @@ import { TrendSparklines } from '../features/feedback/components/TrendSparklines
 import { AlertsBanner } from '../features/feedback/components/AlertsBanner';
 import { AIFeedbackCard } from '../features/feedback/components/AIFeedbackCard';
 
-const CYCLE_LABELS = ['SQT', 'BNC', 'AR1', 'DLF', 'VOL', 'AR2'];
-
 export default function Dashboard() {
   const storage = useStorage();
+  const programId = storage.getActiveProgramId();
+  const program = getProgram(programId);
+
   const [profile, setProfile] = useState<AthleteProfile>(() => storage.getProfile());
   const [sessionIndex, setSessionIdx] = useState(() => storage.getSessionIndex());
-  const [nextSession, setNextSession] = useState<{ week: PrescribedWeek; day: PrescribedDay; weekNumber: number; dayIndex: number } | null>(null);
+  const [nextSession, setNextSession] = useState<ProgramSession | null>(null);
   const [recentPRs, setRecentPRs] = useState<PersonalRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [isNextDeload, setIsNextDeload] = useState(false);
@@ -29,8 +38,13 @@ export default function Dashboard() {
   const [isRestDay, setIsRestDay] = useState(false);
   const [lastWorkoutDateStr, setLastWorkoutDateStr] = useState<string | null>(null);
 
-  const currentWeek = Math.floor(sessionIndex / DAYS_PER_WEEK) + 1;
-  const cyclePosition = sessionIndex % DAYS_PER_WEEK; // 0-5 within current 6-session cycle
+  const totalSessions = getTotalSessions(programId);
+  const totalWeeks = getTotalWeeks(programId);
+  const currentWeek = nextSession?.weekNumber ?? storage.getCurrentWeek();
+  // A semana do programa pode ter 4 ou 5 dias, então a grade do ciclo vem do
+  // próprio programa em vez de uma constante de 6 sessões.
+  const cycleDays = nextSession?.week.days ?? program.weeks[0].days;
+  const cyclePosition = nextSession?.dayIndex ?? 0;
 
   const trends = useSurveyTrends();
   const feedbackHistory = useFeedbackHistory();
@@ -54,28 +68,28 @@ export default function Dashboard() {
     setRecentPRs(recent);
 
     // Load session data
-    const session = getSessionData(idx);
+    const session = getSessionData(idx, programId);
     setNextSession(session);
 
     // Check rest / recommended date
     const lastCompleted = storage.getLastCompletedWorkout();
     if (lastCompleted) {
       setLastWorkoutDateStr(lastCompleted.date);
-      const recDate = getNextTrainingDate(lastCompleted.date, lastCompleted.dayIndex);
-      setRecommendedDate(recDate);
-      setIsRestDay(shouldShowRestWarning(lastCompleted.date, lastCompleted.dayIndex));
+      const restDays = lastCompleted.sessionIndex !== undefined
+        ? getRestDaysAfterSession(lastCompleted.sessionIndex, lastCompleted.programId)
+        : lastCompleted.dayIndex === 5 ? 1 : 0;
+      setRecommendedDate(getNextTrainingDate(lastCompleted.date, restDays));
+      setIsRestDay(shouldShowRestWarning(lastCompleted.date, restDays));
     }
 
     // Check if next week is deload
     if (session) {
-      import('../data/programData').then((mod) => {
-        const nextWeekNum = session.weekNumber + 1;
-        const nextWeek = mod.programData.find((w) => w.weekNumber === nextWeekNum);
-        setIsNextDeload(nextWeek?.isDeload ?? false);
-      });
+      const nextWeek = program.weeks.find((w) => w.weekNumber === session.weekNumber + 1);
+      setIsNextDeload(nextWeek?.isDeload ?? false);
     }
 
     setLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const formatDate = (d: Date) => {
@@ -101,7 +115,7 @@ export default function Dashboard() {
     );
   }
 
-  const programComplete = sessionIndex >= TOTAL_SESSIONS;
+  const programComplete = sessionIndex >= totalSessions;
 
   return (
     <div className="min-h-screen bg-bg-primary pb-20">
@@ -109,17 +123,17 @@ export default function Dashboard() {
         {/* Header */}
         <div className="space-y-1">
           <h1 className="text-xs font-display font-semibold tracking-[0.2em] uppercase text-text-muted">
-            POWERLIFTING TRACKER
+            {program.name}
           </h1>
           <div className="flex items-baseline gap-2">
             <span className="text-4xl font-mono font-bold text-accent-gold">
               S{currentWeek}
             </span>
             <span className="text-sm font-display text-text-secondary">
-              / 52
+              / {totalWeeks}
             </span>
             <span className="text-xs font-mono text-text-muted ml-2">
-              Sessão {sessionIndex + 1}/{TOTAL_SESSIONS}
+              Sessão {Math.min(sessionIndex + 1, totalSessions)}/{totalSessions}
             </span>
           </div>
           {nextSession && (
@@ -276,7 +290,7 @@ export default function Dashboard() {
               PROGRAMA COMPLETO!
             </div>
             <div className="text-xs text-text-muted font-display mt-1">
-              Todas as {TOTAL_SESSIONS} sessões foram concluídas.
+              Todas as {totalSessions} sessões foram concluídas.
             </div>
           </div>
         ) : null}
@@ -315,15 +329,17 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Cycle Progress (6-session cycle) */}
+        {/* Cycle Progress — dias da semana atual do programa */}
         <div className="bg-bg-card border border-border rounded-lg p-4">
           <div className="text-[10px] font-display font-semibold tracking-wider uppercase text-text-muted mb-3">
-            PROGRESSO DO CICLO
+            PROGRESSO DA SEMANA — {cycleDays.length} DIAS
           </div>
-          <div className="grid grid-cols-6 gap-2">
-            {CYCLE_LABELS.map((label, i) => {
+          <div className={`grid gap-2 ${cycleDays.length === 5 ? 'grid-cols-5' : 'grid-cols-4'}`}>
+            {cycleDays.map((day, i) => {
+              const label = dayTypeAbbrev[day.dayType];
               const isCompleted = i < cyclePosition;
               const isCurrent = i === cyclePosition;
+              const isArmDay = day.dayType === 'arms_hypertrophy' || day.dayType === 'arms_shoulders';
 
               return (
                 <div
@@ -331,7 +347,7 @@ export default function Dashboard() {
                   className={`text-center py-2 rounded border ${
                     isCompleted
                       ? 'bg-accent-green/20 border-accent-green/30 text-accent-green'
-                      : isCurrent && (label === 'AR1' || label === 'AR2')
+                      : isCurrent && isArmDay
                       ? 'bg-accent-purple/10 border-accent-purple/30 text-accent-purple'
                       : isCurrent
                       ? 'bg-accent-gold/10 border-accent-gold/30 text-accent-gold'

@@ -8,6 +8,7 @@ const Workout = lazy(() => import('./pages/Workout'))
 const Calendar = lazy(() => import('./pages/Calendar'))
 const Analytics = lazy(() => import('./pages/Analytics'))
 const Settings = lazy(() => import('./pages/Settings'))
+const Warmup = lazy(() => import('./pages/Warmup'))
 
 const navItems: { path: string; label: string; icon: LucideIcon }[] = [
   { path: '/', label: 'HOME', icon: Home },
@@ -39,6 +40,7 @@ function App() {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/warmup" element={<Warmup />} />
           </Routes>
         </Suspense>
       </main>

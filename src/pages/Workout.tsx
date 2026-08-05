@@ -1,6 +1,6 @@
-import { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { CheckCircle2, Trophy, AlertTriangle } from 'lucide-react';
+import { useCallback, useRef, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { CheckCircle2, Trophy, AlertTriangle, Flame } from 'lucide-react';
 import { calculateE1RM } from '../utils/calculations';
 import { useStorage } from '../contexts/StorageContext';
 import { useWorkoutSession } from '../features/workout/hooks/useWorkoutSession';
@@ -13,21 +13,25 @@ import { CompletedSetsList } from '../features/workout/components/CompletedSetsL
 import { SetInputForm } from '../features/workout/components/SetInputForm';
 import { SetEditSheet } from '../features/workout/components/SetEditSheet';
 import { AddExercisePanel } from '../features/workout/components/AddExercisePanel';
+import { ExercisePrescriptionCard } from '../features/workout/components/ExercisePrescriptionCard';
+import { RestTimer } from '../features/workout/components/RestTimer';
 import { useWorkoutSurveys } from '../features/workout/hooks/useWorkoutSurveys';
 import { PreWorkoutSurveySheet } from '../features/survey/components/PreWorkoutSurveySheet';
 import { PostWorkoutSurveySheet } from '../features/survey/components/PostWorkoutSurveySheet';
-import { TOTAL_SESSIONS } from '../services/scheduling';
+import { getProgram, getTotalSessions } from '../data/programData';
 
 export default function Workout() {
   const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
   const storage = useStorage();
 
+  const [rest, setRest] = useState<{ targetSec: number; startedAt: number } | null>(null);
+
   const loadSuggestion = useLoadSuggestion();
   const {
-    inputWeight, inputReps, inputRPE,
+    inputWeight, inputReps, inputRPE, inputSeconds, inputSegments,
     suggestion,
-    setInputWeight, setInputReps, setInputRPE,
+    setInputWeight, setInputReps, setInputRPE, setInputSeconds, updateSegment,
     prefillInputs,
   } = loadSuggestion;
 
@@ -38,19 +42,26 @@ export default function Workout() {
     showNotes, showAddExercise,
     setWorkout, setActiveExIdx, setActiveSetIdx,
     setShowNotes, setShowAddExercise,
-    skipExercise, addExtraExercise, updateExerciseNotes,
+    skipExercise, addExtraExercise, updateExerciseNotes, swapExerciseVariation,
   } = session;
+
+  // O programa prescreve descanso em toda linha; 0 MIN (supersets) não abre timer.
+  const handleSetCompleted = useCallback((restSec: number) => {
+    setRest(restSec > 0 ? { targetSec: restSec, startedAt: Date.now() } : null);
+  }, []);
 
   const { prFlash, editState, completeSet, saveEditSet } = useSetCompletion(
     workout, setWorkout,
     activeExIdx, activeSetIdx,
     setActiveExIdx, setActiveSetIdx,
-    inputWeight, inputReps, inputRPE,
+    { weight: inputWeight, reps: inputReps, rpe: inputRPE, seconds: inputSeconds, segments: inputSegments },
     prefillInputs,
+    handleSetCompleted,
   );
 
   const restWarning = useRestWarning();
   const surveys = useWorkoutSurveys(workout);
+  const activeProgram = getProgram(storage.getActiveProgramId());
 
   // --- Loading ---
   if (loading) {
@@ -71,8 +82,13 @@ export default function Workout() {
             Programa Completo!
           </h1>
           <p className="text-sm text-text-secondary font-display">
-            Todas as {TOTAL_SESSIONS} sessões do programa de 52 semanas foram concluídas.
+            Todas as {getTotalSessions(activeProgram.id)} sessões de {activeProgram.name} foram concluídas.
           </p>
+          {activeProgram.id === 'powerbuilding-2.0' && (
+            <p className="text-xs text-text-muted font-display">
+              Dia de descanso obrigatório após a semana 12.
+            </p>
+          )}
           <button
             onClick={() => navigate('/')}
             className="w-full h-12 bg-accent-gold text-black rounded-lg font-display font-bold uppercase tracking-wider hover:bg-accent-gold-bright active:scale-[0.98] transition-all"
@@ -147,14 +163,25 @@ export default function Workout() {
   }
 
   // --- Derived state ---
+  // Aquecimento não conta no progresso: o programa trata as warm-up sets como
+  // sugestão, não como carga de trabalho.
   const currentExercise = workout.exercises[activeExIdx];
-  const totalSets = workout.exercises.reduce((sum, ex) => ex.skipped ? sum : sum + ex.sets.length, 0);
+  const isWorkingSet = (s: { setType?: string }) => s.setType !== 'warmup';
+  const totalSets = workout.exercises.reduce(
+    (sum, ex) => (ex.skipped ? sum : sum + ex.sets.filter(isWorkingSet).length),
+    0,
+  );
   const completedSets = workout.exercises.reduce(
-    (sum, ex) => ex.skipped ? sum : sum + ex.sets.filter((s) => s.completed).length,
-    0
+    (sum, ex) => (ex.skipped ? sum : sum + ex.sets.filter((s) => isWorkingSet(s) && s.completed).length),
+    0,
   );
   const progressPercent = totalSets > 0 ? (completedSets / totalSets) * 100 : 0;
-  const currentE1RM = inputWeight > 0 && inputReps > 0 ? calculateE1RM(inputWeight, inputReps, inputRPE) : 0;
+
+  const activeSet = currentExercise?.sets[activeSetIdx];
+  const countsForE1RM = activeSet ? activeSet.setType !== 'warmup' && activeSet.unit !== 'seconds' : true;
+  const currentE1RM = countsForE1RM && inputWeight > 0 && inputReps > 0
+    ? calculateE1RM(inputWeight, inputReps, inputRPE)
+    : 0;
   const currentRecord = storage.getRecordForExercise(currentExercise?.exerciseId || '') ?? null;
   const wouldBePR = currentE1RM > (currentRecord?.e1rm || 0) && currentE1RM > 0;
   const sessionIndex = storage.getSessionIndex();
@@ -175,7 +202,7 @@ export default function Workout() {
         {/* Exercise nav tabs */}
         <div className="flex gap-1 overflow-x-auto scrollbar-none -mx-4 px-4">
           {workout.exercises.map((ex, i) => {
-            const allComplete = ex.sets.every((s) => s.completed);
+            const allComplete = ex.sets.filter(isWorkingSet).every((s) => s.completed);
             const isActive = i === activeExIdx;
             return (
               <button
@@ -198,7 +225,9 @@ export default function Workout() {
               >
                 {ex.supersetGroup ? (
                   <span className="flex items-center gap-0.5">
-                    <span className="text-[9px] text-accent-purple font-mono">{ex.supersetGroup}</span>
+                    <span className="text-[9px] text-accent-purple font-mono">
+                      {ex.supersetGroup}{ex.supersetOrder ?? ''}
+                    </span>
                     {i + 1}
                   </span>
                 ) : (
@@ -209,13 +238,27 @@ export default function Workout() {
           })}
         </div>
 
-        {/* Mini-session rest tip */}
-        {workout.dayType === 'arms_shoulders' && !workout.completed && (
-          <div className="bg-accent-purple/10 border border-accent-purple/20 rounded-lg px-3 py-2 flex items-center gap-2">
-            <span className="text-accent-purple text-xs font-display font-semibold tracking-wider uppercase">
-              Descanso: 60-90s entre supersets
+        {/* Aquecimento geral do programa */}
+        {!workout.completed && completedSets === 0 && (
+          <Link
+            to="/warmup"
+            className="flex items-center gap-2 bg-accent-gold/10 border border-accent-gold/30 rounded-lg px-3 py-2 hover:bg-accent-gold/15 transition-colors"
+          >
+            <Flame size={15} className="text-accent-gold flex-shrink-0" />
+            <span className="text-accent-gold text-xs font-display font-semibold tracking-wider uppercase">
+              Protocolo de aquecimento
             </span>
-          </div>
+          </Link>
+        )}
+
+        {/* Cronômetro de descanso */}
+        {rest && !workout.completed && (
+          <RestTimer
+            targetSec={rest.targetSec}
+            label={currentExercise?.restLabel}
+            startedAt={rest.startedAt}
+            onDismiss={() => setRest(null)}
+          />
         )}
 
         {/* PR Flash */}
@@ -224,6 +267,11 @@ export default function Workout() {
         {/* Active Exercise Card */}
         {currentExercise && !currentExercise.skipped && (
           <>
+            <ExercisePrescriptionCard
+              exercise={currentExercise}
+              alternatives={currentExercise.variations}
+              onSwapVariation={swapExerciseVariation}
+            />
             <CompletedSetsList
               sets={currentExercise.sets}
               exIdx={activeExIdx}
@@ -235,6 +283,8 @@ export default function Workout() {
               inputWeight={inputWeight}
               inputReps={inputReps}
               inputRPE={inputRPE}
+              inputSeconds={inputSeconds}
+              inputSegments={inputSegments}
               suggestion={suggestion}
               currentE1RM={currentE1RM}
               currentRecord={currentRecord}
@@ -242,6 +292,8 @@ export default function Workout() {
               onWeightChange={setInputWeight}
               onRepsChange={setInputReps}
               onRPEChange={setInputRPE}
+              onSecondsChange={setInputSeconds}
+              onSegmentChange={updateSegment}
               onCompleteSet={completeSet}
             />
           </>
@@ -257,7 +309,7 @@ export default function Workout() {
           </button>
           <button
             onClick={skipExercise}
-            disabled={!currentExercise || currentExercise.sets.every((s) => s.completed)}
+            disabled={!currentExercise || currentExercise.sets.filter(isWorkingSet).every((s) => s.completed)}
             className="flex-1 h-11 bg-bg-card border border-border rounded-lg font-display text-xs text-text-muted uppercase tracking-wider hover:border-accent-red transition-colors disabled:opacity-30"
           >
             Pular

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useStorage } from '../../../contexts/StorageContext';
-import { shouldShowRestWarning, getNextTrainingDate } from '../../../data/programData';
+import { shouldShowRestWarning, getNextTrainingDate, getRestDaysAfterSession } from '../../../data/programData';
 
 export interface RestWarningState {
   showRestWarning: boolean;
@@ -18,12 +18,17 @@ export function useRestWarning(): RestWarningState {
 
   useEffect(() => {
     const lastCompleted = storage.getLastCompletedWorkout();
-    if (lastCompleted) {
-      const needsRest = shouldShowRestWarning(lastCompleted.date, lastCompleted.dayIndex);
-      if (needsRest) {
-        setShowRestWarning(true);
-        setRecommendedDate(getNextTrainingDate(lastCompleted.date, lastCompleted.dayIndex));
-      }
+    if (!lastCompleted) return;
+
+    // O programa diz quantos dias de descanso sugere após cada sessão
+    // ("SUGGESTED REST DAY"); dias emendados trazem 0.
+    const restDays = lastCompleted.sessionIndex !== undefined
+      ? getRestDaysAfterSession(lastCompleted.sessionIndex, lastCompleted.programId)
+      : lastCompleted.dayIndex === 5 ? 1 : 0;
+
+    if (shouldShowRestWarning(lastCompleted.date, restDays)) {
+      setShowRestWarning(true);
+      setRecommendedDate(getNextTrainingDate(lastCompleted.date, restDays));
     }
   }, [storage]);
 

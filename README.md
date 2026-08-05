@@ -1,6 +1,35 @@
-# React + TypeScript + Vite
+# Powerlifting App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PWA de acompanhamento de treino. Dois programas estão disponíveis: **Powerbuilding
+Phase 2.0** (Jeff Nippard, 12 semanas — o padrão) e o programa legado de 52 semanas,
+mantido para preservar o histórico já registrado.
+
+## Programa a partir do markdown
+
+O Powerbuilding 2.0 é gerado a partir do material de origem, não escrito à mão:
+
+```
+src/data/program/powerbuilding2/source/COMPLETE_WORKOUTS.md   fonte de verdade (54 dias, 373 linhas)
+src/data/program/powerbuilding2/source/WARMUP_ROUTINE.md      protocolo de aquecimento
+scripts/exercise-map.mjs                                      rótulo do markdown -> exerciseId
+scripts/build-program.mjs                                     gerador
+src/data/program/powerbuilding2/generated.ts                  ARQUIVO GERADO — não editar
+```
+
+- `npm run build:program` regenera o TS a partir do markdown.
+- `npm run check:program` falha se o gerado estiver defasado (roda dentro de `npm run build`).
+- O gerador aborta se algum rótulo de exercício não estiver mapeado ou se as
+  contagens de dias/linhas divergirem — nenhum exercício entra no app sem grupo
+  muscular associado.
+
+Cada linha da tabela vira um **bloco de prescrição** (`PrescribedExercise`) com as
+oito colunas do documento. A expansão de um bloco nas séries individuais
+(aquecimento em pirâmide, dropset, 21s, rest-pause, AMRAP, isometria, unilateral)
+acontece em runtime, em `src/domain/setPlan.ts`.
+
+## Stack
+
+React 19 + TypeScript + Vite + Tailwind + Recharts, localStorage com backup em OPFS.
 
 Currently, two official plugins are available:
 

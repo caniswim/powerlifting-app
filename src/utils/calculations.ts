@@ -86,6 +86,29 @@ export function suggestWeight(
   return Math.round(rawWeight / roundingIncrement) * roundingIncrement;
 }
 
+export function roundToIncrement(weight: number, increment: number): number {
+  if (weight <= 0) return 0;
+  if (increment <= 0) return Math.round(weight);
+  return Math.round(weight / increment) * increment;
+}
+
+/** Carga a partir de uma prescrição em %1RM ("82.5-87.5%" usa o extremo inferior). */
+export function suggestWeightFromPercent(
+  oneRM: number,
+  percent: number,
+  roundingIncrement: number,
+): number {
+  if (oneRM <= 0 || percent <= 0) return 0;
+  return roundToIncrement(oneRM * percent, roundingIncrement);
+}
+
+/** Extremo inferior de "8-10", "20-30 sec", "4-6" — 0 para AMRAP. */
+export function parseTargetNumber(raw: string): number {
+  if (!raw) return 0;
+  const match = raw.match(/\d+(\.\d+)?/);
+  return match ? parseFloat(match[0]) : 0;
+}
+
 export function formatWeight(weight: number): string {
   return weight % 1 === 0 ? weight.toString() : weight.toFixed(1);
 }

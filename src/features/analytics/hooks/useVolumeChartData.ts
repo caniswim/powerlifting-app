@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import { calculateWeeklyVolume } from '../../../hooks/useVolumeTracking.ts';
 import { muscleGroupLabels } from '../../../domain/muscleGroupLabels.ts';
+import { prescribedWeeklyVolume } from '../../../domain/volumeTargets.ts';
+import { getWeeks } from '../../../services/scheduling.ts';
 import type { VolumeBarDataPoint } from '../types.ts';
 import type { WorkoutLog, MuscleGroup } from '../../../types/index.ts';
 import type { VolumeData } from '../../../hooks/useVolumeTracking.ts';
@@ -31,12 +33,23 @@ export function useVolumeChartData(filteredWorkouts: WorkoutLog[]) {
     return data;
   }, [filteredWorkouts]);
 
+  const latestWeek = useMemo(
+    () => (filteredWorkouts.length === 0 ? null : Math.max(...filteredWorkouts.map((w) => w.weekNumber))),
+    [filteredWorkouts],
+  );
+
   const latestWeekVolume: VolumeData[] = useMemo(() => {
-    if (filteredWorkouts.length === 0) return [];
-    const maxWeek = Math.max(...filteredWorkouts.map((w) => w.weekNumber));
-    const weekWorkouts = filteredWorkouts.filter((w) => w.weekNumber === maxWeek);
-    return calculateWeeklyVolume(weekWorkouts);
-  }, [filteredWorkouts]);
+    if (latestWeek === null) return [];
+    return calculateWeeklyVolume(filteredWorkouts.filter((w) => w.weekNumber === latestWeek));
+  }, [filteredWorkouts, latestWeek]);
+
+  // Alvo vem da prescrição da mesma semana, do programa daqueles treinos.
+  const latestWeekTargets = useMemo(() => {
+    if (latestWeek === null) return {};
+    const programId = filteredWorkouts.find((w) => w.weekNumber === latestWeek)?.programId;
+    const week = getWeeks(programId).find((w) => w.weekNumber === latestWeek);
+    return week ? prescribedWeeklyVolume(week) : {};
+  }, [filteredWorkouts, latestWeek]);
 
   const activeMuscles = useMemo(() => {
     return MUSCLE_GROUP_KEYS.filter((mg) =>
@@ -44,5 +57,5 @@ export function useVolumeChartData(filteredWorkouts: WorkoutLog[]) {
     );
   }, [volumeChartData]);
 
-  return { volumeChartData, latestWeekVolume, activeMuscles };
+  return { volumeChartData, latestWeekVolume, latestWeekTargets, latestWeek, activeMuscles };
 }

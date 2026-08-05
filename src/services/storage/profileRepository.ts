@@ -6,6 +6,7 @@ const defaultProfile: AthleteProfile = {
   squat1RM: 250,
   bench1RM: 170,
   deadlift1RM: 260,
+  ohp1RM: 0,
   total: 680,
   dots: 0,
 };

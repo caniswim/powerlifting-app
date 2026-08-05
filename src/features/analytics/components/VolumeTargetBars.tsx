@@ -2,34 +2,22 @@ import { ChartCard, EmptyChartMessage } from './ChartShared.tsx';
 import type { VolumeData } from '../../../hooks/useVolumeTracking.ts';
 import type { MuscleGroup } from '../../../types/index.ts';
 
-const VOLUME_TARGETS: Partial<Record<MuscleGroup, number>> = {
-  quads: 16,
-  'glúteos': 10,
-  erectors: 8,
-  hamstrings: 10,
-  peito: 16,
-  'deltóide_anterior': 8,
-  'deltóide_posterior': 14,
-  'deltóide_lateral': 15,
-  'tríceps': 17,
-  'bíceps': 17,
-  costas: 14,
-  braquial: 6,
-};
-
 interface VolumeTargetBarsProps {
   volumeData: VolumeData[];
+  /** Séries prescritas pelo programa na mesma semana. */
+  targets: Partial<Record<MuscleGroup, number>>;
+  weekNumber: number | null;
 }
 
-export function VolumeTargetBars({ volumeData }: VolumeTargetBarsProps) {
+export function VolumeTargetBars({ volumeData, targets, weekNumber }: VolumeTargetBarsProps) {
   return (
-    <ChartCard title="VOLUME: REAL vs ALVO (ÚLTIMA SEMANA)">
+    <ChartCard title={`VOLUME: REAL vs PRESCRITO${weekNumber ? ` (SEMANA ${weekNumber})` : ''}`}>
       {volumeData.length > 0 ? (
         <div className="space-y-2">
           {volumeData
-            .filter((v) => v.actual > 0 || (VOLUME_TARGETS[v.muscleGroup] ?? 0) > 0)
+            .filter((v) => v.actual > 0 || (targets[v.muscleGroup] ?? 0) > 0)
             .map((v) => {
-              const target = VOLUME_TARGETS[v.muscleGroup] ?? 0;
+              const target = targets[v.muscleGroup] ?? 0;
               const ratio = target > 0 ? v.actual / target : 1;
               const isLow = ratio < 0.8;
               const isHigh = ratio > 1.2;
@@ -45,7 +33,7 @@ export function VolumeTargetBars({ volumeData }: VolumeTargetBarsProps) {
                           className={`ml-1.5 inline-block w-1.5 h-1.5 rounded-full ${
                             isLow ? 'bg-accent-red' : 'bg-accent-gold'
                           }`}
-                          title={isLow ? 'Abaixo de 80% do alvo' : 'Acima de 120% do alvo'}
+                          title={isLow ? 'Abaixo de 80% do prescrito' : 'Acima de 120% do prescrito'}
                         />
                       )}
                     </span>
@@ -74,7 +62,7 @@ export function VolumeTargetBars({ volumeData }: VolumeTargetBarsProps) {
           <div className="flex items-center gap-4 pt-2 border-t border-border">
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-accent-red" />
-              <span className="text-[10px] font-display text-text-muted">&lt;80% alvo</span>
+              <span className="text-[10px] font-display text-text-muted">&lt;80% prescrito</span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-accent-green" />
@@ -82,7 +70,7 @@ export function VolumeTargetBars({ volumeData }: VolumeTargetBarsProps) {
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-accent-gold" />
-              <span className="text-[10px] font-display text-text-muted">&gt;120% alvo</span>
+              <span className="text-[10px] font-display text-text-muted">&gt;120% prescrito</span>
             </div>
           </div>
         </div>
