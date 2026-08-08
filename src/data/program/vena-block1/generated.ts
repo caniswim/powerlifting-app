@@ -3,7 +3,7 @@
  *
  * Origem: src/data/program/vena-block1/source/PROGRAMA.md
  * Gerador: scripts/build-vena-block1.mjs
- * sha256(origem): 1f075a6c5c258402
+ * sha256(origem): 1027c4465733419c
  *
  * 18 semanas · 86 sessões · 614 blocos de prescrição.
  * Para regenerar: npm run build:vena
@@ -11,7 +11,7 @@
 import type { PrescribedWeek } from '../../../types';
 
 /** Hash do markdown de origem que produziu este arquivo. */
-export const VENA_BLOCK1_SOURCE_HASH = '1f075a6c5c258402';
+export const VENA_BLOCK1_SOURCE_HASH = '1027c4465733419c';
 
 /** Levantamentos que exigem `trainingMax` no perfil antes de sugerir carga. */
 export const VENA_BLOCK1_REQUIRES_TRAINING_MAX = ['squat', 'bench', 'deadlift'] as const;
@@ -24,7 +24,7 @@ export const VENA_BLOCK1_ENTRADAS: Readonly<Record<string, string>> = {
   "semanas_calibracao": "3",
   "dias_por_semana_bloco": "5",
   "sessoes_total": "86",
-  "incremento_minimo_barra_kg": "2.5",
+  "incremento_minimo_barra_kg": "1",
   "tm_partida_agacho_kg": "215",
   "tm_partida_supino_kg": "160",
   "tm_partida_terra_kg": "240",
@@ -2464,7 +2464,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -3290,7 +3290,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -3313,7 +3313,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -3419,7 +3419,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -3459,7 +3459,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -4151,7 +4151,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -4174,7 +4174,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -4280,7 +4280,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -4320,7 +4320,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -4769,7 +4769,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.62,
             "percentMax": 0.62,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -4793,7 +4793,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.72,
             "percentMax": 0.72,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -4988,7 +4988,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.86,
             "percentMax": 0.86,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -5012,7 +5012,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -5036,7 +5036,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -5059,7 +5059,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -5165,7 +5165,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -5188,7 +5188,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -5211,7 +5211,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -5235,7 +5235,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.62,
             "percentMax": 0.62,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -5317,7 +5317,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.86,
             "percentMax": 0.86,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -5340,7 +5340,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -5363,7 +5363,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -5493,7 +5493,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.86,
             "percentMax": 0.86,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -5516,7 +5516,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -5696,7 +5696,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.625,
             "percentMax": 0.625,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -5720,7 +5720,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.72,
             "percentMax": 0.72,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -5915,7 +5915,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.86,
             "percentMax": 0.86,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -5939,7 +5939,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -5963,7 +5963,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -5986,7 +5986,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -6092,7 +6092,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -6115,7 +6115,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -6138,7 +6138,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -6162,7 +6162,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.62,
             "percentMax": 0.62,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -6244,7 +6244,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.865,
             "percentMax": 0.865,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -6267,7 +6267,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -6290,7 +6290,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -6420,7 +6420,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.865,
             "percentMax": 0.865,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -6443,7 +6443,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -6623,7 +6623,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.625,
             "percentMax": 0.625,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -6647,7 +6647,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.72,
             "percentMax": 0.72,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -6842,7 +6842,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.86,
             "percentMax": 0.86,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -6866,7 +6866,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -6890,7 +6890,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -6913,7 +6913,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -7019,7 +7019,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -7042,7 +7042,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -7065,7 +7065,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -7089,7 +7089,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.62,
             "percentMax": 0.62,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -7171,7 +7171,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.87,
             "percentMax": 0.87,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -7194,7 +7194,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -7217,7 +7217,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -7347,7 +7347,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.87,
             "percentMax": 0.87,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -7370,7 +7370,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -7550,7 +7550,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.63,
             "percentMax": 0.63,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -7574,7 +7574,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.72,
             "percentMax": 0.72,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -7769,7 +7769,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.86,
             "percentMax": 0.86,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -7793,7 +7793,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -7817,7 +7817,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -7840,7 +7840,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -7946,7 +7946,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -7969,7 +7969,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -7992,7 +7992,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -8016,7 +8016,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.62,
             "percentMax": 0.62,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -8098,7 +8098,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.875,
             "percentMax": 0.875,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -8121,7 +8121,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -8144,7 +8144,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -8274,7 +8274,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.875,
             "percentMax": 0.875,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -8297,7 +8297,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -8477,7 +8477,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.635,
             "percentMax": 0.635,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -8501,7 +8501,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.735,
             "percentMax": 0.735,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -8696,7 +8696,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.875,
             "percentMax": 0.875,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -8720,7 +8720,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -8744,7 +8744,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -8767,7 +8767,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -8873,7 +8873,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -8896,7 +8896,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -8919,7 +8919,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -8943,7 +8943,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -9025,7 +9025,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.88,
             "percentMax": 0.88,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -9048,7 +9048,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -9071,7 +9071,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -9201,7 +9201,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.88,
             "percentMax": 0.88,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -9224,7 +9224,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -9404,7 +9404,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.635,
             "percentMax": 0.635,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -9428,7 +9428,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.735,
             "percentMax": 0.735,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -9623,7 +9623,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.875,
             "percentMax": 0.875,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -9647,7 +9647,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -9671,7 +9671,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -9694,7 +9694,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -9800,7 +9800,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -9823,7 +9823,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.72,
             "percentMax": 0.72,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -9846,7 +9846,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -9870,7 +9870,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -9952,7 +9952,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.885,
             "percentMax": 0.885,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -9975,7 +9975,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.825,
             "percentMax": 0.825,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -9998,7 +9998,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -10128,7 +10128,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.885,
             "percentMax": 0.885,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -10151,7 +10151,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.825,
             "percentMax": 0.825,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -10331,7 +10331,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.64,
             "percentMax": 0.64,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -10355,7 +10355,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.735,
             "percentMax": 0.735,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -10550,7 +10550,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.875,
             "percentMax": 0.875,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -10574,7 +10574,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.82,
             "percentMax": 0.82,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -10598,7 +10598,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -10621,7 +10621,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -10727,7 +10727,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -10750,7 +10750,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.72,
             "percentMax": 0.72,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -10773,7 +10773,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -10797,7 +10797,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 2
           },
@@ -10879,7 +10879,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.89,
             "percentMax": 0.89,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -10902,7 +10902,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.83,
             "percentMax": 0.83,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -10925,7 +10925,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -11055,7 +11055,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.89,
             "percentMax": 0.89,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -11078,7 +11078,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.83,
             "percentMax": 0.83,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -11258,7 +11258,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.645,
             "percentMax": 0.645,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -11282,7 +11282,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.75,
             "percentMax": 0.75,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -11477,7 +11477,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.89,
             "percentMax": 0.89,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -11501,7 +11501,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.83,
             "percentMax": 0.83,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -11525,7 +11525,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -11548,7 +11548,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -11654,7 +11654,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -11677,7 +11677,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.72,
             "percentMax": 0.72,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -11700,7 +11700,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -11724,7 +11724,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 2
           },
@@ -11806,7 +11806,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.895,
             "percentMax": 0.895,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -11829,7 +11829,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.835,
             "percentMax": 0.835,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -11852,7 +11852,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -11982,7 +11982,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.895,
             "percentMax": 0.895,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -12005,7 +12005,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.835,
             "percentMax": 0.835,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -12185,7 +12185,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -12209,7 +12209,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.75,
             "percentMax": 0.75,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -12404,7 +12404,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.89,
             "percentMax": 0.89,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -12428,7 +12428,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.83,
             "percentMax": 0.83,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -12452,7 +12452,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -12475,7 +12475,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -12581,7 +12581,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -12604,7 +12604,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.72,
             "percentMax": 0.72,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -12627,7 +12627,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -12651,7 +12651,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -12733,7 +12733,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.9,
             "percentMax": 0.9,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -12756,7 +12756,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.84,
             "percentMax": 0.84,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -12779,7 +12779,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -12909,7 +12909,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.9,
             "percentMax": 0.9,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -12932,7 +12932,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.84,
             "percentMax": 0.84,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -13112,7 +13112,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -13136,7 +13136,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -13331,7 +13331,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.9,
             "percentMax": 0.9,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -13355,7 +13355,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.84,
             "percentMax": 0.84,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -13379,7 +13379,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -13402,7 +13402,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -13508,7 +13508,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -13531,7 +13531,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.74,
             "percentMax": 0.74,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -13554,7 +13554,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -13578,7 +13578,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.67,
             "percentMax": 0.67,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -13660,7 +13660,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.905,
             "percentMax": 0.905,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -13683,7 +13683,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.845,
             "percentMax": 0.845,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -13706,7 +13706,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -13836,7 +13836,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.905,
             "percentMax": 0.905,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -13859,7 +13859,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.845,
             "percentMax": 0.845,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -14039,7 +14039,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.655,
             "percentMax": 0.655,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -14063,7 +14063,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -14258,7 +14258,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.9,
             "percentMax": 0.9,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -14282,7 +14282,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.84,
             "percentMax": 0.84,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -14306,7 +14306,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -14329,7 +14329,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -14435,7 +14435,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -14458,7 +14458,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.74,
             "percentMax": 0.74,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -14481,7 +14481,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -14505,7 +14505,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.67,
             "percentMax": 0.67,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -14587,7 +14587,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.91,
             "percentMax": 0.91,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -14610,7 +14610,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.85,
             "percentMax": 0.85,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -14633,7 +14633,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -14763,7 +14763,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.91,
             "percentMax": 0.91,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -14786,7 +14786,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.85,
             "percentMax": 0.85,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -14966,7 +14966,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.66,
             "percentMax": 0.66,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -14990,7 +14990,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.77,
             "percentMax": 0.77,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -15185,7 +15185,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.91,
             "percentMax": 0.91,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -15209,7 +15209,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.85,
             "percentMax": 0.85,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -15233,7 +15233,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -15256,7 +15256,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -15362,7 +15362,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -15385,7 +15385,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.74,
             "percentMax": 0.74,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -15408,7 +15408,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -15432,7 +15432,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.67,
             "percentMax": 0.67,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -15514,7 +15514,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.915,
             "percentMax": 0.915,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -15537,7 +15537,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.855,
             "percentMax": 0.855,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -15560,7 +15560,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -15690,7 +15690,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.915,
             "percentMax": 0.915,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -15713,7 +15713,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.855,
             "percentMax": 0.855,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -15893,7 +15893,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.66,
             "percentMax": 0.66,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -15917,7 +15917,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.78,
             "percentMax": 0.78,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -16112,7 +16112,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.92,
             "percentMax": 0.92,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -16136,7 +16136,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.86,
             "percentMax": 0.86,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -16160,7 +16160,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -16183,7 +16183,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -16289,7 +16289,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -16312,7 +16312,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.74,
             "percentMax": 0.74,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -16335,7 +16335,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -16359,7 +16359,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.67,
             "percentMax": 0.67,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -16441,7 +16441,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.92,
             "percentMax": 0.92,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -16464,7 +16464,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.86,
             "percentMax": 0.86,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -16487,7 +16487,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling",
             "pauseSec": 1
           },
@@ -16617,7 +16617,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.92,
             "percentMax": 0.92,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -16640,7 +16640,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.86,
             "percentMax": 0.86,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -16820,7 +16820,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.88,
             "percentMax": 0.88,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -16843,7 +16843,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.72,
             "percentMax": 0.72,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           }
@@ -16875,7 +16875,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.72,
             "percentMax": 0.72,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "ceiling"
           },
           {
@@ -16898,7 +16898,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.67,
             "percentMax": 0.67,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           }
@@ -16930,7 +16930,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.875,
             "percentMax": 0.875,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -16953,7 +16953,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.76,
             "percentMax": 0.76,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -16977,7 +16977,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.65,
             "percentMax": 0.65,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           }
         ]
@@ -17008,7 +17008,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.875,
             "percentMax": 0.875,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor",
             "pauseSec": 1
           },
@@ -17032,7 +17032,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.75,
             "percentMax": 0.75,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "floor"
           },
           {
@@ -17055,7 +17055,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.72,
             "percentMax": 0.72,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           }
         ]
@@ -17097,7 +17097,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.62,
             "percentMax": 0.62,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -17120,7 +17120,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.7,
             "percentMax": 0.7,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -17144,7 +17144,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.62,
             "percentMax": 0.62,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           }
         ]
@@ -17175,7 +17175,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.884,
             "percentMax": 0.884,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -17198,7 +17198,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.942,
             "percentMax": 0.942,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -17221,7 +17221,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.977,
             "percentMax": 0.977,
             "percentRef": "squat",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -17244,7 +17244,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.844,
             "percentMax": 0.844,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -17268,7 +17268,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.891,
             "percentMax": 0.891,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -17292,7 +17292,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.922,
             "percentMax": 0.922,
             "percentRef": "bench",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest",
             "pauseSec": 1
           },
@@ -17316,7 +17316,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.875,
             "percentMax": 0.875,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -17339,7 +17339,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.927,
             "percentMax": 0.927,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           },
           {
@@ -17362,7 +17362,7 @@ export const venaBlock1Weeks: PrescribedWeek[] = [
             "percentMin": 0.958,
             "percentMax": 0.958,
             "percentRef": "deadlift",
-            "roundToKg": 2.5,
+            "roundToKg": 1,
             "roundGuard": "nearest"
           }
         ]

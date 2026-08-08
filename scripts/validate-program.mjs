@@ -81,7 +81,7 @@ const MAX_PERCENT = 0.92;
 let LEGAL_REFERENCE_KG = { squat: 215, bench: 160, deadlift: 240 };
 
 /** design.md §0: menor incremento carregável na barra com as micro-anilhas. */
-const BAR_INCREMENT_KG = 2.5;
+const BAR_INCREMENT_KG = 1;
 /** Tolerância de arredondamento ao comparar cargas implícitas, em kg. */
 const KG_TOLERANCE = 0.1;
 

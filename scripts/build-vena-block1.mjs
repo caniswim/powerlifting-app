@@ -590,7 +590,10 @@ function buildExercise(rawCols, weekNumber, dayNumber, index, grade, refs, papei
     ex.percentMin = round5(percent);
     ex.percentMax = round5(percent);
     ex.percentRef = PERCENT_REF_KEY[PERCENT_REF_LIFT[entry.id]];
-    ex.roundToKg = 2.5;
+    // Grade de arredondamento = o que a barra do atleta consegue montar, lido
+    // da declaração `incremento_minimo_barra_kg`. Estava cravado em 2.5 e a
+    // declaração não governava nada: mudar o markdown não mudava a carga.
+    ex.roundToKg = refs.incrementoKg;
     ex.roundGuard = papel.round;
   }
   // A pausa pode ser variável por semana ({PAUSA-P}) e a célula da grade vem
@@ -1014,6 +1017,13 @@ function build() {
   };
   for (const [lift, kg] of Object.entries(refs)) {
     if (!Number.isFinite(kg) || kg <= 0) throw new Error(`trainingMax de partida inválido para ${lift}: ${kg}`);
+  }
+
+  // A grade de arredondamento das cargas prescritas É o menor incremento que a
+  // barra do atleta monta. Declarado uma vez, aqui, e usado em toda prescrição.
+  refs.incrementoKg = Number(entradas.incremento_minimo_barra_kg);
+  if (!Number.isFinite(refs.incrementoKg) || refs.incrementoKg <= 0) {
+    throw new Error(`incremento_minimo_barra_kg inválido: ${entradas.incremento_minimo_barra_kg}`);
   }
 
   checkDerivacoes(grade, derivacoes);
