@@ -8,8 +8,8 @@ export const KEYS = {
   SESSION_INDEX: 'pl_session_index',
   PRE_SURVEYS: 'pl_pre_surveys',
   POST_SURVEYS: 'pl_post_surveys',
-  AI_FEEDBACK: 'pl_ai_feedback',
-  API_KEY: 'pl_api_key',
+  /** Série temporal de peso corporal. */
+  BODYWEIGHT: 'pl_bodyweight',
   /** Id do programa ativo. */
   ACTIVE_PROGRAM: 'pl_active_program',
   /** Posição por programa: Record<programId, sessionIndex>. */
@@ -19,6 +19,12 @@ export const KEYS = {
 } as const;
 
 export const ALL_KEYS = Object.values(KEYS);
+
+/** Chaves de versões antigas que não existem mais e devem ser purgadas. */
+export const OBSOLETE_KEYS = [
+  'pl_ai_feedback',
+  'pl_api_key',
+] as const;
 
 // ---------------------------------------------------------------------------
 // OPFS sync (debounced — writes at most once every 2s)

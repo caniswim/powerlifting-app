@@ -92,14 +92,34 @@ export function roundToIncrement(weight: number, increment: number): number {
   return Math.round(weight / increment) * increment;
 }
 
+/**
+ * Arredondamento com direção declarada. `floor` em série limitada por TETO
+ * (top set: 92% do trainingMax) e `ceiling` em série limitada por PISO (faixa de
+ * volume, dose de força ≥80%). A TM 160, `nearest` põe o top set em 147,5 kg =
+ * 92,19% e a back-off em 127,5 = 79,69% — os dois invariantes que o bloco
+ * inteiro protege, quebrados pelo arredondamento.
+ */
+export function roundWithGuard(
+  weight: number,
+  increment: number,
+  guard?: 'floor' | 'ceiling' | 'nearest',
+): number {
+  if (weight <= 0) return 0;
+  if (increment <= 0) return Math.round(weight);
+  if (guard === 'floor') return Math.floor(weight / increment + 1e-9) * increment;
+  if (guard === 'ceiling') return Math.ceil(weight / increment - 1e-9) * increment;
+  return Math.round(weight / increment) * increment;
+}
+
 /** Carga a partir de uma prescrição em %1RM ("82.5-87.5%" usa o extremo inferior). */
 export function suggestWeightFromPercent(
   oneRM: number,
   percent: number,
   roundingIncrement: number,
+  guard?: 'floor' | 'ceiling' | 'nearest',
 ): number {
   if (oneRM <= 0 || percent <= 0) return 0;
-  return roundToIncrement(oneRM * percent, roundingIncrement);
+  return roundWithGuard(oneRM * percent, roundingIncrement, guard);
 }
 
 /** Extremo inferior de "8-10", "20-30 sec", "4-6" — 0 para AMRAP. */

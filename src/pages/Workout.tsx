@@ -15,6 +15,8 @@ import { SetEditSheet } from '../features/workout/components/SetEditSheet';
 import { AddExercisePanel } from '../features/workout/components/AddExercisePanel';
 import { ExercisePrescriptionCard } from '../features/workout/components/ExercisePrescriptionCard';
 import { RestTimer } from '../features/workout/components/RestTimer';
+import { TrainingMaxGate } from '../features/workout/components/TrainingMaxGate';
+import { missingTrainingMaxRefs } from '../domain/trainingMaxGuard';
 import { useWorkoutSurveys } from '../features/workout/hooks/useWorkoutSurveys';
 import { PreWorkoutSurveySheet } from '../features/survey/components/PreWorkoutSurveySheet';
 import { PostWorkoutSurveySheet } from '../features/survey/components/PostWorkoutSurveySheet';
@@ -29,9 +31,9 @@ export default function Workout() {
 
   const loadSuggestion = useLoadSuggestion();
   const {
-    inputWeight, inputReps, inputRPE, inputSeconds, inputSegments,
+    inputWeight, inputReps, inputRPE, inputSeconds, inputSegments, inputCompliance,
     suggestion,
-    setInputWeight, setInputReps, setInputRPE, setInputSeconds, updateSegment,
+    setInputWeight, setInputReps, setInputRPE, setInputSeconds, updateSegment, updateCompliance,
     prefillInputs,
   } = loadSuggestion;
 
@@ -54,7 +56,10 @@ export default function Workout() {
     workout, setWorkout,
     activeExIdx, activeSetIdx,
     setActiveExIdx, setActiveSetIdx,
-    { weight: inputWeight, reps: inputReps, rpe: inputRPE, seconds: inputSeconds, segments: inputSegments },
+    {
+      weight: inputWeight, reps: inputReps, rpe: inputRPE,
+      seconds: inputSeconds, segments: inputSegments, compliance: inputCompliance,
+    },
     prefillInputs,
     handleSetCompleted,
   );
@@ -186,6 +191,15 @@ export default function Workout() {
   const wouldBePR = currentE1RM > (currentRecord?.e1rm || 0) && currentE1RM > 0;
   const sessionIndex = storage.getSessionIndex();
 
+  // Guarda: programa prescrito em padrão de competição sem máximo técnico.
+  // Roda mesmo que a migração de schema não tenha rodado — dispositivo novo,
+  // storage limpo, import de backup antigo.
+  const missingTrainingMax = missingTrainingMaxRefs(
+    storage.getProfile(),
+    workout.programId ?? storage.getActiveProgramId(),
+    workout.exercises,
+  );
+
   return (
     <div ref={containerRef} className="min-h-screen bg-bg-primary pb-4">
       <WorkoutHeader
@@ -238,6 +252,8 @@ export default function Workout() {
           })}
         </div>
 
+        <TrainingMaxGate missing={missingTrainingMax} />
+
         {/* Aquecimento geral do programa */}
         {!workout.completed && completedSets === 0 && (
           <Link
@@ -285,6 +301,7 @@ export default function Workout() {
               inputRPE={inputRPE}
               inputSeconds={inputSeconds}
               inputSegments={inputSegments}
+              inputCompliance={inputCompliance}
               suggestion={suggestion}
               currentE1RM={currentE1RM}
               currentRecord={currentRecord}
@@ -294,6 +311,7 @@ export default function Workout() {
               onRPEChange={setInputRPE}
               onSecondsChange={setInputSeconds}
               onSegmentChange={updateSegment}
+              onComplianceChange={updateCompliance}
               onCompleteSet={completeSet}
             />
           </>

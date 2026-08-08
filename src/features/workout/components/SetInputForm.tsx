@@ -1,9 +1,11 @@
 import { getRPEColor, getRIRText } from '../../../domain/rpe';
 import { setTypeBadgeClass, setTypeLabels } from '../../../domain/setTypeLabels';
-import { allowsZeroLoad } from '../../../domain/exerciseRegistry';
+import { allowsZeroLoad, getExercise } from '../../../domain/exerciseRegistry';
+import { isJudgedLift } from '../../../domain/competitionStandard';
+import { CompetitionStandardPanel } from './CompetitionStandardPanel';
 import { equipmentIncrement, exerciseEquipment } from '../../../data/exerciseMuscleMap';
 import type { LoadSuggestion } from '../../../utils/calculations';
-import type { ExerciseLog, PersonalRecord, SetSegmentLog } from '../../../types';
+import type { ExerciseLog, PersonalRecord, SetCompliance, SetSegmentLog } from '../../../types';
 
 const RPE_VALUES = [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10];
 
@@ -15,6 +17,7 @@ interface SetInputFormProps {
   inputRPE: number;
   inputSeconds: number;
   inputSegments: SetSegmentLog[];
+  inputCompliance: SetCompliance;
   suggestion: LoadSuggestion | null;
   currentE1RM: number;
   currentRecord: PersonalRecord | null;
@@ -24,6 +27,7 @@ interface SetInputFormProps {
   onRPEChange: (rpe: number) => void;
   onSecondsChange: (s: number) => void;
   onSegmentChange: (index: number, patch: Partial<SetSegmentLog>) => void;
+  onComplianceChange: (patch: Partial<SetCompliance>) => void;
   onCompleteSet: () => void;
 }
 
@@ -78,6 +82,7 @@ export function SetInputForm({
   inputRPE,
   inputSeconds,
   inputSegments,
+  inputCompliance,
   suggestion,
   currentE1RM,
   currentRecord,
@@ -87,6 +92,7 @@ export function SetInputForm({
   onRPEChange,
   onSecondsChange,
   onSegmentChange,
+  onComplianceChange,
   onCompleteSet,
 }: SetInputFormProps) {
   const set = exercise.sets[activeSetIdx];
@@ -97,6 +103,9 @@ export function SetInputForm({
   const isAmrap = setType === 'amrap';
   const hasSegments = inputSegments.length > 0;
   const zeroLoadOk = allowsZeroLoad(exercise.exerciseId);
+  // Padrão de competição só existe nos três levantamentos.
+  const lift = exercise.percentRef ?? getExercise(exercise.exerciseId)?.percentRef;
+  const showCompetitionPanel = !isWarmup && isJudgedLift(lift);
   const increment = equipmentIncrement[exerciseEquipment[exercise.exerciseId] || 'barbell'] || 2.5;
 
   const workingSets = exercise.sets.filter((s) => s.setType !== 'warmup');
@@ -309,6 +318,15 @@ export function SetInputForm({
               {getRIRText(inputRPE)}
             </div>
           </div>
+
+          {showCompetitionPanel && lift && (
+            <CompetitionStandardPanel
+              lift={lift}
+              reps={inputReps}
+              value={inputCompliance}
+              onChange={onComplianceChange}
+            />
+          )}
 
           {/* e1RM preview — aquecimento e isometria não geram e1RM */}
           {currentE1RM > 0 && !isWarmup && !isTimed && (

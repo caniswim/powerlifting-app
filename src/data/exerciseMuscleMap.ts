@@ -1,5 +1,6 @@
 import './exercises/definitions'; // Side-effect: registers all exercises
 import './exercises/powerbuilding'; // Side-effect: Powerbuilding 2.0 (sobrescreve nomes reaproveitados)
+import './exercises/vena'; // Side-effect: Bloco 1 "Ficar Legal" (ids novos, não sobrescreve nada)
 import { getExerciseNames, getExerciseMuscleMapAll, getAllExercises, getEquipmentIncrement } from '../domain/exerciseRegistry';
 import type { ExerciseMuscleMap } from '../types';
 import type { EquipmentType } from '../domain/exerciseRegistry';

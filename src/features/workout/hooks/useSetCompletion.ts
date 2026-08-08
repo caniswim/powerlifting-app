@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import { calculateE1RM } from '../../../utils/calculations';
 import { useStorage } from '../../../contexts/StorageContext';
 import { isExerciseDone } from './useWorkoutSession';
-import type { ExerciseLog, SetLog, SetSegmentLog, WorkoutLog } from '../../../types';
+import type { ExerciseLog, SetCompliance, SetLog, SetSegmentLog, WorkoutLog } from '../../../types';
 
 export interface SetInputValues {
   weight: number;
@@ -10,6 +10,22 @@ export interface SetInputValues {
   rpe: number;
   seconds: number;
   segments: SetSegmentLog[];
+  compliance?: SetCompliance;
+}
+
+/**
+ * Só grava `compliance` quando há de fato algo registrado. Um objeto vazio em
+ * toda série inflaria o histórico e faria "não julgado" parecer "julgado".
+ */
+function meaningfulCompliance(c: SetCompliance | undefined): SetCompliance | undefined {
+  if (!c) return undefined;
+  const hasGear = c.equipment ? Object.values(c.equipment).some(Boolean) : false;
+  const hasAny =
+    c.validReps !== undefined || c.depth !== undefined || c.paused !== undefined
+    || c.pauseSec !== undefined || c.deadStop !== undefined
+    || c.bar !== undefined || c.plates !== undefined
+    || c.video !== undefined || c.note !== undefined || hasGear;
+  return hasAny ? c : undefined;
 }
 
 export interface SetEditState {
@@ -202,6 +218,8 @@ export function useSetCompletion(
     const currentRecord = storage.getRecordForExercise(exerciseId);
     const isPR = eligible && e1rm > 0 && e1rm > (currentRecord?.e1rm || 0);
 
+    const compliance = meaningfulCompliance(input.compliance);
+
     sets[activeSetIdx] = {
       ...previous,
       weight,
@@ -212,6 +230,7 @@ export function useSetCompletion(
       isPR,
       ...(isTimed || seconds > 0 ? { durationSec: seconds } : {}),
       ...(hasSegments ? { segments: input.segments } : {}),
+      ...(compliance ? { compliance } : {}),
     };
     exercise.sets = sets;
     exercises[activeExIdx] = exercise;

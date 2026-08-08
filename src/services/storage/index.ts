@@ -13,5 +13,4 @@ export {
 } from './sessionManager';
 export { exportAllData, importData, resetAllData } from './dataTransfer';
 export { getPreSurveys, savePreSurvey, getPreSurveyForWorkout, getRecentPreSurveys, getPostSurveys, savePostSurvey, getPostSurveyForWorkout, getRecentPostSurveys } from './surveyRepository';
-export { getAllFeedback, saveFeedback, getFeedbackByPeriod, getFeedbackForWorkout, getPendingFeedback } from './feedbackRepository';
-export { getApiKey, setApiKey } from './settingsRepository';
+export { getBodyweightEntries, saveBodyweightEntry, getLatestBodyweight, localDateKey } from './bodyweightRepository';

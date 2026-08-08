@@ -113,4 +113,41 @@ export const EXERCISE_MAP = {
   'L-Sit Hold': { id: 'l_sit_hold' },
   'Long-Lever Plank (Optional)': { id: 'long_lever_plank' },
   'Barbell or DB Isometric Hold': { id: 'isometric_hold' },
+
+  // -------------------------------------------------------------------------
+  // Bloco 1 — "Ficar Legal" (vena-block1). Rótulos em português.
+  // Os ids novos são deliberadamente distintos dos ids do Powerbuilding 2.0:
+  // o padrão de execução mudou (profundidade legal, pausa de competição, sem
+  // strap), então misturar o histórico corromperia PRs e e1RM.
+  // -------------------------------------------------------------------------
+  'Agachamento Low Bar (Profundidade Legal)': { id: 'agachamento_low_bar_legal' },
+  'Floor Press (Barra)': { id: 'floor_press', alt: [['Supino Fechado (Barra)', 'close_grip_bench']] },
+  'Puxada Vertical': { id: 'wide_grip_lat_pulldown', alt: [['Puxada Vertical (Pegada Neutra)', 'puxada_neutra']] },
+  'Puxada Vertical (Pegada Neutra)': { id: 'puxada_neutra', alt: [['Puxada Alta Aberta', 'wide_grip_lat_pulldown'], ['Remada Apoio Peito', 'remada_apoio_peito']] },
+  'Face Pull na Polia': { id: 'face_pull', alt: [['Crucifixo Invertido na Máquina', 'cable_reverse_flye'], ['Face Pull com Banda', 'face_pull_banda']] },
+  'Crucifixo no Peck Deck': { id: 'crucifixo_peck_deck', alt: [['Crucifixo com Halteres no Inclinado', 'crucifixo_halter'], ['Crucifixo na Polia', 'pec_flye']] },
+  'Agachamento High Bar': { id: 'agachamento_high_bar' },
+  'Agachamento com Pausa Acima do Paralelo': { id: 'agachamento_pausa_acima_paralelo' },
+  'Supino Pausado (Competição)': { id: 'supino_pausado_competicao' },
+  'Terra Sumo (Sem Strap)': { id: 'terra_sumo_sem_strap' },
+  'Stiff-Legged Deadlift': { id: 'stiff_legged_deadlift' },
+  // Reaproveitados do catálogo existente (mesmo movimento, preserva histórico).
+  'Remada Unilateral com Halter': { id: 'one_arm_row', alt: [['Remada Apoio Peito', 'remada_apoio_peito'], ['Remada Curvada com Barra', 'remada_barra']] },
+  'Barra Fixa com Peso': { id: 'weighted_pullup', alt: [['Puxada Alta na Polia', 'wide_grip_lat_pulldown']] },
+  'Face Pull com Banda': { id: 'face_pull_banda', alt: [['Face Pull na Polia', 'face_pull'], ['Elevação Posterior (DB)', 'elevacao_posterior']] },
+  'Leg Press': { id: 'leg_press' },
+  'Leg Press 45°': { id: 'leg_press', alt: [['Hack Squat', 'hack_squat'], ['Agachamento Búlgaro', 'bulgarian_split_squat']] },
+  'Mesa Flexora': { id: 'leg_curl', alt: [['Mesa Flexora Unilateral', 'unilateral_leg_curl'], ['Sliding Leg Curl', 'sliding_leg_curl']] },
+  'Extensão Lombar (Hiperextensão)': { id: 'back_extension', alt: [['Good Morning', 'good_morning'], ['Barbell RDL', 'barbell_rdl']] },
+  'Supino Inclinado com Halter': { id: 'db_press_inclinado', alt: [['Supino Inclinado com Barra', 'supino_wide_grip']] },
+  'Crucifixo com Halteres em Posição Alongada': { id: 'crucifixo_halter', alt: [['Crucifixo na Polia', 'pec_flye']] },
+  'Elevação Lateral (DB)': { id: 'elevacao_lateral', alt: [['Elevação Lateral (cabo)', 'elevacao_lateral_cabo'], ['Elevação Lateral (máquina)', 'elevacao_lateral_maquina']] },
+  'Elevação Lateral (cabo)': { id: 'elevacao_lateral_cabo', alt: [['Elevação Lateral (DB)', 'elevacao_lateral']] },
+  'Elevação Posterior (DB)': { id: 'elevacao_posterior', alt: [['Face Pull com Banda', 'face_pull_banda'], ['Band Pull-Apart', 'band_pull_apart']] },
+  'Rosca na Polia': { id: 'rosca_cabo', alt: [['Rosca Barra EZ', 'rosca_barra'], ['Rosca Direta', 'rosca']] },
+  'Rosca Inclinada (DB)': { id: 'rosca_inclinada', alt: [['Rosca Scott', 'rosca_scott']] },
+  'Rosca Martelo': { id: 'rosca_martelo' },
+  'Tríceps Overhead na Polia': { id: 'triceps_overhead_cabo', alt: [['Tríceps Francês', 'triceps_frances'], ['Tríceps Testa', 'triceps_testa']] },
+  'Tríceps Testa': { id: 'triceps_testa', alt: [['Tríceps Francês', 'triceps_frances'], ['Tríceps na Polia', 'triceps_pulley']] },
+  'Tríceps na Polia': { id: 'triceps_pulley', alt: [['Tríceps Banco', 'triceps_banco']] },
 };

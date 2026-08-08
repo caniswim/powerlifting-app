@@ -16,6 +16,13 @@ export const dayTypeLabels: Record<DayType, string> = {
   upper_body: 'UPPER BODY — Focus',
   lower_body_continued: 'LOWER BODY — Continued',
   upper_body_continued: 'UPPER BODY — Continued',
+  vb_squat_force: 'D4 — AGACHO PRIMÁRIO + VOLUME DE SUPINO + OMBRO E BRAÇO',
+  vb_bench_force: 'D2 — FORÇA DE SUPINO + PRÁTICA DE TERRA',
+  vb_squat_volume: 'D3 — AGACHO HIGH BAR SECUNDÁRIO + PRÁTICA DE SUPINO',
+  vb_deadlift_force: 'D5 — FORÇA DE TERRA + HINGE + ESTÉTICA',
+  vb_squat_tertiary: 'D1 — AGACHO TERCIÁRIO (PAUSA) + VOLUME DE SUPINO',
+  vb_taper: 'TAPER — SESSÃO LEVE',
+  vb_mock_meet: 'SIMULADO — 3 TENTATIVAS POR LEVANTAMENTO',
 };
 
 // Short labels for dashboard
@@ -34,6 +41,13 @@ export const dayTypeShortLabels: Record<DayType, string> = {
   upper_body: 'UPPER — Focus',
   lower_body_continued: 'LOWER — Continued',
   upper_body_continued: 'UPPER — Continued',
+  vb_squat_force: 'D4 — Agacho Primário',
+  vb_bench_force: 'D2 — Supino Força',
+  vb_squat_volume: 'D3 — Agacho Secundário',
+  vb_deadlift_force: 'D5 — Terra Força',
+  vb_squat_tertiary: 'D1 — Agacho Terciário',
+  vb_taper: 'TAPER — Leve',
+  vb_mock_meet: 'SIMULADO',
 };
 
 // Portuguese labels for calendar
@@ -52,6 +66,13 @@ export const dayTypePtLabels: Record<DayType, string> = {
   upper_body: 'Superiores',
   lower_body_continued: 'Inferiores — Continuação',
   upper_body_continued: 'Superiores — Continuação',
+  vb_squat_force: 'Agacho Primário',
+  vb_bench_force: 'Força de Supino',
+  vb_squat_volume: 'Agacho Secundário (High Bar)',
+  vb_deadlift_force: 'Força de Terra',
+  vb_squat_tertiary: 'Agacho Terciário (Pausa)',
+  vb_taper: 'Taper — Sessão Leve',
+  vb_mock_meet: 'Simulado',
 };
 
 /** Sigla de 2-3 letras para grades compactas (Dashboard, Calendar). */
@@ -70,4 +91,11 @@ export const dayTypeAbbrev: Record<DayType, string> = {
   upper_body: 'UP1',
   lower_body_continued: 'LO2',
   upper_body_continued: 'UP2',
+  vb_squat_force: 'D4',
+  vb_bench_force: 'D2',
+  vb_squat_volume: 'D3',
+  vb_deadlift_force: 'D5',
+  vb_squat_tertiary: 'D1',
+  vb_taper: 'TAP',
+  vb_mock_meet: 'SIM',
 };

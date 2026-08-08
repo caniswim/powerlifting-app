@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Eye, EyeOff } from 'lucide-react';
 import { calculateDOTS } from '../utils/calculations';
 import { useStorage } from '../contexts/StorageContext';
-import type { AthleteProfile } from '../types';
+import type { AthleteProfile, PercentRef } from '../types';
 import { getSessionData, getTotalSessions, getTotalWeeks } from '../services/scheduling';
+import { localDateKey } from '../services/storage/bodyweightRepository';
 import { listPrograms } from '../data/program/programs';
+import { BodyweightSection } from '../features/settings/components/BodyweightSection';
+import { CloudSyncSection } from '../features/settings/components/CloudSyncSection';
+import { AnthropometrySection } from '../features/settings/components/AnthropometrySection';
 
 const APP_VERSION = '1.3.0';
 
@@ -17,8 +20,6 @@ export default function Settings() {
   const [importStatus, setImportStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [saved, setSaved] = useState(false);
   const [updateStatus, setUpdateStatus] = useState<'idle' | 'checking' | 'updating' | 'up-to-date' | 'error'>('idle');
-  const [apiKey, setApiKeyState] = useState(() => storage.getApiKey());
-  const [showApiKey, setShowApiKey] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const totalSessions = getTotalSessions(programId);
@@ -42,17 +43,35 @@ export default function Settings() {
     setProfile((prev) => ({ ...prev, [field]: num }));
   };
 
+  // Máximo técnico: mora fora dos campos de 1RM de propósito. Não entra no
+  // total nem no DOTS — é só a âncora dos percentuais prescritos.
+  const handleTrainingMaxChange = (lift: PercentRef, value: string) => {
+    const num = parseFloat(value) || 0;
+    setProfile((prev) => ({
+      ...prev,
+      trainingMax: { ...prev.trainingMax, [lift]: num > 0 ? num : undefined },
+      // Digitar o número À MÃO é o gate sendo cumprido: deixa de ser seed de
+      // migração e passa a ser máximo técnico medido. Enquanto for `seed`, a
+      // trava de `trainingMaxGuard` o trata como ausente e bloqueia a sugestão.
+      trainingMaxOrigin: num > 0 ? 'calibrado' : prev.trainingMaxOrigin,
+    }));
+  };
+
   const handleSave = useCallback(() => {
     const total = profile.squat1RM + profile.bench1RM + profile.deadlift1RM;
     const dots = calculateDOTS(profile.bodyweight, total);
     const updated = { ...profile, total, dots };
     storage.saveProfile(updated);
+    // Mudou o peso no perfil? A série temporal recebe o mesmo ponto — o DOTS
+    // histórico não pode depender de o atleta lembrar de usar a outra seção.
+    if (updated.bodyweight > 0 && storage.getLatestBodyweight()?.weightKg !== updated.bodyweight) {
+      storage.saveBodyweightEntry({ date: localDateKey(), weightKg: updated.bodyweight });
+    }
     storage.setActiveProgramId(programId);
     storage.setSessionIndex(sessionIdx, programId);
-    storage.setApiKey(apiKey);
     setSaved(true);
     setTimeout(() => setSaved(false), 2000);
-  }, [profile, sessionIdx, programId, apiKey, storage]);
+  }, [profile, sessionIdx, programId, storage]);
 
   const handleProgramChange = (id: string) => {
     setProgramId(id);
@@ -196,6 +215,42 @@ export default function Settings() {
               O desenvolvimento não entra no total, mas é usado nas cargas prescritas em %1RM.
             </p>
 
+            <div className="border-t border-border pt-3">
+              <span className="text-[10px] font-display text-text-muted uppercase tracking-wider">
+                Máximo Técnico (padrão de competição)
+              </span>
+            </div>
+            <p className="text-[10px] font-display text-text-muted leading-relaxed">
+              O maior peso que você move <strong>sem degradar a técnica</strong>, na execução
+              que o juiz aceitaria: agachamento na profundidade legal, supino com pausa real,
+              terra sem strap e com parada morta.{' '}
+              <strong className="text-text-secondary">Não é o mesmo que o 1RM de academia</strong> —
+              costuma ficar bem abaixo dele. É este número que ancora todas as cargas prescritas
+              em %1RM. Deixe em 0 para usar o 1RM.
+            </p>
+            <InputField
+              label="Agachamento"
+              unit="kg"
+              value={profile.trainingMax?.squat ?? 0}
+              onChange={(v) => handleTrainingMaxChange('squat', v)}
+            />
+            <InputField
+              label="Supino"
+              unit="kg"
+              value={profile.trainingMax?.bench ?? 0}
+              onChange={(v) => handleTrainingMaxChange('bench', v)}
+            />
+            <InputField
+              label="Terra"
+              unit="kg"
+              value={profile.trainingMax?.deadlift ?? 0}
+              onChange={(v) => handleTrainingMaxChange('deadlift', v)}
+            />
+            <p className="text-[10px] font-display text-text-muted -mt-1 leading-relaxed">
+              As semanas 1–3 do Bloco 1 existem para descobrir estes três números por teto de
+              RPE. Atualize-os a cada re-ancoragem — o 1RM histórico acima fica intacto.
+            </p>
+
             {/* Calculated values */}
             <div className="border-t border-border pt-3 flex justify-between items-center">
               <span className="text-sm font-display text-text-secondary uppercase tracking-wider">
@@ -283,40 +338,7 @@ export default function Settings() {
           </div>
         </section>
 
-        {/* API Key Section */}
-        <section className="bg-bg-card border border-border rounded-lg p-4 space-y-4">
-          <h2 className="text-xs font-display font-semibold text-accent-gold uppercase tracking-wider">
-            Feedback com IA
-          </h2>
-          <div className="space-y-2">
-            <label className="text-sm font-display text-text-secondary uppercase tracking-wider">
-              Chave API OpenRouter
-            </label>
-            <div className="flex gap-2">
-              <input
-                type={showApiKey ? 'text' : 'password'}
-                value={apiKey}
-                onChange={(e) => setApiKeyState(e.target.value)}
-                placeholder="sk-or-..."
-                className="flex-1 h-11 bg-bg-input border border-border-light rounded-md px-3
-                           font-mono text-sm text-text-primary focus:outline-none focus:border-accent-gold
-                           transition-colors"
-              />
-              <button
-                type="button"
-                onClick={() => setShowApiKey(!showApiKey)}
-                className="w-11 h-11 bg-bg-input border border-border-light rounded-md
-                           text-text-muted hover:text-text-primary transition-colors
-                           flex items-center justify-center"
-              >
-                {showApiKey ? <EyeOff size={16} /> : <Eye size={16} />}
-              </button>
-            </div>
-            <p className="text-[10px] text-text-muted font-display">
-              Para feedback de IA após cada sessão (opcional)
-            </p>
-          </div>
-        </section>
+        <BodyweightSection />
 
         {/* Save Button */}
         <button
@@ -330,6 +352,8 @@ export default function Settings() {
         >
           {saved ? 'Salvo!' : 'Salvar Alterações'}
         </button>
+
+        <CloudSyncSection />
 
         {/* Data Management */}
         <section className="bg-bg-card border border-border rounded-lg p-4 space-y-3">
@@ -390,6 +414,7 @@ export default function Settings() {
             <span className="text-sm font-display text-text-secondary">Versão</span>
             <span className="text-sm font-mono text-text-muted">{APP_VERSION}</span>
           </div>
+          <AnthropometrySection />
           <button
             onClick={handleUpdate}
             disabled={updateStatus === 'checking' || updateStatus === 'updating'}

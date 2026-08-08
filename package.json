@@ -5,14 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run check:program && tsc -b && vite build",
+    "build": "npm run check:program && npm run check:vena && npm run validate:program && tsc -b && vite build",
     "build:program": "node scripts/build-program.mjs",
     "check:program": "node scripts/build-program.mjs --check",
+    "build:vena": "node scripts/build-vena-block1.mjs",
+    "check:vena": "node scripts/build-vena-block1.mjs --check",
+    "validate:program": "node scripts/validate-program.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "briefing": "node scripts/weekly-briefing.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "firebase": "^12.17.1",
     "lucide-react": "^0.563.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

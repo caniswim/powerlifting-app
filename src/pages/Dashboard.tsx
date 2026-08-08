@@ -17,11 +17,9 @@ import { Zap, Battery, Check, Circle, Minus } from 'lucide-react';
 import { dayTypeShortLabels, dayTypeAbbrev } from '../domain/dayTypeLabels';
 import { blockTypeLabels, blockTypeBadgeClass } from '../domain/blockTypeConfig';
 import { useSurveyTrends } from '../features/feedback/hooks/useSurveyTrends';
-import { useFeedbackHistory } from '../features/feedback/hooks/useFeedbackHistory';
 import { ReadinessIndicator } from '../features/feedback/components/ReadinessIndicator';
 import { TrendSparklines } from '../features/feedback/components/TrendSparklines';
 import { AlertsBanner } from '../features/feedback/components/AlertsBanner';
-import { AIFeedbackCard } from '../features/feedback/components/AIFeedbackCard';
 
 export default function Dashboard() {
   const storage = useStorage();
@@ -47,7 +45,6 @@ export default function Dashboard() {
   const cyclePosition = nextSession?.dayIndex ?? 0;
 
   const trends = useSurveyTrends();
-  const feedbackHistory = useFeedbackHistory();
 
   useEffect(() => {
     const p = storage.getProfile();
@@ -295,12 +292,11 @@ export default function Dashboard() {
           </div>
         ) : null}
 
-        {/* Feedback & Readiness Section */}
+        {/* Prontidão e tendências — derivadas dos surveys, sem IA */}
         {trends.hasSurveyData && (
           <>
             <ReadinessIndicator trends={trends} />
             {trends.alerts.length > 0 && <AlertsBanner alerts={trends.alerts} />}
-            {feedbackHistory.latestDaily && <AIFeedbackCard feedback={feedbackHistory.latestDaily} />}
             {trends.hasEnoughData && <TrendSparklines data={trends.sparklineData} />}
           </>
         )}

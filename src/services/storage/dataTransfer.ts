@@ -1,11 +1,11 @@
-import { KEYS, scheduleSyncToOPFS, setItem, getItem } from './core';
+import { KEYS, OBSOLETE_KEYS, scheduleSyncToOPFS, setItem, getItem } from './core';
 import { clearOPFS } from '../opfs';
 import { getWorkouts } from './workoutRepository';
 import { getRecords } from './recordRepository';
 import { getProfile } from './profileRepository';
 import { getCurrentWeek, getActiveProgramId, runMigrations, SCHEMA_VERSION } from './sessionManager';
 import { getPreSurveys, getPostSurveys } from './surveyRepository';
-import { getAllFeedback } from './feedbackRepository';
+import { getBodyweightEntries } from './bodyweightRepository';
 
 export function exportAllData(): string {
   return JSON.stringify({
@@ -18,7 +18,7 @@ export function exportAllData(): string {
     programProgress: getItem<Record<string, number>>(KEYS.PROGRAM_PROGRESS, {}),
     preSurveys: getPreSurveys(),
     postSurveys: getPostSurveys(),
-    aiFeedback: getAllFeedback(),
+    bodyweight: getBodyweightEntries(),
     exportDate: new Date().toISOString(),
   }, null, 2);
 }
@@ -32,12 +32,15 @@ export function importData(json: string): boolean {
     if (data.currentWeek) setItem(KEYS.CURRENT_WEEK, data.currentWeek);
     if (data.preSurveys) setItem(KEYS.PRE_SURVEYS, data.preSurveys);
     if (data.postSurveys) setItem(KEYS.POST_SURVEYS, data.postSurveys);
-    if (data.aiFeedback) setItem(KEYS.AI_FEEDBACK, data.aiFeedback);
+    if (data.bodyweight) setItem(KEYS.BODYWEIGHT, data.bodyweight);
 
     if (data.programProgress) {
       setItem(KEYS.PROGRAM_PROGRESS, data.programProgress);
       if (data.activeProgram) setItem(KEYS.ACTIVE_PROGRAM, data.activeProgram);
-      setItem(KEYS.SCHEMA_VERSION, data.schemaVersion ?? SCHEMA_VERSION);
+      // Backups anteriores à v3 não trazem a série de peso: reroda as
+      // migrações para semeá-la a partir do perfil importado.
+      setItem(KEYS.SCHEMA_VERSION, Math.min(data.schemaVersion ?? SCHEMA_VERSION, SCHEMA_VERSION));
+      runMigrations();
     } else {
       // Backup anterior à v2: guarda o índice antigo e deixa a migração
       // carimbar os treinos e mover a posição para o programa legado.
@@ -66,10 +69,10 @@ export function resetAllData(): void {
   localStorage.removeItem(KEYS.SESSION_INDEX);
   localStorage.removeItem(KEYS.PRE_SURVEYS);
   localStorage.removeItem(KEYS.POST_SURVEYS);
-  localStorage.removeItem(KEYS.AI_FEEDBACK);
-  localStorage.removeItem(KEYS.API_KEY);
+  localStorage.removeItem(KEYS.BODYWEIGHT);
   localStorage.removeItem(KEYS.ACTIVE_PROGRAM);
   localStorage.removeItem(KEYS.PROGRAM_PROGRESS);
   localStorage.removeItem(KEYS.SCHEMA_VERSION);
+  for (const key of OBSOLETE_KEYS) localStorage.removeItem(key);
   clearOPFS();
 }

@@ -172,6 +172,10 @@ export function buildSetPlan(ex: PrescribedExercise): PrescribedSet[] {
       set.percentMax = ex.percentMax;
     }
     if (ex.percentRef) set.percentRef = ex.percentRef;
+    // O guarda de arredondamento viaja com a série: sem ele o runtime viola em
+    // silêncio o teto de 92% e o piso de 80% que o programa protege.
+    if (ex.roundGuard) set.roundGuard = ex.roundGuard;
+    if (ex.roundToKg !== undefined) set.roundToKg = ex.roundToKg;
     if (ex.restSec !== undefined) {
       set.restSec = ex.restSec;
       set.restLabel = ex.restLabel;

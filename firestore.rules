@@ -1,0 +1,28 @@
+rules_version = '2';
+
+// Banco de um atleta só. Tudo vive sob athletes/{uid} e só o dono daquele uid
+// lê ou escreve. Não há leitura pública, acesso anônimo nem regra de fallback.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner(uid) {
+      return request.auth != null
+          && request.auth.uid == uid
+          && request.auth.token.firebase.sign_in_provider == 'password';
+    }
+
+    match /athletes/{uid} {
+      allow read, write: if isOwner(uid);
+
+      // Perfil, estado, semanas, sessões (e o log cru abaixo delas), peso e PRs.
+      match /{document=**} {
+        allow read, write: if isOwner(uid);
+      }
+    }
+
+    // Qualquer outro caminho é negado — inclusive para usuários autenticados.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

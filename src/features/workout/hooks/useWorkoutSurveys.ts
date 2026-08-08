@@ -1,6 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useStorage } from '../../../contexts/StorageContext';
-import { generateDailyFeedback, generateWeeklyFeedback } from '../../../services/feedbackOrchestrator';
 import type { WorkoutLog, PreWorkoutSurvey, PostWorkoutSurvey } from '../../../types';
 
 export type SurveyPhase = 'pre' | 'workout' | 'post' | 'done';
@@ -60,41 +59,7 @@ export function useWorkoutSurveys(workout: WorkoutLog | null) {
   const submitPostSurvey = useCallback((survey: PostWorkoutSurvey) => {
     storage.savePostSurvey(survey);
     setPhase('done');
-
-    // Fire-and-forget AI feedback generation
-    const apiKey = storage.getApiKey();
-    if (apiKey && workout) {
-      const preSurvey = storage.getPreSurveyForWorkout(workout.id);
-      generateDailyFeedback(
-        preSurvey,
-        survey,
-        workout,
-        apiKey,
-        (fb) => storage.saveFeedback(fb)
-      );
-
-      // Check if this is the 4th session of the week (trigger weekly feedback)
-      const weekWorkouts = storage.getWorkoutsByWeek(workout.weekNumber);
-      const completedThisWeek = weekWorkouts.filter(w => w.completed).length;
-      if (completedThisWeek >= 4) {
-        const weekPreSurveys = weekWorkouts
-          .map(w => storage.getPreSurveyForWorkout(w.id))
-          .filter((s): s is PreWorkoutSurvey => s != null);
-        const weekPostSurveys = weekWorkouts
-          .map(w => storage.getPostSurveyForWorkout(w.id))
-          .filter((s): s is PostWorkoutSurvey => s != null);
-
-        generateWeeklyFeedback(
-          weekPreSurveys,
-          weekPostSurveys,
-          weekWorkouts,
-          workout.weekNumber,
-          apiKey,
-          (fb) => storage.saveFeedback(fb)
-        );
-      }
-    }
-  }, [workout, storage]);
+  }, [storage]);
 
   const skipPostSurvey = useCallback(() => {
     if (!workout) return;

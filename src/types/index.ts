@@ -43,6 +43,10 @@ export interface PrescribedSet {
   percentMin?: number;
   percentMax?: number;
   percentRef?: PercentRef;
+  /** Incremento carregável ao materializar o %1RM. */
+  roundToKg?: number;
+  /** Direção do arredondamento — ver `ExercisePrescription.roundGuard`. */
+  roundGuard?: 'floor' | 'ceiling' | 'nearest';
   /** Descanso após a série, em segundos (extremo inferior do range). 0 = emendar. */
   restSec?: number;
   /** Descanso verbatim: "3-4 MIN". */
@@ -63,6 +67,91 @@ export interface SetSegmentLog {
   seconds?: number;
 }
 
+// ---------------------------------------------------------------------------
+// Padrão de competição (IPF)
+//
+// Peso × reps × RPE não diz se a repetição contaria numa plataforma. Para um
+// programa mirando IPF, "250 no agachamento" é ambíguo sem saber a profundidade.
+// Tudo aqui é OPCIONAL: séries gravadas antes desta versão simplesmente não têm
+// `compliance`, e nenhum cálculo do app depende dela.
+// ---------------------------------------------------------------------------
+
+/** Profundidade atingida, julgada contra a regra IPF (quadril abaixo do joelho). */
+export type SquatDepth =
+  | 'above_parallel'   // falha o padrão
+  | 'at_parallel'      // limítrofe — depende do referee
+  | 'below_parallel'   // passa
+  | 'unknown';
+
+/**
+ * Tipo de barra. Barra de academia com whip levanta menos peso do chão de uma
+ * vez só do que a barra rígida da IPF — o histórico fica incomparável sem isso.
+ */
+export type BarType =
+  | 'ipf_calibrated'   // barra homologada, rígida
+  | 'stiff'            // rígida, não homologada
+  | 'gym_barbell'      // barra comum de academia (whip)
+  | 'deadlift_bar'     // barra de terra, whip alto
+  | 'safety_squat'
+  | 'trap'
+  | 'smith'
+  | 'other';
+
+/**
+ * Tipo de anilha. `thick_plastic` é a anilha grossa da academia dele: põe peso
+ * mais para fora, aumenta o whip e faz as anilhas externas ainda tocarem o chão
+ * enquanto a barra já flexionou — infla o terra em relação ao padrão calibrado.
+ */
+export type PlateType =
+  | 'calibrated'       // anilha calibrada de competição
+  | 'steel'
+  | 'rubber_bumper'
+  | 'thick_plastic'
+  | 'other';
+
+/** Equipamento de apoio usado na série. Strap é proibido em competição IPF. */
+export interface SetEquipment {
+  belt?: boolean;
+  straps?: boolean;
+  kneeSleeves?: boolean;
+  wristWraps?: boolean;
+}
+
+export type VideoAngle = 'side' | 'front' | 'foot' | 'rear45' | 'other';
+
+/** Ponteiro para o vídeo da série — o arquivo em si vive fora do app. */
+export interface VideoRef {
+  /** URL (nuvem) ou caminho relativo do arquivo. */
+  url?: string;
+  fileName?: string;
+  angle?: VideoAngle;
+  /** Offset dentro do arquivo, quando a sessão inteira está num vídeo só. */
+  offsetSec?: number;
+  note?: string;
+}
+
+export type ComplianceJudge = 'self' | 'video' | 'coach';
+
+/** Execução de UMA série medida contra a regra de competição. */
+export interface SetCompliance {
+  /** Reps que passariam num referee IPF. `undefined` = não julgado. */
+  validReps?: number;
+  /** Agachamento. */
+  depth?: SquatDepth;
+  /** Supino: pausa real com a barra imóvel no peito (não reversão). */
+  paused?: boolean;
+  /** Duração média da pausa no peito, em segundos. */
+  pauseSec?: number;
+  /** Terra: cada rep partiu do chão morto, sem touch-and-go. */
+  deadStop?: boolean;
+  equipment?: SetEquipment;
+  bar?: BarType;
+  plates?: PlateType;
+  video?: VideoRef;
+  judgedBy?: ComplianceJudge;
+  note?: string;
+}
+
 export interface SetLog {
   setNumber: number;
   weight: number;
@@ -79,6 +168,8 @@ export interface SetLog {
   segments?: SetSegmentLog[];
   /** Snapshot da prescrição desta série específica. */
   prescribed?: PrescribedSet;
+  /** Padrão de competição desta série. Opcional e retrocompatível. */
+  compliance?: SetCompliance;
 }
 
 export interface ExercisePrescription {
@@ -100,6 +191,24 @@ export interface ExercisePrescription {
   restLabel?: string;
   percent1RM?: string;
   percentRef?: PercentRef;
+  /** Incremento carregável ao materializar o %1RM (2,5 kg com micro-anilhas). */
+  roundToKg?: number;
+  /**
+   * Direção do arredondamento. Load-bearing: a TM 160, `nearest` põe o top set
+   * do supino em 147,5 kg = 92,19% (viola o teto de 92%) e a back-off em
+   * 127,5 = 79,69% (viola o piso de 80% de Pak). `floor` em série limitada por
+   * teto, `ceiling` em série limitada por piso de faixa.
+   */
+  roundGuard?: 'floor' | 'ceiling' | 'nearest';
+  /** Papel da série no desenho (forca, backoff, gauge, volume, pratica…). */
+  role?: string;
+  /** Grupo que esta linha credita como SÉRIE DIRETA (etiqueta autoral). */
+  countsAs?: string;
+  /** Duração mínima da pausa prescrita, em segundos (supino de competição). */
+  pauseSec?: number;
+  /** Descanso prescrito: piso e TETO da faixa. O orçamento lê o teto. */
+  restSecMin?: number;
+  restSecMax?: number;
   perSide?: boolean;
   optional?: boolean;
   unit?: RepUnit;
@@ -162,7 +271,10 @@ export type DayType =
   // Powerbuilding Phase 2.0 — semanas ímpares (full body, 5 dias)
   | 'fb_strength' | 'fb_continued_a' | 'fb_hypertrophy' | 'fb_continued_b' | 'arms_hypertrophy'
   // Powerbuilding Phase 2.0 — semanas pares (upper/lower, 4 dias)
-  | 'lower_body' | 'upper_body' | 'lower_body_continued' | 'upper_body_continued';
+  | 'lower_body' | 'upper_body' | 'lower_body_continued' | 'upper_body_continued'
+  // Bloco 1 "Ficar Legal" (vena-block1) — 5 dias/semana
+  | 'vb_squat_force' | 'vb_bench_force' | 'vb_squat_volume' | 'vb_deadlift_force'
+  | 'vb_squat_tertiary' | 'vb_taper' | 'vb_mock_meet';
 
 export interface PersonalRecord {
   exerciseId: string;
@@ -173,7 +285,16 @@ export interface PersonalRecord {
   date: string;
 }
 
+/**
+ * Máximo técnico por levantamento: o maior peso movido SEM degradar a técnica
+ * (Brett Gibbs, ≈92–94% do máximo real). Distinto do 1RM, que é a melhor marca
+ * já feita em condição de academia. Quando presente, é ele que ancora os
+ * percentuais prescritos. Ver `src/domain/referenceMax.ts`.
+ */
+export type TrainingMax = Partial<Record<PercentRef, number>>;
+
 export interface AthleteProfile {
+  /** Peso corporal atual. A série histórica está em `BodyweightEntry`. */
   bodyweight: number;
   squat1RM: number;
   bench1RM: number;
@@ -182,6 +303,41 @@ export interface AthleteProfile {
   ohp1RM?: number;
   total: number;
   dots: number;
+  /**
+   * Máximo em padrão de competição, opcional. Ausente = os percentuais caem no
+   * 1RM e nada muda. Nunca entra no total nem no DOTS.
+   */
+  trainingMax?: TrainingMax;
+  /**
+   * Procedência do `trainingMax`. `seed` é o valor semeado pela migração a
+   * partir de `baseline.md` §4 (215/160/240): serve para nunca prescrever
+   * contra o 1RM de academia, mas **NÃO conta como máximo técnico definido** —
+   * a trava de `trainingMaxGuard` o trata como ausente até o gate da semana 4
+   * gravar a mediana das três âncoras de calibração. Sem esta distinção,
+   * `missingTrainingMaxRefs` nunca disparava e nada forçava o gate S3→S4.
+   */
+  trainingMaxOrigin?: 'seed' | 'calibrado';
+  /**
+   * `trainingMax` gravado pelo gate da semana 4. É o denominador do teto de
+   * re-ancoragem (`tm_inicial × 1,10`, PROGRAMA.md §1.1) e não muda durante o
+   * bloco, mesmo quando `trainingMax` sobe.
+   */
+  trainingMaxInicialBloco?: TrainingMax;
+}
+
+/**
+ * Peso corporal como série temporal. O DOTS ao longo do tempo é o árbitro
+ * nutricional do bloco: se o peso cai e o DOTS sobe, a direção está certa.
+ * Uma medição por dia — regravar a mesma data sobrescreve.
+ */
+export interface BodyweightEntry {
+  /** Data local no formato YYYY-MM-DD. É a chave do registro. */
+  date: string;
+  weightKg: number;
+  /** Total (S+B+D) vigente na data, usado para o DOTS do ponto. */
+  total?: number;
+  dots?: number;
+  note?: string;
 }
 
 export interface WeeklyVolume {
@@ -215,6 +371,19 @@ export interface PrescribedExercise {
   percentMin?: number;
   percentMax?: number;
   percentRef?: PercentRef;
+  /** Incremento carregável ao materializar o %1RM (2,5 kg com micro-anilhas). */
+  roundToKg?: number;
+  /** Direção do arredondamento — ver `ExercisePrescription.roundGuard`. */
+  roundGuard?: 'floor' | 'ceiling' | 'nearest';
+  /** Papel da série no desenho (forca, backoff, gauge, volume, pratica…). */
+  role?: string;
+  /** Grupo que esta linha credita como SÉRIE DIRETA (etiqueta autoral). */
+  countsAs?: string;
+  /** Duração mínima da pausa prescrita, em segundos. */
+  pauseSec?: number;
+  /** Descanso prescrito: piso e TETO da faixa. O orçamento lê o teto. */
+  restSecMin?: number;
+  restSecMax?: number;
   perSide?: boolean;
   optional?: boolean;
   /** Variações aceitas pelo programa ("Box Squat", "Nordic Ham Curl"). */
@@ -343,18 +512,4 @@ export interface PostWorkoutSurvey {
   pumpRating?: number;        // 1-5
   notes?: string;
   skipped: boolean;
-}
-
-// AI Feedback
-export type FeedbackPeriod = 'daily' | 'weekly' | 'monthly' | 'quarterly';
-
-export interface AIFeedback {
-  id: string;
-  workoutId?: string;
-  date: string;
-  period: FeedbackPeriod;
-  weekNumber?: number;
-  macrocycle?: number;
-  content: string;
-  status: 'pending' | 'completed' | 'failed';
 }

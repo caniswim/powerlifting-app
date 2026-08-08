@@ -23,3 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Env / secrets — nunca comitar (.env.example é o único versionado)
+.env
+.env.*
+!.env.example
+
+# Firebase CLI
+.firebase
+firebase-debug.log

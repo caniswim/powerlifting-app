@@ -4,13 +4,12 @@ import {
   getRecentPerformances, getLastWeightForExercise,
   getRecords, saveRecord, getRecordForExercise, recalculateRecord,
   getProfile, saveProfile,
+  getBodyweightEntries, saveBodyweightEntry, getLatestBodyweight,
   getCurrentWeek, setCurrentWeek, getSessionIndex, setSessionIndex,
   getActiveProgramId, setActiveProgramId, resetProgramPosition,
   exportAllData, importData, resetAllData,
   getPreSurveys, savePreSurvey, getPreSurveyForWorkout, getRecentPreSurveys,
   getPostSurveys, savePostSurvey, getPostSurveyForWorkout, getRecentPostSurveys,
-  getAllFeedback, saveFeedback, getFeedbackByPeriod, getFeedbackForWorkout, getPendingFeedback,
-  getApiKey, setApiKey,
 } from './storage/index';
 
 export class LocalStorageService implements IStorageService {
@@ -26,6 +25,9 @@ export class LocalStorageService implements IStorageService {
   recalculateRecord = recalculateRecord;
   getProfile = getProfile;
   saveProfile = saveProfile;
+  getBodyweightEntries = getBodyweightEntries;
+  saveBodyweightEntry = saveBodyweightEntry;
+  getLatestBodyweight = getLatestBodyweight;
   getCurrentWeek = getCurrentWeek;
   setCurrentWeek = setCurrentWeek;
   getSessionIndex = getSessionIndex;
@@ -44,11 +46,4 @@ export class LocalStorageService implements IStorageService {
   savePostSurvey = savePostSurvey;
   getPostSurveyForWorkout = getPostSurveyForWorkout;
   getRecentPostSurveys = getRecentPostSurveys;
-  getAllFeedback = getAllFeedback;
-  saveFeedback = saveFeedback;
-  getFeedbackByPeriod = getFeedbackByPeriod;
-  getFeedbackForWorkout = getFeedbackForWorkout;
-  getPendingFeedback = getPendingFeedback;
-  getApiKey = getApiKey;
-  setApiKey = setApiKey;
 }

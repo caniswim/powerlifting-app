@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Check, Flame } from 'lucide-react';
 import { useStorage } from '../contexts/StorageContext';
+import { resolveReferenceMax } from '../domain/referenceMax';
 import { roundToIncrement } from '../utils/calculations';
 import {
   BARBELL_WEIGHT_KG,
@@ -28,14 +29,7 @@ export default function Warmup() {
   const [done, setDone] = useState<Record<number, boolean>>({});
   const [lift, setLift] = useState<PercentRef>('squat');
 
-  const oneRM = useMemo(() => {
-    switch (lift) {
-      case 'squat': return profile.squat1RM;
-      case 'bench': return profile.bench1RM;
-      case 'deadlift': return profile.deadlift1RM;
-      case 'ohp': return profile.ohp1RM ?? 0;
-    }
-  }, [lift, profile]);
+  const oneRM = useMemo(() => resolveReferenceMax(profile, lift), [lift, profile]);
 
   const completedCount = Object.values(done).filter(Boolean).length;
 

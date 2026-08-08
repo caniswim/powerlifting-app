@@ -1,4 +1,11 @@
-import type { WorkoutLog, PersonalRecord, AthleteProfile, PreWorkoutSurvey, PostWorkoutSurvey, AIFeedback, FeedbackPeriod } from '../types';
+import type {
+  WorkoutLog,
+  PersonalRecord,
+  AthleteProfile,
+  PreWorkoutSurvey,
+  PostWorkoutSurvey,
+  BodyweightEntry,
+} from '../types';
 
 export interface IStorageService {
   // Workouts
@@ -18,6 +25,11 @@ export interface IStorageService {
   // Profile
   getProfile(): AthleteProfile;
   saveProfile(profile: AthleteProfile): void;
+
+  // Bodyweight (série temporal — o DOTS ao longo do tempo)
+  getBodyweightEntries(): BodyweightEntry[];
+  saveBodyweightEntry(entry: BodyweightEntry): void;
+  getLatestBodyweight(): BodyweightEntry | undefined;
 
   // Session
   getCurrentWeek(): number;
@@ -42,15 +54,4 @@ export interface IStorageService {
   savePostSurvey(survey: PostWorkoutSurvey): void;
   getPostSurveyForWorkout(workoutId: string): PostWorkoutSurvey | undefined;
   getRecentPostSurveys(limit?: number): PostWorkoutSurvey[];
-
-  // Feedback
-  getAllFeedback(): AIFeedback[];
-  saveFeedback(feedback: AIFeedback): void;
-  getFeedbackByPeriod(period: FeedbackPeriod): AIFeedback[];
-  getFeedbackForWorkout(workoutId: string): AIFeedback | undefined;
-  getPendingFeedback(): AIFeedback[];
-
-  // Settings
-  getApiKey(): string;
-  setApiKey(key: string): void;
 }

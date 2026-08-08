@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import {
   estimateE1RMWeighted,
   suggestWeight,
@@ -9,7 +9,14 @@ import {
 import type { LoadSuggestion } from '../../../utils/calculations';
 import { useStorage } from '../../../contexts/StorageContext';
 import { exerciseEquipment, equipmentIncrement } from '../../../data/exerciseMuscleMap';
-import type { AthleteProfile, ExerciseLog, PercentRef, PrescribedSet, SetSegmentLog } from '../../../types';
+import { resolveReferenceMax } from '../../../domain/referenceMax';
+import { blocksLoadSuggestion } from '../../../domain/trainingMaxGuard';
+import type {
+  ExerciseLog,
+  PrescribedSet,
+  SetCompliance,
+  SetSegmentLog,
+} from '../../../types';
 
 export interface SetInputState {
   inputWeight: number;
@@ -17,26 +24,19 @@ export interface SetInputState {
   inputRPE: number;
   inputSeconds: number;
   inputSegments: SetSegmentLog[];
+  inputCompliance: SetCompliance;
   suggestion: LoadSuggestion | null;
   setInputWeight: (w: number) => void;
   setInputReps: (r: number) => void;
   setInputRPE: (rpe: number) => void;
   setInputSeconds: (s: number) => void;
   updateSegment: (index: number, patch: Partial<SetSegmentLog>) => void;
+  updateCompliance: (patch: Partial<SetCompliance>) => void;
   prefillInputs: (exercise: ExerciseLog, setIdx: number) => void;
 }
 
 /** @deprecated nome antigo mantido para os imports existentes */
 export type LoadSuggestionState = SetInputState;
-
-function oneRMFor(profile: AthleteProfile, ref: PercentRef): number {
-  switch (ref) {
-    case 'squat': return profile.squat1RM;
-    case 'bench': return profile.bench1RM;
-    case 'deadlift': return profile.deadlift1RM;
-    case 'ohp': return profile.ohp1RM ?? 0;
-  }
-}
 
 export function useLoadSuggestion(): SetInputState {
   const storage = useStorage();
@@ -46,10 +46,23 @@ export function useLoadSuggestion(): SetInputState {
   const [inputRPE, setInputRPE] = useState(7);
   const [inputSeconds, setInputSeconds] = useState(0);
   const [inputSegments, setInputSegments] = useState<SetSegmentLog[]>([]);
+  const [inputCompliance, setInputCompliance] = useState<SetCompliance>({});
   const [suggestion, setSuggestion] = useState<LoadSuggestion | null>(null);
+
+  // Barra, anilha e equipamento não mudam entre séries da mesma sessão —
+  // repetir a escolha a cada série seria atrito que faria o registro morrer.
+  const gearRef = useRef<Pick<SetCompliance, 'equipment' | 'bar' | 'plates'>>({});
 
   const updateSegment = useCallback((index: number, patch: Partial<SetSegmentLog>) => {
     setInputSegments((prev) => prev.map((s, i) => (i === index ? { ...s, ...patch } : s)));
+  }, []);
+
+  const updateCompliance = useCallback((patch: Partial<SetCompliance>) => {
+    setInputCompliance((prev) => {
+      const next = { ...prev, ...patch };
+      gearRef.current = { equipment: next.equipment, bar: next.bar, plates: next.plates };
+      return next;
+    });
   }, []);
 
   const weightFromHistory = useCallback((
@@ -105,33 +118,44 @@ export function useLoadSuggestion(): SetInputState {
     // 1) %1RM prescrito pelo programa tem precedência.
     const ref = exercise.percentRef;
     const percent = plan?.percentMin;
-    if (ref && percent) {
-      const oneRM = oneRMFor(storage.getProfile(), ref);
-      weight = suggestWeightFromPercent(oneRM, percent, increment);
-    }
+    // Programa prescrito em padrão de competição sem máximo técnico definido:
+    // não sugerir nada é o certo. O fallback para o 1RM de academia daria
+    // carga alta demais, e sugerir errado é pior que não sugerir.
+    const blocked = ref !== undefined && blocksLoadSuggestion(storage.getProfile(), storage.getActiveProgramId(), ref);
 
-    // 2) Aquecimento sem %1RM: fração da carga da primeira série de trabalho.
-    if (weight === 0 && plan?.type === 'warmup' && plan.warmupFraction) {
-      const firstWorking = exercise.sets.find((s) => s.setType !== 'warmup');
-      const base = firstWorking?.completed && firstWorking.weight > 0
-        ? firstWorking.weight
-        : weightFromHistory(exercise, targetReps, targetRPE, increment).weight;
-      weight = roundToIncrement(base * plan.warmupFraction, increment);
-    }
-
-    // 3) Séries seguintes do mesmo bloco repetem a carga da anterior.
-    if (weight === 0) {
-      const prevSet = setIdx > 0 ? exercise.sets[setIdx - 1] : null;
-      if (prevSet?.completed && prevSet.setType === plan?.type) {
-        weight = prevSet.weight;
+    // Bloqueado: nenhuma via de sugestão roda. Nem o e1RM histórico, que viria
+    // de um padrão de execução diferente do que este programa prescreve.
+    if (!blocked) {
+      if (ref && percent) {
+        const oneRM = resolveReferenceMax(storage.getProfile(), ref);
+        // roundToKg do programa vence o incremento do equipamento: o Bloco 1 é
+        // prescrito contra a grade de 2,5 kg das micro-anilhas.
+        weight = suggestWeightFromPercent(oneRM, percent, plan?.roundToKg ?? increment, plan?.roundGuard);
       }
-    }
 
-    // 4) Sem prescrição de carga: estimativa por e1RM histórico.
-    if (weight === 0) {
-      const fromHistory = weightFromHistory(exercise, targetReps, targetRPE, increment);
-      weight = fromHistory.weight;
-      nextSuggestion = fromHistory.suggestion;
+      // 2) Aquecimento sem %1RM: fração da carga da primeira série de trabalho.
+      if (weight === 0 && plan?.type === 'warmup' && plan.warmupFraction) {
+        const firstWorking = exercise.sets.find((s) => s.setType !== 'warmup');
+        const base = firstWorking?.completed && firstWorking.weight > 0
+          ? firstWorking.weight
+          : weightFromHistory(exercise, targetReps, targetRPE, increment).weight;
+        weight = roundToIncrement(base * plan.warmupFraction, increment);
+      }
+
+      // 3) Séries seguintes do mesmo bloco repetem a carga da anterior.
+      if (weight === 0) {
+        const prevSet = setIdx > 0 ? exercise.sets[setIdx - 1] : null;
+        if (prevSet?.completed && prevSet.setType === plan?.type) {
+          weight = prevSet.weight;
+        }
+      }
+
+      // 4) Sem prescrição de carga: estimativa por e1RM histórico.
+      if (weight === 0) {
+        const fromHistory = weightFromHistory(exercise, targetReps, targetRPE, increment);
+        weight = fromHistory.weight;
+        nextSuggestion = fromHistory.suggestion;
+      }
     }
 
     setInputWeight(weight);
@@ -148,6 +172,21 @@ export function useLoadSuggestion(): SetInputState {
     } else {
       setInputSegments([]);
     }
+
+    // --- Padrão de competição -------------------------------------------
+    // Herda só o material/equipamento; o julgamento da série começa em branco.
+    const lastJudged = [...exercise.sets]
+      .slice(0, setIdx)
+      .reverse()
+      .find((s) => s.completed && s.compliance);
+    const gear = lastJudged?.compliance ?? gearRef.current;
+    const inherited: SetCompliance = {
+      ...(gear.equipment ? { equipment: gear.equipment } : {}),
+      ...(gear.bar ? { bar: gear.bar } : {}),
+      ...(gear.plates ? { plates: gear.plates } : {}),
+    };
+    gearRef.current = inherited;
+    setInputCompliance(inherited);
   }, [storage, weightFromHistory]);
 
   return {
@@ -156,12 +195,14 @@ export function useLoadSuggestion(): SetInputState {
     inputRPE,
     inputSeconds,
     inputSegments,
+    inputCompliance,
     suggestion,
     setInputWeight,
     setInputReps,
     setInputRPE,
     setInputSeconds,
     updateSegment,
+    updateCompliance,
     prefillInputs,
   };
 }
