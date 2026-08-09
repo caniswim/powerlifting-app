@@ -32,3 +32,10 @@ dist-ssr
 # Firebase CLI
 .firebase
 firebase-debug.log
+
+# Áudio bruto da verificação com Whisper — nunca vai para o repositório
+research/corpus/.audio/
+research/tools/.venv-whisper/
+
+# Sobra de fetch-captions interrompido — nunca deve ser commitada
+research/corpus/**/.tmp/

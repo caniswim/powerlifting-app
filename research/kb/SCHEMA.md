@@ -50,14 +50,19 @@ reescreve um arquivo e não toca em nenhum outro.
                            // Nunca renumerar: contradições e sínteses apontam pra cá.
   "src": "R159",           // ref do manifesto. Tem que existir e ser citável.
   "at": "03:05",           // onde a evidência começa. Dentro da duração do vídeo.
-  "date": "2021-05-04",    // data de publicação. É o que torna "o recente vence"
-                           // uma regra executável em vez de julgamento de agente.
+  // NÃO existe campo `date` na claim: a data mora no manifesto, por vídeo, e se
+  // deriva de `src`. Duplicá-la aqui criaria duas verdades para o mesmo fato e
+  // uma delas envelheceria. O que importa é que "o recente vence" seja
+  // computável — e é, via manifesto.
 
   "tier": "R",             // procedência. Enumerado FECHADO — ver abaixo.
   "scope": "GERAL",        // GERAL = ele prescreve para os outros
                            // PESSOAL = ele descreve o que faz
                            // A run 1 misturou os dois e virou prescrição.
   "certainty": "explicit", // explicit = ele diz. implied = você inferiu do que ele diz.
+  "modo": "prescricao",    // QUE TIPO de afirmação é — ortogonal a `scope`.
+  "conditions": ["V175-53"], // as claims que limitam esta. Ver abaixo: é a aresta
+                             // mais importante da base.
 
   "topic": ["agacho", "tecnica"],
 
@@ -92,6 +97,43 @@ opinião de YouTube, é o único tier onde discordar não é uma opção.
 **`I` nunca vira `R`.** Foi exatamente essa lavagem que produziu o fator de
 profundidade. O checker recusa uma claim `I` sem `basis`, e recusa uma claim `R`
 cujo `verbatim` não aparece na transcrição.
+
+### `modo` — porque `scope` sozinho achata cinco coisas
+
+A auditoria de escopo mediu: **só 17% do que está marcado `GERAL` é prescrição.**
+O resto é opinião, mecanismo, fato do mundo e narração de estudo. A run 1
+achatou `GERAL` contra `PESSOAL`; separar os dois e parar aí só empurrou o
+achatamento para dentro do `GERAL`.
+
+Isso quebra a consulta que mais importa. Filtrar `scope: GERAL` devolve "ele acha
+o deltoide anterior subestimado" junto com "agache duas vezes por semana", como
+se fossem a mesma categoria de instrução — e é a segunda que vira treino.
+
+| modo | o que é |
+|---|---|
+| `prescricao` | ele diz para fazer. **É o único que pode virar programa.** |
+| `opiniao` | ele acha, sem prescrever |
+| `mecanismo` | por que funciona — fisiologia, alavanca, causa alegada |
+| `fato` | afirmação sobre o mundo, verificável fora dele |
+| `estudo` | ele narra literatura. Não vira `tier: L` — continua sendo ele contando. |
+| `anedota` | história dele ou de terceiro |
+| `narrativa` | o que aconteceu no treino, sem tese |
+
+`scope` diz **para quem**; `modo` diz **que tipo de coisa**. São perguntas
+diferentes e precisam de campos diferentes.
+
+### `conditions` — a aresta que impede prescrição perigosa
+
+O achado mais grave da auditoria: **a prescrição e a condição que a torna segura
+moram em registros diferentes e não têm como se reencontrar.** "Supino 6× por
+semana" foi extraído sem "nunca acima de RPE 5", que ele diz junto. Separada da
+condição, a prescrição não fica incompleta — fica perigosa, porque parece
+completa.
+
+Então prescrição que tem condição declarada **precisa** apontar para ela. E
+`check-claims.mjs` avisa quando uma `modo: "prescricao"` com número de volume,
+intensidade ou frequência não tem `conditions` — não é erro, porque prescrição
+incondicional existe, mas é o lugar certo para olhar duas vezes.
 
 ### `frame` — a trava que faltou nos 215 kg
 

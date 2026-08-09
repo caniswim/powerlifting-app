@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run check:program && npm run check:vena && npm run validate:program && npm run check:notes && tsc -b && vite build",
+    "build": "npm run check:program && npm run check:vena && npm run validate:program && npm run check:notes && npm run check:kb && tsc -b && vite build",
     "build:program": "node scripts/build-program.mjs",
     "check:program": "node scripts/build-program.mjs --check",
     "build:vena": "node scripts/build-vena-block1.mjs",
