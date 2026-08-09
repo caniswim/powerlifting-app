@@ -201,6 +201,27 @@ export function indexar(claims) {
 }
 
 /**
+ * O MESMO índice, restrito a um subconjunto — e a raridade recontada DENTRO dele.
+ *
+ * Existe para o roteamento por tópico. Uma vez que a pergunta já foi resolvida
+ * para `agacho`, ordenar as 990 claims de lá pela raridade GLOBAL não separa
+ * nada: `squat`, `agacho` e `barra` são raros na base inteira e banais dentro do
+ * tópico, então elas empatam no topo e o desempate vira ordem de id — sorteio.
+ * Recontando o `df` só entre as 990, o termo que decide passa a ser o que
+ * distingue uma claim de agacho das OUTRAS claims de agacho, que é exatamente o
+ * que se quer de "texto livre como ordenação".
+ *
+ * É recontagem, não reindexação: os `docs` são os mesmos objetos.
+ */
+export function subIndice(idx, aceita) {
+  const docs = idx.docs.filter((d) => aceita(d.c));
+  const df = new Map();
+  for (const d of docs) for (const s of d.termos) df.set(s, (df.get(s) ?? 0) + 1);
+  const tamMedio = docs.length ? docs.reduce((a, d) => a + d.termos.size, 0) / docs.length : 1;
+  return { docs, df, N: docs.length, tamMedio, porId: new Map(docs.map((d) => [d.c.id, d])) };
+}
+
+/**
  * O número vale MENOS que a palavra, de propósito. `#6` é uma ponte entre
  * `six`, `seis` e o `param` `freq_supino=6` — vale ouro para atravessar idioma,
  * e não vale nada como evidência de assunto: 6 séries, 6 semanas e 6 dias
@@ -341,7 +362,7 @@ export function buscarRelaxada(idx, consulta, { teto = TETO_VIZINHANCA, topico =
 
 /** Palavras que não informam nada sobre assunto nenhum. Lista curta e literal —
  *  uma lista grande viraria julgamento sobre o que é conteúdo. */
-const VAZIAS = new Set(
+export const VAZIAS = new Set(
   ('a o e de da do das dos que em no na nos nas um uma para por com se ao aos as os ou'
     + ' ele ela isso esse essa este esta como mais menos ser ter fazer vai vou tem the of'
     + ' and to in is it you that this for on with as at be are was were do does don t s i'

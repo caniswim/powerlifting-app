@@ -274,6 +274,29 @@ const CASOS = [
     },
   },
   {
+    // FURO REAL, e o mais caro deles. A trava de dose usava `modo ===
+    // 'prescricao'` como eixo de "isto é instrução", e o pior número da base
+    // saiu por fora: `V138-19` dá um limiar de 2 a 4/10 — topo exatamente no
+    // gatilho de encerrar a sessão do PROGRAMA.md §1.2 — em `modo: opiniao`.
+    // Apagar as `conditions` dela não mudava uma linha da saída do checker,
+    // enquanto o DOR-E-TREINO.md §5 afirmava que isso pararia o build.
+    //
+    // O caso é montado em `opiniao` de propósito: montá-lo em `prescricao`
+    // ficaria verde pela trava velha e não provaria nada — modo de falha nº 4.
+    nome: 'número de dor em GERAL sem conditions, num modo que não é prescricao',
+    esperado: /número de dor .* sem conditions/,
+    mutar: (c) => {
+      c.scope = 'GERAL';
+      c.modo = 'opiniao';
+      delete c.conditions;
+      c.claim = 'Ele acha que dá para empurrar até 3 numa escala de dor de 10 pontos.';
+      c.params = [
+        { name: 'limiar', value: 3, unit: 'escala 0-10', frame: 'escala_dor' },
+        { name: 'escala_max', value: 10, unit: 'escala 0-10', frame: 'escala_dor' },
+      ];
+    },
+  },
+  {
     // O esquema define `PESSOAL` ("ele descreve o que ELE faz") e `prescricao`
     // ("ele diz para VOCÊ fazer") como mutuamente excludentes. A base tinha 13
     // ocorrências do par e 10 estavam erradas.
@@ -522,6 +545,24 @@ const CASOS_QUE_PASSAM = [
       const c = claimDoArquivo('G027');
       c.modo = 'avaliacao-de-terceiro';
       return [c];
+    },
+  },
+  {
+    // O outro lado da trava do número de dor, e é ele que decide se ela está no
+    // eixo certo ou se apenas varreu tudo. `mecanismo` explica por que algo
+    // acontece; um número de dor ali descreve o corpo, não entrega um alvo ao
+    // leitor. Se este caso ficar vermelho, a trava virou aviso universal sobre
+    // toda menção a dor — e aviso universal não é lido.
+    nome: 'número de dor em mecanismo, que descreve em vez de mandar',
+    mutar: (c) => {
+      c.scope = 'GERAL';
+      c.modo = 'mecanismo';
+      delete c.conditions;
+      c.claim = 'Acima de 4 numa escala de dor de 10 pontos a inibição motora já derruba o recrutamento.';
+      c.params = [
+        { name: 'limiar_inibicao', value: 4, unit: 'escala 0-10', frame: 'escala_dor' },
+        { name: 'escala_max', value: 10, unit: 'escala 0-10', frame: 'escala_dor' },
+      ];
     },
   },
   {

@@ -26,8 +26,8 @@ import { SOURCES, paths } from './sources.mjs';
 // precisar deles: duas cópias da mesma lista fechada é o defeito que o SCHEMA.md
 // documenta na abertura, e não vale a pena reintroduzi-lo por conveniência.
 import {
-  TIERS, SCOPES, CERTAINTY, MODOS, FRAMES, FRAMES_DOSE, FRAMES_ESCALA, SUSPECT_WHY,
-  GENEROS, GENEROS_SEM_PRESCRICAO, carregarTopicos,
+  TIERS, SCOPES, CERTAINTY, MODOS, MODOS_DESCRITIVOS, FRAMES, FRAMES_DOSE, FRAMES_ESCALA,
+  SUSPECT_WHY, GENEROS, GENEROS_SEM_PRESCRICAO, carregarTopicos,
 } from './kb.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -343,7 +343,40 @@ for (const c of claims) {
   //
   // Aviso e não erro porque prescrição incondicional existe de verdade. Mas é
   // aqui que o passe de `conditions` tem de olhar, e é a lista dele.
-  if (c.modo === 'prescricao' && !(c.conditions?.length) && (c.params ?? []).some((p) => FRAMES_DOSE.has(p.frame))) {
+  //
+  // A DOSE DE DOR tem eixo próprio, e o eixo NÃO é `modo`. A trava acima usa
+  // `modo === 'prescricao'` para decidir o que é instrução, e para número de dor
+  // esse eixo mente — provado em 2026-08-09: `V138-19` tem quatro params em
+  // `escala_dor`, dá um limiar de 2 a 4/10 cujo topo é o gatilho de encerrar a
+  // sessão do PROGRAMA.md §1.2, e é `modo: opiniao`. Apagar as `conditions`
+  // dela não mudava uma linha da saída deste arquivo, enquanto o
+  // `DOR-E-TREINO.md` §5 afirmava que qualquer número de dor sem condição
+  // pararia o build. O documento estava mentindo sobre o código.
+  //
+  // O eixo certo é **para quem o número é** (`scope: GERAL`) × **se o modo
+  // entrega um alvo** (todos, menos `MODOS_DESCRITIVOS`). Ver `kb.mjs` para por
+  // que a lista é de exclusão e não de inclusão, e para o que fica de fora.
+  //
+  // ERRO, e não aviso como a dose comum, por duas razões que não valem lá:
+  //   - o custo do falso negativo aqui é tecido, não uma série a mais — este
+  //     repositório serve um atleta com histórico de lesão de peitoral num
+  //     bloco de reexposição do supino;
+  //   - `escala_dor` são 3 claims em 6.912, e as três já carregam `conditions`.
+  //     Uma trava que hoje acusa zero não vira lista de avisos que ninguém lê:
+  //     ou está calada, ou parou o build.
+  // A saída para um número de dor genuinamente incondicional não é afrouxar
+  // isto: é escrever a claim no modo que a descreve, ou ligar a ressalva que a
+  // fonte disse. Ressalva fabricada é pior que ressalva ausente.
+  const doseDeDor = (c.params ?? []).filter((p) => p.frame === 'escala_dor');
+  const doseDeDorCrua =
+    doseDeDor.length > 0 && c.scope === 'GERAL' && !MODOS_DESCRITIVOS.has(c.modo) && !(c.conditions?.length);
+  if (doseDeDorCrua) {
+    errors.push(
+      `${w}: número de dor (${doseDeDor.map((p) => `${p.name}=${p.value}`).join(', ')}) em GERAL/${c.modo} ` +
+        `sem conditions — um limiar de dor servido cru vira alvo. Ligue a ressalva que a fonte disse, ` +
+        `ou reclassifique se a claim descreve em vez de mandar (ver DOR-E-TREINO.md §5)`,
+    );
+  } else if (c.modo === 'prescricao' && !(c.conditions?.length) && (c.params ?? []).some((p) => FRAMES_DOSE.has(p.frame))) {
     warnings.push(`${w}: prescrição com dose e sem conditions — confirmar se é mesmo incondicional`);
   }
 

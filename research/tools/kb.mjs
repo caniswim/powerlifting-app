@@ -323,6 +323,42 @@ export const FRAMES_DOSE = new Set([
 ]);
 
 /**
+ * Os modos que DESCREVEM o mundo, em oposição aos que entregam um alvo.
+ *
+ * Existe por causa da trava do número de dor (`check-claims.mjs`), e o desenho
+ * é por EXCLUSÃO de propósito. A trava anterior era por inclusão — `modo ===
+ * 'prescricao'` — e o pior número da base escapou por ali: `V138-19` ("on the
+ * pain scale of 1 to 10 I find the usual level to be around the 2 to four",
+ * quatro params em `escala_dor`, topo em 4/10, que é o gatilho de ENCERRAR A
+ * SESSÃO do PROGRAMA.md §1.2) está em `opiniao`. A irmã dela, `V079-34`
+ * ("Anecdotally, I have found that two to three out of 10 pain level is a good
+ * amount to push at"), está em `prescricao`. Mesma frase, mesmo autor, mesma
+ * decisão do leitor, gavetas diferentes: a fronteira `prescricao` × `opiniao` é
+ * julgamento de extrator, e uma lista de inclusão de dois modos seria desligada
+ * pela mesma deriva que produziu o defeito — modo de falha nº 2, a trava
+ * estreita empurrando o dado para fora dela.
+ *
+ * Estes três ficam de FORA da trava, e a exclusão é o conteúdo da decisão:
+ * `mecanismo` explica por que algo acontece ("dor é em parte mental",
+ * `V138-06`), `fato` diz o que o mundo é, `estudo` narra literatura. Um número
+ * de dor dentro deles — *"nociceptores respondem a partir de X"*, *"o protocolo
+ * do estudo limitava a 5 de 10"* — descreve, não manda. Varrê-los junto
+ * produziria a lista de avisos que ninguém lê, que é o outro jeito de a trava
+ * morrer.
+ *
+ * `pratica-pessoal` não está aqui porque ainda não está em `MODOS`: quando
+ * entrar, entra pela porta do `scope: PESSOAL`, que já a tira da trava.
+ */
+export const MODOS_DESCRITIVOS = new Set(['mecanismo', 'fato', 'estudo']);
+
+// Subconjunto declarado à mão tem de continuar sendo subconjunto. Quando a onda
+// 2 mexer em `MODOS`, um valor renomeado aqui viraria trava que nunca casa — e
+// trava que nunca casa é indistinguível de trava ausente, em silêncio.
+for (const m of MODOS_DESCRITIVOS) {
+  if (!MODOS.has(m)) throw new Error(`kb.mjs: MODOS_DESCRITIVOS tem "${m}", que não é modo do enumerado`);
+}
+
+/**
  * Frames que carregam ESCALA FECHADA — e o intervalo que a escala admite.
  *
  * `RPE 12` não é um valor alto, é um valor que não existe: a escala vai a 10.

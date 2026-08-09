@@ -41,7 +41,22 @@
  *      rigor, que o filtro não escondia coisa alguma.
  *
  * Uso:
+ * ─────────────────────────────────────────────────────────────────────────────
+ * O QUE MUDOU EM 10/08/2026 — `--pergunta`, e a porta de entrada trocou
+ *
+ * A camada de 09/08 reprovou no ataque cego, e o diagnóstico foi que ela estava
+ * resolvendo *pergunta → texto* um problema que a base já resolvia: existe um
+ * vocabulário FECHADO de 74 tópicos, e no caso em que a busca livre errou feio
+ * (`descanso-entre-series`) o `--topic` devolvia a resposta na hora.
+ *
+ * `--pergunta` resolve **pergunta → tópico → claims**. O texto livre desceu um
+ * nível: deixou de ser a porta e virou a ORDENAÇÃO dentro do tópico roteado. Ver
+ * `research/tools/roteador.mjs` e `research/kb/RECUPERACAO.md` §4.
+ *
+ * Uso:
  *   node research/tools/check-evidence.mjs V014-03 V052-11 …
+ *   node research/tools/check-evidence.mjs --pergunta "quanto descansar entre as séries?"
+ *   node research/tools/check-evidence.mjs --pergunta "…" --topic agacho   # gaveta forçada
  *   node research/tools/check-evidence.mjs --grep "training max"
  *   node research/tools/check-evidence.mjs --busca "quanto baixar o peso por RPE"
  *   node research/tools/check-evidence.mjs --topic profundidade --modo prescricao
@@ -58,6 +73,9 @@ import {
   recuperar, indexar, vocabularioDoTopico, carregarVocabulario,
   PISO_POBRE, TETO_VIZINHANCA, DETALHE_VIZINHANCA,
 } from './busca.mjs';
+import {
+  responder, perfilarTopicos, assinaturaDoTopico, DETALHE_ROTEADO,
+} from './roteador.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const EXTRACT = join(ROOT, 'research/extract');
@@ -81,6 +99,23 @@ const tier = arg('--tier');
  * fingir um resultado pobre para conseguir ajuda.
  */
 const buscaTermo = arg('--busca');
+
+/**
+ * `--pergunta` é a PORTA DE ENTRADA de 10/08/2026, e ela não é mais uma variação
+ * de `--grep`.
+ *
+ * `--grep` e `--busca` resolvem *pergunta → texto*. `--pergunta` resolve
+ * **pergunta → tópico → claims**: o alvo é o vocabulário FECHADO de 74 tópicos
+ * do `PROTOCOLO-EXTRACAO.md`, e o texto livre só entra depois, para ORDENAR
+ * dentro do que foi roteado. Ver o cabeçalho de `roteador.mjs` para o porquê, e
+ * o `RECUPERACAO.md` §4 para a medição.
+ *
+ * As duas portas continuam existindo porque respondem a perguntas diferentes:
+ * `--grep` é *"quem diz exatamente isto?"* e continua sendo o instrumento certo
+ * para conferir uma citação; `--pergunta` é *"do que a base fala quando eu
+ * pergunto isto?"*, que é o que um agente respondendo ao atleta quer.
+ */
+const perguntaTermo = arg('--pergunta');
 const grepTermo = arg('--grep') ?? buscaTermo;
 const PISO = buscaTermo && !arg('--grep') ? Infinity : Number(arg('--piso') ?? PISO_POBRE);
 const VIZINHOS = Number(arg('--vizinhos') ?? TETO_VIZINHANCA);
@@ -175,6 +210,14 @@ const mostrar = (c) => {
   );
 };
 
+/** A linha de índice: o que basta para decidir QUAL id abrir. Um único
+ *  formatador compacto no repositório, pela mesma razão que `mostrar` é um só. */
+const compacto = (c) => {
+  const g = GENERO_POR_REF.get(c.src);
+  const p = (c.params ?? []).map((x) => `${x.name}=${x.value}`).join(' ');
+  return `    ${c.id.padEnd(9)} ${String(c.scope ?? '—').padEnd(7)} ${String(c.modo ?? '—').padEnd(21)} ${String(g ?? '—').padEnd(18)} ${(c.claim ?? '').slice(0, 74)}${p ? `  [${p.slice(0, 40)}]` : ''}`;
+};
+
 let saiuRuim = false;
 
 if (ids.length > 0) {
@@ -218,6 +261,131 @@ if (vocabPedido) {
   console.log(`     termos ....: ${v.unigramas.map((x) => `${x.termo}(${x.claims})`).join(' ')}`);
   console.log(`     expressões : ${v.bigramas.map((x) => `${x.termo}(${x.claims})`).join(' ')}\n`);
   process.exit(0);
+}
+
+// ── `--pergunta`: PERGUNTA → TÓPICO → CLAIMS ─────────────────────────────────
+//
+// A saída é desenhada para a leitura que ela precisa induzir, e cada peça dela
+// existe contra um erro medido:
+//   · os tópicos saem com o PORQUÊ (que palavra, em quantas claims do tópico,
+//     em quantas da base) — roteamento sem justificativa é a mesma expansão
+//     opaca que injetou `supino 6x/semana` numa pergunta sobre sono;
+//   · o tamanho do tópico sai ao lado do nome, porque `agacho` tem 990 e ver
+//     40 delas não é ver o assunto;
+//   · `declarado` × `afim` sai marcado, porque afirmar que uma claim está num
+//     tópico em que ela não está é mentira barata e cara de descobrir;
+//   · "não mapeia" sai em banner, com as duas variedades separadas.
+const linhaGrossa = '━'.repeat(74);
+
+function imprimirRoteamento(texto, { comoComplemento = false } = {}) {
+  const TOPICOS = carregarTopicos(ROOT);
+  if (topico && !TOPICOS.has(topico)) {
+    console.error(`--topic "${topico}" não é tópico do vocabulário fechado do PROTOCOLO-EXTRACAO.md`);
+    process.exit(2);
+  }
+  const r = responder(claims, texto, {
+    topicos: TOPICOS,
+    vocabulario: VOCAB.entradas,
+    forcar: topico ? [topico] : [],
+  });
+
+  console.log(`\n${linhaGrossa}`);
+  console.log(`  PERGUNTA → TÓPICO → CLAIMS${comoComplemento ? '  (a mesma consulta, pela porta nova)' : ''}`);
+  console.log(`  "${texto}"`);
+  console.log(linhaGrossa);
+  console.log(`  palavras de assunto: ${r.termos.join(' ') || '(nenhuma)'}`);
+  if (r.desconhecidos.length > 0) {
+    console.log(`  ⚠  ${r.desconhecidos.length} NÃO existe(m) em claim nenhuma: ${r.desconhecidos.join(', ')}`);
+  }
+
+  if (r.rotas.length === 0) {
+    console.log(`\n  ⚠  ESTA PERGUNTA NÃO MAPEIA PARA NENHUM DOS ${TOPICOS.size} TÓPICOS.`);
+    console.log(r.motivo === 'fora-de-dominio'
+      ? '     FORA DE DOMÍNIO: nenhuma palavra de assunto desta pergunta aparece em\n'
+        + '     claim nenhuma. A base não fala disto, e dizer isso é a resposta certa.'
+      : '     SEM ASSUNTO: as palavras existem na base, mas nenhuma DISTINGUE um tópico\n'
+        + '     — são palavras que aparecem em todo lugar. Reescreva a pergunta com o\n'
+        + '     substantivo do assunto (o exercício, a variável, o equipamento), ou use\n'
+        + '     --topic <tópico> para escolher a gaveta você mesmo.');
+    if (r.candidatos.length > 0) {
+      console.log(`\n     os mais próximos, TODOS abaixo do piso de ${r.piso}:`);
+      for (const c of r.candidatos.slice(0, 5)) {
+        console.log(`       ${c.topico.padEnd(24)} ${c.score.toFixed(2)}  (${c.porQue.slice(0, 3).map((x) => x.termo).join(', ')})`);
+      }
+    }
+    console.log('\n     ISTO NÃO É "A BASE NÃO TEM". É "esta pergunta não achou a gaveta".');
+    console.log('     node research/tools/check-evidence.mjs --topic <um dos 74> --limit 0');
+    console.log(`${linhaGrossa}\n`);
+    return r;
+  }
+
+  console.log(`\n  ROTEOU PARA ${r.rotas.length} de ${TOPICOS.size} tópicos do vocabulário FECHADO:`);
+  for (const t of r.rotas) {
+    const grande = t.claims > LIMITE_PADRAO ? '  ← GRANDE' : '';
+    console.log(`\n     ${t.topico}  ·  score ${t.score.toFixed(2)}  ·  ${t.claims} claims etiquetadas${grande}`);
+    // A ESCADA DE SAÍDA, sempre impressa: o roteamento entrega uma AMOSTRA
+    // ordenada, e a gaveta inteira é um comando. Quando ela cabe numa tela
+    // (`cinto` tem 54), ver tudo é estritamente melhor que ranquear.
+    console.log(`        a gaveta INTEIRA: node research/tools/check-evidence.mjs --topic ${t.topico} --limit 0`
+      + `${t.claims <= LIMITE_PADRAO ? '   (cabe numa leitura)' : ''}`);
+    for (const w of t.porQue.slice(0, 4)) {
+      const onde = w.canal === 'corpus'
+        ? `em ${w.dentro} das ${w.deQuantas} claims do tópico, ${w.naBase} na base`
+        : w.canal;
+      const veio = w.comoNaBase && w.comoNaBase !== w.termo ? `${w.termo} → ${w.comoNaBase}` : w.termo;
+      console.log(`        ${String(w.peso.toFixed(2)).padStart(5)}  ${veio.padEnd(28)} ${onde}`);
+    }
+  }
+
+  console.log(`\n  ${r.claims.length} claim(s), ordenadas pela sua pergunta DENTRO dos tópicos roteados`);
+  console.log('  (raridade recontada dentro do tópico: `squat` não distingue nada entre 990).');
+  console.log('  NENHUM filtro de modo/scope/tier foi aplicado — filtro de segurança estreita');
+  console.log('  a saída, não a busca, e foi ele que escondeu V033-03/04/05 da Q11.\n');
+  r.claims.slice(0, DETALHE_ROTEADO).forEach((x, i) => {
+    const marca = x.topicos.map((t) => (r.porTopico.find((p) => p.topico === t)?.resultados
+      .find((y) => y.c.id === x.c.id)?.comoEntrou === 'afim' ? `${t}(afim)` : t)).join(' + ');
+    console.log(`  ${String(i + 1).padStart(2)}º  ${marca}`);
+    console.log(`      ${mostrar(x.c).trimEnd().split('\n').join('\n      ')}\n`);
+  });
+  if (r.claims.length > DETALHE_ROTEADO) {
+    console.log(`  ${DETALHE_ROTEADO + 1}º–${r.claims.length}º, em índice:`);
+    for (const x of r.claims.slice(DETALHE_ROTEADO)) console.log(compacto(x.c));
+    console.log('');
+  }
+
+  if (r.params.total > 0) {
+    console.log(`\n  O NOME DO DADO, NÃO A PROSA — ${r.params.total} claim(s) têm \`param\` cujo NOME contém`);
+    console.log('  duas ou mais palavras da sua pergunta. É o canal que achou V033-03 (peso por RPE)');
+    console.log(`  quando a prosa dela dizia "subir" e a pergunta dizia "baixar".${r.params.total > r.params.lista.length ? ` Mostrando ${r.params.lista.length}.` : ''}\n`);
+    for (const x of r.params.lista) {
+      console.log(`${compacto(x.c)}   ← nomeia: ${x.pecas.join(' + ')}`);
+    }
+    console.log('');
+  }
+
+  const grandes = r.rotas.filter((t) => t.claims > LIMITE_PADRAO);
+  if (grandes.length > 0 && r.estreitar.length > 0) {
+    console.log(`\n  ⚠  TÓPICO GRANDE: ${grandes.map((t) => `${t.topico} tem ${t.claims}`).join(', ')} claims, e você viu ${r.claims.length}.`);
+    console.log('     Cruzar dois tópicos é conjunto — verificável — e estreita de verdade.');
+    console.log('     Entre as que saíram, os tópicos que mais aparecem junto:');
+    for (const e of r.estreitar) {
+      console.log(`       ${e.topico.padEnd(24)} em ${e.n} das ${r.claims.length}`
+        + `   →  node research/tools/check-evidence.mjs --pergunta ${JSON.stringify(texto)} --topic ${e.topico}`);
+    }
+    console.log(`     Ou a gaveta inteira:  node research/tools/check-evidence.mjs --topic ${grandes[0].topico} --limit 0`);
+    console.log('');
+  }
+  return r;
+}
+
+/**
+ * A PORTA NOVA VEM PRIMEIRO, e quando ela é usada sozinha a saída é só dela.
+ * Misturar as duas telas por padrão era refazer o defeito de 09/08 com outro
+ * nome: o agente lê a primeira metade e decide.
+ */
+if (perguntaTermo) {
+  imprimirRoteamento(perguntaTermo);
+  if (!grepTermo && !modo && !scope && !tier && !genero) process.exit(0);
 }
 
 const filtrando = grepTermo || topico || modo || scope || tier || genero;
@@ -306,11 +474,6 @@ if (filtrando) {
   };
 
   const linha = '━'.repeat(74);
-  const compacto = (c) => {
-    const g = GENERO_POR_REF.get(c.src);
-    const p = (c.params ?? []).map((x) => `${x.name}=${x.value}`).join(' ');
-    return `    ${c.id.padEnd(9)} ${String(c.scope ?? '—').padEnd(7)} ${String(c.modo ?? '—').padEnd(21)} ${String(g ?? '—').padEnd(18)} ${(c.claim ?? '').slice(0, 74)}${p ? `  [${p.slice(0, 40)}]` : ''}`;
-  };
 
   console.log(`\n${achados.length} claim(s) para ${filtro}:`);
   if (grepTermo && r.foraDaProsa.length > 0) {
@@ -431,9 +594,19 @@ if (filtrando) {
   }
 }
 
-if (ids.length === 0 && !filtrando) {
-  console.error('nada a fazer: passe ids (V014-03), uma busca (--grep/--busca) ou um filtro'
-    + ' (--topic/--modo/--scope/--tier/--genero), ou --vocab <topico>');
+/**
+ * `--busca` continua existindo e continua sendo a busca por TEXTO. O roteamento
+ * sai depois dela, na mesma tela, porque foi exatamente esta consulta que o
+ * ataque cego reprovou — e quem digita `--busca` hoje é quem ainda não sabe que
+ * existe uma porta melhor. Um ponteiro em prosa no fim de um documento não é
+ * conserto; a saída ao lado é.
+ */
+if (buscaTermo && !arg('--grep')) imprimirRoteamento(buscaTermo, { comoComplemento: true });
+
+if (ids.length === 0 && !filtrando && !perguntaTermo) {
+  console.error('nada a fazer: passe ids (V014-03), uma pergunta (--pergunta), uma busca'
+    + ' (--grep/--busca) ou um filtro (--topic/--modo/--scope/--tier/--genero),'
+    + ' ou --vocab <topico>');
   process.exit(2);
 }
 

@@ -86,7 +86,12 @@ Delas, as que estavam **sem `conditions`** — isto é, as que saíam cruas — 
 **`V138-19` é a mais perigosa das nove e não estava na lista da medição** — o topo da faixa
 dela, 4/10, é exatamente o gatilho de **encerrar a sessão** do `PROGRAMA.md` §1.2. Ela
 escapou de duas listas porque é `modo: opiniao`, e a busca da medição estava em
-`prescricao`.
+`prescricao`. **Escapou de uma terceira pelo mesmo motivo, e essa era código:** a trava do
+`check-claims.mjs` também tinha `prescricao` no predicado — ver §5.2.
+
+**As nove foram fechadas em dois passes, e o segundo demorou um dia:** cinco no §4.1,
+quatro no **§4.4**, que é onde está escrito o que cada uma das quatro ganhou e por quê. A
+tabela acima é o estado de ANTES; nenhuma das nove sai crua hoje.
 
 Já estavam conditionadas e **não** precisavam de tratamento: `V001-04`, `V001-05`,
 `V086-21`, `V027-26`, `V108-27`, `V177-11`, `V177-13`, `V138-04`, `V138-05`, `V138-22`.
@@ -195,31 +200,179 @@ Sem isso o freio não aparecia na mesma gaveta do acelerador: `V027-23` não sa�
 frase de `V027-25` é a continuação direta de `V027-24`, que é *"years of pec tendon issues
 on bench"*.
 
+### 4.4 As quatro que o §4.1 deixou cruas — e a quinta que apareceu ao fechá-las
+
+O §2 listou **nove** claims sem `conditions`; o §4.1 fechou cinco e não escreveu uma linha
+sobre as outras quatro. Silêncio num documento que se apresenta como varredura é pior do
+que lacuna declarada: quem lê a tabela do §2 e a do §4.1 lado a lado conclui que as nove
+foram tratadas. **Não foram.** `V138-08`, `V138-13`, `V138-24` e `V138-18` continuaram
+cruas por um dia inteiro depois de o arquivo dizer que o cluster estava tratado.
+
+As quatro foram reabertas na transcrição de `R138`, lida inteira em volta de cada `at`.
+**Nenhuma ressalva foi inventada.** Todas as arestas abaixo são do mesmo autor, quatro
+delas do mesmo vídeo, e três estão **nomeadas dentro do próprio `verbatim`** da claim que
+recebeu a aresta.
+
+| claim | `at` | `conditions` | por quê |
+|---|---|---|---|
+| `V138-08` | 01:01 | `V138-18`, `V027-23` | ver abaixo |
+| `V138-13` | 01:32 | `V138-18` | ver abaixo |
+| `V138-24` | 03:17 | `V138-18`, `V138-30` | ver abaixo |
+| `V138-18` | 02:17 | `V138-33` | ver abaixo |
+
+**`V138-08`** — *"so still doing our primary movement and rebuilding our confidence with it
+is key"*. É a autorização inteira para continuar carregando o tecido que dói, e o argumento
+que ela carrega é **mental**: as duas claims imediatamente anteriores no mesmo bloco são
+`V138-06` (*dor é em parte mental, medo do movimento eleva o nível de dor*) e `V138-07`
+(*e isso pode ser independente de haver dano tecidual*). Servida crua a um peitoral em
+reexposição, ela diz *continue supinando, o problema é o medo*. `V138-18` é a metade que
+falta e está no mesmo vídeo, 76 s depois: no exercício doloroso se **reduz peso absoluto e
+proximidade da falha**. A irmã dela, `V138-05` em 00:46 — *"o exercício que causa dor
+continua sendo feito"* —, já abria em `V138-18`; `V138-08` é a mesma instrução dita de novo
+e tinha ficado sem. `V027-23` porque é a correção que o autor fez a si mesmo em 2026:
+*lesão pequena acaba sendo movida mais do que deveria, e é justamente porque é fácil
+treinar através dela.*
+
+**`V138-13`** — *"even if it's something like having a squat just body weight to half depth
+we have to start somewhere"*. É o ramo do caso extremo, e já carrega o próprio piso de dose
+no texto (peso corporal, meia profundidade). O que faltava é o teto: `V138-18`, que governa
+quanto aquele movimento pode ser carregado enquanto dói. **Não recebeu `V027-23`, e a
+ausência é decisão, não esquecimento:** `V027-23` fala de lesão **menor** sendo movida
+demais, e `V138-13` é o ramo da lesão **grave** em que a carga já é zero. Pendurar ali a
+ressalva de outro caso por semelhança de assunto seria exatamente a ressalva fabricada que
+o §6 recusa.
+
+**`V138-24`** — *"each day we work up to a weight we can do while staying under **our pain
+threshold**"*. A condição está **dentro do verbatim**, e o id dela é `V138-18`: sem a
+aresta, o leitor recebe a instrução e não recebe a definição do limiar a que ela obedece —
+a forma exata do defeito que `conditions` existe para impedir. `V138-30` é para a segunda
+metade da frase, que é uma promessa: *"done correctly we will naturally get back to our old
+or near our old strength levels"*. O mesmo vídeo, 45 s depois, manda desconfiar do
+**"old"**: *"be honest with yourself on if your old workload in terms of intensity and
+volume combined was too much"*. É o mesmo par que o §4.1 montou para `V138-01`.
+
+**`V138-18`** — a definição do limiar, e a claim de que as outras seis dependem. Ela **não**
+recebe as ressalvas das outras porque ela **é** a ressalva das outras: é a única do cluster
+que manda **reduzir** — peso absoluto e proximidade da falha —, e o critério dela, *não se
+sentir pior na sessão seguinte*, é o próprio teste de segurança que o §1 usa para provar
+que o cluster inteiro fala numa escala de tempo maior que uma série. O que faltava nela é o
+hedge que o autor pendura na frase **seguinte**, 15 s depois e sobre este exato limiar:
+`V138-33`, *"everybody and every injury is different and we have different pain
+tolerances"*. Sem ciclo: `V138-33` não tem `conditions`, então o par mútuo que a trava 8b
+do `SCHEMA.md` recusa não se fecha — o `check-claims.mjs` confirma.
+
+**E a quinta, que apareceu ao fechar as quatro: `V138-21`** (02:47) — *"warm up gradually
+with small jumps and you should be able to stay under **this pain threshold** easily"*.
+Mesmo caso literal de `V138-22` e `V138-24`: nomeia o limiar no próprio verbatim e não
+abria nele. Recebeu `V138-18`. **Ela não estava nas nove do §2** porque não tem número nem
+nenhuma das palavras do vocabulário da varredura — o que diz que a varredura do §2 também
+tem borda, e que *"o verbatim nomeia uma coisa que a claim não carrega em `conditions`"* é
+um predicado mecânico que ainda ninguém rodou sobre a base inteira. Fica registrado como
+dívida, não como feito.
+
 ---
 
-## 5. A trava que não enxergava a dose — e por que ela ficava verde
+## 5. A trava que não enxergava a dose — dois eixos, e os dois estavam errados
 
 `check-claims.mjs` avisa quando uma `modo: prescricao` **com dose** não tem `conditions`.
-É a checagem escrita para exatamente este defeito. **Ela nunca acusou `V001-06` nem
-`V079-34`.**
+É a checagem escrita para exatamente este defeito. **Ela nunca acusou nenhuma das três
+claims que carregam número de dor**, e não por um motivo, por dois — um em cada eixo do
+predicado. O primeiro foi consertado na manhã de 9/8/2026. O segundo, à noite; e a versão
+de manhã desta seção afirmava sobre ele uma coisa falsa.
 
-O motivo é o modo de falha nº 2 desta casa, num lugar novo: `FRAMES_DOSE`, em `kb.mjs`,
-nasceu pensando em carga, série, percentual e frequência — `series`, `reps`, `x_semana`,
-`RPE`, `kg`, `lb`… **A dose destas duas está em `escala_dor`**, e a lista não tinha essa
-gaveta. Uma prescrição que diz *quanto pode doer* é dose como qualquer outra, e escapava
-pela borda da própria trava desenhada para pegá-la.
+### 5.1 O eixo do frame — `escala_dor` fora de `FRAMES_DOSE`
 
-`escala_dor` entrou em `FRAMES_DOSE`. O efeito medido:
+Modo de falha nº 2 desta casa, num lugar novo: `FRAMES_DOSE`, em `kb.mjs`, nasceu pensando
+em carga, série, percentual e frequência — `series`, `reps`, `x_semana`, `RPE`, `kg`,
+`lb`… **A dose destas claims está em `escala_dor`**, e a lista não tinha essa gaveta. Uma
+prescrição que diz *quanto pode doer* é dose como qualquer outra, e escapava pela borda da
+própria trava desenhada para pegá-la.
 
-- **Zero avisos novos**, porque as duas foram fechadas no mesmo passe (23× *prescrição com
-  dose e sem conditions* antes, 23× depois).
-- **A trava está armada e foi provada:** apagando `conditions` de `V001-06`, o build
-  imprime `⚠ R001.jsonl:6 V001-06: prescrição com dose e sem conditions`. Restaurando,
-  cala. Isso foi executado, não deduzido — **trava que só se testa contra si mesma é o modo
-  de falha nº 4, e uma trava silenciosa é indistinguível de uma trava desligada.**
-- Só **3 claims** da base inteira usam `escala_dor` (`V001-06`, `V079-34`, `V138-19`), então
-  a ampliação não tem custo de ruído e vale daqui para a frente: qualquer claim futura que
-  prescreva um número de dor sem condição para o build.
+`escala_dor` entrou em `FRAMES_DOSE`, e o custo de ruído foi zero: `V001-06` e `V079-34`
+foram fechadas no mesmo passe, e a contagem de *prescrição com dose e sem conditions* ficou
+em 23 antes e 23 depois.
+
+### 5.2 O eixo do modo — e a frase falsa que ficou aqui um dia
+
+O que a versão de manhã desta seção escreveu, e que virou dívida no mesmo dia:
+
+> ~~*qualquer claim futura que prescreva um número de dor sem condição para o build.*~~
+
+**Era falso, e o contraexemplo estava dentro da própria família.** A trava exigia
+`modo === 'prescricao'`, e `V138-19` — limiar de **2 a 4**/10, quatro params em
+`escala_dor`, topo exatamente no gatilho de *encerrar a sessão* do `PROGRAMA.md` §1.2 — é
+**`modo: opiniao`**. Apagar as `conditions` dela não mudava uma linha da saída do checker.
+Ampliou-se o eixo do frame e deixou-se aberto o eixo do modo — e foi justamente por ser
+`opiniao` que ela já tinha escapado da medição original (§2). **A mesma porta, duas vezes,
+no mesmo dia.**
+
+**E o eixo do modo não se conserta apertando `prescricao`.** Olhe o par:
+
+| claim | verbatim | `modo` |
+|---|---|---|
+| `V079-34` | *"**Anecdotally, I have found that** two to three out of 10 pain level is a good amount to push at"* | `prescricao` |
+| `V138-19` | *"**anecdotally** … on the pain scale of 1 to 10 **I find** the usual level to be around the 2 to four"* | `opiniao` |
+
+Mesmo autor, mesma forma de frase, mesmo número para a mesma decisão do leitor, gavetas
+diferentes. **A fronteira `prescricao` × `opiniao` é julgamento de extrator** — o
+`FRONTEIRA-MODO.md` mede o tamanho desse borrão em outros pares —, e uma trava cujo eixo o
+extrator desliga sem querer não é trava. Uma lista de **inclusão** com os dois modos seria
+desligada pela mesma deriva na terceira vez: modo de falha nº 2 outra vez, a trava estreita
+empurrando o dado para fora dela.
+
+**O eixo que ficou**, e ele é por EXCLUSÃO: para `escala_dor`, *para quem o número é*
+(`scope: GERAL`) × *se o modo entrega um alvo* — todos, **menos**
+`MODOS_DESCRITIVOS = {mecanismo, fato, estudo}`.
+
+A exclusão é o conteúdo da decisão, e é ela o freio contra o excesso. `mecanismo` explica
+**por que** algo acontece — na própria `R138`, `V138-06` é *"dor é em parte mental e não só
+física"*. Um número de dor dentro desses três — *"nociceptores respondem a partir de X"*,
+*"o protocolo do estudo limitava a 5 de 10"* — **descreve, não manda**, e varrê-los junto
+produziria a lista de avisos que ninguém lê, que é o outro jeito de uma trava morrer.
+Medido em 9/8/2026: alargar `opiniao` para **todos** os frames de dose acrescentaria 43
+avisos `GERAL` + 19 `PESSOAL` sobre os 23 de hoje — quase o triplo. Restrita a
+`escala_dor`, a trava governa **3 claims em 6.912**.
+
+**Erro, e não aviso** — ao contrário da dose comum, por duas razões que não valem lá:
+
+1. o custo do falso negativo aqui é tecido, não uma série a mais — este repositório serve
+   um atleta com histórico de lesão de peitoral, num bloco de reexposição do supino;
+2. como as três claims de `escala_dor` já carregam `conditions`, a trava hoje acusa zero, e
+   uma trava que acusa zero não tem como degenerar em lista ignorada. Ou está calada, ou
+   parou o build.
+
+A saída para um número de dor genuinamente incondicional **não** é afrouxar isto: é ligar a
+ressalva que a fonte disse, ou escrever a claim no modo que a descreve. Ressalva fabricada
+é pior que ressalva ausente (§6).
+
+### 5.3 A prova por mutação — as duas metades
+
+Trava silenciosa é indistinguível de trava desligada, e trava que se testa contra si mesma
+é o modo de falha nº 4. Então as duas metades, **executadas e não deduzidas**:
+
+```
+$ (apaga "conditions" de V138-19 em research/extract/R138.jsonl)
+$ node research/tools/check-claims.mjs
+  ✗ R138.jsonl:19 V138-19: número de dor (escala_min=1, escala_max=10, limiar_min=2,
+    limiar_max=4) em GERAL/opiniao sem conditions — um limiar de dor servido cru vira
+    alvo. Ligue a ressalva que a fonte disse, ou reclassifique se a claim descreve em
+    vez de mandar (ver DOR-E-TREINO.md §5)
+$ echo $?          → 1
+
+$ (restaura as conditions)
+$ node research/tools/check-claims.mjs ; echo $?
+  ✓ toda claim resolve, todo verbatim existe, todo número tem frame   → 0
+```
+
+E os dois lados entraram no `check-claims.test.mjs`, que é onde eles sobrevivem a quem
+mexer aqui depois:
+
+- **recusa** — *número de dor em GERAL sem conditions, num modo que não é prescricao*.
+  Montado em `opiniao` de propósito: montado em `prescricao` ficaria verde pela trava
+  velha e não provaria nada.
+- **aceita** — *número de dor em mecanismo, que descreve em vez de mandar*. É este que
+  decide se a trava está num eixo ou se apenas varreu tudo. Se ele ficar vermelho, a trava
+  virou aviso universal sobre toda menção a dor.
 
 ---
 
@@ -380,7 +533,64 @@ Antes as duas saíam **sem uma linha de `condições` e sem uma linha de `confli
 palavras a mais de contexto e nada mais. **É essa a diferença entre um número servido cru e
 um número servido com o freio.**
 
-### 9.3 O caminho inverso continua fechado
+### 9.3 A consulta que este bloco existe para responder — rodada inteira
+
+Documento bom e trava verde não provam nada se a base ainda serve o número cru. Então a
+pergunta real do atleta, palavra por palavra:
+
+> *"senti uma fisgada de 3/10 no peitoral na terceira série de supino pausado, continuo?"*
+
+```
+$ node research/tools/check-evidence.mjs --busca "senti uma fisgada de 3/10 no peitoral \
+    na terceira série de supino pausado, continuo?"
+
+0 claim(s) …  ⚠ RESULTADO VAZIO
+VIZINHANÇA: V145-26 · G007-28 · G022-28 · G003-23 · V118-17 · V142-25 …
+```
+
+**Nenhuma claim de dor no resultado.** A busca casou `terceira série`, `supino` e `pausado`
+e foi inteira para pegada fechada, índice de estresse e log de treino. `3/10` vira dois
+números soltos e `fisgada` não está no `VOCABULARIO.md`. Isto é **defeito da camada de
+busca, não do conserto deste arquivo** — é de outro dono, e está registrado aqui porque a
+saída é a evidência. O efeito é conservador por acidente (não serve o número), não por
+desenho.
+
+Reformulando com a palavra que a base usa — que é o que o próprio aviso de resultado vazio
+manda fazer —, a claim aparece, **e aparece com o freio grudado**:
+
+```
+$ node research/tools/check-evidence.mjs --busca "dor 3 de 10 no supino, continuo?"
+
+ 1º  casou: dor, escala, #10, pain, #3, de
+    V079-34  R079@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+      tópicos: dor, lesao, autorregulacao
+      Anedoticamente, ele achou que um nível de dor de 2 a 3 numa escala de 10 é uma boa
+      faixa para empurrar na reabilitação, ajustando ao que faz os sintomas melhorarem…
+      params: dor_min=2  dor_max=3  escala_max=10 [escala_dor]
+      condições: V079-39, V027-23, V086-21
+      conflita: V027-25
+```
+
+E as três `condições` resolvem em uma linha cada:
+
+- `V079-39` — *"Be cautious still"*
+- `V027-23` — *lesões menores acabam sendo movimentadas mais do que deveriam, justamente
+  porque é fácil treinar através delas*
+- `V086-21` — *treinar com dor leve pode ser aceitável, mas os sintomas precisam estar
+  melhorando ao longo do tempo*
+
+Mesma coisa por `--busca "limiar de dor para continuar treinando"`, que devolve `V001-05`,
+`V138-19`, `V138-21`, `V138-22`, `V177-11` e `V079-34` — e as seis saem com `condições`
+preenchidas, porque as quatro do §4.4 e a quinta fecharam as últimas cruas do cluster.
+
+**O que a resposta correta a essa pergunta ainda tem de dizer, e nenhuma claim diz:** o
+2–3/10 do `V079-34` é escolha de carga **antes** da série, julgada de uma sessão para a
+outra (§1); a fisgada nova no meio da terceira série é a pergunta (b), e para ela **a base
+não tem resposta** (§6.1). Quem responde manda congelar em ≥2/10 e encerrar em ≥4/10 pelo
+`PROGRAMA.md` §1.2, e diz que é o §1.2 que está mandando — não a base. A trava do §5 impede
+que o número saia cru; ela não substitui essa frase.
+
+### 9.4 O caminho inverso continua fechado
 
 `--grep "pec tendon"` devolve `V027-24` e `V095-23`; `V027-24` é vizinha de `V027-25` no
 mesmo vídeo e leva ao mesmo lugar. E `--grep doctor|diagnos|MRI|surgeon` continua devolvendo
@@ -401,7 +611,8 @@ mesmo vídeo e leva ao mesmo lugar. E `--grep doctor|diagnos|MRI|surgeon` contin
   node research/tools/check-evidence.mjs --topic dor --modo prescricao --scope GERAL --limit 0
   ```
 - **Base antes → depois:** 6.909 → **6.912** claims (tier R 6.766 → **6.769**).
-  `condições registradas` 502 → **507** claims (678 → **695** arestas).
+  `condições registradas` 502 → **511** claims (678 → **701** arestas), sendo o segundo
+  passe (§4.4) 5 claims e 6 arestas — nenhuma claim nova foi criada nele.
   `contradições registradas` 31 → **37** claims (40 → **48** arestas).
 - **`check-canarios.mjs`** continua `5 presente · 5 impossivel · 5 armadilha`, exit 0, e
   passa a imprimir a deriva `total de claims: 6909 → 6912`. **O `baseNoMomento` do
@@ -409,9 +620,13 @@ mesmo vídeo e leva ao mesmo lugar. E `--grep doctor|diagnos|MRI|surgeon` contin
   canários foram escritos, e sobrescrevê-lo apagaria exatamente o aviso que ele existe para
   dar. O aviso é o comportamento correto.
 - **Arquivos tocados:** `research/extract/R001.jsonl`, `R027.jsonl`, `R079.jsonl`,
-  `R138.jsonl`, `R171.jsonl`; `research/tools/kb.mjs` (uma entrada em `FRAMES_DOSE`, com o
-  motivo no comentário). **Nenhum `G*.jsonl` foi tocado** — eles são de outro dono nesta
-  onda, e o `git status` confirma `G020`/`G027` modificados por lá.
+  `R138.jsonl`, `R171.jsonl`; `research/tools/kb.mjs` (`escala_dor` em `FRAMES_DOSE` e o
+  novo `MODOS_DESCRITIVOS`, com o motivo no comentário); `research/tools/check-claims.mjs`
+  (a trava do §5.2) e `research/tools/check-claims.test.mjs` (os dois casos do §5.3).
+  **Nenhum `G*.jsonl` foi tocado** — eles são de outro dono nesta onda, e o `git status`
+  confirma `G020`/`G027` modificados por lá. **`check-evidence.mjs` também não**: o defeito
+  de busca do §9.3 é da camada de outro dono, e consertá-lo aqui em paralelo é o jeito de
+  os dois consertos se atropelarem.
 - **O que NÃO foi verificado por mim:** se o §1.2 do `PROGRAMA.md` foi editado por outro
   agente durante este passe — ele já estava sujo quando comecei. Quem for aplicar o conserto
   de uma palavra do §7-1 tem de reler o parágrafo antes.

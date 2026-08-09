@@ -1,0 +1,215 @@
+{
+ "canarios": [
+  {
+   "id": "P01",
+   "topico": "dor",
+   "pergunta": "dói no meio do braço quando a barra desce no supino, será que puxei alguma coisa",
+   "idsEsperados": [
+    "V095-23",
+    "V095-24"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs --topic dor --limit 0  (achei o par no vídeo R095); depois node research/tools/check-evidence.mjs V095-23 V095-24 → dois ✓, V095-23 é o mecanismo (tendão do peitoral insere perto do bíceps) e V095-24 traz o param proporcao_casos=90 %. Teste da busca: node research/tools/check-evidence.mjs --busca \"dói no meio do braço quando a barra desce no supino, será que puxei alguma coisa\" → nenhum dos dois ids aparece nas 40 da vizinhança.",
+   "porqueEhEscondido": "a claim se chama \"tendinite de peitoral\" e usa \"bíceps\" como o nome ERRADO que ela vem corrigir. O atleta não sabe que é peitoral — é justamente por isso que ele pergunta. Ele diz \"meio do braço\", que não está em claim nem em verbatim nenhum. Uma pergunta com a palavra \"bíceps\" dentro acha (testei: passa), o que mostra que o canário só mede porque o atleta não tem o vocabulário do diagnóstico."
+  },
+  {
+   "id": "P02",
+   "topico": "dor",
+   "pergunta": "dá pra treinar sentindo um incômodo leve no peitoral ou tenho que parar até sarar",
+   "idsEsperados": [
+    "V001-05",
+    "V001-06",
+    "V001-29"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs --topic dor --limit 0 | head -200 (V001-05/06/29 saem juntos, com condições cruzadas V001-07, V001-29, V027-23 e conflito com V138-19); node research/tools/check-evidence.mjs V001-05 V001-06 V001-29 → três ✓, V001-06 com param dor_alvo=2 dor_0a10 [escala_dor]. Teste: node research/tools/check-evidence.mjs --busca \"dá pra treinar sentindo um incômodo leve no peitoral ou tenho que parar até sarar\" → nenhum dos três.",
+   "porqueEhEscondido": "a resposta é numérica e mora numa ESCALA: \"cerca de 2 numa escala de dez pontos\" e \"limiar em que dá para continuar treinando com desconforto leve\". O atleta não pergunta por número nenhum — ele pergunta se pode ou não pode. O verbatim é \"a 2 out of 10 level of pain\", e nada em \"incômodo leve\", \"peitoral\" ou \"sarar\" toca essa frase. É o canário mais caro da lista: quem responde \"pare até sarar\" contradiz a base inteira, e quem responde \"vai treinando\" perde o teto de 2/10."
+  },
+  {
+   "id": "P03",
+   "topico": "lesao",
+   "pergunta": "toda vez que subo a carga no supino o ombro reclama, o que ele fez quando aconteceu com ele",
+   "idsEsperados": [
+    "V004-07",
+    "V029-26",
+    "V048-11"
+   ],
+   "comoVoceProvou": "varri o cruzamento supino×lesao com um node -e sobre research/extract (filtro topic ⊇ {supino} e {lesao|dor}); os três aparecem como scope PESSOAL, modo mecanismo/narrativa. node research/tools/check-evidence.mjs V004-07 V029-26 V048-11 → três ✓ (\"intensidade alta inflama suas lesões\", \"ele erra ainda mais leve e compensa com mais volume\"). Teste: node research/tools/check-evidence.mjs --busca \"toda vez que subo a carga no supino o ombro reclama, o que ele fez quando aconteceu com ele\" → nenhum dos três.",
+   "porqueEhEscondido": "é o caso do C19 em outro assunto: a resposta certa está inteiramente fora do filtro de segurança. Os três são scope PESSOAL e nenhum é modo prescricao — quem filtrar --modo prescricao --scope GERAL, que é a trava correta, vê zero e declara lacuna. A regra da base (baixar intensidade e compensar com volume quando a lesão inflama) só existe como prática dele. E o vocabulário também esconde: a base escreve \"inflama lesões antigas\", o atleta escreve \"o ombro reclama\"."
+  },
+  {
+   "id": "P04",
+   "topico": "lesao",
+   "pergunta": "cortei quase todo o supino porque estava doendo, tem problema nisso",
+   "idsEsperados": [
+    "V164-33",
+    "V164-34"
+   ],
+   "comoVoceProvou": "mesmo cruzamento supino×lesao; V164-32/33/34 formam a sequência reativação→corte→destreino. node research/tools/check-evidence.mjs V164-33 V164-34 → dois ✓, V164-33 com params singles_por_treino=3 séries e carga_single=225 lb. Teste: node research/tools/check-evidence.mjs --busca \"cortei quase todo o supino porque estava doendo, tem problema nisso\" → nenhum dos dois.",
+   "porqueEhEscondido": "a base responde \"sim, tem\" — mas a palavra da resposta é \"destreinou\", que o atleta não usa e provavelmente não conhece. Ele pergunta se cortar volume é seguro; a base diz que ele já supinava sem dor e mesmo assim a força tinha ido embora. É o contrapeso exato do P02 e do gate de dor: sem estes dois ids, a recomendação segura vira \"corte tudo\", que a própria base registra como o erro que custou o ciclo dele. Também é PESSOAL+narrativa, fora de qualquer filtro de prescrição."
+  },
+  {
+   "id": "P05",
+   "topico": "selecao-exercicio",
+   "pergunta": "meu peitoral já rompeu uma vez, que jeito de supinar força menos",
+   "idsEsperados": [
+    "V017-19",
+    "V017-20",
+    "V103-05",
+    "V118-16",
+    "V089-20"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs --topic dor --limit 0 trouxe V017-19/20 (prescricao GERAL, com condição V017-22); o cruzamento supino×lesao trouxe V103-05, V118-16 (prescricao GERAL) e V089-20 (anedota PESSOAL de um cliente). node research/tools/check-evidence.mjs V017-19 V017-20 V103-05 V118-16 V089-20 → cinco ✓. Teste: node research/tools/check-evidence.mjs --busca \"meu peitoral já rompeu uma vez, que jeito de supinar força menos\" → nenhum dos cinco.",
+   "porqueEhEscondido": "a base chama isso de \"variação\", \"largura de pegada\" e \"prevenir overuse\"; o atleta chama de \"jeito de supinar que força menos\". A regra que ele precisa — escolher a variação que ALIVIA a lesão específica, não a que é melhor no geral — está escrita como \"variations that make it easier for you\", sem a palavra peitoral em lugar nenhum. Pior: V089-20 é a evidência de que um ângulo pode não doer nada enquanto o de competição dói muito, e é anedota, então some de qualquer filtro de prescrição."
+  },
+  {
+   "id": "P06",
+   "topico": "faixa",
+   "pergunta": "minha munhequeira pode ser de qualquer tamanho na competição",
+   "idsEsperados": [
+    "F001-95",
+    "F001-96"
+   ],
+   "comoVoceProvou": "node -e sobre research/extract filtrando topic ⊇ {faixa} listou F001-94 a F001-99. node research/tools/check-evidence.mjs F001-95 F001-96 → dois ✓, com params comprimento_max_faixa_punho=1 m, largura_max_faixa_punho=8 cm, faixa_punho_acima=10 cm, faixa_punho_abaixo=2 cm, faixa_punho_largura_coberta=12 cm. Teste: node research/tools/check-evidence.mjs --busca \"minha munhequeira pode ser de qualquer tamanho na competição\" → nenhum dos dois.",
+   "porqueEhEscondido": "a base escreve \"faixa de punho\" (verbatim: wrist wrap). \"Munhequeira\" APARECE na base — em F001-99, que proíbe combinar faixa de punho com munhequeira de suor — ou seja, a palavra do atleta existe e aponta para a claim errada. É armadilha de vocabulário com isca instalada, e a resposta certa é um limite dimensional que desclassifica no dia (F001-105) se estiver errado."
+  },
+  {
+   "id": "P07",
+   "topico": "sapato",
+   "pergunta": "preciso comprar tênis de agachamento com salto ou meu all star serve",
+   "idsEsperados": [
+    "G021-15",
+    "V104-28",
+    "V104-29"
+   ],
+   "comoVoceProvou": "node -e filtrando topic ⊇ {sapato} sobre research/extract; G021-15 é prescricao GERAL do corpus G, V104-28/29 são opiniao GERAL do corpus V. node research/tools/check-evidence.mjs G021-15 V104-28 V104-29 → três ✓. Teste: node research/tools/check-evidence.mjs --busca \"preciso comprar tênis de agachamento com salto ou meu all star serve\" → só V104-29; G021-15 e V104-28 ficam de fora.",
+   "porqueEhEscondido": "é o mesmo assunto nos DOIS corpora com termos diferentes: o Vena diz \"flat versus salto é preferência pessoal\" e o Blevins diz \"calçado plano, desde que seja estável\" — nenhum dos dois escreve \"tênis de agachamento\", \"comprar\" ou marca de tênis. A condição que decide (mobilidade de tornozelo) está numa claim e a negação da compra está na outra, em corpora distintos: achar só uma responde metade e a metade errada, porque V104-29 sozinho sugere comprar o salto."
+  },
+  {
+   "id": "P08",
+   "topico": "strap",
+   "pergunta": "minha mão está descascando no terra, uso alguma coisa pra segurar a barra",
+   "idsEsperados": [
+    "V042-02",
+    "V042-04",
+    "G040-24",
+    "G049-08"
+   ],
+   "comoVoceProvou": "node -e filtrando topic ⊇ {strap} sobre research/extract: V042-02/03/04 e V108-33 são prescricao GERAL (Vena), G040-24 e G049-08 são narrativa PESSOAL (Blevins). node research/tools/check-evidence.mjs V042-02 V042-04 G040-24 G049-08 → quatro ✓. Teste: node research/tools/check-evidence.mjs --busca \"minha mão está descascando no terra, uso alguma coisa pra segurar a barra\" → nenhum dos quatro (sai V042-18, que é o mecanismo, não a dose).",
+   "porqueEhEscondido": "os dois canais nomeiam o objeto igual (\"strap\") e o problema diferente: Vena escreve \"mãos destruídas\" e prescreve o mínimo possível, Blevins narra \"rasgar calos e perder treinos\" e conta que passou a usar mais. O atleta descreve a PELE (\"descascando\"), que não é palavra de nenhuma das quatro claims. A resposta boa precisa dos dois lados — a prescrição de dose e o precedente de quem usou mais por causa da mão — e cada lado vive num corpus."
+  },
+  {
+   "id": "P09",
+   "topico": "estagnacao",
+   "pergunta": "travei no supino, não sobe mais, o que eu faço com a carga",
+   "idsEsperados": [
+    "G013-31",
+    "G014-27",
+    "G008-25",
+    "G008-26"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs --topic estagnacao --limit 0. G013-31 é relato-de-programa com param reducao=10 %, G014-27 é relato-de-programa com param reducao=90 %, G008-25 e G008-26 são prescricao GERAL. node research/tools/check-evidence.mjs G013-31 G014-27 G008-25 G008-26 → quatro ✓. Teste: node research/tools/check-evidence.mjs --busca \"travei no supino, não sobe mais, o que eu faço com a carga\" → nenhum dos quatro.",
+   "porqueEhEscondido": "a base escreve \"estagnar\" / \"stall out\"; o atleta escreve \"travei\" e \"não sobe mais\". E o assunto é a gaveta que a base mais teme: os DOIS números concretos (voltar 10 %, voltar para 90 %) são relato-de-programa — são o StrongLifts e o Greyskull, não prescrição —, enquanto o que é prescricao (G008-25/26) não traz número. Uma resposta que sirva \"tire 10 %\" como conselho está exatamente no defeito mais caro da base, e uma que só cite as prescrições genéricas deixa o atleta sem ação."
+  },
+  {
+   "id": "P10",
+   "topico": "training-max",
+   "pergunta": "com quanto por cento do meu melhor levantamento eu monto as porcentagens do treino",
+   "idsEsperados": [
+    "G013-15",
+    "G011-02",
+    "V114-05"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs --topic training-max --limit 0 (45 claims; filtrando os V### sobra UM: V114-05). G013-15 tem param training_max=90 % [pct_1RM] e G011-02 tem training_max=90 % [pct_1RM] + intensidade_amrap=95 % [pct_TM]; os dois são relato-de-programa. node research/tools/check-evidence.mjs G013-15 G011-02 V114-05 → três ✓. Teste: node research/tools/check-evidence.mjs --busca \"com quanto por cento do meu melhor levantamento eu monto as porcentagens do treino\" → nenhum dos três.",
+   "porqueEhEscondido": "o nome do conceito é \"training max\" e o atleta não tem esse nome — ele descreve o cálculo. Além disso o tópico inteiro é praticamente um corpus só: das 45 claims de training-max, UMA é do Vena, e ela é modo fato, não prescricao. Os 90 % que respondem a pergunta são relato-de-programa do push pull legs e do nSuns. Servir esse 90 % como recomendação é promover escopo; declarar que a base não define training max é declarar ausente o que ela tem."
+  },
+  {
+   "id": "P11",
+   "topico": "deload",
+   "pergunta": "de quantas em quantas semanas eu preciso pegar leve",
+   "idsEsperados": [
+    "G004-08",
+    "G004-11",
+    "G004-27",
+    "G010-03"
+   ],
+   "comoVoceProvou": "node -e filtrando topic ⊇ {deload} sobre research/extract (o bloco G004-01..G004-65 é a aula inteira sobre deload). G004-08 e G010-03 são relato-de-programa com o intervalo fixo (a cada 4ª semana; a cada 4ª ou 5ª, params intervalo_deload_min=4 semanas / max=5 semanas), G004-11 é opiniao com param proporcao_do_tempo_em_deload=25 %, G004-27 é prescricao. node research/tools/check-evidence.mjs G004-08 G004-11 G004-27 G010-03 → quatro ✓. Teste: node research/tools/check-evidence.mjs --busca \"de quantas em quantas semanas eu preciso pegar leve\" → nenhum dos quatro.",
+   "porqueEhEscondido": "\"pegar leve\" é como se fala e \"deload\" é como a base escreve — e a base registra explicitamente (G004-03) que nem ela tem acordo sobre a diferença entre deload, taper e semana leve. O par prescricao/relato aqui inverte a resposta: o único número redondo (a cada 4 semanas) é do template do Wendler, relato-de-programa, e a claim de opinião que o acompanha diz que isso é 25 % da vida em deload. O que é prescricao (G004-27) recusa o calendário e manda disparar por gatilho. Responder \"a cada 4 semanas\" é copiar o imperativo do Wendler como se fosse conselho."
+  },
+  {
+   "id": "P12",
+   "topico": "proximidade-da-falha",
+   "pergunta": "na última série eu vou até não conseguir mais ou paro antes",
+   "idsEsperados": [
+    "V010-11",
+    "G016-13",
+    "G014-02"
+   ],
+   "comoVoceProvou": "node -e com regex /reserva|reps in reserve|RIR/ sobre research/extract. V010-11 é prescricao GERAL com params rir_min=4 RIR e rir_max=7 RIR; G016-13 é relato-de-programa com rir_rejeitado_min=3 / max=4 RIR; G014-02 é relato-de-programa (\"no Greyskull LP você não deve deixar repetições na reserva\"). node research/tools/check-evidence.mjs V010-11 G016-13 G014-02 → três ✓. Teste: node research/tools/check-evidence.mjs --busca \"na última série eu vou até não conseguir mais ou paro antes\" → nenhum dos três.",
+   "porqueEhEscondido": "as três claims chamam a coisa de \"repetições em reserva\" e \"RPE\"; o atleta chama de \"ir até não conseguir mais\". As três se contradizem de propósito e a diferença é de MODO, não de conteúdo: a única prescricao manda deixar 4 a 7 na reserva, e as duas que mandam ir até a falha são o Wendler e o Greyskull descritos por fora. Para um atleta com histórico de ruptura de peitoral em reexposição de supino, servir o imperativo do Greyskull como conselho é o dano concreto que esta família de canário existe para pegar."
+  },
+  {
+   "id": "P13",
+   "topico": "supino",
+   "pergunta": "meu supino para no meio do caminho e não sobe mais",
+   "idsEsperados": [
+    "V119-20",
+    "V119-29",
+    "V170-42"
+   ],
+   "comoVoceProvou": "node -e com regex /sticking|ponto de trava/ sobre research/extract (31 claims). V119-20 explica que a metade inferior é a parte biomecanicamente mais difícil, V119-29 é prescricao (velocidade na primeira metade), V170-42 liga pegada larga a sticking point de meio de curso. node research/tools/check-evidence.mjs V119-20 V119-29 V170-42 → três ✓. Teste: node research/tools/check-evidence.mjs --busca \"meu supino para no meio do caminho e não sobe mais\" → nenhum dos três.",
+   "porqueEhEscondido": "a base tem 31 claims sobre isso e escreve \"sticking point\" em TODAS — nenhuma traduz. O atleta descreve a posição (\"no meio do caminho\") e o sintoma (\"não sobe\"). Note que a mesma frase em português, \"trava no meio\", também não acha: testei e devolve zero dos três. É o caso mais puro de assunto grande e bem coberto que fica invisível por uma expressão em inglês que ninguém digita numa conversa de domingo."
+  },
+  {
+   "id": "P14",
+   "topico": "carga-de-treino",
+   "pergunta": "como eu sei se o treino da semana tá pesado demais no total",
+   "idsEsperados": [
+    "G005-34",
+    "G008-34"
+   ],
+   "comoVoceProvou": "node -e filtrando topic ⊇ {carga-de-treino} (13 claims, o tópico mais estreito depois de descanso-entre-series) mais o varredura /RIR/. G005-34 define a unidade do stress index com params rpe_min=8, rpe_max=9, rir_min=1, rir_max=2; G008-34 dá a mesma definição pelo lado das repetições em reserva. node research/tools/check-evidence.mjs G005-34 G008-34 → dois ✓. Teste: node research/tools/check-evidence.mjs --busca \"como eu sei se o treino da semana tá pesado demais no total\" → nenhum dos dois.",
+   "porqueEhEscondido": "a base tem uma unidade de medida para exatamente isso — o \"stress index\", uma série dura em RPE 8 a 9 — e o nome dela não aparece em nenhuma pergunta humana. O número que responde mora só em params (rpe_min/rpe_max, rir_min/rir_max); a prosa diz \"uma unidade de estresse equivale a cerca de uma série dura\", sem os dígitos soltos. O tópico foi criado em 2026-08-09 justamente para que se pudesse FILTRAR por isso: se a busca livre não chega lá, a gaveta nova não está pagando o que custou."
+  },
+  {
+   "id": "P15",
+   "topico": "natural-vs-enhanced",
+   "pergunta": "até onde dá pra chegar de força sem usar nada",
+   "idsEsperados": [
+    "V122-22"
+   ],
+   "comoVoceProvou": "node -e filtrando topic ⊇ {natural-vs-enhanced} sobre research/extract (52 claims). V122-22 traz o teto com param dots_teto_natural=600 DOTS. node research/tools/check-evidence.mjs V122-22 → ✓ (\"Os melhores atletas naturais ficam por volta da marca de 600 DOTS\"). Teste: node research/tools/check-evidence.mjs --busca \"até onde dá pra chegar de força sem usar nada\" → não aparece.",
+   "porqueEhEscondido": "o atleta diz \"sem usar nada\"; a base diz \"natural\" e mede em DOTS, uma unidade que ele não citou porque não sabe que a resposta é expressa nela. É a pergunta de expectativa que um natural de 28 anos que nunca competiu faz, e a base tem UM número para ela. Um único id sustentando o canário é de propósito: se a recuperação não trouxer essa claim, a resposta vai ser fabricada a partir do conhecimento externo do modelo, que é o modo de falha que os canários impossíveis já pegaram uma vez."
+  },
+  {
+   "id": "P16",
+   "topico": "cardio",
+   "pergunta": "levantar peso já conta como exercício pro coração",
+   "idsEsperados": [
+    "V013-04",
+    "V013-05",
+    "V013-06"
+   ],
+   "comoVoceProvou": "node -e filtrando topic ⊇ {cardio}: o trio V013-04/05/06 é a cadeia completa (benefício só em destreinados → acaba passado um limiar básico → precisa de trabalho aeróbio dedicado), sendo V013-06 prescricao GERAL. node research/tools/check-evidence.mjs V013-04 V013-05 V013-06 → três ✓. Teste: node research/tools/check-evidence.mjs --busca \"levantar peso já conta como exercício pro coração\" → nenhum dos três.",
+   "porqueEhEscondido": "a base escreve \"benefício cardiovascular\", \"aptidão aeróbia\" e \"limiar\"; o atleta escreve \"conta como exercício pro coração\". As três claims respondem \"não, passado o básico\", e a terceira é prescricao — mas a única palavra em comum entre a pergunta e as claims é \"exercício\", que é ruído puro numa base de 6.909 claims sobre treino. O tópico cardio tem mais de 230 claims: é assunto abundante ficando invisível por registro de linguagem."
+  },
+  {
+   "id": "P17",
+   "topico": "peso-corporal",
+   "pergunta": "com quanta antecedência eu tenho que escolher a categoria de peso",
+   "idsEsperados": [
+    "F001-114"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs --topic peso-corporal --limit 0 | head -120 (bloco F001-107 a F001-120). node research/tools/check-evidence.mjs F001-114 → ✓, claim \"o atleta só pode pesar na categoria em que foi nomeado vinte e um dias antes da data da competição\", param prazo_nomeacao_final=21 dias [dias]. Teste: node research/tools/check-evidence.mjs --busca \"com quanta antecedência eu tenho que escolher a categoria de peso\" → não aparece.",
+   "porqueEhEscondido": "o número está POR EXTENSO na prosa (\"vinte e um dias\") e só existe como dígito dentro de params.name/value — 21 não aparece em claim nem em verbatim em português. Qualquer busca por número falha por construção, e a busca por palavra falha porque o regulamento chama de \"nomeado\", não de \"escolher a categoria\". É o caso exato do quarto item do método: o dado está tipado e a prosa o esconde. Para um atleta de 87 kg decidindo entre 83 e 93, errar esse prazo custa a inscrição."
+  },
+  {
+   "id": "P18",
+   "topico": "progressao",
+   "pergunta": "quando o peso para de subir de 2,5 em 2,5 quilos no supino, o que eu faço",
+   "idsEsperados": [
+    "G019-41"
+   ],
+   "comoVoceProvou": "varredura node -e sobre research/extract listando claims cujo params.value NÃO aparece em claim nem em verbatim (170 casos); G019-41 é um deles. node research/tools/check-evidence.mjs G019-41 → ✓, claim \"Já na segunda fase pode ser necessário microcarregar o desenvolvimento e talvez também o supino\", param incremento=5 lb [lb] — o 5 não está na prosa. Teste: node research/tools/check-evidence.mjs --busca \"quando o peso para de subir de 2,5 em 2,5 quilos no supino, o que eu faço\" → não aparece.",
+   "porqueEhEscondido": "duas camadas. A palavra da base é \"microcarregar\" (microloading), que nenhum atleta digita — ele descreve o incremento que parou de funcionar. E o número que responde (o degrau de 5 lb que o supino deixa de aguentar) existe SÓ em params: a prosa fala de necessidade, não de quantidade. Some-se que a claim é relato-de-programa dentro de um review, então ela também não pode ser servida como prescrição — o imperativo é do autor do template, não do canal."
+  }
+ ]
+}

@@ -387,7 +387,12 @@ fininho entre dois documentos.
 
 E o checker **avisa** (não recusa) em:
 
-- prescrição com dose e sem `conditions` — o lugar de olhar duas vezes;
+- prescrição com dose e sem `conditions` — o lugar de olhar duas vezes. **Número
+  de DOR é a exceção e é ERRO, não aviso**: param em `escala_dor`, `scope: GERAL`
+  e `modo` fora de `MODOS_DESCRITIVOS` (`mecanismo`/`fato`/`estudo`) sem
+  `conditions` para o build. O eixo aqui não é `modo` porque `V138-19` (limiar de
+  2 a 4/10) é `opiniao` e escapava do predicado de `prescricao` — o registro da
+  decisão, com a prova por mutação, está em `DOR-E-TREINO.md` §5;
 - `scope: PESSOAL` com `modo: prescricao`, que o próprio esquema define como
   excludentes. A auditoria abriu as 13 ocorrências que existiam e 10 estavam
   erradas: o Blevins narrando a própria autorregulação gravado como ordem para o
