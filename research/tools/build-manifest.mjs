@@ -51,7 +51,7 @@
 
 import { execFileSync, execFile } from 'node:child_process';
 import { promisify } from 'node:util';
-import { existsSync, writeFileSync, mkdirSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { resolveSource, paths, channelVideosUrl, refOf } from './sources.mjs';
@@ -75,6 +75,27 @@ if (existsSync(OUT) && !process.argv.includes('--refresh')) {
 }
 
 mkdirSync(P.dir, { recursive: true });
+
+/**
+ * O `genero` do manifesto anterior, indexado por `videoId`.
+ *
+ * `genero` é o único campo do manifesto que NÃO é derivável do yt-dlp: ele sai
+ * da TRIAGEM, do título lido à mão e de decisões registradas em
+ * `seed-genero.mjs`, e uma trava de claim depende dele
+ * (`check-claims.mjs` conta `modo: prescricao` vinda de vídeo de review ou de
+ * form check contra um teto). Reconstruir o manifesto sem carregá-lo adiante
+ * apagaria 551 classificações e desligaria a trava — em silêncio, que é o modo
+ * de falha que este arquivo inteiro existe para evitar.
+ *
+ * Por `videoId` e não por `ref`: o ref é posicional e é justamente o que anda
+ * quando o canal publica. O id do vídeo não anda nunca.
+ */
+const generoAnterior = new Map();
+if (existsSync(OUT)) {
+  for (const v of JSON.parse(readFileSync(OUT, 'utf8')).videos ?? []) {
+    if (v.videoId && v.genero) generoAnterior.set(v.videoId, v.genero);
+  }
+}
 
 const channelUrl = channelVideosUrl(SOURCE);
 console.log(`Listando ${SOURCE.name} (${channelUrl})…`);
@@ -102,6 +123,10 @@ const entries = videos.map((v, i) => {
     postRun1: rNumber < 1,
     videoId: v.id,
     title: v.title,
+    // Não derivável do canal: preservado do manifesto anterior, ou vazio para o
+    // `seed-genero.mjs` preencher. `verify-manifest.mjs` recusa manifesto com
+    // vídeo sem gênero, então "vazio" não sobrevive a um build.
+    genero: generoAnterior.get(v.id) ?? null,
     durationSec: v.duration ?? null,
     url: `https://www.youtube.com/watch?v=${v.id}`,
     date: null, // ISO, preenchido logo abaixo

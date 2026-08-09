@@ -7,9 +7,19 @@ import type {
   SquatDepth,
   StrengthPerception,
 } from '../../types';
+import type { GateReading, GateWeekObservation } from '../../domain/painGate';
 
-/** Versão da forma dos documentos de rollup. Bumpar exige reenviar tudo. */
-export const ROLLUP_SCHEMA_VERSION = 1;
+/**
+ * Versão da forma dos documentos de rollup. Bumpar exige reenviar tudo.
+ *
+ * 2 — `WeekDoc.gate`: o histórico do gate de dor de peitoral (§1.2), que a
+ *     janela de SESSÕES da tabela exige atravessar a virada de semana. O campo é
+ *     **opcional** e todo consumidor tolera a ausência: documento gravado na
+ *     versão 1 continua carregando e o gate degrada para o comportamento antigo
+ *     (janela truncada na semana, retorno indisponível) em vez de quebrar.
+ *     Nenhum campo foi removido e nenhuma migração destrutiva é necessária.
+ */
+export const ROLLUP_SCHEMA_VERSION = 2;
 
 /** Levantamento de referência, com uma gaveta para tudo que não é SBD/OHP. */
 export type LiftKey = PercentRef | 'other';
@@ -226,4 +236,46 @@ export interface WeekDoc {
   sessions: WeekSessionRow[];
   notes: { date: string; dayType: DayType; exerciseName?: string; text: string }[];
   flags: string[];
+
+  /**
+   * Memória do gate de dor de peitoral (`PROGRAMA.md §1.2`).
+   *
+   * Existe porque a janela da tabela é de **sessões de supino** e não cabe numa
+   * semana: com supino 4×/semana, cerca de 1 em cada 4 pares de eventos
+   * qualificados cai dos dois lados da fronteira, e sem esta memória o degrau de
+   * recuo nunca saía. É também o que torna a linha `RETORNO` implementável — ela
+   * fala de semanas consecutivas, e uma semana sozinha não sabe o que foi a
+   * anterior.
+   *
+   * OPCIONAL de propósito: documento gravado antes de
+   * `ROLLUP_SCHEMA_VERSION = 2` não tem o campo. `buildWeekDoc` trata a ausência
+   * como "sem histórico" e produz exatamente o comportamento anterior, sem
+   * migração e sem quebrar leitura.
+   */
+  gate?: WeekGate;
+}
+
+/**
+ * Só observação, nenhum veredito e nenhum limiar.
+ *
+ * O que o documento guarda é o que foi medido; o que decide continua sendo a
+ * tabela do §1.2, lida a cada avaliação. Se o veredito fosse gravado aqui,
+ * mudar o número no markdown deixaria de mudar o app para todo documento já
+ * gravado — que é exatamente a divergência silenciosa que este gate existe para
+ * não repetir.
+ */
+export interface WeekGate {
+  /** Leituras desta semana, uma por sessão de supino que colheu o log. */
+  readings: GateReading[];
+  /**
+   * Cauda das semanas anteriores que a janela de sessões ainda alcança.
+   * Limitada a `gateWindowSessions - 1` leituras: é o máximo que a maior janela
+   * da tabela pode precisar, e mantém o documento com tamanho limitado.
+   */
+  carry: GateReading[];
+  /**
+   * Semanas recentes resumidas, da mais antiga para a mais recente (a última é
+   * esta semana). Limitada às `PAIN_GATE.retorno.semanas` que a tabela exige.
+   */
+  weeks: GateWeekObservation[];
 }

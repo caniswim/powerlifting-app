@@ -22,11 +22,13 @@
  *   node research/tools/check-evidence.mjs --grep "training max"
  *   node research/tools/check-evidence.mjs --topic profundidade --modo prescricao
  *   node research/tools/check-evidence.mjs --topic agacho --limit 0   # sem corte
+ *   node research/tools/check-evidence.mjs --genero review-de-programa --modo prescricao
  */
 
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { GENEROS, carregarGeneroPorRef } from './kb.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const EXTRACT = join(ROOT, 'research/extract');
@@ -41,6 +43,25 @@ const topico = arg('--topic');
 const modo = arg('--modo');
 const scope = arg('--scope');
 const tier = arg('--tier');
+
+/**
+ * `--genero` filtra pela propriedade do VÍDEO, não da claim, resolvendo `src`
+ * contra os manifestos. É o que transforma "o que revisar" de julgamento em
+ * consulta: `--genero review-de-programa --modo prescricao` devolve, hoje, as
+ * exatas claims em que o imperativo de outra pessoa foi gravado como ordem do
+ * canal. Sem isto o campo seria decorativo — um dado que só o compilador lê é
+ * um dado que ninguém audita.
+ *
+ * Valor fora do enumerado sai com a lista e código 2, e não com zero resultados:
+ * "0 claims para genero=review" e "esse gênero não existe" mandam consertos
+ * opostos, e a segunda mensagem é a que um typo produz.
+ */
+const genero = arg('--genero');
+if (genero && !GENEROS.has(genero)) {
+  console.error(`--genero "${genero}" não existe. Os que existem: ${[...GENEROS].join(', ')}`);
+  process.exit(2);
+}
+const GENERO_POR_REF = carregarGeneroPorRef(ROOT);
 
 /**
  * O DEFAULT DE `--limit`, e por que 120.
@@ -99,8 +120,10 @@ const mostrar = (c) => {
   const par = (c.params ?? [])
     .map((p) => `${p.name}=${p.value}${p.unit ? ' ' + p.unit : ''} [${p.frame}]`)
     .join('  ');
+  const g = GENERO_POR_REF.get(c.src);
   return (
-    `${c.id}  ${c.src}@${c.at}  tier:${c.tier} scope:${c.scope ?? '—'} modo:${c.modo ?? '—'} ${c.certainty ?? ''}\n` +
+    `${c.id}  ${c.src}@${c.at}  tier:${c.tier} scope:${c.scope ?? '—'} modo:${c.modo ?? '—'} ` +
+    `genero:${g ?? '—'} ${c.certainty ?? ''}\n` +
     `  tópicos: ${(c.topic ?? []).join(', ')}\n` +
     `  ${c.claim}\n` +
     (par ? `  params: ${par}\n` : '') +
@@ -125,7 +148,7 @@ if (ids.length > 0) {
   }
 }
 
-const filtrando = grepTermo || topico || modo || scope || tier;
+const filtrando = grepTermo || topico || modo || scope || tier || genero;
 if (filtrando) {
   const rx = grepTermo ? new RegExp(grepTermo, 'i') : null;
   const achados = claims.filter(
@@ -134,7 +157,8 @@ if (filtrando) {
       (!topico || (c.topic ?? []).includes(topico)) &&
       (!modo || c.modo === modo) &&
       (!scope || c.scope === scope) &&
-      (!tier || c.tier === tier),
+      (!tier || c.tier === tier) &&
+      (!genero || GENERO_POR_REF.get(c.src) === genero),
   );
   const filtro = [
     grepTermo && `/${grepTermo}/i`,
@@ -142,6 +166,7 @@ if (filtrando) {
     modo && `modo=${modo}`,
     scope && `scope=${scope}`,
     tier && `tier=${tier}`,
+    genero && `genero=${genero}`,
   ]
     .filter(Boolean)
     .join(' · ');
@@ -154,6 +179,7 @@ if (filtrando) {
     modo && `--modo ${modo}`,
     scope && `--scope ${scope}`,
     tier && `--tier ${tier}`,
+    genero && `--genero ${genero}`,
   ]
     .filter(Boolean)
     .join(' ');
@@ -219,7 +245,7 @@ if (filtrando) {
 }
 
 if (ids.length === 0 && !filtrando) {
-  console.error('nada a fazer: passe ids (V014-03) ou um filtro (--grep/--topic/--modo/--scope/--tier)');
+  console.error('nada a fazer: passe ids (V014-03) ou um filtro (--grep/--topic/--modo/--scope/--tier/--genero)');
   process.exit(2);
 }
 

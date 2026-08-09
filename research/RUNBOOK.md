@@ -32,22 +32,26 @@ Antes de tocar em qualquer coisa, leia — na íntegra, não por diagonal:
 | `research/kb/SCHEMA.md` | O registro tipado da claim. Enumerados, tiers, frames. |
 | `research/kb/PROTOCOLO-EXTRACAO.md` | A instrução única do agente extrator. Vocabulário de tópicos fechado. |
 | `research/kb/ENUMERADOS.md` | Por que cada gaveta de `frame`, `topic` e `modo` existe — **e por que as recusadas não existem**. Leia antes de propor ampliar qualquer enumerado. |
-| `research/tools/kb.mjs` | Os enumerados fechados em código, importados por todo checker. A lista viva de `frame` e `modo`. |
+| `research/kb/FRONTEIRA-MODO.md` | A fronteira `pratica-pessoal` × `narrativa` × `fato`, a fusão de `anedota`, e o tamanho do retag que isso deixa para a onda 2. A regra em si mora no `PROTOCOLO-EXTRACAO.md`; aqui está o porquê e a lista. |
+| `research/kb/GENERO.md` | O `genero` do **vídeo** (dez valores, no manifesto), o critério de cada um, como o campo foi semeado sem reabrir vídeo, e a lista das 76 claims que a trava dele acusa hoje. É o conserto determinístico de `relato-de-programa` / `avaliacao-de-terceiro`. |
+| `research/tools/kb.mjs` | Os enumerados fechados em código, importados por todo checker. A lista viva de `frame`, `modo` e `genero`. |
 | `research/kb/INSTRUMENTO.md` | Como a base é **medida**: o que é prova mecânica, o que é julgamento, e como se roda a medição de novo. |
 | `research/kb/CANARIOS.json` | Os canários da medição, com o predicado que prova cada um. **Não mostrar a quem responde.** |
-| `research/kb/ESTADO.md` | **Onde a base está, hoje, e com que instrumento cada número foi obtido.** É o primeiro arquivo a ler depois deste. Diz o que foi provado por compilador e o que continua sendo julgamento de agente. |
+| `research/kb/ESTADO.md` | **Onde a base está, hoje, e com que instrumento cada número foi obtido.** É o primeiro arquivo a ler depois deste. Diz o que foi provado por compilador, o que virou comando sem virar trava, e o que continua sendo julgamento de agente. |
+| `research/kb/ONDA-2.md` | **A fila de trabalho da próxima rodada**, em ordem de risco para o atleta. Cada item diz *quantos*, *onde* e *como se verifica que ficou certo*, com o comando que gera cada lista de ids e as colisões entre as filas já contadas. É lista de trabalho, não relatório — o *porquê* da ordem está no `ESTADO.md` §4. |
 | `research/kb/GATE-DOR.md` | O gate de dor do §1.2 do `PROGRAMA.md`: como a tabela vira comportamento do app, o que a trava cobre e o que ela **não** cobre. |
 | `research/kb/DEFEITOS-PONTUAIS.md` | Os seis defeitos nomeados de 9/8 e o conserto de cada um, inclusive o `CONFIRMADO` falso do `verify-suspects.mjs`. |
 | `research/kb/*.md` (ROSTER-CURADO, IPF-REALIDADE, PADROES-EXTERNOS, FONTES-ADICIONAIS) | Pesquisa curada, escrita à mão, com procedência linha a linha. |
 | `research/kb/PREDICOES-BLOCO1.md` | **O registro pré-comprometido do bloco 1.** 22 previsões falseáveis com prazo e com a claim que morre em cada desfecho. Só admite **anotação** a partir de 10/08/2026 — editar uma previsão é apagar a medição. Era `research/predicoes.md`, órfão; a procedência e a auditoria estão no cabeçalho dele. |
 | `research/tools/*.mjs`, `whisper-window.py` | O pipeline. |
+| `research/tools/params-gaveta-errada.mjs` | **Detector, não verificador, e fora do `check:kb` de propósito.** Enumera os 52 params cujo número está tipado na gaveta errada. Existe porque essa lista era copiada à mão dentro do `ESTADO.md` §3 e o número derivado dela estava errado. Some quando cada regra virar recusa do `check-claims.mjs` — ver §8.19. |
 | `research/corpus/ipf/rulebook-2026.md` | O regulamento IPF 2026 em markdown citável — é contra ele que o checker confere todo `tier: O`. |
 
 ### Derivado — regenerável, e por isso descartável
 
 | Caminho | Quem gera | Custo de refazer |
 |---|---|---|
-| `research/corpus/manifest.json` | `build-manifest.mjs` | ~15 min (rede) |
+| `research/corpus/manifest.json` | `build-manifest.mjs` + `seed-genero.mjs` | ~15 min (rede). **O `genero` não é derivável do canal** — ver a exceção declarada abaixo. |
 | `research/corpus/dates.json` | `fetch-dates.mjs` | ~12 min (rede) |
 | `research/corpus/transcripts/*.md` | `fetch-captions.mjs` | ~15 min para 197 |
 | `research/corpus/captions/*.json3.gz` | `fetch-captions.mjs` | idem (é o bruto guardado) |
@@ -59,6 +63,14 @@ Antes de tocar em qualquer coisa, leia — na íntegra, não por diagonal:
   `videoId`. Editar à mão é a forma mais rápida de deslocar a base inteira em silêncio.
   Se precisar mudar, mude `build-manifest.mjs`/`sources.mjs` e regenere. E rode
   `verify-manifest.mjs` **depois**, sempre.
+  **Uma exceção, declarada:** o campo `genero` **não** é derivável do canal — ele sai da
+  `TRIAGEM.md` e da leitura dos títulos, e uma trava de claim depende dele. Quem o
+  escreve é `seed-genero.mjs`, e a decisão de um vídeo específico se corrige lá (no
+  `OVERRIDES`, com o motivo por escrito) e não no JSON, senão a correção morre no
+  próximo `--refresh`. `build-manifest.mjs` carrega o campo adiante por `videoId` numa
+  reconstrução, e `verify-manifest.mjs` recusa manifesto com vídeo sem gênero — o que
+  `verify-manifest.test.mjs` prova encenando um manifesto sem o campo, porque a trava
+  que depende dele não falha quando o campo some: ela se desliga em silêncio.
 - **`research/corpus/transcripts/*.md`** — é a evidência contra a qual o checker confere
   verbatim. "Consertar" o ASR aqui faz uma claim errada passar a validar.
 - **`research/corpus/captions/*.json3.gz`** — bruto do YouTube, existe para não depender
@@ -106,6 +118,8 @@ node research/tools/fetch-captions.mjs
 node research/tools/check-claims.mjs --only R014
 
 # 5. CHECAGEM COMPLETA. <1 s cada.
+node research/tools/seed-genero.test.mjs    # a semeadura de `genero` grava mesmo? (11 casos, 2 ponta a ponta)
+node research/tools/verify-manifest.test.mjs # o verificador ainda exige `genero` e recusa rebaixamento? (14 casos)
 node research/tools/check-claims.test.mjs   # o checker ainda pega o que promete? (34 recusas + 2 avisos + 3 aceitações)
 node research/tools/check-claims.mjs        # 6.909 claims em ~0,3 s
 node research/tools/check-answer.test.mjs   # 34 casos
@@ -126,8 +140,15 @@ node research/tools/verify-suspects.mjs --only R002 # baixa áudio, corta janela
 #    A saída é EVIDÊNCIA, não veredito: só `CONFIRMADO` é automático.
 ```
 
-Fonte nova (Blevins) usa os mesmos passos 1 e 3 com `--source blevins`. Os passos 2 e 5
-**ainda não aceitam `--source`** — ver §8.2, que registra o conserto parcial.
+Fonte nova (Blevins) usa os mesmos passos 1 e 3 com `--source blevins`. O passo 2 **também
+aceita** (`verify-manifest.mjs --source blevins`, e o `check:kb` roda as duas fontes). O
+passo 5 **não precisa e não deve**: `check-claims.mjs` resolve `src` contra a **união** dos
+manifestos, e o prefixo do ref já diz de qual corpus a claim vem — exigir o campo redundante
+seria criar um segundo lugar para divergir. Ver §8.2.
+
+> Este parágrafo dizia, até 9/8/2026, que "os passos 2 e 5 ainda não aceitam `--source`".
+> Era falso nos dois: o passo 2 aceita desde o conserto do §8.2, e o passo 5 nunca aceitou
+> por desenho. **Defeito nº 3 desta casa, dentro do arquivo que o cataloga.** Ver §8.25.
 
 ---
 
@@ -477,6 +498,18 @@ todas mordem depois. As riscadas foram **resolvidas em 9/8/2026**; ficam registr
 conserto ao lado porque o defeito que elas descrevem volta na próxima fonte nova.
 **Divergência não resolvida não some desta lista** — some só quando for consertada.
 
+**A numeração é estável e nunca se reaproveita.** Item resolvido continua ocupando o número
+dele, riscado: outros arquivos citam `§8.2`, `§8.8` e `§8.9` por número, e renumerar
+transformaria uma referência certa em referência errada sem nada reclamar. Item novo entra
+no fim.
+
+> **ABERTAS HOJE — a lista de trabalho, para não ter de varrer as riscadas:**
+> **7** (`date` na claim) · **8** (dívida: 53 sem `suspectWhy`) · **9** (`synth/` e
+> `topics/` vazios) · **12** (`.tmp` fora do `.gitignore`) · **16** (deliberadamente não
+> consertada) · **17** (dívida: 76 claims de gênero) · **18** (dívida: `pratica-pessoal`) ·
+> **19** (dívida: 52 params em gaveta errada) · **20** · **21** · **22** · **23** · **24** ·
+> **26**. São **14**. O plano de execução delas está em `research/kb/ONDA-2.md`.
+
 1. ~~**`npm run check:kb` não está no `npm run build`.**~~ **RESOLVIDO** — `scripts.build`
    agora roda `check:kb` antes do `tsc -b`. A base deixou de depender de quem lembrar.
 2. ~~**`verify-manifest.mjs` e `check-claims.mjs` são hardcoded no Vena.**~~ **RESOLVIDO** —
@@ -546,21 +579,100 @@ conserto ao lado porque o defeito que elas descrevem volta na próxima fonte nov
     seriam 174 avisos que a fonte quase nunca permite resolver — aviso impossível de zerar
     é como se ensina alguém a ignorar avisos. O conserto certo é do lado do consumidor:
     quem lê a base nunca pode tratar `relato-de-programa` como prescrição.
-17. **Não existe campo `genero` por vídeo, e ele é o conserto determinístico de
-    `relato-de-programa` / `avaliacao-de-terceiro`.** O discriminador dos dois valores é
-    uma propriedade do VÍDEO (review de programa, form check, vlog), não da claim — e a
-    extração normalizou a claim para prosa geral antes de as gavetas existirem. Medido:
-    nos 20 vídeos de review do Blevins, 82 % das claims em `prescricao` não nomeiam o
-    programa no texto; nos 5 de form check, 90 % não têm marcador de pessoa específica.
-    Hoje **cada agente decide isso abrindo o manifesto à mão** — 18 agentes traçaram 18
-    linhas diferentes, e isso está registrado lote a lote. O sinal já existe em prosa:
-    `research/corpus/blevins/TRIAGEM.md` tem título e gênero por ref. Ver `ENUMERADOS.md`
-    §8 e `ESTADO.md`.
-18. **`research/kb/PROTOCOLO-EXTRACAO.md` não tem regra escrita para `narrativa` ×
+17. ~~**Não existe campo `genero` por vídeo, e ele é o conserto determinístico de
+    `relato-de-programa` / `avaliacao-de-terceiro`.**~~ **RESOLVIDO em 9/8/2026, com uma
+    dívida declarada.** `genero` está em 551 de 551 vídeos dos dois manifestos, semeado
+    por `research/tools/seed-genero.mjs` a partir da `TRIAGEM.md` e dos títulos, sem
+    reabrir vídeo nenhum; o enumerado fechado (dez valores) mora em `kb.mjs` e a decisão
+    em `research/kb/GENERO.md`. `verify-manifest.mjs` exige o campo nas duas fontes,
+    `build-manifest.mjs` o carrega adiante por `videoId`, e `check-evidence.mjs --genero`
+    torna "o que revisar" uma consulta.
+    **A dívida:** a trava do `check-claims.mjs` MEDE e não recusa — catraca por `src`
+    (`TETO_PRESCRICAO_EM_GENERO_RESTRITO`), teto no valor de hoje, só desce. São **76
+    claims em `modo: prescricao` vindas de 19 vídeos** que expõem material de outra
+    pessoa, listadas uma a uma em `GENERO.md` §6. Recusar de saída derrubaria o build
+    sobre elas, e a rodada que ligou a trava tinha proibição explícita de editar claim.
+    O piso não é necessariamente zero; o que a catraca garante é que ninguém abaixe o
+    número sem abrir as claims, e que ele não suba sozinho.
+18. ~~**`research/kb/PROTOCOLO-EXTRACAO.md` não tem regra escrita para `narrativa` ×
     `anedota` × `fato` em material PESSOAL, e 17 dos 18 lotes relataram ter inventado a
-    sua.** O buraco nomeado por quase todos: **falta gaveta para prática pessoal habitual**
-    ("ele treina terra 3× por semana", "ele come 400 g de fruta por dia") — não é episódio,
-    então `narrativa` aperta; não é história, então `anedota` aperta. Ninguém forçou o
-    enumerado, e é a decisão certa; mas são centenas de claims apoiadas numa fronteira que
-    o registro não define. Antes de qualquer consulta que dependa desses três valores,
-    escreva a regra.
+    sua.**~~ **A REGRA FOI ESCRITA em 9/8/2026** — `PROTOCOLO-EXTRACAO.md`, secção "O teste
+    de que tipo de coisa é": *quantas datas cabem nesta frase?* Nenhuma → `fato`, uma →
+    `narrativa`, muitas → `pratica-pessoal`. A gaveta que faltava foi aberta e `anedota`
+    foi fundida em `narrativa` (a fronteira entre as duas era tempo verbal, e nem isso
+    segurou: 32 % de passado nas `narrativa` contra 48 % nas `anedota`). Decisão, recusas e
+    tamanho em `research/kb/FRONTEIRA-MODO.md`.
+    **A DÍVIDA CONTINUA DE PÉ, e é grande:** `pratica-pessoal` **não está no enumerado de
+    `kb.mjs`** e nenhuma claim foi retagueada — de propósito, porque enumerado declarado e
+    vazio é o que fez `scope: TERCEIRO` ser recusado (`ENUMERADOS.md` §2), e porque a
+    medição da base estava rodando sobre `research/extract/` no dia. Onda 2: ~425 claims
+    para `pratica-pessoal` (faixa 300–620, amostra à mão n=60, IC por
+    `--ic`) mais 214 de fusão mecânica,
+    a trava `pratica-pessoal` ⇒ `scope: PESSOAL` (`SCHEMA.md`, recusa 13) e a catraca
+    `TETO_HABITUAL_SEM_PRATICA`. **Duas claims são exceção e estão nomeadas no
+    `FRONTEIRA-MODO.md` §5.8: `V170-33` se parte (esconde uma `prescricao` `GERAL` de
+    frequência de supino) e `V009-20` precisa do `scope` corrigido junto.** A lista de
+    trabalho é gerada, não copiada:
+    `node research/tools/candidatos-pratica-pessoal.mjs --tier A`.
+
+19. **`ESTADO.md` §4 dizia "as 19 params de §3, com a lista pronta"; a contagem mecânica
+    dá 52 params em 39 claims.** A lista do §3 era **copiada à mão dentro de um documento**
+    — o defeito nº 3 no próprio inventário dos defeitos —, e duas famílias inteiras não
+    estavam nela: **19 params de TAXA** (*"4 h/semana de cardio"* gravado como `4` com frame
+    `horas`, ao lado de *"treino de 3 h"* gravado como `3` com frame `horas`: o `unit` guarda
+    o `/semana`, mas `frame` é a gaveta que o consumidor lê) e **2 anos de calendário** a
+    mais (`V019-02`, `V122-01`).
+    **RESOLVIDO só o instrumento, e a dívida continua de pé:**
+    `research/tools/params-gaveta-errada.mjs` torna a lista comando (`--ids`, `--json`).
+    Ele é **detector, não verificador**, e está **fora do `check:kb` de propósito**: 31 dos
+    52 não têm gaveta de destino, e travar contra um destino inexistente empurra o dado para
+    fora da trava, que é o modo de falha nº 2. Quando a onda 2 abrir as gavetas, **cada
+    regra dele vira uma recusa do `check-claims.mjs` e o arquivo é apagado.**
+20. **Gavetas abertas em 9/8 com ZERO uso: `pes`, `l`, `pct_XRM`, `grau_C`.** O enumerado
+    cresceu e o dado não se mexeu — meio conserto que parece conserto inteiro no documento.
+    `pes` foi aberta citando `G051-37` (*"com seis pés de altura"*), e `G051-37` continua sem
+    param nenhum. `l` foi aberta citando `V112-22` (*"meio litro"* como `kg`), e `V112-22`
+    continua em `kg`. Reproduz: `node research/tools/params-gaveta-errada.mjs` imprime a
+    lista no rodapé.
+21. **A catraca `TETO_HABITUAL_SEM_PRATICA` não existe, e a especificação que existia ficaria
+    VERDE com ~300 claims de dívida.** Ela contava "Tier A que não está em `pratica-pessoal`",
+    e o recall do detector medido **de fora** é **22 %** — retagar os 115 do Tier A (que é o
+    que o `FRONTEIRA-MODO.md` §5.3 manda) zera a catraca e a congela lá para sempre, porque o
+    universo é uma lista fixa de ids já tratados. Modo de falha nº 4 com o alvo **fora do
+    campo de visão** em vez de apagado. **E o piso não é 0, é 9** (os falsos positivos
+    nomeados no §4.3 têm de ficar), então "só desce" empurra contra o invariante
+    `pratica-pessoal` = só dele. A especificação foi reescrita em `FRONTEIRA-MODO.md` §5.5,
+    com a alternativa honesta ao lado: **não ter catraca e dizer que não tem**.
+    Reproduz: `node research/tools/candidatos-pratica-pessoal.mjs --recall`.
+22. **A auditoria por mutação do gate de dor é manual e não está no repositório.** Duas
+    rodadas dela acharam, somadas, **15 travas mortas** em `check-pain-gate.mjs` — inclusive
+    quatro da mesma raiz (*a trava media a constante contra ela mesma*) e um **falso positivo
+    grave** na direção inversa, em que editar a tabela do §1.2 de propósito derrubava o
+    `check:gate` com mensagens acusando o app. As 24 mutações estão escritas em prosa no
+    `GATE-DOR.md` §9, com repro, e **ninguém as roda**. Falta o alvo `check:gate:mutantes`.
+    **Escreva-o com o limite declarado no cabeçalho:** um alvo que aplica uma lista fixa de
+    mutações prova a lista, não a trava.
+23. **`buildWeekPayload` não tem cenário de comportamento.** Os 59 cenários exercitam
+    `buildWeekDoc`, que recebe o `prev` pronto. A cobertura do encadeamento é (a) uma
+    expressão regular sobre `documentBuilders.ts` — **trava de acoplamento** — e (b) a
+    comparação de `gateLookbackWeeks` como VALOR contra a tabela, que fechou a parte da
+    profundidade. Fechar o resto exige stub de `getSessionIndex`/`getWorkouts`, importados no
+    topo do módulo.
+24. **A contradição mais perigosa da base para este atleta não tem aresta, e não PODE ter
+    hoje.** `V138-18`/`V138-19`/`V138-20` prescrevem reabilitar **treinando com dor de 2 a
+    4/10**; o `PROGRAMA.md` §1.2 manda **congelar a 2/10 no peitoral**. As duas estão certas
+    nos seus contextos. Mas `conflicts` liga **claim a claim**, e o gate do app **não é uma
+    claim** — a base não tem como registrar uma contradição com o programa. Bloqueado por
+    `tier U = 0` (`ONDA-2.md` item 5): registrar o gate como claim do atleta dá o alvo.
+    Reproduz: `node research/tools/check-evidence.mjs V138-18 V138-20` — nenhuma imprime
+    `conflitos:`.
+25. ~~**O §2 afirmava que "os passos 2 e 5 ainda não aceitam `--source`".**~~ **RESOLVIDO
+    em 9/8/2026** — era falso nos dois: o passo 2 aceita desde o conserto do §8.2 (e o
+    `check:kb` roda `verify-manifest.mjs` nas duas fontes), e o passo 5 **não deve** aceitar,
+    porque `check-claims.mjs` resolve `src` contra a união dos manifestos de propósito. Uma
+    frase sobre o código que ninguém executou, no arquivo que cataloga esse defeito.
+26. **`PROGRAMA.md` §1.2 declara um gatilho que o app não tem como receber:** a linha de
+    encerrar sessão é *"≥4/10 **ou estiramento agudo**"*, e `estiramento agudo` **não tem
+    campo na pesquisa**. Hoje ele só chega ao sistema se o atleta também marcar intensidade.
+    É a única célula da tabela sem trava possível, e o `check:gate` não pode cobri-la sem que
+    o campo exista. Detalhe em `GATE-DOR.md` §5.2.

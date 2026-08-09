@@ -15,6 +15,7 @@
 
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { SOURCES, paths } from './sources.mjs';
 
 export const TIERS = new Set(['R', 'E', 'L', 'I', 'U', 'O']);
 export const SCOPES = new Set(['GERAL', 'PESSOAL']);
@@ -40,6 +41,157 @@ export const MODOS = new Set([
   'relato-de-programa',
   'avaliacao-de-terceiro',
 ]);
+
+/**
+ * `genero` — QUE TIPO DE VÍDEO é, declarado no manifesto, um valor por vídeo.
+ *
+ * Existe porque `relato-de-programa` e `avaliacao-de-terceiro` estavam
+ * pendurados na gaveta errada. O discriminador dos dois NÃO é o texto da claim:
+ * `G028-02` é "Manter a cabeça em posição mais neutra e para cima no
+ * agachamento", indistinguível de prescrição geral para quem lê o JSONL — e o
+ * agente lê o JSONL. O discriminador é uma propriedade do VÍDEO: aquilo é um
+ * *Form Assessment Saturday*, o conselho foi calibrado para o corpo de um
+ * desconhecido, e quem sabia disso era o manifesto do canal. Dezoito agentes
+ * dependeram de lembrar de abri-lo, e traçaram dezoito linhas: as 562 claims
+ * nessas duas gavetas não são reproduzíveis. Ver `research/kb/GENERO.md`.
+ *
+ * O enumerado é maior que os três valores sugeridos no `ESTADO.md`
+ * (`review-de-programa | form-check | vlog`) pelo motivo de sempre nesta casa:
+ * **enumerado curto empurra o dado para fora da trava**. `vlog` sozinho teria
+ * que engolir log de sessão, filmagem de meet, oferta de coaching, Q&A e clipe
+ * de PR — cinco coisas cujo único traço comum é "não é aula" —, e a primeira
+ * pergunta que alguém faz à base ("o que ele diz na plataforma?") não teria
+ * como ser feita.
+ *
+ * A ASSIMETRIA DE ATRIBUIÇÃO, que é a regra mais importante daqui: os três
+ * gêneros restritos (abaixo) são os únicos que ligam trava. Marcar de menos
+ * neles custa o status quo — nenhuma trava, que é onde a base já estava.
+ * Marcar de mais custa uma trava FALSA sobre claim legítima, e trava errada é
+ * pior do que trava ausente. Então, na dúvida entre um gênero restrito e
+ * qualquer outro, escolha o outro; e onde o título não decide nada, use
+ * `indeterminado` em vez de chutar.
+ */
+export const GENEROS = new Set([
+  /** O autor ensina o próprio método: didático, tutorial, tese, tier list. */
+  'aula',
+  /** O assunto principal é o método DE OUTRA PESSOA — 5/3/1, nSuns, Cube, PHUL,
+   *  o livro de outro, o programa que uma IA escreveu. O imperativo que aparece
+   *  aqui é do autor do programa, não de quem está falando. */
+  'review-de-programa',
+  /** Análise da execução de OUTRA pessoa, a partir do vídeo que ela enviou
+   *  (a série *Form Assessment Saturday*). O contexto que justifica o conselho é
+   *  o corpo dela, e quem lê a base não tem esse contexto. */
+  'form-check',
+  /** Aconselhamento dirigido a UM praticante nomeado (as *Coaching Call*). Mesma
+   *  família do `form-check` — conselho calibrado para um caso —, nome
+   *  diferente porque não é a execução que está sendo avaliada, é o programa
+   *  dele. Sem esta gaveta o vídeo cairia em `aula`, que é a leitura perigosa. */
+  'coaching-call',
+  /** O que aconteceu no treino/no dia dele: vlog de sessão, prep em vlog, full
+   *  day of eating, análise do PRÓPRIO vídeo. */
+  'log-de-treino',
+  /** Competição: recap de meet, filmagem de plataforma, mock meet. */
+  'competicao',
+  /** Ele responde perguntas do público. Não restringe — a resposta costuma ser
+   *  generalizável —, mas é a fronteira mais próxima dos três restritos, e a
+   *  gaveta existe para que dê para revisar isso por consulta um dia. */
+  'perguntas',
+  /** Anúncio de canal, oferta de coaching, lançamento de produto/app. */
+  'institucional',
+  /** Filmagem curta sem prosa: PR de academia, compilação, filmagem de
+   *  terceiro sem comentário metodológico. */
+  'clipe',
+  /** O título não decide e ninguém reabriu o vídeo. **É um valor legítimo e
+   *  final**, não um buraco: gênero chutado vira trava errada, e trava errada é
+   *  pior do que trava ausente. */
+  'indeterminado',
+]);
+
+/**
+ * Os gêneros em que `modo: prescricao` é suspeito — o material é de outra
+ * pessoa, ou calibrado para uma pessoa específica.
+ *
+ * A trava correspondente em `check-claims.mjs` MEDE, não reprova: é uma catraca
+ * por `src`, com o teto no número de violações do dia em que foi ligada, e o
+ * teto só desce. Reprovar de saída derrubaria o build sobre 76 claims que já
+ * existem, e a rodada que ligou a trava não tinha permissão de editar claim.
+ *
+ * **O piso da catraca não é necessariamente zero.** Sobra prescrição legítima
+ * nesses vídeos — o conselho do próprio autor sobre adotar um programa alheio, o
+ * padrão técnico universal que ele enuncia no meio de um form check. O que a
+ * catraca garante é que cada uma que ficar tenha sido olhada, e que nenhuma nova
+ * entre sem alguém abaixar um número à mão.
+ */
+export const GENEROS_SEM_PRESCRICAO = new Set(['review-de-programa', 'form-check', 'coaching-call']);
+
+/**
+ * `ref` do vídeo → `genero`, lido dos manifestos de todas as fontes.
+ *
+ * Mora aqui, e não copiado dentro de cada ferramenta, pelo motivo da abertura
+ * deste arquivo: `check-claims.mjs` e `check-evidence.mjs` precisam da mesma
+ * resposta, e duas leituras do manifesto divergem em silêncio. Fonte sem
+ * manifesto (o regulamento da IPF, `kind: 'normativo'`) simplesmente não
+ * contribui — claim `tier: O` não vem de vídeo e não tem gênero.
+ */
+export function carregarGeneroPorRef(root) {
+  const porRef = new Map();
+  for (const src of Object.values(SOURCES)) {
+    const file = paths(src, root).manifest;
+    if (!existsSync(file)) continue;
+    for (const v of JSON.parse(readFileSync(file, 'utf8')).videos ?? []) {
+      porRef.set(v.ref, v.genero ?? null);
+    }
+  }
+  return porRef;
+}
+
+/**
+ * Devolve uma cópia do vídeo do manifesto com `genero` gravado logo depois de
+ * `title` — que é onde ele é lido: quem abre o manifesto para conferir um gênero
+ * está olhando para o título.
+ *
+ * ── POR QUE ISTO É UMA FUNÇÃO, E TESTADA ────────────────────────────────────
+ *
+ * A primeira versão morava embutida no `seed-genero.mjs` e tinha um defeito que
+ * desligava o seed inteiro sem uma linha de reclamação:
+ *
+ *     for (const [k, val] of Object.entries(v)) {
+ *       out[k] = val;                              // ← quando k === 'genero',
+ *       if (k === 'title') out.genero = r.genero;  //   copia o valor VELHO por
+ *     }                                            //   cima do recém-derivado
+ *
+ * No manifesto, `genero` vem logo DEPOIS de `title`. Então, para todo vídeo que
+ * já tivesse a chave — inclusive com o `genero: null` que o `build-manifest.mjs`
+ * escreve numa reconstrução —, o valor derivado era sobrescrito pelo antigo. O
+ * script contava a mudança, imprimia "354 de 551 vídeos receberam gênero" e
+ * "→ manifesto escrito", e gravava o arquivo inalterado. Duas consequências, e a
+ * segunda é a cara:
+ *
+ *   - `--refresh` nunca re-derivou nada, ao contrário do que o cabeçalho do
+ *     script e o `GENERO.md` §4 prometiam.
+ *   - o conserto que o `verify-manifest.mjs` manda fazer quando acha vídeo sem
+ *     gênero ("rode `seed-genero.mjs`") não funcionava justamente no caso em que
+ *     é preciso — manifesto reconstruído —, e dizia que tinha funcionado. Trava
+ *     vermelha para sempre com o conserto documentado não funcionando é como se
+ *     desliga uma trava: alguém apaga a checagem.
+ *
+ * O `--dry` que a auditoria anterior usou como prova de reprodutibilidade não
+ * podia pegar isto: ele compara valor derivado com valor no arquivo e nunca
+ * passa pelo caminho da escrita.
+ */
+export function comGenero(video, genero) {
+  const out = {};
+  for (const [k, val] of Object.entries(video)) {
+    // A chave antiga é PULADA, não copiada: é ela que voltava por cima.
+    if (k === 'genero') continue;
+    out[k] = val;
+    if (k === 'title') out.genero = genero;
+  }
+  // Manifesto sem `title` (não deveria existir, mas o campo é do yt-dlp): o
+  // gênero vai para o fim em vez de sumir.
+  if (!('genero' in out)) out.genero = genero;
+  return out;
+}
 
 /**
  * Enumerado fechado, mas não pequeno por esporte: faltar gaveta é pior do que

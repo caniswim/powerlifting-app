@@ -138,6 +138,16 @@ export function parseGateDor(md) {
       `Pico de retorno (≤${retorno.picoMaximo}/10) não pode alcançar o limiar de congelamento (≥${congela.limiar}/10)`,
     );
   }
+  // RETORNO é a única linha da tabela que AFROUXA, e é consumida por código
+  // desde que o `WeekDoc` passou a carregar histórico entre semanas. Zero
+  // semanas exigidas tornaria o retorno automático — e as travas de truncagem
+  // do rollup, que fatiam pelas últimas N semanas, degeneram em "todas".
+  if (!Number.isInteger(retorno.semanas) || retorno.semanas < 1) {
+    throw new Error(`RETORNO exige ao menos 1 semana limpa; leu ${retorno.semanas}`);
+  }
+  if (retorno.picoMaximo < escala[0]) {
+    throw new Error(`Pico de retorno ${retorno.picoMaximo} abaixo da escala ${escala[0]}–${escala[1]}`);
+  }
 
   return {
     secao: '§1.2',

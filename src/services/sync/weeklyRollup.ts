@@ -9,13 +9,18 @@ import type {
 import { prescribedWeeklyVolume } from '../../domain/volumeTargets';
 import { painRegionLabels } from '../../domain/painRegions';
 import {
+  describeGateReturn,
+  describeGateReturnGap,
   describePainGate,
+  evaluateGateReturn,
   evaluatePainGate,
+  gateWindowSessions,
   painFlagDefault,
+  painGateMuscle,
   painGateScope,
   PAIN_GATE,
 } from '../../domain/painGate';
-import type { GateReading } from '../../domain/painGate';
+import type { GateReading, GateWeekObservation } from '../../domain/painGate';
 import { addSet, newRollupAcc, toRollup } from './complianceRollup';
 import { ROLLUP_SCHEMA_VERSION } from './rollupTypes';
 import type {
@@ -25,6 +30,7 @@ import type {
   SurveyAverages,
   TopSetRef,
   WeekDoc,
+  WeekGate,
   WeekSessionRow,
 } from './rollupTypes';
 import { emptyLiftTotals, isWorkingSet, liftOf, weekIdFor } from './sessionRollup';
@@ -366,30 +372,115 @@ function buildNotes(sessions: SessionDoc[]): WeekDoc['notes'] {
   return notes;
 }
 
+/** A sessão carregou o peitoral — é uma "sessão de supino" para o §1.2. */
+function isChestSession(sess: SessionDoc): boolean {
+  return (sess.volumeByMuscle[painGateMuscle] ?? 0) > 0;
+}
+
+/** A sessão colheu a pesquisa em algum dos momentos que o §1.2 pede. */
+function collectedLog(sess: SessionDoc): boolean {
+  return sess.pre != null || sess.post != null;
+}
+
 /**
  * Leitura de peitoral por sessão, para a janela do gate de §1.2.
  *
- * Uma sessão entra na lista só se colheu log de peitoral; é o que torna a janela
- * de "3 sessões de supino" contável sem o rollup precisar saber quais sessões
- * tinham supino. Os dois lados são somados no mesmo tecido — o pico da sessão é
- * o maior valor entre esquerdo e direito, pré e pós.
+ * A janela da tabela é de SESSÕES DE SUPINO. Uma sessão entra na lista quando:
+ *
+ * - carregou o peitoral **e** colheu o log — mesmo sem dor nenhuma, com
+ *   `peak: 0`. Sessão de supino limpa é sessão de supino e consome a janela;
+ *   sem isso, dois eventos separados por um mês de treino limpo continuariam
+ *   contando como "2 eventos em 3 sessões"; **ou**
+ * - registrou dor de peitoral, tenha o rollup visto volume de peitoral ou não.
+ *   Evento colhido **nunca** é descartado por causa da classificação do dia: se
+ *   o volume não foi gravado (sessão abandonada, exercício fora do registro), a
+ *   dor continua sendo dor. Faltar gaveta é pior que ter gaveta demais.
+ *
+ * O que fica de fora é o que tem de ficar: dia sem peitoral e sem dor. É assim
+ * que uma semana de deload sem supino não consome a janela — não por uma regra
+ * sobre deload, mas porque não houve sessão de supino.
+ *
+ * Os dois lados são somados no mesmo tecido — o pico da sessão é o maior valor
+ * entre esquerdo e direito, pré e pós.
  */
-function buildGateReadings(sessions: SessionDoc[]): GateReading[] {
+function buildGateReadings(sessions: SessionDoc[], weekNumber: number): GateReading[] {
   const out: GateReading[] = [];
   for (const sess of sessions) {
     const entries = [...(sess.pre?.pain ?? []), ...(sess.post?.newPain ?? [])]
       .filter((p) => painGateScope(p.region) === 'peitoral');
-    if (entries.length === 0) continue;
-    out.push({ date: dayOf(sess.date), peak: Math.max(...entries.map((p) => p.intensity)) });
+    if (entries.length === 0 && !(isChestSession(sess) && collectedLog(sess))) continue;
+    out.push({
+      date: dayOf(sess.date),
+      weekNumber,
+      peak: entries.length > 0 ? Math.max(...entries.map((p) => p.intensity)) : 0,
+    });
   }
   return out.sort((a, b) => a.date.localeCompare(b.date));
+}
+
+/** O que esta semana observou sobre o peitoral. Fatos, sem veredito. */
+function buildGateWeek(
+  sessions: SessionDoc[],
+  weekNumber: number,
+  readings: GateReading[],
+): GateWeekObservation {
+  let benchSessions = 0;
+  let loggedSessions = 0;
+  for (const sess of sessions) {
+    if (!isChestSession(sess)) continue;
+    benchSessions += 1;
+    if (collectedLog(sess)) loggedSessions += 1;
+  }
+  return {
+    weekNumber,
+    benchSessions,
+    loggedSessions,
+    peak: readings.length > 0 ? Math.max(...readings.map((r) => r.peak)) : null,
+  };
+}
+
+/**
+ * Memória do gate, montada sobre a da semana anterior.
+ *
+ * `prev` pode não ter o bloco (documento gravado em `schemaVersion: 1`): nesse
+ * caso o histórico começa vazio e o gate se comporta como antes desta revisão,
+ * sem migração e sem erro. As duas listas são truncadas ao que a TABELA exige,
+ * então o documento não cresce com o bloco.
+ *
+ * O filtro por `weekNumber` menor que o corrente é o que torna o rollup
+ * idempotente: reconstruir a mesma semana duas vezes não empilha a leitura dela
+ * mesma na cauda.
+ */
+function buildGate(
+  sessions: SessionDoc[],
+  weekNumber: number,
+  prev: WeekDoc | null,
+): WeekGate {
+  const readings = buildGateReadings(sessions, weekNumber);
+  const anteriores = [...(prev?.gate?.carry ?? []), ...(prev?.gate?.readings ?? [])]
+    .filter((r) => r.weekNumber < weekNumber)
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  const weeks = [
+    ...(prev?.gate?.weeks ?? []).filter((w) => w.weekNumber < weekNumber),
+    buildGateWeek(sessions, weekNumber, readings),
+  ].slice(-PAIN_GATE.retorno.semanas);
+
+  // `slice(-0)` devolve o array inteiro, não vazio: a janela de 1 sessão não
+  // pode carregar cauda nenhuma, e o caso é escrito em vez de deduzido.
+  const cauda = Math.max(0, gateWindowSessions - 1);
+  return {
+    readings,
+    carry: cauda === 0 ? [] : anteriores.slice(-cauda),
+    weeks,
+  };
 }
 
 /**
  * Sinalizadores determinísticos. Não são julgamento — são onde olhar primeiro.
  * A conversa semanal decide o que fazer; isto só evita que algo passe batido.
  */
-function buildFlags(doc: Omit<WeekDoc, 'flags'>, sessions: SessionDoc[]): string[] {
+function buildFlags(doc: Omit<WeekDoc, 'flags'>): string[] {
   const flags: string[] = [];
   const { adherence, compliance, surveys, pain, bodyweight } = doc;
 
@@ -433,8 +524,24 @@ function buildFlags(doc: Omit<WeekDoc, 'flags'>, sessions: SessionDoc[]): string
   // GATE DE PEITORAL — o limiar vem da tabela de PROGRAMA.md §1.2, não daqui.
   // Fica ANTES das outras linhas de dor: é o único item desta função que aponta
   // para uma ação já prescrita, e não para "olhe isto".
-  const gate = evaluatePainGate(buildGateReadings(sessions));
+  //
+  // `doc.gate.carry` é o que faz a janela de sessões atravessar a virada de
+  // semana. Documento antigo sem o bloco não existe aqui (ele é sempre montado
+  // agora), mas a ausência do histórico ANTERIOR — `prev` sem `gate` — só
+  // esvazia a cauda, e o gate volta a ler a semana isolada.
+  const gate = evaluatePainGate(doc.gate?.readings ?? [], doc.gate?.carry ?? []);
   if (gate) flags.push(describePainGate(gate));
+
+  // RETORNO — a única linha do §1.2 que AFROUXA. Ela só é decidível com
+  // histórico entre semanas, e por isso ficou parseada e não consumida até
+  // agora. O app não re-sobe degrau nenhum: diz que a condição da tabela está
+  // satisfeita, e a conversa semanal decide (§5.5 de GATE-DOR.md).
+  const retorno = evaluateGateReturn(doc.gate?.weeks ?? []);
+  if (retorno.elegivel) {
+    flags.push(describeGateReturn(retorno));
+  } else if (retorno.semanasSemLog.length > 0) {
+    flags.push(describeGateReturnGap(retorno));
+  }
 
   for (const p of pain) {
     const scope = painGateScope(p.region);
@@ -499,7 +606,8 @@ export function buildWeekDoc(input: WeekInput, prev: WeekDoc | null = null): Wee
     deviations: buildDeviations(input, sessions),
     sessions: buildSessionRows(sessions),
     notes: buildNotes(sessions),
+    gate: buildGate(sessions, input.week.weekNumber, prev),
   };
 
-  return { ...base, flags: buildFlags(base, sessions) };
+  return { ...base, flags: buildFlags(base) };
 }

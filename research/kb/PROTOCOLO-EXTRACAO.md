@@ -155,18 +155,18 @@ Enumerado FECHADO, travado pelo `check-claims.mjs`. `scope` diz **para quem**;
 | `avaliacao-de-terceiro` | ele corrige **uma pessoa específica** a partir do vídeo dela |
 | `opiniao` | ele acha, sem mandar fazer |
 | `mecanismo` | por que funciona — fisiologia, alavanca, causa alegada |
-| `fato` | afirmação sobre o mundo, verificável fora dele |
 | `estudo` | ele narra literatura. Continua sendo ele contando: não vira `tier: L`. |
-| `anedota` | história dele ou de terceiro |
-| `narrativa` | o que aconteceu no treino, sem tese |
+| `pratica-pessoal` | **o que ele faz de rotina** — o que alguém poderia copiar |
+| `narrativa` | um episódio: aconteceu uma vez, tem data |
+| `fato` | o que ele **é** ou o que o mundo **é** — sem ocorrência, sem data |
 
-Os dois do meio são a distinção que a ingestão do Blevins pediu cinco vezes, de
+Os dois do topo são a distinção que a ingestão do Blevins pediu cinco vezes, de
 forma independente. Metade do corpus dele é review de programa alheio, e "o nSuns
 manda AMRAP a 95 % do training max" ficava indistinguível de "faça AMRAP a 95 %
 do training max". Para quem monta treino a partir daqui, essa confusão é do mesmo
 tamanho da que separa `GERAL` de `PESSOAL`.
 
-**O teste, nesta ordem:**
+**O teste de quem fala, nesta ordem:**
 
 1. Ele está enunciando o que **outro programa** manda? → `relato-de-programa`,
    mesmo que a frase esteja no imperativo. O imperativo é do Wendler, não dele.
@@ -178,6 +178,265 @@ tamanho da que separa `GERAL` de `PESSOAL`.
 
 Na dúvida entre `prescricao` e os dois, escolha um dos dois. Promover relato a
 prescrição é o erro caro; o contrário é só conservador.
+
+### ANTES do teste de quem fala: abra o `genero` do vídeo
+
+**O teste acima, sozinho, manda você para a resposta errada — e isso foi
+medido.** A pergunta 3 diz "ele generaliza a partir do caso? → aí sim
+`prescricao`, e a claim tem de estar escrita na forma geral". Só que a extração
+normaliza a claim para prosa geral de qualquer jeito: nos 20 vídeos de review do
+Blevins, **82 %** das claims então em `prescricao` não nomeavam o programa no
+texto; nos 5 de form check, **90 %** não tinham marcador de pessoa específica.
+`G028-02` é *"manter a cabeça em posição mais neutra e para cima no
+agachamento"* — segue o protocolo à letra e vira `prescricao`, e é conselho para
+um desconhecido que mandou um vídeo.
+
+O sinal que falta não está na claim. Está no vídeo, e desde 2026-08-09 está
+declarado no manifesto, no campo `genero`:
+
+```
+node -e "const m=require('./research/corpus/blevins/manifest.json');
+         console.log(m.videos.find(v=>v.ref==='G016').genero)"   # review-de-programa
+```
+
+**A regra, e ela vem antes de tudo:**
+
+| `genero` do vídeo | o que sai dali |
+|---|---|
+| `review-de-programa` | o método é de outro autor → `relato-de-programa`, mesmo em imperativo |
+| `form-check` | o conselho é para um corpo específico → `avaliacao-de-terceiro` |
+| `coaching-call` | idem, para um praticante nomeado → `avaliacao-de-terceiro` |
+| qualquer outro | siga o teste de quem fala normalmente |
+
+`prescricao` vinda de um dos três primeiros é **exceção que você tem de
+defender**, não o caso comum: só quando ele sai do material alheio e enuncia uma
+regra dele ("independentemente do programa, faça X"). O `check-claims.mjs` conta
+essas ocorrências contra um teto por vídeo, e o teto só desce — lote novo que
+passar do teto **falha o build**.
+
+**"Exceção que você defende" não quer dizer "raridade".** As 76 que hoje ocupam a
+fila foram lidas uma a uma, e a maioria é exceção legítima: nos cinco form
+checks, as 18 são padrão técnico universal (*"o joelho passa por cima do segundo
+dedo"*, *"o glúteo não sai do banco"*) ou logística do canal, e **nenhuma** é
+conselho calibrado para o corpo de quem mandou o vídeo — as calibradas de verdade
+já estavam em `avaliacao-de-terceiro`, e por isso não aparecem na fila. Ver
+`GENERO.md` §6.
+
+O discriminador continua sendo **de quem é o imperativo**, não o rótulo do vídeo.
+Um cue que valeria igual em qualquer vídeo do canal é `prescricao` mesmo dito
+dentro de um form check; o que vira `avaliacao-de-terceiro` é o que só faz
+sentido para aquele corpo, e o que vira `relato-de-programa` é o que só faz
+sentido dentro daquele programa. Rebaixar cue universal para caber na trava é o
+dano do falso positivo — some da base uma regra que era boa, e some sem deixar
+rastro.
+
+O enumerado completo de `genero`, o critério de cada valor e a lista das 76
+claims que hoje violam esta regra estão em `research/kb/GENERO.md`.
+
+### O teste de que tipo de coisa é — `pratica-pessoal` × `narrativa` × `fato`
+
+Os três acima resolvem **de quem é a fala**. Sobra decidir, no material que é
+dele, **que tipo de coisa a frase é** — e era aqui que não havia regra nenhuma:
+17 dos 18 lotes que preencheram `modo` relataram ter inventado a sua. O registro
+da decisão, com o tamanho do que ela move, está em `FRONTEIRA-MODO.md`.
+
+Rode as duas perguntas primeiro, porque elas tiram da frente o que não é
+ocorrência nenhuma:
+
+- A frase diz o que ele **acha**, sem mandar fazer? → `opiniao`.
+- A frase diz **por que** algo funciona? → `mecanismo`.
+
+Sobrou uma frase sobre o que ele faz, fez ou é. Então:
+
+> **A PERGUNTA QUE SEPARA: quantas datas cabem nesta frase?**
+>
+> - **Nenhuma** — não é uma ocorrência, é como ele ou o mundo *é*. → `fato`
+> - **Uma** — aconteceu uma vez, e daria para dizer o dia. → `narrativa`
+> - **Muitas** — acontece de novo, e ele espera que continue. → `pratica-pessoal`
+
+É a mesma forma do teste que abre este documento ("se você não aponta os
+segundos, não é claim"): uma pergunta que se responde olhando a frase, não uma
+definição que se responde olhando o dicionário.
+
+**Quando bater "uma" e "muitas" ao mesmo tempo, ganha `pratica-pessoal`.** É o
+caso de `V117-11` — *"ele já fez 68 séries de supino por semana no próprio
+programa, e credita a isso o supino de 405 lb"*: tem um episódio (o 405) e tem
+uma dose que se repete (68 séries por semana). A dose vence porque a dose é o que
+se copia, e `pratica-pessoal` é a gaveta que carrega o aviso de que aquilo é o
+hábito de um homem de 120 kg que não compete testado. Se a tese ("foi isso que me
+deu o 405") importa, ela é **outra claim**, com `basis` apontando para a
+primeira — a regra de granularidade deste documento já mandava separar.
+
+**Por que `pratica-pessoal` existe, em uma frase.** `scope: PESSOAL` diz que a
+frase é sobre ele; não diz se é algo que dá para copiar. *"Ele agachou 825 lb
+semana passada"* e *"ele supina 6 dias por semana"* são as duas `PESSOAL`, e só a
+segunda vira uma linha do treino de alguém. Sem a gaveta, a segunda mora em
+`narrativa` — que este documento define como episódio —, o que diz ao consumidor
+exatamente o contrário do que ele precisa saber.
+
+**A pergunta operacional. Ela não é só desempate — ela tem VETO:**
+
+> **Se este atleta copiasse a frase para a própria semana, ela viraria uma linha
+> do treino, da dieta ou da rotina dele?**
+
+Se vira linha, é `pratica-pessoal`. Se não vira — porque é um resultado que já
+aconteceu, ou uma propriedade do corpo dele — é `narrativa` ou `fato`.
+
+**E quando as duas perguntas brigam, esta ganha.** A contagem de datas erra num
+sentido só, e sempre para o mesmo lado: frases que descrevem uma *observação*
+repetida, e não uma *rotina*, aceitam muitas datas e caem em `pratica-pessoal`
+sem serem copiáveis. `V117-08` — *"ele viu isso ao programar trabalho até a falha
+para dezenas de alunos"* — cabe em dezenas de datas e não é linha de treino de
+ninguém: é `narrativa`. Regra: **"muitas datas" só leva a `pratica-pessoal` se a
+frase também passar na pergunta operacional.**
+
+### Os três empates que a contagem não resolve sozinha
+
+Medido às cegas em 40 claims (`candidatos-pratica-pessoal.mjs --recall`), a
+contagem de datas decide sozinha em 31 e trava em 9 — **22,5 %**. Os nove caem em
+três formas, e cada uma tem desempate declarado abaixo. Sem eles, o agente
+inventa o seu, que é o defeito que esta secção existe para não ter.
+
+**1. Nenhuma × uma (`fato` × `narrativa`).** "A academia dele instalou plataformas
+novas" (`V024-06`), "o supino dele saiu de 215 para 265 lb" (`V057-09`), "antes
+dessa fase ele não lidava com muito workload" (`V065-08`): dá para ler como
+estado ou como o momento em que o estado mudou.
+
+> **Empate entre nenhuma e uma → `narrativa`.**
+
+Pelo mesmo motivo que `scope` na dúvida é `PESSOAL`: promover um episódio a
+`fato` transforma um n = 1 em propriedade do homem, e é o erro caro. Ler um
+estado como episódio é só conservador.
+
+**2. Nenhuma × muitas (`fato` × `pratica-pessoal`).** "Os treinos dele levam ~2,5 h"
+(`V003-02`), "ele segura a barra com o polegar do mesmo lado" (`V157-20`). A
+contagem não decide porque estado e rotina se descrevem com a mesma gramática — é
+o mesmo caso do `V003-18` na tabela abaixo.
+
+> **Use a pergunta operacional, e nada mais.** Vira linha da semana dele →
+> `pratica-pessoal`. Não vira, porque é propriedade do corpo ou da execução →
+> `fato`.
+
+A régua entre os dois: **uma escolha que ele poderia ter feito diferente é
+rotina; uma coisa que o corpo dele faz é propriedade.** Pegada, stance, ordem do
+equipamento e duração da sessão são escolhas → `pratica-pessoal`. Sticking point,
+alavanca, metabolismo e status testado/natural são propriedades → `fato`.
+
+**3. A frase é uma rotina COM a razão ou o juízo colado.** "Ele abriu a stance no
+terra **porque** descobriu que fica mais forte assim" (`G037-07`), "ele usa
+cadeira extensora **para** trabalhar quadríceps sem carga axial" (`V095-25`), "ele
+está indo para uma pegada mais aberta **e acha** que está funcionando melhor"
+(`V020-36`). Lidas ao pé da letra, as duas pré-perguntas do topo desta secção
+engolem as três: elas dizem *por que* funciona e dizem o que ele *acha*.
+
+> **As duas pré-perguntas não são portões sobre rotina.** Quando a frase é *"ele
+> faz X, porque/e Y"*, ela é **duas claims** — a rotina e o mecanismo (ou a
+> opinião) — e partir vem antes de etiquetar, exatamente como no caso `ele + você`
+> logo abaixo. Se você não vai partir, a gaveta é a da **oração principal**: o
+> sujeito da frase é o que ele FAZ, não a razão.
+
+Sem esta linha, todo hábito que vem com a sua justificativa — e quase todos vêm —
+escorrega para `mecanismo`, e a gaveta que existe para dizer "não copie" fica
+vazia justamente nos casos em que a razão torna o hábito mais tentador de copiar.
+
+### O que `pratica-pessoal` NÃO promete
+
+A gaveta diz *"isto é uma dose que se repete e que dá para copiar"*. Ela **não**
+diz que é atual, nem que deu certo, nem que ele ainda faz. Três coisas moram lá
+com o mesmo rótulo:
+
+- rotina de hoje — `V088-19`, *"6 séries por semana em agacho e terra"*;
+- rotina abandonada — `V135-12`, *"tentou 15 séries de agacho por semana e
+  continuou exausto e sobretreinado"*;
+- plano futuro — `V081-26`, *"depois do corte ele pretende ganhar 1/3 a 1/2 lb por
+  semana"*.
+
+Isso é deliberado: `modo` diz *que tipo de coisa é*, e as três são a mesma coisa.
+**A janela — hoje, antes, depois — mora na prosa da `claim` e em `conditions`**,
+como já vale para `V152-19`. Mas então a prosa tem de dizê-la: uma claim de
+`pratica-pessoal` que não diz *quando* é uma dose sem validade, e para um atleta
+que vai ler "o que ele faz" isso é pior do que estar em `narrativa`. **Se você
+marcar `pratica-pessoal` numa rotina abandonada ou hipotética e a prosa não
+disser, conserte a prosa.**
+
+**Casos de fronteira reais, resolvidos:**
+
+| id | claim | vai para | por quê |
+|---|---|---|---|
+| `V170-03` | "o formato geral do programa dele é seis dias por semana com um dia de folga" | `pratica-pessoal` | muitas datas; vira linha de treino direto |
+| `V024-02` | "na semana anterior ele agachou 825 lb, PR de todos os tempos" | `narrativa` | uma data; um PR não é uma linha que se copia |
+| `V044-01` | "ele compete na categoria de 120 kg e chega a ~260 lb" | `fato` | nenhuma data — é o que ele é |
+| `V173-05` | "não usa esteroides" | `fato` | é **status**, não rotina de treino. Status testado/natural é a coisa que mais qualifica esta base inteira e não pode virar item de rotina |
+| `V152-19` | "em certo momento ele treinava agacho, supino e terra 6× por semana" | `pratica-pessoal` | hábito no passado ainda é hábito. A janela ("em certo momento") mora na prosa da claim ou em `conditions`, não no `modo` |
+| `V003-18` | "ele cronometra todos os descansos: 5 min em agacho e terra, 3 min no supino" | `pratica-pessoal` | hoje está em `fato`, porque foi escrita como estado. Agenda e rotina descritas como estado continuam sendo rotina |
+| `V028-08` | "ele andou entre as séries como de costume, e a sensação foi melhorando" | `narrativa` | o episódio é o assunto; o "como de costume" é pano de fundo. O hábito, se vale claim, é uma claim própria |
+| `V083-03` | "o sticking point dele é pronunciado e ele agacha bem fundo" | `fato` | propriedade da execução dele, não algo que se agende |
+| `V009-20` | "um cliente dele consegue treinar 3 dias por semana" | `avaliacao-de-terceiro` | a rotina é de outra pessoa. `pratica-pessoal` é só dele — ver a trava abaixo |
+| `V175-11` | "o programa que o levou até ali foi o Starting Strength, 3×5 de agacho em toda sessão" | `relato-de-programa` | a frequência é do programa alheio; o teste de quem fala vem antes e ganha |
+
+**ANTES de escolher a gaveta, veja se a frase é UMA coisa só.** Se o hábito vem
+grudado num conselho para todo mundo, a frase tem de ser partida — e partir vem
+antes de etiquetar, porque nenhuma etiqueta está certa para uma frase que é duas.
+O caso real é `V170-33`: *"ele supina seis dias por semana, uma frequência
+altíssima, **e acha que a maioria das pessoas deveria fazer o mesmo**"*. O começo
+é `pratica-pessoal` + `PESSOAL`; o fim é `prescricao` + `GERAL`. Etiquetar a
+frase inteira de `pratica-pessoal` **esconde a prescrição dentro da gaveta que
+existe para dizer "isto é dele, não copie"** — e quem consome a base filtrando
+`prescricao` nunca mais a encontra. O sinal de que você está diante disso é
+gramatical e barato: **um "e" ligando um sujeito que é ele a um sujeito que é
+você.**
+
+**`pratica-pessoal` exige `scope: PESSOAL`.** Rotina de terceiro é
+`avaliacao-de-terceiro` ou `relato-de-programa`, nunca isto — senão a gaveta que
+existe para dizer "cuidado, é o hábito DELE" passa a guardar hábito de qualquer
+um. É invariante de compilador, e entra no `check-claims.mjs` junto com o
+enumerado, na onda 2 (`SCHEMA.md`, "o que o checker recusa", item 13).
+
+### `anedota` está em fusão com `narrativa`
+
+`anedota` era "história dele ou de terceiro" e `narrativa` era "o que aconteceu
+no treino". Os 18 lotes separaram os dois **por tempo verbal** — passado virava
+`anedota`, presente virava `narrativa` —, e nem isso se sustentou: medido em
+9/8/2026, 32 % das `narrativa` e 48 % das `anedota` têm marcador de passado no
+verbatim. Isso não é uma fronteira, é um borrão.
+
+E o borrão não paga por si: **nenhuma consulta desta base separa os dois.** Os
+dois são episódio único, do mesmo homem, com o mesmo peso de evidência (n = 1); o
+filtro que decide alguma coisa é `prescricao`, e o aviso que decide alguma coisa
+é `PESSOAL`. Pelo próprio teste de admissão do `ENUMERADOS.md` §1 — "alguém vai
+filtrar por isso?", "a ausência força um erro?" — `anedota` não entraria hoje. E
+o que ela guardava não se perde: o tempo verbal está no `verbatim`, que é a fonte;
+o campo era uma cópia lossy dele, e cópia que diverge em silêncio é o defeito nº 3
+deste projeto.
+
+**Não emita `anedota` em lote novo. Use `narrativa`** — que passa a significar
+*um episódio, dele ou de terceiro, contado como episódio*. As 243 claims que ainda
+estão lá migram na onda 2 (§ `FRONTEIRA-MODO.md` §5); o valor só sai do enumerado
+de `kb.mjs` quando a última claim sair dele, e não antes.
+
+**E isto é travado, não é só texto.** `check-claims.mjs` tem a catraca
+`TETO_ANEDOTA`, por prefixo de id (`V: 196`, `G: 47`) e **só desce**: `anedota`
+continua sendo valor legal — tem de ser, senão o build cai sobre as 243 —, mas o
+número não pode subir. Fonte nova tem teto zero e estoura no primeiro registro.
+Por prefixo e não global pela lição já paga do `TETO_SEM_MODO`: um teto global
+vaza porque retagar uma `anedota` antiga abre exatamente uma vaga para uma nova, e
+a onda 2 retaga e ingere ao mesmo tempo. Sem a catraca, a proibição acima seria
+markdown puro, e o intervalo entre ela e a onda 2 seria a janela em que a dívida
+cresce — que é o defeito nº 3 desta casa em estado puro.
+
+### Estas duas mudanças ainda não estão no `kb.mjs`
+
+`pratica-pessoal` **ainda não é valor legal**, de propósito. O `ENUMERADOS.md` §2
+recusou `scope: TERCEIRO` com o argumento certo — *"um enumerado declarado e nunca
+preenchido é pior do que enumerado ausente: ele promete uma distinção que os dados
+não têm, e o consumidor confia no filtro"* —, e abrir a gaveta antes do retag
+reencena exatamente isso. **A linha do enumerado e o retag entram no mesmo
+commit**, que é a onda 2.
+
+Até lá, lote de extração novo: use `narrativa` para prática habitual, e **liste no
+relatório final os ids que você teria marcado `pratica-pessoal`**. É a mesma regra
+que este documento já aplica a tópico que falta — não invente a gaveta, registre a
+falta.
 
 ## O que NÃO virar claim
 

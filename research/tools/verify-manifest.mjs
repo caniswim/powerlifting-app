@@ -21,7 +21,7 @@
  * unicidade de ref, ordem cronológica) e DIZ, na saída, que a checagem de
  * deslocamento não se aplica.
  *
- * Uso: node research/tools/verify-manifest.mjs [--source blevins]
+ * Uso: node research/tools/verify-manifest.mjs [--source blevins] [--manifest <caminho>]
  *   sem --source, verifica o corpus do Vena.
  */
 
@@ -29,10 +29,33 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { resolveSource, paths } from './sources.mjs';
+import { GENEROS } from './kb.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const SOURCE = resolveSource();
-const MANIFEST = paths(SOURCE, ROOT).manifest;
+
+/**
+ * `--manifest <caminho>` redireciona SÓ o arquivo do manifesto; todo o resto dos
+ * caminhos (o `PROGRAMA.md` que ancora o offset, as transcrições) continua
+ * apontando para o repositório de verdade.
+ *
+ * Existe para `verify-manifest.test.mjs`, e a estreiteza é o ponto: este arquivo
+ * é o ÚNICO lugar que exige `genero` no manifesto, e é dele que a trava de
+ * `prescricao` em gênero restrito depende para não se desligar em silêncio. Sem
+ * uma forma de encenar um manifesto quebrado, "o verificador exige gênero" era
+ * uma afirmação sobre código que ninguém tinha executado — que é o modo de falha
+ * nº 4 desta casa (a trava que passa verde quando o alvo é apagado).
+ *
+ * Um `--root` faria o mesmo e seria pior: mudaria junto o caminho do
+ * `PROGRAMA.md` e das transcrições, e o teste passaria a reprovar por arquivo
+ * ausente — falha pelo motivo errado, que é teste verde sem prova.
+ */
+const iManifest = process.argv.indexOf('--manifest');
+const MANIFEST = iManifest >= 0 ? process.argv[iManifest + 1] : paths(SOURCE, ROOT).manifest;
+if (iManifest >= 0 && !MANIFEST) {
+  console.error('--manifest exige um caminho');
+  process.exit(1);
+}
 
 /**
  * Cada âncora casa um número `[Rxxx]` com um padrão que só o título daquele
@@ -57,6 +80,62 @@ const ANCORAGEM = {
 };
 
 const ancoragem = ANCORAGEM[SOURCE.id] ?? null;
+
+/**
+ * OS VÍDEOS CUJO GÊNERO NÃO PODE CAIR SOZINHO.
+ *
+ * A trava de `check-claims.mjs` só conta `prescricao` quando o gênero do vídeo
+ * está em `GENEROS_SEM_PRESCRICAO`. Exigir que o campo EXISTA e esteja no
+ * enumerado — que é o que a checagem logo abaixo faz — fecha o caso do
+ * manifesto reconstruído sem seed. Não fecha o caso mais fácil de todos:
+ * **trocar o valor por outro válido**.
+ *
+ *     node -e "…G020.genero = 'aula'…"   →  verify-manifest passa
+ *                                            check-claims passa
+ *                                            7 violações somem, exit 0
+ *
+ * `aula` é um gênero legítimo, o campo continua lá, e a única pegada é a linha
+ * de resumo caindo de 76 para 69 — indistinguível de alguém ter consertado sete
+ * claims. É o modo de falha nº 4 desta casa outra vez: a trava que passa verde
+ * quando o alvo é apagado. E é o caminho que um build vermelho convida a tomar,
+ * porque rebaixar o gênero é mais rápido do que reabrir a claim.
+ *
+ * Então o roster abaixo congela os 39 vídeos que HOJE declaram gênero restrito.
+ * Um deles mudar de valor é erro, e o conserto é editar esta lista à mão, com o
+ * motivo — que é exatamente a fricção que se quer.
+ *
+ * **A checagem é de mão única, de propósito.** Vídeo que GANHA gênero restrito
+ * não precisa ser registrado aqui: mais trava é o lado seguro, e obrigar
+ * registro no lado seguro é a fricção que faz alguém desistir de marcar. É a
+ * mesma assimetria do `GENERO.md` §3.
+ *
+ * Note quem está na lista sem ter claim nenhuma extraída (`G101`, `G106`, a
+ * série PPST, `G135`, `G176`, `G242`): é lá que o roster paga mais, porque um
+ * rebaixamento silencioso ali não mexe em número nenhum de hoje e só apareceria
+ * como prescrição aceita numa extração futura.
+ */
+const GENERO_TRAVADO = {
+  vena: {
+    R047: 'review-de-programa',
+  },
+  blevins: {
+    G001: 'review-de-programa', G002: 'review-de-programa', G003: 'review-de-programa',
+    G005: 'review-de-programa', G007: 'review-de-programa', G009: 'review-de-programa',
+    G010: 'review-de-programa', G011: 'review-de-programa', G012: 'review-de-programa',
+    G013: 'review-de-programa', G014: 'review-de-programa', G015: 'review-de-programa',
+    G016: 'review-de-programa', G017: 'review-de-programa', G018: 'review-de-programa',
+    G019: 'review-de-programa', G020: 'review-de-programa', G027: 'form-check',
+    G028: 'form-check', G029: 'form-check', G030: 'form-check', G031: 'form-check',
+    G101: 'coaching-call', G106: 'coaching-call', G135: 'review-de-programa',
+    G176: 'review-de-programa', G182: 'review-de-programa', G185: 'review-de-programa',
+    G191: 'review-de-programa', G195: 'review-de-programa', G196: 'review-de-programa',
+    G197: 'review-de-programa', G198: 'review-de-programa', G199: 'review-de-programa',
+    G200: 'review-de-programa', G202: 'review-de-programa', G203: 'review-de-programa',
+    G242: 'review-de-programa',
+  },
+};
+
+const travados = GENERO_TRAVADO[SOURCE.id] ?? {};
 
 if (!existsSync(MANIFEST)) {
   console.error(
@@ -95,6 +174,7 @@ if (manifest.refPrefix && manifest.refPrefix !== SOURCE.refPrefix) {
 //    duas citações diferentes resolverem para o mesmo vídeo (ou para o errado, a
 //    depender de quem ganhasse o índice), que é deslocamento sob outro nome.
 const vistos = new Map();
+const generos = new Map();
 for (const [i, v] of videos.entries()) {
   const onde = `índice ${i + 1}`;
   if (!v.ref) errors.push(`${onde}: vídeo sem ref`);
@@ -112,6 +192,39 @@ for (const [i, v] of videos.entries()) {
   }
   if (v.postRun1 !== (v.rNumber < 1)) {
     errors.push(`${v.ref ?? onde}: flag postRun1 não bate com rNumber ${v.rNumber}`);
+  }
+  // `genero` é obrigatório e enumerado fechado. É a única propriedade do vídeo
+  // de que uma trava de CLAIM depende (`check-claims.mjs` recusa mais
+  // `prescricao` do que o teto num vídeo de review ou de form check), e uma
+  // trava que depende de um campo ausente não falha: ela se desliga em silêncio.
+  // Por isso a exigência mora aqui, no verificador do manifesto, e não só lá.
+  if (v.genero === undefined || v.genero === null) {
+    errors.push(`${v.ref ?? onde}: sem \`genero\` — rode \`node research/tools/seed-genero.mjs\` (ver research/kb/GENERO.md)`);
+  } else if (!GENEROS.has(v.genero)) {
+    errors.push(`${v.ref ?? onde}: genero "${v.genero}" fora do enumerado de kb.mjs`);
+  } else {
+    generos.set(v.genero, (generos.get(v.genero) ?? 0) + 1);
+    // Rebaixamento: o campo continua lá, válido, e a trava de prescrição some.
+    // Ver o comentário de `GENERO_TRAVADO`.
+    const travado = travados[v.ref];
+    if (travado && v.genero !== travado) {
+      errors.push(
+        `${v.ref}: genero rebaixado de "${travado}" para "${v.genero}" — esse vídeo está no roster ` +
+          `de gênero travado de verify-manifest.mjs, e rebaixá-lo DESLIGA a trava de prescricao ` +
+          `dele em check-claims.mjs sem quebrar nada. Se a reclassificação é intencional, edite o ` +
+          `roster à mão, com o motivo`,
+      );
+    }
+  }
+}
+// Ref do roster que sumiu do manifesto some junto com a trava dele, e some sem
+// ruído: `travados[v.ref]` simplesmente nunca é consultado.
+for (const ref of Object.keys(travados)) {
+  if (!videos.some((v) => v.ref === ref)) {
+    errors.push(
+      `${ref} está no roster de gênero travado e não existe mais no manifesto — ou o ref deslocou, ` +
+        `ou o vídeo saiu do canal; nos dois casos a trava de prescricao dele deixou de existir`,
+    );
   }
 }
 if (manifest.videoCount !== videos.length) {
@@ -220,6 +333,9 @@ console.log(
 console.log(`  build .................... ${manifest.builtAt ?? '?'} · ${manifest.channelItemCount ?? '?'} itens no canal`);
 console.log(`  refs únicos e posicionais . ${vistos.size}/${videos.length}`);
 console.log(`  com data .................. ${datados.length}/${videos.length}`);
+console.log(
+  `  gêneros ................... ${[...generos].sort((a, b) => b[1] - a[1]).map(([g, n]) => `${g}:${n}`).join('  ')}`,
+);
 if (ancoragem) {
   console.log(`  âncoras verificadas ....... ${ancoragem.anchors.length}`);
   console.log(

@@ -81,8 +81,26 @@ FONTE, não CORREÇÃO DA FONTE**, e nenhuma trava desta base prova a segunda.
 | `modo` **presente** em toda claim que não seja `tier: O` | catraca `TETO_SEM_MODO`, hoje vazia |
 | A numeração `[Rxxx]` não deslizou | `verify-manifest.mjs`: 6 âncoras + 258 timestamps, 0 violações no offset adotado contra 52/42/47/50 nos vizinhos |
 | O compilador ainda pega o que promete | `check-claims.test.mjs`: **34 recusas + 2 sinalizações + 3 aceitações**, todas exigindo a mensagem certa |
-| O gate de dor do app obedece a tabela do `PROGRAMA.md` §1.2 | `npm run check:gate`: 33 cenários pelo `buildWeekDoc` **de produção**, nos dois momentos de coleta |
+| O verificador do manifesto ainda exige `genero` — o campo de que a trava de `prescricao` depende para não se desligar em silêncio | `verify-manifest.test.mjs`: **12 recusas + 2 aceitações** com mensagem obrigatória, sobre o manifesto real mutado. Apagar o bloco de `genero` do verificador derruba 5 delas |
+| O gênero de um vídeo restrito não cai sozinho para um valor sem trava | `verify-manifest.mjs`, roster `GENERO_TRAVADO` com os 39 vídeos restritos: rebaixar `G020` para `aula` era aceito pelos dois checkers e sumia com 7 violações em silêncio. Esvaziar o roster derruba 4 casos do teste |
+| A semeadura de `genero` grava o que diz que grava | `seed-genero.test.mjs`: zera os 551 gêneros e exige que o seed devolva **exatamente** os valores commitados, pelo caminho da escrita. O `--dry` que servia de prova antes nunca passava por ele — e escondia um laço que copiava o valor velho por cima do derivado |
+| O gate de dor do app obedece a tabela do `PROGRAMA.md` §1.2 | `npm run check:gate`: **59** cenários pelo `buildWeekDoc` **de produção**, nos dois momentos de coleta, com a janela atravessando a virada de semana e a linha `RETORNO` incluída |
+| As constantes do gate são **derivadas da tabela**, não medidas contra si mesmas | idem: `gateWindowSessions` e `gateLookbackWeeks` são recalculados do `PROGRAMA.md` lido agora e comparados às constantes. Antes, o teto de `gate.carry` era `gateWindowSessions − 1` **dos dois lados** — tautologia, não trava: fixar a janela em 9 passava verde |
+| Uma edição LEGÍTIMA da tabela do §1.2 muda o app num passe só, e não acusa o inocente | `check-pain-gate.test.mjs`: todos os números saem de `PAIN_GATE` e as mutações do markdown são construídas do que o parser leu. Das quatro edições medidas, só a que **afrouxa** o limiar clínico reprova — por um teste, com mensagem que diz o que fazer |
+| `modo: 'anedota'` não cresce em lote novo | catraca `TETO_ANEDOTA = { V: 196, G: 47 }` em `check-claims.mjs`, **por prefixo** de id. A proibição existia só em markdown; teto global vazaria, porque retagar uma anedota antiga abre exatamente uma vaga para uma nova |
 | Os canários da medição continuam vivos | `check-canarios.mjs`: 5 presentes, 5 impossíveis, 5 armadilhas |
+
+### Nem uma coisa nem outra — o que virou COMANDO sem virar trava
+
+Categoria que este documento não tinha e precisava ter. São listas que deixaram de ser
+copiadas à mão e passaram a ser recontáveis por qualquer pessoa — **mas não reprovam
+nada**, e portanto não impedem reincidência. Cada uma tem a data em que vira trava.
+
+| O que | Comando | Por que ainda não é trava |
+|---|---|---|
+| Os params em gaveta errada | `node research/tools/params-gaveta-errada.mjs` | **31 dos 52 não têm gaveta de destino.** Travar contra destino inexistente empurra o dado para fora da trava (modo de falha nº 2). Vira recusa do `check-claims.mjs` quando a onda 2 abrir `ano_calendario` e `indice_adimensional` |
+| O universo e o intervalo de `pratica-pessoal` | `candidatos-pratica-pessoal.mjs --ic` e `--recall` | o instrumento é um detector com **recall medido de 22 %**; a catraca especificada em cima dele ficaria verde com ~300 claims de dívida (`RUNBOOK.md` §8.21) |
+| A fila de revisão de gênero | `check-evidence.mjs --genero <g> --modo prescricao` | a catraca `TETO_PRESCRICAO_EM_GENERO_RESTRITO` **mede e não reprova**: recusar de saída derrubaria o build sobre 76 claims que a rodada não podia editar |
 
 ### Julgamento de agente — nenhum compilador olhou
 
@@ -111,6 +129,14 @@ Estado depois do conserto, contado agora: `G001–G020` (review) têm 938 claims
 conselho do próprio Blevins sobre adotar um programa alheio, ou padrão técnico universal —
 **mas onde exatamente a linha foi traçada é decisão de agente, e 18 agentes traçaram 18
 linhas.** Cada um que acertou, acertou abrindo o manifesto do canal à mão. Ver §5.1.
+
+**Isto deixou de ser julgamento em 9/8/2026, para a parte que um compilador alcança.** O
+manifesto passou a declarar `genero` por vídeo, e a pergunta "esta claim veio de um vídeo
+de review?" tem resposta determinística (`GENERO.md`). O que o compilador ainda **não**
+prova é se a claim individual é relato ou generalização legítima: ele nomeia as 76 que
+precisam ser abertas e conta que o número não suba. Julgamento continua sendo julgamento —
+mas agora sobre uma lista fechada, reproduzível por comando, em vez de sobre 6.766 claims
+e a memória de quem passou por elas.
 
 **Se a ressalva do Vena está certa.** As 678 arestas de `conditions` apontam para claims
 que existem e estão perto no tempo. Isso é tudo o que o compilador pode dizer. Se a
@@ -143,27 +169,59 @@ forma em que disseram, com a ressalva que disseram junto.
 
 ### Não consertado, e por quê
 
-**Números em gaveta errada — 25 claims, todas nomeadas abaixo.** É o bug dos gramas
-gravados como `kg`, ainda vivo, agora com as gavetas certas já abertas:
+**Números em gaveta errada — 52 params em 39 claims, e a lista deixou de ser copiada.**
+É o bug dos gramas gravados como `kg`, ainda vivo.
 
-- `V164-16` 8 **litros** com `frame: ml` · `V112-22` meio **litro** com `frame: kg`
-- `V104-27` e `V114-17` **pés** com `frame: cm` (o frame `pes` existe desde 9/8)
-- `V112-22`/`V112-23` **hora do relógio** com `frame: horas`, que é duração — e em
-  `V112-23` o meio-dia virou `value: 1`, então o número nem é a hora que a claim diz
-- `V013-16`, `V175-08`, `V175-40` **ano de calendário** com `frame: anos`; `V152-24` com
-  `frame: contagem`. **Falta gaveta**: ano de calendário não é duração nem posição.
-- `V044-07` **BRI** (índice adimensional) e `V142-08`/`V142-11` **R²** com `frame: pct`
-- `V102-25` **MET-min/semana** com `frame: min` · `V169-42` **preço em USD** com
-  `frame: contagem` (preço está declarado fora de escopo em `ENUMERADOS.md` §5)
-- `V013-15` *"convicção 100 %"* — percentual de convicção não mede nada
-- **`value` como string** em 10 claims (`V081-15`, `V001-02`, `V091-19`, `V002-19`,
-  `V081-26`, `V087-18`, `V096-05`, `G019-20`, `G020-01`, `G020-41`): frações `"1/3"` e
-  rótulos `"5x5"` escapam de toda aritmética do checker
+> **Correção de 9/8/2026, registrada em vez de apagada.** Esta seção trazia a lista **à
+> mão** e o §4 dela derivava *"as 19 params"*. Ambos os números estavam errados, e a lista
+> estava incompleta: faltavam **19 params de TAXA** e **2 anos de calendário**. Lista
+> copiada dentro de um documento é o defeito nº 3 desta casa, cometido no inventário dos
+> defeitos. **A lista agora é comando:**
+> `node research/tools/params-gaveta-errada.mjs` (`--ids`, `--json`).
+> Ele é **detector, não verificador**, está fora do `check:kb` de propósito
+> (`RUNBOOK.md` §8.19) e some quando cada regra dele virar recusa do `check-claims.mjs`.
+
+As famílias, com o destino e se a gaveta existe:
+
+- **19 params de TAXA tipada como a duração sozinha** — *família que a lista à mão não
+  tinha*. `"4 h/semana"` gravado como `4` com frame `horas`, ao lado de `"treino de 3 h"`
+  gravado como `3` com frame `horas`. O `unit` guarda o `/semana`; `frame` é a gaveta que o
+  consumidor lê. Em `V005`, `V006`, `V013`, `V019`, `V044`, `V048`, `V102`.
+  **Falta gaveta.**
+- **6 anos de calendário** com frame de duração ou contagem: `V013-16`, `V019-02`,
+  `V122-01`, `V152-24`, `V175-08`, `V175-40`. **Falta gaveta** — ano de calendário não é
+  duração nem posição.
+- **5 índices adimensionais com `frame: pct`**: `V044-07` (BRI ×2), `V142-08` (R² ×2),
+  `V142-11`. **Falta gaveta.** E `V142-08` tem `r2_min = 65` ao lado de `r2_max = 0.9`:
+  duas escalas no mesmo par, um dos dois errado por 100×.
+- **5 horas do relógio como duração**: `V112-22` ×2, `V112-23` ×3 — e em `V112-23` o
+  meio-dia virou `value: 1`, então o número nem é a hora que a claim diz. Gaveta
+  `hora_do_dia` **pronta**.
+- **3 comprimentos em pé com `frame: cm`**: `V104-27` ×2, `V114-17`. Gaveta `pes` **pronta**.
+- **2 volumes em litro**: `V164-16` (8 litros com `frame: ml`), `V112-22` (meio litro com
+  `frame: kg`). Gaveta `l` **pronta**.
+- **1 preço** (`V169-42`, USD com `frame: contagem`) — dinheiro está declarado fora de
+  escopo em `ENUMERADOS.md` §5, então o param **sai**.
+- **11 params com `value` string** em 10 claims (`V001-02`, `V002-19`, `V081-15`,
+  `V081-26` ×2, `V087-18`, `V091-19`, `V096-05`, `G019-20`, `G020-01`, `G020-41`): frações
+  `"1/3"` e rótulos `"5x5"` escapam de toda aritmética do checker.
+
+**Gaveta aberta e nunca usada é meio conserto.** `pes`, `l`, `pct_XRM` e `grau_C` foram
+abertas em 9/8 e têm **zero** uso — o enumerado cresceu e o dado não se mexeu. `pes` foi
+aberta citando `G051-37`, que continua sem param nenhum; `l` foi aberta citando `V112-22`,
+que continua em `kg`.
+
+**Dois números que não medem nada, no mesmo passe e com decisão diferente:**
+
+- `V013-15` *"100 % convicto"* — percentual de convicção não mede coisa nenhuma.
+- `V166-05` — **a claim não é uma claim.** O conteúdo dela é *"o número que a transcrição
+  registra é 45 lb, valor implausível"*: uma nota de artefato de extração ocupando gaveta
+  de `fato`, com o número quebrado tipado num `param`. Ela sai.
 
 Por que não consertei: cada um exige decidir se a gaveta certa já existe, se falta uma, ou
 se o número devia sair da base — e ampliar enumerado no fechamento de uma rodada é
-exatamente como o enumerado divergiu do documento da outra vez. É um passe próprio, curto e
-com lista pronta.
+exatamente como o enumerado divergiu do documento da outra vez. É um passe próprio, curto,
+e agora com **lista recontável em vez de lista pronta**. Plano em `ONDA-2.md` item 4.
 
 **Números corrompidos por ASR, ainda circulando tipados.** `V095-18` (`agacho_antes: 45 lb`
 para um contexto de 422 lb), `V117-01` e `V112-04` (supino de 45 lb onde o resto do corpus
@@ -172,10 +230,6 @@ diz 405), `V153-03` (292,5 kg gravado como 622 lb, sendo 645), `V037-06` (total 
 massa), `V043-27` (o áudio não resolve: `large-v3` diz 20, `turbo` diz 28). **74 claims com
 `suspect: true`, 53 sem `suspectWhy`** — o passe de Whisper recebe 53 janelas sem saber se
 procura número ou negação. A trava nova impede que a dívida cresça; ela não a paga.
-
-**Uma claim que não é claim.** `V166-05` tem como conteúdo *"o número que a transcrição
-registra é 45 lb, valor implausível"* — é uma nota de artefato de extração ocupando uma
-gaveta de `fato`, com o número quebrado tipado num `param`.
 
 **As 7 arestas de `conditions` que cruzam vídeo**, que é o estrato de 42 % de erro:
 `V064-05→V010-04`, `V086-26→V032-07`, `V086-26→V032-08`, `V090-18→V072-22`,
@@ -202,12 +256,37 @@ nenhum" por "este extenso não bate com nenhum valor declarado") é o trabalho t
 composição — *"oitenta e um"*, *"dois vírgula cinco"*, *"treze milímetros"* onde "mil" é
 falso positivo — é onde uma versão malfeita produz dezenas de avisos sem conserto.
 
-**Buracos do gate de dor** (detalhe em `GATE-DOR.md`): a janela de "3 sessões" é truncada na
-virada de semana (com supino 4×/semana, ~1 em cada 4 pares qualificados atravessa a
-fronteira e o degrau nunca sai); a linha `RETORNO` é parseada, emitida e **não consumida
-por código nenhum**; o parser degrada em silêncio se o número de eventos for escrito por
-extenso; linha de tabela com 3 colunas é descartada sem um pio; e o gate **sinaliza, não
-age**.
+**Buracos do gate de dor** (detalhe em `GATE-DOR.md`). Dois foram fechados em 9/8/2026
+(`GATE-DOR.md` §7): a janela de "3 sessões" **atravessa a virada de semana** — ela é
+contada em sessões de supino, persistida em `WeekDoc.gate` e a semana sem supino não a
+consome — e a linha `RETORNO` **passou a ser consumida por código**, com as duas mutações
+da célula (`2 semanas` e `pico ≤1/10`) reprovando o build. Continuam abertos: o gatilho
+`estiramento agudo` não tem campo na pesquisa; o parser degrada em silêncio se o número de
+eventos for escrito por extenso; linha de tabela com 3 colunas é descartada sem um pio;
+sessão de supino sem log só é anunciada dentro da janela do `RETORNO`; e o gate
+**sinaliza, não age**.
+
+**E o achado que importa mais que a lista acima: o comportamento estava certo e a TRAVA
+estava morta.** Duas auditorias por mutação (`GATE-DOR.md` §8 e §9) encontraram, somadas,
+**15 travas mortas** em `check-pain-gate.mjs` — mutações no código de **produção** que
+passavam verde com o `npm run build` inteiro. As piores foram de duas famílias:
+
+- **Cenário com o nome certo que testa outra coisa.** `semanaLimpa` tem três condições;
+  havia cenários nomeando as condições 1 e 2, e os dois passavam pela condição 3. Apagar as
+  condições 1 e 2 não mexia em nada, e com isso *uma semana de deload — ou uma semana parada
+  pela própria dor — contava como evidência de tolerância*, com o app anunciando a condição
+  de re-subir o degrau tendo medido **zero** exposições de peitoral.
+- **A trava medindo a constante contra ela mesma.** O teto de `gate.carry` era
+  `gateWindowSessions − 1` **dos dois lados** da comparação; `gateLookbackWeeks` fixado em 1
+  (que é o defeito original de volta) passava porque a única cobertura era uma expressão
+  regular que verifica **onde** o valor é usado, não **qual** valor é — e essa expressão
+  casava até com o nome escrito num **comentário**.
+
+Achou-se também um **falso positivo** na direção inversa: editar a tabela do §1.2 de
+propósito derrubava o `check:gate` com mensagens acusando o app, quando o app estava certo.
+Os dois estão consertados; 45 → **59** cenários, produção intocada. **A moral fica: verde
+não é evidência de que a trava está viva.** É o modo de falha nº 4 desta casa, e ele
+reincidiu duas vezes na mesma rodada.
 
 **Dois limites abertos do `check-answer.mjs`**, declarados no cabeçalho dele e no
 `INSTRUMENTO.md` §3: a anistia de `tier I … basis:` é cega e isenta todo número numa janela
@@ -232,30 +311,59 @@ solta para este atleta.
 
 ## 4. O que a próxima rodada tem de atacar, em ordem
 
-**1. Campo `genero` por vídeo, no manifesto.** É o maior retorno por linha de código de
-tudo o que resta. Hoje `relato-de-programa` e `avaliacao-de-terceiro` dependem de o agente
-lembrar de abrir o manifesto do canal, e 18 agentes traçaram 18 linhas diferentes — o que
-significa que **as 562 claims nessas duas gavetas não são reproduzíveis** (447 + 115,
-contado em 9/8/2026). Com
-`genero: 'review-de-programa' | 'form-check' | 'vlog'` por vídeo, `check-claims.mjs` pode
-**recusar** `modo: prescricao` vindo de review e de form check, e "o que revisar" vira
-consulta em vez de julgamento. O sinal já existe em prosa:
-`research/corpus/blevins/TRIAGEM.md` tem título e gênero por ref, e serve para semear o
-campo sem reabrir vídeo nenhum. **Primeiro porque transforma julgamento em compilador, que
-é o princípio da casa.**
+> **A fila executável mora em `research/kb/ONDA-2.md`** — com *quantos*, *onde* e *como se
+> verifica que ficou certo* para cada item, as colisões entre as filas contadas, e os
+> comandos que geram cada lista de ids. Esta seção é o **porquê da ordem**; aquela é o
+> trabalho. O que mudou na ordem no fechamento de 9/8:
+>
+> - **A contradição `V138-*` × §1.2 subiu para primeiro.** Estava no fim do §3 como
+>   observação. É a única entrada da fila que pode fazer o app dizer a **este** atleta para
+>   treinar dentro da dor do tecido que ele rompeu, e ela **não pode ser registrada** hoje:
+>   `conflicts` liga claim a claim, e o gate do app não é uma claim.
+> - **`tier U` subiu junto**, porque é ele que destrava a anterior (item 5 do `ONDA-2.md`).
+>   Continuava em A7 do `PLANO-EXECUCAO.md`, fora desta ordem.
 
-**2. Escrever a regra de `narrativa` × `anedota` × `fato` × prática habitual — e só então
-retaggear.** Não é ampliação de enumerado, é a fronteira que 17 lotes disseram ter
-inventado sozinhos. Enquanto ela não estiver escrita no `PROTOCOLO-EXTRACAO.md`, qualquer
-consulta que dependa desses valores está lendo três convenções misturadas. Se a decisão for
-abrir `pratica-pessoal`, o material denso está em R034, R043, R106, R185 e R151.
-**Segundo porque é barato, e porque é pré-requisito de qualquer medição desses campos.**
+**1. ~~Campo `genero` por vídeo, no manifesto.~~ FEITO em 9/8/2026 — sobrou a fila de
+revisão, que agora é uma consulta.** O campo está em 551 de 551 vídeos dos dois
+manifestos, semeado a partir da `TRIAGEM.md` e dos títulos sem reabrir vídeo nenhum
+(`research/tools/seed-genero.mjs`); o enumerado fechado tem dez valores e mora em
+`kb.mjs`; a decisão inteira está em **`research/kb/GENERO.md`**. `verify-manifest.mjs`
+exige o campo, `check-evidence.mjs --genero` responde "o que revisar", e
+`check-claims.mjs` conta `modo: prescricao` vinda de vídeo que expõe material de outra
+pessoa contra uma catraca por `src`.
 
-**3. Passe de gaveta errada — as 19 params de §3, com a lista pronta.** Inclui decidir duas
-gavetas que faltam (`ano_calendario` e um frame adimensional para índice) e o que fazer com
-`value` string. **Terceiro porque é finito, nomeado, e cada dia que fica é um dia em que um
-agente pode copiar a convenção errada do vizinho** — que é o modo de falha nº 1 deste
-projeto.
+**O que sobrou, e é o trabalho de verdade: 76 claims em `modo: prescricao` vindas de 19
+vídeos** de `review-de-programa` e `form-check`, nomeadas uma a uma em `GENERO.md` §6. A
+trava **mede e não reprova** porque esta rodada não podia editar claim; a onda seguinte
+abre as 76, decide claim a claim se é `relato-de-programa`, `avaliacao-de-terceiro` ou
+generalização legítima do autor, e baixa o teto de cada vídeo em `check-claims.mjs`. O
+piso não é necessariamente zero — o que a catraca garante é que ele não suba sozinho e
+que ninguém o abaixe sem abrir as claims.
+
+Primeiro dividendo já medido: este documento dizia "94 claims em `prescricao` nos 20
+vídeos de review (`G001`–`G020`)". A faixa contígua cobrava demais — `G004` (deload),
+`G006` (periodização) e `G008` (stress index) são tese própria do Blevins, não resenha, e
+respondem por 40 das 94.
+
+**2. ~~Escrever a regra de `narrativa` × `anedota` × `fato` × prática habitual~~ — a regra
+está escrita; falta retaggear.** Feito em 9/8/2026: `PROTOCOLO-EXTRACAO.md` ganhou o teste
+("quantas datas cabem nesta frase?"), `pratica-pessoal` foi decidida e `anedota` foi
+declarada em fusão com `narrativa`. O registro da decisão, as recusas e a lista do que ela
+move estão em `FRONTEIRA-MODO.md`; o `RUNBOOK.md` §8.18 tem a dívida.
+**Nenhuma claim foi tocada, e o enumerado de `kb.mjs` não foi ampliado** — enumerado
+declarado e vazio é o que fez `scope: TERCEIRO` ser recusado, e a medição estava rodando
+sobre `research/extract/` no dia. O que sobra é um fan-out, não um repasse dirigido: a
+estimativa e o intervalo estão no `FRONTEIRA-MODO.md` §4, com o método de amostragem
+declarado e recontável por script. **Continua em segundo porque é pré-requisito de qualquer
+medição desses campos — e agora a parte cara dele é a única que resta.**
+
+**3. Passe de gaveta errada — 52 params em 39 claims, com a lista agora GERADA.** Inclui
+decidir **três** gavetas que faltam (`ano_calendario`, um frame adimensional para índice, e
+um para taxa do tipo "algo por período") e o que fazer com `value` string.
+`node research/tools/params-gaveta-errada.mjs`. **Terceiro porque é finito, nomeado, e cada
+dia que fica é um dia em que um agente pode copiar a convenção errada do vizinho** — que é o
+modo de falha nº 1 deste projeto. E porque, com 31 dos 52 sem destino, **falta gaveta**, que
+é o modo de falha nº 2: o passe abre as gavetas antes de mover o dado, nunca o contrário.
 
 **4. Passe de Whisper nos 53 `suspect` sem `suspectWhy` e nos números do §3.** Caro (áudio
 + modelo), mas é o único que resolve número corrompido sem adivinhação, e a ferramenta já
@@ -269,8 +377,9 @@ quem já escreve resposta. **Quinto porque é decisão de design, não de execu�
 instrumento hoje é honesto sobre onde é cego.**
 
 **6. O ledger de contradições e as sínteses.** 31 `conflicts` numa base de 6.909 claims com
-duas fontes que discordam é subregistro quase certo, e a primeira contradição a registrar
-está nomeada no fim do §3.
+duas fontes que discordam é subregistro quase certo. **A primeira aresta a registrar saiu
+daqui e virou o item 1 do `ONDA-2.md`**, porque ela não é subregistro: é uma contradição que
+a base **não tem como expressar** enquanto `tier U = 0`.
 
 ---
 

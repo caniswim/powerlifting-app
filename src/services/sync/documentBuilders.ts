@@ -14,6 +14,7 @@ import {
   getSessionIndex,
   getWorkouts,
 } from '../storage/index';
+import { gateLookbackWeeks } from '../../domain/painGate';
 import { buildSessionDoc, weekIdFor } from './sessionRollup';
 import { buildWeekDoc } from './weeklyRollup';
 import { ROLLUP_SCHEMA_VERSION } from './rollupTypes';
@@ -195,11 +196,27 @@ function weekDocOrNull(programId: string, weekNumber: number, prev: WeekDoc | nu
 }
 
 /**
- * Rollup da semana. A semana anterior é recalculada só para as comparações
- * (`deltaPrevWeek`) — sai barato porque tudo vem do localStorage.
+ * Rollup da semana.
+ *
+ * As semanas anteriores são recalculadas em CADEIA, e não só a imediatamente
+ * anterior. Duas coisas dependem disso, e nenhuma delas cabe numa semana:
+ *
+ * - a janela de sessões do gate de dor (`PROGRAMA.md §1.2`), que atravessa a
+ *   virada de semana e chega ao `WeekDoc` pelo `prev.gate.carry`;
+ * - a linha `RETORNO`, que fala de semanas consecutivas limpas.
+ *
+ * `gateLookbackWeeks` sai da própria tabela do §1.2 — quantas semanas o gate
+ * precisa enxergar para trás. Sai barato porque tudo vem do localStorage, e a
+ * cadeia é curta: hoje são 3 semanas.
  */
 export function buildWeekPayload(programId: string, weekNumber: number): WeekDoc | null {
-  const prev = weekNumber > 1 ? weekDocOrNull(programId, weekNumber - 1, null) : null;
+  const from = Math.max(1, weekNumber - gateLookbackWeeks);
+  let prev: WeekDoc | null = null;
+  for (let w = from; w < weekNumber; w += 1) {
+    const doc = weekDocOrNull(programId, w, prev);
+    // Semana inexistente no programa não zera o histórico já acumulado.
+    if (doc) prev = doc;
+  }
   return weekDocOrNull(programId, weekNumber, prev);
 }
 

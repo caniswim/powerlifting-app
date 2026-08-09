@@ -13,7 +13,7 @@
     "validate:program": "node scripts/validate-program.mjs",
     "check:notes": "node scripts/check-notes-parser.mjs",
     "check:gate": "node scripts/check-pain-gate.test.mjs && node scripts/check-pain-gate.mjs",
-    "check:kb": "node research/tools/verify-manifest.mjs && node research/tools/check-claims.test.mjs && node research/tools/check-answer.test.mjs && node research/tools/check-canarios.test.mjs && node research/tools/check-claims.mjs && node research/tools/check-canarios.mjs",
+    "check:kb": "node research/tools/seed-genero.test.mjs && node research/tools/verify-manifest.test.mjs && node research/tools/verify-manifest.mjs && node research/tools/verify-manifest.mjs --source blevins && node research/tools/check-claims.test.mjs && node research/tools/check-answer.test.mjs && node research/tools/check-canarios.test.mjs && node research/tools/check-claims.mjs && node research/tools/check-canarios.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "briefing": "node scripts/weekly-briefing.mjs"

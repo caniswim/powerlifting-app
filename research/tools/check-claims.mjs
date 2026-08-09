@@ -25,7 +25,10 @@ import { SOURCES, paths } from './sources.mjs';
 // Os enumerados moram em `kb.mjs` desde que o `check-canarios.mjs` passou a
 // precisar deles: duas cópias da mesma lista fechada é o defeito que o SCHEMA.md
 // documenta na abertura, e não vale a pena reintroduzi-lo por conveniência.
-import { TIERS, SCOPES, CERTAINTY, MODOS, FRAMES, FRAMES_DOSE, FRAMES_ESCALA, SUSPECT_WHY, carregarTopicos } from './kb.mjs';
+import {
+  TIERS, SCOPES, CERTAINTY, MODOS, FRAMES, FRAMES_DOSE, FRAMES_ESCALA, SUSPECT_WHY,
+  GENEROS, GENEROS_SEM_PRESCRICAO, carregarTopicos,
+} from './kb.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 // `--extract <dir>` existe para o teste do próprio checker: ele monta um extract
@@ -735,6 +738,105 @@ for (const [p, lista] of semModoPorPrefixo) {
 }
 
 /**
+ * A CATRACA DO `genero` — `modo: prescricao` vindo de vídeo que expõe material
+ * de OUTRA pessoa.
+ *
+ * O defeito que ela mede é o mais caro que esta base ainda tem em aberto: "o
+ * nSuns manda AMRAP a 95 % do training max" gravado com a mesma autoridade de
+ * "faça AMRAP a 95 % do training max". O discriminador nunca esteve no texto da
+ * claim — `G028-02` é *"manter a cabeça em posição mais neutra e para cima no
+ * agachamento"*, indistinguível de prescrição geral para quem lê o JSONL, que é
+ * o que o agente lê. O discriminador é o VÍDEO, e agora ele está no manifesto.
+ *
+ * **MEDE, NÃO REPROVA — e o desenho é o do `TETO_SEM_MODO`.** A rodada que ligou
+ * esta trava tinha proibição explícita de editar claim (uma medição da base
+ * rodava em paralelo, e medir alvo móvel foi o erro que aquela rodada existia
+ * para não repetir). Uma regra que reprovasse hoje derrubaria o build sobre 76
+ * claims já existentes, e o conserto pelo caminho mais fácil seria afrouxar a
+ * regra — que é como uma trava morre. Então: teto POR `src`, com o número de
+ * hoje, e o teto só desce.
+ *
+ * Por `src` e não global, pela mesma razão que o `TETO_SEM_MODO` é por prefixo:
+ * um teto global vaza pelo caminho mais fácil de achar. Consertar uma claim do
+ * `G020` abriria exatamente uma vaga para uma claim nova nascer errada num
+ * vídeo de review qualquer, e a soma não se moveria. Vídeo ausente do mapa vale
+ * ZERO — então uma claim nova só passa se alguém escrever o ref aqui à mão.
+ *
+ * **O piso não é necessariamente zero, e isto não é uma desculpa.** Sobra
+ * prescrição legítima nesses vídeos: o conselho do próprio autor sobre adotar
+ * um programa alheio, o padrão técnico universal que ele enuncia no meio de um
+ * form check. O que a catraca garante é que cada uma que ficar tenha sido
+ * aberta por alguém, e que o número não suba sozinho. A lista de baixo é o
+ * produto: ela nomeia, vídeo a vídeo, o que a onda 2 tem de repassar.
+ */
+const TETO_PRESCRICAO_EM_GENERO_RESTRITO = {
+  // Blevins — os 16 vídeos de review (`G001`–`G020` menos `G004`, `G006` e
+  // `G008`, que são tese própria e não resenha) e os 5 form checks.
+  G001: 8, G002: 5, G005: 3, G007: 4, G009: 2, G011: 2, G012: 4, G013: 2,
+  G014: 2, G016: 5, G017: 4, G018: 2, G019: 4, G020: 7,
+  G027: 4, G029: 7, G030: 5, G031: 2,
+  // Vena — o único vídeo de review do canal: ele resenha o programa que o
+  // ChatGPT escreveu para ele.
+  R047: 4,
+};
+
+const generoDeSrc = (ref) => byRef.get(ref)?.genero;
+const violaGenero = (c) =>
+  c.tier === 'R' && c.modo === 'prescricao' && GENEROS_SEM_PRESCRICAO.has(generoDeSrc(c.src));
+
+// Gênero ausente ou fora do enumerado é ERRO e não catraca: aqui não há dívida
+// histórica a amortizar — os 551 vídeos foram semeados de uma vez. O que esta
+// trava pega é o manifesto reconstruído sem passar pelo `seed-genero.mjs`, caso
+// em que a regra de cima ficaria desligada em silêncio, que é o pior desfecho
+// possível para uma trava.
+// Uma linha por VÍDEO e não por claim: um manifesto sem gênero produziria 6.766
+// mensagens idênticas, o corte de 30 erros esconderia todo o resto, e o defeito
+// (que é do manifesto, não das claims) ficaria irreconhecível no meio delas.
+const semGenero = new Map();
+for (const c of allClaims) {
+  if (c.tier !== 'R' || !c.src || !byRef.has(c.src)) continue;
+  const g = generoDeSrc(c.src);
+  if (g === undefined || g === null || !GENEROS.has(g)) semGenero.set(c.src, g ?? null);
+}
+for (const [ref, g] of [...semGenero].sort()) {
+  errors.push(
+    g === null
+      ? `o vídeo ${ref} tem claim e não tem \`genero\` no manifesto — rode ` +
+        `\`node research/tools/seed-genero.mjs\` (sem o campo, a trava de prescrição em gênero restrito se desliga em silêncio)`
+      : `o vídeo ${ref} declara genero "${g}", fora do enumerado de kb.mjs`,
+  );
+}
+
+const violacoesPorSrc = new Map();
+for (const c of allClaims) {
+  if (!violaGenero(c)) continue;
+  violacoesPorSrc.set(c.src, [...(violacoesPorSrc.get(c.src) ?? []), c]);
+}
+for (const [ref, lista] of [...violacoesPorSrc].sort()) {
+  const teto = TETO_PRESCRICAO_EM_GENERO_RESTRITO[ref] ?? 0;
+  const g = generoDeSrc(ref);
+  if (lista.length > teto) {
+    errors.push(
+      `${lista.length} claims com modo prescricao vindas de ${ref}, que é ${g}, e o teto declarado é ${teto} — ` +
+        `o imperativo desse vídeo é de outra pessoa (ex.: ${lista.slice(0, 3).map((c) => c.id).join(', ')})`,
+    );
+  } else {
+    for (const c of lista) {
+      warnings.push(
+        `${c._where} ${c.id}: prescricao num vídeo de gênero ${g} — ${ref} expõe material de outra ` +
+          `pessoa; confirmar se a claim generaliza de verdade ou se é relato/avaliação`,
+      );
+    }
+    if (lista.length < teto) {
+      warnings.push(
+        `${ref}: ${lista.length} prescrições em gênero restrito, teto ${teto} — ` +
+          `baixe TETO_PRESCRICAO_EM_GENERO_RESTRITO.${ref} em check-claims.mjs para ${lista.length}`,
+      );
+    }
+  }
+}
+
+/**
  * A CATRACA DO `suspectWhy`, no mesmo desenho da do `modo` — e pelo mesmo motivo.
  *
  * O `PROTOCOLO-EXTRACAO.md` fecha o campo em `numero`/`negacao` e escreve o
@@ -765,6 +867,53 @@ if (semPorque.length > TETO_SEM_SUSPECT_WHY) {
   );
 }
 
+/**
+ * A CATRACA DA `anedota` — o valor que o protocolo já proibiu e o código ainda
+ * aceita.
+ *
+ * Em 2026-08-09 o `PROTOCOLO-EXTRACAO.md` passou a escrever, em caixa alta,
+ * *"Não emita `anedota` em lote novo. Use `narrativa`"*, e o
+ * `FRONTEIRA-MODO.md` §2.2 registra o porquê: a fronteira que os 18 lotes
+ * usaram era tempo verbal, o tempo verbal já está no `verbatim`, e o campo era
+ * uma cópia lossy dele. Só que `MODOS` continua aceitando `anedota` — e tem de
+ * continuar, porque as 243 claims que estão lá ainda não migraram.
+ *
+ * Uma regra que só existe em markdown é o defeito nº 3 desta casa: documento e
+ * código divergindo em silêncio. O `genero` acabou de ser ligado por causa dele.
+ * Sem esta catraca, o intervalo entre a proibição e a onda 2 é uma janela em que
+ * lote novo escreve `anedota`, o build sai verde, e a dívida que a onda 2 vai
+ * pagar cresce enquanto ela é escrita.
+ *
+ * **POR PREFIXO, e não global — é a lição já paga do `TETO_SEM_MODO`.** Um teto
+ * global de número vaza pelo caminho mais fácil de achar: retagar uma `anedota`
+ * antiga do Vena abre exatamente uma vaga para uma `anedota` NOVA nascer, e a
+ * soma não se move. É o cenário exato da onda 2, que retaga e ingere ao mesmo
+ * tempo. Prefixo ausente vale ZERO: fonte nova nasce sem direito à dívida.
+ *
+ * A ordem que o `FRONTEIRA-MODO.md` §5 exige continua valendo e esta catraca não
+ * a atropela: `'anedota'` só sai de `MODOS` quando a última claim sair dela. O
+ * que a catraca garante é que o número não suba enquanto isso não acontece.
+ */
+const TETO_ANEDOTA = { V: 196, G: 47 };
+const anedotaPorPrefixo = new Map();
+for (const c of allClaims.filter((c) => c.modo === 'anedota')) {
+  const p = String(c.id ?? '?')[0];
+  anedotaPorPrefixo.set(p, [...(anedotaPorPrefixo.get(p) ?? []), c]);
+}
+for (const [p, lista] of anedotaPorPrefixo) {
+  const teto = TETO_ANEDOTA[p] ?? 0;
+  if (lista.length > teto) {
+    errors.push(
+      `${lista.length} claims em modo anedota com id ${p}###, e o teto declarado para ${p} é ${teto} — ` +
+        `o protocolo manda usar narrativa em lote novo (ex.: ${lista.slice(-3).map((c) => c.id).join(', ')})`,
+    );
+  } else if (lista.length > 0 && lista.length < teto) {
+    warnings.push(
+      `${lista.length} claims ${p}### ainda em anedota — baixe TETO_ANEDOTA.${p} em check-claims.mjs para ${lista.length}`,
+    );
+  }
+}
+
 const tierCount = new Map();
 const topicCount = new Map();
 const modoCount = new Map();
@@ -781,6 +930,19 @@ console.log(`  vídeos com claim .......... ${new Set(claims.filter((c) => c.src
 console.log(`  contradições registradas .. ${claims.filter((c) => c.conflicts?.length).length}`);
 console.log(`  condições registradas ..... ${claims.filter((c) => c.conditions?.length).length}`);
 console.log(`  modos ..................... ${[...modoCount].sort((a, b) => b[1] - a[1]).map(([m, n]) => `${m}:${n}`).join('  ')}`);
+
+// O gênero do vídeo em números, porque é a superfície que a rodada seguinte tem
+// de baixar. As duas linhas respondem "quanto ainda falta" e "quanto disso nem
+// dá para perguntar" — a segunda é a honestidade do campo: vídeo
+// `indeterminado` não tem trava e não deve fingir que tem.
+const totalViolacoes = [...violacoesPorSrc.values()].reduce((s, l) => s + l.length, 0);
+const totalTeto = Object.values(TETO_PRESCRICAO_EM_GENERO_RESTRITO).reduce((s, n) => s + n, 0);
+const emIndeterminado = claims.filter((c) => c.tier === 'R' && generoDeSrc(c.src) === 'indeterminado').length;
+console.log(
+  `  prescricao em gênero restrito  ${totalViolacoes} em ${violacoesPorSrc.size} vídeo(s) ` +
+    `· teto ${totalTeto} (só desce)`,
+);
+console.log(`  claims de vídeo indeterminado  ${emIndeterminado} — gênero não decidido, nenhuma trava se aplica`);
 
 if (VERBOSE) {
   console.log('\n  tópicos mais densos:');

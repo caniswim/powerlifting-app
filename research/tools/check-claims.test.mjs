@@ -49,6 +49,21 @@ function claimBoaDeVerdade() {
   throw new Error('nenhuma claim de corpus com param encontrada para servir de base');
 }
 
+/**
+ * Uma claim real de um vídeo ESPECÍFICO. Os casos de `genero` precisam disso: a
+ * trava depende do vídeo de onde a claim veio, e trocar o `src` de uma claim
+ * qualquer levaria junto um `verbatim` que não existe na transcrição de destino
+ * — o checker reprovaria pelo motivo errado e o teste ficaria verde por engano.
+ */
+function claimDoArquivo(ref, filtro = () => true) {
+  for (const line of readFileSync(join(EXTRACT, `${ref}.jsonl`), 'utf8').split('\n')) {
+    if (!line.trim()) continue;
+    const c = JSON.parse(line);
+    if (c.tier === 'R' && c.scope === 'GERAL' && c.verbatim?.length > 30 && filtro(c)) return c;
+  }
+  throw new Error(`nenhuma claim de ${ref}.jsonl serve de base para o teste`);
+}
+
 function roda(claims) {
   const dir = mkdtempSync(join(tmpdir(), 'claims-test-'));
   try {
@@ -236,6 +251,29 @@ const CASOS = [
     },
   },
   {
+    // A catraca da `anedota`. O `PROTOCOLO-EXTRACAO.md` proibiu o valor em lote
+    // novo em 9/8/2026 e `MODOS` continua aceitando-o — tem de continuar, porque
+    // as 243 claims que estão lá só migram na onda 2. Sem catraca, a proibição é
+    // markdown puro e a janela entre ela e a onda 2 é exatamente quando a dívida
+    // cresce, com dezoito agentes ingerindo em paralelo.
+    //
+    // O caso é montado no prefixo do Blevins (teto 47) e não num prefixo fora do
+    // mapa porque é o cenário real: a fonte que ainda está sendo ingerida. Se
+    // alguém subir `TETO_ANEDOTA.G` para deixar um lote passar, este teste cai.
+    nome: 'lote novo estourando o teto de anedota',
+    esperado: /teto declarado para G é 47/,
+    montar: (clone, base) => {
+      const pref = base.id.split('-')[0];
+      return Array.from({ length: 48 }, (_, i) => {
+        const c = clone();
+        c.id = `${pref}-${String(i + 1).padStart(2, '0')}`;
+        c.modo = 'anedota';
+        c.scope = 'PESSOAL';
+        return c;
+      });
+    },
+  },
+  {
     // O esquema define `PESSOAL` ("ele descreve o que ELE faz") e `prescricao`
     // ("ele diz para VOCÊ fazer") como mutuamente excludentes. A base tinha 13
     // ocorrências do par e 10 estavam erradas.
@@ -337,6 +375,26 @@ const CASOS = [
     esperado: /sem modo com id G###|teto declarado para G/,
     mutar: (c) => { delete c.modo; },
   },
+  {
+    // A trava do `genero`. `G003` é resenha do template do Alexander Bromley e
+    // hoje tem ZERO claims em `prescricao`, então não aparece no
+    // `TETO_PRESCRICAO_EM_GENERO_RESTRITO` e o teto dele vale zero. Uma
+    // prescrição nascendo ali é o defeito exato que o campo existe para pegar:
+    // o imperativo é do Bromley, não do Blevins, e sem esta trava ele entraria
+    // no filtro que vira treino com a autoridade errada.
+    //
+    // O vídeo é escolhido de propósito entre os que estão FORA do mapa: um caso
+    // montado sobre `G020` (teto 7) passaria por folga e o teste ficaria verde
+    // sem provar nada — que é o modo de falha nº 4 desta casa, a trava que se
+    // testa a si mesma com o alvo apagado.
+    nome: 'prescricao nascendo em vídeo de review de programa sem teto declarado',
+    esperado: /vindas de G003, que é review-de-programa/,
+    montar: () => {
+      const c = claimDoArquivo('G003');
+      c.modo = 'prescricao';
+      return [c];
+    },
+  },
 ];
 
 console.log('\nTeste do compilador de claims');
@@ -429,6 +487,44 @@ const CASOS_QUE_PASSAM = [
     },
   },
   {
+    // O outro lado da catraca da `anedota`, e ele decide se a trava é usável.
+    // `'anedota'` ainda é valor LEGAL de `MODOS` — tem de ser, porque 243 claims
+    // vivem lá até a onda 2 migrá-las. Uma catraca que reprovasse a dívida
+    // existente derrubaria o build hoje, e o conserto pelo caminho mais fácil
+    // seria afrouxá-la. O teto do Blevins é 47: 47 tem de passar.
+    nome: 'anedota existente dentro do teto continua passando',
+    montar: () => Array.from({ length: 47 }, (_, i) => {
+      const c = clone();
+      c.id = `${base.id.split('-')[0]}-${String(i + 1).padStart(2, '0')}`;
+      c.modo = 'anedota';
+      c.scope = 'PESSOAL';
+      return c;
+    }),
+  },
+  {
+    // O outro lado da trava do `genero`, e ele é o que impede a leitura
+    // preguiçosa "vídeo do Blevins com programa no título = suspeito". `G008` é
+    // a régua DELE para julgar programa (stress index): é `aula`, prescrição
+    // ali é dele, e reprovar isso seria trava falsa sobre claim legítima — pior
+    // do que trava ausente.
+    nome: 'prescricao vinda de vídeo de aula, que é o gênero sem restrição',
+    montar: () => {
+      const c = claimDoArquivo('G008');
+      c.modo = 'prescricao';
+      return [c];
+    },
+  },
+  {
+    // E o gênero restrito NÃO barra o modo certo: um form check cheio de
+    // `avaliacao-de-terceiro` é exatamente o que se espera dele.
+    nome: 'avaliacao-de-terceiro vinda de vídeo de form check',
+    montar: () => {
+      const c = claimDoArquivo('G027');
+      c.modo = 'avaliacao-de-terceiro';
+      return [c];
+    },
+  },
+  {
     nome: 'percentual de XRM com o xrm_base declarado',
     mutar: (c) => {
       c.claim = 'A carga de trabalho fica em 85% do 5RM.';
@@ -441,9 +537,14 @@ const CASOS_QUE_PASSAM = [
 ];
 
 for (const caso of CASOS_QUE_PASSAM) {
-  const c = clone();
-  caso.mutar(c);
-  const r = roda([c]);
+  let r;
+  if (caso.montar) {
+    r = roda(caso.montar());
+  } else {
+    const c = clone();
+    caso.mutar(c);
+    r = roda([c]);
+  }
   if (r.passou) {
     console.log(`  ✓ aceita: ${caso.nome}`);
   } else {

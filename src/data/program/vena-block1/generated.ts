@@ -3,7 +3,7 @@
  *
  * Origem: src/data/program/vena-block1/source/PROGRAMA.md
  * Gerador: scripts/build-vena-block1.mjs
- * sha256(origem): fe22eaa30c0eb822
+ * sha256(origem): 1a888b854056d311
  *
  * 18 semanas · 86 sessões · 614 blocos de prescrição.
  * Para regenerar: npm run build:vena
@@ -11,7 +11,7 @@
 import type { PrescribedWeek } from '../../../types';
 
 /** Hash do markdown de origem que produziu este arquivo. */
-export const VENA_BLOCK1_SOURCE_HASH = 'fe22eaa30c0eb822';
+export const VENA_BLOCK1_SOURCE_HASH = '1a888b854056d311';
 
 /** Levantamentos que exigem `trainingMax` no perfil antes de sugerir carga. */
 export const VENA_BLOCK1_REQUIRES_TRAINING_MAX = ['squat', 'bench', 'deadlift'] as const;

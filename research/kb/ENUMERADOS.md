@@ -382,3 +382,44 @@ Enquanto o campo não existir, `relato-de-programa` e `avaliacao-de-terceiro` s�
 enumerado declarado que ninguém preenche — exatamente o defeito que o §2 usou
 para **recusar** `scope: TERCEIRO`. O argumento vale contra as duas gavetas que
 foram aceitas na mesma rodada.
+
+### RESOLVIDO em 2026-08-09 — o campo existe, com dez valores e não quatro
+
+`genero` está no manifesto dos dois canais, em 551 de 551 vídeos, e o registro da
+decisão é `research/kb/GENERO.md`. Três diferenças em relação ao que este §8
+propunha, e cada uma é uma aplicação de regra desta casa:
+
+1. **Dez valores, não `review-de-programa | form-check | vlog | regra`.** `vlog`
+   teria de engolir log de sessão, filmagem de meet, oferta de coaching, Q&A e
+   clipe de PR. Enumerado curto não é recusado, é contornado — o §1 diz isso
+   sobre `frame`, e `genero` é uma trava, não um índice: **na dúvida, aceita**.
+   Entraram `aula`, `log-de-treino`, `competicao`, `perguntas`, `institucional`,
+   `clipe`, `coaching-call` e `indeterminado`.
+2. **`regra` foi RECUSADO.** O regulamento da IPF é `kind: 'normativo'`: não tem
+   manifesto e não tem vídeo, então o gênero não teria onde morar. E o
+   discriminador já existe e é mais forte — `tier: O`, que o checker usa para
+   isentar a claim de `modo` e de `scope`. É o critério 4 do §1: dois campos
+   dizendo a mesma coisa divergem, e a divergência é silenciosa.
+3. **A trava MEDE, não recusa.** Este §8 pedia que o `check-claims.mjs`
+   *recusasse* `prescricao` vinda de review ou form check. Recusar de saída
+   derrubaria o build sobre 76 claims existentes, na rodada que tinha proibição
+   explícita de editar claim — e trava que quebra o build no dia em que nasce é
+   trava que alguém afrouxa na mesma tarde. Virou catraca por `src`
+   (`TETO_PRESCRICAO_EM_GENERO_RESTRITO`), no molde do `TETO_SEM_MODO`, que só
+   desce.
+
+**E os números de antes não fecham entre si — o que o compilador conta agora é
+76.** Este §8 diz "303 claims em `prescricao` vindas desses 25 vídeos"; o
+`ESTADO.md`, contando depois do conserto, diz 94 nos vinte de review mais 18 nos
+cinco de form check, que dá 112. As duas contas não podem estar certas ao mesmo
+tempo e nenhuma das duas é reproduzível por comando — que é exatamente a doença
+que o campo `genero` existe para curar, cometida dentro do documento que a
+diagnostica.
+
+O que dá para reconstruir do 112 é: menos 40 (as prescrições de `G004`, `G006` e
+`G008`, que estão na faixa contígua `G001`–`G020` e são **tese própria** do
+Blevins, não resenha), mais 4 do `R047` do Vena, que nenhuma das duas contas
+enxergava por olharem só o corpus G. Dá 76, e é o número que
+`node research/tools/check-claims.mjs` imprime. **O 303 continua sem explicação,
+e fica registrado como não explicado** — número de qualidade sem instrumento é
+opinião com cara de medida, e vale para os desta casa também.

@@ -409,12 +409,21 @@ que o gate não conseguia reduzir.
 ⚠️ **ESTA TABELA É LIDA POR MÁQUINA — ela é a fonte única do limiar, e o app não tem
 cópia dele.** `scripts/gate-dor.mjs` a converte em `VENA_BLOCK1_PAIN_GATE`, e
 `src/domain/painGate.ts` a consome; `npm run check:gate` reprova o build se o
-comportamento do rollup semanal divergir dos TRÊS DEGRAUS de agravamento. Mudar um número
-neles muda o app no mesmo passe. **Duas células ainda não têm comportamento nenhum e a
-trava não pode prendê-las**: a linha `RETORNO` (o app não decide re-subida, e nada mede as
-2 semanas limpas) e o gatilho `estiramento agudo` (não existe campo na pesquisa para
-registrá-lo). As duas são lidas e travadas contra o gerado, mas só governam a conversa
-semanal — mudá-las não muda o app. Reformatar a tabela sem manter a gramática
+comportamento do rollup semanal divergir dos TRÊS DEGRAUS de agravamento **ou da linha
+`RETORNO`**. Mudar um número em qualquer uma das quatro linhas muda o app no mesmo passe.
+
+⚠️ **A JANELA É DE SESSÕES DE SUPINO, E ELA ATRAVESSA A VIRADA DE SEMANA.** *"em N sessões
+de supino"* não é "nesta semana": o `WeekDoc` carrega a cauda das leituras das semanas
+anteriores e a janela desliza sobre as sessões que carregaram o peitoral, colhendo o log —
+inclusive as sessões **sem dor**, que consomem a janela como qualquer outra. Semana sem
+supino (deload) não consome janela nenhuma, porque não houve sessão de supino. Antes desta
+revisão a janela truncava no domingo e o degrau de recuo simplesmente não saía quando os
+dois eventos caíam de lados diferentes da fronteira.
+
+**Uma célula ainda não tem comportamento nenhum e a trava não pode prendê-la**: o gatilho
+`estiramento agudo`, porque não existe campo na pesquisa para registrá-lo. Ele é lido e
+travado contra o gerado, mas só governa a conversa semanal — mudá-lo não muda o app.
+Reformatar a tabela sem manter a gramática
 (`≥N/10`, `N eventos`, `em N sessões`, `≤N/10`, e os verbos `congela` / `recua um degrau` /
 `encerra a sessão`) quebra o build em vez de desligar o gate em silêncio. **Este acoplamento
 existe porque as duas coisas já divergiram**: o programa mandava congelar a 2/10 e o app só

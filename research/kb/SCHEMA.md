@@ -147,13 +147,46 @@ se fossem a mesma categoria de instrução — e é a segunda que vira treino.
 | `avaliacao-de-terceiro` | ele corrige **uma pessoa específica**, a partir do vídeo dela |
 | `opiniao` | ele acha, sem prescrever |
 | `mecanismo` | por que funciona — fisiologia, alavanca, causa alegada |
-| `fato` | afirmação sobre o mundo, verificável fora dele |
 | `estudo` | ele narra literatura. Não vira `tier: L` — continua sendo ele contando. |
-| `anedota` | história dele ou de terceiro |
-| `narrativa` | o que aconteceu no treino, sem tese |
+| `pratica-pessoal` | **o que ele faz de rotina.** Muitas datas. Exige `scope: PESSOAL` |
+| `narrativa` | um episódio. Uma data |
+| `fato` | o que ele **é**, ou o que o mundo **é**. Nenhuma data |
+| ~~`anedota`~~ | **em fusão com `narrativa`** — ver abaixo |
 
 `scope` diz **para quem**; `modo` diz **que tipo de coisa**. São perguntas
 diferentes e precisam de campos diferentes.
+
+**A fronteira entre os três de baixo é uma pergunta de contagem, não de
+dicionário: *quantas datas cabem nesta frase?*** Nenhuma → `fato`; uma →
+`narrativa`; muitas → `pratica-pessoal`. O teste completo, com os casos de
+fronteira resolvidos por id, está no `PROTOCOLO-EXTRACAO.md`; o registro da
+decisão e o tamanho do que ela move, em `FRONTEIRA-MODO.md`.
+
+**`pratica-pessoal` é o terceiro andar do mesmo achatamento.** `scope` separou
+"para você" de "para mim"; `relato-de-programa` e `avaliacao-de-terceiro`
+separaram, dentro do `GERAL`, o que é dele do que é de outro. Dentro do `PESSOAL`
+sobrou a mistura que mais importa para o consumidor desta base: *"ele agachou
+825 lb semana passada"* e *"ele supina 6 dias por semana"* moram na mesma gaveta,
+e só a segunda vira uma linha do treino de alguém. Pior: a gaveta em que as duas
+moram chama-se `narrativa` e é definida como episódio, então o campo afirma
+justamente o contrário do que o consumidor precisa saber. `pratica-pessoal` é o
+conjunto que precisa carregar o aviso — *o hábito de um homem de 120 kg que não
+compete testado não é prescrição para ninguém* — e hoje esse conjunto não é
+enumerável.
+
+**`anedota` sai porque a fronteira nunca existiu.** Os 18 lotes a separaram de
+`narrativa` por tempo verbal, e medido em 9/8/2026 o passado aparece em 32 % das
+`narrativa` contra 48 % das `anedota` — smear, não fronteira. E nenhuma consulta
+desta base pede uma sem a outra: as duas são episódio único, do mesmo homem, com
+o mesmo peso de evidência. O que o campo guardava está no `verbatim`, que é a
+fonte; o campo era uma cópia lossy, e é o critério 4 do `ENUMERADOS.md` §1 —
+*dois campos dizendo a mesma coisa divergem, e essa divergência é silenciosa*.
+
+**Nenhuma das duas mudanças está no `kb.mjs` ainda, e isso é deliberado.**
+Enumerado declarado e vazio promete uma distinção que os dados não têm — foi com
+esse argumento que `scope: TERCEIRO` foi recusado (`ENUMERADOS.md` §2). A linha do
+enumerado, a trava e o retag entram no **mesmo** commit, na onda 2. `anedota` só
+sai de `MODOS` quando a última claim sair dela.
 
 **`relato-de-programa` e `avaliacao-de-terceiro` são o mesmo achatamento, uma
 camada abaixo.** Metade do corpus do Blevins é ele expondo o programa dos outros
@@ -288,6 +321,26 @@ fininho entre dois documentos.
     para aquele prefixo em `TETO_SEM_MODO`. **O mapa está vazio desde 2026-08-09**,
     então prefixo nenhum tem folga: `modo` é obrigatório para toda claim que não
     seja `tier: O`.
+12b. Mais claims com `modo: prescricao` **num dado `src`** do que o teto
+    declarado para aquele vídeo em `TETO_PRESCRICAO_EM_GENERO_RESTRITO`, quando o
+    gênero do vídeo é `review-de-programa`, `form-check` ou `coaching-call`.
+    Vídeo ausente do mapa vale zero, o teto só desce, e por `src` e não global
+    pelo mesmo motivo do item 12: teto global vaza — consertar uma claim antiga
+    abriria vaga para uma nova nascer errada, e a soma não se moveria. Abaixo do
+    teto sai como aviso, uma linha por claim, e essa lista É a fila de revisão
+    (`GENERO.md` §6). Também é erro o vídeo com claim não ter `genero` no
+    manifesto, ou declarar um fora do enumerado.
+13. **ESPECIFICADO, AINDA NÃO IMPLEMENTADO — entra com o retag da onda 2:**
+    `modo: pratica-pessoal` com `scope: GERAL`. Rotina de terceiro é
+    `avaliacao-de-terceiro` ou `relato-de-programa`; a gaveta que existe para
+    dizer "cuidado, é o hábito DELE" não pode guardar hábito de qualquer um. É a
+    irmã da trava 10 e do aviso de `PESSOAL` + `prescricao`, e é erro e não
+    aviso porque aqui o checker **sabe** qual dos dois campos está errado: quem
+    escolheu `pratica-pessoal` já afirmou que a frase é sobre ele.
+    Este item está aqui, e não numa lista de tarefas, porque documento
+    prometendo trava que não existe é como `suspectWhy` passou duas ingestões
+    inteiras — e a diferença entre uma promessa e uma dívida é ela dizer em voz
+    alta que ainda não foi paga.
 
 E o checker **avisa** (não recusa) em:
 
@@ -297,6 +350,67 @@ E o checker **avisa** (não recusa) em:
   erradas: o Blevins narrando a própria autorregulação gravado como ordem para o
   leitor. Aviso e não erro porque nas outras 3 quem estava errado era o `scope`,
   e o checker não tem como escolher qual dos dois campos consertar.
+- `modo: prescricao` num vídeo de gênero restrito — ver a seção seguinte. É
+  aviso **enquanto o teto por vídeo não for estourado**; acima do teto vira erro.
+
+## `genero` — o campo que mora no VÍDEO, e a trava que ele liga
+
+`modo` diz que tipo de afirmação a claim é. `genero` diz que tipo de vídeo a
+produziu, e vive em `research/corpus/*/manifest.json`, um valor por vídeo. Ele
+não é do registro da claim de propósito: derivar de `src` é grátis e duplicar
+seria criar uma segunda verdade que envelhece — o mesmo argumento pelo qual a
+claim não tem `date`.
+
+Ele existe porque `relato-de-programa` e `avaliacao-de-terceiro` estavam
+pendurados no lugar errado. O discriminador dos dois **não está no texto da
+claim**: `G028-02` é *"manter a cabeça em posição mais neutra e para cima no
+agachamento"*, indistinguível de prescrição geral para quem lê o JSONL, que é
+exatamente o que o agente lê. O que decide é o vídeo ser um *Form Assessment
+Saturday* — e isso morava no manifesto, alcançável só para o agente que
+lembrasse de abri-lo. Dezoito lembraram de dezoito jeitos, e as 562 claims
+nessas duas gavetas não são reproduzíveis.
+
+O enumerado fechado vive em `kb.mjs` (`GENEROS`); o critério de cada valor, como
+o campo foi semeado e o que ficou indeterminado estão em `GENERO.md`. Em resumo:
+`aula`, `review-de-programa`, `form-check`, `coaching-call`, `log-de-treino`,
+`competicao`, `perguntas`, `institucional`, `clipe`, `indeterminado`.
+
+**Três deles restringem `prescricao`** (`GENEROS_SEM_PRESCRICAO`):
+`review-de-programa`, `form-check` e `coaching-call` — os vídeos em que o
+material é de outra pessoa, ou calibrado para uma pessoa específica. Uma
+`modo: prescricao` vinda de lá conta contra `TETO_PRESCRICAO_EM_GENERO_RESTRITO`
+no `check-claims.mjs`: teto **por `src`**, vídeo ausente vale zero, e o teto só
+desce. Hoje são **76 violações em 19 vídeos**, listadas uma a uma em `GENERO.md`
+§6, e a trava mede em vez de reprovar porque a rodada que a ligou não podia
+editar claim — não porque 76 seja aceitável.
+
+`verify-manifest.mjs` exige `genero` em todo vídeo e recusa valor fora do
+enumerado. Sem isso a trava acima se desligaria em silêncio no dia em que alguém
+reconstruísse um manifesto, que é o pior desfecho possível para uma trava —
+`build-manifest.mjs` carrega o campo adiante por `videoId` pela mesma razão.
+
+Exigir presença e enumerado não basta, porque sobra o caminho mais fácil:
+**trocar o valor por outro válido**. `G020.genero = 'aula'` é legítimo em ambas as
+checagens, e as sete violações dele evaporam com o build verde. Por isso
+`verify-manifest.mjs` também congela um roster dos 39 vídeos que hoje declaram
+gênero restrito (`GENERO_TRAVADO`) e recusa o rebaixamento de qualquer um deles,
+ou o sumiço do ref. A checagem é de mão única: ganhar gênero restrito é o lado
+seguro e não passa por registro.
+
+`verify-manifest.test.mjs` prova que tudo isso ainda é executado: 14 casos com
+mensagem obrigatória, entre eles `genero` ausente nas duas fontes, `genero:
+"vlog"`, o rebaixamento de `G020` e de `R047`, e dois casos de aceitação que
+impedem a checagem de virar bidirecional. Sem esse teste, "o verificador exige
+gênero" era uma afirmação sobre código que ninguém tinha rodado.
+
+Quem ESCREVE o campo é `seed-genero.mjs`, e ele tem teste próprio
+(`seed-genero.test.mjs`, no `check:kb`) porque a primeira versão não gravava: o
+laço copiava o `genero` velho por cima do recém-derivado, de modo que
+`--refresh` era um no-op e o conserto que o verificador manda fazer num manifesto
+reconstruído (onde o campo vem `null`) não fazia nada — relatando que tinha
+feito. O caso central do teste zera os 551 gêneros e exige que a semeadura
+devolva exatamente os valores commitados, o que prova gravação e
+reprodutibilidade de uma vez.
 
 ## Granularidade
 
