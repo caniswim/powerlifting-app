@@ -11,15 +11,19 @@
  * verbatim não existe na transcrição. O segundo é um número atravessando frames
  * sem conversor declarado. Este arquivo recusa os dois, no build.
  *
+ * A base tem mais de um corpus, e este arquivo não pede para saber qual: o
+ * prefixo do ref já diz (`R159` é Vena, `G042` é Blevins). Ver o índice de
+ * vídeos, mais abaixo, para o porquê de a claim não declarar a fonte.
+ *
  * Uso: node research/tools/check-claims.mjs [--verbose]
  */
 
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { SOURCES, paths } from './sources.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
-const MANIFEST = join(ROOT, 'research/corpus/manifest.json');
 // `--extract <dir>` existe para o teste do próprio checker: ele monta um extract
 // sintético com claims deliberadamente quebradas e exige que cada uma seja
 // pega. Sem isso não haveria como saber se este arquivo ainda verifica alguma
@@ -68,8 +72,51 @@ const toSec = (s) => String(s).trim().split(':').map(Number).reduce((a, p) => a 
 const norm = (s) =>
   s.normalize('NFC').toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
 
-const manifest = JSON.parse(readFileSync(MANIFEST, 'utf8'));
-const byRef = new Map(manifest.videos.map((v) => [v.ref, v]));
+/**
+ * O índice de vídeos é a UNIÃO dos manifestos existentes, não o de uma fonte
+ * escolhida por flag.
+ *
+ * A claim não declara de que corpus veio, e não deve declarar: o prefixo do ref
+ * (`R159`, `G042`) já carrega essa informação. Pedir que ela repita a fonte
+ * criaria um segundo lugar onde a mesma verdade pode divergir — e uma claim com
+ * `source: vena` e `src: G042` seria aceita por um checker que confiasse no
+ * campo em vez do ref.
+ *
+ * O único jeito de isso dar errado é dois corpora usarem o mesmo prefixo.
+ * `sources.mjs` proíbe, mas a checagem fica aqui também: sob colisão, um ref
+ * ambíguo validaria uma citação inexistente sem uma linha de reclamação.
+ */
+const byRef = new Map();
+const donoDoRef = new Map();
+const fontePorPrefixo = new Map();
+for (const src of Object.values(SOURCES)) {
+  const anterior = fontePorPrefixo.get(src.refPrefix);
+  if (anterior) {
+    console.error(`prefixo "${src.refPrefix}" usado por "${anterior.id}" e por "${src.id}" — refs seriam ambíguos`);
+    process.exit(1);
+  }
+  fontePorPrefixo.set(src.refPrefix, src);
+
+  // Fonte declarada e ainda não construída é normal (o corpus nasce antes do
+  // manifesto); só não pode ser confundida com fonte cujo manifesto sumiu.
+  const file = paths(src, ROOT).manifest;
+  if (!existsSync(file)) continue;
+  for (const v of JSON.parse(readFileSync(file, 'utf8')).videos ?? []) {
+    if (byRef.has(v.ref)) {
+      console.error(`ref ${v.ref} existe em "${donoDoRef.get(v.ref)}" e em "${src.id}" — manifesto ambíguo`);
+      process.exit(1);
+    }
+    byRef.set(v.ref, v);
+    donoDoRef.set(v.ref, src.id);
+  }
+}
+if (byRef.size === 0) {
+  console.error('\nnenhum manifesto construído — rode build-manifest.mjs antes de checar claims.\n');
+  process.exit(1);
+}
+
+/** Refs escritos na prosa da claim, de qualquer corpus — `[R159 @03:05]`, `G042`. */
+const REF_NA_PROSA = new RegExp(`\\[?[${[...fontePorPrefixo.keys()].join('')}]\\d+[^\\]]*\\]?`, 'g');
 
 /**
  * Carrega a transcrição já normalizada, com um mapa de deslocamento → segundo.
@@ -199,6 +246,27 @@ for (const c of claims) {
   if (c.tier === 'L' && !/\b(PMID:\s*\d{6,9}|10\.\d{4,9}\/\S+)/i.test(JSON.stringify(c.source ?? ''))) {
     errors.push(`${w}: tier L exige source com PMID ou DOI`);
   }
+  // Tier E é "um elite do roster disse". Sem QUEM e SEM ONDE, isso é boato com
+  // sotaque de autoridade — e o roster curado existe justamente porque a run 1
+  // carregava elites que ninguém conseguia reabrir. Nome sem URL não reabre;
+  // URL sem nome não deixa auditar se a pessoa está mesmo no roster.
+  if (c.tier === 'E') {
+    for (const f of ['name', 'url']) {
+      if (!c.source?.[f]) errors.push(`${w}: tier E exige source.${f}`);
+    }
+    if (c.source?.url && !/^https?:\/\//i.test(String(c.source.url))) {
+      errors.push(`${w}: tier E exige source.url navegável (http/https), não "${c.source.url}"`);
+    }
+  }
+  // Tier U é o que VOCÊ disse, e o que você diz muda: peso, lesão, meta de
+  // competição. Sem a data da conversa não dá para aplicar "o recente vence" —
+  // que no tier R vem de graça, do manifesto, e aqui só pode vir da claim.
+  if (c.tier === 'U') {
+    if (!c.source?.date) errors.push(`${w}: tier U exige source.date com a data da conversa`);
+    else if (!/^\d{4}-\d{2}-\d{2}$/.test(String(c.source.date))) {
+      errors.push(`${w}: tier U exige source.date em ISO (YYYY-MM-DD), não "${c.source.date}"`);
+    }
+  }
   // Tier O é regra, e a procedência de uma regra não é "quem disse" — é "onde está
   // escrito, em que edição". Regulamento muda de ano para ano e a versão errada
   // anula tentativa igual: sem documento, versão, URL e data de vigência, a claim
@@ -235,7 +303,7 @@ for (const c of claims) {
   // claim é número sem procedência, e é assim que um fator inventado entra.
   const declared = new Set((c.params ?? []).map((p) => String(p.value).replace(',', '.')));
   const stripped = (c.claim ?? '')
-    .replace(/\[?R\d+[^\]]*\]?/g, ' ')   // refs de vídeo
+    .replace(REF_NA_PROSA, ' ')          // refs de vídeo, de qualquer corpus
     .replace(/\b1RM\b/gi, ' ')
     .replace(/\bV\d{3}-\d+\b/g, ' ');     // ids de claim
   for (const m of stripped.matchAll(/\d+(?:[.,]\d+)?/g)) {
@@ -320,10 +388,20 @@ for (const c of claims) {
 
   if (c.tier !== 'R') continue;
 
-  // Citação resolve para vídeo citável.
+  // Citação resolve para vídeo citável, em algum corpus. As duas falhas são
+  // diferentes e merecem mensagens diferentes: prefixo desconhecido é ref de uma
+  // fonte que ninguém registrou (erro de digitação ou corpus por declarar);
+  // prefixo conhecido e número ausente é citação para vídeo que não existe.
   const v = byRef.get(c.src);
   if (!v) {
-    errors.push(`${w}: src ${c.src} não existe no manifesto`);
+    const pfx = /^([A-Za-z]+)/.exec(String(c.src ?? ''))?.[1] ?? '';
+    const fonte = fontePorPrefixo.get(pfx);
+    errors.push(
+      fonte
+        ? `${w}: src ${c.src} não existe no manifesto de ${fonte.name}`
+        : `${w}: src ${c.src} tem prefixo "${pfx}", que não pertence a nenhuma fonte conhecida ` +
+          `(${[...fontePorPrefixo.keys()].join(', ')})`,
+    );
     continue;
   }
   if (v.postRun1) {

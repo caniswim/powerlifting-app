@@ -5,9 +5,10 @@
  * A run 1 rodou Whisper large-v3-turbo em vídeo inteiro sempre que o ASR do
  * YouTube "parecia ruim" — caro, e o critério era subjetivo. Aqui a legenda do
  * YouTube é a base para todo mundo, e o Whisper vira instrumento cirúrgico
- * (`repair-numbers.mjs`) aplicado só onde errar de verdade importa: em cima de
- * número. `squadrons` no lugar de `squatters` não muda nenhuma claim; "3 séries"
- * virando "30 séries" envenena a base inteira.
+ * (`list-suspects.mjs` → `verify-suspects.mjs` → `whisper-window.py`) aplicado só
+ * onde errar de verdade importa: em cima de número. `squadrons` no lugar de
+ * `squatters` não muda nenhuma claim; "3 séries" virando "30 séries" envenena a
+ * base inteira.
  *
  * O formato de saída existe para uma coisa só: tornar `[Rxxx @mm:ss]`
  * verificável por máquina. Cada linha carrega o segundo em que começa, então
@@ -198,9 +199,9 @@ async function worker() {
       v.transcript = r.file;
       v.source = 'captions';
       v.words = r.words;
-      // Só preenche buraco. O manifesto do Vena não tem o campo `date` e não
-      // pode ganhar um agora — há agente lendo o arquivo — então `?? null` sem
-      // sobrescrever mantém este passo inofensivo para corpus já construído.
+      // Só preenche buraco, nunca sobrescreve. A data canônica é a que o passe
+      // de datação gravou (o Vena tem nos 197); a que vem de carona aqui serve
+      // para vídeo que falhou lá, e não pode reabrir uma decisão já tomada.
       if (r.date && v.date === null) v.date = r.date;
       done += 1;
     } catch (err) {

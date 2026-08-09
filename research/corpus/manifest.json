@@ -1,9 +1,13 @@
 {
+  "source": "vena",
   "channel": {
     "id": "UC4ogvS0mhrPjsoCOjIKlovA",
     "name": "Matt Vena"
   },
+  "refPrefix": "R",
   "builtFor": "run2",
+  "builtAt": "2026-08-09",
+  "channelItemCount": 197,
   "postRun1Count": 1,
   "videoCount": 197,
   "citableCount": 196,

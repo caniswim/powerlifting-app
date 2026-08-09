@@ -82,8 +82,10 @@ node research/tools/build-manifest.mjs --refresh
 #    de ser regra executável.
 
 # 2. VERIFICAR O MANIFESTO — obrigatório, sempre, imediatamente. <1 s
-node research/tools/verify-manifest.mjs
+node research/tools/verify-manifest.mjs [--source blevins]
 #    Se isto falhar, PARE. Não siga para transcrição. Ver §3.
+#    Fonte sem citação prévia não tem âncora: a saída diz, em voz alta, que o
+#    deslocamento NÃO foi verificado — só a integridade do manifesto foi.
 
 # 3. LEGENDAS → transcrição citável. ~15 min para 197 vídeos (conc. 4)
 node research/tools/fetch-captions.mjs
@@ -152,7 +154,9 @@ supino tinha (R83/R4), o do terra tinha (R174). Era interpretação circulando c
 autoridade de citação, e chegou ao programa. Agora: `R` exige `src` + `at` + `verbatim`
 + `scope`, e o verbatim tem que existir na transcrição dentro de 45 s do `at` declarado;
 `I` exige `basis` com os ids que a sustentam; `L` exige PMID ou DOI; `O` exige
-`source.{document,version,url,effective}` e `at` no formato `§4.1.3`.
+`source.{document,version,url,effective}` e `at` no formato `§4.1.3`; `E` exige
+`source.name` + `source.url` navegável; `U` exige `source.date` em ISO (é o que torna
+"o recente vence" computável para o que você diz, já que não há manifesto para consultar).
 
 ### O checker tem teste próprio
 
@@ -163,9 +167,9 @@ banal — alguém "melhora" a normalização até ela apagar caracteres demais, 
 vira prefixo de qualquer outra, e o `✓` continua verde.
 
 `check-claims.test.mjs` monta um extract sintético a partir de uma claim **real já
-aprovada**, muta-a de 14 formas específicas, e exige que o checker recuse cada uma **pela
+aprovada**, muta-a de 19 formas específicas, e exige que o checker recuse cada uma **pela
 mensagem certa** (aceitar qualquer erro seria satisfeito por um typo no próprio teste).
-Estado atual: 14/14. Se você adicionar uma regra ao checker, adicione o caso aqui — senão
+Estado atual: 19/19. Se você adicionar uma regra ao checker, adicione o caso aqui — senão
 a regra não tem garantia nenhuma.
 
 ---
@@ -353,33 +357,29 @@ Deduzido do repositório. Reconfira com os comandos do §4 antes de confiar.
 ## 8. Divergências entre o que os documentos dizem e o que o código faz
 
 Encontradas ao escrever este RUNBOOK. Nenhuma é fatal hoje; todas mordem depois.
+As de 1 a 6 e a 11 foram **resolvidas em 9/8/2026**; ficam registradas com o conserto ao
+lado porque o defeito que elas descrevem volta na próxima fonte nova.
 
-1. **`npm run check:kb` não está no `npm run build`.** O cabeçalho do `check-claims.mjs`
-   diz "este arquivo recusa os dois, **no build**", e o commit que o introduziu se chama
-   "liga a base ao build". Mas `scripts.build` é
-   `check:program && check:vena && validate:program && check:notes && tsc -b && vite build`
-   — `check:kb` não está lá. Hoje a base só é verificada por quem lembrar de rodar.
-2. **`verify-manifest.mjs` e `check-claims.mjs` são hardcoded no Vena.** Ambos abrem
-   `research/corpus/manifest.json` direto e ignoram `--source`, enquanto
-   `build-manifest.mjs`, `fetch-captions.mjs` e `fetch-dates.mjs` já foram generalizados
-   via `sources.mjs`. Consequência concreta: o corpus Blevins pode ser construído e
-   transcrito, mas **nenhuma claim `G###` seria validável**.
-3. **`verify-manifest.mjs` aponta para um símbolo que não existe mais.** Sua mensagem de
-   erro diz "ajuste `POST_RUN1` em `build-manifest.mjs`"; a constante virou
-   `SOURCE.postRun1`, em `sources.mjs`. Quem seguir a mensagem no meio de um incidente vai
-   procurar no arquivo errado.
-4. **`fetch-captions.mjs` cita `repair-numbers.mjs`, que nunca existiu.** O passe de reparo
-   é `list-suspects.mjs` + `verify-suspects.mjs` + `whisper-window.py`.
-5. **`fetch-captions.mjs` afirma que "o manifesto do Vena não tem o campo `date`".** Tem —
-   todos os 197. O comentário é anterior ao passe de datação e a lógica `?? null` que ele
-   justifica virou inofensiva, mas o comentário mente.
-6. **O manifesto do Vena não tem `source`, `refPrefix`, `builtAt` nem `channelItemCount`.**
-   Ele foi construído antes da generalização. Isso significa que a defesa "compare o
-   `channelItemCount` de hoje com o gravado para detectar deslocamento" — o mecanismo que
-   `build-manifest.mjs` descreve como o mínimo para tornar deslocamento respondível — **não
-   está disponível justamente para o corpus que tem 7.741 citações apontando para ele**. O
-   Blevins tem. Rodar `--refresh` no Vena preencheria os campos, mas é uma operação de
-   risco (§6) e exige `verify-manifest.mjs` logo em seguida.
+1. ~~**`npm run check:kb` não está no `npm run build`.**~~ **RESOLVIDO** — `scripts.build`
+   agora roda `check:kb` antes do `tsc -b`. A base deixou de depender de quem lembrar.
+2. ~~**`verify-manifest.mjs` e `check-claims.mjs` são hardcoded no Vena.**~~ **RESOLVIDO** —
+   `verify-manifest.mjs` aceita `--source`; `check-claims.mjs` resolve `src` contra a
+   **união** dos manifestos, sem a claim declarar fonte (o prefixo do ref já diz de qual
+   corpus ela vem, e exigir o campo redundante seria criar um segundo lugar para divergir).
+   Prefixo desconhecido e prefixo conhecido com número inexistente dão erros distintos.
+3. ~~**`verify-manifest.mjs` aponta para um símbolo que não existe mais.**~~ **RESOLVIDO** —
+   a mensagem agora manda ajustar `postRun1` da fonte em `research/tools/sources.mjs`.
+4. ~~**`fetch-captions.mjs` cita `repair-numbers.mjs`, que nunca existiu.**~~ **RESOLVIDO** —
+   o cabeçalho aponta para `list-suspects` → `verify-suspects` → `whisper-window.py`.
+5. ~~**`fetch-captions.mjs` afirma que "o manifesto do Vena não tem `date`".**~~ **RESOLVIDO** —
+   o comentário passou a dizer o que a linha faz de verdade: só preenche buraco, nunca
+   sobrescreve a data canônica do passe de datação.
+6. ~~**O manifesto do Vena não tem `source`, `refPrefix`, `builtAt` nem `channelItemCount`.**~~
+   **RESOLVIDO sem reconstruir** — os quatro campos foram acrescentados por escrita atômica
+   (`builtAt: 2026-08-09`, `channelItemCount: 197`), porque rodar `--refresh` para ganhar
+   metadado arriscaria a numeração, que é a coisa mais valiosa do repositório.
+   `verify-manifest.mjs` agora **exige** os quatro: manifesto sem eles não tem como
+   responder "o canal andou quanto desde o build?".
 7. **`SCHEMA.md` prescreve `date` no registro da claim; nenhuma das 5.090 claims tem, e o
    checker não exige.** A regra "o recente vence" é executável no nível do *vídeo*
    (`manifest.json` e `dates.json`), não no nível da claim. Ou o schema muda, ou o checker
@@ -396,10 +396,9 @@ Encontradas ao escrever este RUNBOOK. Nenhuma é fatal hoje; todas mordem depois
     checker aceita). O próprio `SCHEMA.md` já avisa que a lista viva é a do
     `check-claims.mjs`, então isto é sabido — mas o exemplo de `conflicts` no mesmo arquivo
     usa `"V0088"`, que não é um id válido pelo formato `V{ref}-{seq}` que ele mesmo define.
-11. **Tiers `E` e `U` não têm nenhuma trava no checker.** `SCHEMA.md` diz que `E` exige
-    fonte com URL e `U` exige a data da conversa; `check-claims.mjs` valida procedência
-    apenas para `R`, `I`, `L` e `O`. Hoje não morde — não há claim `E` nem `U` na base —
-    mas morderá no passe de elites, que é exatamente onde o roster curado entra.
+11. ~~**Tiers `E` e `U` não têm nenhuma trava no checker.**~~ **RESOLVIDO** — `E` exige
+    `source.name` e `source.url` navegável; `U` exige `source.date` em ISO. Feito antes do
+    passe de elites de propósito: trava que chega depois do dado chega tarde.
 12. **`.tmp` não está no `.gitignore`.** `research/corpus/.tmp/` e
     `research/corpus/blevins/.tmp/` recebem os `.json3` brutos do yt-dlp e só são limpos no
     caminho feliz do `fetch-captions.mjs`. Se ele morrer no meio, os arquivos ficam lá — e

@@ -93,6 +93,36 @@ const CASOS = [
     mutar: (c) => { c.src = 'R999'; },
   },
   {
+    // O checker resolve `src` contra a UNIÃO dos manifestos, para claims `G###`
+    // do Blevins serem validáveis sem a claim declarar a fonte. Este caso é o
+    // preço disso: a união não pode virar "aceita qualquer coisa". `G999` tem
+    // prefixo legítimo e número que não existe — exatamente o erro que passaria
+    // despercebido se a generalização tivesse trocado o índice por um `if`.
+    nome: 'citação com prefixo de outro corpus e número inexistente lá',
+    esperado: /não existe no manifesto/,
+    mutar: (c) => { c.src = 'G999'; },
+  },
+  {
+    nome: 'citação com prefixo que não pertence a nenhuma fonte',
+    esperado: /não pertence a nenhuma fonte/,
+    mutar: (c) => { c.src = 'Z042'; },
+  },
+  {
+    nome: 'elite sem source com nome e URL',
+    esperado: /tier E exige source\./,
+    mutar: (c) => { c.tier = 'E'; c.source = { name: 'alguém forte' }; },
+  },
+  {
+    nome: 'elite com URL que não é URL',
+    esperado: /source\.url navegável/,
+    mutar: (c) => { c.tier = 'E'; c.source = { name: 'alguém forte', url: 'me contaram' }; },
+  },
+  {
+    nome: 'claim do usuário sem a data da conversa',
+    esperado: /tier U exige source\.date/,
+    mutar: (c) => { c.tier = 'U'; c.source = { canal: 'conversa' }; },
+  },
+  {
     nome: 'citação para vídeo pós-run-1, fora da numeração',
     esperado: /pós-run-1/,
     mutar: (c) => { c.src = 'R000'; },
