@@ -328,7 +328,57 @@ O `ESTADO.md` conta "94 claims em `prescricao` nos 20 vídeos de review
 Blevins**, não resenha — e sozinhos respondem por 40 das 94. O número certo é
 **54**, e as outras 40 nunca deveriam entrar numa fila de revisão.
 
-## 6. As 76 violações de hoje — a lista é o produto
+## 6. As 76 violações — repassadas em 9/8/2026, e o teto foi para 74
+
+> **ONDA 2 — leia isto antes da lista.** As 76 foram abertas uma a uma, com o
+> `verbatim` e a transcrição em volta de cada `at`. **Duas mudaram; 74 ficaram**,
+> e o teto de `check-claims.mjs` desceu de 76 para 74 (`G020`: 7→6, `G027`: 4→3).
+> A justificativa claim a claim mora no comentário da catraca, em
+> `check-claims.mjs`, que é onde quem for baixar o teto de novo vai olhar.
+>
+> **O que mudou**
+>
+> - **`G020-17` → `relato-de-programa`.** *"three times per week is really the
+>   frequency you want for squat"* é a frequência de agacho **do StrongLifts**,
+>   narrada entre `G020-03/04/05` (a estrutura A/B) e `G020-18` (a progressão
+>   45→50→55), e condicionada a `G020-12`, que também é `relato-de-programa`.
+>   Era a **única** das 76 com dose de frequência (`frequencia = 3 x_semana`) em
+>   `GERAL` + `prescricao` — a linha mais diretamente consumível da fila inteira,
+>   e o programa de outra pessoa.
+> - **`G027-01` → `opiniao`.** *"YouTube is a really good way to [submit], it is
+>   far better than sending me the video files"* é logística de canal: não é
+>   imperativo de outro autor, não é conselho calibrado para um corpo, e é a
+>   única da fila que **não pode virar treino sob leitura nenhuma**. O irmão do
+>   mesmo arquivo sobre o mesmo assunto (`G027-27`, ordem da fila de vídeos) já
+>   estava fora de `prescricao`, em `fato`.
+>
+> **Duas correções à leitura que esta seção fazia**
+>
+> - **`G011-32` e `G011-34` NÃO são o alvo**, ao contrário do que o texto abaixo
+>   diz. A leitura anterior foi feita pelo texto da claim (*"ele manda"*); o
+>   `verbatim` diz o contrário — *"I would say stick with the five with the upper
+>   body movements"* e *"I would lean towards the lower end"*. A regra do nSuns
+>   já está gravada ao lado, em `G011-30` e `G011-31`, como `relato-de-programa`.
+>   O defeito ali é do **texto da claim**, não do `modo` — e é exatamente a
+>   ambiguidade que o item 2 do fecho desta seção nomeia.
+> - **Nos form checks a leitura "18 de 18 não são o alvo" quase se sustenta**, e
+>   a exceção é a de logística, não a técnica. Os cues universais
+>   (`G029-38` punho sobre cotovelo, `G030-13` joelho sobre o segundo dedo,
+>   `G029-43` glúteo no banco, `G031-10` o teste de reversibilidade) ficam, pela
+>   regra escrita no `PROTOCOLO-EXTRACAO.md`: *um cue que valeria igual em
+>   qualquer vídeo do canal é `prescricao` mesmo dito dentro de um form check*.
+>   Os dois de filmagem (`G030-34/35`) também ficam, e por um motivo que a
+>   leitura anterior não tinha: **ângulo de câmera vira protocolo neste
+>   repositório** (`design.md` §8), então "ajuda na análise" é conhecimento
+>   consumível, e não recado de caixa de entrada.
+>
+> **O que a fila era, medido:** 74 de 76 são o autor saindo do material alheio
+> para enunciar regra dele. A previsão escrita no fecho desta seção — *"o piso
+> realista está bem acima de zero, e provavelmente perto do número de hoje"* —
+> **acertou**, e é o segundo caso registrado nesta base de uma previsão escrita
+> antes valer mais que a contagem depois.
+
+### A lista original, como foi produzida
 
 Esta é a fila da onda 2. Cada id abaixo é uma claim `modo: prescricao` num vídeo
 que expõe material de outra pessoa. **Nem todas estão erradas** — a revisão é que

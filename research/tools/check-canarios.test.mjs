@@ -201,6 +201,71 @@ const CASOS = [
     canarios: [canario({ familia: 'presente', sustenta: ['G900-01'] })],
     esperado: /só prova que os ids EXISTEM/,
   },
+
+  // ── a quarta família: `presente-escondido` ────────────────────────────────
+  //
+  // Ela cobra DUAS coisas em direções opostas, e os casos abaixo vêm em trio
+  // por isso: a busca cega tem de continuar cega, a recuperação tem de achar, e
+  // o caso de controle tem de passar. Um checker que só soubesse dizer "achei"
+  // passaria no primeiro e reprovaria o segundo; um que só soubesse dizer "não
+  // achei", o contrário.
+  {
+    // `treadmills` não casa `treadmill` por substring, e casa por RAIZ. É o
+    // mecanismo do caso Q05 (`six times` × `six days a week`) em miniatura.
+    nome: 'CONTROLE: escondido que a recuperação encontra por raiz',
+    canarios: [canario({
+      familia: 'presente-escondido',
+      sustenta: ['G900-02'],
+      frases: ['treadmill'],
+      buscaCega: { descricao: 'plural que o literal não casa', termos: ['treadmills'] },
+    })],
+    aprova: true,
+  },
+  {
+    nome: 'escondido que a busca cega já acha sozinha deixou de medir recuperação',
+    canarios: [canario({
+      familia: 'presente-escondido',
+      sustenta: ['G900-02'],
+      frases: ['treadmill'],
+      buscaCega: { descricao: 'acha literal', termos: ['treadmill'] },
+    })],
+    esperado: /DEIXOU DE SER ESCONDIDO/,
+  },
+  {
+    nome: 'escondido que a recuperação não alcança acusa a camada de busca, não a base',
+    canarios: [canario({
+      familia: 'presente-escondido',
+      sustenta: ['G900-02'],
+      frases: ['treadmill'],
+      buscaCega: { descricao: 'termo sem ponte nenhuma', termos: ['zumbizinho'] },
+    })],
+    esperado: /RECUPERAÇÃO REGREDIU[\s\S]*NÃO saia comprando fonte nova/,
+  },
+  {
+    nome: 'escondido sem buscaCega é recusado — seria um presente comum',
+    canarios: [canario({ familia: 'presente-escondido', sustenta: ['G900-02'], frases: ['treadmill'] })],
+    esperado: /exige buscaCega\.termos/,
+  },
+  {
+    nome: 'chave inventada em buscaCega.filtro é recusada',
+    canarios: [canario({
+      familia: 'presente-escondido',
+      sustenta: ['G900-02'],
+      frases: ['treadmill'],
+      buscaCega: { termos: ['treadmills'], filtro: { autor: 'vena' } },
+    })],
+    esperado: /buscaCega\.filtro: chave "autor" não existe/,
+  },
+  {
+    nome: 'modo com typo em buscaCega.filtro é recusado',
+    canarios: [canario({
+      familia: 'presente-escondido',
+      sustenta: ['G900-02'],
+      frases: ['treadmill'],
+      buscaCega: { termos: ['treadmills'], filtro: { modo: 'prescrição' } },
+    })],
+    esperado: /buscaCega\.filtro: modo "prescrição" fora do enumerado/,
+  },
   {
     // O grep é o único campo de texto livre e o único que não era conferido.
     // `kreatin` em vez de `creatin` deixava o canário em zero, com ✓ e exit 0.

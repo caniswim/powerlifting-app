@@ -17,18 +17,47 @@
  * e "está lá e não foi achado" governa consertos opostos e é a mais fácil de
  * errar.
  *
+ * ─────────────────────────────────────────────────────────────────────────────
+ * O QUE MUDOU EM 09/08/2026, E POR QUÊ
+ *
+ * A `MEDICAO-02.md` mediu que **7 de 7** respostas não-`bem` falharam pelo mesmo
+ * defeito: declararam ausente o que a base tem, com id e `param` na mão. O
+ * `--grep` era regex literal sobre `claim` e `verbatim`, e esse é exatamente o
+ * instrumento que erra `six days a week` quando se digitou `six times`.
+ *
+ * Quatro coisas entraram, todas em `busca.mjs`, e nenhuma delas pede esforço do
+ * agente:
+ *
+ *   1. o literal passou a casar TODO campo (inclusive `params.name`, onde
+ *      `freq_supino` mora) — e o que casou fora da prosa sai numa seção própria,
+ *      para nenhuma contagem antiga mudar em silêncio;
+ *   2. resultado POBRE ou VAZIO dispara a vizinhança: busca por raiz e por
+ *      número, ancorada nos poucos resultados literais;
+ *   3. a vizinhança vem com os termos que o CANAL usa naquele tópico, porque o
+ *      problema é não saber a palavra;
+ *   4. com filtro ativo, cada filtro é removido em separado — e os de segurança
+ *      também são removidos TODOS JUNTOS, porque no caso Q11 tirar um por vez
+ *      não revela nada (a claim é barrada pelo outro) e a saída diria, com ar de
+ *      rigor, que o filtro não escondia coisa alguma.
+ *
  * Uso:
  *   node research/tools/check-evidence.mjs V014-03 V052-11 …
  *   node research/tools/check-evidence.mjs --grep "training max"
+ *   node research/tools/check-evidence.mjs --busca "quanto baixar o peso por RPE"
  *   node research/tools/check-evidence.mjs --topic profundidade --modo prescricao
  *   node research/tools/check-evidence.mjs --topic agacho --limit 0   # sem corte
  *   node research/tools/check-evidence.mjs --genero review-de-programa --modo prescricao
+ *   node research/tools/check-evidence.mjs --vocab frequencia
  */
 
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { GENEROS, carregarGeneroPorRef } from './kb.mjs';
+import { GENEROS, carregarGeneroPorRef, carregarTopicos } from './kb.mjs';
+import {
+  recuperar, indexar, vocabularioDoTopico, carregarVocabulario,
+  PISO_POBRE, TETO_VIZINHANCA, DETALHE_VIZINHANCA,
+} from './busca.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const EXTRACT = join(ROOT, 'research/extract');
@@ -38,11 +67,24 @@ const arg = (flag) => {
   return i >= 0 ? process.argv[i + 1] : null;
 };
 
-const grepTermo = arg('--grep');
 const topico = arg('--topic');
 const modo = arg('--modo');
 const scope = arg('--scope');
 const tier = arg('--tier');
+
+/**
+ * `--busca` é `--grep` com o piso no infinito: a vizinhança sai SEMPRE, mesmo
+ * que o literal já tenha devolvido muito. Existe porque as duas perguntas são
+ * diferentes — `--grep` pergunta *"quem diz exatamente isto?"* e `--busca`
+ * pergunta *"do que a base fala quando eu falo assim?"* — e porque um agente
+ * que já desconfia de estar procurando a palavra errada não deveria ter de
+ * fingir um resultado pobre para conseguir ajuda.
+ */
+const buscaTermo = arg('--busca');
+const grepTermo = arg('--grep') ?? buscaTermo;
+const PISO = buscaTermo && !arg('--grep') ? Infinity : Number(arg('--piso') ?? PISO_POBRE);
+const VIZINHOS = Number(arg('--vizinhos') ?? TETO_VIZINHANCA);
+const vocabPedido = arg('--vocab');
 
 /**
  * `--genero` filtra pela propriedade do VÍDEO, não da claim, resolvendo `src`
@@ -148,18 +190,50 @@ if (ids.length > 0) {
   }
 }
 
+const VOCAB = carregarVocabulario(ROOT);
+
+// ── `--vocab <topico>`: o índice escrito à mão, mais o que o corpus mostra ────
+//
+// Duas listas lado a lado de propósito. A de cima é julgamento humano com nota
+// de procedência; a de baixo é contagem. Quando as duas discordam, é a de cima
+// que está velha — e é assim que se descobre que uma seção precisa de revisão.
+if (vocabPedido) {
+  const TOPICOS = carregarTopicos(ROOT);
+  if (!TOPICOS.has(vocabPedido)) {
+    console.error(`--vocab "${vocabPedido}" não é tópico do vocabulário fechado do PROTOCOLO-EXTRACAO.md`);
+    process.exit(2);
+  }
+  const e = VOCAB.entradas.find((x) => x.topico === vocabPedido);
+  console.log(`\nVOCABULÁRIO de "${vocabPedido}"\n`);
+  if (e) {
+    console.log(`  escrito à mão (research/kb/VOCABULARIO.md):`);
+    console.log(`     usa .......: ${e.usa.map((t) => `\`${t}\``).join(' · ')}`);
+    if (e.naoUsa.length) console.log(`     NÃO usa ...: ${e.naoUsa.map((t) => `\`${t}\``).join(' · ')}  (casam zero na base — a nota do arquivo diz por quê)`);
+  } else {
+    console.log('  research/kb/VOCABULARIO.md ainda NÃO tem seção para este tópico');
+    console.log('  (64 dos 74 tópicos não têm; a lista abaixo é derivada e não substitui a leitura)');
+  }
+  const v = vocabularioDoTopico(indexar(claims), vocabPedido, 16, new Set([...TOPICOS].flatMap((t) => t.split('-'))));
+  console.log(`\n  derivado do corpus agora (${v.claims} claims neste tópico):`);
+  console.log(`     termos ....: ${v.unigramas.map((x) => `${x.termo}(${x.claims})`).join(' ')}`);
+  console.log(`     expressões : ${v.bigramas.map((x) => `${x.termo}(${x.claims})`).join(' ')}\n`);
+  process.exit(0);
+}
+
 const filtrando = grepTermo || topico || modo || scope || tier || genero;
 if (filtrando) {
-  const rx = grepTermo ? new RegExp(grepTermo, 'i') : null;
-  const achados = claims.filter(
-    (c) =>
-      (!rx || rx.test(c.claim ?? '') || rx.test(c.verbatim ?? '')) &&
-      (!topico || (c.topic ?? []).includes(topico)) &&
-      (!modo || c.modo === modo) &&
-      (!scope || c.scope === scope) &&
-      (!tier || c.tier === tier) &&
-      (!genero || GENERO_POR_REF.get(c.src) === genero),
-  );
+  const casarGenero = (c, v) => GENERO_POR_REF.get(c.src) === v;
+  const r = recuperar(claims, {
+    grep: grepTermo,
+    filtros: {
+      topic: topico, modo, scope, tier, genero,
+    },
+    casarGenero,
+    piso: PISO,
+    teto: VIZINHOS,
+    vocabulario: VOCAB.entradas,
+  });
+  const achados = r.literal;
   const filtro = [
     grepTermo && `/${grepTermo}/i`,
     topico && `topic=${topico}`,
@@ -231,21 +305,135 @@ if (filtrando) {
     );
   };
 
-  console.log(`\n${achados.length} claim(s) para ${filtro}:\n`);
+  const linha = '━'.repeat(74);
+  const compacto = (c) => {
+    const g = GENERO_POR_REF.get(c.src);
+    const p = (c.params ?? []).map((x) => `${x.name}=${x.value}`).join(' ');
+    return `    ${c.id.padEnd(9)} ${String(c.scope ?? '—').padEnd(7)} ${String(c.modo ?? '—').padEnd(21)} ${String(g ?? '—').padEnd(18)} ${(c.claim ?? '').slice(0, 74)}${p ? `  [${p.slice(0, 40)}]` : ''}`;
+  };
+
+  console.log(`\n${achados.length} claim(s) para ${filtro}:`);
+  if (grepTermo && r.foraDaProsa.length > 0) {
+    console.log(
+      `  (${r.prosa.length} casaram em claim/verbatim — a contagem que os relatórios antigos citam — e\n`
+      + `   ${r.foraDaProsa.length} casaram SÓ em params/tópico, que o --grep de antes não olhava. As duas estão listadas.)`,
+    );
+  }
+  console.log('');
   if (cortou) console.log(banner('SAÍDA TRUNCADA'));
   for (const c of mostrados) console.log(mostrar(c));
   if (cortou) console.log(banner('SAÍDA TRUNCADA — fim da amostra'));
 
-  // Zero resultado NÃO é prova de ausência — é prova de que este vocabulário não
-  // acha. Quem lê isto tende a concluir a coisa errada, então o aviso vem junto.
-  if (achados.length === 0) {
-    console.log('  (zero resultados diz que ESTE termo não acha, não que o assunto está ausente —');
-    console.log('   tente inglês, gíria, e o termo do canal antes de declarar lacuna de conteúdo)\n');
+  /**
+   * ── VAZIO E POBRE, SEPARADOS EM VOZ ALTA ──────────────────────────────────
+   *
+   * `MEDICAO-02` §2.2: `nao-encontravel` e `conteudo-ausente` mandam consertos
+   * OPOSTOS — um manda buscar melhor, o outro manda comprar fonte. Quatro das
+   * sete respostas ruins mandariam a próxima rodada comprar fonte que já se
+   * tem, e §4.4 já orçou uma rodada inteira contra o sintoma errado. Antes
+   * daqui, zero e quatro tinham a mesma cara na tela.
+   */
+  if (r.pobre) {
+    const titulo = r.vazio
+      ? 'RESULTADO VAZIO — este VOCABULÁRIO não acha. Não é o mesmo que ausência.'
+      : `RESULTADO POBRE — ${achados.length} de ${claims.length}, abaixo do piso de ${r.piso}.`;
+    console.log(`\n${linha}\n  ⚠  ${titulo}`);
+    console.log(r.vazio
+      ? '     Zero é o que uma palavra errada produz, e é indistinguível de ausência aqui.\n'
+        + '     Precedente (MEDICAO-02): as duas buscas cegas medidas devolveram 4 e 2, não\n'
+        + '     zero, e as duas foram lidas como "vi o assunto". Leia a vizinhança antes de\n'
+        + '     escrever lacuna de conteúdo.'
+      : '     Precedente (MEDICAO-02): `six times` devolveu 4, a resposta concluiu que a base\n'
+        + '     só tinha log pessoal, e as duas claims GERAL+prescricao estavam sob `six days a\n'
+        + '     week`. Poucos resultados são a BEIRADA do assunto, não o assunto.');
+    console.log(linha);
+
+    if (r.expansao.length > 0) {
+      console.log('\n  A consulta foi EXPANDIDA pelo research/kb/VOCABULARIO.md:');
+      for (const e of r.expansao) {
+        console.log(`     ## ${e.topico}  (casou \`${e.gatilho}\`)  →  ${e.termos.map((t) => `\`${t}\``).join(' · ')}`);
+      }
+      console.log('     (termos emprestados entram com peso baixo: eles desempatam, não decidem)');
+    }
+
+    if (r.relaxada.length > 0) {
+      console.log(`\n  VIZINHANÇA — ${r.relaxada.length} claim(s) por raiz e por número, ordenadas por raridade`);
+      console.log('  do termo, proximidade de tópico e MESMO VÍDEO. As primeiras vêm inteiras; o resto');
+      console.log('  é índice — resolva o id que interessar. NENHUM filtro de modo/scope foi aplicado aqui.\n');
+      r.relaxada.slice(0, DETALHE_VIZINHANCA).forEach((x, i) => {
+        const casou = x.casou.slice(0, 6).join(', ') + (x.casou.length > 6 ? ` …+${x.casou.length - 6}` : '');
+        console.log(`  ${String(i + 1).padStart(2)}º  casou: ${casou}${x.perto.length ? `  ·  ${x.perto.join('  ·  ')}` : ''}`);
+        console.log(`      ${mostrar(x.c).trimEnd().split('\n').join('\n      ')}\n`);
+      });
+      if (r.relaxada.length > DETALHE_VIZINHANCA) {
+        console.log(`  ${DETALHE_VIZINHANCA + 1}º–${r.relaxada.length}º, em índice:`);
+        for (const x of r.relaxada.slice(DETALHE_VIZINHANCA)) console.log(compacto(x.c));
+        console.log('');
+      }
+    }
+
+    /**
+     * A Q19 parou DOZE IDS ANTES da claim que respondia, no mesmo vídeo que já
+     * estava citando. Estas linhas são a página ao lado — ±3 ids no mesmo `src`
+     * a partir do que já está na tela. Sai em índice porque o valor delas é
+     * dizer QUAL id abrir, não despejar o conteúdo.
+     */
+    if (r.vizinhosDeArquivo.length > 0) {
+      console.log(`\n  A PÁGINA AO LADO — ${r.vizinhosDeArquivo.length} claim(s) vizinhas, no mesmo vídeo, a até 3 ids`);
+      console.log('  do que apareceu acima. A Q19 da MEDICAO-02 parou doze ids antes da resposta,');
+      console.log('  no mesmo vídeo que já estava citando.\n');
+      for (const v of r.vizinhosDeArquivo) console.log(`${compacto(v.c)}   ← ao lado de ${v.deQuem}`);
+    }
+
+    for (const v of r.vizinhanca) {
+      const e = VOCAB.entradas.find((x) => x.topico === v.topico);
+      console.log(`\n  O QUE O CANAL DIZ EM "${v.topico}" (${v.claims} claims) — a palavra que você não adivinha:`);
+      console.log(`     termos ....: ${v.unigramas.map((x) => `${x.termo}(${x.claims})`).join(' ')}`);
+      console.log(`     expressões : ${v.bigramas.map((x) => `${x.termo}(${x.claims})`).join(' ')}`);
+      console.log(e
+        ? `     índice ....: research/kb/VOCABULARIO.md ## ${v.topico} — leia a nota, ela diz por que a busca ingênua falha aqui`
+        : `     índice ....: research/kb/VOCABULARIO.md NÃO cobre "${v.topico}" ainda (10 dos 74 tópicos têm seção)`);
+    }
+    console.log('');
+  }
+
+  /**
+   * ── O FILTRO COMO SUSPEITO (o caso Q11) ───────────────────────────────────
+   *
+   * A melhor resposta de disciplina do lote virou `parcial` porque
+   * `--modo prescricao --scope GERAL` escondeu V033-03/04/05, que moram em
+   * PESSOAL + `fato`. O filtro de segurança é o mesmo filtro de recuperação.
+   * Ele continua certo para decidir o que vira treino, e continua errado para
+   * decidir o que EXISTE — então aqui ele é sempre reportado, e o banner grande
+   * sai quando o resultado é pobre, que é quando alguém está prestes a escrever
+   * "a base não tem".
+   */
+  if (r.alargamento.length > 0) {
+    const grande = r.pobre;
+    if (grande) console.log(`${linha}\n  ⚠  O FILTRO É QUE ESTREITOU — não necessariamente a base.`);
+    else console.log('  filtros que estão escondendo material:');
+    for (const a of r.alargamento) {
+      const cmd = ['node research/tools/check-evidence.mjs', a.conjunto
+        ? [grepTermo && `--grep ${JSON.stringify(grepTermo)}`, topico && `--topic ${topico}`].filter(Boolean).join(' ')
+        : filtroCmd.replace(new RegExp(`--${a.filtro} \\S+`), '').replace(/\s+/g, ' ').trim()].join(' ');
+      console.log(a.conjunto
+        ? `     ${a.valor} JUNTOS: ${a.com} com eles, ${a.sem} sem eles — escondem ${a.revela.length} claim(s)`
+        : `     --${a.filtro} ${a.valor}: ${a.com} COM ele, ${a.sem} SEM ele — esconde ${a.revela.length} claim(s)`);
+      console.log(`        ${a.amostra.map((c) => `${c.id}(${c.scope}/${c.modo})`).join(' ')}${a.revela.length > a.amostra.length ? ` …+${a.revela.length - a.amostra.length}` : ''}`);
+      if (grande) console.log(`        sem eles: ${cmd}`);
+    }
+    if (grande) {
+      console.log('     REGRA: declaração de ausência não vale se a busca que a sustenta carregava');
+      console.log('     --modo ou --scope. Busque primeiro SEM filtro; classifique depois.');
+      console.log(linha);
+    }
+    console.log('');
   }
 }
 
 if (ids.length === 0 && !filtrando) {
-  console.error('nada a fazer: passe ids (V014-03) ou um filtro (--grep/--topic/--modo/--scope/--tier/--genero)');
+  console.error('nada a fazer: passe ids (V014-03), uma busca (--grep/--busca) ou um filtro'
+    + ' (--topic/--modo/--scope/--tier/--genero), ou --vocab <topico>');
   process.exit(2);
 }
 

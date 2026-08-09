@@ -43,6 +43,36 @@
  *                Se o ruído sumisse, a armadilha viraria uma pergunta obviamente
  *                sem resposta e pararia de armar.
  *
+ * ─────────────────────────────────────────────────────────────────────────────
+ * A QUARTA FAMÍLIA — `presente-escondido`, acrescentada em 09/08/2026
+ *
+ * As três de cima medem **fabricar**, **responder de fora** e **promover
+ * escopo**. Nenhuma mede o defeito que dominou a `MEDICAO-02`: **declarar
+ * ausente o que a base tem.** Sete de sete respostas não-`bem` falharam assim, e
+ * os 15 canários passaram todos — o instrumento estava cego para o modo de falha
+ * da rodada que ele mediu.
+ *
+ * `presente-escondido` é uma pergunta cuja resposta ESTÁ na base, sob vocabulário
+ * (ou atrás de um filtro) que o agente não vai adivinhar. Ela carrega a busca
+ * CEGA que a medição registrou — `six times`, `sets per muscle`,
+ * `--modo prescricao --scope GERAL` — e cobra DUAS coisas, em direções opostas:
+ *
+ *   1. a busca cega, LITERAL, continua não achando os ids. Se achar, o canário
+ *      deixou de medir esconderijo e virou um `presente` comum;
+ *   2. a busca cega, passada pela camada de recuperação de `busca.mjs`, ACHA
+ *      todos os ids dentro do teto que cabe na tela.
+ *
+ * Nenhum dos dois lados é derivado do outro: os termos são o que a medição
+ * registrou que o agente digitou, e os ids são o que o julgador confirmou que
+ * existia. Isso importa mais do que parece — o modo de falha nº 4 desta casa é
+ * a trava que compara um valor derivado contra o mesmo valor derivado e passa
+ * verde quando o alvo é apagado, e ele aconteceu três vezes num dia só.
+ *
+ * **Um `presente-escondido` que falha diz que a CAMADA DE RECUPERAÇÃO quebrou**,
+ * não que a base perdeu conteúdo. É a única coisa que vai avisar quando ela
+ * regredir — e sem ela a próxima rodada compra fonte que já se tem, que é o erro
+ * mais caro que um relatório de medição pode induzir.
+ *
  * Uso:
  *   node research/tools/check-canarios.mjs [--json] [--verbose] [--extract <dir>]
  *        [--canarios <arquivo>]
@@ -52,6 +82,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { TIERS, SCOPES, MODOS, FRAMES, carregarTopicos, carregarClaims, numerosDaClaim } from './kb.mjs';
+import { recuperar, indexar, carregarVocabulario, prosaDaClaim, TETO_VIZINHANCA } from './busca.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const arg = (f) => {
@@ -96,7 +127,13 @@ const CHAVES = new Set([
 const CAMPOS_CANARIO = new Set([
   'id', 'familia', 'pergunta', 'porque', 'esperado',
   'sustenta', 'numeros', 'frases', 'vazio', 'ruido', 'historia',
+  'buscaCega',
 ]);
+
+/** As chaves aceitas em `buscaCega` — mesmos nomes das opções da linha de
+ *  comando, porque é a linha de comando que o canário está encenando. */
+const CAMPOS_BUSCA_CEGA = new Set(['descricao', 'termos', 'filtro']);
+const CHAVES_FILTRO_CEGO = new Set(['topic', 'modo', 'scope', 'tier']);
 
 /**
  * Um filtro com typo nunca casa, fica em zero para sempre, e ZERO é exatamente o
@@ -198,8 +235,13 @@ const listar = (pred) => {
 
 const erros = [];
 const resultados = [];
-const FAMILIAS = new Set(['presente', 'impossivel', 'armadilha']);
+const FAMILIAS = new Set(['presente', 'presente-escondido', 'impossivel', 'armadilha']);
 const idsVistos = new Set();
+
+// O índice e o vocabulário são montados UMA vez: `recuperar` reindexaria as
+// 6.912 claims por canário, e um checker lento é um checker que sai do `check:kb`.
+const INDICE = indexar(claims);
+const VOCAB = carregarVocabulario(ROOT).entradas;
 
 for (const can of doc.canarios ?? []) {
   const onde = `canário ${can.id ?? '(sem id)'}`;
@@ -221,7 +263,7 @@ for (const can of doc.canarios ?? []) {
     }
   }
 
-  if (can.familia === 'presente') {
+  if (can.familia === 'presente' || can.familia === 'presente-escondido') {
     const ids = can.sustenta ?? [];
     if (ids.length === 0) erros.push(`${onde}: família "presente" exige sustenta com os ids que provam a resposta`);
     const mortos = ids.filter((i) => !porId.has(i));
@@ -279,6 +321,88 @@ for (const can of doc.canarios ?? []) {
       );
     }
     linha.detalhe = `${ids.length} id(s), ${(can.numeros ?? []).length} número(s), ${frases.length} frase(s)`;
+  }
+
+  if (can.familia === 'presente-escondido') {
+    const ids = can.sustenta ?? [];
+    const bc = can.buscaCega;
+    if (!bc?.termos?.length) {
+      erros.push(
+        `${onde}: família "presente-escondido" exige buscaCega.termos — a busca que a medição registrou. `
+          + 'Sem ela o canário vira um "presente" comum e para de medir recuperação.',
+      );
+    } else {
+      for (const k of Object.keys(bc)) {
+        if (!CAMPOS_BUSCA_CEGA.has(k)) erros.push(`${onde} buscaCega: campo "${k}" não existe (conhecidos: ${[...CAMPOS_BUSCA_CEGA].join(', ')})`);
+      }
+      const filtro = bc.filtro ?? {};
+      for (const [k, v] of Object.entries(filtro)) {
+        if (!CHAVES_FILTRO_CEGO.has(k)) erros.push(`${onde} buscaCega.filtro: chave "${k}" não existe (conhecidas: ${[...CHAVES_FILTRO_CEGO].join(', ')})`);
+        if (k === 'modo' && !MODOS.has(v)) erros.push(`${onde} buscaCega.filtro: modo "${v}" fora do enumerado`);
+        if (k === 'scope' && !SCOPES.has(v)) erros.push(`${onde} buscaCega.filtro: scope "${v}" fora do enumerado`);
+        if (k === 'tier' && !TIERS.has(v)) erros.push(`${onde} buscaCega.filtro: tier "${v}" fora do enumerado`);
+        if (k === 'topic' && !TOPICS.has(v)) erros.push(`${onde} buscaCega.filtro: tópico "${v}" fora do vocabulário fechado`);
+      }
+
+      const passaFiltro = (c) =>
+        Object.entries(filtro).every(([k, v]) => {
+          if (k === 'topic') return (c.topic ?? []).includes(v);
+          return c[k] === v;
+        });
+
+      const escondidos = [];
+      const naoRecuperados = [];
+      for (const termo of bc.termos) {
+        let rx;
+        try {
+          rx = new RegExp(termo, 'i');
+        } catch (e) {
+          erros.push(`${onde} buscaCega: termo "${termo}" não é regex válida — ${e.message}`);
+          continue;
+        }
+
+        // (1) A BUSCA CEGA CONTINUA CEGA. Literal, sobre a prosa — o `--grep` de
+        //     antes de 09/08/2026, que é o instrumento com que a falha foi
+        //     medida. Se ele passar a achar, o esconderijo acabou e o canário
+        //     precisa ser reescrito conscientemente.
+        const achouLiteral = claims.filter((c) => passaFiltro(c) && rx.test(prosaDaClaim(c))).map((c) => c.id);
+        const revelados = ids.filter((i) => achouLiteral.includes(i));
+        if (revelados.length > 0) escondidos.push(`"${termo}" já acha ${revelados.join(', ')} sozinho`);
+
+        // (2) A CAMADA DE RECUPERAÇÃO ACHA. É o que o agente veria na tela —
+        //     literal + vizinhança + o que o alargamento de filtro revela.
+        const r = recuperar(claims, {
+          grep: termo,
+          filtros: filtro,
+          idx: INDICE,
+          vocabulario: VOCAB,
+          teto: TETO_VIZINHANCA,
+        });
+        const faltando = ids.filter((i) => !r.idsMostrados.has(i));
+        if (faltando.length > 0) naoRecuperados.push({ termo, faltando });
+      }
+
+      if (escondidos.length > 0) {
+        linha.ok = false;
+        erros.push(
+          `${onde}: DEIXOU DE SER ESCONDIDO — ${escondidos.join('; ')}. `
+            + 'A busca ingênua passou a bastar, então este canário não mede mais a recuperação: '
+            + 'ele virou um "presente" comum. Reescreva-o com a busca cega de uma falha REAL, ou aposente-o.',
+        );
+      }
+      for (const { termo, faltando } of naoRecuperados) {
+        linha.ok = false;
+        erros.push(
+          `${onde}: A CAMADA DE RECUPERAÇÃO REGREDIU — a busca cega "${termo}" `
+            + `${Object.keys(filtro).length ? `(com ${Object.entries(filtro).map(([k, v]) => `--${k} ${v}`).join(' ')}) ` : ''}`
+            + `não devolve ${faltando.join(', ')} dentro das ${TETO_VIZINHANCA} primeiras.\n`
+            + '        ISTO NÃO É PERDA DE CONTEÚDO: os ids existem e o conteúdo deles foi conferido acima.\n'
+            + '        É a busca que parou de achar — conserte research/tools/busca.mjs ou\n'
+            + '        research/kb/VOCABULARIO.md, e NÃO saia comprando fonte nova.',
+        );
+      }
+      linha.detalhe += `, ${bc.termos.length} busca(s) cega(s)${Object.keys(filtro).length ? ' + filtro' : ''}`;
+    }
   }
 
   if (can.familia === 'impossivel' || can.familia === 'armadilha') {
@@ -354,7 +478,10 @@ if (JSON_OUT) {
 
 const porFamilia = (f) => resultados.filter((r) => r.familia === f).length;
 console.log(`\nCanários — ${resultados.length} em ${ARQUIVO.replace(`${ROOT}/`, '')}, recontados contra ${claims.length} claims`);
-console.log(`  presente ... ${porFamilia('presente')}   impossivel ... ${porFamilia('impossivel')}   armadilha ... ${porFamilia('armadilha')}`);
+console.log(
+  `  presente ... ${porFamilia('presente')}   presente-escondido ... ${porFamilia('presente-escondido')}   `
+  + `impossivel ... ${porFamilia('impossivel')}   armadilha ... ${porFamilia('armadilha')}`,
+);
 
 if (VERBOSE) {
   console.log('');

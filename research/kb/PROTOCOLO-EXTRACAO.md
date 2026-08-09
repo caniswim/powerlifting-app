@@ -471,6 +471,26 @@ Então, para toda claim com número:
    re-transcreve esses trechos com Whisper e confere. **Não conserte por conta
    própria** — chutar o que "devia" ser dito é exatamente o que a base não pode ter.
 
+### Duas armadilhas de `frame` que já custaram um passe de reparo
+
+**"Algo POR período" não é a magnitude sozinha.** *"4 horas de cardio por
+semana"* não é `4` com frame `horas` — isso é o que se escreve para *"treino de
+4 h"*, e as duas coisas passam a somar juntas para quem filtra por frame. O
+denominador tem de estar no `frame`, não só no `unit`: `horas_semana`,
+`horas_dia`, `min_semana`, `min_dia`, `lb_semana`, `x_semana`. **Se a sua unidade
+tem barra e não existe frame com o período dentro, pare e relate** — é gaveta
+faltando, e a base tem hoje 111 params exatamente assim (`SCHEMA.md`, "TAXA").
+
+**`value` é número.** A única exceção é `frame: rotulo`, onde `"5x5"` é o
+registro certo porque é um nome e não uma medida. Fração vira decimal com a
+fração preservada por escrito no `unit` — `"2/3"` com frame `pct_1RM` vira
+`66.7` com `unit: "% do 1RM (dois terços)"`. String em qualquer outro frame foge
+da escala fechada e de toda aritmética do checker, e ninguém percebe.
+
+E os dois que parecem duração e não são: **ano de calendário** é
+`ano_calendario` e não `anos` (2019 com frame de duração se lê como dois mil e
+dezenove anos), e **hora do relógio** é `hora_do_dia` e não `horas`.
+
 ## Negação — a outra superfície de risco
 
 Números não são o único ponto onde o ASR estraga sentido. **Um `n't` perdido

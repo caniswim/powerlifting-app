@@ -1,0 +1,51 @@
+{
+  "_leia": "CANDIDATO, VERMELHO DE PROPÓSITO — NÃO está no npm run check:kb. Escrito por um terceiro que não participou do conserto de 09/08/2026, sobre um caso que a MEDICAO-02 não usou. Roda com: node research/tools/check-canarios.mjs --canarios research/kb/CANARIOS-CANDIDATOS.json . Ele falha hoje: a camada de recuperação não devolve V038-07 nem V074-10 a partir de \"rest between sets\" nem de \"descanso entre séries\", que casam ZERO literal. Ele entra no CANARIOS.json no dia em que passar — canário vermelho de nascença dentro do build é como se desliga uma trava.",
+  "gerado": "2026-08-09 (auditoria independente da camada de recuperação)",
+  "baseNoMomento": {
+    "claims": 6909,
+    "tiers": {
+      "R": 6766,
+      "O": 143,
+      "E": 0,
+      "L": 0,
+      "I": 0,
+      "U": 0
+    },
+    "porPrefixoDeSrc": {
+      "R": 4947,
+      "G": 1819,
+      "IPF-TR2026": 143
+    },
+    "comoFoiContado": "node research/tools/check-claims.mjs, e as contagens por predicado pelo próprio check-canarios.mjs. Nenhum número aqui veio de memória."
+  },
+  "canarios": [
+    {
+      "id": "C20",
+      "familia": "presente-escondido",
+      "pergunta": "A base diz quanto tempo descansar entre séries, em minutos, e o que fazer com esse tempo?",
+      "porque": "Caso NOVO, escolhido por um terceiro e ausente da MEDICAO-02. O tópico fechado descanso-entre-series existe, V038-07 e V074-10 dão 5, 8 e 10 minutos com param tipado em frame min, e V074-23 é a única prescrição GERAL do assunto (cortar o descanso até o limite do desempenho, condicionada por V074-24). As duas maneiras óbvias de perguntar — rest between sets e descanso entre séries — casam ZERO literal.",
+      "esperado": "5 min em agacho/terra e 3 min em supino como prática, 8 a 10 min como possível ganho em série pesada, e a prescrição GERAL de cortar o descanso com a condição junto. Declarar que a base não tem número de descanso reprova.",
+      "sustenta": [
+        "V038-07",
+        "V074-10",
+        "V074-23"
+      ],
+      "frases": [
+        "resting 8 minutes instead of 5 minutes",
+        "cut down on your rest time"
+      ],
+      "numeros": [
+        5,
+        8,
+        10
+      ],
+      "buscaCega": {
+        "descricao": "as duas formas naturais de perguntar, uma em cada idioma; ambas casam zero literal",
+        "termos": [
+          "rest between sets",
+          "descanso entre séries"
+        ]
+      }
+    }
+  ]
+}

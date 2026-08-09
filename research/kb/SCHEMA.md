@@ -259,8 +259,11 @@ Todo número carrega unidade **e frame**. Unidade diz "kg"; frame diz *kg de qu�
 | `cm`, `mm`, `m`, `polegadas`, `pes`, `graus`, `bpm`, `pct_FCmax`, `mmHg` | medida física (`graus` é ângulo) |
 | `grau_C`, `grau_F` | temperatura |
 | `contagem`, `idade`, `n_amostra`, `escala_dor`, `escala_subjetiva`, `DOTS` | contagem e escala |
+| `ano_calendario` | ano do calendário: 2019, 2025. **Não é duração** — "2019" com frame `anos` se lê como dois mil e dezenove anos |
+| `indice_adimensional` | índice sem unidade cujo significado mora na prosa: BRI, R². **Não é `pct`** — um R² de 0,9 lido como 0,9 % erra por duas ordens de grandeza |
+| `horas_semana`, `horas_dia`, `min_semana`, `min_dia`, `lb_semana`, `MET_min_semana` | **TAXA** — algo por período. `4` com frame `horas` e `4` com frame `horas_semana` são coisas diferentes |
 | `ordinal` | posição numa sequência: semana 3, bloco 2, onda 1, tentativa 2, tier 2 |
-| `rotulo` | dígito que faz parte de um **nome**: 5/3/1, 5x5, Ph3, T1. Não soma, não converte |
+| `rotulo` | dígito que faz parte de um **nome**: 5/3/1, 5x5, Ph3, T1. Não soma, não converte. **É o único frame que admite `value` em string** |
 
 **A lista viva é a de `research/tools/kb.mjs`, não esta**, e as decisões de
 crescimento moram em `ENUMERADOS.md`. O enumerado cresceu cinco vezes, sempre
@@ -277,6 +280,46 @@ escreveu "fase um" por extenso para fugir dela, e `G019-20` declarou
 prescreve série nenhuma. A trava fabricando a medida que ela existe para
 proteger é o pior modo de falha possível deste esquema, e vale mais uma gaveta do
 que uma medida inventada.
+
+### `value` — número, e `string` só em `rotulo`
+
+Decidido em 2026-08-09, no passe que moveu os params de gaveta errada. `value`
+em string foge de toda aritmética do checker: da escala fechada do frame, da
+comparação com o número da prosa, de qualquer soma futura. Havia onze na base.
+
+- **Fração vira número, e a fração fica escrita no `unit`.** `"2/3"` com frame
+  `pct_1RM` virou `66.7` com `unit: "% do 1RM (dois terços)"`. Nada se perde: o
+  `verbatim` continua dizendo `2/3`, o `unit` repete a fração por escrito, e o
+  número passa a caber na escala do frame. Foram oito (`V001-02`, `V002-19`,
+  `V081-15`, `V081-26` ×2, `V087-18`, `V091-19`, `V096-05`).
+- **Em `rotulo` a string é o registro CERTO, e é o único lugar.** `"5x5"` não é
+  medida, e `rotulo` é exatamente a gaveta que declara isso. O checker já extrai
+  os dígitos de dentro do valor textual para satisfazer a regra de procedência
+  — sem isso, `G019-20`/`G020-01`/`G020-41` voltariam a declarar `series: 5,
+  reps: 5` para uma frase que não prescreve série nenhuma, que é o defeito que
+  `rotulo` existe para impedir. Há caso de aceitação para isso em
+  `check-claims.test.mjs`.
+
+### TAXA — a família que faltava, e a metade dela que continua aberta
+
+`4 h/semana` estava gravado como `4` com frame `horas`, ao lado de `treino de
+3 h` gravado como `3` com frame `horas`. O `/semana` morava só no `unit`, que é
+texto livre; o `frame`, que é o que o consumidor lê, dizia "duração". É o bug dos
+gramas em `kg` outra vez: **quando falta a gaveta do denominador, o denominador
+cai fora.**
+
+As seis gavetas acima fecham as unidades de tempo e de peso corporal. **Falta a
+metade maior**, e ela está declarada aqui em vez de virar promessa em lista de
+tarefas: `node research/tools/params-gaveta-errada.mjs` acha **111 params em 69
+claims** com `unit` em barra e frame de magnitude pura — 68 em `series`
+(*"séries/semana"*), 18 em `lb`, 16 em `contagem`, 9 em `reps`.
+
+Eles não foram movidos de propósito, e o motivo é uma trava e não preguiça:
+`series`, `reps` e `lb` estão em `FRAMES_DOSE`. Abrir `series_semana` e mover 68
+params para lá **desliga em silêncio** o aviso de *"prescrição com dose e sem
+`conditions`"* para todos eles — trocaria um defeito de tipagem por um buraco na
+trava mais cara da base. O passe que fechar esta família tem de mexer em
+`FRAMES_DOSE` no mesmo commit.
 
 **Frame não decide relevância; `topic` decide.** Que exista `grau_F` não
 autoriza extrair a temperatura do frango — autoriza que, se a claim existir, o

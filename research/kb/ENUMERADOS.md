@@ -139,6 +139,74 @@ cai "10 % abaixo do abridor". Não abri `pct_referencia` — ver §5.
 
 ---
 
+## 3-bis. `frame` — oito gavetas de 2026-08-09 (onda 2), e a metade que ficou aberta
+
+Escrito no passe que moveu os params que `node research/tools/params-gaveta-errada.mjs`
+enumerava. A regra do §1 vale inteira aqui: **frame na dúvida, aceita** — e as
+oito abaixo existem porque, sem elas, o número já estava numa gaveta que mentia.
+
+| frame | resolve | evidência do problema |
+|---|---|---|
+| `ano_calendario` | 2019, 2024, 2025 | seis params gravavam ano com frame `anos` ou `contagem`. `V175-40` tem o ano e três cargas na mesma claim: a duração falsa fica encostada em medida de verdade |
+| `indice_adimensional` | BRI (4,5–5,5), R² (0–1) | cinco params em `pct`. Um R² de 0,9 lido como 0,9 % erra por duas ordens de grandeza, e `V044-07` põe um índice corporal na mesma gaveta de percentual de carga |
+| `horas_semana`, `horas_dia`, `min_semana`, `min_dia`, `lb_semana`, `MET_min_semana` | **taxa** — algo por período | `4 h/semana` gravado como `4` com frame `horas`, encostado em `treino de 3 h` gravado como `3` com frame `horas`. `V102-25` gravava 12200 MET-min/semana como frame `min` — 203 horas por semana, que não cabe numa semana |
+
+**Uma gaveta por par unidade × período, e não um `taxa` genérico.** Um frame que
+dissesse só "por semana" voltaria a achatar `4 h/semana`, `4 sessões/semana` e
+`4 lb/semana` — o mesmo achatamento que o §1 chama de contorno de trava. E
+`horas_semana` convive com `min_semana` pela mesma razão que `horas` já convivia
+com `min`: converter é trabalho de conversor declarado, não de quem extrai. O
+sufixo copia o `x_semana` que já existia, para que a família se reconheça sozinha.
+
+### O que ficou aberto, e por que não é preguiça
+
+`params-gaveta-errada.mjs` tinha uma regra de taxa **estreita** — olhava só
+`frame ∈ {min, seg, horas}` — e por isso reportava 19. A regra larga (`unit` tem
+barra e `frame` não carrega período) acha **111 params em 69 claims**: 68 em
+`series` (*"séries/semana"* gravado como `series`), 18 em `lb`, 16 em `contagem`,
+9 em `reps`. A regra do detector foi alargada no mesmo passe, porque **regra
+estreita que reporta número pequeno é pior que regra ausente: ela faz o passe
+parecer terminado.**
+
+Os 111 **não** foram movidos, e a razão é uma trava:
+
+> `series`, `reps` e `lb` estão em **`FRAMES_DOSE`**. Abrir `series_semana` e
+> mover 68 params para lá os tira da lista de dose e **desliga em silêncio** o
+> aviso de *"prescrição com dose e sem `conditions`"* para todos eles.
+
+Trocar um defeito de tipagem pelo desligamento da trava mais cara da base é
+exatamente o modo de falha nº 2 desta casa, com o sinal invertido. O passe que
+fechar esta família tem de mexer em `FRAMES_DOSE` no mesmo commit, e é passe
+próprio.
+
+### `value` string — decidido: número, e `rotulo` é a única exceção
+
+Onze params guardavam string. Duas famílias, dois destinos opostos:
+
+- **Fração vira decimal, com a fração preservada por escrito no `unit`.** `"2/3"`
+  com frame `pct_1RM` virou `66.7` com `unit: "% do 1RM (dois terços)"`. O
+  `verbatim` continua dizendo `2/3` e nada se perde; o que se ganha é o número
+  caber na escala fechada do frame e poder ser comparado. Oito params.
+- **Em `rotulo`, a string é o registro certo.** `"5x5"` não mede nada, e `rotulo`
+  é a gaveta que declara isso — o `check-claims.mjs` já extrai os dígitos de
+  dentro do valor textual para satisfazer a regra de procedência, e há caso de
+  aceitação para isso no teste dele. Forçar `5x5` a virar número seria fabricar
+  a medida que `rotulo` foi aberto para impedir, que é literalmente o defeito de
+  `G019-20`. Três params, e ficam.
+
+### Dois params que saíram
+
+- `V169-42` `preco = 300 USD`: dinheiro está declarado fora de escopo no §5
+  deste arquivo. O frame `contagem` que ele ocupava era o contorno.
+- `V013-15` `conviccao = 100 %`: "100 % convicto" não mede coisa nenhuma. O
+  número não aparece na `claim`, só no `verbatim`, então nada se perdeu.
+
+`V166-05` continua de pé e **não** é gaveta errada: a claim inteira é uma nota de
+artefato de extração (*"o número que a transcrição registra é 45 lb, valor
+implausível"*) ocupando gaveta de `fato`. Remover claim não é passe de enumerado.
+
+---
+
 ## 4. `topic` — seis gavetas novas
 
 | tópico | claims semeadas | por que passou |

@@ -27,6 +27,20 @@
     "    o placar subestima a base.",
     "  · armadilha julgada como 'responde bem'   -> a resposta serviu um número de",
     "    escopo errado como se fosse prescrição. É o defeito mais caro da base.",
+    "  · presente-escondido julgado como 'não responde' -> a CAMADA DE RECUPERAÇÃO",
+    "    está quebrada. Não é lacuna de conteúdo: os ids estão em `sustenta` e o",
+    "    check-canarios.mjs acabou de reprovar o conteúdo deles. Conserte",
+    "    research/tools/busca.mjs ou research/kb/VOCABULARIO.md — e NÃO compre",
+    "    fonte nova. Foi o que a MEDICAO-02 quase induziu: 4 das 7 respostas",
+    "    ruins teriam mandado orçar aquisição contra material que já se tem.",
+    "",
+    "A QUARTA FAMÍLIA (C16–C19, 09/08/2026). `presente-escondido` é pergunta cuja",
+    "resposta ESTÁ na base, sob vocabulário ou atrás de filtro que o agente não",
+    "adivinha. Cada uma carrega em `buscaCega` a busca que a MEDICAO-02 registrou",
+    "que o agente digitou de verdade, e o checker cobra os dois lados: a busca cega",
+    "continua não achando no literal, E a camada de recuperação acha. As três",
+    "famílias antigas medem fabricar, responder de fora e promover escopo; nenhuma",
+    "media ESCONDER, que foi a causa de 7 das 7 respostas não-`bem`.",
     "",
     "Regra de manutenção: canário que este arquivo não consegue provar não entra.",
     "Todo 'presente' precisa de `numeros` ou de `frases` — id vivo com conteúdo",
@@ -381,6 +395,114 @@
           ]
         },
         "minimo": 200
+      }
+    },
+    {
+      "id": "C16",
+      "familia": "presente-escondido",
+      "pergunta": "A base recomenda, para o público geral e não só para ele, supinar seis dias por semana? Se sim, sob que condições?",
+      "porque": "V170-34 e V175-53 são `GERAL` + `prescricao`, com param de frequência 6 e com as ressalvas gravadas em registros separados (V170-36, V170-44, V175-54, V175-56). Na MEDICAO-02 a Q05 buscou `six times` — 4 resultados, todos PESSOAL — e nunca `six days a week`, que devolve 6. Concluiu que a base só tinha log pessoal e disse isso a um atleta com o peitoral rompido há quatro meses. É a única pergunta `catastrofica` que saiu `responde-mal`, e o caso canônico do SCHEMA.md.",
+      "esperado": "Sim, e as duas claims saem com as condições que as desarmam. Responder que a base só tem prática pessoal, ou que não há prescrição GERAL de alta frequência de supino, reprova — e é exatamente o que aconteceu em 09/08/2026.",
+      "sustenta": [
+        "V170-34",
+        "V175-53"
+      ],
+      "frases": [
+        "six days a week",
+        "sub maximal",
+        "seis dias por semana"
+      ],
+      "numeros": [
+        6
+      ],
+      "buscaCega": {
+        "descricao": "o que a Q05 de fato digitou, e a variante em português que também não acha sozinha",
+        "termos": [
+          "six times",
+          "6 vezes por semana"
+        ]
+      }
+    },
+    {
+      "id": "C17",
+      "familia": "presente-escondido",
+      "pergunta": "Quantas séries de isolamento por músculo a base recomenda?",
+      "porque": "V010-13 é `GERAL` + `prescricao` com `series_isolamento_min/max = 1/3`. Na MEDICAO-02 a Q19 buscou `sets per muscle` (2 resultados) e declarou que o polo 1–3 não existia na base como prescrição por músculo. V010-13 está DOZE IDS DEPOIS de V010-01, no mesmo vídeo que a resposta já estava citando. `per muscle`, sem a primeira palavra, devolve 4.",
+      "esperado": "1 a 3 séries por músculo, com as condições V010-14 e V010-02. Declarar o polo inexistente reprova.",
+      "sustenta": [
+        "V010-13"
+      ],
+      "frases": [
+        "one to three per muscle",
+        "1 a 3 séries por músculo"
+      ],
+      "numeros": [
+        1,
+        3
+      ],
+      "buscaCega": {
+        "descricao": "a busca da Q19, palavra por palavra",
+        "termos": [
+          "sets per muscle"
+        ]
+      }
+    },
+    {
+      "id": "C18",
+      "familia": "presente-escondido",
+      "pergunta": "A base diz quanto tempo deve durar um ciclo de treino, em semanas?",
+      "porque": "V070-20 dá 12–16 semanas com param tipado e V108-08 prescreve só mudar no fim do ciclo. Na MEDICAO-02 a Q16 declarou que nenhuma claim definia ciclo em semanas, e nunca tentou `training cycle` — que tem 86 claims.",
+      "esperado": "12 a 16 semanas (V070-20), e a regra de só trocar exercício no fim do ciclo (V108-08). Declarar que a base não define duração de ciclo reprova.",
+      "sustenta": [
+        "V070-20",
+        "V108-08"
+      ],
+      "frases": [
+        "12 to 16 week training cycle",
+        "end of a training cycle"
+      ],
+      "numeros": [
+        12,
+        16
+      ],
+      "buscaCega": {
+        "descricao": "a pergunta escrita como um humano a escreve, que casa literalmente 1 claim e nenhuma das duas",
+        "termos": [
+          "training cycle length"
+        ]
+      }
+    },
+    {
+      "id": "C19",
+      "familia": "presente-escondido",
+      "pergunta": "Se eu errar o RPE alvo para cima, quantos por cento de peso eu tiro da barra?",
+      "porque": "V033-03/04/05 dão 1 RPE ≈ 2–3 % de peso, e 3 % no agacho e no terra. As três são `PESSOAL` + `fato`. Na MEDICAO-02 a Q11 filtrou `--modo prescricao --scope GERAL` — a trava de segurança correta — e escreveu 'A BASE NÃO TEM NÚMERO PARA QUANTO BAIXAR'. Este canário não é de vocabulário: o filtro de segurança É o filtro de recuperação, e nenhuma palavra teria salvo aquela busca. Note que remover UM filtro por vez não revela nada (a claim é barrada pelo outro), o que torna este o caso que a versão ingênua do diagnóstico de filtro deixaria passar.",
+      "esperado": "2–3 % por ponto de RPE, servido COM a marca de que é prática pessoal declarada como fato, e não prescrição geral. Declarar que a base não tem o número reprova.",
+      "sustenta": [
+        "V033-03",
+        "V033-04",
+        "V033-05"
+      ],
+      "frases": [
+        "2 to 3% in weight",
+        "ponta alta dessa faixa",
+        "800 lb"
+      ],
+      "numeros": [
+        2,
+        3,
+        25,
+        800
+      ],
+      "buscaCega": {
+        "descricao": "a consulta certa, com a trava de segurança da Q11 ligada por cima",
+        "termos": [
+          "2 a 3%"
+        ],
+        "filtro": {
+          "modo": "prescricao",
+          "scope": "GERAL"
+        }
       }
     }
   ]

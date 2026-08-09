@@ -249,6 +249,51 @@ export const FRAMES = new Set([
   'l',                  // litro. `V112-22` gravou "meio litro" como `kg`.
   'xicara',             // medida culinária. Alternativa era o agente converter para ml — e conversão de agente é o que este enumerado existe para impedir.
   'pes',                // pé/ft. Mesma razão: sem a gaveta, o agente converte para cm sozinho.
+
+  // ── Ampliação de 2026-08-09 (onda 2), no passe que moveu os 52 params em
+  // gaveta errada. Justificativa em ENUMERADOS.md §7; a lista de origem sai de
+  // `node research/tools/params-gaveta-errada.mjs`.
+
+  /** Ano do CALENDÁRIO — 2019, 2024, 2025. Não é duração (`anos`) e não é
+   *  contagem: "2019" com frame `anos` se lê como dois mil e dezenove anos, e
+   *  qualquer aritmética de duração sobre ele é lixo. Seis params da base
+   *  estavam assim (`V013-16`, `V019-02`, `V122-01`, `V152-24`, `V175-08`,
+   *  `V175-40`), e dois deles moram na mesma claim que uma duração de verdade
+   *  — que é como a confusão passa despercebida. */
+  'ano_calendario',
+
+  /** Índice ADIMENSIONAL cujo significado mora na prosa da claim: BRI (índice
+   *  de redondeza corporal, faixa saudável 4,5–5,5) e R² (0–1). Cinco params
+   *  estavam em `pct`, e um R² de 0,9 lido como 0,9 % é errado por duas ordens
+   *  de grandeza. NÃO tem escala fechada de propósito: BRI e R² são
+   *  adimensionais em faixas diferentes, e uma escala única aqui reprovaria um
+   *  dos dois. */
+  'indice_adimensional',
+
+  // TAXA — "algo por período". Família que a lista à mão do ESTADO.md não tinha
+  // e que o detector encontrou: 19 params gravavam `4 h/semana` como `4` com
+  // frame `horas`, ao lado de `treino de 3 h` gravado como `3` com frame
+  // `horas`. O `/semana` morava só no `unit`, que é texto livre; o `frame`, que
+  // é o que o consumidor lê, dizia "duração". Duas semânticas, mesma gaveta —
+  // o bug dos gramas em `kg`, outra vez.
+  //
+  // Uma gaveta por par unidade×período, e não um `taxa` genérico, pelo motivo
+  // de sempre: um frame que diz só "por semana" volta a achatar 4 h/semana,
+  // 4 sessões/semana e 4 lb/semana. E `horas_semana` convive com `min_semana`
+  // pela mesma razão que `horas` convive com `min` — converter é trabalho de
+  // conversor declarado, não de quem extrai. O sufixo segue o `x_semana` que já
+  // existia.
+  'horas_semana',       // V005-06/09, V006-15/16, V013-27, V019-28, V044-14
+  'horas_dia',          // V019-31
+  'min_semana',         // V013-09, V048-03/04/05
+  'min_dia',            // V044-15
+  'lb_semana',          // V081-26 — ganho de peso corporal por semana
+  /** MET-minutos por semana: volume de atividade física da epidemiologia, não
+   *  duração. `V102-25` gravava 12200 com frame `min` — 203 horas por semana,
+   *  que não cabe numa semana. A claim está `suspect: true` e o número segue
+   *  sendo do passe de Whisper; a gaveta só impede que ele seja lido como
+   *  tempo enquanto isso. */
+  'MET_min_semana',
 ]);
 
 /**
@@ -259,10 +304,22 @@ export const FRAMES = new Set([
  * auditoria de escopo encontrou ("supino 6× por semana" extraído sem "nunca
  * acima de RPE 5"). Separada da condição, a prescrição não fica incompleta —
  * fica perigosa, porque parece completa.
+ *
+ * `escala_dor` entrou em 2026-08-09, e o motivo é o modo de falha nº 2 desta
+ * casa — a trava estreita empurra o dado para FORA dela. A lista nasceu pensando
+ * em carga, série e frequência, e por isso o pior cluster da base passou limpo
+ * por ela: `V001-06` ("2 de 10 é a carga de trabalho aproximadamente certa") e
+ * `V079-34` ("2 a 3 de 10 é uma boa faixa para empurrar") são prescrição com
+ * dose e sem condição, mas a dose está numa escala de DOR, e a checagem não
+ * enxergava esse frame. Duas claims dirigidas a um peitoral em reexposição,
+ * exatamente o defeito que este conjunto existe para acusar, e o build saía
+ * verde. Um número que decide quanto doer é dose como qualquer outro.
+ * Ver `research/kb/DOR-E-TREINO.md`.
  */
 export const FRAMES_DOSE = new Set([
   'series', 'reps', 'x_semana', 'RPE', 'RIR',
   'pct_1RM', 'pct_TM', 'pct_XRM', 'TM', '1RM_treino', '1RM_legal', 'kg', 'lb',
+  'escala_dor',
 ]);
 
 /**

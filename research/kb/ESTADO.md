@@ -14,6 +14,13 @@
 >
 > Isto vale para este documento também. Cada número abaixo diz de onde veio.
 
+> **O número da onda 2A, e ele é baixo: das SETE perguntas que a MEDICAO-02 mediu como
+> falhas de recuperação, o conserto destrava DUAS** (Q05 e Q29). Duas só com a palavra
+> canônica (Q19, Q16), duas continuam escondidas (Q11, Q14), uma está fora do alcance
+> (Q02). O número vem do **ataque**, que respondeu às cegas com consultas próprias — não de
+> quem consertou, que contou 4 de 4. A onda existiu para produzir este número; a tabela e a
+> prova estão no §2, e o trabalho que sobrou está em `research/kb/ONDA-2B.md`.
+
 Este arquivo é curto de propósito. O mapa do sistema está em `research/RUNBOOK.md`; o
 registro está em `SCHEMA.md`; o porquê de cada gaveta está em `ENUMERADOS.md`; como a base
 é medida está em `INSTRUMENTO.md`. Aqui está só: **onde a base está, o que foi provado, o
@@ -38,8 +45,9 @@ autoridade de *"faça AMRAP a 95 % do training max"*. Hoje `modo` está preenchi
 **Reunir a prescrição com a condição que a torna segura.** O achado mais grave da auditoria
 de escopo era que *"supino 6× por semana"* e *"nunca acima de RPE 5"* moravam em registros
 diferentes sem como se reencontrar. Separada da condição, a prescrição não fica incompleta
-— fica **perigosa, porque parece completa**. Hoje há **678 arestas de `conditions` em 502
-claims**, e o caso que o `SCHEMA.md` nomeia como razão de existir do campo está resolvido:
+— fica **perigosa, porque parece completa**. Hoje há **695 arestas de `conditions` em 507
+claims** (recontado em 9/8 no fechamento da onda 2A; eram 678/502 na MEDICAO-02), e o caso
+que o `SCHEMA.md` nomeia como razão de existir do campo está resolvido:
 `V092-01` e `V020-22` estão condicionados, e `V092-01` ganhou no fechamento a ressalva que
 mais importa para este atleta — **a variação de padrão de movimento** (`V092-19/20/21`),
 que o próprio vídeo introduz como resposta ao medo de lesão por overuse na alta frequência.
@@ -88,7 +96,59 @@ FONTE, não CORREÇÃO DA FONTE**, e nenhuma trava desta base prova a segunda.
 | As constantes do gate são **derivadas da tabela**, não medidas contra si mesmas | idem: `gateWindowSessions` e `gateLookbackWeeks` são recalculados do `PROGRAMA.md` lido agora e comparados às constantes. Antes, o teto de `gate.carry` era `gateWindowSessions − 1` **dos dois lados** — tautologia, não trava: fixar a janela em 9 passava verde |
 | Uma edição LEGÍTIMA da tabela do §1.2 muda o app num passe só, e não acusa o inocente | `check-pain-gate.test.mjs`: todos os números saem de `PAIN_GATE` e as mutações do markdown são construídas do que o parser leu. Das quatro edições medidas, só a que **afrouxa** o limiar clínico reprova — por um teste, com mensagem que diz o que fazer |
 | `modo: 'anedota'` não cresce em lote novo | catraca `TETO_ANEDOTA = { V: 196, G: 47 }` em `check-claims.mjs`, **por prefixo** de id. A proibição existia só em markdown; teto global vazaria, porque retagar uma anedota antiga abre exatamente uma vaga para uma nova |
-| Os canários da medição continuam vivos | `check-canarios.mjs`: 5 presentes, 5 impossíveis, 5 armadilhas |
+| **Prescrição com dose de DOR e sem `conditions` acusa** — novo em 9/8 | `escala_dor` entrou em `FRAMES_DOSE` (`kb.mjs:322`), que é a gaveta onde a dose de dor mora e que o aviso não olhava: modo de falha nº 2 num lugar novo. Provado que **arma**, não que se testa a si mesmo: apagar `conditions` de `V001-06` move o contador de `23×` para `24×` em `npm run check:kb`; restaurar volta a 23×. **Limite declarado: o predicado ainda exige `modo === 'prescricao'`**, e `V138-19` (limiar 2 a 4/10, quatro params `escala_dor`) é `modo: opiniao` — apagar as `conditions` dela não move nada. Ampliou-se o eixo do frame e deixou-se aberto o eixo do modo (`ONDA-2B.md` §4.1) |
+| A base já não serve o número de dor cru no filtro que vira treino | `check-evidence.mjs:160-161` é o **único** formatador de claim do repositório e imprime `condições:` e `conflita:` **sempre** — em modo id, `--grep`, `--topic` e na vizinhança; `research/kb/topics/` não existe, então não há segunda visão por onde o número vaze. `--grep "push at"` e `--grep "out of 10"` devolvem V079-34 e V001-06 com as arestas. **Este invariante quebra no dia em que as visões geradas existirem** (`ONDA-2B.md` §11.2) |
+| Os canários da medição continuam vivos | `check-canarios.mjs`: 5 presentes, **4 `presente-escondido`**, 5 impossíveis, 5 armadilhas |
+| A camada de recuperação acha **os quatro casos que a MEDICAO-02 nomeou**, pela busca cega que a medição registrou | `check-canarios.mjs`, família `presente-escondido` (C16–C19). Cobra os dois lados: a busca cega continua não achando no literal, **e** `recuperar()` acha os ids. Desligar a vizinhança (`relaxada = false`) derruba os quatro — medido por mutação em 9/8. **Leia o parágrafo abaixo da tabela antes de citar esta linha: o TETO da tela e o aviso de alargamento NÃO estão travados, e os 35 casos de `busca.test.mjs` não cobrem a fiação.** Ver `RECUPERACAO.md` e `ONDA-2B.md` §1 |
+| Todo termo do índice de vocabulário ainda acha, e todo termo declarado morto ainda não acha | `check-vocabulario.mjs`: 73 termos vivos conferidos **dentro do tópico que os declara** e 26 termos mortos conferidos contra a base inteira. A trava recusou o arquivo na primeira execução — a redação inicial dava `six days per week` como morto, e V114-19 diz isso. Confirmado em 9/8 contra a acusação de que ele só varria a prosa: ele usa `textoDaClaim` (`busca.mjs:141`), que inclui `params` e `topic` |
+| As **funções** da camada de recuperação fazem o que prometem, sobre um corpus sintético | `busca.test.mjs`: **35 casos** em pares — para cada mecanismo, um que TEM de ser achado e um que NÃO pode ser. **Isto não é cobertura do corpus real**: são ~12 claims `V901-*` e as funções são chamadas diretamente. Ver abaixo |
+
+> ### A camada de recuperação, medida de fora — leia antes de citar qualquer linha dela
+>
+> **Onda 2A (9/8/2026), auditada por ataque independente e reconferida por mutação nesta
+> árvore.** A camada nova (`busca.mjs`, `VOCABULARIO.md`, C16–C19) é conserto real, e é
+> **menor do que o relatório que a entregou dizia**. As duas coisas são verdade e as duas
+> precisam estar escritas aqui, porque é este arquivo que vai ser citado.
+>
+> **A pergunta que pagou a onda: das SETE perguntas que falharam na MEDICAO-02, quantas o
+> conserto de fato destrava? — DUAS.** Não quatro. O número vem do ataque, que respondeu
+> às cegas com consultas próprias, e não de quem consertou:
+>
+> | | quais | o que significa |
+> |---|---|---|
+> | **destravadas de verdade** | **Q05, Q29** | a pergunta na forma natural devolve os ids, no topo |
+> | destravadas só com a palavra canônica | Q19, Q16 | `--busca "supino parado há 5 semanas platô"` — a pergunta com as palavras dela mesma — devolve zero sobre ciclo ou platô |
+> | continuam escondidas | Q11, Q14 | Q11 só aparece quando a consulta **já contém a resposta** (`2 a 3%`); Q14 devolve 1 dos 3 ids |
+> | fora do alcance deste conserto | Q02 | é T4 e entregável não escrito, não é índice — e o relatório da onda não a reivindicou |
+>
+> **O furo maior não estava em nenhum relatório, e nenhum teste o media: PRECISÃO.** A
+> expansão do índice disparava uma seção inteira quando **uma** palavra de 4+ letras
+> aparecia na consulta. Medido: `--busca "quantas horas de sono por semana"` devolvia
+> **0 de 40** claims sobre sono e punha **V170-34/V170-33 — supinar seis dias por semana —
+> em 1º e 2º**. Idem para calorias, corte de peso e `deload`. **Para um atleta com o
+> peitoral rompido, a claim mais perigosa da base estava sendo injetada no topo de quase
+> toda pergunta de planejamento semanal.** Consertado em 9/8 (`expandirPorVocabulario`
+> passou a exigir **todas** as palavras longas do termo); **nada trava o conserto** —
+> reverter `every` para `some` passa verde em tudo. É o `ONDA-2B.md` §2.
+>
+> **Três mecanismos que a camada descreve como travados não são travados por nada.**
+> Medido por mutação nesta árvore em 9/8, e revertido:
+>
+> | mutação | resultado | leitura |
+> |---|---|---|
+> | `TETO_VIZINHANCA = 40` → `400` em `busca.mjs:103` | `check:kb` **exit 0**, nenhum canário pisca | **modo de falha nº 4** — a constante é o corte da busca **e** o limite que o canário cobra, no arquivo cujo comentário diz *"achado no lugar 400 não é achado"* |
+> | apagar `...alargamento.flatMap(...)` de `idsMostrados` (`busca.mjs:641`) | `check:kb` **exit 0** | o aviso de alargamento de filtro — **a peça inteira da história da Q11** — pode sumir da tela sem que C19 reclame |
+> | `const relaxada = pobre` → `false` (a vizinhança some) | `busca.test.mjs` **exit 0**, `check-canarios.mjs` **exit 1** | os 35 casos não cobrem a fiação; a rede que pega é a dos canários |
+>
+> **E C19 é calibrado sobre a resposta.** A `buscaCega` dele é `2 a 3%`, e o próprio campo
+> `descricao` admite ser *"a consulta CERTA"*. A Q11 medida não digitou isso — ela concluiu
+> *"a base não tem número"* justamente por não saber que o número era 2–3 %.
+>
+> **Um canário `presente-escondido` novo, de um caso que a onda não usou, FALHA.** C20
+> (descanso entre séries; V038-07, V074-10, V074-23, todos `GERAL` com param tipado) está
+> em `research/kb/CANARIOS-CANDIDATOS.json`, **fora do `check:kb` de propósito**, e
+> `check-canarios.mjs --canarios` o reprova nas duas buscas cegas. O alcance medido da
+> camada é, hoje, **os casos para os quais ela foi construída**.
 
 ### Nem uma coisa nem outra — o que virou COMANDO sem virar trava
 
@@ -98,9 +158,11 @@ nada**, e portanto não impedem reincidência. Cada uma tem a data em que vira t
 
 | O que | Comando | Por que ainda não é trava |
 |---|---|---|
-| Os params em gaveta errada | `node research/tools/params-gaveta-errada.mjs` | **31 dos 52 não têm gaveta de destino.** Travar contra destino inexistente empurra o dado para fora da trava (modo de falha nº 2). Vira recusa do `check-claims.mjs` quando a onda 2 abrir `ano_calendario` e `indice_adimensional` |
+| Os params em gaveta errada | `node research/tools/params-gaveta-errada.mjs` | **Sete das oito famílias foram fechadas em 9/8 (onda 2)**; a oitava, TAXA, tem **111 params em 69 claims** e não pode ser fechada sem mexer em `FRAMES_DOSE` no mesmo commit (§3) — mover 68 params de *"séries/semana"* para uma gaveta nova **desligaria em silêncio** o aviso de dose sem `conditions` para todos eles |
+| ~~"Enquanto a lista não zerar, virar recusa fecharia o build sobre dado legítimo"~~ | — | **ESTA FRASE ERA FALSA e ficou gravada aqui, que é onde ela ia impedir a catraca de nascer.** O detector emite **por família**, e sete famílias emitem **zero**. `ano_calendario` e `indice_adimensional` podem virar recusa hoje, a custo zero de build — provado reintroduzindo um defeito de cada num tree copiado: o detector acusa, `check-claims.mjs` continua exit 0. O argumento de TAXA é bom **para TAXA e só para TAXA**. Trabalho no `ONDA-2B.md` §8 |
 | O universo e o intervalo de `pratica-pessoal` | `candidatos-pratica-pessoal.mjs --ic` e `--recall` | o instrumento é um detector com **recall medido de 22 %**; a catraca especificada em cima dele ficaria verde com ~300 claims de dívida (`RUNBOOK.md` §8.21) |
-| A fila de revisão de gênero | `check-evidence.mjs --genero <g> --modo prescricao` | a catraca `TETO_PRESCRICAO_EM_GENERO_RESTRITO` **mede e não reprova**: recusar de saída derrubaria o build sobre 76 claims que a rodada não podia editar |
+| A fila de revisão de gênero | `check-evidence.mjs --genero <g> --modo prescricao` | a catraca `TETO_PRESCRICAO_EM_GENERO_RESTRITO` **mede e não reprova**. **O teto desceu de 76 para 74 em 9/8**, e a catraca foi atacada por mutação: devolver `G020-17` a `prescricao` dá exit 1; promover uma claim de `G028`, que não está no mapa, dá `teto declarado é 0` e exit 1; baixar `G020` para 5 nomeia o número exato. **Não é trava que se testa a si mesma** — o mapa é literal, e a soma 57 (review) + 17 (form-check) = 74 é recontada de fora |
+| A precisão da camada de recuperação | — | **nada mede.** Não há comando e não há trava: a regressão que pôs *"supinar seis dias por semana"* no topo de perguntas sobre sono passou verde em `check:kb`, em `busca.test.mjs` e nos 19 canários. A quinta família de canário (`ausente-injetado`) é o `ONDA-2B.md` §2 |
 
 ### Julgamento de agente — nenhum compilador olhou
 
@@ -138,12 +200,31 @@ precisam ser abertas e conta que o número não suba. Julgamento continua sendo 
 mas agora sobre uma lista fechada, reproduzível por comando, em vez de sobre 6.766 claims
 e a memória de quem passou por elas.
 
-**Se a ressalva do Vena está certa.** As 678 arestas de `conditions` apontam para claims
+**Se a ressalva do Vena está certa.** As 695 arestas de `conditions` apontam para claims
 que existem e estão perto no tempo. Isso é tudo o que o compilador pode dizer. Se a
 condição de fato limita, e se a lista de condições está completa, **é leitura**. A
 auditoria de `conditions` (n=100, estratificada) mediu ~10 % de aresta falsa, com 42 % nas
 cross-vídeo contra 9 % dentro do mesmo vídeo. As falsas nomeadas foram desfeitas; restam
 **7 arestas cross-vídeo** na base, todas listadas em §3.
+
+**A DIREÇÃO de `conflicts` — e aqui nem julgamento houve, houve convenção nascendo em
+silêncio.** A base tem **48 arestas de contradição em 37 claims**, **8 de mão dupla e 40 de
+mão única**, e **nada diz qual é a certa**: `SCHEMA.md:77` só registra *"opcional. Vira
+aresta no ledger de contradições"*. É o modo de falha nº 1 servido de bandeja — o próximo
+agente copia a do vizinho. E a propriedade de segurança apodrece sem ninguém ver: apagar
+`conflicts` de `V027-25` deixa `check:kb` em **exit 0**, e a claim volta a sair sem a linha
+`conflita` enquanto V079-34/V138-01/V138-20 continuam apontando para ela. Mão única esconde
+justamente do lado perigoso. Decisão e trava no `ONDA-2B.md` §4.3.
+
+**As nove claims que autorizam treinar dentro da dor — cinco foram condicionadas, quatro
+não.** O passe do cluster de dor (`DOR-E-TREINO.md`) tratou V001-06, V079-34, V138-19,
+V138-01 e V171-14. **V138-08, V138-13, V138-24 e V138-18 continuam sem `conditions` e sem
+menção**, e V138-03 e V108-29 nem foram achadas pela varredura (a primeira por conjugação:
+o termo buscado era `keep moving`, o verbatim diz `keepING moving`). A pior é **V138-18** —
+*"reduz o peso até o ponto em que se sente ALGUMA DOR mas não se sente pior na sessão
+seguinte"*, `GERAL` + `prescricao`, a **autorização definicional** que as outras citam como
+limiar — e ela sai crua na própria consulta que o documento usa como prova do conserto.
+`ONDA-2B.md` §4.2.
 
 **Se a base está certa sobre treinar.** Nada aqui prova isso, e nada aqui pode. O Vena e o
 Blevins podem estar errados; a base garante que estamos citando o que eles disseram, na
@@ -169,8 +250,29 @@ forma em que disseram, com a ressalva que disseram junto.
 
 ### Não consertado, e por quê
 
-**Números em gaveta errada — 52 params em 39 claims, e a lista deixou de ser copiada.**
-É o bug dos gramas gravados como `kg`, ainda vivo.
+**Números em gaveta errada — 50 dos 52 foram movidos em 9/8 (onda 2); sobrou uma
+família, e ela é maior do que a lista dizia.**
+
+> **Onda 2, 9/8/2026.** Oito gavetas abertas em `kb.mjs` (`ano_calendario`,
+> `indice_adimensional`, e a família de taxa `horas_semana` / `horas_dia` /
+> `min_semana` / `min_dia` / `lb_semana` / `MET_min_semana`), com a decisão em
+> `ENUMERADOS.md` §3-bis e a tabela em `SCHEMA.md`. Foram movidos **50 params**;
+> saíram 2 (o preço de `V169-42` e a convicção de `V013-15`); as frações em
+> string viraram decimal com a fração preservada por escrito no `unit`; e
+> `value` string ficou **legítimo só em `frame: rotulo`**, onde `"5x5"` é o
+> registro certo.
+>
+> **O achado que muda o tamanho do trabalho:** a regra de taxa do detector era
+> estreita (olhava só `frame ∈ {min, seg, horas}`) e por isso reportava 19. A
+> regra larga acha **111 params em 69 claims** — 68 em `series`
+> (*"séries/semana"* gravado como `series`), 18 em `lb`, 16 em `contagem`, 9 em
+> `reps`. A regra foi alargada; os 111 **não** foram movidos, porque `series`,
+> `reps` e `lb` estão em `FRAMES_DOSE` e movê-los **desliga em silêncio** o aviso
+> de *"prescrição com dose e sem `conditions`"*. Fechar essa família é passe
+> próprio, e tem de mexer em `FRAMES_DOSE` no mesmo commit.
+
+O que segue é o registro do estado anterior, mantido porque é ele que explica por
+que cada gaveta foi aberta. É o bug dos gramas gravados como `kg`.
 
 > **Correção de 9/8/2026, registrada em vez de apagada.** Esta seção trazia a lista **à
 > mão** e o §4 dela derivava *"as 19 params"*. Ambos os números estavam errados, e a lista
@@ -311,7 +413,23 @@ solta para este atleta.
 
 ## 4. O que a próxima rodada tem de atacar, em ordem
 
-> **A fila executável mora em `research/kb/ONDA-2.md`** — com *quantos*, *onde* e *como se
+> ## ⇒ A FILA DE HOJE É `research/kb/ONDA-2B.md`
+>
+> **Escrita no fechamento da onda 2A (9/8/2026), depois do ataque.** É ela que traz o
+> trabalho que sobrou, na ordem, com *quantos* / *onde* / *como se verifica*: as três
+> travas mortas da camada de recuperação, o canário de precisão que não existe, C20, os
+> quatro buracos do cluster de dor, a triagem de banalidade (#34, **com portão de
+> calibração**), os fatos do atleta em `tier U` (#28), o Whisper (#31), a família TAXA, a
+> reconciliação dos documentos que discordam, e — **por último, e a ordem não é
+> negociável** — o ledger e as sínteses (#25, #26).
+>
+> **O `ONDA-2.md` está desatualizado e sabe-se onde:** os critérios de aceite dele
+> (*"o detector imprime zero achados"*, *"cada regra vira uma recusa e este arquivo é
+> apagado"*) foram deferidos e **não foram reescritos lá**. Ele contradiz este arquivo e o
+> `ENUMERADOS.md` em silêncio. Conserto especificado no `ONDA-2B.md` §9.2. **Até lá, leia
+> o 2B.**
+
+> A fila anterior está em `research/kb/ONDA-2.md` — com *quantos*, *onde* e *como se
 > verifica que ficou certo* para cada item, as colisões entre as filas contadas, e os
 > comandos que geram cada lista de ids. Esta seção é o **porquê da ordem**; aquela é o
 > trabalho. O que mudou na ordem no fechamento de 9/8:
@@ -332,13 +450,23 @@ exige o campo, `check-evidence.mjs --genero` responde "o que revisar", e
 `check-claims.mjs` conta `modo: prescricao` vinda de vídeo que expõe material de outra
 pessoa contra uma catraca por `src`.
 
-**O que sobrou, e é o trabalho de verdade: 76 claims em `modo: prescricao` vindas de 19
-vídeos** de `review-de-programa` e `form-check`, nomeadas uma a uma em `GENERO.md` §6. A
-trava **mede e não reprova** porque esta rodada não podia editar claim; a onda seguinte
-abre as 76, decide claim a claim se é `relato-de-programa`, `avaliacao-de-terceiro` ou
-generalização legítima do autor, e baixa o teto de cada vídeo em `check-claims.mjs`. O
-piso não é necessariamente zero — o que a catraca garante é que ele não suba sozinho e
-que ninguém o abaixe sem abrir as claims.
+**A fila de 76 foi repassada em 9/8/2026 (onda 2), uma a uma, com o `verbatim` e a
+transcrição em volta. O teto desceu de 76 para 74**, e as duas que mudaram estão
+justificadas por escrito no `check-claims.mjs`, ao lado da catraca: `G020-17` (*"three
+times per week is really the frequency you want for squat"* — a frequência de agacho **do
+StrongLifts**, e a única da fila com dose de frequência em `GERAL` + `prescricao`) virou
+`relato-de-programa`, e `G027-01` (*"mande o vídeo por link do YouTube"* — logística de
+canal, a única da fila que não pode virar treino sob leitura nenhuma) virou `opiniao`.
+
+**As outras 74 são exceção legítima, e é isso que a fila era.** O discriminador do
+`PROTOCOLO-EXTRACAO.md` é *de quem é o imperativo*, e nas 74 ele é do próprio autor
+saindo do material alheio: *"I would advise…"*, *"my general recommendation here is…"*,
+*"that's how I would adjust this protocol"*. Duas correções de leitura ficaram
+registradas: `G011-32` e `G011-34`, que a primeira passagem chamou de "os casos claros"
+lendo o texto da claim (*"ele manda"*), são do Blevins pelo `verbatim` (*"I would say
+stick with the five…"*) — a regra do nSuns já está gravada ao lado, em `G011-30/31`, como
+`relato-de-programa`. **O defeito ali é do texto da claim, não do `modo`**, e continua de
+pé: *"ele manda"*, *"a recomendação dele"* não dizem quem é "ele".
 
 Primeiro dividendo já medido: este documento dizia "94 claims em `prescricao` nos 20
 vídeos de review (`G001`–`G020`)". A faixa contígua cobrava demais — `G004` (deload),
@@ -357,13 +485,15 @@ estimativa e o intervalo estão no `FRONTEIRA-MODO.md` §4, com o método de amo
 declarado e recontável por script. **Continua em segundo porque é pré-requisito de qualquer
 medição desses campos — e agora a parte cara dele é a única que resta.**
 
-**3. Passe de gaveta errada — 52 params em 39 claims, com a lista agora GERADA.** Inclui
-decidir **três** gavetas que faltam (`ano_calendario`, um frame adimensional para índice, e
-um para taxa do tipo "algo por período") e o que fazer com `value` string.
-`node research/tools/params-gaveta-errada.mjs`. **Terceiro porque é finito, nomeado, e cada
-dia que fica é um dia em que um agente pode copiar a convenção errada do vizinho** — que é o
-modo de falha nº 1 deste projeto. E porque, com 31 dos 52 sem destino, **falta gaveta**, que
-é o modo de falha nº 2: o passe abre as gavetas antes de mover o dado, nunca o contrário.
+**3. ~~Passe de gaveta errada — 52 params em 39 claims.~~ FEITO em 9/8/2026 (onda 2) para
+50 deles; sobrou a família de TAXA, e ela é 111 params.** As três gavetas que faltavam
+foram abertas — `ano_calendario`, `indice_adimensional` e a família de taxa —, `value`
+string foi decidido (número, e `rotulo` é a única exceção), e a decisão está em
+`ENUMERADOS.md` §3-bis. **O que sobrou não é resto: é a família maior**, escondida por uma
+regra de detector estreita, e ela não fecha sem `FRAMES_DOSE` no mesmo commit, senão o
+aviso de "prescrição com dose e sem `conditions`" se desliga em silêncio para 68 params de
+`séries/semana` — a trava se apagando pelo conserto, que é o modo de falha nº 4 desta casa.
+`node research/tools/params-gaveta-errada.mjs`.
 
 **4. Passe de Whisper nos 53 `suspect` sem `suspectWhy` e nos números do §3.** Caro (áudio
 + modelo), mas é o único que resolve número corrompido sem adivinhação, e a ferramenta já
@@ -376,7 +506,8 @@ localidade dentro do documento citado? — e mudar o contrato muda o significado
 quem já escreve resposta. **Quinto porque é decisão de design, não de execução, e o
 instrumento hoje é honesto sobre onde é cego.**
 
-**6. O ledger de contradições e as sínteses.** 31 `conflicts` numa base de 6.909 claims com
+**6. O ledger de contradições e as sínteses.** 48 arestas de `conflicts` em 37 claims, numa
+base de 6.912 claims com
 duas fontes que discordam é subregistro quase certo. **A primeira aresta a registrar saiu
 daqui e virou o item 1 do `ONDA-2.md`**, porque ela não é subregistro: é uma contradição que
 a base **não tem como expressar** enquanto `tier U = 0`.

@@ -769,12 +769,50 @@ for (const [p, lista] of semModoPorPrefixo) {
  * aberta por alguém, e que o número não suba sozinho. A lista de baixo é o
  * produto: ela nomeia, vídeo a vídeo, o que a onda 2 tem de repassar.
  */
+/*
+ * ONDA 2, 2026-08-09 — as 76 foram abertas uma a uma, com o `verbatim` e a
+ * transcrição em volta, e o teto desceu de **76 para 74**. Só duas mudaram, e o
+ * motivo de tão poucas está no discriminador que o `PROTOCOLO-EXTRACAO.md`
+ * declara: **de quem é o imperativo**, não o rótulo do vídeo. O grosso desta
+ * fila é o Blevins saindo do material alheio para enunciar regra dele própria
+ * ("I would advise…", "my general recommendation here is…", "that's how I would
+ * adjust this protocol"), que é a exceção legítima que a própria trava prevê.
+ *
+ *   G020: 7 → 6. `G020-17` (*"three times per week is really the frequency you
+ *   want for squat"*) é a frequência de agacho DO StrongLifts, narrada entre
+ *   `G020-03/04/05` (a estrutura A/B) e `G020-18` (a progressão 45→50→55), e
+ *   condicionada a `G020-12` — que também é `relato-de-programa`. Era a única
+ *   das 76 com dose de frequência (`frequencia = 3 x_semana`) em `GERAL` +
+ *   `prescricao`: a linha mais diretamente consumível da fila inteira, e o
+ *   programa de outra pessoa. → `relato-de-programa`.
+ *
+ *   G027: 4 → 3. `G027-01` (*"YouTube is a really good way to [submit], it is
+ *   far better than sending me the video files"*) é logística do canal: não é
+ *   imperativo de outro autor nem conselho calibrado para um corpo, e é a única
+ *   da fila que **não pode virar treino sob leitura nenhuma**. O irmão do mesmo
+ *   arquivo sobre o mesmo assunto (`G027-27`, ordem da fila de vídeos) já estava
+ *   fora de `prescricao`, em `fato`. → `opiniao`.
+ *
+ * O que NÃO desceu, e por quê — para não ser reaberto por engano:
+ *   - `G011-32` e `G011-34`, que a primeira leitura do `GENERO.md` §6 chamou de
+ *     "os casos claros" pelo texto da claim ("ele manda"). O `verbatim` diz o
+ *     contrário: *"I would say stick with the five…"* e *"I would lean towards
+ *     the lower end"*. A regra do nSuns já está gravada ao lado, em `G011-30` e
+ *     `G011-31`, como `relato-de-programa`. O defeito ali é do texto da claim,
+ *     não do `modo`.
+ *   - As modificações que ele propõe ao programa alheio (`G005-33`, `G007-38`,
+ *     `G016-44/46`, `G017-32/33/34`, `G020-10`): o imperativo é dele.
+ *   - Os padrões técnicos universais dos form checks (`G029-38` punho sobre
+ *     cotovelo, `G030-13` joelho sobre o segundo dedo, `G029-43` glúteo no
+ *     banco). Rebaixá-los para caber na trava é o dano do falso positivo que o
+ *     `PROTOCOLO-EXTRACAO.md` nomeia: some da base uma regra boa, sem rastro.
+ */
 const TETO_PRESCRICAO_EM_GENERO_RESTRITO = {
   // Blevins — os 16 vídeos de review (`G001`–`G020` menos `G004`, `G006` e
   // `G008`, que são tese própria e não resenha) e os 5 form checks.
   G001: 8, G002: 5, G005: 3, G007: 4, G009: 2, G011: 2, G012: 4, G013: 2,
-  G014: 2, G016: 5, G017: 4, G018: 2, G019: 4, G020: 7,
-  G027: 4, G029: 7, G030: 5, G031: 2,
+  G014: 2, G016: 5, G017: 4, G018: 2, G019: 4, G020: 6,
+  G027: 3, G029: 7, G030: 5, G031: 2,
   // Vena — o único vídeo de review do canal: ele resenha o programa que o
   // ChatGPT escreveu para ele.
   R047: 4,
