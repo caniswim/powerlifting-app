@@ -82,6 +82,12 @@ reescreve um arquivo e não toca em nenhum outro.
 | `L` | literatura. Exige PMID ou DOI. |
 | `I` | **interpretação minha.** Exige `basis`: os IDs das claims de onde saiu. |
 | `U` | dito por você. Exige a data da conversa. |
+| `O` | **documento normativo** — regulamento da IPF, regra de federação. Exige `source` com documento, versão e parágrafo. |
+
+`O` existe separado de `L` porque regra não é evidência: não se pondera contra
+outro estudo, não perde para achado mais recente, e não admite interpretação
+"é discutível". Ou o joelho passou da linha ou não passou. Numa base cheia de
+opinião de YouTube, é o único tier onde discordar não é uma opção.
 
 **`I` nunca vira `R`.** Foi exatamente essa lavagem que produziu o fator de
 profundidade. O checker recusa uma claim `I` sem `basis`, e recusa uma claim `R`

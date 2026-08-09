@@ -39,6 +39,7 @@ const FRAMES = new Set([
   'seg', 'min', 'horas', 'dias', 'semanas', 'meses', 'anos', 'x_semana',
   'contagem', 'idade', 'DOTS',
   'g', 'kcal', 'ml', 'graus', 'bpm', 'pct_FCmax', 'mmHg', 'g_por_kg', 'g_por_lb',
+  'polegadas', 'escala_dor', 'n_amostra', 'IMC',
 ]);
 
 const toSec = (s) => String(s).trim().split(':').map(Number).reduce((a, p) => a * 60 + p, 0);
@@ -91,12 +92,16 @@ function secAtOffset(t, off) {
 const onlyIdx = process.argv.indexOf('--only');
 const only = onlyIdx >= 0 ? process.argv[onlyIdx + 1]?.replace(/\.jsonl$/, '') : null;
 
-const files = existsSync(EXTRACT)
-  ? readdirSync(EXTRACT)
-      .filter((f) => f.endsWith('.jsonl'))
-      .filter((f) => !only || f.startsWith(only))
-      .sort()
+// O índice de ids lê SEMPRE o extract inteiro; `--only` restringe apenas o que
+// é validado. A distinção não é detalhe: contradição interessante quase sempre
+// cruza vídeo — "ele diz 4 a 5 h aqui e 5 a 6 h ali" — e se `--only` escondesse
+// os outros arquivos, `conflicts` apontando para fora do lote viraria erro. Um
+// agente esbarrou nisso e desistiu de registrar a aresta, que é exatamente o
+// dado que a base existe para guardar.
+const allFiles = existsSync(EXTRACT)
+  ? readdirSync(EXTRACT).filter((f) => f.endsWith('.jsonl')).sort()
   : [];
+const files = allFiles.filter((f) => !only || f.startsWith(only));
 
 if (files.length === 0) {
   console.log('\nNenhum lote em research/extract/ ainda — nada a verificar.\n');
@@ -107,8 +112,9 @@ const errors = [];
 const warnings = [];
 const seen = new Map();
 const claims = [];
+const allClaims = [];
 
-for (const file of files) {
+for (const file of allFiles) {
   const lines = readFileSync(join(EXTRACT, file), 'utf8').split('\n');
   lines.forEach((line, i) => {
     if (!line.trim()) return;
@@ -121,7 +127,9 @@ for (const file of files) {
       return;
     }
     c._where = where;
-    claims.push(c);
+    c._file = file;
+    allClaims.push(c);
+    if (files.includes(file)) claims.push(c);
 
     if (!c.id) return errors.push(`${where}: sem id`);
     if (seen.has(c.id)) return errors.push(`${where}: id ${c.id} duplicado (já em ${seen.get(c.id)})`);
@@ -129,7 +137,8 @@ for (const file of files) {
   });
 }
 
-const byId = new Map(claims.map((c) => [c.id, c]));
+// Resolve referência contra a base inteira; valida só o recorte pedido.
+const byId = new Map(allClaims.map((c) => [c.id, c]));
 
 for (const c of claims) {
   const w = `${c._where} ${c.id ?? ''}`;
