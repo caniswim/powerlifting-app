@@ -294,8 +294,11 @@ suficiente"* — ou seja, **não perseguir PR em acessório**.
 
 **Brett Gibbs** — *(b) + (c) + (d)* — **o perfil competitivo mais próximo do atleta em todo
 o roster**: masculino, **83 kg**, IPF clássico. 3x campeão mundial IPF Classic Open e campeão
-mundial júnior (2014); **recorde mundial de total na 83 kg com 830,5 kg (299 / 214 / 317,5)
-em 2018**; 8 recordes mundiais na categoria.
+mundial júnior (2014); **total de 830,5 kg (299 / 214 / 317,5) em 2018, que foi recorde
+mundial da 83 kg à época** — hoje superado (ver §4.4); 8 recordes mundiais na categoria.
+⚠️ **Está aposentado da plataforma — último meet em 15.09.2019.** Isso não o desqualifica,
+porque ele entra aqui **como coach**, não como atleta de referência: o material instrucional
+que ele produz hoje é o melhor da lista de ex-elites.
 **Extrair:** (1) treino de elite **documentado em vídeo na categoria leve-média**, que é o
 que falta na base; (2) o contraponto de faixa de repetições registrado em `C16`: Gibbs
 credita o supino a **"repetições de 8 e acima"**, contra a regra do Vena de nunca passar de
@@ -341,23 +344,46 @@ https://www.youtube.com/@PowerliftingTechnique — *confiança média.*
 ### 1.4 Atletas de referência (b)
 
 Aqui o corte foi o mais agressivo do documento. O roster antigo tinha **12 elites**; ficam
-**quatro**, e o motivo é `C11`: a base já havia descoberto que **Orhii, Olivares, Lawrence
+**seis**, e o motivo é `C11`: a base já havia descoberto que **Orhii, Olivares, Lawrence
 e Cayco têm o mesmo treinador (Joey Flexx)**, de modo que qualquer prática comum aos quatro
 **conta uma vez, não quatro** (*coaching-lineage clustering*). Roster grande dá ilusão de
-n grande. Todos os números abaixo foram conferidos no OpenIPF em 9 ago 2026.
+n grande. Todos os números abaixo foram conferidos no OpenIPF e no goodlift em 9 ago 2026.
 
-**Taylor Atwood** — *(b)*, **a melhor referência do roster inteiro**. **83 kg**, testado,
-**em atividade agora**: total de **876 kg** no Classic Open Nationals (AMP, abr/2025,
-317,5 / 216 / 342,5) e **866,5 kg** no Pan-Americano (NAPF, jul/2025). Categoria certa,
-sexo certo, federação certa, dado atual.
+**Joseph Borenstein** — *(b)*, **a referência número 1 da 83 kg hoje** e o nome que faltava
+por completo no roster antigo. Norte-americano, nascido em 2002. **Recordista mundial IPF da
+−83 kg no supino (219 kg, Sheffield, jan/2026) e no total (890 kg, Chemnitz, jun/2025)**,
+com melhor total absoluto de **904 kg** @82,95 num nacional AMP (out/2025). Testado, ativo,
+categoria certa.
+**Extrair:** é o padrão de referência contra o qual medir a distribuição alvo dos três
+levantamentos na 83 kg — e o caso concreto que ensina a diferença entre **recorde
+homologado** e **melhor marca**, porque os 904 dele não são recorde e os 890 são.
+→ https://goodlift.info/ (busca por atleta) — *confiança alta nos números, baixa em
+material instrucional: não verifiquei que ele produza conteúdo didático.*
+
+**Taylor Atwood** — *(b)*, **a melhor referência metodológica do roster**. **83 kg** (veio da
+74 kg), testado: total de **876 kg** no Classic Open Nationals (AMP, abr/2025,
+317,5 / 216 / 342,5) e **866,5 kg** no Pan-Americano (NAPF, jul/2025); 3× campeão mundial
+IPF na 74 kg. Categoria certa, sexo certo, federação certa.
+⚠️ **Nenhum meet registrado em 2026** — nem no OpenPowerlifting nem no goodlift —, e também
+nenhuma notícia de aposentadoria. Tratar o dado como **de 2025, não como "atual"**.
 **Extrair:** o modelo de taper — a base o registra em `C15` com a formulação *"o taper É o
 método"* — e o volume de agachamento (~55.000 lb/semana) que em `C13` forma um dos polos da
 disputa de volume contra o colapso relatado por Rouska com 2–3 séries semanais a mais.
 → https://www.openipf.org/u/tayloratwood — *confiança alta.*
 
+**William Ball** — *(b)*, **recordista mundial do total da 93 kg**: **927,5 kg** no Mundial
+Classic de Druskininkai (jun/2026), norte-americano **nascido em 2006**. É a marca que
+define hoje o teto da categoria mais provável do atleta.
+**Extrair:** referência de alvo, não de método — não verifiquei produção de conteúdo. Entra
+porque a base precisa do número correto da categoria, e porque ele **substitui a atribuição
+errada** que circulava (ver Orhii, abaixo). *Confiança alta no número, nenhuma no método.*
+
 **Russel Orhii** — *(b)*, **agora na 93 kg — a outra categoria possível do atleta**. Melhor
-total **918 kg** no Pan-Americano (jul/2025), seguido de 893,5 kg no Sheffield (jan/2026).
-Continua competindo em IPF.
+total **918 kg** @91,8 no Pan-Americano (jul/2025, 355,5 / 207,5 / 355), seguido de 893,5 kg
+no Sheffield (jan/2026). Detém os **recordes mundiais de agachamento** da −83 (338 kg, 2025)
+**e** da −93 (356 kg, 2026), e **nunca saiu para federação não testada**.
+⚠️ **Correção:** os 918 kg são o melhor total **dele**, e não o recorde mundial da 93 kg,
+que é de William Ball com 927,5. O agachamento é que é recorde — não o total.
 **Extrair:** o padrão de agachamento em repetições altas (`C16` registra 315 kg × 7), que é
 contraponto direto à regra do Vena de nunca passar de 2 repetições nos levantamentos de
 competição. ⚠️ Duas cautelas obrigatórias: (1) o *clustering* de `C11` — não contar as
@@ -381,10 +407,11 @@ taper** (`C15`, mudança adotada depois que o taper custou o supino no Nationals
 lacuna que a base registrou como *"o roster de elites não tem ninguém simultaneamente
 83–93 kg, natural verificado, sumô e documentado"*. Ele é o mais perto que existe: **83 kg**,
 puxador de **sumô**, com registro **USAPL (testada)** — melhores marcas de meet 252,5 / 162,5
-/ **340** e total 737,5 kg entre 2017 e 2018; é citado por um sumô de **370–390 kg**.
-⚠️ **E é por isso que `G31` continua aberta:** o registro em federação testada dele **para
-em 2018**, e as puxadas de 370–390 kg que o tornaram conhecido são **levantamentos de
-treino, não marcas de competição testada**. Usar como referência técnica de sumô, **nunca**
+/ **340** e total **737,5 kg** @82,04 (USAPL Raw Nationals, out/2017).
+⚠️ **E é por isso que `G31` continua aberta:** o último meet sancionado dele é de
+**11.10.2018** (interrompido por lesão lombar/ciática), ele **nunca competiu num
+internacional da IPF**, e a puxada de **410,5 kg** que o tornou famoso é **levantamento de
+treino, não marca de competição testada**. Usar como referência técnica de sumô, **nunca**
 como referência de dose ou de progressão.
 → https://www.openipf.org/u/yangsuren — *confiança média.*
 
@@ -425,6 +452,7 @@ foi calibrada sob condições farmacológicas ou de recuperação diferentes, co
 | **Louie Simmons / Westside Barbell** | Conjugado desenvolvido para **equipado multiply em federação não testada**; nem o equipamento, nem a população, nem o modelo de fadiga transferem. |
 | **Chad Wesley Smith / Juggernaut Training Systems** | **Nenhum histórico competitivo em federação testada** — ProRaw, USPA, GPA, SPF e IPL, boa parte com joelheiras rígidas; o coaching tem lastro no IPF, a dose de treino não. |
 | **Ben Pollack** | Os números que fizeram a fama dele (2039 lb na 198 lb) vieram de **fed não testada e com wraps**; a fase USAPL/NAPF dele é a menos notável da carreira. |
+| **John Haack** | O corte mais doloroso do documento, porque a técnica dele é excelente e ele é o nome mais citado do powerlifting raw: **saiu da IPF/USAPL depois de 2016** e desde então compete em USPA, IPL, WRPF e ABS — **não testadas** —, com **uso de PEDs admitido publicamente**. O total de 1043,5 kg @93,45 (WRPF, 2024) é, para um natural de 87 kg, um número sem denominador comum. |
 | **Larry Wheels, Ed Coan e afins** | Fama que não vira informação acionável: era equipada e/ou uso declarado/notório de PEDs, sem método rastreável aplicável a raw natural. |
 | **Jesus Olivares** | Estava no roster antigo; é **superpesado (+120 kg)**, e a distância de categoria torna a prática dele um dado de baixíssima transferência para 87 kg — a própria base já sinalizou o problema do *coaching-lineage clustering* que o envolve em `C11`. |
 
@@ -548,14 +576,31 @@ qualquer pipeline.
 
 A única que se automatiza sem atrito.
 
-- **Download em massa (CSV):** https://openpowerlifting.gitlab.io/opl-csv/bulk-csv.html
-  · espelho: https://data.openpowerlifting.org
-  · repositório: `git clone https://gitlab.com/openpowerlifting/opl-data.git`
-- **Formato:** CSV simples — aspas duplas e vírgulas dentro de campo são proibidas, o que
-  torna o parsing trivial. Documentação: https://openpowerlifting.gitlab.io/opl-csv/bulk-csv-docs.html
-- **Licença:** os dados (`*.csv` em `meet-data/`) estão em **domínio público**; o código é
-  **AGPLv3+**. Atribuição é pedida, não exigida.
-- **Recorte para este projeto:** filtrar `Federation ∈ {IPF, NAPF, USAPL, AMP, CPU, CBLB…}`,
+- **Download em massa, URLs estáveis e atualizadas diariamente:**
+  - ✅ **`https://openpowerlifting.gitlab.io/opl-csv/files/openipf-latest.zip`** (~66 MB,
+    ~1,5 M linhas) — **só federações IPF. É este que interessa a este projeto.**
+  - `https://openpowerlifting.gitlab.io/opl-csv/files/openpowerlifting-latest.zip` (~168 MB,
+    ~4,0 M linhas) — tudo, inclusive federações não testadas.
+  - Índice: https://openpowerlifting.gitlab.io/opl-csv/bulk-csv.html · Documentação de
+    colunas: https://openpowerlifting.gitlab.io/opl-csv/bulk-csv-docs.html
+  - Repositório: `git clone https://gitlab.com/openpowerlifting/opl-data.git`
+  - ⛔ **`data.openpowerlifting.org` está morto** (não resolve) — não usar.
+- **Formato:** ZIP → pasta `openipf-AAAA-MM-DD/` com `LICENSE.txt`, `README.txt` e um CSV.
+  **41 colunas**, sem aspas nem vírgulas internas, então o parsing é trivial. As que
+  importam: `Name, Sex, Event, Equipment, Age, Division, BodyweightKg, WeightClassKg,`
+  `Squat1Kg…Best3SquatKg, Bench1Kg…Best3BenchKg, Deadlift1Kg…Best3DeadliftKg, TotalKg,`
+  `Place, Dots, Goodlift, Tested, Country, Federation, ParentFederation, Date, MeetName`.
+  **`Goodlift` já traz o IPF GL Points calculado** e **tentativa negativa = tentativa
+  falhada** — os dois detalhes que mais geram erro de análise.
+- **Licença:** dados em **domínio público** (waiver explícito no `LICENSE.txt`); código
+  **AGPLv3+**. Atribuição é sugerida, não exigida.
+- **API JSON não documentada, porém funcional** (verificada em 9 ago 2026):
+  `https://www.openpowerlifting.org/api/liftercsv/<username>` devolve o CSV do atleta —
+  *username* em minúsculas sem espaços, com sufixo numérico para homônimos
+  (`austinperkins1`). Também `…/api/rankings?start=0&end=10&units=kg` e
+  `…/api/search/rankings/?q=<nome>`. ⚠️ **Sem ToS nem rate-limit publicados** — para
+  qualquer coisa em produção, use o ZIP.
+- **Recorte para este projeto:** filtrar `ParentFederation = IPF` **e** `Tested = Yes`,
   `Equipment = Raw`, `Sex = M`, `Division = Open`, `WeightClassKg ∈ {83, 93}`. Daí saem, sem
   intermediário: distribuição de totais que medalham, distribuição por levantamento, e as
   **razões reais entre tentativas** — que é o dado que sustenta `C23`.
@@ -601,23 +646,76 @@ A IPF **não hospeda os recordes**: a página oficial (https://www.powerlifting.
 apenas aponta para o **goodlift.info**, que é a base oficial de resultados e recordes.
 
 - Recordes: http://goodlift.info/records_last.php?pg=1 · https://goodlift.info/records.php
-- ⛔ **goodlift.info devolve HTTP 403 a acesso automatizado.** Verificado. Para consulta
-  pontual, navegador; para série histórica, **o CSV da 4.1 é o caminho**.
 - Resultados de campeonato pela IPF: https://www.powerlifting.sport/championships/results
+- **Padrões de URL úteis** (verificados): `records.php?fd=&ac=&sx=&eq=` — `fd` 0=Mundo,
+  −1=Europa, −2=Ásia · `ac` 0=Open, 2=Jr, 4–7=Masters · `sx` M/W · **`eq` 0=Equipado,
+  1=Clássico**; histórico por levantamento em `records_hst.php?...&ex=&wc=` (`ex` 1=SQ 2=BP
+  3=DL 4=TOT; `wc` 23..30 = 59/66/74/83/93/105/120/120+); ranking anual em
+  `scores-ranking.php?yy=2026&ac=0&sx=M&eq=1`; export em `generate-pdf-records.php?...`.
 
-**Marcos de calibração conferidos em 9 ago 2026** (para situar um total de ~615 kg):
-na **83 kg** o recorde mundial de total é **830,5 kg de Brett Gibbs** (299 / 214 / 317,5,
-2018) e Taylor Atwood totalizou **876 kg** em 2025; na **93 kg**, Russel Orhii detém o
-recorde de total com **918 kg** (Pan-Americano, jul/2025). *Confiança alta para Atwood e
-Gibbs; média-alta para o número de Orhii, que veio de busca e não de leitura direta do
-goodlift.*
+⛔ **Não automatizar esta fonte — e o motivo não é técnico, é declarado.** O `robots.txt`
+do goodlift **desautoriza explicitamente ClaudeBot**, GPTBot, CCBot, Google-Extended e
+outros, com `Content-Signal: ai-train=no, use=reference` e reserva de direitos sob o Art. 4
+da Diretiva UE 2019/790; o rodapé do site proíbe *"any form of data extraction, scraping,
+or bulk reuse"*; e a página de recordes usa **ofuscação anti-scraping ativa** (números
+fatiados por `<span>` transparente com lixo aleatório e caracteres de largura zero).
+O 403 que se recebe é a consequência, não a regra. **Consulta pontual por navegador é
+legítima; ingestão para o app deve usar o `openipf-latest.zip` da 4.1, que é domínio
+público.** Esta distinção precisa sobreviver a qualquer refatoração do pipeline.
+
+**Recordes mundiais IPF Open masculino clássico** — lidos em goodlift na página carimbada
+**06 ago 2026, 17:10 GMT**. *Confiança alta.*
+
+| −83 kg | kg | Atleta | Data / local |
+|---|---|---|---|
+| Agachamento | **338,0** | Russel Orhii (USA) | 26.01.2025, Sheffield |
+| Supino | **219,0** | Joseph Borenstein (USA) | 31.01.2026, Sheffield |
+| Terra | **383,0** | Enahoro Asein (HUN) | 15.06.2026, Druskininkai |
+| **Total** | **890,0** | **Joseph Borenstein (USA)** | 11.06.2025, Chemnitz |
+
+| −93 kg | kg | Atleta | Data / local |
+|---|---|---|---|
+| Agachamento | **356,0** | Russel Orhii (USA) | 31.01.2026, Sheffield |
+| Supino | **246,0** | Jonathan Cayco (USA) | 12.06.2025, Chemnitz |
+| Terra | **380,0** | Aimene Ibrahim El Khalil Nouari (ALG) | 25.11.2025, Tunis |
+| **Total** | **927,5** | **William Ball (USA, n. 2006)** | 17.06.2026, Druskininkai |
+
+⚠️ **Duas correções que esta tabela impõe a leituras antigas da base.** (1) Os **830,5 kg de
+Brett Gibbs** foram recorde mundial da 83 kg **em 2018 e não são mais** — hoje o total da
+categoria é de Borenstein, com 890. (2) Os **918 kg de Orhii** são o melhor total **dele**,
+não o recorde da 93 kg, que é de William Ball com 927,5. Citar Gibbs ou Orhii como
+"recordista" hoje é erro de fato.
+
+⚠️ Detalhe de leitura que evita conclusão errada: **recorde mundial só é homologado em meet
+IPF sancionado internacionalmente.** Borenstein totalizou **904 kg** num nacional AMP
+(11.10.2025), acima do próprio recorde de 890 — e o recorde de 890 segue valendo porque foi
+feito no Mundial. Ao comparar contra "o que ganha", use o **total do meet**, não a tabela de
+recordes.
 
 ### 4.5 Fórmula de pontos — IPF GL ✅
 
-- **Coeficientes oficiais:** https://www.powerlifting.sport/fileadmin/ipf/data/ipf-formula/IPF_GL_Coefficients-2020.pdf
-- Forma: `Pontos = 100 × Total / (A − B × e^(−C × PesoCorporal))`, com A, B e C distintos
-  por sexo e por Classic/Equipped, e arredondamento a 6 casas decimais.
+Em vigor desde **1º de maio de 2020**, substituiu a IPF Points de 2018.
+Página: https://www.powerlifting.sport/rules/codes/info/ipf-formula
+**Coeficientes oficiais:** https://www.powerlifting.sport/fileadmin/ipf/data/ipf-formula/IPF_GL_Coefficients-2020.pdf
+
+`Pontos = 100 × Total / (A − B × e^(−C × PesoCorporal))`, peso em kg, arredondamento a 6
+casas decimais. **A linha que este projeto usa:**
+
+| Categoria | A | B | C |
+|---|---|---|---|
+| **Men's Classic Powerlifting** | **1199,72839** | **1025,18162** | **0,00921** |
+| Men's Equipped Powerlifting | 1236,25115 | 1449,21864 | 0,01644 |
+| Men's Classic Bench Press | 320,98041 | 281,40258 | 0,01008 |
+| Women's Classic Powerlifting | 610,32796 | 1045,59282 | 0,03048 |
+
+⚠️ **Ressalva de validade formal:** o cabeçalho do PDF diz *"ACTUAL FROM MAY 01, 2020 TO
+DEC 31, 2023"* e **não existe documento sucessor publicado** (as variantes `-2024.pdf` e
+`-2025.pdf` devolvem 404). A corroboração de que os números seguem valendo é indireta, mas
+sólida: a calculadora oficial da **CBLB** usa exatamente estes coeficientes hoje.
+*Confiança alta nos números, média na validade formal declarada.*
+
 - Calculadora oficial: https://goodlift.info/public/gl-calc/gl-calc.html
+- Alternativa nacional: https://www.powerlifting-ipf.com.br/paginas/formulas.php
 - **Uso aqui:** é o instrumento que responde de forma limpa a pergunta de `B3` — 83 com
   corte ou 93 sem —, porque compara total contra peso corporal na mesma moeda em que a IPF
   classifica.
@@ -626,16 +724,43 @@ goodlift.*
 
 - **CBLB — Confederação Brasileira de Levantamentos Básicos**, fundada em dezembro de 1994,
   é a **única federação reconhecida pela IPF e pela WADA no Brasil** (também filiada à
-  FESUPO). Sede em São Paulo. Sites: https://powerliftingbrazil.wixsite.com/cblb ·
-  https://www.powerlifting-ipf.com.br/ · https://pt.wikipedia.org/wiki/Confedera%C3%A7%C3%A3o_Brasileira_de_Levantamentos_B%C3%A1sicos
+  FESUPO), **membro pleno**, sede em São Paulo, presidida por Julio Cesar Conrado.
+  Confirmado na **fonte primária da própria IPF**:
+  https://www.powerlifting.sport/federation/regions/south-america
+- ✅ **Site oficial: https://www.powerlifting-ipf.com.br/** — páginas úteis: `/paginas/federacoes.php`
+  (estaduais com contato), `/paginas/criteriosparticipacao.php`, `/paginas/calendario.php`,
+  `/paginas/regras.php`, `/paginas/antidoping.php`, `/paginas/recordes.php?MODO=1`.
+- ⚠️ **Armadilhas de nome — erram fácil e mandam para a entidade errada:** `cblb.com.br`
+  **redireciona para `cblbh.com.br`, que é a Confederação Brasileira de Luta de Braço e
+  Halterofilismo — outra entidade**; `cblp.org.br` é Levantamento de **Pesos** (IWF);
+  `cblb.org.br` não resolve; e `powerliftingbrazil.wixsite.com/cblb` é **site legado**,
+  não a fonte atual.
 - **Critérios de convocação nacional (PDF oficial):**
   https://www.powerlifting-ipf.com.br/paginas/criterios/Criterios%20Convocacao%20Nacional.pdf
-- **Caminho prático:** a inscrição em competição se dá pela **federação estadual filiada**,
-  não direto na confederação. Exemplo verificável: **FEPERJ** (https://feperj.vercel.app/),
-  presidida desde 2017 por **André Jenz** (CREF 054736-G/RJ), árbitro IPF de nível nacional.
-  *Confiança média-alta.* → **Antes de fechar o calendário de 12 meses, confirmar na
-  federação estadual do atleta: filiação anual, prazo de inscrição e calendário.** Esta é a
-  única linha do documento que exige ação humana e não pesquisa.
+- **Como um brasileiro de fato entra — a cadeia é atleta → equipe/clube → federação
+  estadual → CBLB → FESUPO/IPF, e a porta de entrada é o ESTADUAL, não o nacional:**
+  1. filiação regular a uma **federação estadual** no ano do campeonato;
+  2. **ter competido no estadual do ano anterior** (estadual de powerlifting qualifica para
+     powerlifting e supino; estadual de supino qualifica só para supino);
+  3. lesão na data do estadual exige atestado à diretoria técnica da CBLB **e** da estadual
+     antes da data-limite — e **não dispensa a filiação**;
+  4. competir pelo mesmo estado da seletiva;
+  5. existem as categorias **ESTREANTES** (nunca competiu) e **NOVOS** (sem pódio em
+     campeonato CBLB) — é por aí que este atleta começa.
+  → **Consequência direta para o calendário de 12 meses:** o alvo real não é "uma
+  competição em 12 meses", é **o estadual**, e ele precisa cair dentro da janela com
+  filiação feita antes. *Confiança alta.*
+- ⚠️ **Não verificado (confiança baixa):** custo de filiação do atleta e taxa de inscrição
+  por meet não são publicados no site oficial — variam por estadual e ficam atrás de login;
+  o PDF de marcas mínimas é de **2023**; o calendário de 2026 não abriu.
+  → **Esta é a única parte do documento que exige ação humana e não pesquisa: ligar para a
+  federação estadual do atleta e confirmar filiação anual, prazo e calendário.**
+- **Antidoping:** as regras IPF/WADA valem em **todas** as competições CBLB e estaduais.
+  https://www.powerlifting.sport/anti-doping/ipf-anti-doping-rules ·
+  lista proibida WADA 2026: https://www.wada-ama.org/en/resources/2026-prohibited-list ·
+  ABCD (Brasil): https://www.gov.br/abcd/pt-br
+  → Reforça `R16`: creatina só com selo **Informed Sport** ou **NSF Certified for Sport**,
+  porque a responsabilidade é objetiva.
 - ⚠️ **Nomes brasileiros verificáveis, mas sem corpo metodológico publicado:** Prof. Me.
   **Eduardo Kramm** (mestre em Educação Física, treinador da Seleção Brasileira, autor de
   *Power Lifting — 1ª Ed.*; *confiança média — dados vindos da própria página comercial*) e
@@ -652,9 +777,12 @@ Três coisas o quebram, em ordem de probabilidade:
 
 1. **Mudança de regra.** O regulamento de 2026 entrou em vigor há cinco meses; a IPF revisa
    com regularidade. Reconferir §4.3 antes de cada bloco.
-2. **Mudança de status dos atletas.** Perkins já desceu para a 74 kg e Orhii já subiu para
-   a 93 kg desde a montagem do roster antigo. Categoria e federação de atleta de referência
-   são dado perecível — reconferir no OpenIPF, não na memória.
+2. **Mudança de status dos atletas.** Perkins desceu para a 74 kg, Orhii subiu para a 93 kg,
+   Atwood não registrou meet em 2026, e **os dois recordes de total das classes-alvo trocaram
+   de dono** desde a montagem do roster antigo. Categoria, federação e recorde são dado
+   perecível — reconferir no OpenIPF/goodlift, **não na memória**. Esta curadoria já nasceu
+   com uma correção desse tipo: a primeira versão deste arquivo dava a Gibbs e a Orhii
+   recordes que não são mais deles.
 3. **Credenciais marcadas `⚠️`.** Os itens não verificados estão nomeados um a um nos
    verbetes. Nenhum deles sustenta prescrição hoje; se algum passar a sustentar,
    **verifique antes**.
