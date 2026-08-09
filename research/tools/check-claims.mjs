@@ -287,6 +287,37 @@ for (const c of claims) {
     continue;
   }
 
+  // ── claim corrigida por áudio: `verified: "whisper"` ─────────────────────
+  //
+  // O passe de verificação cirúrgica (`verify-suspects.mjs`) re-transcreve com
+  // Whisper as janelas onde a legenda automática do YouTube pode ter estragado
+  // um número ou comido um `n't`. Quando o áudio contradiz a legenda, o dado
+  // certo é o do áudio — mas escrevê-lo em `verbatim` quebraria a checagem
+  // central logo abaixo, que confere o verbatim contra a TRANSCRIÇÃO DA LEGENDA,
+  // e a legenda continua com o texto errado.
+  //
+  // A saída fácil seria afrouxar aquela checagem. Seria a pior: ela é a única
+  // trava que impede interpretação de virar citação, e o preço de abrandá-la é
+  // grande demais para pagar por 4 claims.
+  //
+  // A decisão, então: `verbatim` NUNCA muda. Ele é o registro do que a fonte
+  // citável diz, defeitos inclusive, e é o que mantém a procedência auditável —
+  // quem abrir a transcrição no instante declarado tem que encontrar aquilo ali.
+  // O texto do áudio entra em `verbatimWhisper`, campo próprio, e a divergência
+  // entre os dois passa a ser DADO em vez de ser um erro apagado. `claim` e
+  // `params` seguem o áudio, porque é o áudio que está certo.
+  //
+  // Daí esta regra: quem afirma ter sido corrigido por Whisper tem que exibir o
+  // que o Whisper ouviu. Sem isso, `verified: "whisper"` viraria um carimbo que
+  // dispensa evidência — que é exatamente a doença que esta base trata.
+  if (c.verified === 'whisper') {
+    const vw = norm(c.verbatimWhisper ?? '');
+    if (vw.length < 12) {
+      errors.push(`${w}: verified "whisper" exige verbatimWhisper com o que o áudio diz`);
+    }
+    if (c.suspect) errors.push(`${w}: verified "whisper" e suspect true ao mesmo tempo — ou resolveu ou não resolveu`);
+  }
+
   if (c.tier !== 'R') continue;
 
   // Citação resolve para vídeo citável.

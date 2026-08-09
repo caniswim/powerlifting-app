@@ -146,16 +146,29 @@ console.error(`\n${jobs.length} janela(s) recortada(s) de ${alvos.length} alvo(s
 
 const jobsPath = join(AUDIO, 'jobs.json');
 const resPath = join(AUDIO, 'whisper-raw.json');
-writeFileSync(jobsPath, JSON.stringify(jobs));
 
-if (!existsSync(resPath) || !SKIP_AUDIO) {
-  const r = spawnSync(PY, [join(TOOLS, 'whisper-window.py'), jobsPath, resPath], { stdio: 'inherit' });
+// Cache por janela, e não por execução: a transcrição é a parte cara e imutável
+// (mesmo áudio, mesmo modelo, mesmo resultado), enquanto a COMPARAÇÃO abaixo foi
+// reescrita várias vezes enquanto este passe era afinado. Separar os dois deixa
+// iterar no julgamento sem pagar o Whisper de novo.
+const whisper = new Map(
+  existsSync(resPath) ? JSON.parse(readFileSync(resPath, 'utf8')).map((r) => [r.id, r]) : [],
+);
+const pendentes = jobs.filter((j) => !whisper.has(j.id) || whisper.get(j.id).erro);
+
+if (pendentes.length > 0) {
+  writeFileSync(jobsPath, JSON.stringify(pendentes));
+  const parcial = join(AUDIO, 'whisper-parcial.json');
+  const r = spawnSync(PY, [join(TOOLS, 'whisper-window.py'), jobsPath, parcial], { stdio: 'inherit' });
   if (r.status !== 0) {
     console.error('\nWhisper falhou. Nada foi escrito na base.');
     process.exit(1);
   }
+  for (const x of JSON.parse(readFileSync(parcial, 'utf8'))) whisper.set(x.id, x);
+  writeFileSync(resPath, JSON.stringify([...whisper.values()], null, 1));
+} else {
+  console.error('todas as janelas já transcritas — reaproveitando cache\n');
 }
-const whisper = new Map(JSON.parse(readFileSync(resPath, 'utf8')).map((r) => [r.id, r]));
 
 // ── 4. comparação ───────────────────────────────────────────────────────────
 
@@ -182,53 +195,95 @@ const numerosComExtenso = (s) => {
   return out;
 };
 
-const NEG = /\b(\w+n[''´]?t|not|never|no|none|nothing|without|neither|nor)\b/gi;
-const negacoes = (s) => (norm(s).match(/\b(\w+n t|not|never|no|none|nothing|without|neither|nor)\b/g) ?? []);
+/** `norm` já separou o apóstrofo, então `don't` chega aqui como `don t`. */
+const negacoes = (s) =>
+  norm(s).match(/\b(\w+ t|not|never|no|none|nothing|without|neither|nor)\b/g)?.filter(
+    // `\w+ t` casaria "about t" num corte infeliz; só contam contrações reais.
+    (m) => !/ t$/.test(m) || /\b(do|does|did|is|are|was|were|has|have|had|can|could|would|should|wo|ai|must|might|need|does)n t$/.test(m),
+  ) ?? [];
 
-/** Sobreposição de palavras entre legenda e Whisper: mede se estamos ouvindo o
- *  MESMO trecho. Sem isso, "os números não batem" pode significar só que a
- *  janela pegou outra frase, e aí a divergência não é sobre o dado. */
-function overlap(a, b) {
-  const A = new Set(norm(a).split(' ').filter((w) => w.length > 3));
-  const B = new Set(norm(b).split(' ').filter((w) => w.length > 3));
-  if (A.size === 0) return 0;
-  let hit = 0;
-  for (const w of A) if (B.has(w)) hit++;
-  return hit / A.size;
+/**
+ * Alinha o `verbatim` da legenda dentro da janela do Whisper.
+ *
+ * Sem isso a comparação é inútil: o verbatim tem ~15 palavras e a janela tem
+ * ~180, então contar negações nos dois textos inteiros acusa divergência em
+ * 100% dos casos — a janela simplesmente contém MAIS frases, todas legítimas.
+ * O primeiro rascunho deste arquivo fazia exatamente isso e marcou os seis
+ * alvos do R002 como divergentes quando os seis batiam perfeitamente.
+ *
+ * Janela deslizante de tamanho elástico (80%–140% do verbatim), pontuada por
+ * palavras em comum. Devolve o trecho do Whisper que corresponde à frase citada,
+ * e é SÓ nesse trecho que número e polaridade são comparados.
+ */
+function alinhar(verbatim, texto) {
+  const V = norm(verbatim).split(' ').filter(Boolean);
+  const W = norm(texto).split(' ').filter(Boolean);
+  if (V.length === 0 || W.length === 0) return { trecho: '', cobertura: 0 };
+
+  const alvo = new Set(V.filter((w) => w.length > 2));
+  let melhor = { ini: 0, fim: Math.min(W.length, V.length), pontos: -1 };
+  for (const fator of [0.8, 1, 1.2, 1.4]) {
+    const n = Math.max(4, Math.round(V.length * fator));
+    for (let i = 0; i + 1 < W.length; i++) {
+      const fim = Math.min(W.length, i + n);
+      let pontos = 0;
+      for (let j = i; j < fim; j++) if (alvo.has(W[j])) pontos++;
+      // Normaliza pelo tamanho para que a janela de 140% não vença só por ser maior.
+      const nota = pontos - (fim - i) * 0.05;
+      if (nota > melhor.pontos) melhor = { ini: i, fim, pontos: nota };
+      if (fim === W.length) break;
+    }
+  }
+  const trecho = W.slice(melhor.ini, melhor.fim).join(' ');
+  const presentes = new Set(trecho.split(' '));
+  const cobertura = alvo.size ? [...alvo].filter((w) => presentes.has(w)).length / alvo.size : 0;
+  return { trecho, cobertura };
 }
 
 const relatorio = [];
 for (const a of alvos) {
   const w = whisper.get(a.id);
   const texto = w?.text ?? '';
+  const { trecho, cobertura } = alinhar(a.verbatim, texto);
 
   const numLegenda = numerosComExtenso(a.verbatim);
-  const numWhisper = numerosComExtenso(texto);
+  const numWhisper = numerosComExtenso(trecho);
+  const numJanela = numerosComExtenso(texto);
   const numParams = a.params.map((p) => String(p.value).replace(',', '.'));
 
-  // O param sobreviveu ao Whisper? É a pergunta que importa: o `params` é o que
-  // a base consome, o `verbatim` é só a evidência dele.
-  const paramsAusentes = numParams.filter((n) => !numWhisper.includes(n) && !numWhisper.includes(String(Number(n))));
+  const contem = (lista, n) => lista.includes(n) || lista.includes(String(Number(n)));
+
+  // O param sobreviveu ao Whisper? É a pergunta que importa: `params` é o que a
+  // base consome; o `verbatim` é só a evidência dele. Procura primeiro no trecho
+  // alinhado e, se não achar, na janela inteira — número dito uma frase antes
+  // ainda é o número certo, e reprovar por deslocamento de alinhamento seria
+  // fabricar divergência.
+  const paramsAusentes = numParams.filter((n) => !contem(numWhisper, n) && !contem(numJanela, n));
+  const numNovos = numWhisper.filter((n) => !contem(numLegenda, n));
+  const numPerdidos = numLegenda.filter((n) => !contem(numWhisper, n) && !contem(numJanela, n));
 
   const negLegenda = negacoes(a.verbatim);
-  const negWhisper = negacoes(texto);
-  const cobertura = overlap(a.verbatim, texto);
+  const negWhisper = negacoes(trecho);
 
-  // Único veredito automático. Tudo mais é DIVERGENTE e vai para julgamento humano.
-  let veredito = 'DIVERGENTE';
-  let motivo = [];
+  // Único veredito automático é CONFIRMADO, e só com número e polaridade batendo.
+  // Todo o resto é DIVERGENTE e vira julgamento humano no relatório.
+  const motivo = [];
+  let veredito;
   if (!texto) {
     veredito = 'SEM_AUDIO';
     motivo.push('Whisper não produziu texto para a janela');
-  } else if (cobertura < 0.35) {
+  } else if (cobertura < 0.4) {
     veredito = 'DIVERGENTE';
-    motivo.push(`sobreposição léxica baixa (${(cobertura * 100).toFixed(0)}%) — pode ser janela deslocada`);
-  } else if (paramsAusentes.length === 0 && negLegenda.length === negWhisper.length) {
+    motivo.push(`alinhamento fraco (${(cobertura * 100).toFixed(0)}% das palavras da legenda) — a frase citada pode não estar na janela`);
+  } else if (paramsAusentes.length === 0 && negLegenda.length === negWhisper.length && numPerdidos.length === 0) {
     veredito = 'CONFIRMADO';
   } else {
-    if (paramsAusentes.length) motivo.push(`param(s) não encontrado(s) no Whisper: ${paramsAusentes.join(', ')}`);
+    veredito = 'DIVERGENTE';
+    if (paramsAusentes.length) motivo.push(`param ausente no áudio: ${paramsAusentes.join(', ')}`);
+    if (numPerdidos.length) motivo.push(`número da legenda não ouvido: ${numPerdidos.join(', ')}`);
+    if (numNovos.length) motivo.push(`número novo no áudio: ${numNovos.join(', ')}`);
     if (negLegenda.length !== negWhisper.length) {
-      motivo.push(`contagem de negação difere — legenda ${negLegenda.length}, whisper ${negWhisper.length}`);
+      motivo.push(`POLARIDADE: legenda ${negLegenda.length} negação(ões) [${negLegenda.join(', ')}], áudio ${negWhisper.length} [${negWhisper.join(', ')}]`);
     }
   }
 
@@ -238,10 +293,11 @@ for (const a of alvos) {
     claim: a.claim,
     verbatim: a.verbatim,
     params: a.params,
-    whisper: texto,
+    whisperTrecho: trecho,
+    whisperJanelaTexto: texto,
     whisperJanela: `${Math.floor(a._t0 / 60)}:${String(a._t0 % 60).padStart(2, '0')} +${ANTES_SEC + DEPOIS_SEC}s`,
     avgLogprob: w?.avgLogprob ?? null,
-    numLegenda, numWhisper, paramsAusentes,
+    numLegenda, numWhisper, paramsAusentes, numNovos, numPerdidos,
     negLegenda, negWhisper,
     cobertura: Number(cobertura.toFixed(2)),
     veredito, motivo,
