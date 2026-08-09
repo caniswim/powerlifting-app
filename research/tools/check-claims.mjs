@@ -85,6 +85,32 @@ const TOPICS = (() => {
   return new Set(bloco[1].split(/\s+/).filter(Boolean));
 })();
 
+/**
+ * `mandaEm` declara em que assuntos uma fonte vence outra quando discordam, e só
+ * significa alguma coisa se apontar para tópicos que as claims realmente usam.
+ * Um typo (`competicoes` por `competicao`) não quebraria nada visivelmente: a
+ * regra de precedência simplesmente nunca casaria, e o empate voltaria a ser
+ * decidido pela data — que é o comportamento errado que ela existe para impedir,
+ * de novo em silêncio.
+ *
+ * Dois donos do mesmo tópico também é erro: seria uma regra de desempate que não
+ * desempata.
+ */
+(() => {
+  const dono = new Map();
+  for (const s of Object.values(SOURCES)) {
+    for (const t of s.mandaEm ?? []) {
+      if (!TOPICS.has(t)) {
+        throw new Error(`sources.mjs: fonte "${s.id}" manda em "${t}", que não é tópico do vocabulário`);
+      }
+      if (dono.has(t)) {
+        throw new Error(`sources.mjs: "${t}" tem dois donos ("${dono.get(t)}" e "${s.id}") — precedência ambígua`);
+      }
+      dono.set(t, s.id);
+    }
+  }
+})();
+
 const toSec = (s) => String(s).trim().split(':').map(Number).reduce((a, p) => a * 60 + p, 0);
 
 /** Minúsculo, sem pontuação, espaço colapsado — o denominador comum entre o

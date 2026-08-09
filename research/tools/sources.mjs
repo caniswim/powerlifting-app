@@ -26,6 +26,30 @@
  */
 export const PREFIXOS_RESERVADOS = new Set(['E', 'L', 'I', 'U', 'V', 'O']);
 
+/**
+ * QUEM VENCE QUANDO DUAS FONTES DISCORDAM.
+ *
+ * A regra ingênua é "o recente vence", e ela é uma armadilha aqui. 93 % do canal
+ * do Blevins é de 2013–2018 contra um Vena que publicou este mês: aplicada crua,
+ * a data faz o Blevins perder quase todo empate — e a perspectiva de competidor
+ * TESTADO, que é a única razão de ele estar na base, vira decoração.
+ *
+ * A ordem certa é credencial primeiro, data como desempate dentro da mesma
+ * faixa. E credencial não é global: é por assunto. Ninguém tem autoridade sobre
+ * tudo, e uma fonte que manda em pico de competição não manda em fisiologia.
+ *
+ * `mandaEm` lista tópicos do vocabulário fechado de `PROTOCOLO-EXTRACAO.md` — os
+ * mesmos que a claim usa. Não é decorativo: quando o ledger de contradições for
+ * construído, cada aresta entre fontes tem de declarar por que um lado venceu, e
+ * `credencial` só é resposta legítima se o tópico da contradição estiver aqui.
+ *
+ * O critério do atleta, na palavra dele: o recente vence quando quem diz é BEM
+ * relevante — atleta com mundial natural, ou treinador de atleta mundial
+ * natural. Pelo critério literal, o Vena NÃO passa: não é natural, não tem
+ * mundial, não treina campeão mundial. Ele está na base assim mesmo, e isso é
+ * uma decisão curada, não um fato derivável. Fica escrita aqui exatamente por
+ * isso — uma exceção não declarada é uma exceção que alguém vai "corrigir".
+ */
 export const SOURCES = {
   vena: {
     id: 'vena',
@@ -36,6 +60,14 @@ export const SOURCES = {
     dir: 'research/corpus',
     /** Vídeos publicados depois da run 1 ficam fora da numeração citável. */
     postRun1: 1,
+    testado: false,
+    /**
+     * Não é atleta testado nem coach de campeão mundial natural: entra por
+     * exposição sistemática de método, que é raro e é o que a base consome.
+     * Manda no que é mecânica e didática de execução — não no que é atingível
+     * sem farmacologia, onde ele é justamente a testemunha errada.
+     */
+    mandaEm: ['tecnica', 'setup', 'pegada', 'barra-alta', 'barra-baixa', 'sumo', 'convencional', 'selecao-exercicio', 'erro-comum', 'meta-metodologia'],
   },
 
   blevins: {
@@ -47,6 +79,13 @@ export const SOURCES = {
     // Fonte nova: nada foi citado ainda, então não há numeração legada a
     // preservar e todo vídeo é citável.
     postRun1: 0,
+    testado: true,
+    /**
+     * Compete testado na IPF. Onde a pergunta é "quanto disso é possível sem
+     * farmacologia" ou "como é a competição de verdade", ele tem uma coisa que
+     * nenhuma data de publicação compra — e vence o Vena mesmo sendo de 2016.
+     */
+    mandaEm: ['natural-vs-enhanced', 'competicao', 'pico', 'comandos-ipf', 'regras-ipf', 'taper', 'volume', 'recuperacao'],
   },
 };
 
