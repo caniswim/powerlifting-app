@@ -29,9 +29,15 @@ const AT_TOLERANCE_SEC = 45;
 const TIERS = new Set(['R', 'E', 'L', 'I', 'U']);
 const SCOPES = new Set(['GERAL', 'PESSOAL']);
 const CERTAINTY = new Set(['explicit', 'implied']);
+// Enumerado fechado, mas não pequeno por esporte: faltar gaveta é pior do que
+// ter gaveta demais. Sem `semanas` e `contagem`, o primeiro lote escreveu os
+// números por extenso para não inventar frame — a trava empurrou o dado para
+// fora da trava, que é o oposto do que ela existe para fazer.
 const FRAMES = new Set([
   '1RM_treino', '1RM_legal', 'TM', 'pct_TM', 'pct_1RM',
-  'RPE', 'RIR', 'kg', 'lb', 'reps', 'series', 'min', 'seg', 'cm', 'pct', 'x_semana', 'anos',
+  'RPE', 'RIR', 'kg', 'lb', 'reps', 'series', 'pct', 'cm',
+  'seg', 'min', 'horas', 'dias', 'semanas', 'meses', 'anos', 'x_semana',
+  'contagem', 'idade', 'DOTS',
 ]);
 
 const toSec = (s) => String(s).trim().split(':').map(Number).reduce((a, p) => a * 60 + p, 0);
@@ -175,6 +181,16 @@ for (const c of claims) {
     if (!declared.has(n) && !declared.has(String(Number(n)))) {
       errors.push(`${w}: número ${m[0]} aparece na claim mas não tem param — número sem procedência`);
     }
+  }
+
+  // Número por extenso escapa da regra acima, que só enxerga dígito — e
+  // "quatorze dias" é tão numérico quanto "14 dias". Fica como aviso porque a
+  // lista tem falso positivo demais para barrar commit ("um" é artigo, "cem por
+  // cento" é expressão), mas serve para o passe de reparo saber onde olhar.
+  const EXTENSO = /\b(dois|duas|tr[êe]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|c?quatorze|quinze|dezesseis|dezessete|dezoito|dezenove|vinte|trinta|quarenta|cinquenta|sessenta|setenta|oitenta|noventa|cento|mil)\b/gi;
+  const spelled = [...new Set([...(c.claim ?? '').matchAll(EXTENSO)].map((m) => m[0].toLowerCase()))];
+  if (spelled.length > 0 && (c.params ?? []).length === 0) {
+    warnings.push(`${w}: número por extenso sem param (${spelled.join(', ')})`);
   }
 
   if (c.tier !== 'R') continue;

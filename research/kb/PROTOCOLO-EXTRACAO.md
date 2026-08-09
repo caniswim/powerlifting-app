@@ -26,6 +26,7 @@ equipamento  cinto  faixa  sapato  strap
 nutricao  peso-corporal  cutting  bulking
 mentalidade  competicao  pico  teste-de-forca  cardio  condicionamento
 natural-vs-enhanced  erro-comum  meta-metodologia
+antropometria  genetica  capacidade-trabalho  rom  ordem-exercicio
 ```
 
 Precisou de um tópico que não está aqui? **Não invente.** Use o mais próximo e
