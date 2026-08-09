@@ -65,6 +65,26 @@ const FRAMES = new Set([
   'mm', 'm',
 ]);
 
+/**
+ * O vocabulário de tópicos, lido do PRÓPRIO protocolo.
+ *
+ * `PROTOCOLO-EXTRACAO.md` diz, em caixa alta, que o vocabulário é FECHADO — e
+ * durante toda a extração nada verificou isso. Uma claim usou o tópico `idade`,
+ * que nunca existiu na lista, e passou. Regra sem trava é sugestão, e uma gaveta
+ * inventada é pior do que parece: sem banco vetorial, `topic` É o mecanismo de
+ * recuperação, e um sinônimo solto esconde a claim de quem procura.
+ *
+ * A lista é lida do markdown em vez de duplicada aqui porque já erramos assim
+ * uma vez: o enumerado de `frame` cresceu no código e o SCHEMA.md ficou
+ * descrevendo outra coisa. Documento e trava precisam ser o mesmo objeto.
+ */
+const TOPICS = (() => {
+  const md = readFileSync(join(ROOT, 'research/kb/PROTOCOLO-EXTRACAO.md'), 'utf8');
+  const bloco = /## Vocabulário de tópicos[^\n]*\n[\s\S]*?```\n([\s\S]*?)```/.exec(md);
+  if (!bloco) throw new Error('vocabulário de tópicos não encontrado em PROTOCOLO-EXTRACAO.md');
+  return new Set(bloco[1].split(/\s+/).filter(Boolean));
+})();
+
 const toSec = (s) => String(s).trim().split(':').map(Number).reduce((a, p) => a * 60 + p, 0);
 
 /** Minúsculo, sem pontuação, espaço colapsado — o denominador comum entre o
@@ -228,6 +248,11 @@ for (const c of claims) {
   // Enumerados fechados. Valor fora da lista é erro, não interpretação livre.
   if (!TIERS.has(c.tier)) errors.push(`${w}: tier "${c.tier}" fora do enumerado`);
   if (c.scope && !SCOPES.has(c.scope)) errors.push(`${w}: scope "${c.scope}" fora do enumerado`);
+  for (const t of c.topic ?? []) {
+    if (!TOPICS.has(t)) {
+      errors.push(`${w}: tópico "${t}" fora do vocabulário fechado do PROTOCOLO-EXTRACAO.md`);
+    }
+  }
   if (c.certainty && !CERTAINTY.has(c.certainty)) {
     errors.push(`${w}: certainty "${c.certainty}" fora do enumerado`);
   }
@@ -318,7 +343,17 @@ for (const c of claims) {
   // lista tem falso positivo demais para barrar commit ("um" é artigo, "cem por
   // cento" é expressão), mas serve para o passe de reparo saber onde olhar.
   const EXTENSO = /\b(dois|duas|tr[êe]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|c?quatorze|quinze|dezesseis|dezessete|dezoito|dezenove|vinte|trinta|quarenta|cinquenta|sessenta|setenta|oitenta|noventa|cento|mil)\b/gi;
-  const spelled = [...new Set([...(c.claim ?? '').matchAll(EXTENSO)].map((m) => m[0].toLowerCase()))];
+  // Par anatômico, trio idiomático e nome próprio não são medida: "os dois
+  // cotovelos" e "os três movimentos" enumeram coisas que já vêm em número fixo,
+  // e "ômega três" é nome. Sem esta exclusão sobram 18 avisos que ninguém pode
+  // resolver — e aviso que não tem conserto ensina a ignorar avisos.
+  // Artigo definido antes do numeral marca enumeração de conjunto já conhecido
+  // ("os dois sítios", "nos dois", "ambas as mãos"), não medida. Prescrição de
+  // verdade sai escrita com dígito — "2 séries", não "as duas séries".
+  const NAO_E_MEDIDA =
+    /\b(?:os|as|nos|nas|d[oa]s|aos|às|ambos|ambas|nenhum dos|nenhuma das)\s+(?:dois|duas|tr[êe]s)\b|\b[óo]mega\s+tr[êe]s\b|\b(?:dois|duas|tr[êe]s)\s+(?:cotovelos?|m[ãa]os?|joelhos?|p[ée]s?|ombros?|esc[áa]pulas?|movimentos?)\b/gi;
+  const prosa = (c.claim ?? '').replace(NAO_E_MEDIDA, ' ');
+  const spelled = [...new Set([...prosa.matchAll(EXTENSO)].map((m) => m[0].toLowerCase()))];
   if (spelled.length > 0 && (c.params ?? []).length === 0) {
     warnings.push(`${w}: número por extenso sem param (${spelled.join(', ')})`);
   }

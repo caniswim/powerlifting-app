@@ -27,8 +27,13 @@ nutricao  peso-corporal  cutting  bulking
 mentalidade  competicao  pico  teste-de-forca  cardio  condicionamento
 natural-vs-enhanced  erro-comum  meta-metodologia
 antropometria  genetica  capacidade-trabalho  rom  ordem-exercicio
-saude  aprendizado-motor
+saude  aprendizado-motor  idade
 ```
+
+Esta lista não é decorativa: `check-claims.mjs` a lê deste arquivo e **recusa
+qualquer tópico que não esteja aqui**. Documento e trava são o mesmo objeto de
+propósito — já erramos deixando o enumerado de `frame` crescer no código
+enquanto o `SCHEMA.md` descrevia outra coisa.
 
 **Nunca force um número numa gaveta errada para satisfazer o checker.** Um lote
 mapeou gramas e calorias para o frame `kg` e semanas para `anos` — que é
