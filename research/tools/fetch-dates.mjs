@@ -20,7 +20,12 @@
  * `--flat-playlist` lista o canal barato mas não traz data, então não tem jeito:
  * é uma chamada de rede por vídeo.
  *
- * Uso: node research/tools/fetch-dates.mjs [--only R159] [--force]
+ * Fontes construídas depois da generalização já nascem com `date` dentro do
+ * próprio manifesto (`build-manifest.mjs` data no mesmo passe). Este script
+ * continua existindo para o Vena, cujo manifesto não pode ser reescrito, e para
+ * re-datar qualquer fonte sem tocar no manifesto.
+ *
+ * Uso: node research/tools/fetch-dates.mjs [--source blevins] [--only R159] [--force]
  *   Resumível: pula o que já está em dates.json, salvo --force.
  */
 
@@ -29,11 +34,15 @@ import { promisify } from 'node:util';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { resolveSource, paths } from './sources.mjs';
 
 const exec = promisify(execFile);
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
-const MANIFEST = join(ROOT, 'research/corpus/manifest.json');
-const OUT = join(ROOT, 'research/corpus/dates.json');
+
+const SOURCE = resolveSource();
+const P = paths(SOURCE, ROOT);
+const MANIFEST = P.manifest;
+const OUT = P.dates;
 
 /**
  * Baixo de propósito. Outro processo yt-dlp costuma estar rodando na máquina em

@@ -26,7 +26,15 @@ const VERBOSE = process.argv.includes('--verbose');
 /** Quanto o `at` da claim pode divergir de onde o verbatim realmente aparece. */
 const AT_TOLERANCE_SEC = 45;
 
-const TIERS = new Set(['R', 'E', 'L', 'I', 'U']);
+/**
+ * `at` de claim normativa é parágrafo, não instante: `§4.1.3`, `§6.1.j`, `§2.9.RED`.
+ * Aceita letra e caixa alta no último nível porque o regulamento numera itens com
+ * letra ((b), (j)) e porque a tabela de cartões não tem número — inventar um para
+ * caber na regex seria fabricar uma citação que não resolve no documento.
+ */
+const AT_PARAGRAFO = /^§\d+(?:\.[0-9A-Za-z_]+)*$/;
+
+const TIERS = new Set(['R', 'E', 'L', 'I', 'U', 'O']);
 const SCOPES = new Set(['GERAL', 'PESSOAL']);
 const CERTAINTY = new Set(['explicit', 'implied']);
 // Enumerado fechado, mas não pequeno por esporte: faltar gaveta é pior do que
@@ -40,6 +48,10 @@ const FRAMES = new Set([
   'contagem', 'idade', 'DOTS',
   'g', 'kcal', 'ml', 'graus', 'bpm', 'pct_FCmax', 'mmHg', 'g_por_kg', 'g_por_lb',
   'polegadas', 'escala_dor', 'n_amostra', 'IMC',
+  // O regulamento mede equipamento em milímetro e metro (13 mm de cinto, 1 m de
+  // faixa de punho). Sem estas duas gavetas, 13 mm viraria 1,3 cm na conversão do
+  // agente — que é exatamente o erro de unidade que o enumerado existe para barrar.
+  'mm', 'm',
 ]);
 
 const toSec = (s) => String(s).trim().split(':').map(Number).reduce((a, p) => a * 60 + p, 0);
@@ -74,6 +86,22 @@ function loadTranscript(ref) {
   }
   const entry = { text, offsets };
   transcriptCache.set(ref, entry);
+  return entry;
+}
+
+/**
+ * Carrega o texto de um documento normativo (o markdown citável do regulamento).
+ * O caminho vem da própria claim, em `source.text`, e não de uma tabela aqui
+ * dentro: assim ingerir uma segunda federação não exige editar o compilador.
+ */
+const normativeCache = new Map();
+function loadNormative(path) {
+  if (normativeCache.has(path)) return normativeCache.get(path);
+  const full = join(ROOT, path);
+  const entry = existsSync(full)
+    ? { raw: readFileSync(full, 'utf8'), text: norm(readFileSync(full, 'utf8')) }
+    : null;
+  normativeCache.set(path, entry);
   return entry;
 }
 
@@ -164,6 +192,23 @@ for (const c of claims) {
   if (c.tier === 'L' && !/\b(PMID:\s*\d{6,9}|10\.\d{4,9}\/\S+)/i.test(JSON.stringify(c.source ?? ''))) {
     errors.push(`${w}: tier L exige source com PMID ou DOI`);
   }
+  // Tier O é regra, e a procedência de uma regra não é "quem disse" — é "onde está
+  // escrito, em que edição". Regulamento muda de ano para ano e a versão errada
+  // anula tentativa igual: sem documento, versão, URL e data de vigência, a claim
+  // é boato com autoridade de norma.
+  if (c.tier === 'O') {
+    for (const f of ['document', 'version', 'url', 'effective']) {
+      if (!c.source?.[f]) errors.push(`${w}: tier O exige source.${f}`);
+    }
+    if (!c.at) errors.push(`${w}: tier O exige at com o parágrafo do regulamento`);
+    else if (!AT_PARAGRAFO.test(c.at)) {
+      errors.push(`${w}: at "${c.at}" não é parágrafo — tier O cita §4.1.3, não 03:05`);
+    }
+    if (!c.verbatim?.trim()) errors.push(`${w}: tier O exige verbatim — o texto literal da regra`);
+    // Regra não prescreve para uma pessoa nem narra o que alguém faz: vale para
+    // todo mundo que sobe na plataforma. `scope` aqui só poderia ser ruído.
+    if (c.scope) errors.push(`${w}: tier O não leva scope — regra não é GERAL nem PESSOAL`);
+  }
   for (const b of c.basis ?? []) {
     if (!byId.has(b)) errors.push(`${w}: basis aponta para ${b}, que não existe`);
   }
@@ -201,6 +246,32 @@ for (const c of claims) {
   const spelled = [...new Set([...(c.claim ?? '').matchAll(EXTENSO)].map((m) => m[0].toLowerCase()))];
   if (spelled.length > 0 && (c.params ?? []).length === 0) {
     warnings.push(`${w}: número por extenso sem param (${spelled.join(', ')})`);
+  }
+
+  // A checagem central do tier O. Conferir contra o PDF não dá; conferir contra a
+  // transcrição citável dá — e é ela que o leitor abre a partir da citação, então
+  // é ela que precisa concordar. Duas travas: o parágrafo existe no documento, e o
+  // texto literal está mesmo naquele documento. Uma regra que ninguém consegue
+  // reabrir é indistinguível de uma regra inventada.
+  if (c.tier === 'O') {
+    const path = c.source?.text;
+    const doc = path ? loadNormative(path) : null;
+    if (!path) warnings.push(`${w}: source.text ausente — verbatim não verificado`);
+    else if (!doc) warnings.push(`${w}: ${path} não existe — verbatim não verificado`);
+    else {
+      const anchor = new RegExp(`§${c.at.slice(1).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![\\w.])`);
+      if (!anchor.test(doc.raw)) errors.push(`${w}: parágrafo ${c.at} não existe em ${path}`);
+      const needle = norm(c.verbatim ?? '');
+      if (needle.length < 12) {
+        errors.push(`${w}: verbatim curto demais (${needle.length} chars) para ser evidência`);
+      } else if (!doc.text.includes(needle)) {
+        errors.push(
+          `${w}: verbatim NÃO aparece em ${path}\n` +
+            `        procurado: "${needle.slice(0, 90)}…"`,
+        );
+      }
+    }
+    continue;
   }
 
   if (c.tier !== 'R') continue;

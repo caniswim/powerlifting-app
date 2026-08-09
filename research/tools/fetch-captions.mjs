@@ -14,7 +14,8 @@
  * `check-claims.mjs` consegue pegar a citação, abrir a janela certa da
  * transcrição e conferir se o verbatim está mesmo lá.
  *
- * Uso: node research/tools/fetch-captions.mjs [--only R159] [--force]
+ * Uso: node research/tools/fetch-captions.mjs [--source blevins] [--only R159] [--force]
+ *   sem --source, opera sobre o corpus do Vena, nos caminhos de sempre.
  *   Resumível: pula o que já tem transcrição, salvo --force.
  */
 
@@ -24,13 +25,17 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, unlink
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { gzipSync } from 'node:zlib';
+import { resolveSource, paths } from './sources.mjs';
 
 const exec = promisify(execFile);
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
-const MANIFEST = join(ROOT, 'research/corpus/manifest.json');
-const TRANSCRIPTS = join(ROOT, 'research/corpus/transcripts');
-const CAPTIONS = join(ROOT, 'research/corpus/captions');
-const TMP = join(ROOT, 'research/corpus/.tmp');
+
+const SOURCE = resolveSource();
+const P = paths(SOURCE, ROOT);
+const MANIFEST = P.manifest;
+const TRANSCRIPTS = P.transcripts;
+const CAPTIONS = P.captions;
+const TMP = P.tmp;
 
 /** Quantos segundos de fala cada linha da transcrição agrupa. */
 const WINDOW_SEC = 15;
@@ -101,9 +106,19 @@ function toLines(json3) {
   return lines;
 }
 
+/** yt-dlp entrega YYYYMMDD; a base compara datas como string, então ISO. */
+const toIso = (d) => {
+  const m = /^(\d{4})(\d{2})(\d{2})$/.exec(String(d).trim());
+  return m ? `${m[1]}-${m[2]}-${m[3]}` : null;
+};
+
 async function fetchOne(v) {
   const base = join(TMP, v.videoId);
-  await exec(
+  // `--print` no MESMO comando: a extração de metadado é o que custa caro (~10 s
+  // por vídeo, latência, não banda), e ela já está acontecendo aqui para achar a
+  // trilha de legenda. Pedir a data numa segunda passada dobraria o tempo do
+  // corpus inteiro por um campo que veio de graça nesta.
+  const { stdout } = await exec(
     'yt-dlp',
     [
       '--skip-download',
@@ -113,12 +128,17 @@ async function fetchOne(v) {
       '--sub-format',
       'json3',
       '--no-warnings',
+      '--print',
+      '%(upload_date)s|%(release_date)s',
       '-o',
       base,
       v.url,
     ],
     { maxBuffer: 64 * 1024 * 1024 },
   );
+
+  const [upload, release] = stdout.trim().split('|');
+  const date = [upload, release].map(toIso).find(Boolean) ?? null;
 
   // Prefere a trilha original; `en` costuma ser a mesma coisa re-rotulada.
   const found = readdirSync(TMP).filter((f) => f.startsWith(v.videoId) && f.endsWith('.json3'));
@@ -153,7 +173,9 @@ async function fetchOne(v) {
   ].join('\n');
 
   writeFileSync(join(TRANSCRIPTS, name), `${front}${body}\n`);
-  return { file: `research/corpus/transcripts/${name}`, words };
+  // Caminho relativo à raiz do repo: é o que `check-claims.mjs` abre para
+  // conferir verbatim. Para o Vena resolve exatamente no caminho de sempre.
+  return { file: `${SOURCE.dir}/transcripts/${name}`, words, date };
 }
 
 const queue = manifest.videos.filter((v) => {
@@ -176,6 +198,10 @@ async function worker() {
       v.transcript = r.file;
       v.source = 'captions';
       v.words = r.words;
+      // Só preenche buraco. O manifesto do Vena não tem o campo `date` e não
+      // pode ganhar um agora — há agente lendo o arquivo — então `?? null` sem
+      // sobrescrever mantém este passo inofensivo para corpus já construído.
+      if (r.date && v.date === null) v.date = r.date;
       done += 1;
     } catch (err) {
       failed += 1;

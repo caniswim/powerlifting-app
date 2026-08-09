@@ -104,7 +104,18 @@ Todo número carrega unidade **e frame**. Unidade diz "kg"; frame diz *kg de qu�
 | `TM` | training max — a base dos percentuais do programa |
 | `pct_TM` | percentual do training max corrente |
 | `pct_1RM` | percentual de um 1RM |
-| `RPE`, `RIR`, `kg`, `reps`, `series`, `min`, `seg`, `cm`, `pct` | literais |
+| `RPE`, `RIR`, `kg`, `lb`, `reps`, `series`, `pct` | intensidade e volume |
+| `seg`, `min`, `horas`, `dias`, `semanas`, `meses`, `anos`, `x_semana` | tempo e frequência |
+| `g`, `kcal`, `ml`, `g_por_kg`, `g_por_lb`, `IMC` | nutrição e composição |
+| `cm`, `polegadas`, `graus`, `bpm`, `pct_FCmax`, `mmHg` | medida física |
+| `contagem`, `idade`, `n_amostra`, `escala_dor`, `DOTS` | contagem e escala |
+
+**A lista viva é a do `check-claims.mjs`, não esta.** O enumerado cresceu quatro
+vezes durante a extração, sempre pelo mesmo motivo: um agente esbarrava numa
+unidade que não tinha gaveta e ou escrevia o número por extenso, ou — pior —
+enfiava numa gaveta errada (`kg` para gramas, `anos` para semanas). Faltar frame
+é pior do que ter frame demais, então quando faltar, **amplie o enumerado**; não
+force o número e não peça ao agente que se vire.
 
 Cruzar frame exige conversor declarado. `1RM_legal` × 0,92–0,94 = `TM`, e essa
 multiplicação tem que aparecer como claim `I` com `basis`, não acontecer de
