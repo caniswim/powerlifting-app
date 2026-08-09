@@ -1,0 +1,47 @@
+---
+ref: G055
+videoId: drq07jfmyJk
+title: "Squats, Bench, and Non-Violence?"
+url: https://www.youtube.com/watch?v=drq07jfmyJk
+durationSec: 587
+source: captions
+words: 1728
+---
+[00:00] [Music] gab Levens here with a quick midw workk workout discussion um had a long day at work today so fatigued from that and from the day before um just been really busy a lot of time on my feet so
+[00:15] carrying a little bit more fatigue additionally this week uh even though the volume was down a little bit I tried to push the intensities and uh really feeling stale for lack of a better term my upper quads as I'm doing all these squats uh especially
+[00:30] out of the hole um just feeling no power no bounce uh the way I would describe it is my upper quad just feels tight um like I I don't know a better way to discuss it other than like a lazy muscle it's just not really firing
+[00:45] it's not doing too much so these reps are slower than usual which is really hard on me but I'm really surprised me moving this weight uh it's 525 um for sets of six as easy as I am especially how be up I am
+[01:01] um really excited to see how I do uh when I start releasing this fatigue and again it wasn't a big fatigue buildup um just like a week or two um I'm starting to move away from digging myself real deep into a fatigue debt because it's just hard to know
+[01:16] when you're going to get out of it there's so many factors at play so you kind of want to at least in my opinion in my training have at least one day a week where you're feeling pretty good um feeling kind of like you want to go into the gym you want to train and you're feeling pretty well recovered
+[01:31] um at least once every 2 weeks if uh you go 2 weeks and you just feel more beat up every workout and you're just hating going to the gym it's time to back off the volume and the intensity a little bit and uh give yourself a little bit of a break that said
+[01:46] um should be going to some lower reps pretty soon upping the intensity but lowering the overall volume um excited to see what happens it's kind of a transmutation phase where you take what you did in a loading block and then you transmute that into strength so there'll be a transm
+[02:01] mutation phase kind of in the middle there and then a uh peaking block where I get real sport specific some singles uh leading into National so um going to make this video a little bit shorter I'll have some uh training footage for you but
+[02:17] that's about it and uh hope you enjoy [Music]
+[02:33] [Applause] [Music] [Music]
+[02:58] f well made it through the third set wasn't my best but I think it was better than the second one second set of squats was tough cuz my foot cramped right
+[03:13] as I started doing rep one uh I was trying to spread my toes and grip the ground to get three points of contact between the big toe little toe and the heel um my left foot just cramped up on me kind of you know the one where your toes go like that so made the second set a little bit
+[03:29] harder I was a little bit less stable third set though I was just tired glad that I only had three sets today um moving on to bench now I'm hoping it's going to move pretty well but I've been thinking about this cuz I haven't been doing my usual uh Bible verse and discussion of uh how uh
+[03:44] scripture and uh lifting kind of go together and how a lot of the principles are the same and uh that doesn't mean that I've somehow abandoned my faith or anything like that nobody's commented on it so I don't know if anybody's watching those anyways but one of the things that I worked on the most
+[03:59] and I've been a little uh hesitant to talk about is the uh last course that I just took which was an interpretation course on Revelation there's so many weird things with Revelation and so many Cults and just in general weird
+[04:14] people have gotten a hold of Revelation and done really weird things with it um you may be familiar with some of the more popularized interpretations of Revelation and there have been some movies and theaters I think Nicholas Cage was in a Left Behind movie and uh
+[04:30] these uh ways of reading Revelation which have been around for quite a while but um especially coming from a movement called dispensationalism uh which is where you get a lot of that kind of very predictive readings of Revelation where when people come to the text
+[04:45] they read it as though it's a uh prediction of events that are going to happen in a sequential order in the future usually during a 7-year period um that those sorts of interpretations are fairly recent but they really take over especially
+[05:00] in North America it's really the only way people know how to read Revelation at all um and so I've been wondering how to discuss that cuz it's such an abstract book and it kind of takes in-depth study to discuss it and a lot of the topics are extremely controversial
+[05:15] but one thing I'll say is it was very eye openening when I learned how to read um Revelation a different way which is more uh reading the book is a symbolic book A book that talks about reality using uh symbols
+[05:30] metaphors and what we would call apocalyptic imagery which is uh very strange to us cuz if we try to read it like a newspaper or a magazine as though it's literal um we get really messed up really fast I mean Revelation has some very creative
+[05:46] images in it but we need to take the images for what they are images and metaphors so anyways one topic I've been uh most hesitant to talk about but I figure I'll kind of start putting some feelers out there if anybody wants to start having some discussions
+[06:01] about it just more in general not necessarily out of specific text is the practice of nonviolence um a lot of people and myself included would always think of ways to avoid non-violent responses like you know you go to these crazy
+[06:16] hypotheticals where there's this like craz murder in your house and it's you know you either shoot them or they're going to kill your family and most of the time we don't live our lives in those sorts of situations uh we live our lives in situ where somebody says something
+[06:31] to us when we're walking down the street um for anybody in high school uh people talking trash at lunch um or college I suppose there's Trash Talk everywhere uh or on the Athletics field um in the
+[06:46] gym uh haters on YouTube um haters on Instagram haters all over the Internet what is our response in those sorts of situations um and I've been thinking about you know what's a non-violent response to haters and trolls and I think
+[07:02] sometimes it's good advice not to feed the trolls um even with helpful stuff it depends how weird and Oddball their comments are but if you just have a hater um somebody who's really just against you for some reason I think a a good nonviolent approach
+[07:17] is to seek to understand uh to seek to listen um the interesting thing about listening is it's a nonviolent mode of communication because you're not attacking the other person with your ideas instead you're absorbing maybe even their verbal abuse
+[07:32] um and trying to understand and listen to them it's a way of showing love to an enemy or someone who considers thems your enemy um and that's something that Jesus taught that we were to love our enemies that we're to turn the other cheek um that when the Romans would force um one of the
+[07:47] people of an occupied country U specifically the Jewish people when the soldiers would force them to carry their gear like an animal like a mule for a mile that they were supposed to go 2 miles um that if any body came and asked for their shirt they would give them their coat
+[08:02] also so this is kind of the logic of nonviolence and I think about that and I I just I wonder what if everybody just decided to live that way you know wouldn't it be great if we could all just get along but you know
+[08:18] if people could listen and seek to understand um be empathetic I think a lot of the problems that we have um would go away uh whether that's just hate on the Internet or whether that's global politics but anyways I'm interested on other people's
+[08:33] perspectives on nonviolence um in your actual life and if you do practice that what it looks like not so much crazy hypotheticals um I do those sometimes and if you really want to throw those out there you can but I think those get away from
+[08:48] reality I think dealing with uh the concreteness of what we deal with day-to-day is an important way of seeing nonviolence um I'll probably develop this more in other videos but I think Revelation if it presents one thing and this may be ironic
+[09:03] to some people um that Revelation presents that Christians are supposed to be utterly nonviolent and that may seem strange there's a lot of War imagery and Revelation but I think that imagery itself is being used in an ironic
+[09:18] way uh by John so anyways I may talk more about specific texts and why I think that but in any case uh if you're watching this leave some comments below I'd be interested to see the opinions um whether they're an agreement disagreement or just thoughts
+[09:34] of people out there in the audience in any case um probably going to have played some bench footage over this so the video is not 20 minutes long like some of these other ones seem to be but uh wherever you're at I hope you're doing well blessings

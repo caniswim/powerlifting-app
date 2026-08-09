@@ -119,10 +119,16 @@ async function fetchOne(v) {
   // por vídeo, latência, não banda), e ela já está acontecendo aqui para achar a
   // trilha de legenda. Pedir a data numa segunda passada dobraria o tempo do
   // corpus inteiro por um campo que veio de graça nesta.
+  //
+  // `--no-simulate` é OBRIGATÓRIO junto de `--print`: sozinho, `--print` liga
+  // `--simulate` e o yt-dlp para de escrever a legenda no disco. O sintoma é
+  // cruel — sai "sem legenda em inglês" para 100 % do canal, que se lê como
+  // problema da fonte e não do comando.
   const { stdout } = await exec(
     'yt-dlp',
     [
       '--skip-download',
+      '--no-simulate',
       '--write-auto-subs',
       '--sub-langs',
       'en-orig,en',

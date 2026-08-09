@@ -1,0 +1,40 @@
+---
+ref: G054
+videoId: t3ABekdIf70
+title: "Fun with Deadlifts"
+url: https://www.youtube.com/watch?v=t3ABekdIf70
+durationSec: 467
+source: captions
+words: 1508
+---
+[00:00] Well, Garrett Levens here uh with a mid session uh discussion. Uh just did a 63543. Supposed to be at an RP8 and a half, but I misgrooved the last rep and got a little forward. Uh so it was way harder than it
+[00:15] should have been. Uh the reason for that was probably using straps. Um I can't get set the same way and I can't brace the same way as I can with straps and so I'm actually weaker with them. But I don't know if you'll be able to see it right there. Let me see if I
+[00:31] can just real small. I did 585 for three and it uh it started to split my finger there. So, I just didn't want to tear it more. It's so far out. Grip is not my issue.
+[00:46] So, uh my hands have been getting pretty beat up. The reason that happens is cuz the more sets that I do, if I'm in a high volume phase, my hands usually get pretty beat up. If you uh follow me on Instagram, you'll see in a recent uh bench video I have tape around this part of my hand. It's because
+[01:01] in this area right here, when I roll the bar forward in these rogue racks um to get it as close as possible before I unrackck it, it just starts to wear out my hands. So, I started wrapping up. But that uh that brings up a point of hand help.
+[01:17] Use your hands uh for powerlifting. Like it's important you're holding the squat bar, you're holding the bench, you're holding the deadlift. like you need your hands to be in healthy working order. So, make sure you take care of your calluses. Uh they're going to build up. Personally, I don't like to let my calluses build
+[01:32] up too much because if there's that much dead skin and the bar gets underneath that, the dead skin bunches up and then if the bar slips all, it'll rip out a whole big old chunk of your hand. Whereas, if you have your calluses a little bit better maintained, um
+[01:47] you don't tear the whole callus off. You just kind of rough it up. Um so, I don't know. take that. That's just the way I do it. Other people, they let those calluses build up as much as they can. They actually like it. Um, personally, that's not something that I uh do,
+[02:02] but you can take that for what it is. Uh, going to finish out the day, I think, with four back off sets of three. Supposed to be a 5% drop, but I'm going to drop a little further since I overshot RP on my top set. I considered doing singles today, but since it was my first day back sumo,
+[02:17] um my form is pretty rusty and so I'm definitely uh taking it a little bit easy, which is odd to say since that triple was 50 lbs heavier than the heaviest triple I did in my last
+[02:32] training cycle, I think. Um I think at about this point, maybe a week or two earlier, um cuz I'm I think I'm 6 weeks out right now. I might Yeah, six I think is right. But about 7 weeks out from my last meet, I missed a 655 deadlift. Um, couldn't
+[02:48] break the floor with it. At least I think it was 655. Might have been 635, I can't remember. But I know it was mid6s and I missed it. It was very discouraging. But at that point in my training cycle, uh, my strength was just way down. Um, and you know, that'll happen during certain training cycles.
+[03:03] But that doesn't mean you need to reset everything. I have some uh people who ask me, you know, if they're having a bad training cycle, they're not hitting the numbers they want to hit, they wonder if they should just restart. Well, if every time something goes wrong and is a little suboptimal, you restart a training cycle, you probably
+[03:18] never finish one. Um, that's where training with RP is helpful, you just adjust your RPS down a little bit. Maybe you cut out a little volume, focus on some recovery and mobility work over the week, and then you hop right back into uh training without really skipping a beat.
+[03:33] I did that in this last meet ended up being the best meat that I've done. And that week, uh, the week of that meet, my back was cramped up. Uh, seized up on me Monday. I couldn't even lift until Thursday. And so, long story short is sometimes it's good to test
+[03:48] even if you're feeling like you've had an off training cycle, cuz you may surprise yourself. What is important is to stay positive going into that test. If you say to yourself, "I'm going to test, but I'm not going to set any PRs and it's just going to suck." Well, then it probably will. Um, you
+[04:04] need to be positive and you need to when you go into the gym, especially to test is go for it. I was very excited about today even though it's first day back sumo deadlifting. Um, I got to go to an 8 1/2 RP on a triple. That's a pretty heavy deadlift, especially considering I
+[04:19] think I got up to like 405 on conventional during the uh the offseason portion of this training cycle, which is incredibly light. Um but for me that's how far off it is because my uh my lower back for whatever reason does not tolerate sumo
+[04:34] deadlifting. Um so anyways um see how the uh the rest of the workout goes. Probably I will have put up some of the deadlifting so this isn't a super long video uh over this voice over. So should be seeing some 585 sets
+[04:49] um with straps. So, uh, I'll probably do three more of those since I did 585 for a triple on my way up. Sometimes when I'm feeling a little tired, like I am today, I'll count some of my warm-up sets. If the warm-up set happens to be the same as my back
+[05:04] offset, I'll count that as my first warm-up set. That's just something I do cuz the volume just works out better that way for me. And it also lets me focus and feel like my warm-up sets aren't wasted sets. Um because I'm going to count them as working sets later if
+[05:20] I end up uh using that same weight as a back off set. So um anyways, uh I'll get back with a little bit more rambling uh after these next couple of sets. Well, finished
+[05:35] up. Did one of the sets without straps just cuz it feels so weird using straps, but my hands were starting to hurt. Definitely don't want to tear any calluses. So, put the straps back on for the last set as you saw.
+[05:50] And it went better than any of the other sets with straps. So, I got in a better position. Used a slightly wider stance, but starting to, I think, just get used to pulling sumo again. It is day one, so I'm sure I'll get some neurological adaptation and uh
+[06:05] numbers should shoot up a little bit, which will be good. Um, at least that's the plan. Um, got some back off work now. Um, some rows and some other stuff. Haven't even looked at my workout yet actually to see, but
+[06:21] get through it and uh finish out the day. Go get something to eat. Sounds pretty good right now. In any case, some of you may be wondering about that uh novice program. Uh it's pretty much done. The early
+[06:36] novice is done. Um I'll be getting more info out on that. Really want to film some uh videos to go along with it so that I can explain some of what's going on so you know what's going on with it and what to expect with the program.
+[06:52] I really want to get that done this weekend, but I just don't know if I'm going to have time. Um we'll see. So stay tuned for that. uh if not this weekend, hopefully next weekend. Um but things are just uh schedule is busy and that's one of those other things
+[07:07] you got to manage. Got to manage your calluses, got to manage your time. But uh in any case, uh finishing up the workout, getting the uh assistance work done. You shouldn't just blow blow through your
+[07:22] assistance work either. You should take everything serious or as serious as you can. Um, it all goes towards building a better total. So, in any case, um, hope you enjoyed the video and, uh, the deadlift workout.
+[07:37] One of my favorite workouts of the week, um, cuz I get to lift the heaviest weights. Uh, anyways, hope wherever you're at, you're doing well. Blessings.

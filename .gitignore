@@ -39,3 +39,4 @@ research/tools/.venv-whisper/
 
 # Sobra de fetch-captions interrompido — nunca deve ser commitada
 research/corpus/**/.tmp/
+research/tools/scan/

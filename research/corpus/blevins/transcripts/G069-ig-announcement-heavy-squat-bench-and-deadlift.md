@@ -1,0 +1,41 @@
+---
+ref: G069
+videoId: NnVkHv7PXOo
+title: "IG Announcement! Heavy Squat, Bench and Deadlift"
+url: https://www.youtube.com/watch?v=NnVkHv7PXOo
+durationSec: 484
+source: captions
+words: 1617
+---
+[00:00] Garett Levens here with a quick overview of some of the heavy work from week two um also a Instagram announcement you can follow me at Garrett blessings uh that is my Instagram uh not much up on there yet just starting it now but going to
+[00:15] probably be a little bit more active there in the uh coming months so be aware this was for the uh Selma strong bench press Challenge and so this is kind of an opportunity to remind you all again if my content has been helpful or informative I encourage you please to give even if it's a
+[00:30] dollar or two to the account um it's to help out Southside High School um and Selma uh with building their weight room and they really could use some better equipment so if you can help out to that there's a link in the description box below you'll see there um
+[00:45] I am trying to make the move to hook grip so I'm doing kind of a single each week before I end up doing my rep work uh with straps as back off work uh today the first reps really felt slow um my hips were a little bit tired but it just wasn't a great
+[01:00] day um I've been pushing it pretty hard the last week or two and so uh it's definitely been a little bit taxing for sure this is my third week back of training uh my second real week the first week was really an introductory week but I'm still happy
+[01:15] with these for sets of six uh that's pretty good for me and I didn't do really any rep work uh with this weight or uh kind of rep range lately uh with deadlifts it's been a lot of singles so I definitely have a very different reaction um physically to
+[01:31] rep work on Sumo a lot of different areas get sore and hurt and I'm hoping that that's going to translate over to some better higher numbers CU I have got to get my deadlift squared away uh This was later the next day actually um so I was a little
+[01:46] tired but I also had my uh workouts run into each other my schedule got a little busy so I would have liked to have had a day of rest in between these two but it was not to be so um and so uh 530 here for a set of six on low
+[02:01] bar nothing special that's actually pretty low for how hard it felt but I think that's due to the uh rep work with deadlift just the day before um took a long time warming up on this day cuz my back felt tight hips felt tight
+[02:16] and things just did not feel fresh and they're not supposed to it's not that time in the uh training cycle I then did uh I think oh how much is that a 20 lb drop and did two more sets of six till the RP is matched
+[02:31] what was weird is after the first set I pretty much had matched the RP of my initial set with 530 but I really wanted to get some more rep work in so even though I had pretty much hit the same RP uh that I was going to cap at I decided to do another set um because
+[02:46] I knew I was going to have a couple of days off after this so even if I overreached a little bit I'd have time to recover uh since I'm going to have pretty much 48 hours until my next workout so the second set here for some reason felt a lot better and this this will happen to me every once in a while
+[03:02] um even though I didn't really adjust my rest periods or anything I just felt a lot better on this one bar moved better uh speed of the Reps was good and so I was happy about that this one turned out being probably at least one rpe lower than the previous back off set
+[03:17] and probably a lower RP than my initial set so it I decided to call it anyways it was more volume than I had done the week previous and so since it was an improvement on volume I figured n just call it there for this week and I can add some more volume in next week if I need to
+[03:33] I then moved over to bench press um I worked up to a heavy set of six normally I would have worked up to my weekly Max but since I had done the Selma strong Max uh the day before with 475 I just did uh 385 for the set of six here doing
+[03:48] touch and go pretty much um I wish the straps I could adjust them just a little bit one way or the other because they touch a little more than I would like but that's kind of where they have to be to help me out now this is what I'm calling the uh Hanny bench circuit uh my coach TSA
+[04:03] Hanny JZ jazreel jazari gosh I don't know his last name I call him Coach but anyways he advised me to do some back off work with some lighter weights and so I lightened up the weight a lot taking what was really an RP uh
+[04:19] probably 9.5 for my initial set and dropping all the way down to like rpe 5 uh off of that um and looking at the percentage ranges for that and then throwing some bands on to really tacks my triceps and so I did a three sets with three bands three sets with two
+[04:34] bands and one set with one band and that was it for the workout and got pretty pumped up after that one it was nice to have a little bit more rep work so continuing on um we've been talking about postmodern thought especially is how that uh relates to Christian Theology
+[04:49] and I want to bring that in and really start addressing some of the more specific aspects of that uh with this passage and this is where uh a lawyer uh someone who's well versed in the law has come to Jesus and asked uh what is
+[05:04] the greatest commandment and Jesus answers with two Commandments the first is to love the Lord your God with all your heart soul mind and strength um and that this is the greatest commandment but he comes in and says and the second is like it to love your neighbor as
+[05:19] yourself and I specifically wanted to start with this because this really hits at the core of can you master another person can you rule over them can you own another person can you turn them into an object uh for your profit
+[05:34] I was I could think of uh pimps pimps is a good example you know to put someone uh put in my pocket put someone in your pocket you own them you can sell them they're yours um and you can pimp people out or you can own the Miss slaves to me it's all the same sort
+[05:50] of mentality where you turn a person into an object and the question is is that how you love yourself and ultimately I think that some people answer yes to that question question that they do in fact Master themselves they determine who they are they
+[06:05] make their own identity they are their own God and their body is their Idol um they are in charge of themselves I don't see it that way um I don't have that P that perspective personally
+[06:20] I do not believe that I am the master of my own destiny and that I get to make myself however I want to make myself um I believe that I was made I believe that I'm a creature who has been made by God therefore I don't have the right to
+[06:35] take the role of the Creator and make myself and therefore I cannot master myself rather God is my Lord and Savior and master and because of that I don't Master other people either because I could
+[06:50] never love them as I love myself since I do not master myself I do not master them and then the question is well then how do you relate to them how do you love yourself and how do you love another with that same measure
+[07:06] and I'll pick up on that in the next video I'd be interested on the thoughts of those I'm sure many of you out there in the audience do not have that perspective um not that that necessarily means that you're okay with uh the objectification of people or slavery or something like
+[07:21] that I don't think that necessarily follows but I do think that it is a possible result what's interesting is that so so-called you know white Christians were slave owners um in America and ultimately I have to say that there is a
+[07:36] tremendous hypocrisy there I don't see how someone can claim to be a Christian and yet own slaves um that just doesn't make sense any more than how someone can claim to be a Christian and pimp somebody out or be a drug dealer
+[07:51] um it's just it doesn't make sense to me but anyways this video is going a little long uh I will be talking more on that and my personal views in the future I hope wherever you're at you're doing well blessings

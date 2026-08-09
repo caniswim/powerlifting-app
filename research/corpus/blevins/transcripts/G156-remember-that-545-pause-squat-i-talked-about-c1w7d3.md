@@ -1,0 +1,35 @@
+---
+ref: G156
+videoId: Afw0s-RA4D4
+title: "Remember that 545 pause squat I talked about??? C1W7D3"
+url: https://www.youtube.com/watch?v=Afw0s-RA4D4
+durationSec: 391
+source: captions
+words: 1389
+---
+[00:01] [Music] Garr bevens here with an overview of my last day of week seven uh this was a really good day you'll see here I was able to get up to that 545 for 5 pause squat that
+[00:16] I talked about uh bench was a little bit uh less today um than last week I was able to get up to 405 last week but just wasn't really there today um had a good PR on pause conventionals they felt really good um and also alltime PR on close grip
+[00:32] uh bench press here you see the overall numbers for the week uh volume wise so we start off here with pause squats these just felt really good this week um I know I've been dialing in my form more and the volume has been less the last uh week or so and so I think some
+[00:47] of the fatigue is starting to alleviate I did feel that the uh pauses were a little uh short on this day I realized it after I watched the video footage so I don't know sometimes when you're under that heavy weight it just feels like you're down there for a long time when in reality you're not
+[01:02] really down there for a long time I'll also say that I was uh this second set here I believe is uh 515 uh maybe 525 I can't remember but in any case uh I went up to 545 after this set but my camera did not record I was
+[01:17] kind of thinking about doing a drop set after it uh the first set of 545 I did was probably an rp9 uh the second set at a RP 9.5 but I did do it for two sets though I will say the second set as I watched it over had some really short pauses Down in
+[01:32] the Hole however this is again I'm not getting any uh bounce out of the bottom as I normally do um and so I think sometimes when I'm doing pause squats that last you know inch or two on the way down that descent I start to slow myself much more than I normally would
+[01:47] and that starts to actually feel like the pause see that set there looked almost like a normal or that rep looked like a normal squat you can see there's just that slight pause down there at the bottom so this is something maybe next week uh I e I'll increase the weight for pause squats or I'll increase the
+[02:02] pause um or do both that's actually I'm going to try and do I do think that a pause squats to have a little bit longer pause than that but was still happy to get two sets of five at 5:45 uh bench press was a little bit uh slower today um I know I've been building up
+[02:18] some fatigue and pushing some weights pretty fast and so not feeling beat up per se but just uh a little bit tired today in general especially after those pause squats um that takes a lot out of me and so to come in and then work with this was a little bit difficult weight
+[02:33] still moved pretty well and worked up to 395 for a uh a set of five you'll see that I pause some of the Reps in the set some of the others I do touch and go um with this much weight it's just hard for me to pause every rep run out of breath and uh lose my upper back tightness
+[02:48] after a while so I'll do touch and go on most of them but then throw a pause in here and there to make sure that I'm still getting some good pause work I actually feel that my uh pause bench press is almost as good if not better than my uh Touch and Go bench press I think my touch and go I might have a
+[03:03] little bit on my pause but not a whole lot uh pausing really allows me to gather some energy and then uh explode off the chest so it's something to work on um this I believe tied what I did last week for paused conventional deadlifts uh
+[03:18] this is only 425 so not a ton of weight especially considering my uh my Sumo strength but these reps felt really good and so that was an improvement over other weeks I think I have gone heavier and probably will next week uh on paused
+[03:33] conventional deadlifts maybe up to uh 465 475 we'll see um if it feels anything like it did today I'll be able to do that um here was the heaviest that I went this is uh 445 and it still moved really well
+[03:48] uh today I would just describe that I was able to brace into my belt uh better than I had been able to in previous weeks uh stance is a little wider than it's been and I tighten up my belt to the fourth kn on it today instead of the third um I've been losing a little bit of
+[04:04] uh body fat and putting on a little bit of muscle with all this volume that I've been doing in this training cycle and so my leverages are changing a little bit belt is fitting differently but moving it into that fourth Notch really helped both on the pause squats and on these uh conventional deadlifts so I was
+[04:19] happy about that I also want to mention briefly um for those of you who responded to that uh coaching interest survey uh video that I put out I'm very thankful um I had overwhelming interest shown there um I'm planning on being able to hold maybe
+[04:34] 12 to 18 people at any given time and had about just about 50 uh people say that they were interested just on that survey alone so um I'm going to have to start opening up some coaching as soon as possible um I'm putting in some paperwork now
+[04:49] with the state of California to start the business legitimately so as soon as that's in I'm going to be uh contacting those people that filled out that form uh showing their interest if you are interested get name on that form um I'll be going off that list pretty much uh to
+[05:04] determine who uh is going to get to uh have a coaching spot first and so I wanted to again just say thanks for everybody that took the time to do that I know it wasn't the application um but you took time out of your day to do it so I figure I'll give you first a shot at it and
+[05:19] I'll be contacting you out of the emails uh that you put into those uh individually so if you don't hear from me it's not because I lost your information or that I'm not paying attention it's just there's a lot of people that are uh looking for this and right now I'm only going to be doing it uh part-time coaching
+[05:35] there's a large amount of time investment that comes up front uh because I'm not going to be just emailing out a program I will be uh making a program for each person based out of what they're currently doing uh so it will be individualized but that takes time especially up front
+[05:50] you'll notice on that last bench press uh close gript there uh that was in the last shot barely locked it or didn't lock it out barely got it up uh for 8 and a half uh reps but decided to go forward a little bit see where my uh close grip strength was so I think my old
+[06:05] uh four rep or five rep max was 315 on close grip I hadn't been tracking it very well so that was 365 in any case uh remember that if you keep putting in work uh gains will come to you you just have to keep that consistent investment
+[06:20] I harp on that a lot but I can't say it enough um and again thanks everybody for all the support and uh hope you're doing well wherever you're at blessings

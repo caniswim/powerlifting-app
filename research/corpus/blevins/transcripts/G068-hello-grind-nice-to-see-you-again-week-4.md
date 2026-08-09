@@ -1,0 +1,51 @@
+---
+ref: G068
+videoId: Ov86DHt6ljQ
+title: "\"Hello Grind! Nice to see you again.\" Week 4"
+url: https://www.youtube.com/watch?v=Ov86DHt6ljQ
+durationSec: 633
+source: captions
+words: 1984
+---
+[00:00] Garrett bevens here with uh pretty much almost a whole week in in review um The Grind is here and the volume work is uh is around my volume tolerance is increased which I'm happy about but it has led to a lot of back off sets uh this day
+[00:15] was uh one example of that uh this was high bar um and I called it volume day I'm not planning it as a volume day in fact the protocol was only to go up from my uh initial set one RP um so I started with what should have probably been an RP
+[00:31] 7 or 8 but turned out to be a six however this was kind of the weight that I decided to use for the day and it took me four back off sets to increase the rpe just one RP from six to 7 and uh you I speed this up here just cuz I'm not going to make
+[00:46] you watch me do uh four back off sets but you'll notice that the uh light changes and that's kind of why I wanted to leave it in here um I had started filming with my camera exposure uh somewhat High only because uh it's hard to see in the uh garage but as
+[01:01] the sun went down um I had to open up the camera more as the day went on um just because time was passing and squatted from uh when it was light outside to when it was dark outside but anyways this was a really good day I really felt like I hit
+[01:16] my stride and sometimes um instead of pushing intensity I'll push volume a little bit when I'm really feeling good and on this day um I had some other stuff planned in fact I had conventional deadlifting planned as back uh as part of this day and I moved it to
+[01:31] the next day just because squatting was feeling so good I decided I just wanted to write out the volume and really Hammer my quads since they've been a weak spot for me and so uh finished up with a nice set where it was still smooth and just a lot of good volume work um really
+[01:46] just nice to have a good day every once in a while I then moved on to uh close grip and worked up to 365 as my initial set came out to probably about 8 and 1 half RP I would have preferred um and then I dropped
+[02:02] the weight back down to 335 and repped that until I had the RP uh go up um what I would say about two from that first set of 335 so the first set of 335 was probably around a six
+[02:17] and then I continued to do sets until it went up to about an eight um so two fatigue is what I would call that um and it it felt pretty good on this day um is a good amount of volume work I can't remember exactly how many sets I did I think I ended up doing five sets
+[02:32] on bench or no I think I did six total sets on bench including the initial set and then I did four sets five with the initial set on squats so this whole day this whole workout um nine working sets but just some good quality work really
+[02:47] enjoyed it this is uh this was a tough day for me I went in for Sumo about two days after that last session I didn't film the conventional session 545 moved really well and I moved up to 585 but I had my first thumb blowout
+[03:03] on my uh right hand I didn't get my ring finger on my thumbnail it was just kind of on the fleshy part of the end of my thumb and as I pulled the weight up I detached my thumb underneath the nail from the nail it moved fast as I looked back on the
+[03:18] footage but man it really hurt and kind of was bleeding from under the nail but I uh I posted this on Instagram um I thought about my silver medal at Nationals last year and finished out the workout with straps because I was not going to not put in the work
+[03:33] and hook grip itself uh that whole Endeavor of learning that movement is because I need to get my deadlift squared away and one of the issues that I've been having is that my lats have gotten a little bit more developed as well as my triceps and if I as I've put on weight
+[03:49] I just can't get in a good position for Sumo um so I ended up doing two sets of five as back off work with 545 and these really hammered my hamstrings a lot I think probably my form is a little off maybe my grip
+[04:04] was not as strong as I would have liked it because of the thumb pain and that can really affect my speed um doing some weird stuff kind of like almost bending my elbows as I was holding the uh weight it looks like I'm actually like partially rowing the weight off the
+[04:19] floor so I need to definitely keep my arms long but I also need to work on keeping my torso um tight and my bracing against my belt better because I need to get my deadlift squared away I need to be at least pulling 700
+[04:34] easy and probably closer 715 or 720 in competition there's no reason I shouldn't do that if I'm squatting around 715 lbs so anyways uh finished up uh that day with some close grip I think I actually
+[04:49] after the uh the Sumo deadlifting I did this but took a little bit of a break in between that's one of the nice things about having a home gym and ended up I think doing eights um then did a 4% drop down to I think 300 lb um and then
+[05:04] just continued to rep out until I matched the RP of the initial set with the back off work uh which I think I put it at like an rp8 or something um so that was the day just some good volume and uh working on a little bit of hypertrophy
+[05:20] now I want to continue on where I left off last video which was talking about loving your neighbor as yourself I am writing a term paper on this right now for an ethics class and it's getting more and more involved as I'm looking at different sources but one of the things that's been on my
+[05:35] mind has been 1 John 4 and I'm going to read this real quick and then talk a little bit about it um John says there is no fear in love but perfect love casts out fear for fear has to do with punishment and whoever fears
+[05:51] has not been perfected in love we love because he first loved us and the he that first loved us is God that that's the first thing to be said but the second thing to be said about that is that God as far as the Christians
+[06:06] believe takes the first step and loves and offers Avenues of reconciliation and empowerment to enemies to God's enemies to those who are sinners to those who are against God God loves
+[06:21] people who are not righteous God loves Sinners this is because love is not something that is merited by our effort or our abilities it's not something that is merited by what we have done we're not earning
+[06:36] our way into heaven um that's not what Christians ought to believe based out of the scriptures though historically both uh those of the Jewish faith and those of the Christian faith have struggled at least at times with what's
+[06:52] called Works righteousness which is doing enough good works so that God will accept you but what this verse is pointing out um well let me say one other thing about Works righteousness first with Works righteousness if you do good works then God will reward you with good things
+[07:07] some people would say that he will reward you with heaven when you die but the opposite is if you do bad things then Eternal judgment and Punishment awaits you that's why John says here that fear has to do with punishment but whoever
+[07:22] fears has not been perfected in love they've not been finished in love um that word perfected there that tellos is the end of love and what I think the end of God's love is for us and what God loving Sinners before they've
+[07:37] done anything righteous is really about is to show us that love is never about conditions it's never about if you do this for me then I will love you you know if you put out then I'll still be your boyfriend um
+[07:53] if you do what I say then I'll love you if you go and work and bring home the money then I will love you and support you whatever the thing is that people think that's not what love is from the Christian
+[08:08] Perspective love is unconditional now the Bible does speak about different loves this is the love I'm talking about that is to be the love for God and the love for neighbor as self this love is an unconditional love it doesn't love because of what it
+[08:23] gets back and it doesn't wait to love until the other does something good this love comes before and we love and even have the capacity for love because God first loved us before we did
+[08:39] anything and there is nothing to fear from God because God loves us even when we are God's enemies this means we don't have to earn our way into God's love or into God's favor rather it's something that's given unconditionally to
+[08:54] us the only thing that we have to do is decide will we accept that love and be transformed by it or will we reject that love and turn away from God and stay out of God's presence these are the options
+[09:09] given to us because God has loved us first and it means that all of our love for our neighbor for ourself and for God is to be unconditional love in just the same way that God's love is unconditional for us now that doesn't mean that we
+[09:24] don't have boundaries or that we are just codependent and let people treat us like G garbage or that we can treat others like garbage and expect them to still be around us but what it does mean is that we do not earn love and we do not give love because it is earned
+[09:39] by other people and I'll be talking more about this as it goes on but that's what I've been thinking about lately I'd be interested in the perspectives of those who either agree or disagree with that uh view of love and why um it might be helpful in how I uh articulate
+[09:55] some of these thoughts later on in other videos so regardless um um one of the core tenants I believe of the Bible and the scriptures and of the Christian God is that it's a God that loves us unconditionally not because of what we can do what we
+[10:10] will do what we have done but because it is in fact God's nature to love and it is incumbent upon us to either accept or reject that offer and to love God in the same way or to reject
+[10:25] God and not love God in any case I hope wherever you're at you're doing well blessings

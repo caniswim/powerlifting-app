@@ -1,0 +1,37 @@
+---
+ref: G165
+videoId: cBXltrgizgo
+title: "TSA C1W3D3-W4D1 \"Hurt back and learning lessons\""
+url: https://www.youtube.com/watch?v=cBXltrgizgo
+durationSec: 416
+source: captions
+words: 1407
+---
+[00:01] [Music] gar Levens here with an overview of uh week three day three and also uh week four day one uh you'll see here that there's some uh squatting
+[00:17] in red uh had some really bad lower back pain in this workout uh not really an injury not anything that happened on one rep in particular but just kind of a general uh fatigue you'll see that the overall volume for the day was about 74 ,000 and I think it said something like
+[00:32] 45 for uh the barbell work on that day here's the rep breakdown for the week um so here's the lifting from the day really when I was unracking the weights um I just felt my lower back was kind of funky um talked with my uh coach
+[00:47] at TSA hany uh after this workout and he thought that it was probably uh something to do with a fatigued ql muscle um I went back through and did a volume breakdown of what I did in the last training cycle and what I've done so far
+[01:02] in this training cycle and looked at the uh sets reps and volumes and comparison and what came up was I was doing about um I would say about half the uh barbell movements that I'm doing in this training block though I was doing them with a little bit heavier weights
+[01:18] what that means is you see a lot of 6X sixes in this training cycle whereas uh in my previous training cycle I would maybe do a uh six sets of three and so I would be doing a little bit higher in intensity for those triples but I would still be doing six sets
+[01:33] almost never did six sets of six and if I was going over uh you know FES um I was probably doing only three maybe four sets of six maybe four sets of eight um tops and really that only a few times however on this training
+[01:48] cycle um I'm doing volume oriented training all three days instead of having the uh daily undulating uh periodization that I had with the cube cycle and so this uh block periodization really puts a lot of the volume up front which I think my
+[02:03] body uh was able to withstand as far as soreness but I think some of the fatigue smaller muscles uh that fatigue just built up and outstripped my current recovery ability now that said this is why it's so important I think for uh you to have training
+[02:18] logs when you uh modify training you need to be able to look back and see you know if you're more beat up than you were before you're having more aches and pains in certain areas or if you're getting hurt or you're uh you know verging on injury you can look back through a training log
+[02:33] and start to identify some of these things um for me I can look at both the additions of uh conventional deadlifts which I'm not used to and then also the increase in volume as something that's probably contributing additionally I had uh been ignoring some
+[02:48] of the cues that I use on squats um I had almost really forgotten some of the things that had worked well for me and have spent the last few days really rethinking my squat setup and how to achieve both neutral spine and bracing um you'll also
+[03:03] see on this day because my back was kind of messing with me a little bit I was sinking down deep and then pulling up into the deadlift and this felt much more comfortable and also uh quite a bit less taxing on my lower back because I was able to achieve some tightness in my hamstrings
+[03:19] before initiating the pull um It's always important to use whenever you get a little hurt beat up or even have an injury use that as a learning experience in fact I injured my back 2 years ago it was the last major injury that I had um and was
+[03:34] out for uh probably about a month and a half uh my back had completely seized up on me what it ended up being was uh most likely a pulled hip flexor uh but it was extremely painful and it came when I was doing some conventional deadlifting however that led me to move to
+[03:49] a Sumo stance and when I did that I had tremendous increases in My overall strength every time that you have an injury or you get hurt that's an opportunity for you to learn and become better and that's what training is all about you don't have all the answers up front
+[04:04] you have to test things out see what will happen and then make adjustments from there again that's why if you're not recording your uh your workouts you're making some big mistakes so here's what I came back with I ended up working up to uh two sets of 405
+[04:20] on squats um and had zero pain again it wasn't injured last week just kind of hurt a little bit it's kind of how I described that uh took an extra day off then I did my normal incline presses um had a slight increase on that this week up to 285 for the
+[04:35] top set and was able to do all of my conventional pulling and actually pull more conventional uh than I've done at all in this training cycle and then uh finish up with some floor press which was down this week and some uh barbell rows I also noticed that the Croc rows since
+[04:50] there's some twisting in those when I do the full body uh one arm dumbbell Croc row that that was aggravating my lower back a little as well and so that could have been contributing uh to the fatigue without me really realizing it maybe uh some of that fatigue showed up on squats but could have been contributed
+[05:05] to with the crocro so something for me to pay attention to here you see uh I had straps on this set my hands getting a little beat up but this was uh uh 545 it's got kind of a weird number of plates put on there with 10 and 25s but this
+[05:20] moved all right I was happy with it um I brought my belt in another notch I'm weighing exactly 231 in the mornings right now uh so my weight is down slight lightly and I do think that I've been losing some uh body fat and putting on a little bit of muscle through this training cycle which is great
+[05:35] happy about that so I wanted to uh put up this proverb I've put it up before uh for though the righteous fall seven times they rise again and what this speaks about is you know as you go through life you're going to make mistakes you're going to run into walls uh you're going to
+[05:50] have issues that come up that will bring you down and if you want to be the type of person that's righteous if you want to be somebody that is successful that does the right thing you're going to come back from those difficult situations you're going to learn from them and you're going to be better moving forward
+[06:06] uh so I'm going to work with my uh my TSA coaches um work on my programming work on my recovery uh work on my form as well and uh get through some of these issues and come back as a better lifter I'm looking to uh return to kind of normal training
+[06:21] volumes uh by next week I'm going to take the rest of this week easy on squats uh but still try to push where I can and see what I can get too uh as far as numbers also the next uh training block will be coming up uh which was the end of this high volume training uh to begin
+[06:37] with this is the last week of high volume and so you'll be seeing some changes uh in the next block of training still should be volume oriented but with more intensity um and also uh less overall volume so in any case uh hope wherever you're at you're doing well um
+[06:52] thanks for watching blessings

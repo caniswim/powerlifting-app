@@ -1,0 +1,47 @@
+---
+ref: G062
+videoId: LDn-K-tmoeM
+title: "Big Lifts and Big Announcement!"
+url: https://www.youtube.com/watch?v=LDn-K-tmoeM
+durationSec: 566
+source: captions
+words: 1777
+---
+[00:00] gar Levens here with a video for the first time in a while um I've been out uh new addition to the family baby girl and it's been really good but really busy and I'm just starting to catch the uh swing of things again here so in any case I'm starting
+[00:15] the video off with this 655 this was about when my training pretty much hit a wall uh this should be a really easy weight for me to hit especially just for singles and was not able to do it as you see here and this failure really started a change
+[00:30] in my training I had to decrease my volume and frequency substantially to deal with the additional stresses and a sleep disruption that I was working with so that was probably 2 weeks before that pull there that you saw 635 that
+[00:46] was my second to last heavy pull in this training prep this is my third to last heavy Squat and I started to uh do a weekly Max for a single it needed to move well in the RP 8 and 1 half range
+[01:01] but I was only low bar squatting once a week only Sumo pulling once a week and only doing competition bench two times a week and those were all separate days and so it was a move back to a little bit more of the uh Cube style um frequency
+[01:17] where I would do you know maybe some variations on the days but pretty much each lift had its own day you'll see there that that uh release of fatigue allowed me to pull 675 uh just about 5 weeks after and uh after that missed
+[01:32] Pole or four weeks after that Miss pole and also squat 655 here um fairly well but you'll notice how as I decreased frequency and started to make better use of my uh my recovery and uh
+[01:47] allowing myself more off time how my body started to respond again and this is just to say you need to figure out what works for your schedule there's no one perfect training plan and it depends on what works for you and where you're at in
+[02:02] life um you'll see here a uh a 465 bench and it moved pretty darn well um I was very happy with this though I did make contact with the rack I'm hoping to get maybe a little more than that in competition but based on my training for
+[02:17] this entire cycle uh that was quite surprising um so this is my uh second to last heavy bench I'll have one more heavy bench in this training cycle the week before the meet that um the squat that you're going to see coming up with my
+[02:32] last heavy squat I'm taking my last heavy squat two weeks out my last heavy bench one week out and my last heavy deadlift was about 3 and 1/2 weeks out I found that Sumo really takes a long time to recover and I can only go heavy two weeks in a row before I need to back off my hips just
+[02:47] don't just don't handle it well so you can see the speed difference there um on that rep and with this rep from some of the other lifts of similar weights uh earlier in the training cycle and that just shows that you're not always at your strongest I mean
+[03:03] it doesn't mean that you have to be at you know 80% of your best but you're not going to be training at 100% all the time and that that's okay but just by adjusting frequency and releasing the fatigue and allowing my uh my maximum recoverable volume not to exceed what
+[03:18] I could do uh things started to turn around and move in a much better Direction and so that's why it's good to track fatigue but it's also good to have various training options I started to go to a percentage Based training um so that I could regulate myself better and
+[03:33] it's worked out pretty well on that note um I do want to announce that I'll be starting another 10we group um and I'll be doing something similar to what I did when I was working with that uh Kingpin RTS split a lot of people have been interested in that
+[03:48] it worked very well for me as a uh intermediate lifter moving into advanced though my total was in an elite total I was still gaining um and making progress like an intermediate lifter and so I think uh I started that lift or I started
+[04:03] uh that Kingpin cycle in let's see here November uh after my meet in November of 2013 where I total 1646 I used the uh the cube method and then the cube Kingpin and then
+[04:18] made the Kingpin my own with a Kingpin RTS split and made adjustments and modification so much show that it's really not the Kingpin I I use that name but it's not the Kingpin program anymore more it's changed substantially um but in any case
+[04:34] I've based I've made some even further adjustments since then on what I've learned and that's what the program will uh be that's coming out I went from a 1646 total to an 1873 total in a one-year period from November to November
+[04:49] and that was definitely one of my better years um I used that uh training program all the way through January of 2015 where in a mock meet I told the 1900 in the gym but that was with uh some whipper bars and bumper plates
+[05:05] out to the side so deadlift was definitely uh higher on that than it would be in a competition but those were some of the results that I had had I just seemed to respond really well because that training plan meshed with what I was doing at the time however there'll be some more information
+[05:20] on that coming out uh in the future probably very soon maybe even uh later this week on what exactly that program is but in general for those of you who are interested is a 10-e program it is percentage based but there are RP uh principles
+[05:35] included in it um in fact there's rpe recommendations for the sets though it is uh there are numbers given for almost all of the lifts uh that I would be able to calculate um things though like shoulder raises or you know even some
+[05:50] of the variations if there's incline press or something like that if that's a weak spot that needs to be trained those would not be programmed in there you would have to use rpe to determine that um that said there are different exercises um but in general it focuses around the uh around the main
+[06:06] lifts however it's also a program that's it's for summer you know you should look like you lift and this program does have a strong hypertrophy element in it not only from the uh the main lifts and the repetition work that's present in the program but also in the
+[06:21] space that's there for assistance work you know your lap pull Downs your bicep curls your shoulder assistance work your rowing movements and there's guys programming that comes with that uh that program it's not just a template that I'll be sending out to people it will be a 10-week
+[06:36] guided programming group um and so I will be giving advice to people who want to work on areas or want to gain strength um I encourage a caloric Surplus on the program uh for the best results as well as
+[06:51] the best uh hypertrophy that you're going to get out of it not anything crazy because you don't want to gain a lot of fat either um and it's not that it wouldn't be effective for somebody on a deficit you would probably just do less of the assistance work um and maybe even lower some of the main sets but
+[07:07] in any case uh that's what is going to be coming out very soon and I'm excited about that um that opportunity and to get on uh to open that up to some people who have been asking for it for quite a while uh since they saw that I had
+[07:22] such good success with that sort of a training program that has both percentage and rpe principes together now with that in mind I want to return to a passage that I've spoken on frequently over the years but haven't spoken on recently um
+[07:37] let us not become weary in doing good for at the proper time we will reap a harvest if we do not give up uh this is a call to uh endurance and I think in powerlifting there's no verse in Scripture that
+[07:52] really speaks more to what the process of training and the discipline of training uh really is about out about teaching how to endure through tough times even when it seems like you're you're sewing you're you're you're putting your seeds
+[08:08] in the ground and nothing's happening and you're putting in all this effort and nothing is going right but this is a call to endurance to continue doing the things that you know are right and to not give up no matter what uh that's true in many many areas of
+[08:23] life uh in lifting uh as well as others and I've been reminded that over this last training cycle um and I hope that it is an encouragement to any of you who are struggling and not seeing the results that you would like to see
+[08:38] uh at the present time uh to be encouraged to continue doing what is right to also seek to learn more um to see if there is a change that you need to make and to make those changes but to continue doing good and not giving up uh even when
+[08:53] times are hard so I hope that's an encouragement if you do want to see more frequent cont content from me I am on Instagram now more than I am on YouTube so if you can follow me there @garrett blessings uh b l
+[09:08] SS i n gs uh so that is my uh Instagram and if you want to follow me there great if not that's fine too hopefully I'll be able to get some more YouTube content up uh in the coming weeks in any case I hope wherever you're at you're doing well
+[09:23] blessings

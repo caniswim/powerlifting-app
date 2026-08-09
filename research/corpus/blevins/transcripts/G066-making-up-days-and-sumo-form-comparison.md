@@ -1,0 +1,47 @@
+---
+ref: G066
+videoId: IpGrJ050KQo
+title: "Making up days and Sumo Form Comparison"
+url: https://www.youtube.com/watch?v=IpGrJ050KQo
+durationSec: 577
+source: captions
+words: 1849
+---
+[00:00] Garrett bevens here with uh the final workout of I'm not exactly sure what week this is I think it's week five of the prep I wanted to start out here by doing a little Sumo review this uh on the left is 585 from last week
+[00:16] and on the right is 585 from this week now this was from the previous video you'll see there the speed was about the same but the form is definitely different um I have a wider stance on the day that goes better and a more narrow stance on the week four there in the
+[00:31] blue and The Wider stance allowed me to move uh on this set 615 at pretty much exactly the same speed as 585 you'll also notice that uh with the glute activation and hip work I've been doing that my hips
+[00:46] and the bar pretty much start to move at the same time and uh again that's some of the best sumo form that I've had and I really like the hook grip uh it's taken a while to get used to it and I still am getting used to it but on this day had no pain really at all with 615
+[01:01] and hoping that'll keep up uh that and that that Trend will continue so it was a good day um happy about that this is the uh the next day and uh pretty beat up I did a good amount of deadlift volume on
+[01:16] that uh it was a Friday and so when I came in Saturday uh this was my last warm-up uh was it about a seven I would say with 495 but it just really beat me up but one thing I'll say is it's difficult some sometimes when you make big jumps
+[01:31] uh you'll see I go right from 495 to 565 which was my working weight for the day with fives um for my initial set and sometimes that can make it difficult with RP um I was just feeling really tired and beat up as I went back and watch this
+[01:46] set over again I noticed two things one um within the set itself I actually am going to change my stance with I'm a little too wide in my stance right here I'm a little bit better uh with a little bit more narrow stance my uh as I brace my gut I can
+[02:01] really kind of push out of the bottom of the hole a lot better and stay more upright and just have a stronger squat overall with a slightly more narrow stance just cuz things kind of Squish and run into each other more uh than they do with a wider stance this set I
+[02:16] rode it in initially as a nine but I think it was more of an 8.5 I definitely had one more rep probably two uh at the end of that but I was just feeling very tired and uh dro the back off work down pretty far it's a 3 RP drop uh
+[02:31] which comes out to about 9% uh fatigue and that's a lot of fatigue but I had missed a whole squatting workout this week and I was trying to make up some of that volume however it's very difficult to make up volume uh it
+[02:47] just doesn't really happen and I had uh I really pushed it hard on bench I had done about oh what I think I did seven sets of eight um or something like that some crazy amount of sets of eight uh the day before with close
+[03:02] grip and then I finish up later you'll see it I kind of make it go fast cuz there were so many of them I had 10 sets of five um with my back off work uh for bench today with competition grip uh I did nine back off sets actually but
+[03:17] I'm trying to keep my volume up and make up a little bit of lost ground but I want to just advise everybody out there that feels that way do what you can if you feel fresh but don't injure yourself even these uh you'll see them here um with uh
+[03:32] 515 were pretty rough sets I mean I was gassed after each one of those and it was just a tough day I probably shouldn't have pushed it so hard it may eat into my next uh next week and I almost passed out here you see how I set the weight down there a little bit
+[03:47] on the second rep that's because I was uh getting that black tunnel vision and couldn't see uh so I had to relax for a minute and then I finished out the set um as I felt better and better each rep but was just just pretty much exhausted on this day um it was
+[04:02] nice though to have this back off work which I am calling handy pressing uh my coach only referenced it one time but it's just something I've started using more and more um and I throw the bands on there I start with three sets of three or three sets of five uh with three bands and
+[04:18] then three sets with two bands and three sets with only one band um doing sets of five all the way through and uh it's just a nice way to get volume but I also don't get bored doing it and I get a really good pump I think that volume work with bench is actually really important to make
+[04:33] progress so picking up from where we left off in the last video um I just wanted to read this this is from uh Genesis chapter 3 this is after the creation accounts of Genesis 1 and then Genesis 2 uh there are some differences between those two accounts but I'm not going
+[04:48] to really get into that too much right now uh what I want to focus on is what Humanity does once they're in the garden now we learned from Genesis 1 that God created Humanity uh to image God to be the image of God uh
+[05:03] visible representation and that this takes two and once there are two human beings it is very good uh but there's this serpent in the garden and this tree uh from which God has said that they should not eat the fruit the tree of the knowledge of
+[05:18] Good and Evil um so this is the passage but the serpent said to the woman you will not surely die that is if you eat the fruit um for God knows that when you eat of it your eyes will be opened and you will be like God knowing good and evil I
+[05:33] want to note at that point that the serpent is undermining the very creative act of God that God has already made them in the image of God yet the serpent is really questioning that and saying no you're not like God unless you make yourself more than you are
+[05:48] right now unless you become more than what you were created uh you can't be like God and so there's an attack there upon their identity so when the woman saw that the tree was was good for food and that it was a delight to the eyes and that the tree was desired
+[06:03] to make one wise she took of its fruit and ate and she also gave some to her husband who was with her and he ate then the eyes of both of them were opened and they knew that they were naked and they sewed fig leaves together and
+[06:18] made themselves loin cloths or coverings as some translations say what happens here is when both of these human beings eat of the this fruit and gain this knowledge as they are attempting to be like
+[06:34] God to create themselves and make themselves God taking the form of the Creator changing their identity changing the properties of themselves um and taking things that are forbidden for them to take by God they are
+[06:49] in fact making themselves like God in the sense that they are creating themselves yet they are not making themselves like God because God does not act that way God is not the type of God that takes power and seizes it and grasps it um Paul
+[07:04] says of Jesus the revelation of God from the Christian Perspective that even though he was in the form of God he did not think equality was something to be grasped yet the original humans Adam and Eve here they do grasp at that equality with God
+[07:19] and in doing so they become ashamed of who they are they weren't good enough they needed to make themselves better at least in their own eyes and that is what the Serpent's temptation is but once they buy into that Paradigm once they buy into that way of life
+[07:35] they realize that they're not good enough and that they are embarrassed they're ashamed before they were naked and they were not ashamed because they were fine with who with who they were yet now because they've bought into this system of self-making
+[07:50] and self forming now that they are their own creators they're not satisfied with who they were created to be and who they are they need to augment themselves they need to change who they are and this is the whole problem this brings
+[08:06] down the uh issue of jealousy and violence flows right from that behavior uh this is going to be an issue with their children Cain uh who murders his brother Abel because he is jealous of what his brother Abel does and how God honors and respects
+[08:21] that this cycle of feeling insecure of feeling inadequate is at the core of many many human needs and processes but it's something that the Bible looks at and says
+[08:36] we don't need to buy into that system God loves us first before we've done anything good or bad love is not earned and we do not become approved by God by what we do and what we can produce
+[08:52] and what we take rather we need to be who we were created to be for God already loves us and that is really what the original sin is it's this sin of self-making the sin of becoming God and making ourselves and
+[09:07] our own image that we think is right rather than accepting who God has made us to be um so anyways again I'll be talking more on that but this gets at the core of what it means to love yourself and we can love ourselves and that is to accept and appreciate
+[09:22] who we are when we know that God has made us just the way we're supposed to be and that God loves us just as we are in any case uh hope wherever you at you're doing well out there blessings

@@ -1,0 +1,36 @@
+---
+ref: G129
+videoId: qfOKwNyrMCg
+title: "Building the Base TSA King C2W2D3"
+url: https://www.youtube.com/watch?v=qfOKwNyrMCg
+durationSec: 405
+source: captions
+words: 1391
+---
+[00:01] [Music] Glevens here with the final day of week two. Uh this is that darn pause squat day and they were tough. Uh worked up to 465
+[00:17] for a top set and then uh did my drop sets at 455 and I counted my last warm-up here of 405 uh as one of my sets of six. So, I uh just I think last week I did the same thing where I
+[00:32] did a uh set of six with 405 and used that as the first set even though I worked up to a heavier weight. Um just brutal brutal day today. Um was sore. I worked out uh Thursday afternoon where I did my primary squat day and then
+[00:47] uh this is Saturday morning. So, not quite 48 hours in between the two workouts. And uh it was difficult. Definitely uh tougher than I was thinking this day was going to be. Um had some pain in my right leg uh the inside of my knee
+[01:03] and so I think it's just a general tightness. Um the uh the tightness of my quad kind of pulling on the tendons in my knee is creating some of the pain there. Regardless, I was able to get through the workout.
+[01:18] I was a little bit worried that I would have some uh some pain in the knee, but overall it worked out pretty well. And that's one of the things that I've learned is that if you feel beat up and you don't want to go to the gym, go anyways and see how
+[01:33] it goes. Take your warm-ups slowly. Uh you don't want to push really hard and cause more damage uh if there is something that is injured. At the same time, uh, you don't want to miss the entire workout.
+[01:48] You want to get in there and do some work, and you don't want to lose out on that volume. So, if you're feeling beat up, feel that out in the warm-ups. Um, on this day specifically, the warm-ups felt pretty bad, and so I warmed up really slow,
+[02:03] and by the time I got to my working sets, I didn't have any pain in my knee at all. One of the things I realized I had to do though was open up in my hips more, sit back a little bit more than I usually do and put some of that tension into my hips rather than allowing for a lot of forward
+[02:18] knee travel and a lot of quad in these squats. If I hadn't have done that, I think I would have had more knee pain. And I think also if I was doing more high bar style with heeled shoes, I would have had more forward knee travel with more of that quad uh involvement. And
+[02:34] I think that would uh led to a little bit more aggravation. Um, in general, I think that it's just a lot of volume in this program. I don't think there's anything specifically that's causing any sort of injury. And this is not an injury. This is just when you're getting kind of banged up. That is going to
+[02:49] happen with a volume cycle. Um, the whole point of it is to force your body to adapt to a new stimulus. So, if you're not feeling beat up, you're not doing it correctly. However, you're writing that line in between, you know, being beat up, being hurt, and being
+[03:04] injured. If you're injured, you're out. you can't work out. If you're hurt, you can kind of work around it. If you're just beat up, you need to work through that. And the more you lift, the more you're going to learn really what those three sensations feel like and what you can work through and what you can't
+[03:19] work through. Regardless, warm-ups are a great way to see how beat up you are on that day. Uh, bench press. I was not I had no idea how bench press was going to feel on this day. I did touchandgo for the first four reps of each set and then pause the last one.
+[03:34] I usually like to do that only to make sure that I'm working with a weight that I can pause. If I'm pausing the last rep, it means I probably could have paused a lot of the reps. But with rep work, I just don't like to do pauses on all of the sets. Um, anyways, I did not know
+[03:49] how 365 was going to move today. Earlier in this training cycle, 365 has felt incredibly heavy, and I'm kind of surprised at how my bench just feels a little off right now. Um, usually that doesn't happen, but it is happening now. Regardless, this day
+[04:04] was not as hard as I thought it was going to be for the 365 5x5, and I still think that's a pretty good weight. I'll need to look back at my uh old training cycle, but I think that this is a decent amount of weight for me to be moving around. Here you can see a uh aerial view.
+[04:19] It's not the greatest. Probably not an angle I'll use a lot more. I actually don't bring a tripod into the gym with me, which is why you get some of the same angles over and over again because it is a hassle to move the camera around. I may be investing in a tripod soon. I don't know. Um
+[04:34] I will uh try to get some better angles though on some of these shots. But uh close grip bench was pretty difficult. Did have to go down all the way to 335 to be able to get a set of six. And uh though this last set of six goes okay, I was pressured timewise and
+[04:50] needed to get out of the gym. This workout took two and a half hours. And I didn't do any of the assistance work afterwards, the croc rows or anything like that. I've talked with uh Hanny, my coach at TSA, and he has said, "Go ahead and chuck some of that stuff out. It's not as important."
+[05:05] We originally put it in to address some weaknesses. Those weaknesses do not seem to be the uh weaknesses I'm dealing with. Now, I finished out with a 4x6 uh with this narrow sumo stance. Um this is about as close as I can bring my legs
+[05:20] and still use uh hands inside the knees grip. I really like training this. I feel that it allows me to uh have to sit down really low when I start to lift and it helps train that uh spreading the floor. I've been watching a lot of the uh the world's
+[05:35] competition and as I've been thinking about, you know, even nationals this year and uh starting to compete in powerlifting against other people where you start to know who the players are in the game and you're kind of thinking about how you can win or how you can beat other people.
+[05:50] I think I'm going to make the choice not to really think that way so much. Um, not that I'm not going to be competitive, but rather that I'm not going to do things from a sense of rivalry or this desire to get on top, rather I'm just going to be the best that I can
+[06:05] be and go up and when I go to nationals do the best total I can do. And whatever that is, uh, be satisfied with it. Whether it takes first, whether it takes sixth, seventh, who knows? as long as it's the best that I'm capable of, I think that is a better way uh one to live life,
+[06:20] but also I think even to compete, if you start looking at what everybody else is doing, you're going to get distracted from what you need to do. And really, you can't control anybody else anyways. And so, that's something I've been thinking about lately as I've been seeing these competitions and numbers. And uh
+[06:36] I don't know, I I'd be interested to see what the rest of you guys and girls out there think about it. Um in any case, I hope you're doing well. Blessing.

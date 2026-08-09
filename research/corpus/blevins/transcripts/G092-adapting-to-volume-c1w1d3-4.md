@@ -1,0 +1,36 @@
+---
+ref: G092
+videoId: TdfalkUf4bM
+title: "Adapting to Volume C1W1D3-4"
+url: https://www.youtube.com/watch?v=TdfalkUf4bM
+durationSec: 410
+source: captions
+words: 1406
+---
+[00:01] [Music] gar Levens here with a uh kind of overview of the final two days of lifting uh for this week first week had about 39,000 lb of
+[00:16] squat 73,000 pressing and 30,000 deadlifting for a total of a little over 140,000 lb of barbell movements most of that actually all of that done with variations um of the main movements and all of that done with right around
+[00:32] 50% of my one rep max um for the competition movement with a belt um however everything I did in this week was beltless and with variations so probably the uh the relative intensity was a little higher probably closer to 60%
+[00:48] um for the alternate variations that I used but pretty happy with that amount of volume especially for the first week back um I don't know that I've ever had that much barbell volume now I did include some of my uh assistance movements with bench press such as JM presses uh
+[01:03] in that calculation so that boosted up the uh the bench press work a little bit though it is a pretty uh the way that I do it you'll see it here at the end of this video it is definitely uh still a pressing movement so I think it's okay to count that in there uh these rack presses uh
+[01:18] stopping 4 in off my chest really taxed me on this day I had to lower the weight to stay at the RP uh by the end of the sets and uh something about just coming to this uh dead stop and and then relaxing instead of resting it on my chest these are definitely
+[01:33] harder than if I was doing a full rep uh bringing the bar down to my chest which it's odd that a uh reduced range of motion would be more difficult but you see the struggle there to uh finish that rep the reason that is there is because that's where my muscular weakness
+[01:49] is and coming to a full rest and losing the inertia uh that's actually where my sticking point is or where it starts at least um and so since the bar decelerates from that point on to pause and then reverse the weight from that spot is much more taxing than doing
+[02:04] a full range of motion where I could gain uh momentum off my chest um really enjoyed getting into some of the lower rep ranges uh by the end of the week down into sixes this is much more what I'm used to and it was a lot more enjoyable I was able to use substantially
+[02:19] heavier weights I believe I averaged 320 on my first squat day and on the am wrap I was only able to tie what I had done in previous sets I was supposed to do four sets 10 followed by an AM wrap and I did 10 on the am wrap it was all I had
+[02:34] um and that's just cuz I got so much weaker uh set to set as I was doing those um I'll have more information on my next uh second week though I will say it went substantially better um however this was the first day where I think I really started to catch my stride
+[02:50] uh doing 12 with uh High bar squats here this looks to be I believe 375 uh or 370 actually I think those are two and a halfs but this moved a lot better better um feels really good to do some beltless work really enjoying the high bar right now um kind of like an idiot
+[03:05] I forgot my heeled shoes so I was doing this in Flats uh but in general you know this was a pretty good day and I was really happy to get double um and actually move this weight up whereas the first day since I just tied my am wrap uh for the working sets it stayed the
+[03:20] same did have a little bit of elbow pain uh from all the high bar squatting but I've ordered a safety squat bar that I'm going to be including into some of my training uh just to get a even more different stimulus uh for some of these days and so you'll see that here in the future something I'm going to incorporate
+[03:36] uh Spoto 4in off the chest was a little bit easier definitely easier than the rack presses uh I don't know if that's because I just kept the tension um through my body or not I don't know what for whatever reason though uh the Spoto 4 in off the chest uh really moved a lot better than the rack
+[03:51] presses which was going to tell me that maybe I should do some more rack pressing um really stopping that momentum and then having to restart uh is difficult for me and the only time though I ever injured my PEC was doing rack presses starting in the bottom position
+[04:06] um most of the time you're going to start rack presses at the bottom I've decided not to do that um only because I can kind of set it down in a weird spot sometimes and if you get your start position wrong on rack presses you can really strain your pecs um so by no means you
+[04:22] have to start at the top unrack the weight and bring it down but it is an option um for rack presses you're just going to want to pause the weight on the the rack uh in between each of your reps um block poles uh conventional felt pretty good uh I was able to use
+[04:37] I think a whole another plate than I did uh from the floor uh for sets of 10 so I did 315 uh the first day and did 405 here um and started to blow me up pretty good this is the am wrap here um I'm not putting in all my sets because if I did
+[04:52] that these videos would be like 20 minutes long it's not taking me a super long time in the workout but it is a lot of sets and Reps uh even though it's with submaximum weights uh definitely trying to accumulate volume in this phase and still getting used to those conventional
+[05:07] po I do want to get good at those but I have some work to do now this is the modified JM press I was telling you about as you can tell it is not coming down over my face but it is coming down about 4 in higher on my chest than my normal close grip and I am doing these as close
+[05:22] grip JM presses so that's kind of my modification I'll show you more of that from some different angles um as well now adding on to that uh video that I put out last where I talked about uh morality being singular that it ought not to contradict itself
+[05:37] and it ought to be Universal I'm going to throw the gauntlet down um metaphorically I suppose but uh I'm going to present what I think to be the uh best iteration of morality and ethics uh that has ever existed uh for those of you who know me
+[05:52] at all you know that that's going to be coming from a Christian perspective and really I want to present it as my opinion and my belief but I'm very open to debate um but I'm definitely not open to debate that is slanderous or insulting or anything like that so if you are
+[06:07] interested in an exchange of ideas in the comments below um learning and improving yourself that is what I am interested in engaging in um I definitely want to learn and understand more as well I've not settled on my answers
+[06:23] to where I'm not going to change in fact I find myself changing growing and learning often I think that's the point of having discussion uh not just further entrenching ourselves in whatever beliefs we already had at the beginning um that kind of seems like a waste of time anyways
+[06:38] I'm not trying to blast anybody in particular I've said that before and I'll say it again but wherever you're at I hope you're doing well and hope you stay tuned for future videos blessings

@@ -1,0 +1,41 @@
+---
+ref: G043
+videoId: CUkuFz9w-zo
+title: "SSB PR, Guided Programming, and Relative Intensity"
+url: https://www.youtube.com/watch?v=CUkuFz9w-zo
+durationSec: 531
+source: captions
+words: 1587
+---
+[00:47] [Music] Lovin here with a quick workout overview um did some safety squat bar work
+[01:02] today was really just planning to work up to a set of eight at uh 385 bar weight I suppose that comes out to oh right about 400 lb I think on the safety squat bar but ended up going for about uh for 405 four plates
+[01:18] um and ended up doing it for a set of 10 because when I got the rep number eight um it just felt really good I was descending more quickly on the set of 405 and that really uh helped out um just for some reason I get more stretch reflex out
+[01:33] of that and if I can get in the right Groove and attack that descent even though I'm still staying tight I'm not getting loose um especially in the hole I'm not letting my hips tilt around or uh letting my knees wobble or cave in um as much as possible
+[01:48] but uh just had a much better set ended up with a really big uh rep PR for uh safety squat bar um I started doing sets of 10 with 275 just a few weeks ago and those were really taxing um I think I worked up about four sets of
+[02:03] 10 with 275 and my quads just were so pumped I couldn't do any more reps it was a really a really difficult workout um had full abdominal wall cramp afterwards um and if you've never had one of those they're awful um and so that's just night
+[02:18] and day from this week where 315 wasn't even my last warm-up I went 315 365 385 and then 405 um all of those were for sets eight except for the last set um where I went forward a little bit but this is very encouraging haven't even added my belt back in yet
+[02:33] I squat a lot better when I have a belt I've uh spent a lot of time learning how to utilize a belt properly and so I get quite a bit out of the belt um I will say one of the things to look out for with higher rep work is uh SI joint pain if you overlock out your
+[02:48] reps up at the top and then you relax as you take a breath that can really put extra strain on your back because you kind of get into that arched back position as you stand up and then kind of rest that can really cause SI joint pain if you don't maintain your bracing throughout
+[03:03] the whole lift even when you're getting that next breath um and going to descend again for another squat so be aware of that if you're doing a lot of rep work with uh even high bar squats can start to hurt your back that way um that said I kind of have something else I want to talk about
+[03:19] today um I'm excited that we're going to be starting um and by Wii I mean uh Brandon camel and Ben rice we're going to be starting another uh guided programming group we've done a couple of these before and usually uh we try to get as many people in as possible um so we'll lower the price
+[03:34] a little bit from usual and uh the reason for that is we really want a community of people going through the program together there's going to be a more extended video on Brandon Campbell's Channel um explain exactly uh what the program is some more of the principles behind it
+[03:49] basically it's a dup program based on fatigue uh percents but I've added in some uh different phase potentiation different exercise selections um just out of my experience over this last year working with uh probably a couple hundred different people um
+[04:04] and so it it's been really a great learning experience as we continue to search for that optimal programming so if you're interested in that there's going to be more information coming out uh the program will go live and you'll be able to sign up on uh Cyber Monday as it turns out
+[04:19] um that happened to be the day that we were all ready and had things squared away so you'll be seeing more information on that but just as a little heads up uh be aware of that it's not going to have a hard start date so even if you can't start um Monday next week there's going to be signups allowed throughout the entire
+[04:35] year but we're going to give a discount for people that sign up um between now and the beginning of January so just uh look for that those videos there'll be some more content and uh I hope you enjoyed the video and the uh safety squat bar work
+[04:50] one thing I want to say before I leave is one of the additions to the program uh is relative intensity and whether you sign up for the program or not is irrelevant um relative intensity is something that's important to track and also understand uh the way relative intensity
+[05:05] differs from just average intensity is your average intensity you would look at what you're doing as compared to your one rep max um and so often times you hear somebody saying oh I was using you know 75% well 75% of what well they're one rep max
+[05:20] well 75% only has a relative intensity of 75% if you guessed it you're doing it for a single because that's what you're comparing to um let's say you're doing a set of 10 with 75% and let's say you can't do a set of 10 with 76
+[05:36] you can only do nine reps with 76% and you can do 10 reps with 75% but it takes everything you have it's an absolute grinder RP 10 sort of set that means that that 75% that you're using even though it's kind of comparison to
+[05:51] one rep max is 75% which doesn't sound like a whole lot in powerlifting terms we like to stay around 80% um however if you're doing a 75% lift for a set of 10 and that's all you can do its relative intensity is 100% And
+[06:06] so in general for powerlifting the lowest you ever want to go with relative intensity is 80% but you can go well below 80% um with your kind of absolute intensity if you're doing rep work with it you just want to pay attention and the way you would figure out relative intensity
+[06:21] is you take whatever percentage in a rep range would be RP 10 meaning the highest percentage you can use and still make that number of reps and you would take that number um and divide whatever percentage you're using by that number to
+[06:37] get the relative intensity so if you can do oh Mental Math I'm not sure you'll have to check me on this uh let's say 75% is what you can do for a set of 10 um and that's your RP 10
+[06:52] but you're using uh 70% um your relative intensity oh is probably going to be some around 90% for that somebody will have to check the math on that comment below uh when you figure out that math problem but 7 /
+[07:07] 75 um gives you the relative intensity of that 7 set for 10 uh which is going to probably be around an rp8 um and I think about 90% relative intensity is going to be on point with that might be a little higher like 91 A2
+[07:22] um but there's my Mental Math midw Workout for you so we'll see how accurate I am but uh in any case track relative intensity in your workouts especially if you're doing stuff like I am it's a variation it's a high rep set I don't know what my one rep max is on a safety squat bar
+[07:37] that's why I like RP but I know that that set of 10 was an rp9 which means the relative intensity was somewhere between you know 96 and 98% um if it was like a 9 N and a half RP might might have been down closer to 95% relative intensity
+[07:52] but long story short um it was a great stimulus I know that's going to transfer over when I get back to low bar squatting um but it is good to get away from kind of monotonous training where you're doing the same things over and over again and get stale if you mix it up
+[08:08] um like I have I've gone from 275 uh to 405 in a matter of uh just 4 weeks and so that's definitely going to have some transfer over to low bar even if it ends up just being you know 10 or 15 pounds on a one rep max for low bar that's
+[08:23] a tremendous amount um but you do have to improve a lot on those assistance movements to get that sort of a carryover if you increase you know your safety squat bar rep max by 5 lbs I don't know if that's going to transfer directly over to your low bar but if you
+[08:38] increase it by you know what 125 lbs well there might be something there so in any case uh hope you enjoyed the video and I hope where you're at you're doing well blessings

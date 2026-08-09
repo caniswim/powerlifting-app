@@ -1,0 +1,41 @@
+---
+ref: G168
+videoId: uk1tyCi5toU
+title: "TSA C1W2D3 Medium Volume Day"
+url: https://www.youtube.com/watch?v=uk1tyCi5toU
+durationSec: 484
+source: captions
+words: 1571
+---
+[00:01] [Music] Garrett Levens here with an overview of my medium day. Uh it's kind of in between my first and uh second workout. This is a 6x6
+[00:17] on squats, 5x5 on bench, a uh 6x3 on deadlifts, and a uh three AM wrap sets on close grips, followed by hip thrust and croc rows. Here you see the volume for the week. The uh total volume
+[00:32] is there at 90 196,000 and the work set volume is 127. Below that is the reps broken out by uh exercise. I think I was over uh 800 reps if I added in all the accessory work reps to that uh for the
+[00:47] week. However, even though there was uh about 600 reps of accessory work, they made up uh only about 70,000 lbs of the volume for the week. Um, and included in that is the uh hip thrusters and maybe the barbell rows. Can't remember if I put those in.
+[01:02] Um, I think I counted that as accessory volume as well. Not 100%. In any case, here are the pause squats. Uh, six sets of six. Uh, did my first set with a 405 and then actually did some ramp up sets from there, trying to establish RP. Still
+[01:17] playing around with RP as a tool and uh, trying to get used to it. What I'm finding is a lot of times I'm underestimating what I'm going to be able to do and as the day goes on, uh, RP drops as I become more and more warmed up. Um, so I'm still playing
+[01:32] around with it. Uh, workouts, uh, the working weights for this day went from 405 to 455 and, uh, moved pretty well. I was happy with the depth. It's a little bit lower than it has been lately. Uh, I'd say about maybe half an inch to 3/4 of
+[01:47] an inch lower and that makes a pretty big difference. Here you see a little bit closer shot. Um, and this you can see depth on a little bit better. Uh, but I was pretty happy with these. Pauses were not overly long on this day. Uh, really was trying to go through pretty quick since I was doing
+[02:03] 36 reps. Didn't want to stay down there and fatigue the lower back too much. So, quick pause and then uh coming out of it as explosively as possible. I felt comfortable uh on this day and was really trying to squat down in between my knees and not have a ton of
+[02:18] forward knee drift. However, um you will uh have some of that knee uh moving forward in any squat. Everybody's built different. Um and usually my knees go forward pretty far. Um and I'm okay with that as of right now. I am trying to uh get a little bit wider stance
+[02:33] and may work on that throughout this training cycle. But uh that's what's going on with squats. Followed up uh with a 5x5 on bench and uh really fatigued uh upper body still. Um did 365 for this day and these reps were rough. Uh,
+[02:48] some of them I did pause, some of them I did touch and go, but I did have to drop the weight back down to, I think, uh, maybe 355. I'll see here on this. Yeah, 355 for the rest of my uh, working reps on competition bench.
+[03:04] I also had some close grip benching later in the day. You'll see here, this set went okay, so I paused the last rep longer, but on some of these, I just had to do touchandgo and barely made it through the sets. I'll see on this one how it turns out on the uh the last rep,
+[03:19] but I think uh yeah, you can see there's substantial slowing there on the fourth rep. And then here uh well, I ended up pausing that one pretty good. So, working on uh getting my overall just preparedness up for uh benching. Uh
+[03:34] this training cycle is really taxing me. 365 and 355 should not be uh as difficult as it was. So, I'm definitely uh developing some fatigue debt there. uh pause deadlifts also today. Um messing around with my belt and uh not my belt as
+[03:49] you see here. Um and starting position. I'm starting a little bit more forward. I'm still trying to retract my shoulders, but I'm just having that uh the barbell the bar path directly under the uh scapula, the back side of the shoulder there. And I'm feeling a little bit more
+[04:04] comfortable. I don't feel like uh I'm having this huge arc with my back. I'm I think using my hips more and uh squeezing the glutes at the top to lock out the lift more uh effectively and more optimally. These sets I did a
+[04:19] double overhand cuz the weight is still uh fairly light. You'll see that first set that I did was with 315 and then I moved up from there. I believe I got up to uh 365 for my top set this uh this day uh for a set of six. Um here you
+[04:35] see my belt. I wore the belt low on this set. You'll see it in another set where it uh it's higher. Uh I also forgot I was doing pause deadlifts on that first rep, so I just did it fast. Um as I'm watching these, I see that the the weight is really moving quickly. However, doing
+[04:50] this uh these sets, my back uh lower back especially was getting pretty blown up and fatigued. Though I am not as sore uh after this workout than I have been after others. I think I may be acclimating to the training a little bit. Um, and I'm really feeling pretty good
+[05:05] about coming in for uh either a Monday or Tuesday workout that's going to be that heavy volume work again. Um, I think my bar path is going okay on conventional deadlift. I think I still need to work on tightness. Uh, wearing the belt low on that set really threw me off. So, I actually just
+[05:20] took off the belt for this set here. I believe this with uh 355 and it moved pretty well again. Um, nothing special, nothing amazing here. or pause deadlifts are definitely not my uh my greatest lift. Certainly not conventional, but I am getting
+[05:35] stronger each week and I hope to build on that throughout this training cycle. One of the things that I am having to do uh with this new style of training is get used to uh doing some things that I don't like doing or haven't done before. And so that's included uh incline presses, croc
+[05:50] rows, these uh both conventional deadlift and paused conventional deadlift. But I am starting to get more used to it. Um, here I put my belt substantially higher and I got a lot more uh pressure internally when I did this and also had
+[06:06] uh felt like I could actually round my upper back without having it impact any rounding in my lower back and was a lot more comfortable. So, I think the high belt position on uh conventional deadlifting may be uh the ticket for me. This was with 365 and it felt very
+[06:21] explosive um and easy. So, I'm hoping to be uh hopefully up around 405 for most of the working reps uh next time I do pause deadlifts, but time will tell and I'll have to see how I feel that day. A lot of my training numbers are going to be low only because uh the fatigue
+[06:36] debt that I'm holding through this training cycle is pretty intense. Uh here you see some of the close grip work I was doing. Um it's not an extremely close grip. It's just about maybe an inch, inch and a half in from where I do my normal benching. and did three AM wrap sets on this
+[06:51] day with these. Um, overall happy with the day. Uh, less sore and fatigued from this day than any of the others and really happy to have 120,000 plus pounds for my work set volume this week. All between uh 70 and 80%.
+[07:07] So, made me think of this uh Proverb 14:23. Uh, and all toil there is profit, but mere talk tends only to poverty. And every lifter knows that you can talk big and you can uh discuss training uh styles
+[07:22] and different programming periodization till you're blue in the face, but you're going to have a bunch of poverty gains if you're not actually out there putting the work in. Now, I'm not saying that everybody needs to do high volume or that anybody should implement uh the training that I'm doing. This is effective
+[07:38] uh for me where I'm at in my career. I think it's actually a great example of how you shouldn't have a cookie cutter program. Uh because it's a lot of volume and a lot of people would not tolerate it. Well, even I'm just barely tolerating it. So remember that you need to be putting in the work, but make
+[07:53] it the right type of work. Uh you should work smarter and not harder, but that doesn't mean that you aren't working hard. Hope wherever you're at, you're doing well. Blessings.
