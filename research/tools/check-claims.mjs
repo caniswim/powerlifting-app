@@ -38,6 +38,7 @@ const FRAMES = new Set([
   'RPE', 'RIR', 'kg', 'lb', 'reps', 'series', 'pct', 'cm',
   'seg', 'min', 'horas', 'dias', 'semanas', 'meses', 'anos', 'x_semana',
   'contagem', 'idade', 'DOTS',
+  'g', 'kcal', 'ml', 'graus', 'bpm', 'pct_FCmax', 'mmHg', 'g_por_kg', 'g_por_lb',
 ]);
 
 const toSec = (s) => String(s).trim().split(':').map(Number).reduce((a, p) => a * 60 + p, 0);

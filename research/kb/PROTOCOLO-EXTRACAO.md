@@ -27,7 +27,14 @@ nutricao  peso-corporal  cutting  bulking
 mentalidade  competicao  pico  teste-de-forca  cardio  condicionamento
 natural-vs-enhanced  erro-comum  meta-metodologia
 antropometria  genetica  capacidade-trabalho  rom  ordem-exercicio
+saude  aprendizado-motor
 ```
+
+**Nunca force um número numa gaveta errada para satisfazer o checker.** Um lote
+mapeou gramas e calorias para o frame `kg` e semanas para `anos` — que é
+exatamente o erro de unidade que este esquema existe para impedir, reintroduzido
+pelo contorno da trava. Se faltar frame, relate no resumo final e deixe o número
+por extenso; aviso é barato, dado errado não é.
 
 Precisou de um tópico que não está aqui? **Não invente.** Use o mais próximo e
 registre a falta no relatório final. O vocabulário cresce por decisão, não por
@@ -108,6 +115,27 @@ Então, para toda claim com número:
    de 10, percentual acima de 110), marque `"suspect": true`. Um passe posterior
    re-transcreve esses trechos com Whisper e confere. **Não conserte por conta
    própria** — chutar o que "devia" ser dito é exatamente o que a base não pode ter.
+
+## Negação — a outra superfície de risco
+
+Números não são o único ponto onde o ASR estraga sentido. **Um `n't` perdido
+inverte a afirmação inteira**, e ao contrário de um número absurdo isso não
+parece errado: sai uma frase gramatical, plausível, e completamente ao contrário
+do que foi dito.
+
+Casos reais achados no corpus:
+
+- `"energy availability doesn't play a role in protein metabolism"` — dito logo
+  depois de ele argumentar exatamente o contrário.
+- `"if you're doing none currently, any amount you add won't give you big benefits"`
+  — inverte a conclusão do próprio parágrafo.
+
+Então: se a negação de um trecho **briga com o argumento em volta**, marque
+`"suspect": true` com `"suspectWhy": "negacao"`. Se a claim ficaria perigosa
+estando invertida, prefira não emitir e relate no resumo final.
+
+Números levam `"suspectWhy": "numero"`. É o mesmo passe de reparo com Whisper
+que resolve os dois, e ele precisa saber o que procurar.
 
 ## `verbatim`
 
