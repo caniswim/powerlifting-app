@@ -1,0 +1,1779 @@
+WORLD RAW POWERLIFTING FEDERATION
+(ASSOCIATION, ORGANIZATION) WRPF/WRPA/WRPO
+
+Technical Rules Book
+
+Edition 01.07.2023
+
+Current Rules Book is an official publication of the rules of WRPF powerlifting competitions
+approved by the Presidium of the WRPF Russia and its President.
+The entry of force of the current Rules Book is July 01, 2023
+Copying and publishing is prohibited without written permission of the copyright
+holders - WRPF Russia.
+
+WRPF Technical Rules
+
+Page 2
+
+Contents
+I.
+
+GENERAL RULES OF POWERLIFTING ..............................................................................................4
+
+II. EQUIPMENT AND SPECIFICATION ................................................................................................ 11
+III. PERSONAL EQUIPMENT .................................................................................................................. 15
+IV. POWER LIFTS AND RULES OF PERFORMANCE .......................................................................... 20
+4.1.
+
+Squat. ........................................................................................................................................... 20
+
+4.2.
+
+Bench press. ................................................................................................................................ 21
+
+4.3.
+
+Feet Up Bench Press. ................................................................................................................. 22
+
+4.4.
+
+Deadlift. ....................................................................................................................................... 24
+
+V. WEIGHING IN ..................................................................................................................................... 25
+VI. ORDER OF COMPETITION ............................................................................................................... 27
+VII. REFEREE, JURY AND TECHNICAL COMMITTEE ......................................................................... 33
+
+WRPF Technical Rules
+
+Page 3
+
+I.
+
+GENERAL RULES OF POWERLIFTING
+1.1. General.
+
+1.1.1. World Raw Powerlifting Federation (Association, Organization) (as WRPF/ WRPA/ WRPO),
+called Federation or “WRPF”, hereinafter «WRPF» - is independent sport organisation the main
+aim of which is to popularise RAW powerlifting in the world.
+1.1.2. Technical Rules book of the WRPF is the main document, which identifies basic principles of
+organizing and running WRPF championships. The athletes, who are performing at the
+competitions according to WRPF, coaches, all the officials of the competitions, must know and
+abide these rules.
+1.1.3. The WRPF recognizes the following lifts in all competitions run under WRPF rules:
+-
+
+Raw Powerlifting (Full power: Squat, Bench Press, Deadlift);
+Classic Powerlifting (Full power: Squat, Bench Press, Deadlift);
+Push-pull (Bench Press and Deadlift);
+Bench Press;
+Feet Up Bench Press;
+Bench Press among athletes with the physical features;
+Folk Bench Press;
+Deadlift;
+Strict biceps curl.
+
+1.1.4. Raw and Classic Powerlifting Definition:
+1.1.4.1.The approved costume and equipment allowed for the RAW division competitions will be
+defined as a non–supportive, one piece, single-ply singlet, a t-shirt, optional undershorts,
+socks, optional belt, shoes, and optional single-ply wrist wraps and knee sleeves. Knee wraps
+of any length are not allowed. The Rules of Performance for all three lifts are the same for
+Raw and Classic competitors.
+1.1.4.2.The approved costume and equipment allowed for the CLASSIC division competitions will be
+defined as a non–supportive, one piece, single-ply singlet, a t-shirt, optional undershorts,
+socks, optional belt, shoes, and optional single-ply wrist wraps, knee sleeves and knee wraps.
+The Rules of Performance for all three lifts are the same for Raw and Classic competitors.
+1.1.5. The technical rules for "Folk Bench Press", "Strict biceps curl" and "Bench press among athletes
+with physical features" could be found on the official website of the Federation:
+http://wrpf.pro/en/pravila/.
+1.1.6. Three lifts in powerlifting must be taken in the same sequence in all competitions conducted under
+WRPF rules: Squat, Bench Press and Deadlift. Two lifts in Push-pull meet must be taken in the
+same sequence in all competitions: Bench Press and Deadlift.
+1.1.7. The main document of the competitions, along with the rules, is the statement of competition,
+hereinafter the "Statement". Other changes, which are not reflected in the rules, may be changed
+and must be stated in the Statement.
+1.1.8. Permissible deviations from the rules, which may be stated in the statement:
+-
+
+-
+
+uniting age categories in accordance with the statements of the current rules. The following age
+categories could be united for awards and the overall scores: "Masters M1, M2, M3, M4 and M5,
+into category "Masters"; «Teenagers 14-16» and «Teenagers 17-19» into «Teenagers»; uniting all
+age categories into the one «Open»;
+uniting all weight classes, within the rules registered in the current Rules;
+uniting «Amateurs Drug Tested» and «Amateurs» divisions into the one division – «Amateurs»;
+defining the other order of counting Team Championship Scores.
+WRPF Technical Rules
+
+Page 4
+
+1.1.9. Competitive results and records are determined in kilograms.
+
+1.2. Divisions.
+1.2.1. Competitions are held among athletes in the following divisions:
+-
+
+«Amateurs Drug Tested», hereinafter «Amateurs-D»
+«Amateurs non Drug Tested», hereinafter – «Amateurs»
+«Professionals»
+
+taking into account classification the athletes into different divisions by weight categories, age categories
+and sex.
+1.2.2. Every participant in the «Amateurs» and «Professionals» divisions is given three attempts to
+complete each competitive movement.
+
+1.3. Age categories.
+1.3.1. To compete the athlete must be at least 14 or older. The athlete must be at the minimum age on the
+day of the competition. The athlete who haven’t attained minimum age on the day of the
+competition can take part in the competition only with the written permission of his parents or the
+child's legal representative, made in the stated form.
+1.3.2. There is a special rule about the age categories:
+-
+
+The day a Teenager turns 20 years he or she is no longer a Teenager.
+The day a Junior turns 24 years he or she is no longer a Junior.
+
+1.3.3. The following age categories for men and women, which recognized in WRPF, in the divisions
+"Amateurs with DC" and "Amateurs", are divided into the age groups:
+
+Men / Women:
+Teenage:
+Sub-Junior:
+Junior:
+Open:
+Masters M1:
+Masters M2:
+Masters M3:
+Masters M4:
+Masters M5:
+
+from 14 to and including 16;
+from 17 to and including 19;
+from 20 to and including 23;
+from 24 to and including 39;
+from 40 to and including 49;
+from 50 to and including 59;
+from 60 to and including 69;
+from 70 to and including 79;
+from 80 years and older.
+
+1.3.4. Athletes from «Professionals» are competing in the Open age category without age classification
+but with sex classification.
+1.3.5. It is allowed to transfer results of successful attempts from the following age categories Teenagers
+14-16, Sub-Juniors 17-19, Juniors, Masters M1, Masters M2, Masters M3, Masters M4, Masters
+M5 into the results of successful attempts of the Open age class.
+
+WRPF Technical Rules
+
+Page 5
+
+1.4. Body weight categories.
+Men:
+52.0 kg Class up to 52.0 kg
+56.0 kg Class from 52.01 to 56 kg
+60.0 kg Class from 56.01 to 60.0 kg
+67.5 kg Class from 60.01 to 67.5 kg
+75.0 kg Class from 67.51 to 75.0 kg
+82.5 kg Class from 75.01 to 82.5 kg
+90.0 kg Class from 82.51 to 90.0 kg
+100.0 kg Class from 90.01 to 100.0 kg
+110.0 kg Class from 100.01 to 110.0 kg
+125.0 kg Class from 110.01 to 125.0 kg
+140.0 kg Class from 125.01 to 140.0 kg
+140.0 kg + Class from 140.01 to unlimited
+Women:
+44.0 kg Class up to 44.0 kg
+48.0 kg Class from 44.01 to 48.0 kg
+52.0 kg Class from 48.01 to 52.0 kg
+56.0kg Class from 52.01 to 56.0 kg
+60.0 kg Class from 56.01 to 60.0 kg
+67.5 kg Class from 60.01 to 67.5 kg
+75.0 kg Class from 67.51 to 75.0kg
+82.5 kg Class from 75.01 to 82.5 kg
+90.0 kg Class from 82.51 to 90.0 kg
+kg + Class from 90.1 to unlimited
+
+1.5. Defining winners and absolute winners, rewarding competitors.
+1.5.1. The athlete, who has finished the competition with the largest total is titled as the winner in
+Powerlifting, following the results of three competitive lifts. The lifted total includes the best
+results of all attempts performed by the athlete on the platform and taken into the account by the
+referees. Other athletes are determined in descending order based on the lifted total. The athletes,
+who lifted a zero result in all three attempts of the one lift, are excluded from further Powerlifting
+competition.The athlete, who has made the largest total, is titled as the winner in Push-pull,
+following the results of two competitive lifts. The lifted total includes the best results of all
+attempts performed by the athlete on the platform and taken into the account by the referees. Other
+athletes are determined in descending order based on the lifted total. The athletes, who lifted a
+zero result in all the attempts of the one lift, are excluded from further Push-pull competition. The
+athlete, who has collected the largest result performing a single lift is titled as the winner in single
+lift (Bench Press or Deadlift), following the results of his lift. The result includes the best numbers
+from all three attempts by the athlete on the platform and taken into the account by the referees.
+Other athletes are determined in descending order based on the lifted result.
+1.5.2. If the results of two or more athletes are the same, the preference is given to the athlete with the
+lighter bodyweight. If two athletes during the weight-in procedure were registered with the same
+body weight and by the end of the competition got the same total, the procedure of re-weighting
+would take place. The higher place will take the athlete whose body weight will be lighter. If the
+bodyweight of the athletes will be the same again, then both athletes are given the same place and
+the next place is not occupied.
+1.5.3. There are places in every age category, and there are places inside them in every weight category.
+
+WRPF Technical Rules
+
+Page 6
+
+1.5.4. The Best Lifters are defined by the Wilks coefficient in age groups: “Teenagers”, “Juniors”,
+“Open” and “Masters”. While calculating points in “Masters” age category the McCullough
+formula is additionally applied. The final result (total) of the participant is multiplied by the
+coefficient, and the result (point) becomes a criterion for comparing athletes and ranging them
+among absolute winners. Athlete who got the highest amount of points becomes a winner. Other
+places are ranged in decreasing order in accordance with the number of winner’s points. You can
+find the Table of coefficients for men and women in Appendix №1 to the current Rules.
+1.5.5. Rewarding ceremony of the athletes. The awarding ceremony of WRPF Championships
+participants and winners in the personal, absolute and team scores is held in accordance with the
+Statement of the competition. The allowed uniform of the athletes for the Awards ceremony at
+WRPF tournaments, Championships, etc. is the following: full tracksuit, t-shirt, sport shoes. Every
+piece of athlete appearance must be clean and tidy. It is not allowed to use the emblems and logos
+on uniform of the athletes with offensive content.
+
+1.6. Team championship.
+1.6.1. The team championship can be held at the tournament, according to Statement. The amount and
+team composition is determined by the Statement.
+1.6.2. The system of point scoring for team championship is also regulated by the Statement.
+1.6.3. The main rule for point scoring is the following: team points could be got for first ten places and
+are allocated in the following order: 12 points – for the 1 place, 9 points – for the 2 place, 8 points
+– for the 3 place, 7 points – for the 4 place, 6 points – for the 5 place, 5 points – for the 6 place, 4
+points – for the 7 place, 3 points – for the 8 place, 2 points –for the 9 place and 1 points – for the
+10 place. All the participants of the competition ranked below the 10th place earn 1 point for
+command superiority. The team which gets the maximum number of points becomes a winner in
+the command superiority. If the number of team points are equal for two teams, the command
+which has more taken 1st places becomes a winner. In case of having the same amount of 1st
+places the winner is determined by the number of taken 2d, 3d, 4th and so on places.
+1.6.4. There could be Increasing coefficients for team scores which could be attained according to the
+athletes level in Sports standard (NB: in Russia there is a system of Sports standard which is based
+on the bodyweight, lifted total, type of powerlifting usage of equipment and other parameters).
+1.6.5. Team entry form should be sent by the Captain of the Team accordingly to deadline announced in
+the Statement. Changes and additions after deadline could be made only with the approval of the
+Organizing committee of the tournament.
+1.6.6. There can be run several team championships during the competition. For example, the
+championship between teams of different countries, between teams of different regions or between
+teams of different sport clubs.
+1.6.7. Other questions about team championship are regulated by the Competition Rules.
+
+1.7. Tournament ranking.
+1.7.1. WRPF identifies the following classification of tournaments:
+- city/regional (district, sport club)
+- master’s sport categories (subject of the country)
+- regional
+- international, national or All-Russian
+1.7.2. Requirements for the technical equipment of tournaments are listed in «Technical requirements
+for running WRPF competition». Obeying these requirements is an absolute must for all the
+competitions which are sanctioned or held under WRPF. Requirements for the referees and the
+process of fixing records are described in the relevant paragraphs of the current Rule Book.
+WRPF Technical Rules
+
+Page 7
+
+1.7.3. By International, National or All-Russian tournament could be meant World Championships and
+World Cups, Continental Championship, as well as individual countries tournaments with
+assignment of sports titles up to WRPF PRO, with the registration of the national, continental and
+world records.
+1.7.4. By Regional tournament could be Championships and Cups o cups of individual territorial
+districts of the country with the assignment of sports titles up to WEPF MSIC inclusively and
+registration of the national records.
+1.7.5. By Master (subject of the country’s) tournament could be meant any Championship and Cup of
+territorial/regional or of the subject of the countries with the assignment of sports titles up to
+Sports master WRPF inclusively, and registration of the National and Regional records.
+1.7.6. By City (town, district, club) tournament could be meant any Championship and Cup of the city,
+town, district, club with the assignment of sports titles up to Sports master WRPF inclusively and
+registration of the City records. These competitions are held without drug tested division.
+1.7.7. There could be done another classification of Tournaments for WRPF national departments
+according to the features of the country. Usage of the other classification must be approved by the
+President of WRPF.
+
+1.8. Drug-testing.
+1.8.1. During WRPF competitions there are drug-testing operations which are conducted in accordance
+with the «WRPF Anti-doping rules».
+
+1.9. WRPF Records.
+1.9.1. WRPF registers the following records:
+-
+
+World
+Continental
+National
+
+1.9.2. There also could be registered Regional WRPF records (of the district, city or town). National and
+regional representatives are totally responsible for registration and accounting of this records.
+Registration of region (subject of the country, city) records is not a compulsory requirement by
+Federation.
+1.9.3. World and Continental records could be registered only by the head of WRPF or Official recordspeaker of Federation.
+1.9.4. In case of setting Continental or World records on tournaments which are run by national
+departments of WRPF, the Officials of these national departments are responsible to provide in a
+strict 3-days-deadline a protocol of tournament to the HQ of WRPF. The protocol should be
+created in established form and represent the needed information about the set records.
+1.9.5. Only citizens of the country can set national records. For example, citizens of the Russian
+Federation can only set Russia’s records; only U.S. citizens can set America’s records, and so on.
+1.9.6. The level of set records depends on classification of the tournament.
+1.9.7. The approved status of records depends on the rank of the referees presented at these
+competitions.
+1.9.8. All records which could be set during WRPF Championships are possible to be made in the
+following movements:
+
+-
+
+Powerlifting Total
+Powerlifting Squat
+Powerlifting Bench Press
+WRPF Technical Rules
+
+Page 8
+
+-
+
+Powerlifting Deadlift
+Push-pull Total
+Push-pull Bench Press
+Push-pull Deadlift
+Bench Press
+Feet Up Bench Press
+Deadlift
+
+1.9.9. All records are registered in each age category, weight category and differentiate by sex.
+1.9.10. Records in «Amateurs-D» division should be registered separately from records in «Amateurs»
+and «Professionals».
+1.9.11. In «Professionals» records are registered only in Open age class with separation by weight and
+sex.
+1.9.12. Registration of records only takes place in the tournament sanctioned by WRPF and in full
+compliance with the rules of the federation and with the full accordance of the equipment, referees
+qualification to the stated Rules.
+1.9.13. Record attempts can be made at any attempt. In case when during one competition, and in one
+category there were implemented several successful record-setting attempts, the attempt with the
+last, the heaviest weight would be recognized as new record.
+1.9.14. In case when two athletes exceeded the existing record in separate lifts or in the full power total
+by lifting the same weight, as champion will be recognized the athlete with lower body weight. If
+both athletes during weighing in procedure were recorded with the same bodyweight, as champion
+would be recognized the athlete who was the first to beat the existing record.
+1.9.15. New WRPF Records are only valid if they exceed the previous record by at least 0.5 kg (500 gr).
+1.9.16. Records in age categories are counted even if there is only one participant at this age class.
+1.9.17. In case of absence of the record chart results, records are defined by the results in the lifts which
+are set by Presidium of WRPF as a «record standard» and are accepted as records of all levels.
+Only athlete who exceeds «record standard» becomes a record-holder.
+"Standard of Record" in the age class is equated to Sports category (please see the
+“Classification Standards WRPF” document on the official website - https://wrpf.pro/normativy/):
+-
+
+Teens 14-16 - there is no “Standard of Record”;
+Teens 17-19 - “I sport category”
+Junior 20-23 - "Candidate Master of Sports";
+Open - "Master of Sports";
+Masters 40-49 - "Master of Sports";
+Masters 50-59 - "Candidate Master of Sports";
+Masters 60-69; 70-79 - there is no “Standard of Record”.
+
+1.9.18. At «Amateurs-D», «Amateurs» and «Professionals» divisions’ fourth attempt may be given for
+athlete to establish a record in each movement. The only aim of this attempt is to establish a new
+record. This fourth attempt doesn’t count in total result, and doesn’t consider while ranking
+athletes by places at competition nor doesn’t consider in registration title, accounting team points
+or accounting absolute winners.
+1.9.19. Additional record attempt may be given for athlete only in case of successful (approved by the
+referees on the platform) third attempt in «Amateurs-D», «Amateurs» and «Professionals»
+divisions.
+1.9.20. Only those athletes who applied and participated at the tournament may try to set a record in an
+additional attempt (i.e. an athlete with a zero result in the first three attempts but remaining in the
+tournament as a guest cannot set a record in the fourth attempt). If the athlete wants to set the
+record in single movement, he or she must be applied in advance to the division before the start of
+
+WRPF Technical Rules
+
+Page 9
+
+the competition. It could also take place with the approval of the organizing committee 30 minutes
+before the beginning of the competition.
+1.9.21. Athletes can set the record only in the division (or divisions) in which they were lifting before the
+end of the last weigh-in.
+1.9.22. The new records could be counted by age categories depending on at which category the athlete
+applied for the tournament – “Junior” could set a record as “Junior” and in the Open age class,
+«Teenagers» could set a record as «Teenagers» and in the «Open» age class, athletes from «Open»
+age class could set a record only in «Open» age class, «Masters» could set a record among
+«Masters» as well as in «Open» age class.
+1.9.23. In case if the class of the tournament determines that all athletes can compete only in the Open
+category, despite their actual age (Teenagers, Juniors or Masters), the athletes can set a record in
+their actual age class.
+1.9.24. After a new record was set an athlete is obligated to be completely checked in terms of clothing
+and equipment by Chief Referee right away on the platform. The procedure should be done
+immediately after the record attempt and before the athlete will leave the platform.
+
+1.10. Memberships in WRPF.
+1.10.1. All athletes, referees, and other officials of the competition have to be active members of their
+national/local WRP Federation on the day of the tournament.
+1.10.2. Heads of national offices could set annual Federation membership fee (the "Fee"). The fee
+amount could be specified in the Competition Rules. The payment should be made by athletes at
+the registration (during the weighing procedure). Payment by the referees is made after the initial
+assignment of judicial category, or during the at the registration of the participants, before the
+referee will start doing his obligations at the competition.
+1.10.3. Fee is made once a year and valid through 12 months from the date of the payment. After this
+period the fee has to be paid again.
+1.10.4. During the international competitions all the athletes and referees should be members of the
+national WRPF departments. If WRPF department in the current country does not exist, they
+should pay a membership of the national federation of the country which holds the tournament
+by paying the annual membership fee. The same rule applies to foreign participants, referees at
+any tournament of national WRP Federation.
+1.10.5. All members of the WRPF must be entered into a one database. This database is available in
+every tournament at weighing secretary. Secretary have to conduct verification of participants in
+this database while registering participants. If athlete from other country participates in the
+competition, organizers can request the member’s information from database of the national
+department WRPF from this country.
+1.10.6. In order to obtain the status of a national affiliated branch of WRPF, a potential representative
+must submit an application in the form on the website: https://wrpf.pro/en/zayavka-na-otkrytienovogo-regionalnogo-otdeleniya/.
+1.10.7. The President of WRPF is the only person who is eligible to make the decision to open a
+National Office.
+
+1.11. International affiliation.
+1.11.1. Rules and requirements of the International affiliation WRPF/WEPF/WAF/WSF - are regulated
+by the document "International affiliation of national WRPF/WEPF/WAF/WSF ". The document
+is available on the official website of the federation: https://wrpf.pro/en/dokumenty/.
+
+WRPF Technical Rules
+
+Page 10
+
+II. EQUIPMENT AND SPECIFICATION
+Every tournament in each level has different requirements of presence and quantity of equipment.
+These requirements are listed in Appendix №2 «Technical requirements for holding WRPF competition».
+The fulfillment of these requirements is a must. However, all of the equipment described in them, must
+comply with the following items:
+
+2.1. Scales.
+2.1.1. Scales for weighing the athletes have to be digital electronic, showing weight with two decimal
+signs after a comma and a measuring range of at least 180 kg. A scales certificate to accompany
+the scales must be current to within one year of the date of the competition.
+
+2.2. Platform.
+2.2.1. All lifts shall be carried out on a platform measuring between 2.5 m x 2.5 m minimum and 4.0 m x
+4.0 m maximum. It must not exceed 15 cm in height from the surrounding stage or floor. The
+surface of the platform must be flat and non-slip.
+2.2.2. It is not allowed to use the platform of multiple segments are not attached to one another.
+2.2.3. The upper surface of the platform must provide good grip of athlete's feet with platform, so it
+should be of a non-slip material and firm. It is strictly prohibited to have the segments unattached
+to each other.
+2.2.4. Loose mats or similar sheeting materials (thickness of more than 1 cm) are not permitted.
+
+2.3. Bars and collars.
+2.3.1. At the WRPF competitions only those collars and bars are allowed which provide safety while
+making movements.
+2.3.2. The following types of bars are allowed to use:
+-
+
+Standard bar for powerlifting (stiff)
+A special bar for squat;
+Special deadlift bar (flexible/soft).
+
+2.3.3. All bars used in competition must be created on factory production, shall be straight, clean of rust,
+has a well knurled and grooved. To fix weight on the bar it is necessary to use fixing collars. They
+have to provide a secure fix of the plates on the bar. Bar and collars must fit the following general
+requirements:
+-
+
+total overall length should be from 2,2 and should not exceed 2.45 m;
+distance between the collar faces is less than 1.31 m and no more than 1,48m;
+diameter of the bar should not exceed 32 mm or be less than 27 mm;
+weight of the bar and collars could be 25 or 30 kg (for special squat bar);
+collars must weigh 2.5 kg each;
+all bars used during the competition must weigh within 0.25 percent of their face value;
+diameter of the sleeve should not exceed 52 mm or be less than 50 mm.
+there shall be a diameter machined marking or the bar taped so as to measure 81 cm between
+marking or tape.
+
+WRPF Technical Rules
+
+Page 11
+
+2.3.4. It is prohibited to change the bar during the one performing group except the case when the bar is
+damaged what makes the usage of this bar dangerous to the health of athletes. The decision to
+change the bar could be taken by Technical committee, jury or referee. Changing the bar is
+provided accordingly to which exercise the bar was used.
+2.3.5. Bar usage during the tournament is regulated in Annex №2 « Technical requirements for holding
+WRPF competition».
+
+2.4. Discs.
+Discs used in competitions WRPF must meet the following requirements:
+2.4.1. All discs used in competition must be created on factory production, there shouldn’t be no chips,
+cracks and other defects which can affect on their safe usage;
+2.4.2. All discs used in competition must weight within 0.25 percent or 10 grams of their face value.
+2.4.3. The hole size in the middle of the disc must not exceed 53 mm or be less than 51 mm.
+2.4.4. Discs must be within the following range: 0,25 kg, 0,5 kg, 1 kg, 1.25 kg, 2.5 kg, 5 kg, 10 kg, 15
+kg, 20 kg, and 25 kg. Disks 50 kg are allowed for usage.
+2.4.5. Discs weighing 25 kg must not exceed 6 cm in thickness. Discs weighing 20 kg and under must
+not exceed 5 cm in thickness. Discs weighing 50 kg must not exceed 12 cm in thickness. These
+are the rules for metal discs, not rubber-coated type.
+2.4.6. Discs must be colored as the following: 0,25 kg; 0,5 kg; 1,25 kg; 2,5 kg; – any monochromatic
+color; 5 kg – white; 10 kg - green, 15 kg - yellow, 20 kg - blue, 25 kg - red, 50 kg - green.
+Acceptable to use disks of other color only in agreement with the head of the national department
+of the federation.
+2.4.7. All discs must be clearly marked with their weight and loaded in the sequence of heavier discs
+innermost with the smaller discs in descending weight arranged so that the referees can read the
+weight on each disc.
+2.4.8. The first and heaviest discs are loaded on the bar must be loaded face in; the rest of the discs are
+loaded face out.
+2.4.9. The diameter of the largest discs shall not be more than 45 cm. The diameter of the discs of 50 kg,
+25 kg and 20 kg must be strictly 45cm.
+2.4.10. Rubber discs are acceptable only in case when there is a minimum of 5 cm from the outside of the
+collars to the end of the bar, for spotter grip outside of the discs.
+
+2.5. Squat Racks.
+2.5.1. In WRPF tournaments can be used two types of squat racks: «mono lift» with a hydraulic system
+of changing height of racks and discharging level-arms from which the athlete takes off the bar
+and standard rack for powerlifting with a lever arm system of changing height of the rack.
+2.5.2. Squat racks must be a unitary structure, durable, easy to assistants’ work and ensuring safety of
+making attempts by the athlete.
+2.5.3. The racks type "mono lift" must be capable of being secured at the required height by means
+ribbons or chains. To avoid falling on the floor of the bar, in the case if athlete dropping her with
+themselves.
+2.5.4. In international and national tournaments to perform squat attempts "Mono lift" must be used with
+mechanically, hydraulically or otherwise mechanism of changing height of the rack. In other
+levels of competitions it is allowed the use standard squat racks.
+2.5.5. The squat racks shall be designed to adjust from a minimum height of 1.00 m in the lowest
+position to extend to a height of at least 1.70 m in 5 cm increments. The width between the outer
+edges of the arms which hold the bar must not exceed 1.2 meters.
+
+WRPF Technical Rules
+
+Page 12
+
+2.5.6. "Mono lift" racks have to have levers holding the bar that can move inwardly so that the distance
+between is adjusted up to 60 cm and at any of the intermediate positions the levers must be
+securely fixed with special clamps or wedges.
+2.5.7. Standard squat racks should be able to tilt and bring together two vertical levers to securely fix
+levers in position is necessary to use clamps or wedges.
+2.5.8. To fix the required height of racks should be used special pins.
+
+2.6. Bench.
+2.6.1. The bench, which used in WRPF competitions shall be a single and has a sturdy construction, be
+safe to participate athletes and assistants.
+2.6.2. The bench shall conform to the following dimensions:
+-
+
+length - not less than 1.22m;
+width - not less than 29 cm and not exceeding 32 cm;
+height - not less than 42 cm and not exceeding 45 cm measured from the floor to the top of the
+padded surface of the bench;
+the height of the uprights, which must be adjustable, shall be a minimum of 75 cm to a maximum
+of 110 cm measured from the floor to the bar rest position;
+minimum width between insides of bar rests shall be 1.1 m;
+the head of the bench shall extend 22 cm beyond the center of the uprights with a tolerance of 5
+cm either way.
+
+2.6.3. The bench must be equipped with special limiters with adjustable height.
+2.6.4. The head of the bench must be equipped with pads for the legs of the assistant, which should not
+prevent the athlete to perform the powerlifting movement.
+2.6.5. Bench height should be adjustable via a lever mechanism or jacks.
+2.6.6. For fixing the height of vertical uprights and safety uprights pins have to be used.
+
+2.7. Lights.
+2.7.1. A system of lights shall be provided for the referees to make known their decisions of good lift or
+no lift. A system of lights should have an information board with three white signals and three red
+signals located in a horizontal row and also one panel for each of the three referees on the
+platform. Also judicial board should have a two-tone alarm sound. Alarms and evaluation have to
+be visible to the referees on the platform, to the jury, to the secretary, athlete speaking on the
+platform and to the audience.
+2.7.2. When a referee detects an infraction he activates his control. Each referee will control a white and
+a red light. These two colors represent a “good lift” and “no lift” respectively. Additionally, in
+case of «no lift», when referees give signals they have to use error information card, more about
+this see at chapter 2.9 of the Rules.
+2.7.3. The lights shall be arranged horizontally to correspond with the positions of the three referees.
+They must be wired in such a way that they light up together and not separately when activated by
+the three referees.
+2.7.4. The referees are obliged to monitor the correct completion of the athlete’s competitive movement.
+In case of breaking the rules the referee has the right to enable the remote optical signal before
+completing the lift. When most of referees turn on the remote control, there is an alarm that
+informs the athlete that his attempt is failed.
+2.7.5. For emergency purposes, i.e. a breakdown in the electrical system, the referees will be provided
+with small white or red flags or paddles with which to make known their decisions on the Chief
+Referee’s audible command “flags”. In case of having no flags referees show their decisions by
+hand gestures. The thumb lifted upwards - «good lift», thumbs down - «no lift».
+WRPF Technical Rules
+
+Page 13
+
+2.8. Clocks.
+2.8.1. The timer (stopwatch) is used to set a time limit, after calling the athlete on the platform, and
+before the start of the lift.
+2.8.2. The timer must be placed within the overall visibility of the referees on the platform, secretary,
+jury, spectators and athletes in the exit area on to platform. There should be a information board
+on which is visible countdown allotted for athlete output.
+
+WRPF Technical Rules
+
+Page 14
+
+III. PERSONAL EQUIPMENT
+On any subject of personal equipment are prohibited abusive labels which would counteract with the
+sporting event.
+
+3.1. Lifting suit.
+3.1.1. The suit must be constructed entirely of fabric or a synthetic textile material, so that no support
+should be given to the lifter by the suit while lifting.
+3.1.2. Any seams, trims or other details which, in the opinion of the members of the Technical
+Committee, the jury and in case of their absence, referees, applied in suits exclusively to enhance
+or consolidate are cause for prohibiting the use of such suit at the competition.
+3.1.3. The suit shall be one-piece and form fitting without any looseness when is worn.
+3.1.4. The suit straps must be worn over the lifter’s shoulders at all times in all lifts in all competitions.
+3.1.5. The lifting suit must conform to the following specifications:
+-
+
+Can be created in any color, be monochrome or multicolored.
+The suit may have the logos or emblems - of the lifter’s nation - of the lifter’s name - of the
+lifter’s club or individual sponsor.
+It is prohibited to have prints or labels with the slogans which are offensive or discrediting the
+sport.
+
+3.1.6. Seams and hems must not be wider than 3 cm and a thickness of 0.5 cm. The seams may be
+covered or reinforced narrow band of stretchable fabric material is not more than 2 cm in width
+and 0.5 cm in thickness. Only weightlifting or wrestling suits may have seams and hems
+exceeding 3 cm in width. Also in suits in the crotch area may be two layers of the same with itself
+suits material no larger than 12 x24 cm.
+3.1.7. The suit must have legs, the length of the outer side of which may reach 25 cm, but the length
+along the inner side of leg from middle of crotch shall not be less than 5 cm and not more than 15
+cm. Measurement is made from passing through the top of the crotch seam along the inside of the
+leg.
+3.1.8. Do not use suites with:
+-
+
+sleeves of any length.
+any fasteners or other parts from metal, plastic or other materials that may cause injury or damage
+during the completing the powerlifting movement.
+it is forbidden to sew on material residues, if the straps of suit was stitched.
+
+3.1.9. Others suits, that are not accepted by these Rules, are not allowed for the use in competitions.
+
+3.2. T-Shirt.
+3.2.1. A t-shirt must be worn under the lifting suit by all lifters during the Squat and Bench Press; men
+and women do not need to wear a t-shirt during the Deadlift. Also women can wear the bra or top
+under the t-shirt, with no additional support. You can wear only one a T-shirt at the same time.
+3.2.2. The t-shirt must conform to the following specifications:
+-
+
+T-shirt must be made only of cotton and / or polyester. T-shirts consist of any rubberized stretch
+material are prohibited. Also, denim and canvas are prohibited.
+The shirt must not have any reinforced seams or pockets, buttons, zippers or V-neck collar.
+
+WRPF Technical Rules
+
+Page 15
+
+-
+
+-
+
+The shirt must not have reinforced seam.
+The shirt must have sleeves. Those sleeves must terminate below the lifter’s deltoid and must not
+extend onto or below the lifter’s elbow. The sleeves may not be pushed or rolled up onto the
+deltoid when the lifter is competing.
+T-shirt can be an officially branded t-shirt of a competition, or may bear the logo or emblem of the
+lifter’s nation, the lifter’s club or individual sponsor.
+T-shirt must be to sit free on the athlete what is guaranteed not to give him any physical support.
+
+3.3. Briefs.
+3.3.1. A standard commercial “athletic supporter” or standard commercial briefs (not boxer shorts) of
+any mixture of cotton, nylon or polyester shall be worn under the lifting suit during completing all
+the tree lifts.
+3.3.2. Women may also wear a commercial or sports bra.
+3.3.3. Swimming trunks or any garment consisting of rubberized or similar stretch material except in the
+waistband, shall not be worn under the lifting costume.
+3.3.4. Any supportive undergarment is not legal for use in competition. Evaluation of this parameter left
+to the discretion of referees, the jury and the technical committee.
+
+3.4. Socks.
+3.4.1. Only one pair of socks is allowed to be worn.
+3.4.2. Socks may be of any colour or multicoloured.
+3.4.3. They shall not be of such length on the leg that they come into contact with the knee wraps or
+knee sleeves.
+3.4.4. Full length leg stockings, tights or hose are strictly forbidden.
+3.4.5. During deadlift all the lifters should use gaiters. Their length should be such that gaiters end of 5
+cm from the patella.
+3.4.6. It is allowed to use special guards and overlays during the deadlift. They are allowed to wear
+under gaiters. They must be put on in such a manner that the top of guards does not protrude from
+the gaiters.
+
+3.5. Belt.
+3.5.1. Competitors may wear a belt. If worn, it shall be on the outside of the lifting suit.
+3.5.2. The belt shall be made of leather, vinyl or other similar non-stretch material in one or more
+laminations which may be glued and/or stitched together.
+3.5.3. It shall not have additional padding, bracing or supports of any material either on the surface or
+concealed within the lamentations of the belt.
+3.5.4. The buckle shall be attached at one end of the belt by means of studs and/or stitching.
+3.5.5. The belt may have a buckle with one or two prongs or “quick release” type (“quick release”
+referring to lever.) A tongue loop shall be attached close to the buckle by means of studs/or
+stitching.
+3.5.6. Permissible to place on the belt any inscriptions or drawings that are not abusive and did not
+discredit the sport.
+3.5.7. Dimensions:
+-
+
+Width of belt maximum 10 cm. (1)
+Thickness of belt maximum 13 mm along the main length. (2)
+Inside width of buckle maximum 11 cm. (3)
+Outside width of buckle maximum 13 cm. (4)
+
+WRPF Technical Rules
+
+Page 16
+
+-
+
+Tongue loop maximum width 5 cm. (5)
+Distance between end of belt and far end of tongue loop maximum 15 cm. (6)
+
+3.6. Shoes or boots.
+3.6.1. Shoes or boots must be worn while during completing the lifts.
+3.6.2. Shoes shall be taken to include only sports shoes/sports boots; Weightlifting/Powerlifting boots or
+Deadlift slippers. The above is referring to indoor sports e.g. wrestling/basketball/ gymnastics.
+3.6.3. No part of the underside shall be higher than 5 cm.
+3.6.4. The thickness of the inner soles if they are not part of the factory made shoes must not exceed 1
+cm.
+3.6.5. It is forbidden to use shoes with open heel (slippers, shale).
+3.6.6. It is forbidden to use shoes with metal spikes or strips, pads.
+
+3.7. Wrist wraps.
+3.7.1. It is allowed to use bandages or wraps of elastic single-layer, only factory-produced materials:
+medical crepe, polyester, cotton or combinations thereof.
+3.7.2. Wrists wraps shall not exceed 1 m in length and 8 cm in width. Any sleeves and Velcro
+patches/tabs for securing must be incorporated within the one meter length. A loop may be
+attached as an aid to securing. The loop shall not be over the thumb or fingers during the actual
+lift.
+3.7.3. Standard commercial sweat bands may be worn, but they should not exceed 12 cm in width. A
+combination of wrist wraps and sweat bands is not allowed.
+3.7.4. A wrist covering shall not extend beyond 10 cm above and 2 cm below the center of the wrist joint
+and shall not exceed a covering width of 12 cm.
+3.7.5. Using more than one wrap on one hand at the same time is prohibited.
+
+3.8. Knees wraps.
+3.8.1. Knee wraps may be worn during WRPF competitions while squat and deadlift movements.
+3.8.2. It is allowed to use wraps made only of single-layer elastic factory material: medical crepe,
+polyester, cotton or combination of them.
+3.8.3. Wraps may not exceed 2.5 m in length and 8 cm in width for all weight categories. A knee wrap
+shall not extend beyond 15 cm above and 15 cm below the center of the knee joint and shall not
+exceed a total covering width of 30 cm.
+3.8.4. Wraps must not come into contact with socks or lifting suit.
+3.8.5. Using more than one wrap on one knee at the same time is prohibited.
+
+WRPF Technical Rules
+
+Page 17
+
+3.8.6. Alternatively, a one ply knee sleeve or knee cap made from commercially available neoprene or
+woven elastic that is covered with polyester, cotton or combinations of either materials could be
+used. It should not be more than 30cm in length, and less than 7mm in thickness. Knee sleeves
+cannot have any crisscross seams that allow additional support (The Yellow Jacket Knee Sleeves
+are approved only for Classic RAW, not RAW). The placement of the sleeve is the same as in
+3.8.3.
+3.8.7. Raw lifters may only use the optional single ply knee sleeve during their lift, and it may not have
+any Velcro on it, they must be non-adjustable and non-fastening.
+
+3.9. Wraps, tapes, strap.
+3.9.1. The wraps of medical crepe or conventional medical bandages and special wristbands require
+special approval for usage during competitions.
+3.9.2. Athletes can apply to the thumbs two layers of medical tape. However, plasters and bandages can
+not be used by an athlete as aids in the performance of the exercises or for the hold the bar.
+3.9.3. While doing "squat" and "deadlift" it is allowed to use bandages, elbow pads or bandages.
+3.9.4. With the permission of the jury, official doctor or paramedic on duty medical tape may be applied
+on the injured body part. However, it may not be used as aids to the lifter in holding the bar.
+3.9.5. Medical tape or its like may not be worn anywhere else on the body without official permission of
+the Jury, or Chief Referee. Medical tape may not be used as aids to the lifter in holding the bar.
+3.9.6. All medical reports in accordance with which the athlete will be able to have a permission to use
+medical wraps and bandages during lifting should be submitted to the Chief Referee before the
+event to determine their suitability to the rules.
+3.9.7. It is forbidden to use any wraps or bandages on the elbow joints completing "bench press".
+3.9.8. If a lifter missing some parts of fingers, including the thumb, in which that hand is responsible for
+gripping a bar in the deadlift, he is permitted to use the strap. However, this strap may be used
+only on that hand and attached at the wrist only. The strap can only be used in agreement with the
+WRPF Head Referee.
+
+3.10. Inspection of Personal Equipment.
+3.10.1. During the competition the inspection of personal equipment for every lifter may take place at
+any time. It is not a mandatory procedure. Any athlete in case of doubt of any of the referees
+may be checked for permissible use of equipment, both before and after the competition.
+3.10.2. The athlete can provide the form for review during his weigh-in, but no later than 20 minutes
+prior to his flight.
+3.10.3. Only the referees, the jury, the members of the Technical Committee may check the equipment
+of the athlete.
+3.10.4. Equipment that does not comply with these rules is not allowed to use. But there could be
+exceptions. For example: the length of the bandages or trouser-leg can be cut off for the
+conformity to the rules.
+3.10.5. Equipment or form that has an unkempt appearance or damaged is forbidden to use during the
+competition. The offensive inscriptions or images on the form or equipment are prohibited.
+3.10.6. If the referee made a mistake when checking the equipment, it is does not entitle to use this
+equipment during the competition. If such an error is detected, all the approaches that the athlete
+has fulfilled with its use, are not counted.
+3.10.7. Items such as watches, costume jewelry, mouthpieces, eye wear and feminine hygiene articles
+need not be inspected.
+3.10.8. Before attempting a world, regional, continental record the lifter will be inspected by the
+Technical Controller.
+
+WRPF Technical Rules
+
+Page 18
+
+3.11. Usage of other supportive things.
+3.11.1. The use of oil, grease or other lubricants on the body, or personal equipment is strictly forbidden.
+Baby powder, resin, talc or magnesium carbonates or chalk are the only substances that may be
+added to the body and attire.
+3.11.2. The use of any form of adhesive on the underside of footwear is strictly forbidden (this applies to
+any kind of ratchet inserts in the sole, steel or other things, the lining of the sandpaper, etc.).
+3.11.3. It is forbidden to apply any adhesives, e.g. glass paper, emery cloth, etc. and to cover the shoes
+with sweet water and magnesium carbonate. A spray of water is acceptable.
+3.11.4. No substances may be applied to the powerlifting equipment. This takes into account all
+substances other than that which may be used periodically as a sterile agent in the cleaning of the
+bar, bench, or platform.
+
+3.12.
+
+Antiseptic equipment operations.
+
+3.12.1. The presence of an athlete on the platform with bleeding or open wounds is unacceptable. Any
+damage must be treated and bandaged before going on the platform. If there is blood on the bar,
+or equipment, and the lifting must be performed, so the bar and the equipment should be
+sterilized with a disinfectant solution. Competition organizers are responsible for the availability
+of such a solution during the competition.
+3.12.2. In the presence of a bleeding or open wound the athlete is obliged to resort to medical assistance
+for proper inspection and take the necessary measures for the treatment of wounds and to stop
+bleeding in order to be admitted to lift on the platform. The time allotted for the attempt does not
+stop, and in case of impossibility of solving this problem in a set time the athlete loses his
+attempt.
+
+WRPF Technical Rules
+
+Page 19
+
+IV. POWER LIFTS AND RULES OF PERFORMANCE
+4.1. Squat.
+4.1.1. The lifter shall face the front of the platform.
+4.1.2. After removing the bar from the racks while facing the front of the platform, the lifter may move
+forward or backward to establish the lifting position. If the squats are performed on the
+"monolift", it is not necessary to walk away from the racks. The lifter may be aided in removal of
+the bar from the racks by the assistants / loaders.
+4.1.3. The bar shall be held horizontally across the shoulders with the hands and fingers gripping the bar.
+The hands may be positioned anywhere. The maximum width of the grip is until the hand touches
+in contact with the inner collars of bar. Do not touch discs or bushings. Open grip, in which the
+thumb grips the bar from the outside, is allowed.
+4.1.4. Starting position - this is the position of the athlete in which: the feet flat upon the platform with
+the knees locked and the corpus is located vertically (slight deviation is allowable). The top of the
+bar not more than 3 cm below the top of the anterior deltoids.
+4.1.5. Immediately, after the setting the starting position, the Chief Referee will give the signal to begin
+the lift. The Chief Referee’s signal shall consist of a downward movement of the arm and audible
+command "Squat". Before receiving the signal to “squat” the lifter may make any position
+adjustments within the rules, without penalty. For reasons of safety the lifter will be requested to
+“Replace” the bar, together with a backward movement of the arm, if after a period of five
+seconds he is not in the correct position to begin the lift.
+4.1.6. Upon receiving the Chief Referee’s signal "Squat", the lifter must bend the knees and lower the
+body until the top surface of the legs at the hip joint is lower than the top of the knees.
+4.1.7. Only one attempt is allowed to make a movement. The attempt is deemed to have commenced
+when the lifters knees have unlocked. Completing the lift it is allowed to get some the movement
+of the bar from a starting position down along the back of the athlete (the slide), but not more than
+thickness (diameter) of the bar.
+4.1.8. The lifter must recover at will to an upright position with the knees locked. Double bouncing at
+the bottom of the squat attempt or any downward movement is not permitted. When the lifter is
+motionless (in the apparent final position) the Chief Referee will give the signal to rack the bar.
+4.1.9. The signal to rack the bar will consist of a backward motion of the arm and the audible command
+“Rack”. The lifter must then return the bar to the racks. Foot movement after the rack signal will
+not be cause for failure. For reasons of safety the lifter may request the aid of the spotter/loaders in
+returning the bar to, and replacing it in the racks. The lifter must stay with the bar during this
+process.
+4.1.10. No more than six and no less than three spotter/loaders shall be on the platform at any time.
+4.1.11. If a lifter inadvertently begins the lift prior to the Head Referee giving the “Squat” command, and
+the lifter has not continued the lift to the point they have hit the bottom of the lift and has begun
+the assent of the bar, the lifter may return to the correct starting position with knees locked, or
+even re-rack the bar, and then begin the lift once again after the Head Referee will give the
+“Squat” command, without penalty.
+
+Causes for disqualification of a Squat:
+1.
+2.
+3.
+4.
+5.
+
+Failure to observe the Chief Referee’s signals at the commencement or completion of a lift.
+Double bouncing at the bottom of the lift, or any downward movement during the ascent.
+Failure to assume an upright position with the knees locked at the commencement or completion
+of the lift.
+Stepping backward or forward or moving the feet laterally. Rocking the feet between the ball and
+heel is permitted.
+Failure to bend the knees and lower the body until the top surface of the legs at the hip joint is
+lower than the top of the knees.
+
+WRPF Technical Rules
+
+Page 20
+
+6.
+
+Any movement of the bar from the starting position down along the back of the athlete (slipping)
+more than the thickness (diameter) of the bar itself.
+7. Contact with the bar or the lifter by the spotter/loaders between the Chief Referee’s signals in
+order to make the lift easier.
+8. Contact of the elbows with the legs. Slight contact is permitted if there is no supporting that might
+aid the lifter.
+9. Any dropping or dumping of the bar after completion of the lift.
+10. If the athlete could not remove the bar from the racks during the allotted minute.
+11. Unintentional or intentional contact of bar and racks during the execution attempt. However,
+unintentional contact that did not help the athlete is not a reason not to count attempt.
+12. Failure to comply with any of the items outlined under Rules of Performance for the squat.
+
+4.2. Bench press.
+4.2.1. The bench shall be placed on the platform with the head facing the front or angled up to 45
+degrees, which will give the opportunity for Jury and the crowd to see the movement.
+4.2.2. The lifter must lie on his back with head, shoulders and buttocks in contact with the bench surface.
+This position shall be maintained throughout the lift.
+4.2.3. The athlete's feet should be in a convenient position, in contact with the platform, plates or blocks
+installed under the feet. It is allowed to touch the sharp of the foot, as well as toe of foot touching
+the floor behind.
+4.2.4. Hands and fingers must grip the bar positioned in the rack stands with a thumbs around grip. This
+position shall be maintained throughout the lift. One-way or reverse grips are prohibited.
+4.2.5. The spacing of the hands shall not exceed 81 cm measured between the forefingers (both
+forefingers must be within the 81 cm marks and the whole of the forefingers must be in contact
+with the 81 cm marks if maximum grip is used). In the case when an athlete has an old injury or
+anatomically can not grab the bar at the same distance with both hands, he must inform the
+referees about it before every attempt. If necessary, the bar may accordingly be marked before
+every attempt of the athlete.
+4.2.6. To achieve firm footing the lifter may use blocks which will not exceed 20 cm in total height.
+Blocks in the range of 5 cm, 10 cm, 15 cm should be made available for foot placement at all
+international competitions. Foot movement is permissible but must remain flat on the platform or
+blocks.
+4.2.7. Not more than five and not less than two spotters/loaders shall be on the platform at any time.
+After setting up the starting position, the lifter may enlist the help of the spotter/loaders in
+removing the bar from the racks. The lift off if assisted by the spotter/loaders must be at arm’
+length.
+4.2.8. A personal assistant of the athlete can be on the platform as a spotter per the request of the athlete.
+In this case an assistant needs to go on the platform in a neat sport suit only, which doesn't impede
+movements and doesn’t have inscriptions and drawings with provocative or offensive sense. A
+spotter after providing a lift off, must immediately clear the area in front of the head referee.
+4.2.9. After removing the bar from the racks, with or without the help of the spotter / loaders, the lifter
+shall wait with straight arms elbows locked and hips and shoulders on the bench for the Chief
+Referee’s signal.
+4.2.10. The signal shall be given as soon as the lifter is motionless and the bar is properly positioned. For
+reasons of safety the lifter will be requested to “Replace” the bar, together with a backward
+movement of the arm, if after a period of five seconds he is not in the correct position to begin the
+lift. The Chief Referee will then convey the reason why the signal was not given. Also, the
+"Return" or "Help" command can be given by the senior referee on the platform to prevent
+injuries, in the case of an error committed by an athlete which prevents the attempt to be counted.
+If the personal spotter does not immediately leave the platform area and or in any way distracts or
+impedes the head referees responsibilities, the referees may determine that the lift is unacceptable,
+and it will be signaled "no lift" by the referees and given three red lights.
+WRPF Technical Rules
+
+Page 21
+
+4.2.11. The signal to begin the attempt shall consist of a downward movement of the arm together with
+the audible command “Start”.
+4.2.12. After receiving the signal, the lifter must lower the bar to the chest or abdominal area, hold it
+motionless, after which the Chief referee will signal the audible command “Press”.
+4.2.13. After the "Press" command the lifter must then return the bar to straight arms’ length elbows
+locked, non accepting significant distortions in the movement of the hands. When the position
+would be motionless the audible command “Rack” shall be given together with a backward
+motion of the arm.
+4.2.14. If an athlete inadvertently begins to lower the barbell before the command of the central judges
+"Start", but does not touch the chest, he can return it to the original position on straightened
+elbows or even return to the racks, and then try again, after the central referee will give a
+command "Start".
+4.2.15. In case when both hands anatomically cannot be straightened entirely, the athlete should provide a
+relevant medical report when registering or weighting in. It is the lifter’s responsibility to explain
+the issue to all the three referees, and allow to make inspection of the intended grip prior to
+making an attempt.
+
+Causes for Disqualification of a Bench Press:
+1. Failure to observe the Chief Referee’s signals at the commencement, during or completion of the
+lift.
+2. Any change in the elected lifting position during the lift proper i.e. any raising movement of the
+shoulders, or buttocks, from the bench, or lateral movement of hands on the bar. Movement of the
+head couldn’t be the cause of disqualification.
+3. A slight displacement or slipping of the feet should not be considered as a cause of
+disqualification if feet were not detached from the platform completely.
+4. Any obvious (excessive) uneven straightening of the hands during the execution of the bench
+press. Any downward movement of the whole of the bar in the course of being pressed out.
+5. Bar is not lowered to chest or abdominal area i.e. not reaching the chest or abdominal area, or the
+bar is touching the belt.
+6. Failure to press the bar to straight arms’ length elbows locked at the completion of the lift.
+Heaving, or sinking the bar into the chest or abdominal area after it is motionless in such a way as
+to make the lift easier.
+7. Contact with the bar or the lifter by the spotter/loaders between the Chief Referee’s signals, in
+order to make the lift easier.
+8. Any contact of the lifter’s feet with the bench or its supports.
+9. Failure to comply with any of the items outlined under the Rules of Performance.
+
+4.3. Feet Up Bench Press.
+4.3.1. The bench shall be placed on the platform with the head facing the front or angled up to 45
+degrees, which will give the opportunity for Jury and the crowd to see the movement.
+4.3.2. The lifter must lie on his back with head, shoulders and buttocks (or with lumbar) in contact with
+the bench surface. The bench press with legs up is done with the legs off the ground. The legs are
+usually bent and hold in the air, and crossed between themselves and no part should touch the
+platform, as well as any of the elements of the bench. This position is maintained throughout the
+movement.
+4.3.3. Hands and fingers must grip the bar positioned in the rack stands with a thumbs around grip. This
+position shall be maintained throughout the lift. One-way or reverse grips are prohibited.
+4.3.4. The spacing of the hands shall not exceed 81 cm measured between the forefingers (both
+forefingers must be within the 81 cm marks and the whole of the forefingers must be in contact
+with the 81 cm marks if maximum grip is used). In the case when an athlete has an old injury or
+anatomically can not grab the bar at the same distance with both hands, he must inform the
+WRPF Technical Rules
+
+Page 22
+
+referees about it before every attempt. If necessary, the bar may accordingly be marked before
+every attempt of the athlete.
+4.3.5. Not more than five and not less than two spotters/loaders shall be on the platform at any time.
+After setting up the starting position, the lifter may enlist the help of the spotter/loaders in
+removing the bar from the racks. The lift off if assisted by the spotter/loaders must be at arm’
+length.
+4.3.6. A personal assistant of the athlete can be on the platform as a spotter per the request of the athlete.
+In this case an assistant needs to go on the platform in a neat sport suit only, which doesn't impede
+movements and doesn’t have inscriptions and drawings with provocative or offensive sense. A
+spotter after providing a lift off, must immediately clear the area in front of the head referee.
+4.3.7. After removing the bar from the racks, with or without the help of the spotter / loaders, the lifter
+shall wait with straight arms elbows locked and hips and shoulders on the bench for the Chief
+Referee’s signal.
+4.3.8. The signal shall be given as soon as the lifter is motionless and the bar is properly positioned. For
+reasons of safety the lifter will be requested to “Replace” the bar, together with a backward
+movement of the arm, if after a period of five seconds he is not in the correct position to begin the
+lift. The Chief Referee will then convey the reason why the signal was not given. Also, the
+"Return" or "Help" command can be given by the senior referee on the platform to prevent
+injuries, in the case of an error committed by an athlete which prevents the attempt to be counted.
+If the personal spotter does not immediately leave the platform area and or in any way distracts or
+impedes the head referees responsibilities, the referees may determine that the lift is unacceptable,
+and it will be signaled "no lift" by the referees and given three red lights.
+4.3.9. The signal to begin the attempt shall consist of a downward movement of the arm together with
+the audible command “Start”.
+4.3.10. After receiving the signal, the lifter must lower the bar to the chest or abdominal area, hold it
+motionless, after which the Chief referee will signal the audible command “Press”.
+4.3.11. After the "Press" command the lifter must then return the bar to straight arms’ length elbows
+locked, non accepting significant distortions in the movement of the hands. When the position
+would be motionless the audible command “Rack” shall be given together with a backward
+motion of the arm.
+4.3.12. If an athlete inadvertently begins to lower the barbell before the command of the central judges
+"Start", but does not touch the chest, he can return it to the original position on straightened
+elbows or even return to the racks, and then try again, after the central referee will give a
+command "Start".
+4.3.13. In case when both hands anatomically cannot be straightened entirely, the athlete should provide a
+relevant medical report when registering or weighting in. It is the lifter’s responsibility to explain
+the issue to all the three referees, and allow to make inspection of the intended grip prior to
+making an attempt.
+
+Causes for Disqualification of a Feet Up Bench Press:
+1. Failure to observe the Chief Referee’s signals at the commencement, during or completion of the
+lift.
+2. Touching with the legs (any part of them) the platform or elements of bench, lateral movement of
+hands on the bar. Movement of the head couldn’t be the cause of disqualification.
+3. Pressing the bar into the chest or abdomen, moving the bar along the body, after the command
+“Press” by the Chief Referee.
+4. Any obvious (excessive) uneven straightening of the hands during the elbows locked.
+5. Any downward movement of the bar during the press, after the command “Press” by the Chief
+Referee.
+6. Bar is not lowered to chest or abdominal area i.e. not reaching the chest or abdominal area, or the
+bar is touching the belt.
+7. Failure to press the bar to straight arms’ length elbows locked at the completion of the lift.
+WRPF Technical Rules
+
+Page 23
+
+8. Contact with the bar or the lifter by the spotter/loaders between the Chief Referee’s signals, in
+order to make the lift easier.
+9. Failure to comply with any of the items outlined under the Rules of Performance.
+
+4.4. Deadlift.
+4.4.1. The lifter shall face the front of the platform.
+4.4.2. The bar shall lay horizontally in front of the lifters feet, gripped with an optional grip in both
+hands and lifted until the lifter is standing erect.
+4.4.3. The movement is made without any signal. The movement is made till the moment until the bar is
+set motionless and the lifter is in the apparent finished position.
+4.4.4. On completion of the lift the knees shall be locked in a straight position and the shoulders back.
+4.4.5. The Chief Referee’s signal shall consist of a downward movement of the arm and the audible
+command “Down”. The signal will not be given until the bar is held motionless and the lifter is in
+the apparent finished position.
+4.4.6. Any rising of the bar or any deliberate attempt to do so will count as an attempt. However, the jerk
+of the bar by a sportsman is possible, as a reception of a psychological mood. In case of doubt, the
+decision must be made in favor of the athlete.
+4.4.7. Once the attempt has begun no downward movement is allowed until the lifter reaches the erect
+position with the knees locked. If the bar settles as the shoulders come back (slightly downward
+on completion) this should not be reason to disqualify the lift.
+
+Causes for Disqualification of a Deadlift:
+1. Any downward movement of the bar before it reaches the final position and the command
+"Down" of the Chief Referee.
+2. Failure to stand erect with the shoulders back.
+3. Failure to lock the knees straight at the completion of the lift.
+4. Supporting the bar on the thighs during the performance of the lift. If the bar edges up the thigh
+but is not supported this is not reason for disqualification.
+5. The lifter should benefit in all decisions of doubt made by the referee.
+6. Stepping backward or forward or moving the feet laterally. Rocking the feet between the ball and
+heel is permitted.
+7. Lowering the bar before receiving the Chief Referee’s signal.
+8. Allowing the bar to return to the platform without maintaining control with both hands, i.e.,
+releasing the bar from the palms of the hand.
+9. Failure to comply with any of the items outlined under Rules of Performance.
+
+WRPF Technical Rules
+
+Page 24
+
+V. WEIGHING IN
+5.1. Weighing-in of the competitors shall be initiated 24 hours before the start of the competition for a
+particular category. The meet director may schedule regular weigh in any time during the 24 hour
+period.The first weighing in session lasts an hour and a half at minimum. Second weighing in
+session is held two hours before and is completed a half of an hour before the start of competing of
+appropriate weight class. This two sessions are mandatory. Additional sessions could be possibly
+set by decision of Organizing committee. Information about all sessions should be brought to the
+attention of athletes and coaches.
+5.2. All athletes in the category/categories must be weighed during one of two mandatory or additional
+(if so provided) sessions, which are carried out in the presence of at least one certified WRPF
+referee.
+5.3. Schedule of weighing in is established in the regulations and It is a mandatory part of it.
+5.4. Weighing in of each participant is held in separate room behind closed doors or a screen, where
+there are the participant, his coach or manager and referee or WRPF official.
+5.5. Athletes should be weighed naked or in underwear (briefs for men; bra and panties for women).
+Weighing in must be conducted by officials of the same sex as the athlete is. In this case additional
+officials can be appointed who have a needed category of referees.
+5.6. To establish the order a draw must be conducted during the weighing in. A draw determines the
+order of the lifts on the platform during the competition, when athletes set the same weight on the
+bar in their attempts. In the case of using an automated system for running the competitions a draw
+is determined by the program.
+5.7. Each athlete could be weighed only once. Re-weighing is allowed only to those athletes, whose own
+weight was less or more than the permissible limits of the weight category. These athletes must
+return to weigh-in and be weighed again on one of two mandatory sessions, before the end of the
+last weighing session for the one and a half hours for this category, other way they will be excluded
+from the competition in this weight class. Athlete, who trying to make weight, can do weighing
+many times, but during the time for this weight class.
+5.8. If weight of athlete exceeds the allowed for the weight class, he can go to the next, heavier weight
+class. This athlete must weigh-in in time for next weight class, if it establishes by the regulations.
+Athlete must match for all established qualification standards of this competition. Qualification
+check is performed in the presence of the athlete. If weight of athlete is lower than the minimum of
+weight class, he can go to the previous, lower weight class, provided that the procedure for
+weighing this weight class is not over yet. Qualification check is performed in the presence of the
+athlete.
+5.9. Official weight of athlete, which is recorded in the protocol, will be fixed with rounding up to 100
+grams.
+5.10. Participants of age categories “Teenagers”, “Juniors” and “Masters” may declare their participation
+or reconside in “Open” category without additional weigh-in, or be weighed again if they wish.
+5.11. At the weigh-in the athlete's data are entered in the participant's cards or in tournament program. It
+is required to include the following information:
+-
+
+Name and surname of an athlete;
+Division;
+Birth date, age and age category;
+Country, region and city;
+Weight of athlete after weigh-in and weight class;
+First attempts in all lifts;
+Wilks coefficient value;
+Team;
+Name and surname of the coach;
+Draw number;
+A signed form about accepting responsibility in the event of injury or an accident that could occur
+due to the fault of the athlete;
+
+WRPF Technical Rules
+
+Page 25
+
+-
+
+Contacts of an athlete (telephone number, post address and e-mail);
+Date of Filling in and signature of athlete;
+
+The secretary at weigh-in should correctly enter the information, and athlete should check correctness of
+all the entered data. After signing the participant’s card an athlete assumes taking responsibility for the
+reliability of all data put in it. The participant’s card is an official document of tournament.
+5.12. Registration and weighing of participants are made only upon presentation of a document
+certifying the identity of an athlete.
+5.13. During any session of weigh-in mandatory equipment check can be appointed. This information
+must be published in the statement of the tournament. In other way equipment check is not
+mandatory on weigh-in, but athlete may ask referee to check his equipment.
+5.14. In the case when participants of several weight categories or divisions are weighted on the same
+time, priority in the order is given to those athletes whose performance will begin no more than 2
+hours from the current time. Otherwise, the sequence of weighing is determined by the athletes
+themselves waiting their turn.
+5.15. In case of severe weather or emergency situations in the competition area, time of weigh-in may
+be extended by decision of technical secretary or jury member.
+
+WRPF Technical Rules
+
+Page 26
+
+VI. ORDER OF COMPETITION
+6.1. The Round system.
+Before start of competition in Bench press and Squat, athletes must measure height of the racks and
+face savers. Information about rack height and, if necessary, about blocks, is sent by himself, his coach or
+representative person to the attention of secretary, assistants or judges.
+6.1.1. All competitors are distributed by round according to the rules of the tournament. Every round
+consists of three attempts for each athlete in each lifts. Creating the rounds and setting the
+attempts queue must comply with the rules given in this chapter.
+6.1.2. A round must be formed in such a way that all competitors perform the same lift.
+6.1.3. If there are more than 20 athletes at the competition or round, then they must be divided into
+several flights consisting of an approximate equal number of participants. One stream should
+consist of no more than 20 participants.
+6.1.4. The round may include one or several weight classes, it is all up to the organizer. Rounds must be
+classified by numbers or letters.
+6.1.5. Rounds are formed by weight and age classes by increasing the declared weight in the first
+attempt. Athletes of the lightest weight classes with the lowest first attempts are forming first
+round (Round 1). Next rounds are formed by ascending weight classes and weights of first
+attempts.
+6.1.6. Arrangement of rounds, which included two or more lifts (powerlifting or push-pull), must be
+implemented as following: Round 1 performing three attempts of first lift, then Round 2
+performing three attempts of first lift. At this time Round 1 athletes are warming up to second lift.
+When Round 2 first lift ends, Round 1 start second lift, and Round 2 lifters are warming up for
+next lift. If there is only one flight with several lifts, it must be in between another divisions lifts
+or 30 minutes between to warm up.
+6.1.7. If number of participants in one round less than 10, an added time should be provided to the end
+of each round: 9 athletes – 1 minute, 8 athletes – 2 minute, 7 athletes – 3 minutes and so on: 1
+minute more for 1 athlete less. Tournament secretary must make an announcement about the
+breaks and turn on a timer after the last athlete in the round.
+6.1.8. In each round a bar weight is set from smallest to largest (in accordance with the existing
+applications of athletes). Weight can be lowered less only by mistakes. Each athlete makes first
+lift in the first round, second lift in the second round and third lift in the third round. All record
+lifts will be after the third round for each lifts.
+6.1.9. The athlete is allowed only one weight change in the first attempt in each exercise. Weight can be
+increased or decreased from the original order and then the order of lifts should be changed
+accordingly. The change of weight at the first attempt is possible no later than 5 minutes before
+the start of the first attempt, at which the athlete performs. Weight changes in the first attempt
+could be taken both for increase and decrease. The secretary must inform the athletes one minute
+before the end of the time allotted for re-applying the starting weights.
+6.1.10. If two athletes declared the same weight, athlete who have less draw number lifts first.
+6.1.11. Time for the attempt for “Amateurs”, “Amateurs-D” and “Professionals” is one minute. Time for
+attempt starts after a signal of a head referee: “The bar is loaded”.
+6.1.12. If attempt failed by a bar loading mistake, there should be given an additional attempt with
+declared weight in the end of round. If wrong weight loaded and it checked by athlete before he
+starts of the lift, he can continue a lift after fixing mistake or take additional attempt in the end of a
+round. If an athlete is the last in this round, he gets 5 minutes more for his next attempt.
+6.1.13. An athlete must declare the second and the third attempts in one minute after his lift. If the next
+attempt is not declared, 2.5 kg automatically added to last attempt weight. If last attempt was no
+lift and athlete haven’t declared a next attempt weight, he will lift the same weight in next attempt.
+Responsibility for weight declaring is fully on the athlete.
+6.1.14. Weights of the second and the third attempts cannot be changed in powerlifting and push-pull in
+squat and bench press lifts. Weight can be changed in the third attempts in deadlift.
+
+6.1.15. In the competition of single lifts (bench press and deadlift) weight of the third attempt can be
+changed.
+6.1.16. Minimal weight change is 2.5 kg.
+
+6.2. The Officials
+-
+
+Speaker/Announcer - a national or International referee (preferably) who is fluent in English and
+in the language of the hosting nation.
+Technical Secretary - an International Referee preferably who is fluent in speaking and writing
+English and in the language of the hosting nation.
+Time Keeper (a qualified referee).
+Marshals/Expeditors.
+Secretaries.
+Spotters/Loaders.
+Additional officials may be appointed as required, e.g. doctors, paramedics etc.
+
+Responsibilities of the Officials are:
+6.2.1. Speaker/Announcer:
+The speaker is responsible for qualified competition management. He must perform the following
+duties:
+- declares s the approaches by athletes in the established in these rules order. Works with protocol
+or member cards.
+- announces the weight required for the next attempt, the name and surname of the athlete.
+- announces the order of lifts of the next following three athletes, so that they are to enter the
+platform
+- When the bar is loaded and the platform cleared for lifting, the Chief Referee will indicate this
+fact to the Speaker. When the Speaker announces that the bar is ready and calls the lifter to the
+platform, the clock will begin. To clarify, - when the Speaker announces that the bar is
+“ready/loaded”, then the lifter is committed to the attempt. Attempts announced by the speaker
+must be displayed on the scoreboard in a prominent position, with the lifters name and his
+bodyweight.
+6.2.2. Technical Secretary:
+-
+
+-
+
+The Technical Secretary is responsible for forming the composition of the officials - jury, judges
+and other officials of the competition, the schedule of their work.
+If there is no need in a full jury of three people, he can be the only one responsible for enforcing
+WRPF rules. If the technical secretary is absent from the competition, then the official with the
+highest status must fulfill his duties.
+He is responsible to interact with all the personnel of the competition, with the referees and
+athletes, resolve any disputable issues, referring to the technical rules.
+He is responsible check and monitor compliance with the technical requirements for hosting
+WRPF tournaments, the availability of all necessary documentation in the tournament.
+He is responsible for registering the new records and collecting information for the preparation of
+documents.
+
+6.2.3. Time Keeper:
+-
+
+The time keeper is responsible for accurately recording the lapse between the announcement that
+the bar is ready and the lifter starting his attempt.
+
+WRPF Technical Rules
+
+Page 28
+
+-
+
+-
+
+He is also responsible for recording time allowances whenever required, e.g. after the attempt the
+lifter shall leave the platform within 30 seconds. The only exception could take place in case when
+the referee checks the equipment of the athlete after setting a new record. Once the timer is
+running for a lifter, it can only be stopped by the completion of a time allowance, by the start of
+the lift, or at the discretion of the Chief Referee. Consequently, it is very important to check the
+height of the racks before being called on the platform, because after the call, the timer starts. Any
+changes in rack height must be made within the time allotted to the athlete to complete the
+attempt.
+After the command "The bar is loaded" the athlete is given one minute to start the attempt. During
+squat and bench press the beginning of the exercise is considered as unracking the bar from the
+racks, and for the deadlift - explicit or deliberate attempt to lift the bar from the platform. If the
+athlete does not fulfill these requirements during the allotted time, the timekeeper announces
+“Time” and the main referee gives a loud command "Rack" ("Rack"). In this case it is ‘No lift”
+attempt. The chief referee makes the final decision after the "Time" command, by the reason that
+the athlete violated the time limit.
+
+6.2.4. Marshals/Expeditors:
+-
+
+-
+
+They are responsible for collecting the weight of required attempts from the lifters or their
+coaches and passing the information without delay to the speaker. The lifter is allowed one minute
+between completing his last attempt and informing the speaker, via the marshal, about the weight
+required for his next attempt.
+They are responsible for monitoring compliance with the rules of equipment in the warm-up zone.
+When identifying attempts to violate the requirements for equipment, for example: use both knee
+wraps and sleeves, or use a couple of knee wraps, etc., immediately point this out to the
+participant who violates the rules or his representative. If this is not possible, he reports it to the
+head judge or senior judge on the platform.
+
+6.2.5. Secretaries:
+-
+
+-
+
+They are responsible for the weighing and registering participants, competitions, recording all
+results and providing signatures of three judges on the records of the competitions, records of new
+records and other documents requiring signatures.
+They are responsible for prepare the award ceremony. Also they print the diplomas for winners of
+personal, absolute and team championships. As far as possible, the functions of the Speaker and
+the Secretary should be distributed among several official representatives. And, they are
+responsible for admission of the referees to the WRPF competitions.
+
+6.2.6. Spotters/Loaders:
+-
+
+They are responsible for the safety of the athlete, and provide him with immediate assistance in
+case if he cannot lift the weight during the attempt.
+Spotters/loaders are responsible for loading and unloading the bar, adjusting squat racks and
+benches as required, cleaning the bar or platform.
+All the spotters should work together as a team, and should be neatly dressed in a clean uniform,
+in tournament T-shirts.
+All the spotters must inform the chief referee of any malfunctions in the equipment so that they
+can assess the problem and take the necessary measures to solve it.
+At no time shall there be less than two or more than six spotters/loaders on the platform.
+When the lifter prepares for his attempt, the spotters/loaders may assist him in removing the bar
+from the racks. They may also assist in replacing the bar after the attempt. However, they shall not
+touch the lifter or the bar during the actual attempt, i.e. during the period of time that elapses
+between the commencement and completion signals. The only exception to this rule could happen
+if the lift is predictable “No lift” and likely to result in injury to the lifter. In this case the
+
+WRPF Technical Rules
+
+Page 29
+
+-
+
+spotters/loaders may, either at the request of the Chief Referee or the lifter himself, step in and
+help the lifter to put the bar back to the racks. If the lifter himself has failed the attempt by the
+error of a spotter/loader and has no fault of his own, he shall be guaranteed with another attempt at
+the discretion of the Referees and Jury at the end of the round.
+Any additional spotter that an athlete may need must be selected before the competition and be
+instructed by the spotter 30 minutes before the start of the competition. Additional spotter should
+be available to all athletes in all types of lifts.
+
+6.3. General rules
+6.3.1. During any competition taking place, only the lifter and his coach, members of the Jury,
+officiating referees and spotter/loaders will be allowed to be around the platform or on the stage.
+Performing the lift, only the lifter, spotter/loaders and the referees are permitted to be present on
+the platform. Coaches shall remain within the designated coaching area as defined by the Chief
+Referee in charge. The selection of a zone for coaches should be made in such a way that each
+coach can choose within this zone a convenient place to observe the performance of the lifting and
+provide instructions and signals to the athlete regarding technical details (for example: squat
+depth). At the same time, it must not interfere with the work of referees, juries, secretaries and
+spotters. Photo/video reporters also can be admitted on the platform by agreement.
+6.3.2. The form of coaches' clothes at international competitions consists of a national team's sports suit,
+a national team's T-shirt or T-shirt, approved by WRPF. In case of violation of the established
+form of clothing, the Chief Referee or the jury may prohibit the coach from being at the venue of
+the competition.
+6.3.3. A lifter shall not wrap or adjust any part of his costume or equipment while on the platform. The
+only exception to this rule is that he may adjust his belt. Items such as inhalants, ammonia caps,
+etc. cannot be utilized on the platform.
+6.3.4. In all WRPF recognized competitions, the weight of the barbell must always be a multiple of
+2.5kg.The progression must be at least 2.5kg between all attempts. The weight shall be always
+announced in kilograms.
+6.3.5. In a record attempt, the weight of the barbell must be at least 500 grams in excess of the current
+record.
+6.3.6. During the course of the competition, a lifter may request a record attempt that is not a multiple of
+2.5kg, but is to be attempted within his prescribed attempts.
+6.3.7. Record attempts may be taken on any or all of a lifter’s prescribed attempts provided that they
+maintain a minimum increase of 500 grams.
+6.3.8. The athlete can make permitted additions to the weight of the bar less than 2.5 kg for attempts to
+set a record, only speaking at competitions corresponding to the planned record for the division
+and the weight class. However, if the athlete performs in an open age category, but by age is a
+teenager, junior or veteran, he can set a record in only his age category.
+6.3.9. In the case where one athlete has ordered a weight that is not a multiple of 2.5 kg for the next
+round, in order to establish a new record, and another one performing in the same age and weight
+category after that shows a higher result, then the weight declared by the first athlete must be
+Changed to the nearest weight, a multiple of 2.5 kg.
+6.3.10. The Chief Referee will be solely responsible for decisions taken in the case of loading errors or
+incorrect announcements by the speaker. His decision will be given to the speaker who will make
+the appropriate announcement.
+6.3.11. Examples of errors in setting the weight of the bar:
+-
+
+If the bar is loaded to a lighter weight than originally requested and the attempt is successful, the
+lifter may accept the successful attempt or elect to take the attempt again at the originally
+requested weight. If the attempt is not successful, the lifter will be granted a further attempt at the
+originally requested weight. In both cases above, further attempts may only be taken at the end of
+the round in which the error occurred.
+
+WRPF Technical Rules
+
+Page 30
+
+-
+
+-
+
+-
+
+If the bar is loaded to a heavier weight than originally requested and the attempt is successful, the
+lifter will be granted the attempt. However, the weight may be reduced again if required for other
+lifters. If the attempt is not successful, the lifter will be granted a further attempt at the originally
+requested weight at the end of the round in which the error occurred.
+If the loading is not the same on each end of the bar; or any change occurs to the bar or discs
+during the execution of the lift; or the platform is disarranged, if despite these factors, the lift is
+successful, the lifter may accept the attempt or elect to take the attempt again. If the successful
+attempt is not a multiple of 2.5 kg, then the lower closest multiple of 2.5 kg will be recorded on
+the score sheet. If the attempt is unsuccessful, the lifter will be granted a further attempt. Further
+attempts may only be taken at the end of the round in which the error occurred.
+If the speaker makes a mistake by announcing a weight lighter or heavier than that requested by
+the lifter, the Chief Referee will make the same decisions as for errors in loading.
+If for any reason it is not possible for the lifter or his coach to remain in the zone close to the
+platform in order to follow the progress of the competition and the lifter misses his attempt
+because the speaker omitted to announce him at the appropriate weight, then the weight will be
+reduced as necessary and the lifter allowed to take his attempt, but only at the end of the round.
+Three unsuccessful attempts in any lift will automatically eliminate the lifter from the
+competition.
+
+6.3.12. Three unsuccessful attempts in any exercise automatically exclude the athlete from the
+competition in the total of powerlifting or push pull.
+6.3.13. The spotters should not help the athlete in taking the starting position in any of the lifts, their
+assistance is allowed only with the initial removal of the bar from the racks.
+6.3.14. On the completion of an attempt, a lifter shall leave the platform within thirty seconds. Failure to
+comply with this rule may result in disqualification of the attempt at the discretion of the referees.
+The only exception to this rule is if a lifter's equipment is being inspected after a record attempt.
+The lifter is required not to leave the platform for this inspection to certify the records attempt.
+6.3.15. If, during warm up or competition, a lifter suffers injury or in any other way exhibits signs of a
+condition which may unduly or significantly jeopardize the competitor’s health and well-being,
+the official doctor, Meet Director, or Chief Referee has the right to examination. If considered
+inadvisable for the lifter to continue, the lifter and / or their coach will be notified of the decision
+and the lifter will be removed from the meet.
+6.3.16. Any physical abnormality, handicap, or incapacity of a lifter that may cause an inability to fully
+comply with the rules should be brought to the attention of, and explained to, the appointed
+Contest Officials. This should be in advance of the start of the lifter’s Flight. The lifter, Contest
+Officials, and the platform referees for the particular lifter will then confer on the matter to best
+accommodate any special considerations for the lifter. Deafness, blindness, limb, or joint
+abnormalities that prevent proper straightening or extension, are examples for such special
+considerations.
+6.3.17. It is considered a verbal warning if any official contacts and corrects a lifter prior to, or after a lift,
+about a technical portion of their lift, a rules violation, or about any equipment violations they
+may have. If the lifter repeats the violation it is mandatory that their lift will be turned down by all
+three officials. If an official gives any lifter a verbal warning to a lifter, they must immediately
+inform all other officials on the platform that an official warning was given, and the reason for it,
+so the three officials can work together as a team at all times. A repeated violation by a lifter will
+result in a mandatory red light by all officials.
+6.3.18. Blood or particles of skin on the bar or platform should be cleaned off with the solution of
+antiseptic or alcohol to avoid infection.
+6.3.19. Any lifter or coach, who by reason of his misconduct before, during, or after the competition is
+likely to discredit the sport, shall be officially warned. If the misconduct continues, the Meet
+Director or Head Referee may disqualify the lifter and order the coach to leave the venue. This
+includes any lifter, coach, or the lifters support personal, from arguing, using foul language, or
+becoming abusive with any Referee or official about the outcome of any lifts, or the legality of
+equipment determinations.
+WRPF Technical Rules
+
+Page 31
+
+6.3.20. The jury or referees may by their majority decision immediately disqualify an athlete or official if
+they believe that the violation of the rules is serious enough to entail an immediate disqualification
+rather than a warning.
+6.3.21. In the case of a decision "2 to 1" referees, the athlete or his representative has the right to appeal to
+the jury within one minute (if there is a video recording of his attempt of appropriate quality, on
+which you can determine the error of the referees). Together with the video material, the
+sportsman or his representative will give the jury a deposit amount of 1,000 Russian rubles (about
+$25). If the jury recognizes the mistake decision of the judges, the security deposit immediately
+returns to the athlete or his representative, and the athlete is given additional attempt at the end of
+the current round (if by the end this round, there are three performances of other athletes or less,
+as well as the appellant was the last to lift in the attempt, then before his an attempt he is given a 3
+minutes break). Decision of the referees in a controversial attempt is not subject to change. In the
+case that the jury recognizes the referees' assessment is correct, or the video cannot
+unambiguously and unmistakably determine the correctness of the athlete's approach, an
+additional attempt is not given to the athlete, the deposit is not returned to the athlete and
+transferred to the cashier for further expenditure at the discretion of the Chief Referee of the
+competition.
+6.3.22. Within a 30 day period of all WRPF sanctioned meets should clear and credible video of any
+record lift become available to the WRPF that demonstrates a lift was misloaded it will be
+reviewed by the Executive Committee. If the bar was determined to be under loaded the correct
+weight will be credited. If this amount is still a new record, the record will be awarded at the new
+lower amount. If the bar was determined to be overloaded the correct weight will be credited and
+the new record will stand at the correct amount of weight as determined by the Committee.
+
+WRPF Technical Rules
+
+Page 32
+
+VII. REFEREE, JURY AND TECHNICAL COMMITTEE
+7.1. Referees.
+7.1.1. There should be 3 referees -- the Chief Referee or Center Referee and two side referees.
+7.1.2. The three referees may seat themselves in what they consider to be the best viewing positions
+around the platform for each of the three lifts. However, the Chief Referee must always bear in
+mind the need to be visible to the lifter performing the squat or deadlift. Side referees should not
+sit strictly from on each side from the athlete, during the deadlift, because the discs on the bar will
+close the view on the athlete's knees.
+7.1.3. The referees are responsible for the qualitative and timely evaluation of attempts.
+7.1.4. The referees supervise observance of rules of competitions and performance of lift.
+7.1.5. The Chief Referee is responsible for giving the necessary signals for all three lifts. The side
+referees can give a signal to the Chief Referee if they see from their point a violation in taking the
+starting position by the athlete in squats or bench press.
+7.1.6. Before the contest, the three referees shall jointly ascertain that:
+-
+
+-
+
+The platform and competition equipment comply in all respects with the rules. Bars and discs are
+checked for weight discrepancies and defective equipment discarded. A second bar and collars
+should be ready and put aside in case of damage to the original bar or collars.
+The scales work correctly and are accurate.
+The lifters weigh in within the limits of weight and time for their body weight category.
+The lifters costumes and personal equipment comply with the rules in all respects.
+
+7.1.7. During the contest the three referees must ascertain that:
+-
+
+-
+
+-
+
+The weight of the loaded bar agrees with the weight announced by the speaker. Referees may be
+issued with bar loading charts for this purpose or a computer generated bar loading software may
+also be used and projected on a screen that is in a clear and visible location for the three referees.
+The lifter’s personal equipment should comply with the rules while on the platform. If any referee
+has the reason to doubt a lifter’s integrity in this respect he must inform of his suspicions the
+Chief Referee after completion of the lift. The president of the Jury may then examine the lifter’s
+personal equipment. If the lifter is found to be wearing or using any illegal item the lifter shall be
+immediately disqualified from the competition. If wearing any illegal item passed in error by the
+examining referees, and the lift in which the discovery was made is successful, the lift will be
+rejected and then the lifter will be granted a new attempt (having removed the illegal item) at the
+end of the round.
+In cases of minor disruption in the equipment, the athlete's attempt may be counted. In this case,
+he is issued a warning so that this violation has been eliminated to the next approach. If such
+violation is found before the approach begins, the judge should ask to correct this violation.
+However, the time allotted to the athlete does not stop at the approach.
+
+7.1.8. Once the bar has been replaced in the racks or on the platform at the completion of the lift, the
+referees will announce their decisions by means of the lights. White for a “good lift” and red for
+“no lift”.
+7.1.9. The lifter or his coach may request the reason for a "no lift" decision from any of the Referees
+immediately following their lifters attempt. Such request must be made before the next lifters
+attempt begins, so as not to interfere with the progression of the competition.
+7.1.10. Referees shall abstain from commentary and not receive any document or verbal account
+concerning the progress of the competition.
+7.1.11. A referee shall not attempt to influence the decisions of the other referees.
+7.1.12. The referees decide on the legitimacy of record attempts, conduct re-checking of equipment of
+athletes who have made a record attempts, directly on the platform (not allowing the athlete to
+leave the competition zone, until the end of the check).
+WRPF Technical Rules
+
+Page 33
+
+7.1.13. The Chief Referee may consult with the side referees, the jury or any other official as necessary in
+order to expedite the competition.
+7.1.14. The Chief Referee may, at his own discretion, instruct to clean the bar or platform. If the athlete or
+coach ask to clean the bar or platform, this request should be directed to the Chief Referee, and
+not to the spotters on the platform.
+7.1.15. The Change of the referee team in the process of competing one Round is forbidden. Except when
+the qualifications of the referees are not sufficient to register a record attempt. It is desirable that
+worked one referee team at the one and the same lift in different categories.
+7.1.16. The selection of a referee to act as Chief Referee in one category does not preclude his selection
+as a side referee in another category.
+7.1.17. Cell phones or other similar electronic devices are not allowed to be in use while judging.
+7.1.18. Referees will be uniformly dressed as follows:
+-
+
+Men, winter: Black/Dark blue blazer and black/dark blue trousers with a white shirt.
+Men, summer: Black/Dark blue trousers with a white shirt.
+Women, winter: Dark blue blazer and black/dark blue skirt or trousers and a white blouse or shirt.
+Women, summer: Black/Dark blue skirt or trousers and a white blouse or shirt.
+
+The referees of tournaments WRPF must have the appropriate distinctive signs, chevrons. Only black
+shoes, boots, or tennis shoes (no sandals or open toed shoes) are allowed. All apparel items will be neat
+and clean at all times.
+7.1.19. Examples of faults that should be considered a minor oversight are:
+-
+
+Socks overlaid or touching the knee wraps.
+Thumb loops not being removed prior to the lift.
+The leg length of the singlet exceeding proper requirements.
+Deadlift socks not completely covering the top of the calves.
+
+7.1.20. Examples of infractions that must be corrected prior to the lifter making their attempt are:
+-
+
+The lifters suit/singlet straps not being worn over their shoulders.
+Items forgotten to be removed that may have been worn for warm-ups or to maintain warmth (e.g.
+hats, rubber elbow sleeves, etc.)
+Raw lifters not wearing a t-shirt while squatting or benching.
+No socks, or ankle socks, being worn during the deadlift.
+
+7.1.21. Examples that should be considered a purposeful attempt to cheat are:
+-
+
+The use of more than one lifting suit or any suit that has been altered beyond the specs within the
+rulebook.
+Wearing more than one pair of underwear or illegal support briefs.
+The use of more than one shirt or an illegal supportive shirt or illegal undershirt.
+The use of more than one pair of wraps, more than one ply (wraps sewn together) or wraps over
+regulation length.
+Any additions such as body wraps, towel inserts, bracing, etc. Presence of oil, grease, liquids, or
+lubricants other than chalk or approved powder.
+
+7.1.22. The referees of WRPF tournaments whose activities will be deemed unsatisfactory must be
+suspended from the performance of judicial functions until the moment of recertification.
+7.1.23. The conditions for the removal of referees are:
+-
+
+Improper adherence to the conditions of refereeing, specified in these rules.
+
+WRPF Technical Rules
+
+Page 34
+
+-
+
+Biased judging, actions in favor of one or more athletes to the detriment of the rest of the
+tournament participants.
+The performance in WRPF competitions of action or actions discrediting their reputation in
+relation to any states, nations, races, individuals or legal entities.
+
+7.2. Qualifications of referees.
+7.2.1. Referee of regional category.
+-
+
+-
+
+-
+
+Must be a member of the sports federation “WRPF / World Raw Powerlifting Federation”.
+Must be recommended by his regional representative and approved by the President of the sports
+federation “WRPF / World Raw Powerlifting Federation”.
+He should be at least 18 years old and must have a minimum of 01 year experience as an athlete
+competing in powerlifting and single lifts.
+Must pass a written test on the form adopted in the sports federation “WRPF / World Raw
+Powerlifting Federation” and a practical test under the supervision of the chairman of the referees
+committee (or candidate for his position) at the time of full competition, sanctioned sports
+federation “WRPF / World Raw Powerlifting Federation”.
+He must pass the test on the 90% and higher.
+Must pass a practical test within 30 days after delivery of a written test.
+Should officiate as a referee for at least at the 2 competitions, status is not below those which are
+assigned to the title of Master of Sport, throughout the year in sport federation “WRPF / World
+Raw Powerlifting Federation” to maintain accreditation.
+He must follow all the updates and changes in the rules of the sport federation “WRPF / World
+Raw Powerlifting Federation”.
+The referee, who is not running for 2 years, loses his title.
+
+7.2.2. Referee of national category.
+-
+
+-
+
+-
+
+-
+
+Must be a member of the sports federation “WRPF / World Raw Powerlifting Federation”. He
+must be recommended by a regional representative, a referee of a national or international
+category in the his region, and approved by the president of the sports federation “WRPF / World
+Raw Powerlifting Federation”.
+Must be a referee of regional category for at least 2 years.
+During this period must be in referee for at least on 6 events, status is not below those which are
+assigned to the title of Master of Sport, with an average experience of the five flight on a single
+event.
+Must pass a written test on the form adopted in the sports federation “WRPF / World Raw
+Powerlifting Federation” under the supervision of the chairman of the referees committee.
+He must pass the test on the 90% and higher.
+Should officiate as a referee for at least at the 2 competitions, status is not below those which are
+assigned to the title of Master of Sport, throughout the year in sport federation “WRPF / World
+Raw Powerlifting Federation” to maintain accreditation.
+He must follow all the updates and changes in the rules of the sport federation “WRPF / World
+Raw Powerlifting Federation”.
+The referee, who is not running for 2 years, loses its title.
+
+7.2.3. Referee of international category.
+-
+
+Must be a member of the sports federation “WRPF / World Raw Powerlifting Federation”.
+Must be recommended by the chairman committee of the referees «WRPF / World Federation of
+powerlifting without equipment" and approved by the President of the sports federation “WRPF /
+World Raw Powerlifting Federation” from among the judges of a national category.
+
+WRPF Technical Rules
+
+Page 35
+
+-
+
+-
+
+-
+
+Must be a referee of national category for at least 3 years.
+During this period must be in referee for at least on 9 events, with an average experience of the
+five flight on a single event. During this period must be running a referee by at least on three
+national and three international tournaments.
+Must pass a written test on the form adopted in the sports federation “WRPF / World Raw
+Powerlifting Federation” under the supervision of the chairman of the referees committee.
+He must pass the test on the 90% and higher.
+If not passed the test, the candidate must wait 6 months to retake the test.
+Should officiate as a referee for at least at the 2 competitions, status is not below those which are
+assigned to the title of Master of Sport, throughout the year in sport federation “WRPF / World
+Raw Powerlifting Federation” to maintain accreditation.
+He must follow up all the updates and changes in the rules of the sport federation “WRPF / World
+Raw Powerlifting Federation”.
+The referee, who is not running for 2 years, loses his title.
+
+7.3. Jury
+7.3.1. A jury will be appointed to preside over each lifting session. The jury must be present during the
+international tournaments. In the absence of a jury at the tournament, these functions are
+performed by the head referee of the competition.
+7.3.2. The jury shall consist of three referees, the highest ranking shall be designated president of the
+jury.
+7.3.3. The function of the jury is to ensure that the technical rules are correctly applied.
+7.3.4. During the competition the jury may, by a majority vote, replace any referee whose decisions in
+their opinion, prove him to be incompetent. The concerned referee must have received a warning
+prior to any action of dismissal. If a protest is made to the Jury against a referee, then the referee
+may be informed of the protest. The Jury should not put unnecessary stress on platform referees.
+7.3.5. The impartiality of referees cannot be doubted, but a mistake in refereeing can be committed in
+good faith. In such a case, the referee shall be allowed to give his explanation for making the
+decision, which is the subject of his receiving a warning.
+7.3.6. If a serious mistake occurs in the refereeing which is contrary to the technical rules, the jury may
+take appropriate action to correct the mistake. They may at their discretion, grant the lifter a
+further attempt.
+7.3.7. The jury shall not at any time overrule or change the decisions of the referees.
+7.3.8. The members of the jury will be positioned to ensure an unimpeded view of the competition.
+7.3.9. Before each competition, the President of the jury must be sure that the members of the jury have
+a complete knowledge of their role and are warned about new rules which are described in the
+most current edition of the WRPF rulebook.
+
+WRPF Technical Rules
+
+Page 36
+
+

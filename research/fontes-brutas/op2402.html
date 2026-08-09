@@ -1,0 +1,4682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  
+  <meta name="theme-color" content="#272727">
+
+  
+  <title>2024 CBLB Campeonato Brasileiro De Powerlifting Classico Subjunior Junior e Aspirantes</title>
+  <meta name="description" content="The OpenPowerlifting project aims to create a permanent, accurate, convenient, accessible, open archive of the world&#x27;s powerlifting data.">
+
+  
+  <link rel="stylesheet" type="text/css" href="/static/css/style.a6cb9cab3edcab121aee9eb30b12b365.css"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="OpenPowerlifting">
+
+  
+  <script type="text/javascript">const DISTRIBUTION="OPENPOWERLIFTING"</script>
+
+  
+  <script type="text/javascript">
+    const PAGE_KIND = "MEET";
+    const path_if_by_ah = "/m/cblb/2402/by-ah";
+    const path_if_by_division = "/m/cblb/2402/by-division";
+    const path_if_by_dots = "/m/cblb/2402/by-dots";
+    const path_if_by_glossbrenner = "/m/cblb/2402/by-glossbrenner";
+    const path_if_by_goodlift = "/m/cblb/2402";
+    const path_if_by_ipfpoints = "/m/cblb/2402/by-ipf-points";
+    const path_if_by_mcculloch = "/m/cblb/2402/by-mcculloch";
+    const path_if_by_nasa = "/m/cblb/2402/by-nasa";
+    const path_if_by_reshel = "/m/cblb/2402/by-reshel";
+    const path_if_by_schwartzmalone = "/m/cblb/2402/by-schwartz-malone";
+    const path_if_by_total = "/m/cblb/2402/by-total";
+    const path_if_by_wilks = "/m/cblb/2402/by-wilks";
+    const path_if_by_wilks2020 = "/m/cblb/2402/by-wilks2020";
+  </script>
+
+
+  
+  
+  
+  <script defer src="/static/scripts/main.87c846cb297654dc15fcca4272d2c30e.js"></script>
+</head>
+<body>
+  
+  
+    
+  <div class="topbar">
+
+      <div id="header">
+  <a href="https://www.openpowerlifting.org"><img class="header-logo pad" src="/static/images/logo-compressed.e87731f9ce53411287c05e88356bf68e.svg" alt="OpenPowerlifting"/></a>
+  <a href="/" class="nav__link">Rankings</a>
+  <a href="/records" class="nav__link">Records</a>
+  <a href="/mlist" class="nav__link">Meets</a>
+  <a href="/status" class="nav__link">Status</a>
+  <a href="/faq" class="nav__link">FAQ</a>
+  <a href="https://openpowerlifting.gitlab.io/opl-csv/" class="nav__link">Data</a>
+  <a href="https://www.plsource.org" class="nav__link" rel="noopener" target="_blank">Apps</a>
+  <a href="https://openpowerlifting.bigcartel.com" class="nav__link" rel="noopener" target="_blank">Shop</a>
+  <a href="https://gitlab.com/openpowerlifting/opl-data/-/work_items/new" class="nav__link" rel="noopener" target="_blank">Contact</a>
+  <a href="https://www.patreon.com/join/openpowerlifting" class="nav__link" rel="noopener" target="_blank">Support Us</a>
+  <a href="https://instagram.com/openpowerlifting/" class="nav__link" rel="noopener" target="_blank"><i class="iglogo-alt"></i></a>
+  <a href="javascript:void(0)" class="nav__link header-hamburger" onClick="document.getElementById('header').classList.toggle('responsive')">&#9776;</a>
+  <div id="header-right">
+    <select id="weightunits">
+  <option value="lbs" >lbs</option>
+  <option value="kg" selected>kg</option>
+</select>
+
+    <select id="langselect">
+  <option value="ar" >العربية</option>
+  <option value="cs" >Česky</option>
+  <option value="de" >Deutsch</option>
+  <option value="el" >Ελληνικά</option>
+  <option value="en" selected>English</option>
+  <option value="es" >Español</option>
+  <option value="eo" >Esperanto</option>
+  <option value="fr" >Français</option>
+  <option value="hr" >Hrvatski</option>
+  <option value="it" >Italiano</option>
+  <option value="lt" >Lietuvių</option>
+  <option value="hu" >Magyar</option>
+  <option value="nl" >Nederlands</option>
+  <option value="pl" >Polski</option>
+  <option value="pt" >Português</option>
+  <option value="ru" >Русский</option>
+  <option value="sk" >Slovenčina</option>
+  <option value="sl" >Slovenščina</option>
+  <option value="sr" >Srpski</option>
+  <option value="fi" >Suomi</option>
+  <option value="sv" >Svenska</option>
+  <option value="vi" >Tiếng Việt</option>
+  <option value="tr" >Türkçe</option>
+  <option value="uk" >Українська</option>
+  <option value="ko" >한국어</option>
+  <option value="ja" >日本語</option>
+  <option value="zh-Hant" >繁體中文</option>
+  <option value="zh-Hans" >简体中文</option>
+</select>
+
+  </div>
+</div>
+
+      
+  <div id="controls">
+    <div id="controls-left">
+      <select id="sortselect">
+        <optgroup label="Weight Sorts">
+          <option value="by-division" selected>By Division</option>
+          <option value="by-total" >By Total</option>
+        </optgroup>
+        <optgroup label="Point Sorts">
+          <option value="by-ah" >By AH (Haleczko)</option>
+          <option value="by-dots" >By Dots</option>
+          <option value="by-glossbrenner" >By Glossbrenner</option>
+          <option value="by-goodlift" >By GL Points</option>
+          <option value="by-ipf-points" >By IPF Points</option>
+          <option value="by-mcculloch" >By McCulloch</option>
+          <option value="by-nasa" >By NASA Points</option>
+          <option value="by-reshel" >By Reshel</option>
+          <option value="by-schwartz-malone" >By Schwartz&#x2F;Malone</option>
+          <option value="by-wilks" >By Wilks</option>
+          <option value="by-wilks2020" >By Wilks 2020</option>
+        </optgroup>
+      </select>
+    </div>
+    <div id="controls-right">
+      <button onclick="location.href='https://gitlab.com/openpowerlifting/opl-data/tree/main/meet-data/cblb&#x2F;2402'" type="button">Edit Meet</button>
+    </div>
+  </div>
+
+    
+  </div>
+
+    
+  <div class="mixed-content-with-controls">
+    <h1 id="meet">2024 CBLB Campeonato Brasileiro De Powerlifting Classico Subjunior Junior e Aspirantes</h1>
+    <p>2024-02-22, Brazil
+      <a href="/api/meetcsv/cblb&#x2F;2402" style="float: right; margin-right: 20px;">
+        <button style="width: 120px">Download as CSV</button>
+      </a>
+    </p>
+
+    <table>
+      <thead><tr>
+        
+          <th>Place</th>
+        
+        <th>Lifter</th>
+        <th>Sex</th>
+        
+          <th>Age</th>
+        
+        <th>Equip</th>
+        <th>Class</th>
+        <th>Weight</th>
+        <th>Squat</th>
+        <th>Bench</th>
+        <th>Deadlift</th>
+        <th>Total</th>
+        <th>GLP</th>
+      </tr></thead>
+      <tbody>
+      
+        
+          <td colspan="12" class="divheader">Women Raw 47 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="nicolypereira" href="#"></a>
+            <a class="" href="/u/nicolypereira">Nicoly Pereira</a>
+          </td>
+          <td>F</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>47</td>
+          <td>46</td>
+          <td class="squat">72.5</td>
+          <td class="bench">37.5</td>
+          <td class="deadlift">110</td>
+          <td>220</td>
+          <td>62.32</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="lauranauck" href="#"></a>
+            <a class="" href="/u/lauranauck">Laura Nauck</a>
+          </td>
+          <td>F</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>47</td>
+          <td>43.4</td>
+          <td class="squat">75</td>
+          <td class="bench">42.5</td>
+          <td class="deadlift">100</td>
+          <td>217.5</td>
+          <td>65.55</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 52 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="victoriaamerico" href="#"></a>
+            <a class="" href="/u/victoriaamerico">Victoria Americo</a>
+          </td>
+          <td>F</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>52</td>
+          <td>50.7</td>
+          <td class="squat">107.5</td>
+          <td class="bench">60</td>
+          <td class="deadlift">120</td>
+          <td>287.5</td>
+          <td>74.22</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="nathiellyalves" href="#"></a>
+            <a class="" href="/u/nathiellyalves">Nathielly Alves</a>
+          </td>
+          <td>F</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>52</td>
+          <td>51.3</td>
+          <td class="squat">77.5</td>
+          <td class="bench">35</td>
+          <td class="deadlift">112.5</td>
+          <td>225</td>
+          <td>57.49</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 57 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="fabyanaribeiro" href="#"></a>
+            <a class="" href="/u/fabyanaribeiro">Fabyana Ribeiro</a>
+          </td>
+          <td>F</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>57</td>
+          <td>56.3</td>
+          <td class="squat">117.5</td>
+          <td class="bench">50</td>
+          <td class="deadlift">115</td>
+          <td>282.5</td>
+          <td>66.89</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="anajuliaalves" href="#"></a>
+            <a class="" href="/u/anajuliaalves">Ana Julia Alves</a>
+          </td>
+          <td>F</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>57</td>
+          <td>52.6</td>
+          <td class="squat">87.5</td>
+          <td class="bench">50</td>
+          <td class="deadlift">120</td>
+          <td>257.5</td>
+          <td>64.39</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="marialuanavieira" href="#"></a>
+            <a class="" href="/u/marialuanavieira">Maria Luana Vieira</a>
+          </td>
+          <td>F</td>
+          
+            <td>20~</td>
+          
+          <td>Raw</td>
+          <td>57</td>
+          <td>55.9</td>
+          <td class="squat">82.5</td>
+          <td class="bench">42.5</td>
+          <td class="deadlift">110</td>
+          <td>235</td>
+          <td>55.95</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 63 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="eduardacamilegoncalves" href="#"></a>
+            <a class="" href="/u/eduardacamilegoncalves">Eduarda Camile Goncalves</a>
+          </td>
+          <td>F</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>63</td>
+          <td>59.1</td>
+          <td class="squat">100</td>
+          <td class="bench">50</td>
+          <td class="deadlift">117.5</td>
+          <td>267.5</td>
+          <td>61.11</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 69 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="gabriellahimauarysatodossantos" href="#"></a>
+            <a class="" href="/u/gabriellahimauarysatodossantos">Gabriella Himauary Sato dos Santos</a>
+          </td>
+          <td>F</td>
+          
+            <td>20~</td>
+          
+          <td>Raw</td>
+          <td>69</td>
+          <td>66.1</td>
+          <td class="squat">107.5</td>
+          <td class="bench">65</td>
+          <td class="deadlift">152.5</td>
+          <td>325</td>
+          <td>69.02</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="pamelahubner" href="#"></a>
+            <a class="" href="/u/pamelahubner">Pamela Hubner</a>
+          </td>
+          <td>F</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>69</td>
+          <td>68.2</td>
+          <td class="squat">102.5</td>
+          <td class="bench">55</td>
+          <td class="deadlift">132.5</td>
+          <td>290</td>
+          <td>60.48</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="luanabandeiramaia" href="#"></a>
+            <a class="" href="/u/luanabandeiramaia">Luana Bandeira Maia</a>
+          </td>
+          <td>F</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>69</td>
+          <td>64.9</td>
+          <td class="squat">100</td>
+          <td class="bench">65</td>
+          <td class="deadlift">112.5</td>
+          <td>277.5</td>
+          <td>59.59</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="juliavidal" href="#"></a>
+            <a class="" href="/u/juliavidal">Julia Vidal</a>
+          </td>
+          <td>F</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>69</td>
+          <td>67.7</td>
+          <td class="squat">100</td>
+          <td class="bench">55</td>
+          <td class="deadlift">120</td>
+          <td>275</td>
+          <td>57.59</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 76 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="ayumitakiy" href="#"></a>
+            <a class="" href="/u/ayumitakiy">Ayumi Takiy</a>
+          </td>
+          <td>F</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>76</td>
+          <td>70.3</td>
+          <td class="squat">143</td>
+          <td class="bench">70</td>
+          <td class="deadlift">166</td>
+          <td>379</td>
+          <td>77.72</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="mariaeduardawalesko" href="#"></a>
+            <a class="" href="/u/mariaeduardawalesko">Maria Eduarda Walesko</a>
+          </td>
+          <td>F</td>
+          
+            <td>20~</td>
+          
+          <td>Raw</td>
+          <td>76</td>
+          <td>73.7</td>
+          <td class="squat">100</td>
+          <td class="bench">47.5</td>
+          <td class="deadlift">132.5</td>
+          <td>280</td>
+          <td>56.03</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="mariafernandapires" href="#"></a>
+            <a class="" href="/u/mariafernandapires">Maria Fernanda Pires</a>
+          </td>
+          <td>F</td>
+          
+            <td>20~</td>
+          
+          <td>Raw</td>
+          <td>76</td>
+          <td>69.6</td>
+          <td class="squat">102.5</td>
+          <td class="bench">45</td>
+          <td class="deadlift">130</td>
+          <td>277.5</td>
+          <td>57.22</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 84 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="nathaliacamilygomesmoreira" href="#"></a>
+            <a class="" href="/u/nathaliacamilygomesmoreira">Nathalia Camily Gomes Moreira</a>
+          </td>
+          <td>F</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>84</td>
+          <td>78.9</td>
+          <td class="squat">115</td>
+          <td class="bench">65</td>
+          <td class="deadlift">137.5</td>
+          <td>317.5</td>
+          <td>61.54</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>DQ</td>
+          
+          <td>
+            <a class="anchor" id="hannahvictoriagoncalves" href="#"></a>
+            <a class="" href="/u/hannahvictoriagoncalves">Hannah Victoria Gonçalves</a>
+          </td>
+          <td>F</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>84</td>
+          <td>82.3</td>
+          <td class="squat">120</td>
+          <td class="bench">60</td>
+          <td class="deadlift"></td>
+          <td></td>
+          <td></td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 84+ Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="fatimahamadecipriano" href="#"></a>
+            <a class="" href="/u/fatimahamadecipriano">Fatima Hamade Cipriano</a>
+          </td>
+          <td>F</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>84+</td>
+          <td>129.3</td>
+          <td class="squat">207.5</td>
+          <td class="bench">70</td>
+          <td class="deadlift">212.5</td>
+          <td>490</td>
+          <td>83.05</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="mariavitoriagauteriobernadote" href="#"></a>
+            <a class="" href="/u/mariavitoriagauteriobernadote">Maria Vitória Gauterio Bernadote</a>
+          </td>
+          <td>F</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>84+</td>
+          <td>103.2</td>
+          <td class="squat">207.5</td>
+          <td class="bench">95</td>
+          <td class="deadlift">177.5</td>
+          <td>480</td>
+          <td>84.91</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 52 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="ivaniapereiradasilva" href="#"></a>
+            <a class="" href="/u/ivaniapereiradasilva">Ivania Pereira da Silva</a>
+          </td>
+          <td>F</td>
+          
+            <td>33~</td>
+          
+          <td>Raw</td>
+          <td>52</td>
+          <td>51.5</td>
+          <td class="squat">112.5</td>
+          <td class="bench">57.5</td>
+          <td class="deadlift">132.5</td>
+          <td>302.5</td>
+          <td>77.02</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="victoriaamerico" href="#"></a>
+            <a class="" href="/u/victoriaamerico">Victoria Americo</a>
+          </td>
+          <td>F</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>52</td>
+          <td>50.7</td>
+          <td class="squat">107.5</td>
+          <td class="bench">60</td>
+          <td class="deadlift">120</td>
+          <td>287.5</td>
+          <td>74.22</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="isabeladesousaviana" href="#"></a>
+            <a class="" href="/u/isabeladesousaviana">Isabela de Sousa Viana</a>
+          </td>
+          <td>F</td>
+          
+            <td>23~</td>
+          
+          <td>Raw</td>
+          <td>52</td>
+          <td>50.7</td>
+          <td class="squat">77.5</td>
+          <td class="bench">50</td>
+          <td class="deadlift">112.5</td>
+          <td>240</td>
+          <td>61.96</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 57 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="marianaarduinorosa" href="#"></a>
+            <a class="" href="/u/marianaarduinorosa">Mariana Arduino Rosa</a>
+          </td>
+          <td>F</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>57</td>
+          <td>55.9</td>
+          <td class="squat">117.5</td>
+          <td class="bench">57.5</td>
+          <td class="deadlift">145</td>
+          <td>320</td>
+          <td>76.18</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="alcioneribeiro" href="#"></a>
+            <a class="" href="/u/alcioneribeiro">Alcione Ribeiro</a>
+          </td>
+          <td>F</td>
+          
+            <td>42~</td>
+          
+          <td>Raw</td>
+          <td>57</td>
+          <td>56</td>
+          <td class="squat">115</td>
+          <td class="bench">52.5</td>
+          <td class="deadlift">142.5</td>
+          <td>310</td>
+          <td>73.70</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="jossanaruff" href="#"></a>
+            <a class="" href="/u/jossanaruff">Jossana Ruff</a>
+          </td>
+          <td>F</td>
+          
+            <td>28~</td>
+          
+          <td>Raw</td>
+          <td>57</td>
+          <td>56</td>
+          <td class="squat">110</td>
+          <td class="bench">52.5</td>
+          <td class="deadlift">142.5</td>
+          <td>305</td>
+          <td>72.51</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="mariacleoniceleao" href="#"></a>
+            <a class="" href="/u/mariacleoniceleao">Maria Cleonice Leao</a>
+          </td>
+          <td>F</td>
+          
+            <td>46~</td>
+          
+          <td>Raw</td>
+          <td>57</td>
+          <td>57</td>
+          <td class="squat">117.5</td>
+          <td class="bench">47.5</td>
+          <td class="deadlift">120</td>
+          <td>285</td>
+          <td>66.85</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="mariaisadoralimaribeiro" href="#"></a>
+            <a class="" href="/u/mariaisadoralimaribeiro">Maria Isadora Lima Ribeiro</a>
+          </td>
+          <td>F</td>
+          
+            <td>26~</td>
+          
+          <td>Raw</td>
+          <td>57</td>
+          <td>56.1</td>
+          <td class="squat">80</td>
+          <td class="bench">47.5</td>
+          <td class="deadlift">115</td>
+          <td>242.5</td>
+          <td>57.57</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 63 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="sararaizyrocha" href="#"></a>
+            <a class="" href="/u/sararaizyrocha">Sara Raizy Rocha</a>
+          </td>
+          <td>F</td>
+          
+            <td>30~</td>
+          
+          <td>Raw</td>
+          <td>63</td>
+          <td>60.6</td>
+          <td class="squat">130</td>
+          <td class="bench">70</td>
+          <td class="deadlift">142.5</td>
+          <td>342.5</td>
+          <td>76.89</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="larissadasilva" href="#"></a>
+            <a class="" href="/u/larissadasilva">Larissa da Silva</a>
+          </td>
+          <td>F</td>
+          
+            <td>33~</td>
+          
+          <td>Raw</td>
+          <td>63</td>
+          <td>61.3</td>
+          <td class="squat">115</td>
+          <td class="bench">50</td>
+          <td class="deadlift">160</td>
+          <td>325</td>
+          <td>72.40</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="nataliasalvadorjumonji" href="#"></a>
+            <a class="" href="/u/nataliasalvadorjumonji">Natalia Salvador Jumonji</a>
+          </td>
+          <td>F</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>63</td>
+          <td>61.5</td>
+          <td class="squat">105</td>
+          <td class="bench">50</td>
+          <td class="deadlift">130</td>
+          <td>285</td>
+          <td>63.35</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="amandalarissaramosnogueira" href="#"></a>
+            <a class="" href="/u/amandalarissaramosnogueira">Amanda Larissa Ramos Nogueira</a>
+          </td>
+          <td>F</td>
+          
+            <td>25~</td>
+          
+          <td>Raw</td>
+          <td>63</td>
+          <td>61.7</td>
+          <td class="squat">95</td>
+          <td class="bench">37.5</td>
+          <td class="deadlift">120</td>
+          <td>252.5</td>
+          <td>56.00</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 69 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="hannahkarenina" href="#"></a>
+            <a class="" href="/u/hannahkarenina">Hannah Karenina</a>
+          </td>
+          <td>F</td>
+          
+            <td>23~</td>
+          
+          <td>Raw</td>
+          <td>69</td>
+          <td>68.2</td>
+          <td class="squat">125</td>
+          <td class="bench">70</td>
+          <td class="deadlift">160</td>
+          <td>355</td>
+          <td>74.03</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="brunaluizalemes" href="#"></a>
+            <a class="" href="/u/brunaluizalemes">Bruna Luiza Lemes</a><a href="https://www.instagram.com/bruna.l.l/" class="instagram" rel="noopener" target="_blank"><i class="iglogo"></i></a>
+          </td>
+          <td>F</td>
+          
+            <td>24</td>
+          
+          <td>Raw</td>
+          <td>69</td>
+          <td>68</td>
+          <td class="squat">137.5</td>
+          <td class="bench">65</td>
+          <td class="deadlift">150</td>
+          <td>352.5</td>
+          <td>73.63</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="cristianamariadasilva" href="#"></a>
+            <a class="" href="/u/cristianamariadasilva">Cristiana Maria da Silva</a>
+          </td>
+          <td>F</td>
+          
+            <td>49~</td>
+          
+          <td>Raw</td>
+          <td>69</td>
+          <td>68.6</td>
+          <td class="squat">100</td>
+          <td class="bench">65</td>
+          <td class="deadlift">150</td>
+          <td>315</td>
+          <td>65.47</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 76 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="danielaestefanoalmeida" href="#"></a>
+            <a class="" href="/u/danielaestefanoalmeida">Daniela Estefano Almeida</a>
+          </td>
+          <td>F</td>
+          
+            <td>48~</td>
+          
+          <td>Raw</td>
+          <td>76</td>
+          <td>73.1</td>
+          <td class="squat">105</td>
+          <td class="bench">60</td>
+          <td class="deadlift">155</td>
+          <td>320</td>
+          <td>64.30</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="isabelaleone" href="#"></a>
+            <a class="" href="/u/isabelaleone">Isabela Leone</a>
+          </td>
+          <td>F</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>76</td>
+          <td>72.7</td>
+          <td class="squat">130</td>
+          <td class="bench">52.5</td>
+          <td class="deadlift">135</td>
+          <td>317.5</td>
+          <td>63.97</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="joenepereirasouza" href="#"></a>
+            <a class="" href="/u/joenepereirasouza">Joene Pereira Souza</a>
+          </td>
+          <td>F</td>
+          
+            <td>35~</td>
+          
+          <td>Raw</td>
+          <td>76</td>
+          <td>74.3</td>
+          <td class="squat">120</td>
+          <td class="bench">57.5</td>
+          <td class="deadlift">135</td>
+          <td>312.5</td>
+          <td>62.28</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="andressalima" href="#"></a>
+            <a class="" href="/u/andressalima">Andressa Lima</a>
+          </td>
+          <td>F</td>
+          
+            <td>32~</td>
+          
+          <td>Raw</td>
+          <td>76</td>
+          <td>74.8</td>
+          <td class="squat">110</td>
+          <td class="bench">47.5</td>
+          <td class="deadlift">145</td>
+          <td>302.5</td>
+          <td>60.09</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>DQ</td>
+          
+          <td>
+            <a class="anchor" id="rayannirosa" href="#"></a>
+            <a class="" href="/u/rayannirosa">Rayanni Rosa</a>
+          </td>
+          <td>F</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>76</td>
+          <td>74.4</td>
+          <td class="squat">120</td>
+          <td class="bench"></td>
+          <td class="deadlift">142.5</td>
+          <td></td>
+          <td></td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 84 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="carolinearaujoamorim" href="#"></a>
+            <a class="" href="/u/carolinearaujoamorim">Caroline Araujo Amorim</a>
+          </td>
+          <td>F</td>
+          
+            <td>26~</td>
+          
+          <td>Raw</td>
+          <td>84</td>
+          <td>81.6</td>
+          <td class="squat">140</td>
+          <td class="bench">75</td>
+          <td class="deadlift">145</td>
+          <td>360</td>
+          <td>68.78</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="lidianecavalcanti" href="#"></a>
+            <a class="" href="/u/lidianecavalcanti">Lidiane Cavalcanti</a>
+          </td>
+          <td>F</td>
+          
+            <td>35~</td>
+          
+          <td>Raw</td>
+          <td>84</td>
+          <td>79.2</td>
+          <td class="squat">130</td>
+          <td class="bench">57.5</td>
+          <td class="deadlift">155</td>
+          <td>342.5</td>
+          <td>66.27</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 84+ Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="simonicristina" href="#"></a>
+            <a class="" href="/u/simonicristina">Simoni Cristina</a>
+          </td>
+          <td>F</td>
+          
+            <td></td>
+          
+          <td>Raw</td>
+          <td>84+</td>
+          <td>92.7</td>
+          <td class="squat">170</td>
+          <td class="bench">82.5</td>
+          <td class="deadlift">172.5</td>
+          <td>425</td>
+          <td>77.51</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="rafaellagrilomartins" href="#"></a>
+            <a class="" href="/u/rafaellagrilomartins">Rafaella Grilo Martins</a>
+          </td>
+          <td>F</td>
+          
+            <td>35~</td>
+          
+          <td>Raw</td>
+          <td>84+</td>
+          <td>94</td>
+          <td class="squat">157.5</td>
+          <td class="bench">67.5</td>
+          <td class="deadlift">127.5</td>
+          <td>352.5</td>
+          <td>64.00</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 57 Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="lorenabertoldi" href="#"></a>
+            <a class="" href="/u/lorenabertoldi">Lorena Bertoldi</a>
+          </td>
+          <td>F</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>57</td>
+          <td>56.2</td>
+          <td class="squat">120.5</td>
+          <td class="bench">50</td>
+          <td class="deadlift">130</td>
+          <td>300.5</td>
+          <td>71.25</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 63 Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="analuizasilvadealmeida" href="#"></a>
+            <a class="" href="/u/analuizasilvadealmeida">Ana Luiza Silva de Almeida</a>
+          </td>
+          <td>F</td>
+          
+            <td>16~</td>
+          
+          <td>Raw</td>
+          <td>63</td>
+          <td>58.5</td>
+          <td class="squat">112.5</td>
+          <td class="bench">50</td>
+          <td class="deadlift">132.5</td>
+          <td>295</td>
+          <td>67.89</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="mariaeduardafaietdecamargo" href="#"></a>
+            <a class="" href="/u/mariaeduardafaietdecamargo">Maria Eduarda Faiet de Camargo</a>
+          </td>
+          <td>F</td>
+          
+            <td>15~</td>
+          
+          <td>Raw</td>
+          <td>63</td>
+          <td>60</td>
+          <td class="squat">100</td>
+          <td class="bench">47.5</td>
+          <td class="deadlift">117.5</td>
+          <td>265</td>
+          <td>59.90</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="carolinadacamara" href="#"></a>
+            <a class="" href="/u/carolinadacamara">Carolina da Camara</a>
+          </td>
+          <td>F</td>
+          
+            <td>14~</td>
+          
+          <td>Raw</td>
+          <td>63</td>
+          <td>61.9</td>
+          <td class="squat">82.5</td>
+          <td class="bench">35</td>
+          <td class="deadlift">90</td>
+          <td>207.5</td>
+          <td>45.92</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 69 Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="sofiafonsecadeoliveira" href="#"></a>
+            <a class="" href="/u/sofiafonsecadeoliveira">Sofia Fonseca de Oliveira</a>
+          </td>
+          <td>F</td>
+          
+            <td>16~</td>
+          
+          <td>Raw</td>
+          <td>69</td>
+          <td>66.4</td>
+          <td class="squat">112.5</td>
+          <td class="bench">40</td>
+          <td class="deadlift">102.5</td>
+          <td>255</td>
+          <td>54.01</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 76 Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="melissagomesmoreira" href="#"></a>
+            <a class="" href="/u/melissagomesmoreira">Melissa Gomes Moreira</a>
+          </td>
+          <td>F</td>
+          
+            <td>13~</td>
+          
+          <td>Raw</td>
+          <td>76</td>
+          <td>71.4</td>
+          <td class="squat">107.5</td>
+          <td class="bench">45</td>
+          <td class="deadlift">115</td>
+          <td>267.5</td>
+          <td>54.40</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Women Raw 84+ Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="mariaeduardasantos" href="#"></a>
+            <a class="" href="/u/mariaeduardasantos">Maria Eduarda Santos</a>
+          </td>
+          <td>F</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>84+</td>
+          <td>130</td>
+          <td class="squat">146</td>
+          <td class="bench">60</td>
+          <td class="deadlift">160</td>
+          <td>366</td>
+          <td>61.99</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 59 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="adrianrafael" href="#"></a>
+            <a class="" href="/u/adrianrafael">Adrian Rafael</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>59</td>
+          <td>57.3</td>
+          <td class="squat">105</td>
+          <td class="bench">50</td>
+          <td class="deadlift">115</td>
+          <td>270</td>
+          <td>45.38</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 66 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="luciovitordelima" href="#"></a>
+            <a class="" href="/u/luciovitordelima">Lucio Vitor de Lima</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>64.7</td>
+          <td class="squat">185</td>
+          <td class="bench">102.5</td>
+          <td class="deadlift">248</td>
+          <td>535.5</td>
+          <td>84.36</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="argelduarte" href="#"></a>
+            <a class="" href="/u/argelduarte">Argel Duarte</a>
+          </td>
+          <td>M</td>
+          
+            <td>23~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>65.9</td>
+          <td class="squat">180</td>
+          <td class="bench">135</td>
+          <td class="deadlift">220</td>
+          <td>535</td>
+          <td>83.46</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="sergiodanieldemouraemoura" href="#"></a>
+            <a class="" href="/u/sergiodanieldemouraemoura">Sérgio Daniel de Moura E Moura</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>65.2</td>
+          <td class="squat">177.5</td>
+          <td class="bench">117.5</td>
+          <td class="deadlift">215</td>
+          <td>510</td>
+          <td>80.02</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="thiagoramosdepaiva" href="#"></a>
+            <a class="" href="/u/thiagoramosdepaiva">Thiago Ramos de Paiva</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>64.8</td>
+          <td class="squat">167.5</td>
+          <td class="bench">110</td>
+          <td class="deadlift">200</td>
+          <td>477.5</td>
+          <td>75.16</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="thiagosantosdaniel" href="#"></a>
+            <a class="" href="/u/thiagosantosdaniel">Thiago Santos Daniel</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>65.7</td>
+          <td class="squat">172.5</td>
+          <td class="bench">105</td>
+          <td class="deadlift">190</td>
+          <td>467.5</td>
+          <td>73.05</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>6</td>
+          
+          <td>
+            <a class="anchor" id="joaoguilhermecastellain" href="#"></a>
+            <a class="" href="/u/joaoguilhermecastellain">João Guilherme Castellain</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>61.7</td>
+          <td class="squat">165</td>
+          <td class="bench">105</td>
+          <td class="deadlift">187.5</td>
+          <td>457.5</td>
+          <td>73.92</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>7</td>
+          
+          <td>
+            <a class="anchor" id="marcusviniciusdacosta" href="#"></a>
+            <a class="" href="/u/marcusviniciusdacosta">Marcus Vinicius da Costa</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>64.6</td>
+          <td class="squat">140</td>
+          <td class="bench">87.5</td>
+          <td class="deadlift">170</td>
+          <td>397.5</td>
+          <td>62.67</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 74 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="kauereciocarpimsala" href="#"></a>
+            <a class="" href="/u/kauereciocarpimsala">Kaue Recio Carpim Sala</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>73.5</td>
+          <td class="squat">225</td>
+          <td class="bench">130</td>
+          <td class="deadlift">245</td>
+          <td>600</td>
+          <td>88.40</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="davilinslourenco" href="#"></a>
+            <a class="" href="/u/davilinslourenco">Davi Lins Lourenco</a>
+          </td>
+          <td>M</td>
+          
+            <td>20~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>72.8</td>
+          <td class="squat">202.5</td>
+          <td class="bench">112.5</td>
+          <td class="deadlift">240</td>
+          <td>555</td>
+          <td>82.17</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="viniciussimoesvelozo" href="#"></a>
+            <a class="" href="/u/viniciussimoesvelozo">Vinicius Simoes Velozo</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>74</td>
+          <td class="squat">200</td>
+          <td class="bench">107.5</td>
+          <td class="deadlift">235</td>
+          <td>542.5</td>
+          <td>79.64</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="angelorossetto" href="#"></a>
+            <a class="" href="/u/angelorossetto">Angelo Rossetto</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>68.2</td>
+          <td class="squat">200</td>
+          <td class="bench">102.5</td>
+          <td class="deadlift">215</td>
+          <td>517.5</td>
+          <td>79.29</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="caiofernandodossantoscosta" href="#"></a>
+            <a class="" href="/u/caiofernandodossantoscosta">Caio Fernando dos Santos Costa</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>73.6</td>
+          <td class="squat">180</td>
+          <td class="bench">115</td>
+          <td class="deadlift">215</td>
+          <td>510</td>
+          <td>75.08</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>6</td>
+          
+          <td>
+            <a class="anchor" id="jorgekaram" href="#"></a>
+            <a class="" href="/u/jorgekaram">Jorge Karam</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>72.4</td>
+          <td class="squat">172.5</td>
+          <td class="bench">115</td>
+          <td class="deadlift">220</td>
+          <td>507.5</td>
+          <td>75.36</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>7</td>
+          
+          <td>
+            <a class="anchor" id="matheuspeixotogalvaocampos" href="#"></a>
+            <a class="" href="/u/matheuspeixotogalvaocampos">Matheus Peixoto Galvao Campos</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>72.7</td>
+          <td class="squat">187.5</td>
+          <td class="bench">97.5</td>
+          <td class="deadlift">220</td>
+          <td>505</td>
+          <td>74.83</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>8</td>
+          
+          <td>
+            <a class="anchor" id="sergioaugustomellodasilvajunior" href="#"></a>
+            <a class="" href="/u/sergioaugustomellodasilvajunior">Sérgio Augusto Mello da Silva Junior</a>
+          </td>
+          <td>M</td>
+          
+            <td>20~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>73.5</td>
+          <td class="squat">180</td>
+          <td class="bench">115</td>
+          <td class="deadlift">202.5</td>
+          <td>497.5</td>
+          <td>73.30</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>9</td>
+          
+          <td>
+            <a class="anchor" id="victorsantos" href="#"></a>
+            <a class="" href="/u/victorsantos">Victor Santos</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>71.2</td>
+          <td class="squat">177.5</td>
+          <td class="bench">117.5</td>
+          <td class="deadlift">190</td>
+          <td>485</td>
+          <td>72.65</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>10</td>
+          
+          <td>
+            <a class="anchor" id="joaodanielsecchin" href="#"></a>
+            <a class="" href="/u/joaodanielsecchin">João Daniel Secchin</a>
+          </td>
+          <td>M</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>72.9</td>
+          <td class="squat">172.5</td>
+          <td class="bench">105</td>
+          <td class="deadlift">190</td>
+          <td>467.5</td>
+          <td>69.17</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>11</td>
+          
+          <td>
+            <a class="anchor" id="rafaelfernandescamargo" href="#"></a>
+            <a class="" href="/u/rafaelfernandescamargo">Rafael Fernandes Camargo</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>73.2</td>
+          <td class="squat">160</td>
+          <td class="bench">100</td>
+          <td class="deadlift">200</td>
+          <td>460</td>
+          <td>67.91</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>12</td>
+          
+          <td>
+            <a class="anchor" id="lucascostadeoliveiranascimento" href="#"></a>
+            <a class="" href="/u/lucascostadeoliveiranascimento">Lucas Costa de Oliveira Nascimento</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>72.6</td>
+          <td class="squat">177.5</td>
+          <td class="bench">92.5</td>
+          <td class="deadlift">180</td>
+          <td>450</td>
+          <td>66.72</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 83 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="matheusdossantos" href="#"></a>
+            <a class="" href="/u/matheusdossantos">Matheus dos Santos</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>79.2</td>
+          <td class="squat">245</td>
+          <td class="bench">100</td>
+          <td class="deadlift">260</td>
+          <td>605</td>
+          <td>85.77</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="arthurgabrieldeoliveirafonsecasanto" href="#"></a>
+            <a class="" href="/u/arthurgabrieldeoliveirafonsecasanto">Arthur Gabriel de Oliveira Fonseca Santo</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>82.8</td>
+          <td class="squat">195</td>
+          <td class="bench">132.5</td>
+          <td class="deadlift">265</td>
+          <td>592.5</td>
+          <td>82.12</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="matheusferesturcheti" href="#"></a>
+            <a class="" href="/u/matheusferesturcheti">Matheus Feres Turcheti</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>79.4</td>
+          <td class="squat">215</td>
+          <td class="bench">140</td>
+          <td class="deadlift">235</td>
+          <td>590</td>
+          <td>83.53</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="arthurcoutinho" href="#"></a>
+            <a class="" href="/u/arthurcoutinho">Arthur Coutinho</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>82.1</td>
+          <td class="squat">220</td>
+          <td class="bench">115</td>
+          <td class="deadlift">255</td>
+          <td>590</td>
+          <td>82.12</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="gabrieldasilvaleite" href="#"></a>
+            <a class="" href="/u/gabrieldasilvaleite">Gabriel da Silva Leite</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>79</td>
+          <td class="squat">190</td>
+          <td class="bench">120</td>
+          <td class="deadlift">225</td>
+          <td>535</td>
+          <td>75.94</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>6</td>
+          
+          <td>
+            <a class="anchor" id="adrianomatapiresfreiredecarvalho" href="#"></a>
+            <a class="" href="/u/adrianomatapiresfreiredecarvalho">Adriano Mata Pires Freire de Carvalho</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>81.1</td>
+          <td class="squat">180</td>
+          <td class="bench">120</td>
+          <td class="deadlift">230</td>
+          <td>530</td>
+          <td>74.23</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>7</td>
+          
+          <td>
+            <a class="anchor" id="joaootavioferreiradossantos" href="#"></a>
+            <a class="" href="/u/joaootavioferreiradossantos">João Otávio Ferreira dos Santos</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>80</td>
+          <td class="squat">177.5</td>
+          <td class="bench">102.5</td>
+          <td class="deadlift">220</td>
+          <td>500</td>
+          <td>70.52</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>8</td>
+          
+          <td>
+            <a class="anchor" id="gabrielceranto" href="#"></a>
+            <a class="" href="/u/gabrielceranto">Gabriel Ceranto</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>81</td>
+          <td class="squat">170</td>
+          <td class="bench">115</td>
+          <td class="deadlift">200</td>
+          <td>485</td>
+          <td>67.97</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>9</td>
+          
+          <td>
+            <a class="anchor" id="andreicoutinhonoriller" href="#"></a>
+            <a class="" href="/u/andreicoutinhonoriller">Andrei Coutinho Noriller</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>78.2</td>
+          <td class="squat">180</td>
+          <td class="bench">102.5</td>
+          <td class="deadlift">200</td>
+          <td>482.5</td>
+          <td>68.85</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>10</td>
+          
+          <td>
+            <a class="anchor" id="gabrielribeirolobato" href="#"></a>
+            <a class="" href="/u/gabrielribeirolobato">Gabriel Ribeiro Lobato</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>79.7</td>
+          <td class="squat">155</td>
+          <td class="bench">97.5</td>
+          <td class="deadlift">200</td>
+          <td>452.5</td>
+          <td>63.94</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 93 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="leonardomenditealves" href="#"></a>
+            <a class="" href="/u/leonardomenditealves">Leonardo Mendite Alves</a>
+          </td>
+          <td>M</td>
+          
+            <td>21</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>88.9</td>
+          <td class="squat">290.5</td>
+          <td class="bench">180</td>
+          <td class="deadlift">280</td>
+          <td>750.5</td>
+          <td>100.38</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="viniciusoliveira" href="#"></a>
+            <a class="" href="/u/viniciusoliveira">Vinicius Oliveira</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>86.8</td>
+          <td class="squat">242.5</td>
+          <td class="bench">137.5</td>
+          <td class="deadlift">247.5</td>
+          <td>627.5</td>
+          <td>84.93</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="miguellopesalvesandrini" href="#"></a>
+            <a class="" href="/u/miguellopesalvesandrini">Miguel Lopes Alves Andrini</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>91.8</td>
+          <td class="squat">232.5</td>
+          <td class="bench">130</td>
+          <td class="deadlift">252.5</td>
+          <td>615</td>
+          <td>80.97</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="lorenzocosta" href="#"></a>
+            <a class="" href="/u/lorenzocosta">Lorenzo Costa</a>
+          </td>
+          <td>M</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>90.9</td>
+          <td class="squat">215</td>
+          <td class="bench">122.5</td>
+          <td class="deadlift">255</td>
+          <td>592.5</td>
+          <td>78.38</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="pedrohenriquebriqueze" href="#"></a>
+            <a class="" href="/u/pedrohenriquebriqueze">Pedro Henrique Briqueze</a>
+          </td>
+          <td>M</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>88</td>
+          <td class="squat">200</td>
+          <td class="bench">140</td>
+          <td class="deadlift">230</td>
+          <td>570</td>
+          <td>76.62</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>6</td>
+          
+          <td>
+            <a class="anchor" id="luizhenriquegoelzer" href="#"></a>
+            <a class="" href="/u/luizhenriquegoelzer">Luiz Henrique Goelzer</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>90.4</td>
+          <td class="squat">195</td>
+          <td class="bench">110</td>
+          <td class="deadlift">255</td>
+          <td>560</td>
+          <td>74.29</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>7</td>
+          
+          <td>
+            <a class="anchor" id="luanrocharossi" href="#"></a>
+            <a class="" href="/u/luanrocharossi">Luan Rocha Rossi</a>
+          </td>
+          <td>M</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>91.5</td>
+          <td class="squat">190</td>
+          <td class="bench">125</td>
+          <td class="deadlift">245</td>
+          <td>560</td>
+          <td>73.84</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>8</td>
+          
+          <td>
+            <a class="anchor" id="levimaiabraga" href="#"></a>
+            <a class="" href="/u/levimaiabraga">Levi Maia Braga</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>89.8</td>
+          <td class="squat">215</td>
+          <td class="bench">107.5</td>
+          <td class="deadlift">230</td>
+          <td>552.5</td>
+          <td>73.53</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>9</td>
+          
+          <td>
+            <a class="anchor" id="brunorodrigues" href="#"></a>
+            <a class="" href="/u/brunorodrigues">Bruno Rodrigues</a>
+          </td>
+          <td>M</td>
+          
+            <td>20~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>91.4</td>
+          <td class="squat">195</td>
+          <td class="bench">107.5</td>
+          <td class="deadlift">240</td>
+          <td>542.5</td>
+          <td>71.58</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>10</td>
+          
+          <td>
+            <a class="anchor" id="davirodrigueslima" href="#"></a>
+            <a class="" href="/u/davirodrigueslima">Davi Rodrigues Lima</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>83.8</td>
+          <td class="squat">180</td>
+          <td class="bench">130</td>
+          <td class="deadlift">230</td>
+          <td>540</td>
+          <td>74.39</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>11</td>
+          
+          <td>
+            <a class="anchor" id="gabrielbruske" href="#"></a>
+            <a class="" href="/u/gabrielbruske">Gabriel Bruske</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>90.3</td>
+          <td class="squat">170</td>
+          <td class="bench">140</td>
+          <td class="deadlift">217.5</td>
+          <td>527.5</td>
+          <td>70.01</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>12</td>
+          
+          <td>
+            <a class="anchor" id="renatovidigaldacruzbrito" href="#"></a>
+            <a class="" href="/u/renatovidigaldacruzbrito">Renato Vidigal da Cruz Brito</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>88</td>
+          <td class="squat">177.5</td>
+          <td class="bench">112.5</td>
+          <td class="deadlift">225</td>
+          <td>515</td>
+          <td>69.23</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 105 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="gabrielgusmaosantino" href="#"></a>
+            <a class="" href="/u/gabrielgusmaosantino">Gabriel Gusmão Santino</a>
+          </td>
+          <td>M</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>103.4</td>
+          <td class="squat">245</td>
+          <td class="bench">142.5</td>
+          <td class="deadlift">272.5</td>
+          <td>660</td>
+          <td>82.07</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="joaopedroschueler" href="#"></a>
+            <a class="" href="/u/joaopedroschueler">João Pedro Schueler</a>
+          </td>
+          <td>M</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>97.9</td>
+          <td class="squat">253</td>
+          <td class="bench">137.5</td>
+          <td class="deadlift">252.5</td>
+          <td>643</td>
+          <td>82.06</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="raulgustavosantos" href="#"></a>
+            <a class="" href="/u/raulgustavosantos">Raul Gustavo Santos</a>
+          </td>
+          <td>M</td>
+          
+            <td>20~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>94.7</td>
+          <td class="squat">232.5</td>
+          <td class="bench">145</td>
+          <td class="deadlift">260</td>
+          <td>637.5</td>
+          <td>82.67</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="matheussampaiodossantos" href="#"></a>
+            <a class="" href="/u/matheussampaiodossantos">Matheus Sampaio dos Santos</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>102.1</td>
+          <td class="squat">230</td>
+          <td class="bench">127.5</td>
+          <td class="deadlift">270</td>
+          <td>627.5</td>
+          <td>78.50</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="italodosanjos" href="#"></a>
+            <a class="" href="/u/italodosanjos">Italo dos Anjos</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>103.7</td>
+          <td class="squat">217.5</td>
+          <td class="bench">125</td>
+          <td class="deadlift">260</td>
+          <td>602.5</td>
+          <td>74.82</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 120 Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="davidcardoso" href="#"></a>
+            <a class="" href="/u/davidcardoso">David Cardoso</a>
+          </td>
+          <td>M</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>120</td>
+          <td>116</td>
+          <td class="squat">305</td>
+          <td class="bench">170</td>
+          <td class="deadlift">315</td>
+          <td>790</td>
+          <td>93.21</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="gustavozolyone" href="#"></a>
+            <a class="" href="/u/gustavozolyone">Gustavo Zolyone</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>120</td>
+          <td>105.1</td>
+          <td class="squat">200</td>
+          <td class="bench">160</td>
+          <td class="deadlift">240</td>
+          <td>600</td>
+          <td>74.05</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="joaoarthurweberdarosa" href="#"></a>
+            <a class="" href="/u/joaoarthurweberdarosa">João Arthur Weber da Rosa</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>120</td>
+          <td>106</td>
+          <td class="squat">220</td>
+          <td class="bench">125</td>
+          <td class="deadlift">225</td>
+          <td>570</td>
+          <td>70.07</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 120+ Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="gabrielcassaniga" href="#"></a>
+            <a class="" href="/u/gabrielcassaniga">Gabriel Cassaniga</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>120+</td>
+          <td>120.7</td>
+          <td class="squat">267.5</td>
+          <td class="bench">167.5</td>
+          <td class="deadlift">285</td>
+          <td>720</td>
+          <td>83.49</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="stvanoliveira" href="#"></a>
+            <a class="" href="/u/stvanoliveira">Stvan Oliveira</a>
+          </td>
+          <td>M</td>
+          
+            <td>19~</td>
+          
+          <td>Raw</td>
+          <td>120+</td>
+          <td>120.7</td>
+          <td class="squat">240</td>
+          <td class="bench">195</td>
+          <td class="deadlift">270</td>
+          <td>705</td>
+          <td>81.75</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="otavioaugustolimapereira" href="#"></a>
+            <a class="" href="/u/otavioaugustolimapereira">Otávio Augusto Lima Pereira</a>
+          </td>
+          <td>M</td>
+          
+            <td>22~</td>
+          
+          <td>Raw</td>
+          <td>120+</td>
+          <td>121.3</td>
+          <td class="squat">180</td>
+          <td class="bench">115</td>
+          <td class="deadlift">225</td>
+          <td>520</td>
+          <td>60.17</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 59 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="fabiodiasmartins" href="#"></a>
+            <a class="" href="/u/fabiodiasmartins">Fabio Dias Martins</a>
+          </td>
+          <td>M</td>
+          
+            <td>23~</td>
+          
+          <td>Raw</td>
+          <td>59</td>
+          <td>55.3</td>
+          <td class="squat">162.5</td>
+          <td class="bench">87.5</td>
+          <td class="deadlift">200</td>
+          <td>450</td>
+          <td>77.10</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="edypaulomartinsgeronazzo" href="#"></a>
+            <a class="" href="/u/edypaulomartinsgeronazzo">Edy Paulo Martins Geronazzo</a>
+          </td>
+          <td>M</td>
+          
+            <td>29~</td>
+          
+          <td>Raw</td>
+          <td>59</td>
+          <td>59</td>
+          <td class="squat">137.5</td>
+          <td class="bench">95</td>
+          <td class="deadlift">155</td>
+          <td>387.5</td>
+          <td>64.12</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="vitorcamillosantoscoradello" href="#"></a>
+            <a class="" href="/u/vitorcamillosantoscoradello">Vitor Camillo Santos Coradello</a>
+          </td>
+          <td>M</td>
+          
+            <td>23~</td>
+          
+          <td>Raw</td>
+          <td>59</td>
+          <td>57.1</td>
+          <td class="squat">125</td>
+          <td class="bench">92.5</td>
+          <td class="deadlift">152.5</td>
+          <td>370</td>
+          <td>62.31</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="georgelukas" href="#"></a>
+            <a class="" href="/u/georgelukas">George Lukas</a>
+          </td>
+          <td>M</td>
+          
+            <td>30~</td>
+          
+          <td>Raw</td>
+          <td>59</td>
+          <td>59</td>
+          <td class="squat">125</td>
+          <td class="bench">65</td>
+          <td class="deadlift">167.5</td>
+          <td>357.5</td>
+          <td>59.16</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 66 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="jonathanwilliamdematias" href="#"></a>
+            <a class="" href="/u/jonathanwilliamdematias">Jonathan William de Matias</a>
+          </td>
+          <td>M</td>
+          
+            <td>26~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>64.6</td>
+          <td class="squat">160</td>
+          <td class="bench">95</td>
+          <td class="deadlift">210</td>
+          <td>465</td>
+          <td>73.31</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="guilhermedossantosdasilva" href="#"></a>
+            <a class="" href="/u/guilhermedossantosdasilva">Guilherme dos Santos da Silva</a>
+          </td>
+          <td>M</td>
+          
+            <td>24~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>64.5</td>
+          <td class="squat">157.5</td>
+          <td class="bench">85</td>
+          <td class="deadlift">202.5</td>
+          <td>445</td>
+          <td>70.22</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="marlonrogergeraldo" href="#"></a>
+            <a class="" href="/u/marlonrogergeraldo">Marlon Roger Geraldo</a>
+          </td>
+          <td>M</td>
+          
+            <td>25~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>64.5</td>
+          <td class="squat">125</td>
+          <td class="bench">67.5</td>
+          <td class="deadlift">202.5</td>
+          <td>395</td>
+          <td>62.33</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="jonasselski" href="#"></a>
+            <a class="" href="/u/jonasselski">Jonas Selski</a>
+          </td>
+          <td>M</td>
+          
+            <td>14~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>61.2</td>
+          <td class="squat">92.5</td>
+          <td class="bench">50</td>
+          <td class="deadlift">130</td>
+          <td>272.5</td>
+          <td>44.22</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 74 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="fernandosanchez" href="#"></a>
+            <a class="" href="/u/fernandosanchez">Fernando Sanchez</a>
+          </td>
+          <td>M</td>
+          
+            <td>35~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>73.5</td>
+          <td class="squat">225</td>
+          <td class="bench">135</td>
+          <td class="deadlift">235</td>
+          <td>595</td>
+          <td>87.66</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="mateusgoncalvesdeoliveira" href="#"></a>
+            <a class="" href="/u/mateusgoncalvesdeoliveira">Mateus Goncalves de Oliveira</a>
+          </td>
+          <td>M</td>
+          
+            <td>30~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>73.9</td>
+          <td class="squat">190</td>
+          <td class="bench">125</td>
+          <td class="deadlift">230</td>
+          <td>545</td>
+          <td>80.07</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="angelorossetto" href="#"></a>
+            <a class="" href="/u/angelorossetto">Angelo Rossetto</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>68.2</td>
+          <td class="squat">200</td>
+          <td class="bench">102.5</td>
+          <td class="deadlift">215</td>
+          <td>517.5</td>
+          <td>79.29</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="felippeduartecorreia" href="#"></a>
+            <a class="" href="/u/felippeduartecorreia">Felippe Duarte Correia</a>
+          </td>
+          <td>M</td>
+          
+            <td>24~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>72.8</td>
+          <td class="squat">182.5</td>
+          <td class="bench">117.5</td>
+          <td class="deadlift">210</td>
+          <td>510</td>
+          <td>75.51</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="caiomelodelima" href="#"></a>
+            <a class="" href="/u/caiomelodelima">Caio Melo de Lima</a>
+          </td>
+          <td>M</td>
+          
+            <td>25~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>73.1</td>
+          <td class="squat">185</td>
+          <td class="bench">105</td>
+          <td class="deadlift">212.5</td>
+          <td>502.5</td>
+          <td>74.24</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>6</td>
+          
+          <td>
+            <a class="anchor" id="marceloyamawaka" href="#"></a>
+            <a class="" href="/u/marceloyamawaka">Marcelo Yamawaka</a>
+          </td>
+          <td>M</td>
+          
+            <td>20~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>69.8</td>
+          <td class="squat">170</td>
+          <td class="bench">100</td>
+          <td class="deadlift">200</td>
+          <td>470</td>
+          <td>71.14</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>7</td>
+          
+          <td>
+            <a class="anchor" id="luizhenriquelopesdeoliveira" href="#"></a>
+            <a class="" href="/u/luizhenriquelopesdeoliveira">Luiz Henrique Lopes de Oliveira</a>
+          </td>
+          <td>M</td>
+          
+            <td>31~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>71.9</td>
+          <td class="squat">165</td>
+          <td class="bench">100</td>
+          <td class="deadlift">200</td>
+          <td>465</td>
+          <td>69.30</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>8</td>
+          
+          <td>
+            <a class="anchor" id="henriquealbertorusa" href="#"></a>
+            <a class="" href="/u/henriquealbertorusa">Henrique Alberto Rusa</a>
+          </td>
+          <td>M</td>
+          
+            <td>31~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>72.8</td>
+          <td class="squat">145</td>
+          <td class="bench">105</td>
+          <td class="deadlift">152.5</td>
+          <td>402.5</td>
+          <td>59.60</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 83 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="guilhermeaugustobragadeoliveira" href="#"></a>
+            <a class="" href="/u/guilhermeaugustobragadeoliveira">Guilherme Augusto Braga de Oliveira</a>
+          </td>
+          <td>M</td>
+          
+            <td>26~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>81.6</td>
+          <td class="squat">227.5</td>
+          <td class="bench">130</td>
+          <td class="deadlift">260</td>
+          <td>617.5</td>
+          <td>86.22</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="felipespinellidematos" href="#"></a>
+            <a class="" href="/u/felipespinellidematos">Felipe Spinelli de Matos</a>
+          </td>
+          <td>M</td>
+          
+            <td>24~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>82.5</td>
+          <td class="squat">217.5</td>
+          <td class="bench">137.5</td>
+          <td class="deadlift">245</td>
+          <td>600</td>
+          <td>83.31</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="renatoinfantozziolivares" href="#"></a>
+            <a class="" href="/u/renatoinfantozziolivares">Renato Infantozzi Olivares</a>
+          </td>
+          <td>M</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>81.8</td>
+          <td class="squat">200</td>
+          <td class="bench">132.5</td>
+          <td class="deadlift">230</td>
+          <td>562.5</td>
+          <td>78.44</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="adriandossantos" href="#"></a>
+            <a class="" href="/u/adriandossantos">Adrian dos Santos</a>
+          </td>
+          <td>M</td>
+          
+            <td>31~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>82.1</td>
+          <td class="squat">222.5</td>
+          <td class="bench">95</td>
+          <td class="deadlift">245</td>
+          <td>562.5</td>
+          <td>78.30</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="brendooliveira" href="#"></a>
+            <a class="" href="/u/brendooliveira">Brendo Oliveira</a>
+          </td>
+          <td>M</td>
+          
+            <td>28~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>78.9</td>
+          <td class="squat">190</td>
+          <td class="bench">122.5</td>
+          <td class="deadlift">240</td>
+          <td>552.5</td>
+          <td>78.48</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>6</td>
+          
+          <td>
+            <a class="anchor" id="williamsprung" href="#"></a>
+            <a class="" href="/u/williamsprung">William Sprung</a>
+          </td>
+          <td>M</td>
+          
+            <td>35~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>81.2</td>
+          <td class="squat">212.5</td>
+          <td class="bench">120</td>
+          <td class="deadlift">215</td>
+          <td>547.5</td>
+          <td>76.63</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>7</td>
+          
+          <td>
+            <a class="anchor" id="felipegreghi" href="#"></a>
+            <a class="" href="/u/felipegreghi">Felipe Greghi</a>
+          </td>
+          <td>M</td>
+          
+            <td>31~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>82</td>
+          <td class="squat">210</td>
+          <td class="bench">107.5</td>
+          <td class="deadlift">230</td>
+          <td>547.5</td>
+          <td>76.25</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>8</td>
+          
+          <td>
+            <a class="anchor" id="danielvictorfernandescarvalho" href="#"></a>
+            <a class="" href="/u/danielvictorfernandescarvalho">Daniel Victor Fernandes Carvalho</a>
+          </td>
+          <td>M</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>79.8</td>
+          <td class="squat">170</td>
+          <td class="bench">110</td>
+          <td class="deadlift">185</td>
+          <td>465</td>
+          <td>65.67</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>DQ</td>
+          
+          <td>
+            <a class="anchor" id="lucassimoesbagli" href="#"></a>
+            <a class="" href="/u/lucassimoesbagli">Lucas Simões Bagli</a>
+          </td>
+          <td>M</td>
+          
+            <td>23~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>81.6</td>
+          <td class="squat">230</td>
+          <td class="bench">135</td>
+          <td class="deadlift"></td>
+          <td></td>
+          <td></td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>DQ</td>
+          
+          <td>
+            <a class="anchor" id="pedrocapelari" href="#"></a>
+            <a class="" href="/u/pedrocapelari">Pedro Capelari</a>
+          </td>
+          <td>M</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>75.3</td>
+          <td class="squat">160</td>
+          <td class="bench"></td>
+          <td class="deadlift"></td>
+          <td></td>
+          <td></td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 93 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="joaovitormadeira" href="#"></a>
+            <a class="" href="/u/joaovitormadeira">João Vitor Madeira</a>
+          </td>
+          <td>M</td>
+          
+            <td>24~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>88.1</td>
+          <td class="squat">220</td>
+          <td class="bench">147.5</td>
+          <td class="deadlift">272.5</td>
+          <td>640</td>
+          <td>85.99</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="thiagoporto" href="#"></a>
+            <a class="" href="/u/thiagoporto">Thiago Porto</a>
+          </td>
+          <td>M</td>
+          
+            <td>29~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>89.8</td>
+          <td class="squat">217.5</td>
+          <td class="bench">145</td>
+          <td class="deadlift">265</td>
+          <td>627.5</td>
+          <td>83.51</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="luizhenriquescaloni" href="#"></a>
+            <a class="" href="/u/luizhenriquescaloni">Luiz Henrique Scaloni</a>
+          </td>
+          <td>M</td>
+          
+            <td>23~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>91.9</td>
+          <td class="squat">235</td>
+          <td class="bench">140</td>
+          <td class="deadlift">242.5</td>
+          <td>617.5</td>
+          <td>81.25</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="davidchristiandemelopontes" href="#"></a>
+            <a class="" href="/u/davidchristiandemelopontes">David Christian de Melo Pontes</a>
+          </td>
+          <td>M</td>
+          
+            <td>30~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>92.1</td>
+          <td class="squat">215</td>
+          <td class="bench">130</td>
+          <td class="deadlift">257.5</td>
+          <td>602.5</td>
+          <td>79.20</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="allanzapatagomes" href="#"></a>
+            <a class="" href="/u/allanzapatagomes">Allan Zapata Gomes</a>
+          </td>
+          <td>M</td>
+          
+            <td>29~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>92.3</td>
+          <td class="squat">205</td>
+          <td class="bench">115</td>
+          <td class="deadlift">265</td>
+          <td>585</td>
+          <td>76.81</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>6</td>
+          
+          <td>
+            <a class="anchor" id="danielornellas" href="#"></a>
+            <a class="" href="/u/danielornellas">Daniel Ornellas</a>
+          </td>
+          <td>M</td>
+          
+            <td>23~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>92.2</td>
+          <td class="squat">200</td>
+          <td class="bench">125</td>
+          <td class="deadlift">250</td>
+          <td>575</td>
+          <td>75.54</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>7</td>
+          
+          <td>
+            <a class="anchor" id="pedrohenriquebriqueze" href="#"></a>
+            <a class="" href="/u/pedrohenriquebriqueze">Pedro Henrique Briqueze</a>
+          </td>
+          <td>M</td>
+          
+            <td>21~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>88</td>
+          <td class="squat">200</td>
+          <td class="bench">140</td>
+          <td class="deadlift">230</td>
+          <td>570</td>
+          <td>76.62</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>8</td>
+          
+          <td>
+            <a class="anchor" id="claudiorobertoalves" href="#"></a>
+            <a class="" href="/u/claudiorobertoalves">Claudio Roberto Alves</a>
+          </td>
+          <td>M</td>
+          
+            <td>37~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>88.2</td>
+          <td class="squat">180</td>
+          <td class="bench">152.5</td>
+          <td class="deadlift">215</td>
+          <td>547.5</td>
+          <td>73.52</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>9</td>
+          
+          <td>
+            <a class="anchor" id="christyanconceicaobeltrame" href="#"></a>
+            <a class="" href="/u/christyanconceicaobeltrame">Christyan Conceicao Beltrame</a>
+          </td>
+          <td>M</td>
+          
+            <td>30~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>92.7</td>
+          <td class="squat">197.5</td>
+          <td class="bench">127.5</td>
+          <td class="deadlift">220</td>
+          <td>545</td>
+          <td>71.41</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>10</td>
+          
+          <td>
+            <a class="anchor" id="isaiaslorenzeto" href="#"></a>
+            <a class="" href="/u/isaiaslorenzeto">Isaias Lorenzeto</a>
+          </td>
+          <td>M</td>
+          
+            <td>34~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>87.8</td>
+          <td class="squat">190</td>
+          <td class="bench">115</td>
+          <td class="deadlift">230</td>
+          <td>535</td>
+          <td>72.00</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>11</td>
+          
+          <td>
+            <a class="anchor" id="guilhermeribeiroreis" href="#"></a>
+            <a class="" href="/u/guilhermeribeiroreis">Guilherme Ribeiro Reis</a>
+          </td>
+          <td>M</td>
+          
+            <td>26~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>86.5</td>
+          <td class="squat">207.5</td>
+          <td class="bench">120</td>
+          <td class="deadlift">205</td>
+          <td>532.5</td>
+          <td>72.20</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>12</td>
+          
+          <td>
+            <a class="anchor" id="andrearaujoestevesdasilva" href="#"></a>
+            <a class="" href="/u/andrearaujoestevesdasilva">Andre Araujo Esteves da Silva</a>
+          </td>
+          <td>M</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>90.2</td>
+          <td class="squat">182.5</td>
+          <td class="bench">120</td>
+          <td class="deadlift">230</td>
+          <td>532.5</td>
+          <td>70.71</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>13</td>
+          
+          <td>
+            <a class="anchor" id="bismarcksilvasousa" href="#"></a>
+            <a class="" href="/u/bismarcksilvasousa">Bismarck Silva Sousa</a>
+          </td>
+          <td>M</td>
+          
+            <td>34~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>89.4</td>
+          <td class="squat">175</td>
+          <td class="bench">122.5</td>
+          <td class="deadlift">220</td>
+          <td>517.5</td>
+          <td>69.03</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>14</td>
+          
+          <td>
+            <a class="anchor" id="gabrielhenriquedasilva" href="#"></a>
+            <a class="" href="/u/gabrielhenriquedasilva">Gabriel Henrique da Silva</a>
+          </td>
+          <td>M</td>
+          
+            <td>25~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>86.4</td>
+          <td class="squat">160</td>
+          <td class="bench">102.5</td>
+          <td class="deadlift">200</td>
+          <td>462.5</td>
+          <td>62.74</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>15</td>
+          
+          <td>
+            <a class="anchor" id="arthurtamayo" href="#"></a>
+            <a class="" href="/u/arthurtamayo">Arthur Tamayo</a>
+          </td>
+          <td>M</td>
+          
+            <td>35~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>85.3</td>
+          <td class="squat">157.5</td>
+          <td class="bench">102.5</td>
+          <td class="deadlift">185</td>
+          <td>445</td>
+          <td>60.76</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>DQ</td>
+          
+          <td>
+            <a class="anchor" id="caiocoggianiyamashita" href="#"></a>
+            <a class="" href="/u/caiocoggianiyamashita">Caio Coggiani Yamashita</a>
+          </td>
+          <td>M</td>
+          
+            <td>34~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>88.3</td>
+          <td class="squat">220</td>
+          <td class="bench">157.5</td>
+          <td class="deadlift">255</td>
+          <td></td>
+          <td></td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 105 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="fernandoromani" href="#"></a>
+            <a class="" href="/u/fernandoromani">Fernando Romani</a>
+          </td>
+          <td>M</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>98.7</td>
+          <td class="squat">222.5</td>
+          <td class="bench">160</td>
+          <td class="deadlift">260</td>
+          <td>642.5</td>
+          <td>81.67</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="thiagograhl" href="#"></a>
+            <a class="" href="/u/thiagograhl">Thiago Grahl</a>
+          </td>
+          <td>M</td>
+          
+            <td>36~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>98.7</td>
+          <td class="squat">240</td>
+          <td class="bench">172.5</td>
+          <td class="deadlift">212.5</td>
+          <td>625</td>
+          <td>79.45</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="robertgarcia" href="#"></a>
+            <a class="" href="/u/robertgarcia">Robert Garcia</a>
+          </td>
+          <td>M</td>
+          
+            <td>28~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>99.5</td>
+          <td class="squat">192.5</td>
+          <td class="bench">172.5</td>
+          <td class="deadlift">255</td>
+          <td>620</td>
+          <td>78.51</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="leopatrick" href="#"></a>
+            <a class="" href="/u/leopatrick">Leo Patrick</a>
+          </td>
+          <td>M</td>
+          
+            <td>18~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>100.2</td>
+          <td class="squat">235</td>
+          <td class="bench">120</td>
+          <td class="deadlift">242.5</td>
+          <td>597.5</td>
+          <td>75.41</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="juliohenriquedelima" href="#"></a>
+            <a class="" href="/u/juliohenriquedelima">Julio Henrique de Lima</a>
+          </td>
+          <td>M</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>95.2</td>
+          <td class="squat">192.5</td>
+          <td class="bench">137.5</td>
+          <td class="deadlift">217.5</td>
+          <td>547.5</td>
+          <td>70.82</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>6</td>
+          
+          <td>
+            <a class="anchor" id="kaiquenathansilvestrearaujoamorim" href="#"></a>
+            <a class="" href="/u/kaiquenathansilvestrearaujoamorim">Kaique Nathan Silvestre Araujo Amorim</a>
+          </td>
+          <td>M</td>
+          
+            <td>28~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>97.9</td>
+          <td class="squat">205</td>
+          <td class="bench">120</td>
+          <td class="deadlift">210</td>
+          <td>535</td>
+          <td>68.27</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>7</td>
+          
+          <td>
+            <a class="anchor" id="vitorsoaresdecarvalho" href="#"></a>
+            <a class="" href="/u/vitorsoaresdecarvalho">Vitor Soares de Carvalho</a>
+          </td>
+          <td>M</td>
+          
+            <td>23~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>100.3</td>
+          <td class="squat">187.5</td>
+          <td class="bench">107.5</td>
+          <td class="deadlift">240</td>
+          <td>535</td>
+          <td>67.49</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>8</td>
+          
+          <td>
+            <a class="anchor" id="johngregorymoraismoura" href="#"></a>
+            <a class="" href="/u/johngregorymoraismoura">John Gregory Morais Moura</a>
+          </td>
+          <td>M</td>
+          
+            <td>24~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>100.2</td>
+          <td class="squat">175</td>
+          <td class="bench">125</td>
+          <td class="deadlift">232.5</td>
+          <td>532.5</td>
+          <td>67.21</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>9</td>
+          
+          <td>
+            <a class="anchor" id="caiotorres" href="#"></a>
+            <a class="" href="/u/caiotorres">Caio Torres</a>
+          </td>
+          <td>M</td>
+          
+            <td>31~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>97.7</td>
+          <td class="squat">162.5</td>
+          <td class="bench">110</td>
+          <td class="deadlift">200</td>
+          <td>472.5</td>
+          <td>60.36</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>DQ</td>
+          
+          <td>
+            <a class="anchor" id="rafaeldeaguiarleindorf" href="#"></a>
+            <a class="" href="/u/rafaeldeaguiarleindorf">Rafael de Aguiar Leindorf</a>
+          </td>
+          <td>M</td>
+          
+            <td>23~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>103.8</td>
+          <td class="squat">225</td>
+          <td class="bench"></td>
+          <td class="deadlift">250</td>
+          <td></td>
+          <td></td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 120 Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="rafaeldemattos" href="#"></a>
+            <a class="" href="/u/rafaeldemattos">Rafael de Mattos</a>
+          </td>
+          <td>M</td>
+          
+            <td>25~</td>
+          
+          <td>Raw</td>
+          <td>120</td>
+          <td>114.7</td>
+          <td class="squat">255</td>
+          <td class="bench">152.5</td>
+          <td class="deadlift">260</td>
+          <td>667.5</td>
+          <td>79.16</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="cleversonluisdasilva" href="#"></a>
+            <a class="" href="/u/cleversonluisdasilva">Cléverson Luís da Silva</a>
+          </td>
+          <td>M</td>
+          
+            <td>26~</td>
+          
+          <td>Raw</td>
+          <td>120</td>
+          <td>109.1</td>
+          <td class="squat">222.5</td>
+          <td class="bench">157.5</td>
+          <td class="deadlift">250</td>
+          <td>630</td>
+          <td>76.42</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="pauloalvescarneironeto" href="#"></a>
+            <a class="" href="/u/pauloalvescarneironeto">Paulo Alves Carneiro Neto</a>
+          </td>
+          <td>M</td>
+          
+            <td>38~</td>
+          
+          <td>Raw</td>
+          <td>120</td>
+          <td>118.7</td>
+          <td class="squat">190</td>
+          <td class="bench">105</td>
+          <td class="deadlift">180</td>
+          <td>475</td>
+          <td>55.48</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 120+ Open</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="luizotaviodoval" href="#"></a>
+            <a class="" href="/u/luizotaviodoval">Luiz Otavio do Val</a>
+          </td>
+          <td>M</td>
+          
+            <td>24~</td>
+          
+          <td>Raw</td>
+          <td>120+</td>
+          <td>136.2</td>
+          <td class="squat">257.5</td>
+          <td class="bench">150</td>
+          <td class="deadlift">245</td>
+          <td>652.5</td>
+          <td>71.92</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="renatoantoniooliveiracruz" href="#"></a>
+            <a class="" href="/u/renatoantoniooliveiracruz">Renato Antonio Oliveira Cruz</a>
+          </td>
+          <td>M</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>120+</td>
+          <td>126.7</td>
+          <td class="squat">245</td>
+          <td class="bench">157.5</td>
+          <td class="deadlift">237.5</td>
+          <td>640</td>
+          <td>72.68</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="raulmanzione" href="#"></a>
+            <a class="" href="/u/raulmanzione">Raul Manzione</a>
+          </td>
+          <td>M</td>
+          
+            <td>32~</td>
+          
+          <td>Raw</td>
+          <td>120+</td>
+          <td>126.8</td>
+          <td class="squat">240</td>
+          <td class="bench">120</td>
+          <td class="deadlift">255</td>
+          <td>615</td>
+          <td>69.82</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="jonathanserracorrea" href="#"></a>
+            <a class="" href="/u/jonathanserracorrea">Jonathan Serra Correa</a>
+          </td>
+          <td>M</td>
+          
+            <td>27~</td>
+          
+          <td>Raw</td>
+          <td>120+</td>
+          <td>124.1</td>
+          <td class="squat">237.5</td>
+          <td class="bench">135</td>
+          <td class="deadlift">235</td>
+          <td>607.5</td>
+          <td>69.60</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="renanvitordeandraderibeiro" href="#"></a>
+            <a class="" href="/u/renanvitordeandraderibeiro">Renan Vitor de Andrade Ribeiro</a><a href="https://www.instagram.com/coachbuda1/" class="instagram" rel="noopener" target="_blank"><i class="iglogo"></i></a>
+          </td>
+          <td>M</td>
+          
+            <td>30</td>
+          
+          <td>Raw</td>
+          <td>120+</td>
+          <td>135.3</td>
+          <td class="squat">230</td>
+          <td class="bench">135</td>
+          <td class="deadlift">235</td>
+          <td>600</td>
+          <td>66.31</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 59 Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="joaovictornunesgava" href="#"></a>
+            <a class="" href="/u/joaovictornunesgava">João Victor Nunes Gava</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>59</td>
+          <td>57.3</td>
+          <td class="squat">163</td>
+          <td class="bench">60</td>
+          <td class="deadlift">185</td>
+          <td>408</td>
+          <td>68.58</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="jhonatanmeirapaiva" href="#"></a>
+            <a class="" href="/u/jhonatanmeirapaiva">Jhonatan Meira Paiva</a>
+          </td>
+          <td>M</td>
+          
+            <td>14~</td>
+          
+          <td>Raw</td>
+          <td>59</td>
+          <td>58.7</td>
+          <td class="squat">105</td>
+          <td class="bench">65</td>
+          <td class="deadlift">125</td>
+          <td>295</td>
+          <td>48.95</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 66 Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="guilhermeeduardoguagnini" href="#"></a>
+            <a class="" href="/u/guilhermeeduardoguagnini">Guilherme Eduardo Guagnini</a>
+          </td>
+          <td>M</td>
+          
+            <td>15~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>63.9</td>
+          <td class="squat">155</td>
+          <td class="bench">102.5</td>
+          <td class="deadlift">175</td>
+          <td>432.5</td>
+          <td>68.59</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="eduardopeixotogalvaocampos" href="#"></a>
+            <a class="" href="/u/eduardopeixotogalvaocampos">Eduardo Peixoto Galvao Campos</a>
+          </td>
+          <td>M</td>
+          
+            <td>15~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>65.5</td>
+          <td class="squat">150</td>
+          <td class="bench">82.5</td>
+          <td class="deadlift">172.5</td>
+          <td>405</td>
+          <td>63.39</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="hildersonferreira" href="#"></a>
+            <a class="" href="/u/hildersonferreira">Hilderson Ferreira</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>63.9</td>
+          <td class="squat">140</td>
+          <td class="bench">85</td>
+          <td class="deadlift">175</td>
+          <td>400</td>
+          <td>63.43</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="guilhermechavesribeiro" href="#"></a>
+            <a class="" href="/u/guilhermechavesribeiro">Guilherme Chaves Ribeiro</a>
+          </td>
+          <td>M</td>
+          
+            <td>15~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>65.2</td>
+          <td class="squat">130</td>
+          <td class="bench">87.5</td>
+          <td class="deadlift">175</td>
+          <td>392.5</td>
+          <td>61.58</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="yarleischindler" href="#"></a>
+            <a class="" href="/u/yarleischindler">Yarlei Schindler</a>
+          </td>
+          <td>M</td>
+          
+            <td>15~</td>
+          
+          <td>Raw</td>
+          <td>66</td>
+          <td>65.2</td>
+          <td class="squat">105</td>
+          <td class="bench">72.5</td>
+          <td class="deadlift">200</td>
+          <td>377.5</td>
+          <td>59.23</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 74 Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="fernandowatanabeishiy" href="#"></a>
+            <a class="" href="/u/fernandowatanabeishiy">Fernando Watanabe Ishiy</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>73.9</td>
+          <td class="squat">187.5</td>
+          <td class="bench">130</td>
+          <td class="deadlift">212.5</td>
+          <td>530</td>
+          <td>77.86</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="fernandoluizalmeidacunha" href="#"></a>
+            <a class="" href="/u/fernandoluizalmeidacunha">Fernando Luiz Almeida Cunha</a>
+          </td>
+          <td>M</td>
+          
+            <td>16~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>74</td>
+          <td class="squat">185</td>
+          <td class="bench">117.5</td>
+          <td class="deadlift">222.5</td>
+          <td>525</td>
+          <td>77.08</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="diegoonuki" href="#"></a>
+            <a class="" href="/u/diegoonuki">Diego Onuki</a>
+          </td>
+          <td>M</td>
+          
+            <td>16~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>72.6</td>
+          <td class="squat">185</td>
+          <td class="bench">112.5</td>
+          <td class="deadlift">222.5</td>
+          <td>520</td>
+          <td>77.10</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="nathanchrist" href="#"></a>
+            <a class="" href="/u/nathanchrist">Nathan Christ</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>72.4</td>
+          <td class="squat">180</td>
+          <td class="bench">97.5</td>
+          <td class="deadlift">232.5</td>
+          <td>510</td>
+          <td>75.73</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="joaovitorribeiro" href="#"></a>
+            <a class="" href="/u/joaovitorribeiro">João Vitor Ribeiro</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>68.9</td>
+          <td class="squat">180</td>
+          <td class="bench">85</td>
+          <td class="deadlift">220</td>
+          <td>485</td>
+          <td>73.91</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>6</td>
+          
+          <td>
+            <a class="anchor" id="pedrohenriquesilvaferreira" href="#"></a>
+            <a class="" href="/u/pedrohenriquesilvaferreira">Pedro Henrique Silva Ferreira</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>73.1</td>
+          <td class="squat">177.5</td>
+          <td class="bench">95</td>
+          <td class="deadlift">200</td>
+          <td>472.5</td>
+          <td>69.81</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>7</td>
+          
+          <td>
+            <a class="anchor" id="petersonramoscipriani" href="#"></a>
+            <a class="" href="/u/petersonramoscipriani">Peterson Ramos Cipriani</a>
+          </td>
+          <td>M</td>
+          
+            <td>15~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>71</td>
+          <td class="squat">155</td>
+          <td class="bench">95</td>
+          <td class="deadlift">215.5</td>
+          <td>465.5</td>
+          <td>69.83</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>8</td>
+          
+          <td>
+            <a class="anchor" id="joaopedrodecampos" href="#"></a>
+            <a class="" href="/u/joaopedrodecampos">João Pedro de Campos</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>72.2</td>
+          <td class="squat">177.5</td>
+          <td class="bench">102.5</td>
+          <td class="deadlift">180</td>
+          <td>460</td>
+          <td>68.40</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>9</td>
+          
+          <td>
+            <a class="anchor" id="matheusmachado" href="#"></a>
+            <a class="" href="/u/matheusmachado">Matheus Machado</a>
+          </td>
+          <td>M</td>
+          
+            <td>16~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>72.4</td>
+          <td class="squat">135</td>
+          <td class="bench">90</td>
+          <td class="deadlift">185</td>
+          <td>410</td>
+          <td>60.88</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>10</td>
+          
+          <td>
+            <a class="anchor" id="thiagochiarelli" href="#"></a>
+            <a class="" href="/u/thiagochiarelli">Thiago Chiarelli</a>
+          </td>
+          <td>M</td>
+          
+            <td>15~</td>
+          
+          <td>Raw</td>
+          <td>74</td>
+          <td>71.5</td>
+          <td class="squat">85</td>
+          <td class="bench">62.5</td>
+          <td class="deadlift">75</td>
+          <td>222.5</td>
+          <td>33.25</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 83 Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="davidematosvaldezferreira" href="#"></a>
+            <a class="" href="/u/davidematosvaldezferreira">Davi de Matos Valdez Ferreira</a>
+          </td>
+          <td>M</td>
+          
+            <td>16~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>81.8</td>
+          <td class="squat">240</td>
+          <td class="bench">125</td>
+          <td class="deadlift">275</td>
+          <td>640</td>
+          <td>89.25</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="gabrielcarvalhoembacher" href="#"></a>
+            <a class="" href="/u/gabrielcarvalhoembacher">Gabriel Carvalho Embacher</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>81.6</td>
+          <td class="squat">215</td>
+          <td class="bench">135</td>
+          <td class="deadlift">262.5</td>
+          <td>612.5</td>
+          <td>85.52</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="danielranghetti" href="#"></a>
+            <a class="" href="/u/danielranghetti">Daniel Ranghetti</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>81.4</td>
+          <td class="squat">190</td>
+          <td class="bench">120</td>
+          <td class="deadlift">220</td>
+          <td>530</td>
+          <td>74.09</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="luisfelipedemouraneiland" href="#"></a>
+            <a class="" href="/u/luisfelipedemouraneiland">Luis Felipe de Moura Neiland</a>
+          </td>
+          <td>M</td>
+          
+            <td>15~</td>
+          
+          <td>Raw</td>
+          <td>83</td>
+          <td>79.1</td>
+          <td class="squat">160</td>
+          <td class="bench">112.5</td>
+          <td class="deadlift">220</td>
+          <td>492.5</td>
+          <td>69.86</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 93 Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="fabrizziocastropilsilva" href="#"></a>
+            <a class="" href="/u/fabrizziocastropilsilva">Fabrizzio Castropil Silva</a>
+          </td>
+          <td>M</td>
+          
+            <td>16~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>90.8</td>
+          <td class="squat">210</td>
+          <td class="bench">132.5</td>
+          <td class="deadlift">250</td>
+          <td>592.5</td>
+          <td>78.43</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="arthurmuschioni" href="#"></a>
+            <a class="" href="/u/arthurmuschioni">Arthur Muschioni</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>90.9</td>
+          <td class="squat">165</td>
+          <td class="bench">110</td>
+          <td class="deadlift">240</td>
+          <td>515</td>
+          <td>68.13</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="lucasferreirabarbosa" href="#"></a>
+            <a class="" href="/u/lucasferreirabarbosa">Lucas Ferreira Barbosa</a>
+          </td>
+          <td>M</td>
+          
+            <td>16~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>90</td>
+          <td class="squat">182.5</td>
+          <td class="bench">130</td>
+          <td class="deadlift">197.5</td>
+          <td>510</td>
+          <td>67.80</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>4</td>
+          
+          <td>
+            <a class="anchor" id="gustavoalmeida" href="#"></a>
+            <a class="" href="/u/gustavoalmeida">Gustavo Almeida</a>
+          </td>
+          <td>M</td>
+          
+            <td>16~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>91.2</td>
+          <td class="squat">185</td>
+          <td class="bench">92.5</td>
+          <td class="deadlift">215</td>
+          <td>492.5</td>
+          <td>65.05</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>5</td>
+          
+          <td>
+            <a class="anchor" id="gabrielbartelprazeres" href="#"></a>
+            <a class="" href="/u/gabrielbartelprazeres">Gabriel Bartel Prazeres</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>93</td>
+          <td>89.8</td>
+          <td class="squat">170</td>
+          <td class="bench">107.5</td>
+          <td class="deadlift">202.5</td>
+          <td>480</td>
+          <td>63.88</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 105 Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="luizguedes" href="#"></a>
+            <a class="" href="/u/luizguedes">Luiz Guedes</a>
+          </td>
+          <td>M</td>
+          
+            <td>16~</td>
+          
+          <td>Raw</td>
+          <td>105</td>
+          <td>104.6</td>
+          <td class="squat">162.5</td>
+          <td class="bench">107.5</td>
+          <td class="deadlift">200</td>
+          <td>470</td>
+          <td>58.13</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 120 Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="anthonylimbergu" href="#"></a>
+            <a class="" href="/u/anthonylimbergu">Anthony Limbergu</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>120</td>
+          <td>114.5</td>
+          <td class="squat">217.5</td>
+          <td class="bench">122.5</td>
+          <td class="deadlift">225</td>
+          <td>565</td>
+          <td>67.05</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="felipefujimoto" href="#"></a>
+            <a class="" href="/u/felipefujimoto">Felipe Fujimoto</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>120</td>
+          <td>115.5</td>
+          <td class="squat">170</td>
+          <td class="bench">100</td>
+          <td class="deadlift">200</td>
+          <td>470</td>
+          <td>55.56</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>3</td>
+          
+          <td>
+            <a class="anchor" id="eduardoribeirodealvarengapinheiro" href="#"></a>
+            <a class="" href="/u/eduardoribeirodealvarengapinheiro">Eduardo Ribeiro de Alvarenga Pinheiro</a>
+          </td>
+          <td>M</td>
+          
+            <td>15~</td>
+          
+          <td>Raw</td>
+          <td>120</td>
+          <td>108.4</td>
+          <td class="squat">170</td>
+          <td class="bench">72.5</td>
+          <td class="deadlift">200</td>
+          <td>442.5</td>
+          <td>53.83</td>
+        </tr>
+      
+      
+        
+          <td colspan="12" class="divheader">Men Raw 120+ Sub-Juniors</td>
+        
+      
+        <tr class="">
+          
+            <td>1</td>
+          
+          <td>
+            <a class="anchor" id="andremaio" href="#"></a>
+            <a class="" href="/u/andremaio">André Maio</a>
+          </td>
+          <td>M</td>
+          
+            <td>16~</td>
+          
+          <td>Raw</td>
+          <td>120+</td>
+          <td>143.2</td>
+          <td class="squat">177.5</td>
+          <td class="bench">87.5</td>
+          <td class="deadlift">220</td>
+          <td>485</td>
+          <td>52.40</td>
+        </tr>
+      
+        <tr class="">
+          
+            <td>2</td>
+          
+          <td>
+            <a class="anchor" id="mizaeldasilvaferreira" href="#"></a>
+            <a class="" href="/u/mizaeldasilvaferreira">Mizael da Silva Ferreira</a>
+          </td>
+          <td>M</td>
+          
+            <td>17~</td>
+          
+          <td>Raw</td>
+          <td>120+</td>
+          <td>129.6</td>
+          <td class="squat">155</td>
+          <td class="bench">105</td>
+          <td class="deadlift">205</td>
+          <td>465</td>
+          <td>52.31</td>
+        </tr>
+      
+      
+      </tbody>
+    </table>
+  </div>
+
+  
+</body>
+</html>

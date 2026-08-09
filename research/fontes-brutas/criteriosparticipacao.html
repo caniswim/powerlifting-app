@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Confederação Brasileira de Levantamentos Básicos</title>
+	<link rel="shortcut icon" href="../imagens/logo.png" type="image/x-icon"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
+	<link href="../LIB/styles/estilos.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body id="top">
+	
+<header> 
+	<div id="logo">
+		<div class="row m-0 p-0">
+			<div class="col-12 col-lg-2">
+				<a href="pagina.php"><img class="m-0 p-0" style="height: 90px" src="../imagens/logo.png"  alt="CBLB - Confederação Brasileira de Levantamentos Básicos"></a>
+			</div>
+			<div class="col-12 col-lg-10 titulo titulomargem">
+				<span>Confederação Brasileira de Levantamentos Básicos</span>
+			</div>
+		</div>
+	</div>
+
+	<div id="menu1">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 col-lg-10 m-0 p-0">
+					<a class="menu-link" href="#menu">Menu</a>
+					<nav id="menu" class="menu text-nowrap">
+						<ul>
+							<li class="has-submenu mr-lg-5" id="federacao">
+								<a href="#">SOBRE A CBLB</a>
+								<ul class="sub-menu">
+									<li><a href="../paginas/powerlifting.php">Powerlifting</a></li>
+									<li><a href="../paginas/cblb.php">A CBLB</a></li>
+									<li><a href="../paginas/balancos.php">Balanço</a></li>
+									<li><a href="../paginas/diretoria.php">Diretoria</a></li>
+									<li><a href="../paginas/comissoes.php">Comissões</a></li>
+									<li><a href="../paginas/arbitros.php">Árbitros</a></li>
+									<li><a href="../paginas/federacoes.php">Federações</a></li>
+									<li><a href="../paginas/contato.php">Contato</a></li>
+									<li><a href="../paginas/atletas.php">Atletas</a></li>
+									<li><a href="../ROTINAS/login.php" target="_blank">Login</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu mr-lg-5" id="campeonatos">
+								<a href="#">CAMPEONATOS</a>
+								<ul class="sub-menu">
+									<li><a href="../paginas/calendario.php">Calendário</a></li>
+									<li><a href="../paginas/convites.php">Convites</a></li>
+									<li><a href="../paginas/nominacoes.php">Nominações</a></li>
+									<li><a href="../paginas/campeonatos.php">Resultados</a></li>
+									<li><a href="../paginas/recordes.php?MODO=1">Recordes</a></li>
+									<li><a href="../paginas/transmissoes.php">Transmissões</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu mr-lg-5" id="regras">
+								<a href="#">REGRAS/NORMAS</a>
+								<ul class="sub-menu">
+									<li><a href="../paginas/regras.php">Regras Técnicas</a></li>
+									<li><a href="../paginas/equipamentos.php">Equipamentos Autorizados</a></li>
+									<li><a href="../paginas/criteriosparticipacao.php">Critérios para Participação em Campeonatos</a></li>
+									<li><a href="../paginas/formulas.php">Fórmula IPF / GL Points</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu" id="anti_doping">
+								<a href="#">ANTI-DOPING</a>
+								<ul class="sub-menu">
+									<li><a href="../paginas/antidoping.php">Regulamento</a></li>
+									<li><a href="../paginas/substanciasproibidas.php">Lista de Substâncias Proibidas</a></li>
+									<li><a href="../paginas/informativo.php">Informativo</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>	
+				</div>
+
+				<div class="col-12 col-lg-2 mt-1 mb-2">
+					<a href="https://www.facebook.com/Powerlifting.CBLB/" target="_blank"><img src="../imagens/facebook.png"></img></a>
+    		    	<a href="https://www.instagram.com/powerliftingbrazil_ipf/" target="_blank"><img src="../imagens/instagram.png"></img></a>
+        			<a href="https://www.youtube.com/channel/UCgfcUESh3_pQMgqtMG5aUxw" target="_blank"><img src="../imagens/youtube.png"></img></a>
+					<a href="https://www.sbdapparel.com/" target="_blank"><img src="../imagens/sbd.png"></img></a>
+	    		</div>
+	    	</div>
+    	</div>
+    </div>
+
+</header>
+	
+<script>
+jQuery( document ).ready( function( $ ) {
+
+	var	$menu = $('#menu'),
+	 	$menulink = $('.menu-link'),
+	  	$menuTrigger = $('.has-submenu > a');
+
+		$menulink.click(function(e) {
+		e.preventDefault();
+		$menulink.toggleClass('active');
+		$menu.toggleClass('active');
+	});
+
+	$menuTrigger.click(function(e) {
+		e.preventDefault();
+		var $this = $(this);
+		$this.toggleClass('active').next('ul').toggleClass('active');
+	});
+
+});
+
+</script>
+
+<script type="text/javascript">
+(function($) {
+$(window).scroll(function() {
+if ($(document).scrollTop() > 50) {
+	$('header').addClass('shrink'); } 
+else 
+	{ $('header').removeClass('shrink'); }
+});
+
+})(jQuery);
+</script>
+
+<style>
+	.texto-corpo			{ 	font-family: verdana;
+								font-size: 20px;
+						        color: #000;
+							}
+</style>
+
+<br>
+<div class="container-fluid titulo-sombreado mb-3">
+    <div class="row">
+        <div class="col-12 col-lg-12 text-center">
+            <p>CRITÉRIOS PARA PARTICIPAÇÃO EM CAMPEONATOS</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid texto-corpo mt-0">
+    <p>A CBLB promove diversas competições durante o ano.</p>
+    <p>Para que um atleta possa participar de uma dessas competições, existem alguns pré-requisitos.</p>
+    <p>Caso o atleta almeje participar de competições internacionais, regidas pela 
+<a href="https://www.powerlifting.sport/" target="_blank"><u><span style="color: blue">IPF</span></u></a> (International 
+Powerlifting Federation), também existe uma lista de exigências à serem cumpridas.<p>
+    <p>Clique nos documentos abaixo para saber mais sobre os critérios de convocação.</p>
+</div>
+<br>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 col-lg-4 text-center">
+            <a href="../paginas/criterios/Criterios Convocacao Nacional.pdf" target="_blank">
+               <img src="../imagens/logopdf.png" class="center"></img>
+            </a>
+        </div>
+        <div class="col-4 col-lg-4 text-center">
+            <a href="../paginas/criterios/Criterios Convocacao Internacional.pdf" target="_blank">
+               <img src="../imagens/logopdf.png"></img>
+            </a>    
+        </div>
+        <div class="col-4 col-lg-4 text-center">
+            <a href="../paginas/criterios/Marcas Minimas Classico-2023.pdf" target="_blank">
+               <img src="../imagens/logopdf.png"></img>
+            </a>    
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 col-lg-4 text-center">Competições Nacionais</div>
+        <div class="col-4 col-lg-4 text-center">Competições Internacionais</div>
+        <div class="col-4 col-lg-4 text-center">Competições Internacionais<br>Marcas Mínimas</div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+
+<br>
+<br>
+<footer>
+	<div class="container">
+		<span>Desenvolvimento e Hospedagem
+			<a href="https://www.padraoinformatica.com.br/" target="_blank"><img src="../imagens/logo_padrao.png" width="70" height="40"></img></a>
+		</span>
+	</div>
+</footer>
+
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
+<script src="../LIB/scripts/jquery.min.js"></script>
+<script src="../LIB/scripts/jquery.backtotop.js"></script>
+<script src="../LIB/scripts/jquery.mobilemenu.js"></script>
+<script src="../LIB/scripts/jquery.flexslider-min.js"></script>
+<script src="../JS/datatables/jquery.dataTables.js"></script>
+<script src="../JS/datatables/dataTables.bootstrap4.js"></script>
+<script src="../JS/sb-admin.min.js" type="text/javascript"></script>
+<script src="../JS/sb-admin-datatables.min.js" type="text/javascript"></script>

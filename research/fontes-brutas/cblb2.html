@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Confederação Brasileira de Levantamentos Básicos</title>
+	<link rel="shortcut icon" href="../imagens/logo.png" type="image/x-icon"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
+	<link href="../LIB/styles/estilos.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body id="top">
+	
+<header> 
+	<div id="logo">
+		<div class="row m-0 p-0">
+			<div class="col-12 col-lg-2">
+				<a href="pagina.php"><img class="m-0 p-0" style="height: 90px" src="../imagens/logo.png"  alt="CBLB - Confederação Brasileira de Levantamentos Básicos"></a>
+			</div>
+			<div class="col-12 col-lg-10 titulo titulomargem">
+				<span>Confederação Brasileira de Levantamentos Básicos</span>
+			</div>
+		</div>
+	</div>
+
+	<div id="menu1">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 col-lg-10 m-0 p-0">
+					<a class="menu-link" href="#menu">Menu</a>
+					<nav id="menu" class="menu text-nowrap">
+						<ul>
+							<li class="has-submenu mr-lg-5" id="federacao">
+								<a href="#">SOBRE A CBLB</a>
+								<ul class="sub-menu">
+									<li><a href="../paginas/powerlifting.php">Powerlifting</a></li>
+									<li><a href="../paginas/cblb.php">A CBLB</a></li>
+									<li><a href="../paginas/balancos.php">Balanço</a></li>
+									<li><a href="../paginas/diretoria.php">Diretoria</a></li>
+									<li><a href="../paginas/comissoes.php">Comissões</a></li>
+									<li><a href="../paginas/arbitros.php">Árbitros</a></li>
+									<li><a href="../paginas/federacoes.php">Federações</a></li>
+									<li><a href="../paginas/contato.php">Contato</a></li>
+									<li><a href="../paginas/atletas.php">Atletas</a></li>
+									<li><a href="../ROTINAS/login.php" target="_blank">Login</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu mr-lg-5" id="campeonatos">
+								<a href="#">CAMPEONATOS</a>
+								<ul class="sub-menu">
+									<li><a href="../paginas/calendario.php">Calendário</a></li>
+									<li><a href="../paginas/convites.php">Convites</a></li>
+									<li><a href="../paginas/nominacoes.php">Nominações</a></li>
+									<li><a href="../paginas/campeonatos.php">Resultados</a></li>
+									<li><a href="../paginas/recordes.php?MODO=1">Recordes</a></li>
+									<li><a href="../paginas/transmissoes.php">Transmissões</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu mr-lg-5" id="regras">
+								<a href="#">REGRAS/NORMAS</a>
+								<ul class="sub-menu">
+									<li><a href="../paginas/regras.php">Regras Técnicas</a></li>
+									<li><a href="../paginas/equipamentos.php">Equipamentos Autorizados</a></li>
+									<li><a href="../paginas/criteriosparticipacao.php">Critérios para Participação em Campeonatos</a></li>
+									<li><a href="../paginas/formulas.php">Fórmula IPF / GL Points</a></li>
+								</ul>
+							</li>
+							<li class="has-submenu" id="anti_doping">
+								<a href="#">ANTI-DOPING</a>
+								<ul class="sub-menu">
+									<li><a href="../paginas/antidoping.php">Regulamento</a></li>
+									<li><a href="../paginas/substanciasproibidas.php">Lista de Substâncias Proibidas</a></li>
+									<li><a href="../paginas/informativo.php">Informativo</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>	
+				</div>
+
+				<div class="col-12 col-lg-2 mt-1 mb-2">
+					<a href="https://www.facebook.com/Powerlifting.CBLB/" target="_blank"><img src="../imagens/facebook.png"></img></a>
+    		    	<a href="https://www.instagram.com/powerliftingbrazil_ipf/" target="_blank"><img src="../imagens/instagram.png"></img></a>
+        			<a href="https://www.youtube.com/channel/UCgfcUESh3_pQMgqtMG5aUxw" target="_blank"><img src="../imagens/youtube.png"></img></a>
+					<a href="https://www.sbdapparel.com/" target="_blank"><img src="../imagens/sbd.png"></img></a>
+	    		</div>
+	    	</div>
+    	</div>
+    </div>
+
+</header>
+	
+<script>
+jQuery( document ).ready( function( $ ) {
+
+	var	$menu = $('#menu'),
+	 	$menulink = $('.menu-link'),
+	  	$menuTrigger = $('.has-submenu > a');
+
+		$menulink.click(function(e) {
+		e.preventDefault();
+		$menulink.toggleClass('active');
+		$menu.toggleClass('active');
+	});
+
+	$menuTrigger.click(function(e) {
+		e.preventDefault();
+		var $this = $(this);
+		$this.toggleClass('active').next('ul').toggleClass('active');
+	});
+
+});
+
+</script>
+
+<script type="text/javascript">
+(function($) {
+$(window).scroll(function() {
+if ($(document).scrollTop() > 50) {
+	$('header').addClass('shrink'); } 
+else 
+	{ $('header').removeClass('shrink'); }
+});
+
+})(jQuery);
+</script>
+
+<!--
+<figure id="picture"></figure>
+-->
+
+<div class="clear"></div>
+
+<div id="wrapper">
+	<section id="main_content">
+		<div>
+			<header>
+				<h1 class=""><a href="../paginas/noticias.php"><img src="../imagens/botaomais.jpg"></a>Notícias</h1>					
+			</header>
+			<div>
+
+<div class="noticias">	<span class="noticias-por-data">18-11-2025</span>	<div>		<h2>Adeus nosso querido amigo!</h2>	</div>	<div>	</div>	<div>		<div>			<p>Amigos e Colegas do Powerlifting Brasileiro
+<br>
+<br>
+O esporte Powerlifting no Brasil foi acometido no dia de ontem da perda de uma das pessoas mais importante para o desbravamento e consolidação de nossa modalidade. Maurício Laurindo, o Maurício da Calibre como muitos atletas o conheciam.<br>
+Perdemos uma das pessoas mais queridas e respeitadas no cenário do Powerlifting, era uma unanimidade entre todos do esporte!
+Locutor brilhante, dirigente, fornecedor de equipamentos, anilheiros, montador, organizador e acima de tudo um entusiasta do nosso esporte.<br>
+<br>
+Será sempre lembrado por todos e deixar saudades pelo seu jeito no trato com todos, as brincadeiras, o sorriso e o otimismo em tudo que fez !
+<br>
+Fique com Deus na glória do Senhor e continue desse outro plano nos acompanhando e nos protegendo.
+<br>
+<br>
+Com muito carinho e saudades!<br>
+<strong>Diretoria - CBLB</strong>
+</p>			<p><a href="http://" target="_blank"></a></p>		</div>	</div></div><div class="noticias">	<span class="noticias-por-data">24-02-2025</span>	<div>		<h2>UM BELO INÍCIO PARA O CALENDÁRIO 2025!</h2>	</div>	<div>	</div>	<div>		<div>			<p>Estimados Esportistas do Powerlifting !!
+
+É com a maior satisfação e orgulho que parabenizo e agradeço a todos que estiveram em Navegantes, Santa Catarina e fizeram com que fizéssemos um grandioso evento, seja em termos de estrutura e organização, mas também e principalmente no mais alto nível técnico. Uma especial homenagem a ACLB mais uma vez pela brilhante organização de mais um evento em terras Catarinenses.
+<br>
+<br>
+E desde já convidamos a todos para estarem também presentes, no mês de Abril, em São Paulo, em mais uma edição do Campeonato Brasileiro Raw Sub-Juniores e Juniores e de Powerlifting Equipado.<br>
+Será um evento sensacional, onde estarão os expoentes do Powerlifting que despontam forte, mesclado com a experiência de multi campeões no equipado.
+<br>
+<br>
+Não percam !
+<br>
+<br>
+<b>Julio Cesar Conrado - Presidente CBLB</b></p>			<p><a href="http://" target="_blank"></a></p>		</div>	</div></div><div class="noticias">	<span class="noticias-por-data">25-01-2025</span>	<div>		<h2>MUDANÇA LOCAL DO CAMP. BRASILEIRO RAW E SUPINO RAW/EQUIPADO</h2>	</div>	<div>	</div>	<div>		<div>			<p><b>Campeonato Brasileiro de Powerlifting Raw OPEN e MASTERS e Campeonato Brasileiro de Supino Raw e Equipado - 2025?.</b>
+<br>
+<br>
+Prezados Atletas, Árbitros e Treinadores.
+<br>
+Pelo presente, eu, Julio Cesar Conrado, na qualidade de Presidente da Confederação Brasileira de Levantamentos Básicos, ratificando decisão elaborada em reunião da Diretoria Executiva da CBLB, em face da excelente de infra estrutura detectados que colocavam em risco a qualidade, a tranquilidade e segurança dos atletas inscritos nos eventos em epígrafe, resolvem por bem alterar a cidade sede, passando os aludidos eventos para a cidade de Navegantes, que nos oferta no presente momento uma maior quantidade de opções de hotéis, AIRBNB, bem como maior facilidade de acesso e transporte.
+<br>
+Assim comunicamos a todos que os eventos em epígrafe, NÃO mais serão sediados em Balneário Piçarras. Passando para a cidade de Navegantes que não mediu esforços e nos acolheu e ofereceu a melhor estrutura possível.
+<br>
+O Evento tomará parte no 
+<b>GINÁSIO DE ESPORTES PREFEITO DOMINGOS ANGELINO RÉGIS</b>, situado no endereço: Rua Arnaldo Passos - Centro, Navegantes - SC. CEP: 88370-102
+<br>
+Por fim, aproveitando o ensejo para externar os nossos mais sinceros votos de estima e consideração, firmamos a presente.
+<br>
+<br>
+Cordialmente,
+<br>
+<b>Júlio Cesar Conrado - Presidente CBLB</b></p>			<p><a href="http://" target="_blank"></a></p>		</div>	</div></div><div class="noticias">	<span class="noticias-por-data">06-05-2024</span>	<div>		<h2>Sulamericano Equipado - 2024</h2>	</div>	<div>	</div>	<div>		<div>			<p><b>ATENÇÃO POVO DO AÇO !!!</b>
+<br><br>
+Já estão disponíveis os resultados do Campeonato Sulamericano 2024 de:<br><b>
+- Powerlifting Equipado<br>
+- Powerlifting Universitário<br>
+- Supino Clássico e Equipado</b><br><br>
+Clique 
+<a href="https://www.powerlifting-ipf.com.br/php/campeonatos.php" target="_blank">aqui</a>
+para acessar os resultados
+<br><br>
+A CBLB agradece a todos os envolvidos que se desdobraram para que o evento fosse um sucesso, mesmo com as adversidades que os Estados do sul tem passado.
+<br><br>
+</p>			<p><a href="http://" target="_blank"></a></p>		</div>	</div></div><div class="noticias">	<span class="noticias-por-data">19-12-2023</span>	<div>		<h2>Livro de regras atualizado</h2>	</div>	<div>	</div>	<div>		<div>			<p><strong>Atenção atletas !</strong>
+<br><br>
+Confiram o livro de regras IPF 2024 atualizado na versão em português!
+<br><br>
+Senhores treinadores, estejam atentos às recomendações de atuação ao final do livro!
+<br><br>
+Clique 
+<a href="https://www.powerlifting-ipf.com.br/php/regras.php" target="_blank">aqui</a>
+para acessar o livro de regras
+</p>			<p><a href="http://" target="_blank"></a></p>		</div>	</div></div>
+			</div>
+		</div>
+	</section>
+
+	
+	<section id="msgpresidente">
+		<div>
+			<header>
+				<h1 class="">Mensagem do Presidente</h1>
+			</header>
+			<div class="news">
+				<div>
+					<span class="noticias-por-data">
+						24-12-2025					</span>
+					<div>
+						<h2>
+							Boas Festas						</h2>
+					</div>
+					<div>
+						<div>
+							<p>
+								A Confederação Brasileira de Levantamentos Básicos, na pessoa de seu presidente, vem desejar a todos seus filiados, atletas, técnicos e aficionados, um Feliz Natal cheio de Saúde e Paz !
+Com um 2026 que se aproxima, com ânimo renovados e repleto de prosperidade !
+
+
+								<p><a href="http://" target="_blank"></a></p>							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+<section class="partner">
+	<h3>Acesse também</h3>
+	</br></br>
+ 	<a href="https://www.powerlifting.sport/" target="_blank"><img src="../imagens/logo_ipf.png"></img></a>
+	</br></br></br></br>
+    <a href="https://www.gov.br/abcd/pt-br" target="_blank"><img src="../imagens/logo_ABCD.png"></img></a>
+	</br></br></br></br>
+    <a href="https://www.wada-ama.org/" target="_blank"><img src="../imagens/logo_wada.png"></img></a>
+	</br></br></br></br>
+    <a href="https://www.theworldgames.org/" target="_blank"><img src="../imagens/logo_worldgames.jpg"></img></a>
+	</br></br></br></br>
+    <a href="https://www.sbdapparel.com/" target="_blank"><img src="../imagens/logo_sbd.jpg"></img></a>
+	</br></br></br></br>
+    <a href="https://www.eleiko.com/en/home" target="_blank"><img src="../imagens/logo_eleiko.jpg"></img></a>
+	</br></br></br></br>
+    <a href="https://www.repmaxsports.com/" target="_blank"><img src="../imagens/logo_repmax.png"></img></a>
+</section>
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+
+<br>
+<br>
+<footer>
+	<div class="container">
+		<span>Desenvolvimento e Hospedagem
+			<a href="https://www.padraoinformatica.com.br/" target="_blank"><img src="../imagens/logo_padrao.png" width="70" height="40"></img></a>
+		</span>
+	</div>
+</footer>
+
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
+<script src="../LIB/scripts/jquery.min.js"></script>
+<script src="../LIB/scripts/jquery.backtotop.js"></script>
+<script src="../LIB/scripts/jquery.mobilemenu.js"></script>
+<script src="../LIB/scripts/jquery.flexslider-min.js"></script>
+<script src="../JS/datatables/jquery.dataTables.js"></script>
+<script src="../JS/datatables/dataTables.bootstrap4.js"></script>
+<script src="../JS/sb-admin.min.js" type="text/javascript"></script>
+<script src="../JS/sb-admin-datatables.min.js" type="text/javascript"></script>

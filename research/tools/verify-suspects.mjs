@@ -33,6 +33,7 @@
  *   node research/tools/verify-suspects.mjs              # tudo
  *   node research/tools/verify-suspects.mjs --only R002  # um vídeo
  *   node research/tools/verify-suspects.mjs --skip-audio # reaproveita clipes já cortados
+ *   node research/tools/verify-suspects.mjs --report     # só re-renderiza o markdown
  */
 
 import { execFileSync, spawnSync } from 'node:child_process';
@@ -62,6 +63,14 @@ const toSec = (s) => String(s).trim().split(':').map(Number).reduce((a, p) => a 
 
 const norm = (s) =>
   (s ?? '').normalize('NFC').toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
+
+// `--report` só renderiza o markdown a partir do JSON já adjudicado: não baixa
+// áudio, não roda Whisper, não toca no julgamento. Assim reformatar o relatório
+// nunca custa uma hora de CPU nem arrisca sobrescrever um veredito humano.
+if (argv.includes('--report')) {
+  renderReport();
+  process.exit(0);
+}
 
 // ── alvos e manifesto ───────────────────────────────────────────────────────
 
@@ -293,8 +302,13 @@ for (const a of alvos) {
     claim: a.claim,
     verbatim: a.verbatim,
     params: a.params,
+    // Só o trecho ALINHADO entra no JSON versionado, nunca a janela de 60 s
+    // inteira. Duas razões: a janela é redundante com a transcrição do corpus,
+    // que já está no repositório, e 128 janelas de 60 s virariam duas horas de
+    // vídeo transcrito de novo, num arquivo cujo propósito é guardar a
+    // divergência e não o conteúdo. A janela crua fica em
+    // `.audio/whisper-raw.json`, fora do git, para quem precisar reabrir o caso.
     whisperTrecho: trecho,
-    whisperJanelaTexto: texto,
     whisperJanela: `${Math.floor(a._t0 / 60)}:${String(a._t0 % 60).padStart(2, '0')} +${ANTES_SEC + DEPOIS_SEC}s`,
     avgLogprob: w?.avgLogprob ?? null,
     numLegenda, numWhisper, paramsAusentes, numNovos, numPerdidos,
@@ -302,6 +316,27 @@ for (const a of alvos) {
     cobertura: Number(cobertura.toFixed(2)),
     veredito, motivo,
   });
+}
+
+/**
+ * A adjudicação humana sobrevive a uma nova execução.
+ *
+ * O veredito automático é só um detector de divergência; quem decide
+ * `confirmado / corrigido / indeterminado` é uma pessoa lendo os dois textos
+ * lado a lado. Se rodar de novo apagasse esse julgamento, o passe seria de uso
+ * único — e reexecutar depois de ingerir mais claims custaria refazer 128
+ * decisões já tomadas. Por isso `vereditoHumano` e `nota` são mesclados por id
+ * a partir do arquivo anterior.
+ */
+if (existsSync(OUT_JSON)) {
+  const anterior = new Map(JSON.parse(readFileSync(OUT_JSON, 'utf8')).map((r) => [r.id, r]));
+  for (const r of relatorio) {
+    const a = anterior.get(r.id);
+    if (a?.vereditoHumano) {
+      r.vereditoHumano = a.vereditoHumano;
+      if (a.nota) r.nota = a.nota;
+    }
+  }
 }
 
 writeFileSync(OUT_JSON, `${JSON.stringify(relatorio, null, 1)}\n`);
@@ -313,3 +348,110 @@ console.error(`  DIVERGENTE (julgar) ....... ${cont('DIVERGENTE')}`);
 console.error(`  SEM_AUDIO ................. ${cont('SEM_AUDIO')}`);
 console.error(`\nEvidência crua em research/kb/suspeitos-whisper.json`);
 console.error(`O veredito final é humano — ver research/kb/SUSPEITOS-VERIFICADOS.md\n`);
+
+// ── relatório ───────────────────────────────────────────────────────────────
+
+/**
+ * Renderiza `SUSPEITOS-VERIFICADOS.md` a partir do JSON adjudicado.
+ *
+ * O relatório existe para ser JULGADO por quem lê, não para ser acreditado:
+ * onde legenda e áudio divergem, os dois textos aparecem lado a lado, com o
+ * instante, para que qualquer pessoa possa abrir o vídeo e decidir por conta
+ * própria. Um relatório que só anunciasse o veredito pediria a mesma confiança
+ * cega que este passe inteiro existe para não precisar pedir.
+ *
+ * Só o trecho alinhado é citado — o suficiente para conferir número e
+ * polaridade, e nada além disso.
+ */
+function renderReport() {
+  const dados = JSON.parse(readFileSync(OUT_JSON, 'utf8'));
+  const rotulo = { confirmado: 'CONFIRMADO', corrigido: 'CORRIGIDO', indeterminado: 'INDETERMINADO' };
+  const ordem = { corrigido: 0, indeterminado: 1, confirmado: 2 };
+  const v = (r) => r.vereditoHumano ?? (r.veredito === 'CONFIRMADO' ? 'confirmado' : 'indeterminado');
+
+  const n = (k) => dados.filter((r) => v(r) === k).length;
+  const L = [];
+  L.push('# Suspeitos verificados com Whisper');
+  L.push('');
+  L.push('Gerado por `research/tools/verify-suspects.mjs --report`. **Não editar à mão** —');
+  L.push('a fonte é `research/kb/suspeitos-whisper.json`, e o veredito humano mora lá, em');
+  L.push('`vereditoHumano`.');
+  L.push('');
+  L.push('## Por que este arquivo existe');
+  L.push('');
+  L.push('A base é construída sobre legenda automática do YouTube. Erro de palavra é');
+  L.push('inofensivo; erro de **número** envenena o dado, e um `n\'t` perdido inverte a');
+  L.push('afirmação sem que a frase pareça errada. `list-suspects.mjs` levanta');
+  L.push('mecanicamente as janelas onde isso pode ter acontecido, e cada uma é');
+  L.push('re-transcrita do áudio com `faster-whisper` `large-v3-turbo` (int8, CPU) numa');
+  L.push('janela de `at − 20 s` a `at + 40 s`.');
+  L.push('');
+  L.push('A máquina detecta **divergência**; ela não decide quem está certo. Onde legenda e');
+  L.push('áudio discordam, os dois textos ficam lado a lado abaixo, com o instante, para');
+  L.push('quem lê poder julgar. Onde o áudio também sai ambíguo, o veredito é');
+  L.push('`INDETERMINADO` e a claim continua marcada `suspect` — chutar o que "devia" ter');
+  L.push('sido dito é exatamente o defeito que esta base existe para não ter.');
+  L.push('');
+  L.push('## Placar');
+  L.push('');
+  L.push('| veredito | claims | o que foi feito na base |');
+  L.push('|---|---:|---|');
+  L.push(`| CONFIRMADO | ${n('confirmado')} | \`suspect\` removido, \`verified: "whisper"\` |`);
+  L.push(`| CORRIGIDO | ${n('corrigido')} | \`claim\`/\`params\` seguem o áudio, \`verbatimWhisper\` registra o que se ouve |`);
+  L.push(`| INDETERMINADO | ${n('indeterminado')} | \`suspect: true\` mantido + \`whisperChecked: true\` |`);
+  L.push('');
+  L.push(`Total: **${dados.length}** janelas re-transcritas, em ${new Set(dados.map((r) => r.src)).size} vídeos.`);
+  L.push('');
+  L.push('`verbatim` **nunca** é reescrito, nem quando o áudio o contradiz: ele é o registro');
+  L.push('do que a transcrição citável diz, e é o que mantém a procedência auditável contra');
+  L.push('`check-claims.mjs`. O texto do áudio entra em `verbatimWhisper`. A divergência');
+  L.push('entre os dois é dado, não erro a apagar.');
+  L.push('');
+
+  for (const grupo of ['corrigido', 'indeterminado', 'confirmado']) {
+    const itens = dados.filter((r) => v(r) === grupo).sort((a, b) => a.id.localeCompare(b.id));
+    if (itens.length === 0) continue;
+    L.push('---');
+    L.push('');
+    L.push(`## ${rotulo[grupo]} — ${itens.length}`);
+    L.push('');
+    if (grupo === 'confirmado') {
+      L.push('Número e polaridade do áudio batem com a legenda. Nada mudou além do carimbo.');
+      L.push('');
+      L.push('| claim | ref @ at | motivo do levantamento | o que se ouve |');
+      L.push('|---|---|---|---|');
+      for (const r of itens) {
+        const t = (r.whisperTrecho || '').replace(/\|/g, '/').slice(0, 150);
+        L.push(`| \`${r.id}\` | ${r.src} @${r.at} | ${r.why} | …${t}… |`);
+      }
+      L.push('');
+      continue;
+    }
+    for (const r of itens) {
+      L.push(`### \`${r.id}\` — ${r.src} @${r.at}`);
+      L.push('');
+      L.push(`**Levantado por:** ${r.why} · **janela:** ${r.whisperJanela} · **alinhamento:** ${(r.cobertura * 100).toFixed(0)}%`);
+      L.push('');
+      L.push(`**Claim:** ${r.claim}`);
+      L.push('');
+      L.push('| fonte | texto |');
+      L.push('|---|---|');
+      L.push(`| legenda (YouTube) | ${(r.verbatim || '').replace(/\|/g, '/')} |`);
+      L.push(`| áudio (Whisper) | ${(r.whisperTrecho || '—').replace(/\|/g, '/')} |`);
+      L.push('');
+      if (r.params?.length) {
+        L.push(`**Params declarados:** ${r.params.map((p) => `\`${p.value} ${p.unit ?? ''} [${p.frame}]\``).join(' · ')}`);
+        L.push('');
+      }
+      if (r.motivo?.length) {
+        L.push(`**Divergência detectada:** ${r.motivo.join(' · ')}`);
+        L.push('');
+      }
+      L.push(`**Veredito: ${rotulo[grupo]}.** ${r.nota ?? ''}`.trim());
+      L.push('');
+    }
+  }
+
+  writeFileSync(join(ROOT, 'research/kb/SUSPEITOS-VERIFICADOS.md'), `${L.join('\n')}\n`);
+  console.error(`relatório escrito — ${dados.length} entrada(s)`);
+}

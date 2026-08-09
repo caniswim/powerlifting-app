@@ -1,251 +1,53 @@
 [
  {
-  "id": "V002-07",
-  "src": "R002",
-  "at": "02:19",
-  "file": "research/extract/R002.jsonl",
-  "line": 7,
+  "id": "V043-27",
+  "src": "R043",
+  "at": "03:48",
+  "file": "research/extract/R043.jsonl",
+  "line": 27,
   "why": "numero",
   "origem": "marcado",
   "scope": "GERAL",
-  "claim": "O lado pró-intensidade cita um estudo que alega que os sujeitos fizeram 21 máximas de agachamento numa sessão e voltaram à força normal no dia seguinte.",
-  "verbatim": "They claim they had people do 21 rep max squats in one workout and that they recovered within 24 hours",
+  "claim": "A meta-análise que muitos citam não mostra benefício de proteína além de cerca de 8 g por libra de peso corporal.",
+  "verbatim": "showing no benefits beyond about8 g per pound of body weight for protein",
   "params": [
    {
-    "name": "maximas_em_uma_sessao",
-    "value": 21,
-    "unit": "séries",
-    "frame": "series"
+    "name": "proteina_por_lb",
+    "value": 8,
+    "unit": "g/lb",
+    "frame": "g_por_lb"
    }
   ],
-  "whisperTrecho": "they claim they had people do 21 rep max squats in one workout and that they recovered within 24 hours",
-  "whisperJanelaTexto": "Science-based lifters are very pro-volume and less so intensity. I'm not taking a side on that debate. I think both are important. And if we really want to talk about one versus the other, it'd be a really long video. But anyways, I want to say both sides really kind of cherry-pick evidence and then don't acknowledge that, hey, these studies are ridiculous. I don't believe they're true. I'm going to give you an example from both sides. So this first one's from the intensity side, the pro-intensity side. they claim they had people do 21 rep max squats in one workout and that they recovered within 24 hours completely back to normal strength now you guys are power lifters or probably probably power lifters if you're watching my content or at least lifters who have probably done a one rep max before right do you guys think you could do 21 rep max squats in one day and be perfectly fine the next day of course not right and i this is something i struggle with with these time-space lifters is they take these extreme",
-  "whisperJanela": "1:59 +60s",
-  "avgLogprob": -0.132,
+  "whisperTrecho": "many use showing no benefits beyond about 20 grams per pound of body weight for protein",
+  "whisperJanela": "3:28 +60s",
+  "avgLogprob": -0.096,
   "numLegenda": [
-   "21",
-   "24",
-   "1"
+   "8"
   ],
   "numWhisper": [
-   "21",
-   "24",
-   "1"
+   "20"
   ],
-  "paramsAusentes": [],
-  "numNovos": [],
-  "numPerdidos": [],
-  "negLegenda": [],
-  "negWhisper": [],
-  "cobertura": 1,
-  "veredito": "CONFIRMADO",
-  "motivo": []
- },
- {
-  "id": "V002-08",
-  "src": "R002",
-  "at": "02:34",
-  "file": "research/extract/R002.jsonl",
-  "line": 8,
-  "why": "numero",
-  "origem": "marcado",
-  "scope": "GERAL",
-  "claim": "Ele considera implausível que alguém faça 21 máximas de agachamento num dia e esteja perfeitamente bem no dia seguinte.",
-  "verbatim": "Do you guys think you could do 21 rep max squats in one day and be perfectly fine the next day? Of course not",
-  "params": [
-   {
-    "name": "maximas_em_uma_sessao",
-    "value": 21,
-    "unit": "séries",
-    "frame": "series"
-   }
+  "paramsAusentes": [
+   "8"
   ],
-  "whisperTrecho": "probably done a one rep max before right do you guys think you could do 21 rep max squats in one day and be perfectly fine the next day of course not right and",
-  "whisperJanelaTexto": "And don't, like, acknowledge that, hey, these studies are, like, ridiculous. I don't believe they're true. I'm going to give you an example from both sides. So this first one's from the intensity side, the pro intensity side. They claimed they had people do 21 rep max squats in one workout. And that they recovered within 24 hours. Completely back to normal strength. Now, you guys are powerlifters or probably powerlifters if you're watching my content. or at least lifters who have probably done a one rep max before right do you guys think you could do 21 rep max squats in one day and be perfectly fine the next day of course not right and i this is something i struggle with with these science-based lifters is they take these extreme not either side like both sides they take these extreme arguments these extreme results from studies at face value with no like critical thinking like hey this is ridiculous i could never do that right There's no mention.",
-  "whisperJanela": "2:14 +60s",
-  "avgLogprob": -0.152,
-  "numLegenda": [
-   "21",
-   "1"
+  "numNovos": [
+   "20"
   ],
-  "numWhisper": [
-   "21",
-   "1",
-   "1"
+  "numPerdidos": [
+   "8"
   ],
-  "paramsAusentes": [],
-  "numNovos": [],
-  "numPerdidos": [],
   "negLegenda": [
-   "not"
+   "no"
   ],
   "negWhisper": [
-   "not"
+   "no"
   ],
-  "cobertura": 1,
-  "veredito": "CONFIRMADO",
-  "motivo": []
- },
- {
-  "id": "V002-13",
-  "src": "R002",
-  "at": "04:50",
-  "file": "research/extract/R002.jsonl",
-  "line": 13,
-  "why": "numero",
-  "origem": "marcado",
-  "scope": "GERAL",
-  "claim": "Do lado do volume há um estudo infame em que os sujeitos chegaram a 52 séries por semana para quadríceps e teriam tido mais crescimento.",
-  "verbatim": "They worked up to doing 52 sets per week for the quads and they said they got better growth",
-  "params": [
-   {
-    "name": "series_semanais_quadriceps",
-    "value": 52,
-    "unit": "séries/semana",
-    "frame": "series"
-   }
-  ],
-  "whisperTrecho": "probably heard about they worked up to doing 52 sets per week for the quads and they said they got better growth now purportedly all the sets",
-  "whisperJanelaTexto": "singles with like 80 percent of one rep max right that's a reasonable load most people can do that and costers seem to be a lot less fatigued in research that's a like well-documented thing so i can believe somebody did that and their one their isometric light extension strength was pretty much the same the next day but not 21 rep maxes now on the volume side of things there's a study you've it's pretty infamous you've probably heard about they worked up to doing 52 sets per week for the quads and they said they got better growth now purportedly all the sets were done to two reps in reserve except the last set of each exercise was done to failure but here's the thing that's a very subjective measure like you i think we all know about the people who train to mild discomfort right it's a bit subjective how much discomfort you want to push through i don't believe people are actually doing 52 hard sets and then there's people arguing for like yeah you can do these extreme really hard set counts like i don't believe it",
-  "whisperJanela": "4:30 +60s",
-  "avgLogprob": -0.091,
-  "numLegenda": [
-   "52"
-  ],
-  "numWhisper": [
-   "52"
-  ],
-  "paramsAusentes": [],
-  "numNovos": [],
-  "numPerdidos": [],
-  "negLegenda": [],
-  "negWhisper": [],
-  "cobertura": 1,
-  "veredito": "CONFIRMADO",
-  "motivo": []
- },
- {
-  "id": "V002-16",
-  "src": "R002",
-  "at": "05:21",
-  "file": "research/extract/R002.jsonl",
-  "line": 16,
-  "why": "numero",
-  "origem": "marcado",
-  "scope": "GERAL",
-  "claim": "Ele não acredita que os sujeitos estivessem de fato fazendo 52 séries duras por semana.",
-  "verbatim": "I don't believe people were actually doing 52 hard sets",
-  "params": [
-   {
-    "name": "series_semanais",
-    "value": 52,
-    "unit": "séries/semana",
-    "frame": "series"
-   }
-  ],
-  "whisperTrecho": "don t believe people are actually doing 52 hard sets and then there s people",
-  "whisperJanelaTexto": "and they said they got better growth now purportedly all the sets were done to two reps in reserve except the last set of each exercise was done to failure but here's the thing that's a very subjective measure like you i think we all know about the people who train to mild discomfort right it's a bit subjective how much discomfort you want to push through i don't believe people are actually doing 52 hard sets and then there's people arguing for like yeah you can do these extreme really hard set counts like I don't believe it again you guys have probably lifted before do you think you could do 52 sets to failure on a muscle per week I don't I've even talked about how I've done these extreme volumes before I'm currently doing 42 sets per week on my bench I've done 51 sets per week on squats and deadlifts before but these were with many reps in reserve like for example my bench work is about two-thirds of my max and I'm doing it for doubles right at least 10 reps in reserve likely more likely more like 15 12 to 15 i can handle the 42 sets with that but it's still pretty fatiguing adding in my",
-  "whisperJanela": "5:01 +60s",
-  "avgLogprob": -0.07,
-  "numLegenda": [
-   "52"
-  ],
-  "numWhisper": [
-   "52"
-  ],
-  "paramsAusentes": [],
-  "numNovos": [],
-  "numPerdidos": [],
-  "negLegenda": [
-   "don t"
-  ],
-  "negWhisper": [
-   "don t"
-  ],
-  "cobertura": 0.88,
-  "veredito": "CONFIRMADO",
-  "motivo": []
- },
- {
-  "id": "V002-17",
-  "src": "R002",
-  "at": "05:36",
-  "file": "research/extract/R002.jsonl",
-  "line": 17,
-  "why": "numero",
-  "origem": "marcado",
-  "scope": "PESSOAL",
-  "claim": "Está fazendo 42 séries por semana de supino no momento da gravação.",
-  "verbatim": "I'm currently doing 42 sets per week on my bench",
-  "params": [
-   {
-    "name": "series_semanais_supino",
-    "value": 42,
-    "unit": "séries/semana",
-    "frame": "series"
-   }
-  ],
-  "whisperTrecho": "currently doing 42 sets per week on my bench i ve done 51 sets per",
-  "whisperJanelaTexto": "trained to mild discomfort, right? It's a bit subjective how much discomfort you want to push through. I don't believe people are actually doing 52 hard sets. And then there's people arguing for like, yeah, you can do these extreme really hard set counts. Like, I don't believe it. Again, you guys have probably lifted before. Do you think you could do 52 sets to failure on a muscle per week? I don't. I've even talked about how I've done these extreme volumes before. I'm currently doing 42 sets per week on my bench. I've done 51 sets per week on squats and deadlifts before. But these were with many reps in reserve. Like, for example, my bench work is about two-thirds of my max, and I'm doing it for doubles, right? At least 10 reps in reserve. Likely more. Likely more like 15. 12 to 15. I can handle 42 sets with that, but it's still pretty fatiguing, adding in my bit of accessory work too. 52 sets to failure? No way. I don't believe that, right? And just studies like this, oftentimes, even if they are, like, plausible that they did it, they just don't represent what people do in the real world. like there's a lot of stuff",
-  "whisperJanela": "5:16 +60s",
-  "avgLogprob": -0.141,
-  "numLegenda": [
-   "42"
-  ],
-  "numWhisper": [
-   "42",
-   "51"
-  ],
-  "paramsAusentes": [],
-  "numNovos": [
-   "51"
-  ],
-  "numPerdidos": [],
-  "negLegenda": [],
-  "negWhisper": [],
-  "cobertura": 1,
-  "veredito": "CONFIRMADO",
-  "motivo": []
- },
- {
-  "id": "V002-18",
-  "src": "R002",
-  "at": "05:36",
-  "file": "research/extract/R002.jsonl",
-  "line": 18,
-  "why": "numero",
-  "origem": "marcado",
-  "scope": "PESSOAL",
-  "claim": "Já fez 51 séries por semana em agachamento e terra, mas sempre com muitas repetições em reserva.",
-  "verbatim": "I've done 51 sets per week on squats and deadlifts before, but these were with many reps in reserve",
-  "params": [
-   {
-    "name": "series_semanais_agacho_terra",
-    "value": 51,
-    "unit": "séries/semana",
-    "frame": "series"
-   }
-  ],
-  "whisperTrecho": "doing 42 sets per week on my bench i ve done 51 sets per week on squats and deadlifts before but these were with many reps in reserve",
-  "whisperJanelaTexto": "trained to mild discomfort, right? It's a bit subjective how much discomfort you want to push through. I don't believe people are actually doing 52 hard sets. And then there's people arguing for like, yeah, you can do these extreme really hard set counts. Like, I don't believe it. Again, you guys have probably lifted before. Do you think you could do 52 sets to failure on a muscle per week? I don't. I've even talked about how I've done these extreme volumes before. I'm currently doing 42 sets per week on my bench. I've done 51 sets per week on squats and deadlifts before. But these were with many reps in reserve. Like, for example, my bench work is about two-thirds of my max, and I'm doing it for doubles, right? At least 10 reps in reserve. Likely more. Likely more like 15. 12 to 15. I can handle 42 sets with that, but it's still pretty fatiguing, adding in my bit of accessory work too. 52 sets to failure? No way. I don't believe that, right? And just studies like this, oftentimes, even if they are, like, plausible that they did it, they just don't represent what people do in the real world. like there's a lot of stuff",
-  "whisperJanela": "5:16 +60s",
-  "avgLogprob": -0.141,
-  "numLegenda": [
-   "51"
-  ],
-  "numWhisper": [
-   "42",
-   "51"
-  ],
-  "paramsAusentes": [],
-  "numNovos": [
-   "42"
-  ],
-  "numPerdidos": [],
-  "negLegenda": [],
-  "negWhisper": [],
-  "cobertura": 1,
-  "veredito": "CONFIRMADO",
-  "motivo": []
+  "cobertura": 0.9,
+  "veredito": "DIVERGENTE",
+  "motivo": [
+   "param ausente no áudio: 8",
+   "número da legenda não ouvido: 8",
+   "número novo no áudio: 20"
+  ]
  }
 ]

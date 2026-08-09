@@ -1,0 +1,90 @@
+[
+ {
+  "id": "V041-21",
+  "src": "R041",
+  "at": "03:47",
+  "file": "research/extract/R041.jsonl",
+  "line": 21,
+  "why": "numero",
+  "origem": "marcado",
+  "scope": "GERAL",
+  "claim": "Mesmo algo como 6 g de proteína por libra de peso corporal, considerado baixo entre praticantes, já cobre a maior parte das bases.",
+  "verbatim": "even if you get something like 6 g per pound of body weight which is pretty low as far as lifters go",
+  "params": [
+   {
+    "name": "proteina_por_lb",
+    "value": 6,
+    "unit": "g/lb",
+    "frame": "g_por_lb"
+   }
+  ],
+  "whisperTrecho": "is sustainable for you even if you get something like 0 6 grams per pound of body weight which is pretty low as far as lifters",
+  "whisperJanela": "3:27 +60s",
+  "avgLogprob": -0.083,
+  "numLegenda": [
+   "6"
+  ],
+  "numWhisper": [
+   "0",
+   "6"
+  ],
+  "paramsAusentes": [],
+  "numNovos": [
+   "0"
+  ],
+  "numPerdidos": [],
+  "negLegenda": [],
+  "negWhisper": [],
+  "cobertura": 1,
+  "veredito": "CONFIRMADO",
+  "motivo": []
+ },
+ {
+  "id": "V041-22",
+  "src": "R041",
+  "at": "04:02",
+  "file": "research/extract/R041.jsonl",
+  "line": 22,
+  "why": "numero",
+  "origem": "marcado",
+  "scope": "GERAL",
+  "claim": "Quem for um pouco mais dedicado pode buscar 8 g ou 1 g de proteína por libra de peso corporal.",
+  "verbatim": "go for [music] 8 g or 1 g or if that's an easy goal to hit for you",
+  "params": [
+   {
+    "name": "proteina_por_lb_dedicado",
+    "value": 8,
+    "unit": "g/lb",
+    "frame": "g_por_lb"
+   },
+   {
+    "name": "proteina_por_lb_facil",
+    "value": 1,
+    "unit": "g/lb",
+    "frame": "g_por_lb"
+   }
+  ],
+  "whisperTrecho": "you re a bit more dedicated go for 0 8 grams or 1 grams or if that s an easy goal to hit for you and you",
+  "whisperJanela": "3:42 +60s",
+  "avgLogprob": -0.096,
+  "numLegenda": [
+   "8",
+   "1"
+  ],
+  "numWhisper": [
+   "0",
+   "8",
+   "1"
+  ],
+  "paramsAusentes": [],
+  "numNovos": [
+   "0"
+  ],
+  "numPerdidos": [],
+  "negLegenda": [],
+  "negWhisper": [],
+  "cobertura": 0.86,
+  "veredito": "CONFIRMADO",
+  "motivo": []
+ }
+]

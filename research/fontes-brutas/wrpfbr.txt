@@ -1,0 +1,1222 @@
+TECHNICAL RULEBOOK
+LIVRO DE REGRAS TÉCNICAS WRPF
+ATUALIZADO EM AGOSTO DE 2019
+DEPARTAMENTO DE ARBITRAGEM - AMANDA PACIFICO
+DIRETOR TÉCNICO - MARINO ROSSA
+
+WRPF BRASIL
+FILIADA
+
+WORLD RAW POWERLIFTING FEDERATION
+https://wrpfbrasil.wixsite.com/wrpfbrasil
+wrpfbrasil@gmail.com
+RECONHECIDA PELO ESCRITÓRIO INTERNACIONAL DA WRPF RÚSSIA
+
+CONTEÚDO
+
+REGRAS GERAIS DO POWERLIFTING....................................................................
+EQUIPAMENTOS…………………………………………………………………..............................
+PESAGEM…………………………………………………………………………………..................
+.......
+ORDEM DA COMPETIÇÃO.....................................................................................
+ARBITROS/COMITÊ................................................................................................
+CATEGORIA EQUIPADA………………………………………………………………........................
+
+I. REGRAS GERAIS DO POWERLIFTING
+1.1. Geral.
+1.1.1. World Raw Powerlifting Federation (WRPF), é uma organização esportiva independente cujo objetivo principal
+é popularizar e promover o Powerlifting RAW no mundo.
+1.1.2. O livro de Regras Técnicas da WRPF é o documento principal que identifica os princípios básicos da organização
+e com o qual se realiza as competições da WRPF. Os atletas que participam nas competições assim como os técnicos
+e funcionários devem saber e obedecer as essas regras.
+1.1.3. A WRPF reconhece os seguintes movimentos em todas as competições sob suas regras:
+Full power: Agachamento, Supino, Levantamento Terra; Push-pull (Supino e Levantamento Terra); Supino Somente e
+Levantamento Terra Somente;
+
+1.1.4. Definição de Raw e Raw com Wraps;
+* As roupas e equipamentos aprovados para as competições da divisão RAW serão definidas como não-de-apoio
+(não equipado), uma peça, macaquinho single-ply (normal), uma camiseta, shorts de baixo (opcional), meias, cinto
+(opcional), sapatos, faixas de punho (munhequeira) e joelheiras. Faixas de joelhos não são permitidas na divisão
+RAW.
+
+As Regras de Performance para os três movimentos são as mesmas para os competidores da
+RAW e RAW com Wraps.
+* As roupas e equipamentos aprovados para as competições da divisão RAW serão definidas como não-de-apoio
+(não equipado), uma peça: macaquinho single-ply (normal), uma camiseta, shorts de baixo (opcional), meias, cinto
+(opcional), sapatos, faixas de punho (munhequeira) e joelheiras ou faixas de joelho.
+
+1.1.5. A sequência de cada movimento deve ser realizada da mesma forma em todas as competições conduzidas sob
+as regras da WRPF: Agachamento, Supino e Levantamento Terra. A Push-pull deve ser realizada na mesma sequencia
+em todas as competições: Supino e Levantamento Terra.
+1.1.6. Atualizações do livro de regras devem ser feitas anualmente.
+
+1.2. Divisões
+As competições são sancionadas nas seguintes divisões:
+• - Com teste antidoping
+• - Sem teste antidoping
+
+1.3. Categorias de Idade
+1.3.1 Para competir o atleta deve ter pelo menos 14 anos de idade ou mais. Deve ter a idade mínima no dia da
+competição. Um atleta que não atinja a idade mínima no dia da competição pode participar somente com uma
+permissão escrita dos pais ou responsável legal e será considerado um atleta convidado. Eles não serão elegíveis para
+contabilização de Recordes ou vagas em competições.
+1.3.2 No dia em que um Junior completar 24 anos de idade, não é mais considerado Junior.
+1.3.3. As seguintes categorias de idade para homens e mulheres são reconhecidas pela WRPF.
+Junior: 8-9, 10-11, 12-13, 14-16, 17-19, 20-23
+Open: TODAS AS IDADES
+Sub-Masters: 35-39
+Masters: 40-44, 45-49, 50-54, 55-59, 60-64, 65-69, 70-74, 75-79, 80+.
+1.3. É permitido cruzar as categorias; Junior e Open, Master e Open etc.
+
+1.4. Categorias de peso homens:
+Categoria até 52.0 kg:
+até 52.0 kg
+Categoria até 56.0 kg: de 52.01 até 56.0 kg
+Categoria até 60.0 kg: de 56.01 até 60.0 kg
+Categoria até 67.5 kg
+de 60.01 até 67.5 kg
+Categoria até 75,0 kg
+de 67,01 até 75.0 kg
+Categoria até 82,5 kg
+de 75.01 até 82.5 kg
+Categoria até 90.0 kg
+de 82.51 até 90.0 kg
+Categoria até 100.0 kg: de 90.01 até 100.0 kg
+Categoria até 110.0 kg: de 100.01 até 110.0 kg
+Categoria até 125.0 kg: de 110.01 até 125.0 kg
+Categoria até 140.0 kg: de 125.01 até 140.0 kg
+Categoria até 140.0 kg +: de 140.01 até sem limite
+
+Categorias de peso Mulheres:
+Categoria até 44.0 kg:
+até 44.0 kg
+Categoria até 48.0 kg: de 44.01 até 48.0 kg
+Categoria até 52.0 kg: de 48.01 até 52.0 kg
+
+Categoria até 56.0 kg: de 52.01 até 56.0 kg
+Categoria até 60.0 kg: de 56.01 até 60.0 kg
+Categoria até 67.5 kg: de 60.01 até 67.5 kg
+Categoria até 75.0 kg: de 67.51 até 75.0 kg
+Categoria até 82.5 kg: de 75.01 até 82.5 kg
+Categoria até 90.0 kg: de 82.51 até 90.0 kg
+Categoria até 90.0 kg +: de 90.1 até sem limite
+
+1.5. Definindo os vencedores
+1.5.1 O atleta que terminar a competição com o maior total na sua categoria de peso e idade é premiado como
+Primeiro Lugar. O “total” inclui a melhor das 3 tentativas realizadas pelo atleta naquela competição. Os outros
+lugares são determinados em ordem descendente de acordo com cada total. O atleta que falhar em entregar um
+total (“bombar”) deve ser excluído do próximo movimento. Uma exceção pode ser concedida pela parte
+organizadora e o atleta será considerado “atleta convidado”.
+1.5.2 O atleta que fizer o maior total é intitulado como vencedor no Push-pull, seguindo o resultado dos dois
+movimentos da competição. O total inclui o número mais alto das 3 tentativas desempenhadas pelo atleta. Os outros
+atletas serão determinados por ordem descendente baseado no total entregue. O atleta que falhar em entregar um
+total (“bombar”) deve ser excluído do próximo movimento. Uma exceção pode ser concedida pela Organização e o
+atleta será considerado “atleta convidado”.
+
+1.5.3 O atleta que entregar o maior total na Divisão de Single Lift será o vencedor. Divisão de um só movimento
+(Supino ou Levantamento Terra). O total inclui o número mais alto das três tentativas. Outros lugares serão
+determinados em ordem descendente baseado no total entregue.
+1.5.4 Se o total de dois ou mais atletas for o mesmo, o Primeiro Lugar será dado ao atleta com peso corporal mais
+leve. Se dois atletas tiverem pesado igual e no final da competição obtiveram o mesmo total, uma nova pesagem
+será obrigatória o Primeiro Lugar será dado ao atleta mais leve. Se o peso dos atletas for o mesmo novamente então
+ambos ganharão a mesma colocação e o próximo lugar não será ocupado.
+1.5.3 Há colocação em cada divisão, grupo de idade, categoria de peso.
+1.5.4. O melhor levantador é definido pelo coeficiente de Wilks por grupo de idade: Junior, Open, Sub-Masters e
+Masters. Os pontos da Master serão calculados pela fórmula de McCullough. O resultado final (total) do participante
+é multiplicado pelo coeficiente e o resultado (pontos) se torna critério para comparação dos atletas, variando entre
+os campeões absolutos. O atleta que ganhar o maior número de pontos se torna o Melhor Levantador.
+1.5.5. A premiação dos campeonatos (determinada pelo Organizador e aprovada pelo Escritório Nacional) da WRPF
+será pessoal de melhor atleta e melhor equipe realizadas de acordo com as regras da competição. As regras de
+vestimentas durante a premiação são: camisa/camiseta, shorts, calça ou moletom, sapatos. Não é permitido usar
+nada de conteúdo ofensivo.
+
+1.6. Equipes
+1.6.1. Um evento de equipes deve ser realizado em todos os campeonatos.
+1.6.2. O sistema de contagem de pontos em campeonato por equipes é o seguinte:
+
+12 pontos - para o 1º colocado, 9 pontos - para o 2º colocado, 8 pontos - para o 3º colocado, 7 pontos - para o 4º
+colocado, 6 pontos para o 5º colocado, 5 pontos - para o 6º colocado, 4 pontos - para o 7º colocado, 3 pontos - para o
+8º colocado, 2 pontos - para o 9º colocado, 1 ponto - para o 10º colocado.
+O time que receber o maior número de pontos se torna o vencedor. Se o número de pontos por equipe for igual em
+duas equipes, o time que tiver mais 1º lugares se torna campeão. Em caso de haver a mesma quantidade de 1º
+lugares o vencedor será determinado pelo número de 2º, 3º, etc.
+
+1.6.3 O formulário de inscrição deve ser enviado pelo Capitão de cada Time até o dia da pesagem (não pode passar
+de tal data). Mudanças, adições depois do prazo limite podem ser feitas somente com a aprovação do Organizador.
+1.6.4. Pode haver diversas competições de equipes durante o campeonato. Por exemplo, competição entre times de
+diferentes países, entre times de diferentes regiões ou entre times de diferentes clubes esportivos/academias.
+
+1.7. Classificação/Autorização do Campeonato
+A WRPF identifica as seguintes designações de torneios:
+- Campeonato/Mundial/Internacional/por convite
+- Campeonato Nacional
+- Estadual,cidade/regional
+1.7.1. Internacional (mundiais) ou Nacionais significa qualquer Campeonato Mundial, Copa do Mundo, Campeonato
+Nacional, com a capacidade de estabelecer/quebrar recordes Nacionais e Mundiais.
+1.7.4. Nacional significa qualquer Campeonato e Copa dentro do país com a capacidade de estabelecer/quebrar
+recorde, Nacionais e Mundiais.
+1.7.5. Campeonato Estadual (Cidade, bairro, clube) significa Campeonato e Copa do estado, cidade com a capacidade
+de estabelecer recordes Estaduais e Nacionais somente.
+1.7.7. Pode haver outras classificações de torneios para a WRPF. O uso de outras classificações deve ser aprovado
+pelo escritório da WRPF na América do Norte / América do Sul.
+
+1.8. Antidoping
+1.8.1. Existe uma divisão antidoping que é conduzida de acordo com as regras antidoping da WRPF.
+1.8.2. 10% das melhores pontuações de Wilks serão testadas imediatamente ao final da competição.
+Eles serão uma mistura igual de homens e mulheres conforme o número de atletas permitir.
+1.8.3. Se um atleta se recusar ou sair sem se submeter a um teste antidoping. Será banido para sempre de
+competições que haja teste antidoping, seus recordes / totais são removidos e sua afiliação será revogada até que
+uma multa de US $ 500 (quinhentos dólares) seja paga ao Escritório Nacional para reafiliação O atleta só poderá
+competir em campeonatos sem testes antidoping a partir desse momento.
+
+1.9. Recordes
+1.9.1. A WRPF registra os seguintes recordes:
+Mundial, Nacional, Estadual
+Todos os Recordes serão registrados pelo Official Records Chair da WRPF.
+
+1.9.2 Os funcionários são responsáveis por fornecer o resultado da competição para o escritório apropriado da WRPF
+em um prazo máximo de 7 dias. Os resultados serão publicados de forma estabelecida e representam a informação
+necessária dos registros.
+
+1.9.3 Somente cidadãos de seus respectivos países podem estabelecer Recordes Nacionais. Por exemplo: A Rússia só
+pode estabelecer recordes Nacionais e Estaduais russos; Cidadãos dos E.U.A podem estabelecer recordes Nacionais e
+Estaduais americanos e assim por diante.
+1.9.4. O nível dos recordes disponíveis para estabelecer/quebrar dependerá da aprovação de cada torneio e do nível
+dos árbitros presentes. Para estabelecer um recorde Estadual qualquer nível de árbitro pode julgar. Para recordes
+Nacionais deve haver pelo menos 2 árbitros nacionais ou a combinação de 1 árbitro Nacional e 1 Internacional na
+plataforma.
+Para recordes Mundiais deve haver 2 árbitros internacionais e um nacional na plataforma. Não há exceções.
+1.9.5. Os Recordes que podem ser estabelecidos durante uma competição aprovada pela WRPF são:
+- Total
+- Squat, Bench Press, Deadlift
+- Bench Press Only & Deadlift Only
+- Push-pull Total
+- Push-pull Bench Press - Push-pull Deadlift
+1.9.6. Todos os recordes são registrados por divisão, idade, categoria de peso e gênero.
+1.9.7. Quebra ou definição de recordes somente podem ocorrer em torneios aprovados pela WRPF e em total acordo
+com as regras da Federação.
+1.9.8. Tentativas de Recordes podem ser feitas durante qualquer tentativa. A tentativa com o maior peso validado
+será reconhecida como novo recorde.
+1.9.9. No caso de dois atletas ultrapassarem o recorde existente com o mesmo peso, em movimentos separados ou
+no total do fullpower, o recorde será concedido ao atleta com menos peso corporal. Se ambos os atletas durante o
+procedimento de pesagem foram registrados com o mesmo peso, será reconhecido campeão o atleta que bateu o
+recorde existente por primeiro.
+1.9.10. Novos recordes na WRPF somente são válidos se excederem o anterior em pelo menos 0, 5 kg (500 gr).
+1.9.11. Recordes na categoria de idade são aprovados mesmo que só haja um participante nessa categoria.
+1.9.12. No caso de ausência de um recorde, um número será estabelecido pelo Presidente da WRPF como recorde
+pré-definido e aceito. Somente um atleta que exceder esse número se tornará detentor do recorde.
+1.9.13. Quatro tentativas podem ser dadas a um atleta para estabelecer um recorde em cada movimento. O único
+objetivo dessa tentativa é estabelecer um novo recorde. Essa quarta tentativa NÃO conta na sua pontuação total ou
+na pontuação por Wilks.
+1.9.14. A 4ª tentativa somente é possível com a 3ª tentativa realizada com sucesso.
+1.9.15. Somente atletas que estão “ativos” no torneio podem tentar quebrar/definir um recorde com uma 4ª
+tentativa (exemplo: um atleta com resultado zero nas três tentativas, mas permanece como levantador convidado
+não será permitido quebrar/definir nenhum recorde). Se o atleta quer estabelecer o recorde em um único
+movimento, ele ou ela deve pagar outra taxa de entrada para entrar naquela divisão antes de começar aquela parte
+da competição. O “crossover” pode acontecer com a aprovação da organização até 30 minutos antes de começar
+aquela parte da competição.
+1.9.16. Os atletas só podem estabelecer recordes na divisão (ou divisões) nas quais eles estão inscritos.
+
+1.9.17. Os Recordes podem ser também permitidos por crossovers de categorias de idade. Junior pode estabelecer
+um recorde como Júnior e na categoria Open, Masters podem quebrar/definir recordes na Masters e também na
+Open contanto que o atleta tenha se inscrito e confirmado como um cross over.
+1.9.18 Se a norma do torneio determina que todos os atletas competem somente na categoria Open, apesar da sua
+idade (teenagers, Juniors ou Masters), os atletas podem ter seus recordes aplicados na sua categoria apropriada de
+idade.
+1.9.19 IMEDIATAMENTE após completar com sucesso um novo recorde o Levantador é requisitado para ser checado
+em termos de roupa e equipamento pelo árbitro chefe NA PLATAFORMA.
+A checagem deve ser desempenhada imediatamente após a tentativa e antes do atleta sair da plataforma. Uma vez
+feita a checagem o árbitro vai virar e levantar a mão do Levantador.
+
+1.10. Adesão à WRPF
+1.10.1. Todos os atletas, árbitros e outros funcionários devem ser membros ativos da sua respectiva unidade da
+WRPF no dia do torneio.
+1.10.2. Os chefes dos escritórios nacionais devem fixar as cotas anuais para membros. A quantia deve ser
+especificada no website Nacional. O pagamento deve ser feito pelo atleta antes da pesagem na competição. As taxas
+para os árbitros são feitas depois da atribuição inicial da categoria judicial, antes que o árbitro comece suas
+obrigações na competição.
+1.10.3 A taxa de afiliados é paga uma vez ao ano e é válida por 12 meses a partir da data do pagamento. Não são
+reembolsáveis e nem transferíveis.
+1.10.4. Durante competições nacionais e internacionais todos os atletas e árbitros devem ser membros da WRPF.
+1.10.5. Todos os membros da WRPF serão registrados em uma base de dados. Esta base de dados deve estar
+disponível em cada pesagem/checagem de cada competição. A organização deve fazer uma verificação do atleta
+antes da pesagem. Se um atleta de outro país participar na competição, os organizadores podem solicitar as
+informações de membros do banco de dados do país do atleta.
+
+II. EQUIPAMENTOS E ESPECIFICAÇÕES
+Cada torneio tem requisitos técnicos específicos para a competição. O cumprimento desses requisitos é obrigatório.
+Toda organização deve cumprir com os seguintes itens:
+
+2.1. Balança
+2.1.1. A balança para pesagem dos atletas deve ser calibrada e digital.
+
+2.2. Plataforma
+2.2.1. Todos os levantamentos devem ser realizados em uma plataforma medindo no mínimo 2,43m x 2,43m (8ft x
+8ft) e no máximo 3,65m x 3,65m (12ft x 12ft). Não deve exceder 0,05cm (2 inches) de altura do piso ou palco ao
+redor. A superfície da plataforma deve ser plana e antiderrapante. Carpete normal de escritório é permitido em cima
+da plataforma.
+
+2.2.2. Não é permitido usar uma plataforma de múltiplas partes que não estejam ligadas umas às outras.
+
+2.2.3. A parte superior deve fornecer um bom ajuste dos pés dos atletas com a plataforma, então deverá haver um
+material antiderrapante e firme. É estritamente proibido ter segmentos (partes) desconectados uns dos outros na
+plataforma.
+2.2.4. Tapetes (tatame) soltos (folgados, frouxos) ou materiais tipo lençol, panos não são permitidos.
+
+2.3. Barras e presilhas
+2.3.1 Durante as competições da WRPF, somente presilhas e barras que oferecem segurança durante a performance
+dos movimentos são permitidos.
+2.3.2. Os seguintes tipos de barras são permitidas para usar:
+- Barra padrão para powerlifting (stiff) – Barra especial para agachamento – Barra especial para Levantamento Terra
+(flexível/maleável).
+2.3.3. Todas as barras usadas em competições devem ser feitas em uma fábrica, devem ser retas, sem ferrugem, ser
+bem recartilhada e estriadas. Para prender os pesos na barra é necessário usar presilhas de fixação. Elas devem
+fornecer um encaixe seguro das anilhas na barra. A barra e as presilhas devem cumprir com os seguintes requisitos:
+- O cumprimento total deve ser de 2,2m a (não excedendo) 2,45m;
+- A distância entre as faces dos prendedores é inferior a 1,31 m e não superior a 1,48 m;
+- O diâmetro da barra não deve exceder 32 mm ou ser inferior a 27 mm;
+- O peso da barra e com as presilhas pode ser de 25 kg ou 30 kg (para barra de agachamento especial);
+- as presilhas devem pesar 2,5 kg cada;
+- todas as barras utilizadas durante a competição devem pesar até 0,25% do seu valor nominal;
+- O diâmetro da ponteira da barra não deve exceder 52 mm ou ser inferior a 50 mm.
+- Deve haver uma marca de diâmetro na barra feita por máquina de modo a medir 81 cm entre as anilhas.
+2.3.4 É proibido trocar a barra durante o flight exceto no caso da barra estar danificada o que a torna insegura. A
+decisão de trocar a barra deve ser feita pelo árbitro chefe e Organizador.
+
+2.4. Anilhas de competição
+Anilhas usadas nas competições da WRPF devem seguir os seguintes requisitos:
+2.4.1. Todas as anilhas usadas em competição devem ser manufaturadas, não pode haver lascas, trincados ou outro
+defeito que possa afetar o seu uso seguro;
+2.4.2. Todas as anilhas de competição devem pesar dentro de 0,25% ou 10g do seu valor nominal.
+2.4.3. O tamanho do furo do meio da anilha não deve exceder 53mm ou ser menos que 51mm.
+2.4.4. As anilhas devem estar dentro do seguinte intervalo de peso: 0.25 kg, 0.5 kg, 1.25 kg, 2.5 kg, 5 kg, 10 kg, 15 kg,
+20 kg, e 25 kg. Anilhas de 50 Kg estão permitidas usar.
+2.4.5 Anilhas pesando 25 kg não podem exceder 6cm de espessura. Os de 20 kg de abaixo não podem exceder 5 cm
+de espessura. Anilhas com 50 kg não devem exceder 12 cm de espessura.
+2.4.6. As cores das anilhas devem ser as seguintes:
+0,25 kg; 0,5 kg; 1,25 kg; 2,5 kg; – qualquer cor monocromática; 5 kg – Branco ou preto; 10 kg – verde ou preto; 15 kg
+– amarelo; 20 kg – azul; 25kg – vermelho; 50 kg – verde.
+
+2.4.7. Todas as anilhas devem estar claramente marcadas com o seu peso e serem colocadas na sequência da mais
+pesada na parte interior com as anilhas menores em ordem descendente organizadas de tal forma que os árbitros
+possam ler o peso de cada anilha.
+2.4.8. A primeira e mais pesada anilha que é carregada na barra deve ser posta com a face para dentro; o restante
+são carregadas com a face para fora.
+2.4.9. O diâmetro da maior anilha não deve ser maior que 45 cm. O diâmetro das anilhas de 50 kg, 25 kg, e 20 kg
+deve ser estritamente 45 cm.
+
+2.5. Suportes de Agachamento
+2.5.1. Nos torneios da WRPF podem ser usados dois tipos de suportes para agachamento: mono lift com um sistema
+hidráulico de troca de altura do suporte com braço nivelado onde cada atleta retira a barra; e o rack combo padrão
+de powerlifting com um sistema de alavanca para troca de altura do suporte.
+2.5.2. Os suportes de agachamento devem ser uma estrutura única, durável, fácil de manusear e que garanta a
+segurança dos atletas e auxiliares/anilheiros..
+2.5.3. O mono lift deve ser equipado com faixas de segurança feitas de material resistente ou correntes para evitar
+que a barra caia no chão em caso do atleta falhar ou cair.
+2.5.4. Em torneios internacionais e nacionais os Mono lifts e combo racks podem ser usados com um mecanismo de
+troca de altura no rack.
+2.5.5. Os suportes de agachamento devem ser projetados para um ter um ajuste mínimo de 1,00 m na posição mais
+baixa e altura de pelo menos 1,70 m com aumentos de 5 cm. A largura entre as bordas exteriores dos braços que
+sustentam a barra não deve exceder 1,2 metros.
+2.5.6. O suporte “Mono lift” deve possuir alavancas segurando a barra que podem se mover para dentro, então a
+distância entre elas pode ser ajustada até 60 cm e qualquer outra posição intermediária das alavancas deve ser
+fixadas com braçadeira especial ou grampos/ calço de forma segura.
+2.5.7 Suportes combo padrão devem ser capazes de inclinar e unir as duas alavancas verticais para fixar de forma
+segura as alavancas na posição desejada. Usar grampos ou suportes.
+2.5.8. São necessários pinos fortes para fixar a altura.
+
+2.6. Banco de supino
+2.6.1 O banco de supino deve ser robusto e seguro para os atletas e auxiliares/anilheiros.
+2.6.2. O banco deve estar em conformidade com as seguintes dimensões:
+Cumprimento – não menos que 1,22 m;
+Largura – não menos que 29 cm e não exceder 32 cm;
+Altura – não menos que 42 cm e não exceder 45 cm medidos do chão ao topo da superfície acolchoada do banco.
+- A altura das partes verticais do banco deve ser ajustável em um mínimo de 75 cm a um máximo de 110 cm
+medidos do chão até a posição de descanso da barra;
+
+- A largura mínima entre os descansos da barra na parte de dentro deve ser 1,1 m;
+- A cabeça do banco deve se estender 22 cm além do centro das barras verticais com uma tolerância de 5 cm em
+ambas as direções.
+
+2.6.3 O banco deve ser equipado com ajuste de altura para a barra e “protetor de face”.
+2.6.4 A cabeça do banco deve ser equipada com um degrau ou caixa para os assistentes, o qual não deve impedir o
+atleta de realizar o movimento de powerlifting.
+2.6.5 A altura do banco deve ser ajustável via mecanismo de alavanca ou macacos.
+2.6.6 Pinos serão usados para fixar a altura do suporte e se ter uma pegada segura.
+
+2.7. Luzes da arbitragem
+2.7.1. Um sistema de luzes deve ser providenciado para que os árbitros possam fazer e mostrar a todos a decisão de
+movimento válido ou não. As luzes devem ser montadas com três sinais brancos e três sinais vermelhos localizadas
+em uma linha horizontal. Cada uma das três luzes representa a decisão de um árbitro na plataforma.
+2.7.2. Cada árbitro irá controlar uma luz branca e uma vermelha. Estas duas cores representam um “movimento
+válido” (luz branca) e um “movimento inválido” (luz vermelha) respectivamente.
+2.7.3. As luzes devem ser organizadas verticalmente para corresponder às decisões dos três árbitros. Elas devem
+estar conectadas de tal forma que elas acendam simultaneamente e não separadamente quando ativadas pelos três
+árbitros.
+2.7.4. Cabe aos árbitros monitorar a correta execução do movimento competitivo do atleta e fazer sua decisão visível
+a todos o mais rápido possível. Discussão do movimento antes da ativação das luzes é estritamente proibido
+2.7.5. Por motivos emergenciais como, por exemplo, falhas nos sistema elétrico serão providenciadas pequenas
+bandeiras ou placas vermelhas e brancas com as quais mostrarão suas decisões com o comando de áudio
+“bandeiras” do árbitro chefe. Caso não haja bandeiras, os árbitros mostrarão suas decisões com movimentos de
+mão. Dedão para cima (positivo) – movimento válido, dedão para baixo (negativo) – movimento inválido.
+
+2.8. Relógios
+2.8.1. O cronómetro é utilizado para definir um limite de tempo, depois de chamar o atleta na plataforma, e antes do
+início do movimento.
+2.8.2. O cronômetro deve ser colocado de forma visível para os árbitros na plataforma, secretário, júri, espectadores
+e atletas na aérea de saída da plataforma. Deve haver um quadro de informação no qual está visível a contagem
+regressiva atribuída a saída do atleta. Se não houver painel ou relógio visível, o Organizador deve anunciar o tempo
+restante em intervalos de 30 segundos.
+
+III. EQUIPAMENTO PESSOAL
+3.1. Roupas Traje/macaquinho
+3.1.1. O traje/macaquinho deve ser fabricado inteiramente de tecido ou um material têxtil sintético, no qual não
+pode haver suporte dado pela roupa ao levantador durante o movimento.
+
+3.1.2. Qualquer costura, acabamento ou outro detalhe que, na opinião do Organizador ou árbitros dê alguma
+vantagem ou melhoria ao atleta será causa de proibição do uso de tal traje/macaquinho durante a competição.
+3.1.3. A roupa deve ser uma peça e caber corretamente sem folgas quando usada.
+3.1.4. As alças da roupa/macaquinho devem ser usadas sobre o ombro dos atletas o tempo todo durante a
+competição.
+3.1.5. The lifting suit must conform to the following specifications:
+- Can be of any color.
+- May have the logos or emblems of the lifter’s Nation, Name, Club or Sponsor.
+- It is prohibited to have printing which is offensive or discredits the sport
+Os trajes devem estar em conformidade com as seguintes especificações:
+- Pode ser de qualquer cor.
+- Pode conter logos ou emblemas do país do atleta, nome, clube ou patrocinador.
+- É proibido ter impresso qualquer coisa com ofensa ou descrédito ao esporte.
+3.1.6. Costuras e bainhas não devem ter mais de 3 cm de largura e espessura de 0,5 cm. As costuras devem estar
+cobertas ou reforçadas com tecido de material maleável com não mais de 2 cm de largura e 0,5 cm de espessura.
+Somente trajes de Weightlifting ou Wrestling podem ter costuras e bainhas excedendo 3 cm de largura. Somente a
+área da virilha pode ser de duas camadas do mesmo material não superior a 12x24 cm.
+3.1.7. A roupa deve ter a parte das pernas, o cumprimento da parte de fora de cada uma pode alcançar até 25 cm,
+mas o comprimento ao longo da parte de dentro da perna do meio da virilha não pode ser menos do que 5 cm e não
+mais que 15 cm. A medida é tomada passando pelo topo da costura da virilha ao longo da parte de dentro da perna.
+3.1.8. Trajes ilegais:
+- mangas de qualquer comprimento.
+- quaisquer fechos, prendedores ou outras peças de metal, plástico ou outros materiais que possam causar
+ferimentos ou danos durante a realização do movimento de powerlifting. - é proibido costurar ou adicionar material
+a qualquer traje.
+
+3.2. Camiseta
+3.2.1. A t-shirt must be worn under the lifting suit by all lifters during the Squat and Bench Press; men and women
+may elect to not wear a t-shirt during the Deadlift. Women may wear a sports bra with no additional support. Only
+one T-shirt is allowed to be worn at a time.
+Uma camisa deve ser usada embaixo do traje/macaquinho por todos os levantadores durante o Agachamento e
+Supino; homens e mulheres podem escolher não usar uma camiseta durante o Levantamento Terra. Mulheres
+podem usar top esportivo sem suporte adicional. Somente uma camiseta é permitida ser usada por vez.
+
+3.2.2. A camiseta deve estar em conformidade com as seguintes especificações:
+- Camisetas devem ser feitas somente de algodão, poliéster ou ambos. Camisetas não podem ter nenhum material
+emborrachado. Jeans e lona são proibidos.
+- A camiseta não pode ter bolsos, botões, zíperes ou gola – V.
+- A camiseta não pode ter costura reforçada.
+- A camiseta deve ter manga. As mangas devem terminar abaixo do deltóide e não pode passar em cima ou abaixo
+do cotovelo do atleta. Não pode puxar ou enrolar as mangas da camiseta quando o atleta está competindo.
+- A camiseta pode ser de uma marca oficial de competição ou levar o logo ou emblema do país, clube ou
+patrocinador.
+- A camiseta deve caber no atleta de forma a não dar nenhum suporte físico.
+
+3.3. Roupas de baixo/suporte atlético
+3.3.1. Um suporte atlético padrão comercial ou cueca comercial padrão (não cuecas boxer ou samba canção) de
+qualquer tipo de algodão, nylon ou polyester deve ser usada embaixo do traje de competição durante a realização
+dos três movimentos. Os levantadores podem escolher ficar sem a roupa íntima, pois ela não é obrigatória.
+3.3.2. As mulheres podem usar um top esportivo comercialmente disponível.
+3.3.3. Calção de banho ou qualquer outro vestuário feito de material emborrachado ou elástico exceto na parte da
+cintura está proibido.
+3.3.4. Qualquer roupa de baixo que tenha suporte é ilegal usar na competição. A avaliação dessa questão é
+discricionária por parte dos árbitros e do Organizador.
+
+3.4. Meias
+3.4.1. Somente um par de meias é permitido usar por vez.
+3.4.2. As meias podem ser de qualquer cor ou multicoloridas.
+3.4.3. Elas não devem ser cumpridas ao ponto de entrar em contato com as faixas de joelho ou joelheiras.
+3.4.4. Meias de perna inteira ou meia-calça são proibidas.
+3.4.5. É permitido usar caneleiras e fita durante o Levantamento Terra. É permitido usar somente por baixo das
+meias. Elas devem ser colocadas de tal forma que a parte de cima não escape das meias.
+
+3.5. Cinto
+3.5.1. Os competidores tem a opção de usar cinto. Se usados, devem estar pela parte de fora da roupa.
+3.5.2. O cinto deve ser feito de couro, vinil ou outro material similar não elástico em uma ou mais camadas as quais
+podem ser coladas e/ou costuradas juntas.
+3.5.3. Não deve ter qualquer acolchoamento, reforço ou suporte de qualquer material, seja na superfície ou
+escondido dentro do cinto.
+3.5.4. A fivela deve ser fixada numa das extremidades do cinto por meio de pinos, tachas e/ou costuras.
+3.5.5. O cinto deve ter uma fivela com um ou dois dentes ou alavanca abre-fecha rápido. Um passante deve estar
+afixado perto da fivela por tachas/ou costuras.
+3.5.6. É permitido colocar no cinto qualquer inscrição ou desenhos que não são abusivos e não causam descrédito ao
+esporte.
+Dimensões:
+1. Largura do cinto de no máximo 10 cm. (1)
+2. Espessura do cinto máximo 13 mm ao longo do cumprimento principal. (2)
+3. Largura interna da fivela de no máximo 11 cm. (3)
+4. Largura externa de no máximo 13 cm. (4)
+5. Passante com largura máxima de 5 cm. (5)
+6. Distancia entre o final do cinto e a extremidade com o passante de no máximo 15 cm. (6)
+
+3.6. Calçado
+3.6.1 Sapatos, botas ou sapatilhas de Levantamento Terra devem ser usadas durante a realização dos movimentos.
+3.6.2. Os sapatos que devem ser incluídos para o uso são sapatos, botas e sapatilhas esportivas; Botas de
+Powerlifting/Weightlifting ou sapatilhas de Levantamento Terra. As referências acima são para esportes em ambiente
+fechado ex: luta/basquete/ginástica. São permitidos sapatos tipo "Chuck" e "Vans".
+3.6.3. Nenhuma parte da sola deve ser superior a 5 cm.
+3.6.4. A espessura da sola interna, se não for parte do calçado original de fábrica, não deve exceder 1 cm.
+3.6.5. É proibido o uso de sapatos com calcanhar/dedos à mostra (sandálias).
+3.6.6. Meias de perna inteira, ou meia-calça são proibidas.
+
+3.7. Faixas de pulso
+3.7.1. Faixas de elástico de camada única, apenas materiais produzidos em fábrica: poliéster, algodão ou
+combinações delas.
+3.7.2. As faixas de pulso não devem exceder 1 m de comprimento e 8 cm de largura. Qualquer manga e velcro,
+adesivo/esparadrapo para fixação devem ser incluídas dentro do comprimento de 1 m. Uma malha pode ser fixada
+como auxílio de fixação. Essa malha não pode cobrir o dedão ou os dedos durante a realização do levantamento.
+3.7.3. Podem ser usadas faixas comerciais para suor, mas não devem exceder 12 cm de largura. Não é permitida uma
+combinação de faixas para o pulso e faixas de suor.
+3.7.4 Uma cobertura de pulso não deve exceder além de 10 cm acima e 2 centímetros abaixo do centro da
+articulação do pulso e não deve exceder uma largura de 12 cm.
+3.7.5. Usar mais de uma faixa na mesma mão é proibido.
+
+3.8. Faixas de joelho/joelheiras
+3.8.1. Faixas de joelho/joelheiras podem ser usadas nos 3 levantamentos da competição.
+3.8.2 Faixas fabricadas apenas com material elástico de camada única: poliéster, algodão ou combinação são
+permitidos. Faixas tipo “gripper” são permitidas.
+3.8.3. As faixas não podem exceder 2,5 m de comprimento e 8 cm de largura para todas as categorias de peso. A
+faixa de joelho não deve ultrapassar 15 cm acima e 15 cm abaixo do centro da articulação e não deve exceder uma
+largura da cobertura total de 30 cm.
+
+3.8.4. As faixas de joelho/joelheiras não devem entrar em contato com as meias ou o traje.
+3.8.5. É proibido usar mais do que um faixa/joelheira em um mesmo joelho ao mesmo tempo.
+3.8.6. Pode ser utilizada uma joelheira feita de neoprene ou tecido elástico que é coberto com poliéster, algodão ou
+combinações de ambos os materiais. Não deve ter mais de 30 cm de comprimento e deve ter 7 mm ou menos de
+espessura. As joelheiras não podem ter costuras cruzadas que permitam suporte adicional ( As joelheiras Yellow
+Jacket são aprovadas somente para RAW com faixas, não para RAW). A forma de usar as joelheiras é a mesma que
+em 3.8.3.
+3.8.7 Levantadores RAW podem somente usar a joelheira opcional de camada única durante o levantamento, e ela
+não pode ter nenhum velcro, elas não podem ser ajustáveis e nem de fixação.
+
+3.9. Faixas não suporte
+3.9.1. O uso de fitas medicinais ou faixas medicinais convencionais e pulseiras especiais requer aprovação prévia
+durante as competições.
+3.9.2. Os atletas podem usar a fita médica desde que não seja utilizada como ajuda no desempenho do levantador e
+com a aprovação prévia do Organizador e árbitro chefe.
+3.9.3. Durante o Agachamento e Levantamento Terra, cotoveleiras ou fitas não-suporte são permitidas
+3.9.4. Com a permissão do Organizador, pode ser aplicada fita médica na parte do corpo lesionada. No entanto, não
+pode ser utilizada como auxílio para o atleta segurar a barra.
+3.9.5. Physio-tape ou seu equivalente não pode ser usada em qualquer parte do corpo.
+3.9.6. All medical reports in accordance with which the athlete will be able to have a permission to use medical
+wraps and bandages during lifting should be submitted to the Chief Referee before the event to determine their
+suitability to the rules i.e. at weigh in/gear check.
+Todos os relatórios médicos de acordo com os quais o atleta poderá ter uma permissão para utilizar faixas e fitas
+médicas durante o levantamento devem ser submetidos ao Árbitro Chefe antes do evento para determinar a sua
+adequação às regras, por exemplo, na verificação do peso/checagem.
+3.9.7. É proibido utilizar quaisquer faixas ou fitas nas articulações do cotovelo durante o supino.
+
+3.10. Inspeção de Equipamento Pessoal
+3.10.1. Antes e durante a competição a inspeção/checagem de equipamento pessoal para qualquer atleta se
+realizará a qualquer momento. Não é um procedimento opcional. Qualquer atleta pode ser checado para ter
+permissão de uso do equipamento, antes, durante e depois da competição.
+3.10.2. Somente os árbitros e Organizador podem checar o equipamento do atleta.
+3.10.3. Equipamentos que não estão de acordo com essas regras não são permitidos.
+3.10.4. O equipamento que estiver danificado está proibido de ser utilizado durante a competição. São proibidas
+inscrições ou imagens ofensivas no equipamento.
+3.10.5 Se um árbitro cometeu um erro ao verificar o equipamento, isso não dá o direito à sua utilização durante a
+competição. Se tal erro for detectado, as tentativas que o atleta tenha realizado com a sua utilização não serão
+contadas. É da responsabilidade do atleta fazer a sua devida diligência.
+
+3.10.6. Artigos tais como relógios, bijuteria, jóias, batons, óculos e artigos de higiene feminina não precisam ser
+inspecionados.
+3.10.7. Todos os recordes bem sucedidos do levantador serão imediatamente inspecionados pelo Árbitro.
+
+3.11. Uso de outros itens de suporte
+3.11.1. A utilização de óleo, graxa ou outros lubrificantes no corpo, ou equipamento pessoal, é estritamente
+proibido. Talco de bebé, talco ou carbonato de magnésio ou giz são as únicas substâncias que podem ser adicionadas
+ao corpo e ao traje.
+3.11.2. A utilização de qualquer forma de adesivo na parte de baixo do calçado é estritamente proibida (isto se aplica
+a qualquer tipo de inserções de catraca na sola, aço ou outras coisas, o forro da lixa, etc.).
+3.11.3. É proibido aplicar quaisquer adesivos, por exemplo, papel de vidro, tecido esmerilado, etc. e cobrir os sapatos
+com carbonato de magnésio. É aceitável um spray de água.
+3.11.4. Nenhuma substância pode ser aplicada ao equipamento de powerlifting. Isto leva em conta todas as outras
+substâncias a não ser aquelas que podem ser utilizadas periodicamente como agente esterilizantes na limpeza da
+barra, bancada ou plataforma.
+
+3.12. Manejo do sangue na plataforma
+3.12.1. Um atleta sangrando na plataforma ou com feridas abertas é inaceitável. Qualquer machucado deve ser
+tratado e enfaixado antes de ir para a plataforma. Se houver sangue na barra, ou equipamento, a barra e o
+equipamento devem ser esterilizados com uma solução desinfetante imediatamente. O Organizador é responsável
+pela disponibilidade de tal solução durante a competição. Madicide, Cavicide, alvejantes são soluções aceitáveis.
+3.12.2. Na presença de sangramento ou de uma ferida aberta, o atleta deve cuidar do problema para uma inspeção
+adequada e tomar as medidas necessárias para o tratamento das feridas e parar o sangramento a fim de ser
+admitido novamente na plataforma. O tempo previsto para a tentativa do levantamento não parará, em caso de
+impossibilidade de resolver a situação num certo tempo, o atleta perde a sua tentativa.
+
+IV. LEVANTAMENTOS E REGRAS DE EXECUÇÃO
+4.1. Agachamento
+4.1.1. O levantador deve ficar virado para frente da plataforma.
+4.1.2. Depois de retirar a barra do suporte enquanto olha para frente da plataforma, o levantador pode mover-se
+para frente ou para trás para estabelecer a posição de saída. Se o agachamento é executado no monolift, não é
+necessário “retirar” a barra carregada. Devido à curva da barra carregada, o levantador pode ser ajudado pelos
+assistentes/anilheiros a retirar a barra do suporte.
+4.1.3. A barra deve ser segurada horizontalmente nas costas na altura dos ombros com as mãos e/ou dedos
+agarrando a barra. As mãos podem ser posicionadas em qualquer lugar. A largura máxima da pegada é até onde a
+mão toca o colarinho interno da barra. Tocar os discos ou as extremidades internas da barra é estritamente proibido.
+Pegada aberta, na qual o polegar pega a barra por fora é permitido.
+
+4.1.4. Posição inicial – esta é a posição que na qual o atleta: com os pés retos no chão sobre a plataforma com os
+joelhos travados e o torso na vertical (pequenos desvios são permitidos). O topo da barra não mais que 3 cm abaixo
+do topo do deltóide.
+4.1.5 Imediatamente depois de estabelecer a posição inicial, o árbitro chefe irá dar o sinal para começar o
+movimento. O sinal do árbitro chefe consiste de um movimento para baixo com o braço e um comando audível
+“Agacha”. Antes de receber o sinal de “agacha” o levantador pode fazer qualquer ajuste de posição dentro das regras,
+sem penalidade. Por razões de segurança será pedido que o levantador “recoloque” a barra em posição com um
+movimento para trás dos braços depois de um período de cinco segundos se ele não estiver na posição de iniciar o
+levantamento.
+4.1.6. Ao receber o sinal do Árbitro Chefe "Agachar" (squat), o levantador deve dobrar os joelhos e os quadris para
+baixar o corpo até que a superfície superior das pernas na articulação dos quadris esteja mais baixa do que a parte
+superior do joelho.
+4.1.7. Apenas uma tentativa é permitida para fazer o movimento. A tentativa é considerada como tendo começado
+quando os joelhos do levantador estiverem destravados.
+4.1.8 Durante o levantamento é permitido algum movimento da barra a partir da posição inicial para baixo ao longo
+das costas do atleta (rolando ou deslizando), mas não mais do que a espessura (diâmetro) da barra.
+4.1.9. O levantador deve se reposicionar quando quiser a posição ereta com os joelhos travados. Não é permitido um
+duplo impulso na parte baixa da tentativa ou qualquer movimento descendente. Quando o levantador estiver na
+posição final aparente, o Árbitro-Chefe dará o sinal para guardar a barra.
+4.1.10. O sinal para guardar a barra consistirá de um movimento para traz com o braço e um comando audível
+“guarde” (rack). O levantador deve retornar a barra para o suporte. Movimentos com os pés depois do sinal de
+“guarde” não será causa para invalidar o movimento. Por razões de segurança o levantador pode pedir auxilio dos
+assistentes/anilheiros para retornar a barra e recolocá-la no suporte. O levantador deve ficar com a barra durante
+esse processo.
+4.1.11. Não mais de seis assistentes/anilheiros quando usando o monolifit e não menos do que três devem estar na
+plataforma a qualquer momento.
+4.1.12. Se um levantador inadvertidamente começa o movimento previamente ao comando “agache” do árbitro
+chefe, e NÃO continua até o ponto onde ele atinge a parte inferior do movimento, ele pode voltar a correta posição
+de início com os joelhos travados, ou mesmo recolocar a barra no suporte e então começar o movimento novamente
+sem penalidade.
+
+Causas De Desqualificação no Agachamento:
+1. Não observar os sinais do Árbitro Chefe durante a conclusão do levantamento.
+2. Impulso duplo na parte mais baixa do movimento, ou qualquer movimento para baixo durante a subida.
+3. Não assumir uma posição ereta com os joelhos fechados no início ou no final do levantamento.
+4. Recuar ou avançar ou mover os pés lateralmente. É permitido balançar os pés entre arco do pé e o calcanhar.
+5. Não dobrar os joelhos e baixar o corpo até que a superfície superior das pernas na articulação do quadril esteja
+mais baixa do que a parte superior do joelho.
+6. Qualquer movimento da barra desde a posição inicial para baixo ao longo da parte de trás das costas do atleta
+(deslizando) mais do que a espessura (diâmetro) da própria barra.
+
+7. Contato intencional da barra ou do levantador com os assistentes/anilheiros entre os sinais do Árbitro Chefe a fim
+de deixar o levantamento mais fácil. O contato involuntário será motivo para o atleta retomar o levantamento no
+final do flight.
+8. Contato dos cotovelos com as pernas. O contato suave é permitido desde que não haja apoio que possa ajudar o
+levantador.
+9. Qualquer queda ou lançamento da barra em qualquer momento antes, durante ou após o levantamento.
+10. Se o atleta não for capaz de retirar a barra em segurança dos racks durante o minuto estipulado.
+11. Contato não intencional ou intencional da barra com o rack durante a tentativa de execução do movimento.
+Contudo, o contato involuntário que não ajudou o atleta não é motivo para invalidar a tentativa.
+12. Não cumprir com nenhum dos itens dispostos nas regras de execução do Agachamento.
+
+4.2. Supino
+4.2.1. O banco deve ser colocado na plataforma com a cabeça virada para frente ou angulada até 45 graus, o que irá
+dar a oportunidade para o Jury e os espectadores verem o movimento.
+4.2.2. O levantador deve deitar de costas com seus ombros e glúteos em contato com a superfície do banco. Essa
+posição deve ser mantida durante todo o levantamento. A cabeça pode se mover para cima sem penalidade.
+4.2.3. Os pés do atleta devem estar numa posição conveniente, em contato com a plataforma, placas ou blocos
+instalados por baixo. É permitido ajustar os pés de forma plana, bem como ficar nas pontas do pé.
+
+4.2.4. As mãos e os dedos devem agarrar a barra posicionada no rack com os polegares em volta da barra. Esta
+posição deve ser mantida ao longo de todo o levantamento. É permitida a pegada sem polegar (punho suicida) ou
+pegada invertida, sabendo o perigo que estas pegadas proporcionam.
+4.2.5. O espaçamento das mãos não deve exceder 81 cm medidos entre os dedos indicadores (ambos os dedos
+indicadores devem estar dentro das marcas de 81 cm e o conjunto dos dedos indicadores deve estar em contato com
+as marcas de 81 cm se for utilizada a abertura máxima). No caso de um atleta com uma lesão antiga ou
+anatomicamente não conseguir segurar a barra na mesma distância com ambas as mãos, ele deve informar os
+árbitros antes de cada tentativa. Se necessário, a barra pode ser marcada em conformidade antes de cada tentativa
+do atleta.
+4.2.6. Para conseguir uma base firme, o levantador pode utilizar blocos que não excedam 20 cm de altura total.
+Blocos na faixa de 5 cm, 10 cm, 15 cm devem ser disponibilizados para posicionamento dos pés em todas as
+competições internacionais. Os pés devem permanecer na plataforma ou blocos. As placas podem ser substituídas
+por blocos.
+4.2.7. Não mais de cinco e não menos de dois assistentes/anilheiros devem estar na plataforma em qualquer
+momento. Depois de estabelecer a posição de início, o levantador pode pedir a ajuda do assistente/anilheiro para
+retirar a barra do rack. O assistente de "arranque" da barra deve estar à distância de um braço.
+4.2.8. O assistente pessoal de um levantador pode estar na plataforma como auxiliar, a pedido do atleta. Neste caso,
+o assistente precisa ir à plataforma com roupa limpa e arrumada que não impeça seus movimentos e não tenha
+inscrições e desenhos que sejam provocativos ou ofensivos. O auxiliar, depois de providenciar o arranque inicial,
+deve mover-se imediatamente para o lado e liberar a área na frente do árbitro principal.
+4.2.9. Depois de remover a barra dos racks, com ou sem a ajuda dos auxiliares/anilheiros, o levantador deve esperar
+com os cotovelos travados, braços estendidos e os glúteos e ombros no banco para o sinal do árbitro chefe.
+
+4.2.10. Por medidas de segurança será solicitado ao levantador “reposicionar” a barra, junto com um movimento
+para traz com os braços se depois de um período de cinco segundos ele não estiver na posição correta para iniciar o
+movimento. O árbitro chefe irá então comunicar a razão pela qual o sinal não foi dado. Também, o comando
+“Retornar” ou “ajuda” pode ser dado pelo árbitro principal na plataforma a fim de prevenir lesões, em caso de um
+erro cometido por um atleta que impeça a tentativa de ser contabilizada. Se o auxiliar pessoal não abandonar
+imediatamente a área da plataforma e ou de alguma forma distraia ou impeça árbitro chefe das suas
+responsabilidades, o árbitro pode determinar que o movimento é “inaceitável” e será sinalizado “inválido " pelos
+árbitros e receberá três luzes vermelhas.
+4.2.11. O sinal para iniciar a tentativa consiste num movimento para baixo do braço juntamente com o comando
+audível (comece) "Start".
+4.2.12. Após receber o sinal, o levantador deve baixar a barra (com controle) fazendo contato com a área do peito ou
+abdominal até ficar imóvel, após isso, o Árbitro Chefe sinalizará com um movimento para cima com mão e o
+comando audível (sobe) "Press".
+4.2.13. Após o comando (sobe) "Press", o levantador deve então retornar a barra para a posição com os braços
+estendidos e cotovelos travados. Quando a barra estiver imóvel, o comando audível (guarde) "Rack" será dado
+juntamente com um movimento dos braços para trás.
+4.2.14. Se logo após receber o comando de "comece", o levantador puxa uma grande quantidade de ar para encher
+os seus pulmões enquanto ainda está na posição vertical antes de começar a tentativa, e a barra sobe como
+resultado desta tomada de ar, isto não deve ser motivo de desqualificação. Se enquanto ainda estiver na posição
+vertical, o levantador destravar, e depois re-travar os seus cotovelos, ou mover a barra para cima e para baixo com o
+movimento do corpo, neste caso isso seria contra as Regras.
+4.2.15 Se um atleta começar inadvertidamente a baixar a barra antes do comando "Comece" do Árbitro Chefe, mas
+não tocar no peito, pode voltar à posição original dos cotovelos estendidos ou mesmo voltar ao rack, assim, depois
+pode tentar novamente esperando que o comando "Comece" seja dado.
+4.2.16. Caso os braços não possam ficar totalmente esticados, o atleta deve fornecer um relatório médico relevante
+no dia da inscrição ou da pesagem. É da responsabilidade do levantador recordar aos três árbitros antes de cada
+tentativa e permitir a inspeção da pegada pretendida antes de fazer uma tentativa
+
+Causas de desqualificação no Supino:
+1. Não observar os sinais do Árbitro Chefe no início, durante ou na conclusão do levantamento.
+2. Qualquer mudança na posição escolhida durante o levantamento propriamente dito, ou seja, qualquer movimento
+de elevação dos ombros, ou glúteos do banco, ou movimento lateral das mãos na barra. O movimento da cabeça não
+será causa de desqualificação.
+3. Um ligeiro deslocamento ou escorregamento dos pés não deve ser considerado como uma causa de
+desqualificação se os pés não se soltarem completamente da plataforma.
+4. Qualquer desnivelamento (excessivo) óbvio dos braços durante a execução do supino. Qualquer movimento para
+baixo de toda a barra durante a subida.
+5. A barra não é baixada até ao peito ou área abdominal, ou seja, não atinge o peito ou área abdominal, ou a barra
+entra em contato com o cinto.
+6. Falha em colocar a barra com os braços estendidos e cotovelos travados no final do levantamento. Puxar ou
+descansar a barra no peito ou na zona abdominal após o comando "Sobe" ter sido dado.
+7. Contato dos auxiliares/anilheiros com a barra ou o levantador entre os sinais do Árbitro Chefe, a fim de que
+facilitar o levantamento.
+
+8. Qualquer contato dos pés do levantador com o banco ou com os seus suportes.
+9. Incumprimento de qualquer um dos itens descritos nas Regras de Performance.
+
+4.3. Levantamento Terra
+4.3.1. O levantador deve ficar virado para frente da plataforma.
+4.3.2. A barra deve ficar na horizontal em frente aos pés do levantador, segurada com uma pegada opcional em
+ambas as mãos e levantada até que o atleta esteja ereto.
+4.3.3. O movimento é feito sem qualquer sinal. O movimento é realizado até que a barra esteja imóvel e o levantador
+esteja na posição de finalização aparente.
+4.3.4. No final do levantamento, os joelhos devem estar estendidos em posição reta e os ombros para trás.
+4.3.5. O sinal do Árbitro Chefe consiste de um movimento para baixo com o braço e do comando audível (desce)
+"Down". O sinal não será dado enquanto a barra não estive imóvel e o levantador não estiver na posição final
+aparente.
+4.3.6. Qualquer subida da barra ou qualquer tentativa deliberada de fazer isso contará como uma tentativa. No
+entanto, é permitido que um atleta faça aquela "preparação psicológica" óbvia sacudindo/agitando a barra. Em caso
+de dúvida, a decisão deve ser sempre tomada a favor do atleta.
+4.3.7. Uma vez iniciada a tentativa, não é permitido qualquer movimento descendente até o levantador alcançar a
+posição ereta com os joelhos estendidos. Se a barra se acomodar à medida que os ombros voltam (ligeiramente para
+baixo no final), isto não deve ser motivo para desqualificar o levantamento.
+
+Causas de Desqualificação no Levantamento Terra:
+1. Qualquer movimento para baixo da barra antes de atingir a posição final e o comando "desce" do Árbitro Chefe.
+2. Falhar em ficar ereto com os ombros para traz.
+3. Não terminar o levantamento com os joelhos estendidos na conclusão do movimento.
+4. Apoiar a barra nas coxas durante a realização do levantamento. Se a barra encostar extremidades da coxa, mas
+não for apoiada, isso não é motivo para desqualificação. Em caso de duvidas o levantador deve ser beneficiado em
+todas as decisões tomadas pelo árbitro.
+5. Caminhar para frente ou para traz ou mover os pés lateralmente. É permitido balançar os pés entre o arco e o
+calcanhar.
+6. Baixar a barra antes de receber o sinal do Árbitro Chefe.
+7. Permitir que a barra volte à plataforma sem manter o controle com ambas as mãos, por exemplo: largar/ soltar a
+barra das mãos.
+8. Não cumprimento de qualquer um dos itens descritos nas Regras de performance.
+
+V. PESAGEM
+
+5.1. A pesagem dos competidores deve ser iniciada 24 horas antes do início da competição. O Organizador agendará
+uma pesagem regular a qualquer hora durante o período de 24 horas. A primeira sessão de pesagem dura uma hora
+e meia, no mínimo. Uma segunda pesagem é realizada à noite e tem a duração mínima de uma hora e meia. As duas
+sessões são obrigatórias, a menos que todos os atletas sejam contabilizados e autorizados a fazer os levantamentos
+na "sessão da manhã". Sessões adicionais podem ser marcadas por marcação com o Organizador. Informações sobre
+todos as sessões de pesos nas devem ser levadas ao conhecimento dos atletas durante o processo de inscrição.
+5.2. Todos os atletas devem ser pesados durante os dois dias obrigatórios ou sessões adicionais (se for
+providenciado), que são realizadas com a presença de um árbitro certificado da WRPF.
+5.3. O calendário de pesagem é previsto no regulamento e é uma parte obrigatória do mesmo.
+5.4. A pesagem de cada participante é realizada numa sala separada, com portas fechadas ou atrás de um painel.
+Quando um menor é pesado estará presente; o atleta, o seu pai/mãe ou responsável legal ou treinador e 2 (dois)
+árbitros da WRPF do mesmo sexo que o Levantador. Se não houver árbitros suficientes do mesmo sexo, o Levantador
+será obrigado a ser pesado no seu traje.
+5.5. Os atletas devem ser pesados nus ou em roupa de baixo (cuecas para homens; sutiã e calcinhas para as
+mulheres). A pesagem deve ser conduzida por oficiais do mesmo sexo que o atleta. No caso de falta de árbitros, um
+funcionário temporário adicional pode ser nomeado pelo Organizador. O Levantador também pode ser pesado com
+seu traje.
+5.6. Para estabelecer a ordem de entrada, é por ordem de chegada, primeiro a chegar, primeiro a ser pesado.
+5.7. Cada atleta deve ser pesado apenas uma vez. A re-pesagem é permitida apenas para aqueles atletas cujo peso
+seja inferior ou superior aos limites admissíveis da categoria de peso. Estes atletas devem retornar à pesagem e ser
+novamente pesados numa das duas sessões obrigatórias, antes do final da última sessão de pesagem. Se perderem a
+segunda oportunidade de pesagem, serão excluídos da competição nesta categoria de peso e transferidos para a
+próxima categoria disponível.
+Os atletas que estão tentando bater o peso podem se pesar quantas vezes forem necessárias, desde que não
+interrompam a pesagem de outro atleta.
+5.8. Se o peso do atleta exceder o permitido para a categoria de peso, ele pode ir para a seguinte categoria mais
+pesada. O atleta deve cumprir todas as normas de qualificação estabelecidas para os níveis de competição Nacional,
+Internacional e Expo neste peso mais elevado. Se o peso do atleta for inferior ao mínimo permitido para a categoria
+de peso, ele pode ir para a classe de peso mais leve.
+5.9. O peso oficial do Levantador será registado de caneta no cartão do atleta e rubricado pelo Árbitro da pesagem e
+pelo próprio Levantador.
+5.10. Os participantes das categorias de idade Juniors e Masters devem confirmar/checar a sua participação como
+"crossover" na categoria Open. Não é necessária uma pesagem adicional para os crossovers.
+5.11 Na pesagem, os dados do atleta são inseridos no cartão do atleta e depois lançados no software de controle da
+competição. É necessário incluir as seguintes informações:
+-Nome completo do atleta;
+-Divisão;
+-Data de nascimento, idade e categoria de idade;
+-País, região e cidade;
+-Peso do atleta (em caneta) após a pesagem e categoria de peso;
+-Primeiras tentativas em todos os levantamentos a lápis e rubricados pelo Levantador ou Treinador;
+-Valor do coeficiente Wilks;
+-Equipe;
+-Número do lote;
+-Um formulário assinado de aceitação de responsabilidade em caso de lesão ou acidente que possa ocorrer devido à
+falha do atleta;
+-Contatos de um atleta (número de telefone, endereço e e-mail);
+-Data de preenchimento, assinatura do atleta e do árbitro inspetor;
+
+Os árbitros e o Organizador devem inserir corretamente as informações, o atleta deve verificar com precisão todos
+os dados preenchidos. Depois de assinar a ficha de participação um atleta assume responsabilidade pela fiabilidade
+de todos os dados nele colocados. O cartão do participante é um documento oficial de torneio
+5.12. O cadastro e a pesagem dos participantes só são feitos depois de verificar a identidade do atleta.
+5.13. Durante todas as sessões de pesagem, será realizada uma verificação obrigatória do equipamento. Esta
+informação deve ser publicada com a informação da pesagem. A verificação de equipamento é obrigatória durante a
+pesagem. As pedidas iniciais serão feitas neste momento.
+5.14. A ordem de pesagem é determinada pelos próprios atletas que aguardam a sua vez.
+5.15. Em caso de condições climáticas severas ou situações de emergência na área de competição, o tempo de
+pesagem pode ser prolongado pelo Organizador.
+5.16. Durante a pesagem e a verificação do equipamento, os atletas medirão a altura dos racks e dos protetores
+faciais para o Squat and Bench Press e registarão a informação no cartão do atleta.
+
+VI. ORDEM DA COMPETIÇÃO
+6.1 O Sistema de Rounds
+6.1.1. Todos os competidores são distribuídos por rounds de acordo com as regras do torneio. Cada flight consiste
+em três tentativas para cada atleta em cada levantamento. A criação dos flights e a definição das tentativas devem
+cumprir as regras determinadas neste capítulo.
+6.1.2. Um flight deve ser formado de tal forma que todos os competidores realizem o mesmo levantamento.
+6.1.3. Se houver mais de 20 atletas na competição ou ronda, então eles devem ser divididos em vários flights que
+consistem de um número aproximado igual de participantes. Os flights não devem consistir de mais de 17
+participantes.
+6.1.4. O flight pode incluir uma ou várias categorias de peso. Os flights devem ser classificados por números ou
+letras. Ex, 1,2,3 ou A, B, C
+6.1.5. Os flights são formados por sexo, peso e peso informado para a primeira tentativa. Os atletas das categorias de
+peso mais leve com as primeiras tentativas mais baixas formam o primeiro flight (flight 1 ou flight A, etc.). Os flights
+seguintes são formados por categorias de peso crescente e pesos das primeiras tentativas.
+6.1.6. A estrutura dos flights deve ser implementada da seguinte forma: Ronda 1 realizando três tentativas de
+primeiro levantamento, depois Ronda 2 realizando três tentativas de primeiro levantamento e assim por diante.
+6.1.7. Se o número de participantes num flight for inferior a 10, deve ser acrescentado tempo ao final desse flight: 9
+atletas - 1 minuto, 8 atletas - 2 minutos, 7 atletas - 3 minutos e assim por diante: 1 minuto a mais para 1 atleta a
+menos. O MC ou Organizador do torneio deve fazer um anúncio sobre os intervalos e ligar um cronômetro após o
+último atleta no flight.
+6.1.8. Em cada flight, um peso é estabelecido do menor ao maior (de acordo com as aplicações existentes dos
+atletas).
+6.1.9. É permitido ao atleta apenas uma mudança de peso para a primeira tentativa em cada levantamento. O peso
+pode ser aumentado ou diminuído em relação à pedida original e então a ordem dos levantamentos deve ser
+alterada em conformidade. A mudança de peso na primeira tentativa é possível no mais tardar 5 minutos antes do
+início da primeira tentativa no flight do referido atleta. As alterações de peso na primeira tentativa podem ser
+
+tomadas tanto para aumentar como para diminuir. O Organizador deve informar os atletas um minuto antes do
+período de tempo de 5 minutos previsto para as alterações.
+6.1.10. Se dois atletas tiverem declarado o mesmo peso, o atleta que tiver o número de lote (inscrição/controle) mais
+baixo levanta primeiro.
+6.1.11. O tempo para a tentativa é de um minuto. O tempo para a tentativa começa após um sinal do Árbitro Chefe
+"Barra pronta".
+6.1.12. Se uma tentativa falhar por um erro de carga, será dada ao atleta a opção de seguir o levantamento como
+está carregado ou retomar o levantamento no final dessa ronda de tentativas. Se um atleta for o último na sua
+ronda, o atleta receberá mais 5 minutos para tentar novamente.
+6.1.13. O atleta deve declarar a próxima tentativa dentro de um minuto após ter completado o levantamento. Se a
+próxima tentativa não for declarada, 2,5 kg serão automaticamente adicionados ao peso da última tentativa. Se a
+última tentativa foi "invalida" e o Levantador não tiver declarado a próxima tentativa, ele levantará o mesmo peso
+que a tentativa anterior. A responsabilidade pela declaração da próxima tentativa é inteiramente do Levantador.
+6.1.14. Os pesos da segunda e terceira tentativas não podem ser alterados uma vez indicados. A exceção é a terceira
+tentativa apenas no Supino e para todas as terceiras tentativas no Levantamento Terra.
+6.1.15. Em competição de levantamentos únicos (Supino e Terra) o peso da terceira tentativa pode ser alterado para
+mais ou para menos, mas não de forma a prejudicar o andamento da competição.
+6.1.16. A alteração mínima de peso é de 2,5 kg, a menos que o atleta esteja tentando um recorde.
+
+6.2 Funcionários/Responsavéis
+a) MC/Locutor - um árbitro nacional ou internacional ou DJ profissional com conhecimentos de Powerlifting.
+b) Mesa/computador/cartões - um Árbitro ou um levantador especialmente treinado.
+c) Expedidores.
+d) Auxiliares/anilheiros.
+e) Podem ser designados funcionários adicionais conforme necessário, por exemplo, médicos, paramédicos, etc.
+
+As Responsabilidades dos Funcionários/oficiais são:
+6.2.1. MC/Locutor:
+- É responsável pela administração da competição. Deve desempenhar as seguintes funções:
+- Anuncia a ordem dos Levantadores, dos três próximos atletas, para que estejam prontos para entrar na
+plataforma.
+- Quando a barra for carregada e a plataforma liberada para o levantamento, o Árbitro Chefe indicará isto ao MC que
+anunciará "Levantador Pronto" e chamará o levantador para a plataforma, o relógio começará.
+Para esclarecer - quando o MC anuncia "Levantador Pronto" o levantador está autorizado para a tentativa. As
+tentativas anunciadas pelo orador devem ser exibidas no painel de pontuação numa posição de destaque, com o
+nome do levantador e o seu peso corporal.
+
+6.2.2. Organizador:
+- O Organizador é responsável por criar o quadro de funcionários - juízes, outros funcionários da competição e o
+cronograma de trabalho.
+
+- O Organizador é responsável pela aplicação das regras da WRPF. Se estiver ausente da competição, então o
+funcionário com o status mais alto deve assumir suas obrigações.
+- Espera-se que ele interaja com todo o pessoal da competição, com os árbitros e atletas, resolva quaisquer questões
+contestáveis, recorrendo às Regras Técnicas.
+- É responsável por verificar e garantir a conformidade com os requisitos técnicos para sediar os torneios WRPF, a
+disponibilidade de toda a documentação necessária no torneio.
+- É responsável pelo registo dos novos recordes e pela coleta de informação para a preparação de documentos. 6.2.3.
+
+Cronometrista:
+- É responsável pela contagem exata de tempo entre o anúncio de "Barra pronta" e o início da tentativa do Atleta.
+- Ele também é responsável por adicionar tempo sempre que necessário, por exemplo, depois de uma tentativa o
+atleta tem que deixar a plataforma dentro de segundos. A única exceção poderia ser no caso de o Árbitro Chefe estar
+checando o equipamento de um atleta que acabou de quebrar um recorde. Uma vez que o tempo esteja correndo
+para um Levantador, ele só pode ser parado ao final do tempo atribuído ou pelo inicio do levantamento ou a critério
+do Árbitro Chefe. Qualquer mudança de altura no rack deve ser contabilizada dentro do tempo atribuído ao atleta
+para realizar o movimento.
+Após o comando "Barra pronta" ser dado, o atleta tem um minuto para iniciar a tentativa. Durante de agachamento
+e de supino de bancada o início do exercício é considerado como tirando da barra do rack e para o levantamento
+terra - tentativa explícita ou deliberada de levantar a barra da plataforma. Se a o atleta não preenche estes requisitos
+durante o tempo atribuído, o cronometrista anuncia "Tempo" e o Árbitro Chefe dá o comando "Rack". Neste caso, é
+"movimento invalido". O árbitro chefe toma a decisão final após o comando "Tempo", pela razão de que o
+Levantador violou o limite de tempo.
+
+6.2.4. Expedidores
+- São responsáveis por coletar o peso das próximas tentativas com os levantadores ou seus treinadores e passar a
+informação sem demora a mesa. É permitido ao levantador um minuto entre completar a sua última tentativa e
+informar o Expedidor o peso para a próxima tentativa.
+- São responsáveis pelo controle do cumprimento das regras do uso de equipamento na área de aquecimento. Ao
+identificar uma violação das regras, por exemplo: utilizar joelheiras e faixas juntas ou usar algumas faixas de joelho
+juntas, etc., deve comunicar isto imediatamente ao Levantador que violou as regras ou o seu representante. Se isso
+não for possível, ele reporta ao Organizador ou ao Árbitro Chefe na plataforma.
+
+6.2.5. Auxiliares/Anilheiros:
+- Responsável pela segurança do atleta, e prestar a ele/ela assistência imediata no caso de não conseguir levantar o
+peso durante a tentativa.
+- Auxiliares/Anilheiros são responsáveis por carregar e descarregar a barra, ajustar os racks de agachamento e bancos
+de supino conforme necessário, limpar a barra ou plataforma.
+- Todos os Auxiliares devem trabalhar em equipe, devem estar bem vestidos, com roupas limpas e camisetas do
+evento ou da WRPF.
+- Todos os Auxiliares devem informar o Árbitro Chefe sobre qualquer mau funcionamento do equipamento para que
+possam avaliar o problema e tomar as medidas necessárias para a sua resolução.
+
+- Em nenhum momento deve haver menos de dois ou mais de seis Auxiliares/Anilheiros na plataforma.
+Quando o levantador se prepara para a sua tentativa, os Auxiliares/Anilheiros podem ajudá-lo a retirar a barra dos
+racks. Podem também ajudar a colocar a barra após a tentativa. No entanto, não devem tocar no levantador ou na
+barra durante a tentativa em si, ou seja, durante o período de tempo que decorre entre os sinais de início e de
+conclusão. A única exceção a esta regra pode acontecer se o levantamento for um "movimento invalido" e
+provavelmente resultaria em lesões para o levantador. Neste caso, os Auxiliares/Anilheiros podem, a pedido do
+Árbitro Chefe ou do próprio levantador, intervir e ajudar o atleta. Se o levantador falhar na tentativa por erro de um
+Auxiliar/Anilheiro e não tiver culpa, deverá ser concedida outra tentativa a critério do Árbitro Chefe no final da
+ronda.
+- Qualquer auxiliar adicional que um atleta possa precisar deve ser escolhido antes da competição e ser instruído
+pelo auxiliar 30 minutos antes do início da competição. Além disso, os auxiliares devem estar disponíveis para todos
+os atletas em todos os tipos de levantamento.
+
+6.3 Regras Gerais
+6.3.1. Durante qualquer competição, apenas o levantador e o seu treinador, árbitros oficiantes e
+observadores/carregadores serão autorizados a estar em volta da plataforma ou no palco. Na realização do
+levantamento, apenas o levantador, o auxiliar/anilheiro e os árbitros estão autorizados a estar presentes em redor da
+plataforma.
+Os treinadores devem permanecer dentro da área para eles designada, conforme definido pelo Árbitro Chefe
+responsável. A seleção de uma zona para treinadores deve ser feita de forma a que cada treinador possa escolher
+dentro desta zona um local conveniente para observar o desempenho do levantamento e fornecer instruções e sinais
+ao atleta no que diz respeito aos detalhes técnicos (por exemplo: agacha fundo)
+Ao mesmo tempo, não deve interferir com o trabalho dos árbitros e dos auxiliares. Os profissionais de
+fotografia/vídeo podem ser admitidos na plataforma, a critério do Organizador e são obrigados a manter-se fora do
+fluxo normal na plataforma.
+6.3.2. As roupas dos treinadores nos eventos devem estar limpas e não ter palavras ou imagens ofensivas e ser
+aprovadas pelo Organizador. Em caso de violação do código de vestimenta, o Árbitro Chefe ou Organizador pode
+proibir o treinador de estar no local da competição.
+6.3.3 Um levantador não deve arrumar ou ajustar qualquer parte do seu traje ou equipamento enquanto estiver na
+plataforma. A única exceção a esta regra é que ele pode ajustar o seu cinto. Artigos como inalantes, recipientes de
+amoníaco, etc., não podem ser utilizados na plataforma.
+6.3.4. Em todas as competições reconhecidas pela WRPF o peso da barra deve ser sempre um múltiplo de 2.5kg. A
+progressão deve ser de pelo menos 2,5kg entre todas as tentativas. O peso deve ser sempre anunciado em
+quilogramas.
+6.3.5. Numa tentativa recorde, o peso deve ser pelo menos 500 gramas superior ao recorde atual.
+6.3.6. Durante o decorrer da competição, um levantador pode solicitar uma tentativa de recorde que não é um
+múltiplo de 2, 5 kg, mas que deve ser tentada dentro das suas tentativas indicadas.
+6.3.7. Podem ser feitas tentativas de recorde em qualquer ou todas as tentativas indicadas por um levantador, desde
+que mantenham um aumento mínimo de 500 gramas.
+6.3.8. O Árbitro Chefe e o Organizador serão os únicos responsáveis pelas decisões em caso de erros de
+carregamento ou anúncios incorretos por parte do locutor. A sua decisão será dada ao locutor que fará o anúncio
+apropriado.
+
+Exemplos de erros no carregamento do peso da barra:
+- Se a barra for carregada com um peso menor do que o originalmente solicitado e a tentativa for bem sucedida, o
+levantador pode aceitar essa tentativa ou optar por refazer a tentativa com o peso originalmente solicitado. Se a
+tentativa não for bem sucedida, será concedida ao levantador uma nova tentativa com o peso originalmente pedido.
+Em ambos os casos acima, outras tentativas só podem ser feitas no final da ronda em que o erro ocorreu.
+- Se a barra for carregada com um peso mais pesado do que o originalmente solicitado e a tentativa for bem
+sucedida, a tentativa será concedida ao Levantador. No entanto, o peso pode ser novamente reduzido se for
+necessário para outros atletas. Se a tentativa não for bem sucedida, será concedida ao Levantador uma nova
+tentativa com o peso originalmente solicitado no final da ronda em que o erro ocorreu.
+- Se a carga não for a mesma em cada lado da barra; ou se ocorrer qualquer alteração na barra ou anilhas durante a
+realização do levantamento; ou se a plataforma estiver desajustada, se apesar destes fatores, o levantamento for
+bem sucedido ele pode aceitar a tentativa ou optar por refaze-la. Se a tentativa bem sucedida não for um múltiplo de
+2,5 kg, então o múltiplo mais baixo e mais próximo de 2,5 kg será registado na folha de pontuação. Se a tentativa não
+for bem sucedida, será concedida ao levantador uma nova tentativa. Outras tentativas só podem ser feitas no final
+da ronda em que o erro ocorreu.
+- Se por qualquer razão não for possível que o levantador ou o seu treinador permaneçam na zona próxima da
+plataforma para acompanhar o andamento da competição e o levantador perder a sua tentativa porque o locutor
+omitiu em anunciá-lo com o peso adequado, então o peso será reduzido conforme necessário e o levantador terá
+permissão de fazer a sua tentativa, mas apenas no final da ronda
+6.3.11. Três tentativas sem sucesso em qualquer levantamento (bombar) excluem automaticamente o atleta da
+competição.
+6.3.12. Os auxiliares não devem ajudar o atleta a assumir a posição inicial em nenhum dos levantamentos, a sua
+ajuda só é permitida com a retirada inicial da barra dos suportes.
+6.3.13. Após a finalização de uma tentativa, o levantador deverá sair da plataforma no prazo de trinta segundos. O
+não cumprimento desta regra pode resultar na desqualificação da tentativa ao critério do Árbitro Chefe e do
+Organizador. A única exceção a esta regra é se o equipamento de um Levantador estiver sendo inspecionado após
+uma tentativa de recorde. O levantador é obrigado a não sair da plataforma para esta inspeção certificar a tentativa
+de recorde.
+6.3.14. Se, durante o aquecimento ou competição, um levantador sofrer lesões ou de qualquer outra forma
+apresentar sinais de uma condição que possa prejudicar indevida ou significativamente a saúde e o seu bem-estar o
+Organizador ou o Árbitro Chefe tem o direito de examinar. Se considerado desaconselhável para o levantador
+continuar, ele e/ou o seu treinador serão notificados da decisão e o atleta será retirado do Meet. O Oranizador ou
+Árbitro Chefe que não dão aconselhamento médico, estão cometendo erros de prudência em relação à segurança do
+atleta.
+6.3.15. Se um levantador não tiver um mínimo de 50% do total dos seus dedos, incluindo o polegar, em que essa
+mão é responsável pela pegada na barra no Levantamento Terra, é permitido utilizar uma faixa/alça. No entanto, esta
+faixa/alça só pode ser utilizada nessa mão e fixada apenas no pulso.
+6.3.16. Qualquer anomalia física, deficiência ou incapacidade de um levantador que possa causar uma incapacidade
+de cumprir integralmente as regras, deve ser comunicada ao Árbitro Chefe. Isto deve ser feito antes do início do
+flight do levantador. O levantador e os árbitros tratarão do assunto de forma a melhor acomodar quaisquer
+observações especiais para o levantador. Surdez, cegueira, ou anomalias nos membros ou articulações que impeçam
+o alinhamento ou extensão adequada, são exemplos para tais considerações especiais.
+
+6.3.17 É considerada uma advertência verbal quando qualquer funcionário contata e corrige um levantador antes ou
+depois de um levantamento, podendo ser sobre uma parte técnica do seu levantamento, uma violação das regras, ou
+sobre qualquer violação de equipamento que possa ocorrer. Se o levantador repetir a violação, é obrigatório que o
+seu levantamento seja indeferido pelos três oficiais. Se um funcionário der um aviso verbal a um levantador, deverá
+informar imediatamente todos os outros funcionários da plataforma de que foi dado um aviso oficial, e o motivo
+para tal. Os três árbitros devem trabalhar sempre em conjunto como uma equipe. Uma violação repetida por um
+levantador resultará num sinal vermelho obrigatório por parte de todos os oficiais.
+6.3.18. Sangue ou partículas de pele na barra ou plataforma devem ser limpos com o antisséptico para evitar
+infecção.
+6.3.19. Qualquer levantador ou treinador que devido à sua má conduta antes, durante ou depois da competição, seja
+passível de desqualificar o esporte, deve ser oficialmente advertido. Se a má conduta continuar, o Organizador ou
+Árbitro Chefe pode desqualificar o levantador e ordenar ao treinador que abandone o local do evento. Isto inclui
+qualquer atleta, treinador, ou equipe de apoio do levantador que discutir usar linguagem grosseira, ou se tornar
+injurioso com qualquer Árbitro ou Oficial sobre o resultado de qualquer levantamento, ou sobre a legalidade das
+determinações do equipamento.
+6.3.20. Os árbitros podem, por decisão maioritária, desqualificar imediatamente um atleta ou funcionário se
+acreditarem que a violação das regras é suficientemente grave para implicar uma desqualificação imediata em vez de
+uma advertência.
+
+VII. ÁRBITROS E COMITÊ TÉCNICO
+7.1 Árbitros
+7.1.1. Deve haver 3 árbitros - o Árbitro Chefe ou Árbitro Central e dois árbitros laterais.
+7.1.2. Os três árbitros podem sentar-se no que consideram ser a melhor posição de visualização ao redor da
+plataforma para cada um dos três levantamentos. No entanto, o Árbitro Chefe deve ter sempre em mente a
+necessidade de estar visível para o levantador que realiza o agachamento ou o levantamento terra. Os árbitros
+laterais não devem sentar-se estritamente ao lado do atleta, sobretudo durante o levantamento, porque as anilhas
+na barra irão tapar a vista dos joelhos do levantador.
+7.1.3. Os Árbitros são responsáveis pela avaliação qualitativa e de tempo das tentativas.
+7.1.4. Os árbitros vão assegurar rigorosamente o cumprimento das Regras de Competições e desempenho dos
+levantamentos.
+7.1.5. O Árbitro Chefe é responsável por dar os sinais necessários para os três levantamentos. Os árbitros laterais
+podem dar um sinal ao Árbitro Chefe se virem do seu ponto de vista uma violação quando o atleta assume a posição
+inicial no agachamento ou supino.
+7.1.6. Antes da competição, os três árbitros devem certificar-se conjuntamente do seguinte:
+- A plataforma e o equipamento de competição cumprem em todos os aspectos com as regras. As barras e anilhas
+são verificadas quanto a discrepâncias de peso e descarte de equipamentos defeituosos. Uma segunda barra e
+presilhas devem estar prontas e deixadas próximas em caso de danos na barra ou presilhas originais.
+- Os trajes e equipamento pessoal do levantador obedecem às regras em todos os pontos.
+7.1.7. Durante a competição, os três árbitros devem certificar-se disso:
+
+- O peso da barra carregada está de acordo com o peso anunciado pelo locutor. Os árbitros podem receber tabelas
+de cargas da barra para este fim ou um software de carga da barra gerado por computador também pode ser
+utilizado e projetado num monitor que se encontra em um local claro e visível para os três árbitros.
+- O equipamento pessoal do Levantador deve cumprir as regras enquanto estiver na plataforma. Se algum Árbitro
+tiver razões para duvidar do cumprimento das regras por parte do Levantador, deverá informar o Árbitro Chefe após
+a realização da tentativa. Os Árbitros podem então examinar o equipamento pessoal do Levantador. Se for verificado
+que o atleta está usando qualquer item ilegal, ele/ela poderá ser imediatamente desclassificado da competição. Se
+usar qualquer item ilegal aprovado por engano pelos árbitros examinadores, e o levantamento no qual a descoberta
+foi feita tiver sido bem sucedida, o levantamento será rejeitado, e ao levantador será concedida uma nova tentativa
+(sem o item ilegal) no final da ronda.
+Em casos de infracções menores em relação ao equipamento, a tentativa do atleta pode ser contada. Neste caso, é
+feito uma advertência para que esta violação seja retirada na tentativa seguinte. Se não for encontrada qualquer
+solução para a violação antes que o atleta comece, os árbitros não têm a obrigação de avisar o levantador e então
+invalidariam o levantamento do atleta.
+O tempo atribuído ao atleta não para.
+7.1.8. Uma vez que a barra tenha sido recolocada nos racks ou na plataforma no final do levantamento, os Árbitros
+anunciarão as suas decisões por meio das luzes. Branco para um "valido" e vermelho para um "invalido".
+7.1.9. O Levantador ou o seu treinador pode pedir o motivo de uma decisão "invalido" a qualquer um dos árbitros
+imediatamente após a tentativa. Tal pedido deve ser feito antes do início da próxima tentativa do atleta de modo a
+não interferir com o andamento da competição.
+7.1.10. Os árbitros devem abster-se de comentar publicamente o andamento da competição.
+7.1.11. Um Árbitro não deve tentar influenciar as decisões dos outros Árbitros. Se isto acontecer, o Árbitro Chefe
+pode pedir ao Árbitro que abandone a plataforma.
+7.1.12. Os árbitros decidem sobre a legitimidade das tentativas de recorde, realizam uma nova verificação do
+equipamento dos atletas que fizeram a tentativa de recorde diretamente na plataforma (não permitindo ao atleta
+sair da plataforma até ao final da verificação) e terminam a inspeção erguendo a mão do Levantador.
+7.1.13. O Árbitro Chefe pode consultar os árbitros laterais ou qualquer outro funcionário, conforme necessário, a fim
+de agilizar o concurso.
+7.1.14. O Árbitro Chefe pode a seu critério, dar instruções para limpar a barra ou plataforma. Se o atleta ou treinador
+pedir para limpar a barra ou plataforma, este pedido deve ser dirigido ao Árbitro Chefe e não aos auxiliares na
+plataforma.
+7.1.15. Qualquer mudança da equipe de arbitragem no processo de conclusão de um flight é proibida. Exceto
+quando as qualificações dos árbitros não forem suficientes para registar uma tentativa de recorde. É desejável que a
+equipe de arbitragem permaneça intacta durante a realização de um flight.
+7.1.16. A escolha de um Árbitro para atuar como Árbitro Chefe num flight não impede a sua escolha como Árbitro
+Adjunto num outro flight.
+7.1.17. Celulares ou outros dispositivos electrónicos semelhantes não estão autorizados a serem utilizados durante o
+julgamento.
+7.1.18. Os árbitros estarão uniformemente vestidos da seguinte forma:
+Calções ou calças pretas ( Legging pretas para mulheres) com sapatos pretos e a camisa de árbitro apropriada.
+Os árbitros Nacionais, Mundiais, Expos da WRPF devem usar calças compridas pretas, sapato social/esporte fino
+pretos e a camisa de árbitro apropriada.
+
+Não são permitidas sandálias ou sapatos com a parte dos dedos aberta. Todos os itens de vestuário serão sempre
+limpos e arrumados.
+7.1.19 Exemplos de falhas que devem ser consideradas pequenos descuidos onde serão dados advertência são:
+- Meias que se sobrepõem ou que tocam nos joelhos faixas/joelheiras
+- Os laços da faixa de punho que que não são tirados do polegar antes do levantamento.
+- O comprimento do macaquinho/traje que excede os requisitos apropriados.
+- As meias no Levantamento terra que não cobrem completamente a parte superior das panturrilhas.
+7.1.20. Exemplos de infrações que devem ser corrigidas antes de o levantador fazer a sua tentativa são:
+- O macaquinho/traje do atleta não está sendo usado sobre os ombros.
+- Itens esquecidos de retirar que possam ter sido usados para aquecer ou para manter o aquecimento (por exemplo,
+gorros, cotoveleiras de borracha, auriculares etc.)
+- Levantadores RAW que não usam camiseta enquanto agacham ou realizam o supino.
+- Não usar meias ou meias de tornozelo durante o levantamento terra.
+7.1.21. Exemplos que devem ser considerados uma tentativa intencional de trapacear são:
+- A utilização de mais de uma roupa específica de levantamento o ou qualquer roupa que tenha sido alterada para
+além das especificações do manual de regras.
+- Usar mais do que um par de roupas de baixo ou roupas de suporte ilegais.
+- O uso de mais do que uma camisa ou uma camisa de suporte ilegal ou uma camisa de baixo ilegal.
+- A utilização de mais do que um par de faixas, mais do que uma camada de costura (faixas duplas costuradas juntas)
+ou faixas de comprimento além do permitido.
+- Quaisquer adições, tais como faixa de corpo, toalhas de banho, escoras, etc. Presença de óleo, graxa, líquidos ou
+lubrificantes que não giz ou pó aprovado. Trapacear será considerado como uma desqualificação automática do
+evento.
+7.1.22. Os árbitros das competições da WRPF cujas atividades sejam consideradas insatisfatórias podem ser
+suspensos da realização da Arbitragem até à recertificação por parte do escritório nacional.
+As condições para o afastamento dos árbitros são:
+- Adesão inadequada às condições de arbitragem, especificadas nas presentes regras.
+- Julgamento tendencioso, ações a favor de um ou mais atletas em detrimento do resto dos participantes no torneio.
+- Qualquer ação ou ações que desacreditem a sua reputação em relação a quaisquer estados, nações, raças,
+indivíduos ou entidades jurídicas.
+
+7.2 Qualificações dos árbitros
+7.2.1. Árbitro Estadual.
+1. Deve ser um membro da "WRPF / World Raw Powerlifting Federation".
+2. Deve ser recomendado pelo seu Presidente de Estado e aprovado pelo Presidente/Árbitro Chefe da federação
+"WRPF / World Raw Powerlifting Federation".
+3. Ele deve ter pelo menos 18 anos de idade e deve ter um mínimo de 1 ano de experiência como atleta competindo
+no Powerlifting.
+
+4. Deve passar um teste escrito das regras da "WRPF / World Raw Powerlifting Federation" e um teste prático sob a
+supervisão de um Árbitro Internacional num evento realizado pela WRPF.
+5. Deve passar no teste escrito e prático com 90% ou mais.
+6. Deve passar um teste prático no prazo de 30 dias após a entrega de um teste escrito.
+7. Deve participar em pelo menos 4 competições sancionadas com uma média de cinco flights por evento por ano
+para manter a credenciação.
+8. Deve seguir todas as atualizações e alterações do livro de regras.
+9. O árbitro, que ficar inativo durante 1 ano, perde o seu título de Árbitro Estadual.
+
+7.2.2. Árbitro Nacional.
+1. Deve ser um membro da "WRPF / World Raw Powerlifting Federation".
+2. Deve ser recomendado pelo seuPresidente de Estado e aprovado pelo Presidente/Árbitro-Chefe do WRPF.
+3. Deve ser um árbitro Estadual por pelo menos 2 anos.
+4. Durante este período deve ter sido árbitro pelo em menos 10 encontros como árbitro estadual com uma média de
+cinco flights por encontro.
+5. Deve passar em um teste escrito sobre as regras para o WRPF.
+6. Deve passar no teste com uma pontuação de 90% ou mais.
+7. Deve arbitrar pelo menos 4 encontros aprovados por ano.
+8. Deve seguir todas as atualizações e alterações ao livro de regras.
+9. O árbitro, que não esteja ativo durante 1 ano, perde o seu título de Árbitro Nacional.
+
+7.2.3. Árbitro de categoria internacional.
+1. Deve ser um membro da WRPF.
+2. Deve ser recomendado pelo seu Presidente de Estado e aprovado pelo Presidente/Árbitro-Chefe do WRPF.
+3. Deve ser Árbitro Nacional por pelo menos 2 anos.
+4. Deve ter arbitrado pelo menos em 9 eventos, com uma média de cinco flights por encontro. Durante este período,
+deve ter arbitrado pelo menos dois eventos Nacionais e/ou Internacionais.
+5. Deve passar um teste escrito sobre as regras para o WRPF.
+6. Deve passar no teste escrito e prático com 90% ou mais.
+7. Se não for aprovado, o candidato pode repetir o teste mais 2 vezes. Se falhar, deve esperar 2 meses para repetir o
+teste.
+8. Deve oficializar pelo menos 2 competições por ano para manter a designação como Árbitro Internacional.
+
+9. Deve seguir todas as atualizações e alterações ao livro de regras do WRPF
+10. O árbitro, que não estiver ativo durante 2 anos, perde o seu título de Árbitro Internacional.
+
+7.3. Júri
+7.3.1. Será nomeado um júri para presidir cada sessão/evento de levantamento. O júri deverá estar presente durante
+os torneios internacionais. Na ausência de um júri, estas funções são desempenhadas pelo Árbitro Chefe e pelo
+Organizador.
+7.3.2. O júri é composto por três árbitros, o Organizador é designado Presidente do júri.
+7.3.3. A função do júri é assegurar que as regras técnicas sejam corretamente aplicadas.
+7.3.4. Durante a competição, o júri pode, por maioria de votos, substituir qualquer árbitro cujas decisões, em sua
+opinião, provem que ele é incompetente. O árbitro em questão deve ter recebido uma advertência antes de
+qualquer ação de afastamento. Se for apresentado um protesto ao Júri contra um árbitro, então o árbitro pode ser
+informado do protesto. O Júri não deve colocar stress desnecessário sobre os árbitros da plataforma.
+7.3.5. A imparcialidade dos árbitros não pode ser posta em dúvida, mas um erro na arbitragem pode ser cometido de
+boa fé. Nesse caso, o árbitro é autorizado a dar a sua explicação para ter tomado a decisão que, foi alvo de uma
+advertência.
+7.3.6. Se ocorrer um erro grave de arbitragem que seja contrário às regras técnicas, o júri pode tomar as medidas
+adequadas para corrigir o erro. Podem, se assim o entenderem, conceder ao árbitro uma nova tentativa.
+7.3.7. O júri não pode em momento algum anular ou alterar as decisões dos árbitros.
+7.3.8. Os membros do júri serão posicionados de tal forma que garanta uma visão limpa da competição.
+7.3.9. Antes de cada competição, o Presidente do júri deve certificar-se de que os membros do júri tenham um
+conhecimento completo do seu papel e de que sejam avisados sobre novas regras que são descritas na edição mais
+atualizada do livro de regras do WRPF.
+
+VIII. DIVISÃO EQUIPADA
+SINGLY PLY
+8,1. ROUPAS DE LEVANTAMENTO (ROUPA DE AGACHAMENTO E ROUPA DE LEVANTAMENTO
+TERRA)
+A roupa de levantamento deve ser constituída por uma peça de material de uma camada somente para a divisão
+Single Ply (uma camada) ou mais para a divisão Multiply (multicamadas). A estrutura do traje deve ser sem quaisquer
+remendos ou acolchoados e têm que ter uma espessura total máxima de material não superior a 1,3mm em
+qualquer ponto medido, exceto na costura. Qualquer costura falsa ou não, que na opinião dos árbitros esteja
+incorporada ao traje puramente como uma forma de reforço ou escoramento, invalidará o traje de ser utilizado na
+competição. As alças devem ser usadas sobre os ombros o tempo todo durante o levantamento na competição.
+8.1.2. O traje pode ser de qualquer cor ou combinação de cores. A roupa do atleta pode carregar a símbolo,
+emblema, e/ou nome do país, associação nacional, logo do fabricante ou patrocinador. logos de natureza ofensiva
+não são permitidos.
+8.1.3 As costuras e bainhas não devem exceder 3cm de largura e 0,5cm de espessura. As costuras podem ser
+protegidas ou reforçadas por tiras estreitas ou material elástico não superior a 2cm de largura e 0,5cm de espessura.
+
+8.1.4 Qualquer alteração ao traje, que exceda as larguras, comprimentos ou espessuras estabelecidas anteriormente,
+tornará a roupa ilegal para competição.
+8.1.5 Qualquer traje em que as alças tenham sido encurtadas de qualquer forma deve deixar o material em excesso
+intacto. O atleta não pode remendar ou recolocar o material em excesso no próprio traje. A quantidade máxima que
+o tecido em excesso (a.k.a. "abas") pode estender-se é de 5cm acima da nova costura. Não é permitido velcro nas
+alças ou em qualquer parte do traje de levantamento na divisão Single Ply, mas são permitidos na divisão Multiply.
+
+8.2 CAMISA DE SUPINO
+O camisa de supino debe ser usada apenas para o Supino. Sua estrutura deve consistir de apenas uma camada e
+deve como um todo ser composta de apenas um material. As mangas para a camisa de supino devem terminar acima
+dos cotovelos. Não pode ter abertura nas costas.
+8.2.2. Não é permitido usar camiseta embaixo da camisa de supino.
+8.2.3.Não é permitido velcro na camisa de supino.
+8.2.4.Retalhos ou remendos não podem ser acrescentados em nenhuma parte da camisa, pois poderiam oferecer
+alguma vantagem injusta ao levantador.
+8.2.5. A camisa de supino usada pelo atleta deve cobrir pelo menos metade do deltoide e o ponto mais baixo da
+frente da linha do pescoço não pode estar abaixo da linha do mamilo. O colarinho na frente da camisa não pode ser
+mais largo do que 3 cm
+8.2.6.A camisa de supino pode ter laços não-suporte adicionais feitos para facilitar o aperto das mangas no lugar
+certo. Eles tem que ser costurados dentro da parte externa da camisa bem atrás do tríceps. Devem ser feitos de
+poliéster ou fio de nylon e não podem exceder 4cm de largura e não mais que 9 cm de cumprimento. Deve consistir
+de material de camada única e ser fixado de forma mais folgada para permitir o uso de uma mão mecânica ou
+gancho. Feito de material de camada única sua espessura não pode exceder 0.3 cm.
+
+MULTICAMADAS - MULTI-PLY
+8.3.1 A roupa de agchamento/levantamento terra deve ser um peça de roupa de comprimento inteiro, de tecido
+fabril, poliéster, jeans ou lona e pode consistir de várias camadas de qualquer espessura, mas em geral permanecem
+de estrutura única. As alças devem ser sempre usadas por cima dos ombros durante a realização dos levantamentos
+em competição. É permitido o uso de velcro para proteger as tiras. O comprimento das pernas não deve ultrapassar
+o meio da coxa (ponto médio entre a parte superior da rótula e a virilha).
+8.3.2 Uma camisa de levantamento pode ser usada tanto no agachamento como no levantamento terra durante a
+realização destes dois levantamentos.
+8.3.3 Um par de roupas de baixo de suporte de qualquer tipo pode ser usado e pode estender-se abaixo do traje na
+parte das pernas, desde que o comprimento da roupa nas pernas não exceda a metade da coxa, e que a cintura não
+se estenda além de aproximadamente a metade do torso. Devem ser um artigo de tecido individual . A estrutura
+pode ser constituída por várias camadas de qualquer espessura, mas deve, como um todo, ser um componente
+único.
+8.3.4 Deve ser um artigo de tecido individual, poliéster, jeans ou lona. A sua estrutura pode ser composta por várias
+camadas, mas deve ser um componente único. As mangas devem terminar acima do cotovelo quando usadas e
+devem cobrir as axilas. Velcro ou costas abertas é permitido.
+
+

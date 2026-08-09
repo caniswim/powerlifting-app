@@ -1,0 +1,409 @@
+Place | Lifter | Sex | Age | Equip | Class | Weight | Squat | Bench | Deadlift | Total | GLP
+=== Women Raw 47 Masters 1
+1 | Renata Inamassu | F | 46~ | Raw | 47 | 46.6 | 110 | 67.5 | 127.5 | 305 | 85.27
+2 | Érica Duque | F | 40~ | Raw | 47 | 45.7 | 100 | 52.5 | 115 | 267.5 | 76.28
+=== Women Raw 52 Masters 1
+1 | Daniela Nunes Ferreira | F | 46~ | Raw | 52 | 50.5 | 90 | 55 | 110 | 255 | 66.06
+=== Women Raw 57 Masters 1
+1 | Silmara Aparecida Valvazoridos Reis | F | 48~ | Raw | 57 | 56 | 117.5 | 65 | 137.5 | 320 | 76.08
+2 | Paula Borges | F | 39~ | Raw | 57 | 56.6 | 117.5 | 67.5 | 122.5 | 307.5 | 72.51
+=== Women Raw 63 Masters 1
+1 | Lilian Silva Monteiro | F | 44~ | Raw | 63 | 62.2 | 130 | 87.5 | 170 | 387.5 | 85.49
+2 | Gisele Barbosa Lourenco | F | 42~ | Raw | 63 | 62.9 | 130 | 70 | 177.5 | 377.5 | 82.68
+=== Women Raw 69 Masters 1
+1 | Josilene de Sales Lima | F | 44~ | Raw | 69 | 65.3 | 122.5 | 72.5 | 150 | 345 | 73.80
+2 | Marcia Marins | F | 43~ | Raw | 69 | 67.7 | 127.5 | 72.5 | 145 | 345 | 72.25
+3 | Ursula Maria Castellain | F | 41~ | Raw | 69 | 65.5 | 90 | 55 | 117.5 | 262.5 | 56.05
+DQ | Vanessa Azevedo | F | 39~ | Raw | 69 | 68.1 | 145 | 87.5 |  |  | 
+=== Women Raw 76 Masters 1
+1 | Iolanda Costa Zolyone | F | 47~ | Raw | 76 | 75.4 | 180 | 105 | 200 | 485 | 95.98
+2 | Flavia Basso Domingues | F | 39~ | Raw | 76 | 76 | 132.5 | 85 | 200 | 417.5 | 82.31
+3 | Adriana Bueno da Silva Oliveira | F | 44~ | Raw | 76 | 74.9 | 127.5 | 57.5 | 135 | 320 | 63.53
+=== Women Raw 84 Masters 1
+DQ | Ana Mohr | F | 39~ | Raw | 84 | 83.1 | 170 |  | 190 |  | 
+=== Women Raw 84+ Masters 1
+1 | Bianca Soares dos Santos | F | 42~ | Raw | 84+ | 93.4 | 220 | 107.5 | 242.5 | 570 | 103.70
+2 | Simoni Cristina | F |  | Raw | 84+ | 94 | 162.5 | 85 | 182.5 | 430 | 78.07
+3 | Mônica Delciana Cavalcante Miranda | F | 46~ | Raw | 84+ | 93.5 | 120 | 62.5 | 120 | 302.5 | 55.02
+=== Women Raw 63 Masters 2
+1 | Rute Enedina de Oliveira | F | 56~ | Raw | 63 | 61.6 | 110.5 | 42.5 | 117.5 | 270.5 | 60.06
+2 | Rejane Romano | F | 49~ | Raw | 63 | 62.7 | 111 | 45 | 112.5 | 268.5 | 58.92
+=== Women Raw 69 Masters 2
+1 | Adriane Schwab | F | 54~ | Raw | 69 | 67.5 | 85 | 50 | 135 | 270 | 56.64
+=== Women Raw 76 Masters 2
+1 | Miralva Miranda | F | 56~ | Raw | 76 | 70.8 | 92.5 | 47.5 | 122.5 | 262.5 | 53.63
+=== Women Raw 52 Masters 3
+DQ | Cleonice Maria de Souza | F | 63~ | Raw | 52 | 48.5 | 72.5 |  | 105 |  | 
+=== Women Raw 63 Masters 3
+1 | Angela Testoni Luiz | F | 60~ | Raw | 63 | 62.8 | 90.5 | 45 | 141 | 276.5 | 60.62
+=== Women Raw 47 Open
+1 | Érica Duque | F | 40~ | Raw | 47 | 45.7 | 100 | 52.5 | 115 | 267.5 | 76.28
+2 | Laíssa Fernandes Machado | F | 26~ | Raw | 47 | 45.6 | 87.5 | 35 | 115 | 237.5 | 67.88
+=== Women Raw 52 Open
+1 | Giulia Cunha Costa Carvalho | F | 25~ | Raw | 52 | 51.5 | 137.5 | 88 | 157.5 | 383 | 97.52
+2 | Gabriela Finotello | F | 27~ | Raw | 52 | 51.5 | 132.5 | 55 | 157.5 | 345 | 87.85
+3 | Lyenara Camargo Leal Winckler | F | 37~ | Raw | 52 | 50.9 | 70 | 32.5 | 95 | 197.5 | 50.81
+G | Melissa Kwan | F | 25~ | Raw | 52 | 52 | 95 | 52.5 | 137.5 | 285 | 71.96
+=== Women Raw 57 Open
+1 | Mariana Coelho da Silva | F | 29~ | Raw | 57 | 56.7 | 152.5 | 72.5 | 160 | 385 | 90.67
+2 | Bianca Traszi de Moraes | F | 28~ | Raw | 57 | 56.2 | 137.5 | 75 | 157.5 | 370 | 87.72
+3 | Ariane Merchiori Pichoz | F | 33~ | Raw | 57 | 56.9 | 132.5 | 70 | 162.5 | 365 | 85.73
+4 | Thays Ferreira da Rocha | F | 28~ | Raw | 57 | 56.3 | 135 | 70 | 150 | 355 | 84.05
+5 | Alessandra Camila Schaefer | F | 26~ | Raw | 57 | 56.6 | 120 | 72.5 | 155 | 347.5 | 81.95
+6 | Luisa Simei Dos Santos | F | 26~ | Raw | 57 | 56.6 | 125 | 75 | 137.5 | 337.5 | 79.59
+7 | Mariana Arduino Rosa | F | 28~ | Raw | 57 | 56.1 | 130 | 60 | 145 | 335 | 79.53
+8 | Larissa Regina Inocêncio Eugênio | F | 31 | Raw | 57 | 56.3 | 115 | 62.5 | 152.5 | 330 | 78.13
+9 | Alice Mourao | F | 27~ | Raw | 57 | 56.2 | 105 | 67.5 | 155 | 327.5 | 77.65
+10 | Daniele Consoni Tonetto | F | 30 | Raw | 57 | 56 | 115 | 60 | 145 | 320 | 76.08
+11 | Paula Borges | F | 39~ | Raw | 57 | 56.6 | 117.5 | 67.5 | 122.5 | 307.5 | 72.51
+G | Maria Antônia de Almeida Braga | F | 23~ | Raw | 57 | 57 | 100 | 60 | 135 | 295 | 69.20
+=== Women Raw 63 Open
+1 | Érica Batista Bueno | F | 44~ | Raw | 63 | 61.4 | 157.5 | 117.5 | 157.5 | 432.5 | 96.24
+2 | Renata Touma | F | 26~ | Raw | 63 | 62.9 | 152.5 | 95 | 170 | 417.5 | 91.44
+3 | Lilian Silva Monteiro | F | 44~ | Raw | 63 | 62.2 | 130 | 87.5 | 170 | 387.5 | 85.49
+4 | Carmillena dos Santos Reis | F | 32~ | Raw | 63 | 62.4 | 135 | 57.5 | 150 | 342.5 | 75.40
+5 | Nicolli Gomes Muller | F | 26~ | Raw | 63 | 63 | 130 | 55 | 140 | 325 | 71.10
+6 | Natalia Salvador Jumonji | F | 28~ | Raw | 63 | 62.5 | 117.5 | 52.5 | 140 | 310 | 68.17
+7 | Eduarda Camile Goncalves | F | 20~ | Raw | 63 | 62.5 | 107.5 | 57.5 | 125 | 290 | 63.78
+DQ | Keity Peixoto | F | 37~ | Raw | 63 | 62.8 | 155 | 70 |  |  | 
+=== Women Raw 69 Open
+1 | Estefany dos Santos Barbosa | F | 25~ | Raw | 69 | 68.6 | 160 | 72.5 | 177.5 | 410 | 85.22
+2 | Hannah Karenina | F | 24~ | Raw | 69 | 68.3 | 130 | 70 | 157.5 | 357.5 | 74.49
+3 | Fernanda de Fraga Inacio | F | 27~ | Raw | 69 | 68.6 | 127.5 | 62.5 | 162.5 | 352.5 | 73.27
+4 | Julia Mariano | F | 37~ | Raw | 69 | 68.5 | 125 | 70 | 155 | 350 | 72.81
+5 | Larissa de Oliveira Rogerio | F | 25~ | Raw | 69 | 68 | 135 | 55 | 152.5 | 342.5 | 71.54
+6 | Fabiana da Silva Mello | F | 37~ | Raw | 69 | 65.1 | 120 | 67.5 | 147.5 | 335 | 71.80
+7 | Hemily Goncalves de Almeida | F | 34~ | Raw | 69 | 67.7 | 122.5 | 60 | 132.5 | 315 | 65.96
+8 | Hevelin Daniela Nones | F | 19~ | Raw | 69 | 68.2 | 120 | 60 | 130 | 310 | 64.65
+DQ | Vanessa Azevedo | F | 39~ | Raw | 69 | 68.1 | 145 | 87.5 |  |  | 
+=== Women Raw 76 Open
+1 | Bruna Bisol | F | 27~ | Raw | 76 | 74.3 | 201 | 112.5 | 227.5 | 541 | 107.83
+2 | Iolanda Costa Zolyone | F | 47~ | Raw | 76 | 75.4 | 180 | 105 | 200 | 485 | 95.98
+3 | Maiara Suellen Cabral da Silva | F | 37~ | Raw | 76 | 75.9 | 192.5 | 80 | 185 | 457.5 | 90.26
+4 | Flavia Basso Domingues | F | 39~ | Raw | 76 | 76 | 132.5 | 85 | 200 | 417.5 | 82.31
+5 | Maria Isabela da Rocha | F | 30~ | Raw | 76 | 73.2 | 137.5 | 70 | 150 | 357.5 | 71.78
+6 | Lidiane Cavalcantti | F | 36~ | Raw | 76 | 72.2 | 127.5 | 65 | 160 | 352.5 | 71.28
+7 | Eliane Pellizzoni Lima | F | 28~ | Raw | 76 | 75.7 | 122.5 | 70 | 160 | 352.5 | 69.63
+8 | Carolina Pereira Batista | F | 34~ | Raw | 76 | 73.1 | 132.5 | 55 | 140 | 327.5 | 65.81
+=== Women Raw 84 Open
+1 | Marina Garcia de Almeida | F | 34~ | Raw | 84 | 83.7 | 192.5 | 115 | 243 | 550.5 | 104.11
+2 | Luana Amaral | F | 30~ | Raw | 84 | 83.6 | 185 | 92.5 | 167.5 | 445 | 84.20
+3 | Larissa Vignati dos Reis | F | 26~ | Raw | 84 | 82.5 | 160 | 60 | 160 | 380 | 72.28
+4 | Shirley Lopes Silva | F | 25~ | Raw | 84 | 79.2 | 132.5 | 70 | 152.5 | 355 | 68.69
+5 | Camila Motta de Alencar | F | 29~ | Raw | 84 | 81.8 | 105 | 50 | 135 | 290 | 55.35
+DQ | Ana Mohr | F | 39~ | Raw | 84 | 83.1 | 170 |  | 190 |  | 
+=== Women Raw 84+ Open
+1 | Bianca Soares dos Santos | F | 42~ | Raw | 84+ | 93.4 | 220 | 107.5 | 242.5 | 570 | 103.70
+2 | Maria Vitória Gauterio Bernadotte | F | 23~ | Raw | 84+ | 99 | 217.5 | 110 | 190 | 517.5 | 92.55
+3 | Paula Gil Andrade E Silva | F | 36~ | Raw | 84+ | 106.8 | 180 | 92.5 | 202.5 | 475 | 83.33
+4 | Simoni Cristina | F |  | Raw | 84+ | 94 | 162.5 | 85 | 182.5 | 430 | 78.07
+5 | Nicole dos Anjos Aragão | F | 35~ | Raw | 84+ | 109.9 | 165 | 87.5 | 170 | 422.5 | 73.65
+6 | Mônica Delciana Cavalcante Miranda | F | 46~ | Raw | 84+ | 93.5 | 120 | 62.5 | 120 | 302.5 | 55.02
+=== Men Raw 66 Masters 1
+1 | Eudson Lima | M | 39~ | Raw | 66 | 65.9 | 212.5 | 132.5 | 247.5 | 592.5 | 92.44
+2 | Anderson de Paula Alcantara | M | 48~ | Raw | 66 | 65.4 | 195 | 112.5 | 260 | 567.5 | 88.89
+3 | Cristiano Kalata Varela | M | 43~ | Raw | 66 | 65.6 | 185 | 110 | 220 | 515 | 80.54
+4 | Thiago Romao Barbieri | M | 41~ | Raw | 66 | 65.6 | 172.5 | 105 | 190 | 467.5 | 73.11
+=== Men Raw 74 Masters 1
+1 | André Garcia #1 | M | 42~ | Raw | 74 | 73.6 | 250 | 167.5 | 252.5 | 670 | 98.64
+2 | Jorge Gutho Pereira de Paula Mendes | M | 42~ | Raw | 74 | 73 | 212.5 | 142.5 | 260 | 615 | 90.93
+=== Men Raw 83 Masters 1
+1 | Eduardo de Assis | M | 44~ | Raw | 83 | 82.2 | 234 | 135 | 265.5 | 634.5 | 88.26
+2 | Robson Andre de Lima Leite | M | 40~ | Raw | 83 | 82.7 | 207.5 | 135 | 265 | 607.5 | 84.25
+=== Men Raw 93 Masters 1
+1 | Rudi Vieira | M | 41~ | Raw | 93 | 92.6 | 245 | 170 | 260 | 675 | 88.49
+2 | Rafael Pastre | M | 40~ | Raw | 93 | 91.5 | 225 | 157.5 | 267.5 | 650 | 85.71
+3 | Diego Altran Gonzales | M | 42~ | Raw | 93 | 87.3 | 172.5 | 107.5 | 200 | 480 | 64.78
+=== Men Raw 105 Masters 1
+1 | Cesar Hideki Kikuti | M | 40~ | Raw | 105 | 104.9 | 285 | 157.5 | 285 | 727.5 | 89.86
+2 | Edson Kamogawa | M | 48~ | Raw | 105 | 93.3 | 207.5 | 147.5 | 200 | 555 | 72.49
+3 | Raphael Duarte | M | 42~ | Raw | 105 | 93.5 | 195 | 117.5 | 237.5 | 550 | 71.76
+=== Men Raw 120 Masters 1
+1 | Osvaldo Machado da Silva Jr | M | 43~ | Raw | 120 | 107 | 235 | 162.5 | 252.5 | 650 | 79.55
+2 | Lucas Blundi | M | 41~ | Raw | 120 | 119 | 225 | 140 | 260 | 625 | 72.92
+3 | Daniel Brick de Araujo | M | 39~ | Raw | 120 | 112.3 | 217.5 | 135 | 217.5 | 570 | 68.24
+4 | Hiro Fernandes Correia Velho | M | 43~ | Raw | 120 | 117 | 150 | 85 | 155 | 390 | 45.84
+=== Men Raw 74 Masters 2
+1 | Marcos Padovani | M | 51~ | Raw | 74 | 73 | 170 | 105 | 190 | 465 | 68.75
+2 | Gilson Clemente da Silva | M | 54~ | Raw | 74 | 73.8 | 160 | 90 | 182.5 | 432.5 | 63.58
+3 | Dirney Souza | M | 55~ | Raw | 74 | 72.6 | 142.5 | 80 | 190 | 412.5 | 61.16
+=== Men Raw 83 Masters 2
+1 | Remi de Carvalho | M | 55~ | Raw | 83 | 82.6 | 205.5 | 132.5 | 244.5 | 582.5 | 80.83
+2 | Cidinei Bogo Chatt | M | 52~ | Raw | 83 | 80.9 | 165 | 120 | 215 | 500 | 70.12
+3 | Jamir Pieczarka | M | 50~ | Raw | 83 | 82 | 125 | 105 | 200 | 430 | 59.89
+=== Men Raw 93 Masters 2
+1 | Turnambey Cláudio Delvos | M | 51~ | Raw | 93 | 92.6 | 212.5 | 115 | 225 | 552.5 | 72.43
+=== Men Raw 120+ Masters 2
+1 | Fabio Mastromauro Oliveira | M | 53~ | Raw | 120+ | 129.8 | 182.5 | 120 | 222.5 | 525 | 59.02
+=== Men Raw 83 Masters 3
+1 | Clodoaldo Botura Junior | M | 62~ | Raw | 83 | 80.6 | 165 | 100 | 190 | 455 | 63.93
+=== Men Raw 93 Masters 3
+1 | Jaime Neto Rosa | M | 62~ | Raw | 93 | 88.5 | 170 | 110 | 170 | 450 | 60.32
+=== Men Raw 83 Masters 4
+1 | Ari Prestes | M | 69~ | Raw | 83 | 78.4 | 80 | 50 | 120 | 250 | 35.63
+=== Men Raw 93 Masters 4
+1 | Aldemar Furtado | M | 75~ | Raw | 93 | 91.7 | 107.5 | 80 | 122.5 | 310 | 40.83
+=== Men Raw 59 Open
+1 | Fabio Martins | M | 24~ | Raw | 59 | 55.3 | 171 | 100 | 200 | 471 | 80.69
+G | Marlan Santos da Silva | M | 32~ | Raw | 59 | 59 | 180 | 102.5 | 207.5 | 490 | 81.08
+=== Men Raw 66 Open
+1 | Eudson Lima | M | 39~ | Raw | 66 | 65.9 | 212.5 | 132.5 | 247.5 | 592.5 | 92.44
+2 | Anderson de Paula Alcantara | M | 48~ | Raw | 66 | 65.4 | 195 | 112.5 | 260 | 567.5 | 88.89
+3 | Gabriel Ghizoni | M | 25~ | Raw | 66 | 65.5 | 187.5 | 125 | 245 | 557.5 | 87.26
+4 | Cristiano Kalata Varela | M | 43~ | Raw | 66 | 65.6 | 185 | 110 | 220 | 515 | 80.54
+5 | Carlos Augusto Rost | M | 23 | Raw | 66 | 61.1 | 182.5 | 102.5 | 202.5 | 487.5 | 79.17
+6 | Thiago Romao Barbieri | M | 41~ | Raw | 66 | 65.6 | 172.5 | 105 | 190 | 467.5 | 73.11
+=== Men Raw 74 Open
+1 | André Garcia #1 | M | 42~ | Raw | 74 | 73.6 | 250 | 167.5 | 252.5 | 670 | 98.64
+2 | Jorge Gutho Pereira de Paula Mendes | M | 42~ | Raw | 74 | 73 | 212.5 | 142.5 | 260 | 615 | 90.93
+3 | Gustavo Firmino | M | 26~ | Raw | 74 | 73.6 | 225 | 132.5 | 250 | 607.5 | 89.44
+4 | Alexandre Meyer | M | 37~ | Raw | 74 | 73.2 | 202.5 | 112.5 | 250 | 565 | 83.42
+5 | Leonardo da Silva Veloso | M | 26~ | Raw | 74 | 73.8 | 195 | 107.5 | 255 | 557.5 | 81.96
+6 | Vitor Moura | M | 30~ | Raw | 74 | 73.8 | 210 | 125 | 215 | 550 | 80.86
+7 | Jorge Karam | M | 23~ | Raw | 74 | 72 | 155 | 120 | 230 | 505 | 75.20
+8 | João Victor Rigo Bento da Silva | M | 26~ | Raw | 74 | 72.8 | 170 | 100 | 202.5 | 472.5 | 69.96
+9 | Douglas Reis | M | 34~ | Raw | 74 | 73.4 | 157.5 | 102.5 | 205 | 465 | 68.56
+10 | Murilo Henrique Borge de Oliveira | M | 29~ | Raw | 74 | 70.8 | 160 | 105 | 190 | 455 | 68.36
+11 | Gabriel Robson Abreu Guilherme | M | 25~ | Raw | 74 | 72.4 | 150 | 105 | 200 | 455 | 67.56
+=== Men Raw 83 Open
+1 | Guilherme Menezes | M | 29~ | Raw | 83 | 82.8 | 262.5 | 167.5 | 280 | 710 | 98.40
+2 | Matheus dos Santos | M | 23~ | Raw | 83 | 82.3 | 275 | 140 | 292.5 | 707.5 | 98.36
+3 | Eduardo Saramago | M | 32~ | Raw | 83 | 82.5 | 247.5 | 150 | 295 | 692.5 | 96.15
+4 | Johnny Bittencourt | M | 28~ | Raw | 83 | 80.6 | 257.5 | 142.5 | 280 | 680 | 95.54
+5 | Denis Luan da Silva Gibson | M | 33~ | Raw | 83 | 82.6 | 250 | 155 | 275 | 680 | 94.36
+6 | Felipe Spinelli de Matos | M | 25~ | Raw | 83 | 82.9 | 237.5 | 150 | 272.5 | 660 | 91.42
+7 | Danillo Laviolla Pedrosa | M | 31~ | Raw | 83 | 82.7 | 245 | 122.5 | 290 | 657.5 | 91.18
+8 | Leonardo Muller de Carvalho | M | 29~ | Raw | 83 | 82.4 | 245 | 137.5 | 270 | 652.5 | 90.66
+9 | Jonas Schaefer Júnior | M | 29~ | Raw | 83 | 82.3 | 230 | 145 | 270 | 645 | 89.67
+10 | Lucas Simões Bagli | M | 24~ | Raw | 83 | 81.9 | 235 | 132.5 | 265 | 632.5 | 88.15
+11 | Luan Pereira Freitas | M | 30~ | Raw | 83 | 82.2 | 240 | 135 | 255 | 630 | 87.64
+12 | Maurício de Abreu Silva | M | 25~ | Raw | 83 | 82.9 | 225 | 155 | 240 | 620 | 85.88
+13 | Vitor Lorenzato Ferreira | M | 27~ | Raw | 83 | 82.9 | 230 | 120 | 260 | 610 | 84.49
+14 | Rodrigo Santos de Oliveira | M | 30~ | Raw | 83 | 82.3 | 212.5 | 150 | 245 | 607.5 | 84.46
+15 | Rawllins Gonzalez | M | 35~ | Raw | 83 | 83 | 217.5 | 142.5 | 242.5 | 602.5 | 83.40
+16 | Lucas Watts | M | 28~ | Raw | 83 | 82.1 | 220 | 155 | 215 | 590 | 82.12
+17 | José Yuri | M | 31~ | Raw | 83 | 82.4 | 210 | 135 | 242.5 | 587.5 | 81.62
+18 | Wesley Lacerda Pinos | M | 28~ | Raw | 83 | 82.5 | 212.5 | 125 | 245 | 582.5 | 80.88
+19 | Renato Infantozzi Olivares | M | 28~ | Raw | 83 | 79.9 | 217.5 | 132.5 | 220 | 570 | 80.44
+20 | Adrian dos Santos | M | 32~ | Raw | 83 | 82.9 | 230 | 100 | 227.5 | 557.5 | 77.22
+21 | Vinicius Andrietta Chagas | M | 23~ | Raw | 83 | 81.4 | 210 | 125 | 205 | 540 | 75.49
+22 | Gustavo Avelar Falcone | M | 25~ | Raw | 83 | 82.7 | 200 | 125 | 212.5 | 537.5 | 74.52
+23 | Vinicius Beldi | M | 36~ | Raw | 83 | 82.6 | 150 | 105 | 217.5 | 472.5 | 65.57
+24 | Henrique Alberto Rusa | M | 32~ | Raw | 83 | 80 | 160 | 110 | 180 | 450 | 63.47
+=== Men Raw 93 Open
+1 | Leonardo Mendite Alves | M | 22 | Raw | 93 | 89.4 | 295 | 180 | 300 | 775 | 103.37
+2 | Leonardo Hermisdorf Ferreira | M | 27~ | Raw | 93 | 91.7 | 262.5 | 185 | 310 | 757.5 | 99.78
+3 | Guilherme Gortz | M | 34 | Raw | 93 | 92.3 | 285 | 165 | 295 | 745 | 97.82
+4 | João Victor Madeira da Costa | M | 25~ | Raw | 93 | 91.5 | 265 | 160 | 285 | 710 | 93.62
+5 | Rudi Vieira | M | 41~ | Raw | 93 | 92.6 | 245 | 170 | 260 | 675 | 88.49
+6 | Alessandro Ribeiro | M | 31~ | Raw | 93 | 92.9 | 250 | 160 | 255 | 665 | 87.04
+7 | Jefferson Januário Lima | M | 29~ | Raw | 93 | 91.2 | 207.5 | 142.5 | 255 | 605 | 79.91
+8 | Jeferson Oliveira Gomes | M | 30~ | Raw | 93 | 91.9 | 230 | 125 | 250 | 605 | 79.61
+9 | Matheus Tome Corradi | M | 23~ | Raw | 93 | 90.8 | 220 | 145 | 235 | 600 | 79.42
+10 | Gabriel Bruske | M | 23~ | Raw | 93 | 91.9 | 210 | 140 | 237.5 | 587.5 | 77.31
+11 | Victor Ferreira Alonso | M | 32~ | Raw | 93 | 93 | 215 | 125 | 245 | 585 | 76.53
+12 | Vitor Malgarise Junior | M | 31~ | Raw | 93 | 92.5 | 200 | 120 | 225 | 545 | 71.49
+13 | Jonathan Sadrack Amancio da Silva | M | 31~ | Raw | 93 | 91.2 | 202.5 | 102.5 | 230 | 535 | 70.66
+14 | Christian Tadeu Mendes de Oliveira | M | 32~ | Raw | 93 | 92.4 | 160 | 122.5 | 190 | 472.5 | 62.01
+=== Men Raw 105 Open
+1 | Rodrigo Jamar Santanna | M | 30 | Raw | 105 | 104.1 | 303 | 190 | 292.5 | 785.5 | 97.37
+2 | Matheus Wallace de Oliveira | M | 29~ | Raw | 105 | 102.3 | 298 | 177.5 | 290 | 765.5 | 95.67
+3 | Artur Vemado | M | 29~ | Raw | 105 | 102.1 | 270 | 175 | 315 | 760 | 95.07
+4 | João Pedro de Saldanha Gomes | M | 26~ | Raw | 105 | 104.4 | 285 | 185 | 265 | 735 | 90.99
+5 | Cesar Hideki Kikuti | M | 40~ | Raw | 105 | 104.9 | 285 | 157.5 | 285 | 727.5 | 89.86
+6 | Renan Ferreira Gomes | M | 25~ | Raw | 105 | 103.3 | 265 | 162.5 | 297.5 | 725 | 90.20
+7 | Delmas Ferreira Junior | M | 27~ | Raw | 105 | 101.6 | 252.5 | 160 | 310 | 722.5 | 90.59
+8 | Leonam Augusto Alduino Egas | M | 24~ | Raw | 105 | 104.4 | 250 | 160 | 285 | 695 | 86.04
+9 | Ailson Ribeiro Soares | M | 35~ | Raw | 105 | 103.1 | 257.5 | 140 | 270 | 667.5 | 83.12
+10 | Vitor Flaumenhaft | M | 31 | Raw | 105 | 94 | 235 | 155 | 262.5 | 652.5 | 84.92
+11 | Eric Rangel Martins | M | 25~ | Raw | 105 | 101.2 | 220 | 142.5 | 257.5 | 620 | 77.88
+12 | Enrico Magalhães Costa Santana | M | 25~ | Raw | 105 | 101.7 | 177.5 | 132.5 | 240 | 550 | 68.93
+13 | Thomas Gazaniga | M | 34~ | Raw | 105 | 98.5 | 195 | 112.5 | 220 | 527.5 | 67.12
+=== Men Raw 120 Open
+1 | Matheus Garcia Costa | M | 33~ | Raw | 120 | 119.3 | 320 | 195 | 372.5 | 887.5 | 103.43
+2 | Rogerio Almeida de Sousa | M | 29~ | Raw | 120 | 118.7 | 341.5 | 225 | 320 | 886.5 | 103.54
+3 | David Cardoso | M | 22~ | Raw | 120 | 118.9 | 341 | 187.5 | 315 | 843.5 | 98.45
+4 | Gabriel Jesus da Silva | M | 27~ | Raw | 120 | 113.1 | 315 | 180 | 250 | 745 | 88.91
+5 | Lucas Gioppo | M | 25~ | Raw | 120 | 115.4 | 242.5 | 182.5 | 260 | 685 | 81.01
+6 | Guilherme Muniz da Costa Massafra | M | 32~ | Raw | 120 | 114.3 | 240 | 150 | 250 | 640 | 76.01
+7 | Lucas Blundi | M | 41~ | Raw | 120 | 119 | 225 | 140 | 260 | 625 | 72.92
+8 | Rodrigo Veigas Lima | M | 26~ | Raw | 120 | 105.6 | 210 | 155 | 230 | 595 | 73.27
+=== Men Raw 120+ Open
+1 | Jonathan H R Coelho Alves | M | 31~ | Raw | 120+ | 120.2 | 305 | 190 | 270 | 765 | 88.86
+2 | Flávio Araújo | M | 25~ | Raw | 120+ | 124.5 | 280 | 175 | 280 | 735 | 84.09
+3 | André Vitor de Almeida | M | 31~ | Raw | 120+ | 132.3 | 260 | 150 | 297.5 | 707.5 | 78.91
+4 | Guilherme Pimentel da Silva | M | 27 | Raw | 120+ | 173.5 | 252.5 | 170 | 285 | 707.5 | 71.30
+5 | Renato Antonio Oliveira Cruz | M | 28~ | Raw | 120+ | 123.2 | 255 | 160 | 270 | 685 | 78.73
+6 | João Pedro Cordeiro Tomkelski | M | 25~ | Raw | 120+ | 162.7 | 242.5 | 135 | 250 | 627.5 | 64.65
+7 | Carlos Eduardo | M | 23~ | Raw | 120+ | 163.8 | 210 | 152.5 | 245 | 607.5 | 62.44
+8 | Gustavo Aguirre | M | 23~ | Raw | 120+ | 178 | 217.5 | 155 | 200 | 572.5 | 57.21
+DQ | Jonathan Serra Correa | M | 28~ | Raw | 120+ | 132.1 | 270 | 152.5 |  |  | 
+=== Women Raw 69 Juniors Bench Only
+1 | Polyana Cardoso Oliveira | F | 18~ | Raw | 69 | 66.9 |  | 67.5 |  | 67.5 | 54.60
+=== Women Raw 57 Masters 1 Bench Only
+1 | Kelly Hissae Moreira | F | 43~ | Raw | 57 | 55.9 |  | 55 |  | 55 | 49.62
+=== Women Raw 76 Masters 1 Bench Only
+1 | Iolanda Costa Zolyone | F | 47~ | Raw | 76 | 74.1 |  | 105 |  | 105 | 81.37
+=== Women Raw 47 Open Bench Only
+1 | Bruna Vanzela | F | 35~ | Raw | 47 | 46.4 |  | 50 |  | 50 | 53.78
+2 | Larissa Barros Pinto Franco | F | 35~ | Raw | 47 | 46.7 |  | 42.5 |  | 42.5 | 45.37
+=== Women Raw 52 Open Bench Only
+1 | Lyenara Camargo Leal Winckler | F | 37~ | Raw | 52 | 51.1 |  | 35 |  | 35 | 34.04
+=== Women Raw 57 Open Bench Only
+1 | Alice Mourão Viana | F | 27~ | Raw | 57 | 56.6 |  | 67.5 |  | 67.5 | 60.34
+2 | Kelly Hissae Moreira | F | 43~ | Raw | 57 | 55.9 |  | 55 |  | 55 | 49.62
+=== Women Raw 69 Open Bench Only
+1 | Hannah Karenina | F | 24~ | Raw | 69 | 68.6 |  | 70 |  | 70 | 55.96
+2 | Hemily Goncalves de Almeida | F | 34~ | Raw | 69 | 68 |  | 65 |  | 65 | 52.17
+3 | Anaís Sawczuk Garcias da Luz | F | 31~ | Raw | 69 | 67.2 |  | 57.5 |  | 57.5 | 46.41
+=== Women Raw 76 Open Bench Only
+1 | Iolanda Costa Zolyone | F | 47~ | Raw | 76 | 74.1 |  | 105 |  | 105 | 81.37
+2 | Eliane Pellizzoni Lima | F | 28~ | Raw | 76 | 75.8 |  | 65 |  | 65 | 49.97
+=== Women Raw 84 Open Bench Only
+1 | Isabelle Guimarães Barros | F | 35~ | Raw | 84 | 81.9 |  | 100 |  | 100 | 75.10
+=== Women Raw 84+ Open Bench Only
+1 | Naara Sergina da Silva Paula | F | 36~ | Raw | 84+ | 112.8 |  | 95 |  | 95 | 67.73
+=== Women Raw 69 Sub-Juniors Bench Only
+1 | Lidia Aires de Souza | F | 17~ | Raw | 69 | 65.7 |  | 60 |  | 60 | 48.96
+=== Women Raw 84 Sub-Juniors Bench Only
+1 | Marianna Fonseca | F | 14 | Raw | 84 | 79 |  | 50 |  | 50 | 37.93
+=== Men Raw 93 Especial Bench Only
+1 | Frank Witt | M | 46 | Raw | 93 | 92.9 |  | 75 |  | 75 | 35.60
+=== Men Raw 66 Juniors Bench Only
+1 | Gabriel Skruzdeliauskas | M | 20~ | Raw | 66 | 65.3 |  | 117.5 |  | 117.5 | 67.04
+DQ | Thiago Ramos de Paiva | M | 20~ | Raw | 66 | 64.9 |  |  |  |  | 
+=== Men Raw 74 Juniors Bench Only
+1 | Gabriel Monteiro Esteves | M | 21~ | Raw | 74 | 72.9 |  | 130 |  | 130 | 69.88
+2 | Pedro Henrique Cardoso Gonçalves | M | 20~ | Raw | 74 | 73.1 |  | 117.5 |  | 117.5 | 63.07
+3 | Rafael Jouki Oshima Faria | M | 20~ | Raw | 74 | 72 |  | 105 |  | 105 | 56.82
+DQ | João Pedro de Campos | M | 18~ | Raw | 74 | 73.1 |  |  |  |  | 
+=== Men Raw 83 Juniors Bench Only
+1 | Miguel Pita | M | 21~ | Raw | 83 | 81.4 |  | 137.5 |  | 137.5 | 69.76
+2 | Rafael Bareiro | M | 18~ | Raw | 83 | 81.5 |  | 130 |  | 130 | 65.91
+3 | Julio Sérgio Lima | M | 21~ | Raw | 83 | 82.2 |  | 125 |  | 125 | 63.10
+=== Men Raw 93 Juniors Bench Only
+1 | Mateus Fischer | M | 18~ | Raw | 93 | 85.9 |  | 167.5 |  | 167.5 | 82.68
+2 | Rafael Vieira Faiani | M | 22~ | Raw | 93 | 92.6 |  | 152.5 |  | 152.5 | 72.51
+=== Men Raw 105 Juniors Bench Only
+1 | Italo dos Anjos | M | 20~ | Raw | 105 | 104.6 |  | 145 |  | 145 | 65.04
+2 | Miguel Lopes Alves Andrini | M | 20~ | Raw | 105 | 96.1 |  | 135 |  | 135 | 63.04
+=== Men Raw 120 Juniors Bench Only
+1 | Gustavo Zolyone | M | 20~ | Raw | 120 | 113.8 |  | 160 |  | 160 | 69.08
+2 | Anthony Limberger | M | 18~ | Raw | 120 | 118.9 |  | 135 |  | 135 | 57.18
+=== Men Raw 120+ Juniors Bench Only
+1 | Stvan Oliveira | M | 20~ | Raw | 120+ | 120.1 |  | 202.5 |  | 202.5 | 85.40
+=== Men Raw 83 Masters 1 Bench Only
+1 | Wellington Vieira Masuko | M | 47~ | Raw | 83 | 82.2 |  | 112.5 |  | 112.5 | 56.79
+=== Men Raw 93 Masters 1 Bench Only
+1 | Leonardo Stelet Fernandes | M | 42~ | Raw | 93 | 86.5 |  | 185 |  | 185 | 90.99
+2 | Rafael Pastre | M | 40~ | Raw | 93 | 92.7 |  | 162.5 |  | 162.5 | 77.22
+=== Men Raw 105 Masters 1 Bench Only
+1 | Marco Antonio Correia Junior | M | 43~ | Raw | 105 | 102.2 |  | 187.5 |  | 187.5 | 85.02
+2 | Eder Junior | M | 42~ | Raw | 105 | 100.6 |  | 180 |  | 180 | 82.23
+3 | Edson Kamogawa | M | 48~ | Raw | 105 | 94.7 |  | 150 |  | 150 | 70.54
+4 | André Franca | M | 47~ | Raw | 105 | 98.9 |  | 125 |  | 125 | 57.57
+DQ | André Franca | M | 47~ | Raw | 105 | 98.9 |  |  |  |  | 
+=== Men Raw 120 Masters 1 Bench Only
+1 | Carlos Eduardo Miquelissa | M | 43~ | Raw | 120 | 116.4 |  | 155 |  | 155 | 66.26
+2 | Fabio Nascimento dos Santos | M | 45~ | Raw | 120 | 115.5 |  | 97.5 |  | 97.5 | 41.82
+=== Men Raw 120+ Masters 1 Bench Only
+1 | Alexandre Emidio | M | 41~ | Raw | 120+ | 159.7 |  | 225 |  | 225 | 85.00
+=== Men Raw 74 Masters 2 Bench Only
+1 | Dirney Souza | M | 55~ | Raw | 74 | 73.4 |  | 85 |  | 85 | 45.53
+=== Men Raw 83 Masters 2 Bench Only
+1 | Cidinei Bogo Chatt | M | 52~ | Raw | 83 | 80.6 |  | 115 |  | 115 | 58.64
+=== Men Raw 105 Masters 2 Bench Only
+1 | Valdecir Lopes da Silva | M | 52~ | Raw | 105 | 96.6 |  | 140 |  | 140 | 65.21
+=== Men Raw 120 Masters 2 Bench Only
+1 | Marcelo Moreira | M | 52~ | Raw | 120 | 112.6 |  | 120 |  | 120 | 52.05
+=== Men Raw 120+ Masters 2 Bench Only
+1 | Fabio Mastromauro Oliveira | M | 53~ | Raw | 120+ | 129.4 |  | 115 |  | 115 | 47.01
+=== Men Raw 93 Masters 3 Bench Only
+1 | Flavio Borges Fortes | M | 65~ | Raw | 93 | 87.1 |  | 130 |  | 130 | 63.72
+=== Men Raw 83 Masters 4 Bench Only
+1 | Pedro Nelson Belmiro | M | 73~ | Raw | 83 | 82.6 |  | 92.5 |  | 92.5 | 46.58
+=== Men Raw 66 Open Bench Only
+1 | Marcel Sauma | M | 31~ | Raw | 66 | 65.4 |  | 145 |  | 145 | 82.66
+=== Men Raw 74 Open Bench Only
+1 | Gabriel Henrique Santos de Oliveira | M | 26~ | Raw | 74 | 73.2 |  | 132.5 |  | 132.5 | 71.07
+2 | Gabriel Monteiro Esteves | M | 21~ | Raw | 74 | 72.9 |  | 130 |  | 130 | 69.88
+=== Men Raw 83 Open Bench Only
+1 | Lucas Watts | M | 28~ | Raw | 83 | 81.7 |  | 155 |  | 155 | 78.49
+2 | Elierkson Cesar Alves de Souza | M | 34~ | Raw | 83 | 80 |  | 145 |  | 145 | 74.23
+3 | David Menezes Mariano | M | 24~ | Raw | 83 | 81.7 |  | 135 |  | 135 | 68.36
+4 | Victor Begha | M | 26~ | Raw | 83 | 77 |  | 105 |  | 105 | 54.83
+5 | Vinicius Beldi | M | 36~ | Raw | 83 | 82.6 |  | 105 |  | 105 | 52.87
+DQ | Marcelo del Lama Silva | M | 40~ | Raw | 83 | 82.4 |  |  |  |  | 
+=== Men Raw 93 Open Bench Only
+1 | Jackson Fernando dos Santos | M | 33~ | Raw | 93 | 91.8 |  | 187.5 |  | 187.5 | 89.53
+2 | Leonardo Stelet Fernandes | M | 42~ | Raw | 93 | 86.5 |  | 185 |  | 185 | 90.99
+3 | Mateus Fischer | M | 18~ | Raw | 93 | 85.9 |  | 167.5 |  | 167.5 | 82.68
+4 | Claudio Roberto Alves | M | 38~ | Raw | 93 | 87.8 |  | 150 |  | 150 | 73.23
+DQ | Gabriel Schmidt | M | 27~ | Raw | 93 | 93 |  |  |  |  | 
+=== Men Raw 105 Open Bench Only
+1 | Guilherme dos Santos | M | 38~ | Raw | 105 | 102.8 |  | 202.5 |  | 202.5 | 91.57
+2 | Marco Antonio Correia Junior | M | 43~ | Raw | 105 | 102.2 |  | 187.5 |  | 187.5 | 85.02
+3 | Leonardo Hermisdorf Ferreira | M | 27~ | Raw | 105 | 94.3 |  | 180 |  | 180 | 84.82
+4 | Eder Junior | M | 42~ | Raw | 105 | 100.6 |  | 180 |  | 180 | 82.23
+5 | Vitor Flaumenhaft | M | 31 | Raw | 105 | 95.4 |  | 155 |  | 155 | 72.63
+6 | Marcos Vinicius Gandra de Souza | M | 27 | Raw | 105 | 103.6 |  | 140 |  | 140 | 63.08
+=== Men Raw 120 Open Bench Only
+1 | Claudio Pires de Campos Junior | M | 31~ | Raw | 120 | 112.6 |  | 197.5 |  | 197.5 | 85.67
+2 | João Pedro de Saldanha Gomes | M | 26~ | Raw | 120 | 109.2 |  | 182.5 |  | 182.5 | 80.26
+3 | Cléverson Luís da Silva | M | 27~ | Raw | 120 | 115.6 |  | 180 |  | 180 | 77.18
+4 | Carlos Eduardo Miquelissa | M | 43~ | Raw | 120 | 116.4 |  | 155 |  | 155 | 66.26
+5 | Rogerio Vaquer Moreira | M | 24~ | Raw | 120 | 107.8 |  | 145 |  | 145 | 64.15
+=== Men Raw 120+ Open Bench Only
+1 | Alexandre Emidio | M | 41~ | Raw | 120+ | 159.7 |  | 225 |  | 225 | 85.00
+2 | Stvan Oliveira | M | 20~ | Raw | 120+ | 120.1 |  | 202.5 |  | 202.5 | 85.40
+3 | Augusto Hostin Pezzini | M | 37~ | Raw | 120+ | 123.5 |  | 142.5 |  | 142.5 | 59.39
+=== Men Raw 66 Sub-Juniors Bench Only
+1 | Matheus Eduardo Gomes da Silva | M | 16~ | Raw | 66 | 64.7 |  | 100 |  | 100 | 57.34
+=== Men Raw 74 Sub-Juniors Bench Only
+1 | Thomaz Manduca Migliorini | M | 16~ | Raw | 74 | 66.5 |  | 85 |  | 85 | 48.01
+=== Men Raw 83 Sub-Juniors Bench Only
+1 | Rafael Schmitt Sallum Feres | M | 17~ | Raw | 83 | 81 |  | 115 |  | 115 | 58.49
+2 | Thiago Chiarelli | M | 16~ | Raw | 83 | 80.6 |  | 85 |  | 85 | 43.34
+=== Men Raw 93 Sub-Juniors Bench Only
+1 | André Luiz de Carvalho Cordeiro | M | 16~ | Raw | 93 | 91 |  | 125 |  | 125 | 59.94
+=== Men Raw 105 Sub-Juniors Bench Only
+1 | Ruan Cesar Costa Simões | M | 15~ | Raw | 105 | 93.1 |  | 127.5 |  | 127.5 | 60.46
+=== Women Single 76 Masters 1 Bench Only
+1 | Iolanda Costa Zolyone | F | 47~ | Single | 76 | 76 |  | 130 |  | 130 | 70.84
+=== Women Single 63 Open Bench Only
+1 | Sayuri Fukugawa | F | 38~ | Single | 63 | 58.9 |  | 97.5 |  | 97.5 | 61.50
+=== Women Single 76 Open Bench Only
+1 | Iolanda Costa Zolyone | F | 47~ | Single | 76 | 76 |  | 130 |  | 130 | 70.84
+2 | Luciana Chiocchetti Guarita | F | 38~ | Single | 76 | 73.4 |  | 100 |  | 100 | 55.41
+=== Women Single 84+ Open Bench Only
+1 | Rafaga Barbosa de Mello | F | 38~ | Single | 84+ | 105.6 |  | 105 |  | 105 | 51.03
+=== Men Single 74 Juniors Bench Only
+1 | Pedro Henrique Cardoso Gonçalves | M | 20~ | Single | 74 | 73.4 |  | 115 |  | 115 | 45.10
+=== Men Single 74 Masters 1 Bench Only
+1 | Eric Oishi | M | 45~ | Single | 74 | 69.7 |  | 175 |  | 175 | 71.93
+=== Men Single 93 Masters 1 Bench Only
+1 | Tiago Baltar de Castro | M | 42~ | Single | 93 | 88.8 |  | 165 |  | 165 | 56.13
+=== Men Single 120+ Masters 1 Bench Only
+1 | Jean Ribas | M | 39~ | Single | 120+ | 123.9 |  | 182.5 |  | 182.5 | 53.11
+=== Men Single 74 Masters 2 Bench Only
+1 | José Adenilton Segundo Fonseca | M | 53~ | Single | 74 | 71.5 |  | 130 |  | 130 | 52.19
+=== Men Single 83 Masters 2 Bench Only
+1 | Luiz Carlos Hallier | M | 56~ | Single | 83 | 82 |  | 140 |  | 140 | 50.27
+=== Men Single 105 Masters 2 Bench Only
+1 | Edmur Pessoa | M | 57~ | Single | 105 | 104 |  | 200 |  | 200 | 62.38
+=== Men Single 120 Masters 2 Bench Only
+1 | Guilherme Neto | M | 51~ | Single | 120 | 115.2 |  | 160 |  | 160 | 47.78
+=== Men Single 120+ Masters 2 Bench Only
+1 | Fabricio Mariano | M | 49~ | Single | 120+ | 135.9 |  | 160 |  | 160 | 45.32
+=== Men Single 74 Open Bench Only
+1 | Eric Oishi | M | 45~ | Single | 74 | 69.7 |  | 175 |  | 175 | 71.93
+=== Men Single 93 Open Bench Only
+1 | Gabriel Schmidt | M | 27~ | Single | 93 | 93 |  | 190 |  | 190 | 62.85
+2 | Tiago Baltar de Castro | M | 42~ | Single | 93 | 88.8 |  | 165 |  | 165 | 56.13
+=== Men Single 105 Open Bench Only
+1 | Vanderlei Barbosa | M | 37~ | Single | 105 | 104.8 |  | 275 |  | 275 | 85.46
+=== Men Single 120 Open Bench Only
+1 | Cléverson Luís da Silva | M | 27~ | Single | 120 | 115.6 |  | 200 |  | 200 | 59.64
+2 | Guilherme Neto | M | 51~ | Single | 120 | 115.2 |  | 160 |  | 160 | 47.78
+=== Men Single 120+ Open Bench Only
+1 | Fabricio Mariano | M | 49~ | Single | 120+ | 135.9 |  | 160 |  | 160 | 45.32

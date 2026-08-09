@@ -1,0 +1,165 @@
+                                                                                                              IPF Sanction Registry
+                                                                                                                   v20260717
+Nation Athlete                             Test Type     Anti-Doping Rule                    Classification                           Substance                                            Consequences      Start         End
+                                                                                             S1. Anabolic Androgenic Steroids         19-norandrosterone, Metandienone, Stanozolol
+ IND   Bansal, Sandeep Kumar               In-Comp       2.1 Presence                        S1.2 Other Anabolic Agents               SARMS LGD-4033 (ligandrol)                              5 Years     04-Jun-2026   04-Jun-2031
+                                                                                             S6. Mephentermine                        Mephentermine
+ IND   Somasekharan Pilla, Rohith          Out-of-Comp   2.1 Presence                        S4. Hormone and Metabolic Modulators     Tamoxifen                                               2 Years     25-Apr-2026   24-Apr-2028
+ MGL Dorjjugder, Ganbat                    In-Comp       2.1 Presence                        S1. Anabolic Androgenic Steroids         Boldenone                                               3 Years     09-Mar-2026   09-Mar-2029
+ GBR   Awala Shaw, Joey                    -             2.4 Whereabouts Violaton            -                                        -                                                      *2 Years     19-Feb-2026   20-Apr-2028
+
+ IND   Umbalkar, Vishal                    In-Comp       2.1 Presence                        S1. Anabolic Androgenic Steroids         Metandienone, Trenbolone, Stanozolol, Testosterone      6 Years     12-Feb-2026   12-Feb-2032
+
+ BRA   Da Silva Ribeiro, Alessandro        In-Comp       2.1 Presence                        S1. Anabolic Androgenic Steroids         19-Norandrosterone                                      3 Years     12-Feb-2026   12-Feb-2029
+ TUN   Messelmani Rakia, Saidani Ep        In-Comp       2.1 Presence                        S1. Anabolic Androgenic Steroids         Clostebol, Methyltestosterone, Stanozolol               6 Years     12-Feb-2026   12-Feb-2032
+ MGL Yagaanbandi, Batjargal                In-Comp       2.1 Presence                        S1. Anabolic Androgenic Steroids         Oxandrolone                                             3 Years     12-Feb-2026   12-Feb-2029
+ RUS   Polianskaia, Kesniia                In-Comp       2.1 Presence                        S1. Anabolic Androgenic Steroids         Drostanolone                                            3 Years     12-Feb-2026   12-Feb-2029
+ TUR   Deniz, Mehmet                       In-Comp       2.1 Presence                        S1. Anabolic Androgenic Steroids         DHCMT, Stanozolol, Trenbolone, Metandienone             5 Years     10-Feb-2026   10-Feb-2031
+                                                         10.14.3 Violation of the
+ MGL Sainkhuu, Minjbaatar                  -             Prohibition of Participation        -                                        -                                                       3 Years     31-Jan-2026   31-Jan-2029
+                                                         During Ineligibility
+ GBR   Chinye, Nonso                       -             2.4 Whereabouts Violaton            -                                        -                                                     18 months     09-Jan-2026   09-Jul-2027
+                                                         2.3 Evading, Refusing or Failing to
+ LBA   Bin-Sultan, Ali                     In-Comp       Submit to Sample Collection by      -                                        -                                                       4 Years     04-Dec-2025   04-Dec-2029
+                                                         an Athlete
+                                                         2.3 Evading, Refusing or Failing to
+ LBA   Daebis, Nouralddeen                 In-Comp       Submit to Sample Collection by      -                                        -                                                       4 Years     04-Dec-2025   04-Dec-2029
+                                                         an Athlete
+ IND   Puthiyiandi, Suresh                 -             2.4 Whereabouts Violaton            -                                        -                                                     18 months     27-Oct-2025   27-Apr-2027
+ AUT   Jandorek, Andreas                   In-Comp       2.1 Presence                        S5. Diuretics and Masking Agents         Hydrochlorothiazide, Chlorothiazide                     2 Years     04-Jun-2025   04-Jun-2027
+ ITA   Mattucci, Valentina                 In-Comp       2.1 Presence                        S1.2 Other Anabolic Agents               SARMS LGD-4033 (Ligandrol)                              3 Years     01-May-2025 01-May-2028
+                                                         10.14.3 Violation of the
+ ECU   Godoy Leon, Ivan Josue              -             Prohibition of Participation        -                                        -                                                       3 Years     01-May-2025 01-May-2028
+                                                         During Ineligibility
+ MGL Khuder, Enkhbold                      Out-of-Comp   2.1 Presence                        S1. Anabolic Agents                      Metandienone                                            7 Years     21-Feb-2025   21-Feb-2032
+ MEX Garcia, Gabriel                       -             2.9 Complicity                      -                                        -                                                       3 Years     09-Oct-2024   09-Oct-2027
+ POL   Bilicka, Julie                      In-Comp       2.1 Presence                        S1.2 Other Anabolic Agents               SARMS enobosarm (Ostarine)                              3 Years     21-Sep-2024   21-Sep-2027
+       Jimenez Quintereo, Santos Gabriel   In-Comp       2.1 Presence                        S4. Hormone and Metabolic Modulators     Tamoxifen                                               3 Years     01-Sep-2024   01-Sep-2027
+                                                                                             S1. Anabolic Agents                      Trenbolone, Metenolone
+ LBA   Abdulla Mohamed, Mohamed            In-Comp       2.1 Presence                                                                                                                         9 Years     02-Aug-2024   02-Aug-2033
+                                                                                             S4. Hormone and Metabolic Modulators     Anastrozole
+                                                                                             S1. Analbolic Agents                     Metandienone
+ KAZ   Suyunshaliyev, Arslan               In-Comp       2.1 Presence                        S1.2 Other Anabolic Agents               SARMS LGD-4033 (Ligandrol)                              5 Years     02-Aug-2024   02-Aug-2029
+                                                                                             S4. Hormone and Metabolic Modulators     Clomifene
+                                                                                             S1 Anabolic Androgenic Steroids          Mesterolone, Metandienone, Trenbolone
+ IRQ   Al-Fatlawi, Abdullah Imad Hameed    In-Comp       2.1 Presence                                                                                                                         5 years     04-Jun-2024   04-Jun-2029
+                                                                                             S4. Hormone and Metabolic Modulators     Clomifene, Anastrozole
+ IND   Prathiksha (Shetty), Prathiksha     In-Comp       2.1 Presence                        S1 Anabolic Androgenic Steroids          Stanozolol                                              4 Years     29-May-2024 29-May-2028
+                                                                                             S1. Analbolic Agents                     Oxandrolone
+ UKR   Malynovska, Yuliia                  In-Comp       2.1 Presence                        S1.2 Other Anabolic Agents               SARMS enobosarm (Ostarine)                              6 Years     27-May-2024 27-May-2030
+                                                                                             S4. Hormone and Metabolic Modulators     Meldonium
+ PHI   Caharop, Matthew                    In-Comp       2.1 Presence                        S6. Stimulants (speficied)               Sibutramine                                             2 Years     13-Mar-2024   13-Mar-2026
+ IRI   Tahmasebi, Mehdi                    In-Comp       2.1 Presence                        S1.2 Other Anabolic Agents               SARMS RAD140                                            3 years     21-Feb-2024   21-Feb-2027
+ IND   Vipulbhai Korat, Hency              In-Comp       2.1 Presence                        S1. Anabolic Agents                      Oxandrolone                                             3 years     05-Feb-2024   05-Feb-2027
+ MGL Munkhbat, Solongo                     In-Comp       2.1 Presence                        S1. Anabolic Agents                      Drostanolone                                            3 years     12-Dec-2023   12-Dec-2026
+
+
+
+
+                                                                                                                   Page 1 of 3
+                                                                                                                             Nandrolone, Clostebol, Metanienone, Testosterone,
+MEX Cedillo, Alejandro               In-Comp       2.1 Presence                 S1. Anabolic Agents                                                                              6 Years    07-Dec-2023   07-Dec-2029
+                                                                                                                             Boldenone
+IRI   Mafi gholami, Mehdi            In-Comp       2.1 Presence                 S1. Anabolic Agents                          Testosterone                                        3 Years    06-Dec-2023   06-Dec-2026
+                                                                                S1. Anabolic Agents                          Metandienone
+IRI   Talkhabi, Hadi                 In-Comp       2.1 Presence                                                                                                                  4 Years    29-Nov-2023   29-Nov-2027
+                                                                                S6. Stimulants (specified)                   Methylphenidate
+                                                                                S1. Anabolic Agents                          19-Norandrosterone, Clostebol, Trenbolone
+KAZ   Yerzhanov, Aibar               In-Comp       2.1 Presence                                                                                                                  3 Years    22-Nov-2023   22-Nov-2026
+                                                                                S4. Hormone and Metabolic Modulators         Anastrozole
+CAN   Pope, Mark Thomas              In-Comp       2.1 Presence                 S1. Anabolic Agents                          Metenolone, Drostanolone, Trenbolone                3 Years    15-Nov-2023   15-Nov-2026
+IND   Salman, Mohammad               In-Comp       2.1 Presence                 S1. Anabolic Agents                          Metandienone                                        4 Years    09-Nov-2023   09-Nov-2027
+SYR   Al Hafi, Majd                  In-comp       2.1 Presence                 S6. Stimulants (non-speficied)               Amfetamine                                          3 Years    09-Nov-2023   09-Nov-2026
+                                                                                S1. Anabolic Agents                          Metenolone, Drostanolone, Trenbolone
+KAZ   Jaitabarov, Murat              In-Comp       2.1 Presence                                                                                                                  3 Years    09-Nov-2023   09-Nov-2026
+                                                                                S4. Hormone and Metabolic Modulators         Letrozole
+ESP   Lopez Lopez, Pau               In-Comp       2.1 Presence                 S1. Anabolic Agents                          Metenolone                                          3 Years    08-Nov-2023   08-Nov-2026
+LBA   Alhasi, Saeid Mohammed         In-Comp       2.1 Presence                 S1. Anabolic Agents                          Drostanolone, Metandienone                          3 Years    08-Nov-2023   08-Nov-2026
+LBN   Awwad, Tatiana                 In-Comp       2.1 Presence                 S1. Anabolic Agents                          Stanozolol, Oxymetholone                            4 Years    07-Nov-2023   07-Nov-2027
+                                                                                S1. Anabolic Agents                          Nandrolone
+BRA   dos Santos Viana, Sidnei       In-Comp       2.1 Presence                 S4. Hormone and Metabolic Modulators         Clomifene                                           3 Years    07-Nov-2023   07-Nov-2026
+                                                                                S5. Diuretics and Masking Agents             Canrenone, Hydrocholorothiazide
+COL   Alava Mondragon, Lady Lizeth   In-Comp       2.1 Presence                 S1. Anabolic Agents                          19-Norandrosterone, Metandienone                    3 Years    07-Nov-2023   07-Nov-2026
+SYR   Allouch, Shouq                 In-Comp       2.1 Presence                 S1. Anabolic Agents                          Metandienone                                        3 Years    07-Nov-2023   07-Nov-2026
+IRQ   Al Buthabhak, Hussein          In-Comp       2.1 Presence                 S1. Anabolic Agents                          Stanozolol, Methasterone                            3 Years    19-Oct-2023   19-Oct-2026
+IRQ   Abdulameer, Mohammed           In-Comp       2.1 Presence                 S1. Anabolic Agents                          Metandienone                                        3 Years    19-Oct-2023   19-Oct-2026
+                                                                                                                             Methasterone
+GER   Schmidt, Thomas                In-Comp       2.1 Presence                 S1. Anabolic Agents                          Methasterone metabolite                             3 Years    30-Aug-2023   30-Aug-2026
+                                                                                                                             DHCMT
+UKR   Vovk, Dmytro                   In-Comp       2.1 Presence                 S6. Stimulants (non-speficied)               Modafinil                                           3 Years    11-Aug-2023   11-Aug-2026
+MGL Batkhishig, Amartsengel          In-Comp       2.1 Presence                 S1. Anabolic Agents                          Stanozolol                                          4 Years    11-Aug-2023   11-Aug-2027
+IND   Dutta Chatterjee, Sima         In-Comp       2.1 Presence                 S1. Anabolic Agents                          Stanozolol                                          4 years    10-Aug-2023   10-Aug-2027
+IND   Singh, Ansu                    In-Comp       2.1 Presence                 S1. Anabolic Agents                          Stanozolol                                          3 Years    10-Aug-2023   10-Aug-2026
+IRI   Nezhadi, Peyman                In-comp       2.1 Presence                 S1. Anabolic Agents                          19-Norandrosterone                                  4 Years    27-Jun-2023   27-Jun-2027
+                                                                                                                             Metandienone
+                                                                                S1. Anabolic Agents
+TUR   Kucukyarma, Mehmet Sezgin      In-Comp       2.1 Presence                                                              19-Norandrosterone                                  4 Years    08-May-2023 08-May-2027
+                                                                                S8. Cannabinoids
+                                                                                                                             Carboxy-THC
+                                                                                S2. Peptide Hormones, Growth Factors, Related
+RSA   Smith, Johan                   In-Comp       2.1 Presence                                                               Ibutamoren                                         7 Years    14-Apr-2023   14-Apr-2030
+                                                                                Substances and Mimetics
+                                                                                                                              Mestanolone
+                                                                                                                              Methasterone
+                                                                                                                              Oxymetholone
+BRA   Ramos, Francisco               In-Comp       2.1 Presence                 S1. Anabolic Agents                                                                              4 Years    01-Apr-2023   01-Apr-2027
+                                                                                                                              Nandrolone
+                                                                                                                              19-Norandrosterone
+                                                                                                                              19-Noretiocholanolone
+MGL Buyandalai, Khadbaatar           In-Comp       2.1 Presence                 S1. Anabolic Agents                          Metandienone                                        4 Years    19-Dec-2022   19-Dec-2026
+MGL Tuvshintugs, Danzan              In-Comp       2.1 Presence                 S4. Hormone and Metabolic Modulators         Meldonium                                           4 Years    08-Nov-2022   08-Nov-2026
+KAZ   Broner, Veronika               Out-of-Comp   2.1 Presence                 S1. Anabolic Agents                          Drostanolone                                        *4 Years   25-Mar-2022     *TBC*
+                                                   2.1 Presence
+                                                                                                                             Metandienone
+TJK   Abdulloev, Furqatjon           In-Comp       2.5 Tampering or Attempted   S1. Anabolic Agents                                                                              6 Years    27-Jan-2022   27-Jan-2028
+                                                                                                                             DHCMT
+                                                   Tampering
+LTU   Paulauskas, Amandas            In-Comp       2.1 Presence                 S1. Anabolic Agents                          5a-androstane-3a,17b-diol (5aAdiol)                 8 Years    28-Jan-2020   20-Jan-2028
+POL   Daniel, Cieplak                In-Comp       2.3 Refusal                  -                                            -                                                   8 Years    17-Oct-2018   17-Oct-2026
+UAE   Al Amri, Rashed S.M.           In-Comp       2.1 Presence                 S1. Anabolic Agents                          -                                                   Lifetime   04-Jul-2013        -
+UAE   Al Amri Maroof, Rashed Sami    In-Comp       2.1 Presence                 S1. Anabolic Agents                          -                                                   Lifetime   12-Dec-2012        -
+
+
+
+
+                                                                                                      Page 2 of 3
+PER   Quesada, Lorenzo        -         Article 14.10.2   -                                   -   Lifetime   01-Jul-2009   -
+BUL   Stoyan, Andreev         In-Comp   2.1 Presence      S1. Anabolic Agents                 -   Lifetime   30-Jun-2008   -
+ISL   Gunnarsson, Jon         In-Comp   -                 -                                   -   Lifetime   28-Jun-2006   -
+IRI   Fatemi, Mehdi           In-Comp   -                 -                                   -   Lifetime   28-Jun-2006   -
+KAZ   Sivokon, Alexei         In-Comp   -                 -                                   -   Lifetime   28-Jun-2006   -
+RUS   Fomina, Elena           In-Comp   -                 -                                   -   Lifetime   28-Jun-2006   -
+RUS   Matasov, Evgeniy        In-Comp   -                 -                                   -   Lifetime   28-Jun-2006   -
+RSA   Dranias, Chris          In-Comp   -                 -                                   -   Lifetime   28-Jun-2006   -
+UKR   Kutcher, Oleksandr      -         10.11             -                                   -   Lifetime   28-Jun-2006   -
+UKR   Solovyov, Dmytro        -         10.11             -                                   -   Lifetime   28-Jun-2006   -
+UKR   Polutin, Sergiy         -         10.11             -                                   -   Lifetime   28-Jun-2006   -
+UKR   Yarymbash, Yevgen       -         10.11             -                                   -   Lifetime   28-Jun-2006   -
+GBR   Barnes, David           -         -                 -                                   -   Lifetime   27-Jun-2005   -
+RUS   Shulga, Anna            In-Comp   -                 -                                   -   Lifetime   27-Jun-2005   -
+UKR   Shlyakhta, Ivan         In-Comp   -                 -                                   -   Lifetime   26-Jun-2004   -
+UKR   Solovyov, Oleksiy       In-Comp   -                 -                                   -   Lifetime   25-Jun-2003   -
+ITA   Andreatta, Pietro       In-Comp   -                 -                                   -   Lifetime   23-Jun-2001   -
+NOR Davidsen, Sturla          -         -                 -                                   -   Lifetime   23-Jun-2001   -
+DEN   Joergensen, Frank       In-Comp   -                 -                                   -   Lifetime   22-Jun-2000   -
+AUS   Dalvean, Ahmed M.D.     -         -                 -                                   -   Lifetime   21-Jun-1999   -
+USA   Coan, Ed                In-Comp   -                 -                                   -   Lifetime   18-Jun-1996   -
+LTU   Linkauskas, Raimundas   -         -                 -                                   -   Lifetime   16-Jun-1994   -
+AUS   Comerford, Tim          -         -                 -                                   -   Lifetime   15-Jun-1993   -
+NOR Foeynum, Trond            -         -                 -                                   -   Lifetime   15-Jun-1993   -
+AUS   Brown, Steven           -         -                 -                                   -   Lifetime   13-Jun-1991   -
+NOR Johansen, Knut            -         -                 -                                   -   Lifetime   10-Jun-1988   -
+NOR Olsen, Tommy              -         -                 -                                   -   Lifetime   10-Jun-1988   -
+POL   Domaszewski, Waldemar   -         -                 -                                   -   Lifetime   09-Jun-1987   -
+POL   Drzazgowski, Jan        -         -                 -                                   -   Lifetime   09-Jun-1987   -
+POL   Sentkowski, Miroslaw    -         -                 -                                   -   Lifetime   09-Jun-1987   -
+NOR Sagmyr, Roy               -         -                 -                                   -   Lifetime   01-Jun-1984   -
+NOR Wien, Kjell Ivar          -         -                 -                                   -   Lifetime   01-Jun-1984   -
+RSA   Kay, Johnny             -         -                 -                                   -   Lifetime   01-Jun-1984   -
+RSA   Molobeng, Clarence      -         -                 -                                   -   Lifetime   01-Jun-1984   -
+
+
+
+
+                                                                                Page 3 of 3
+

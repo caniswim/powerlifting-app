@@ -1,0 +1,488 @@
+===== ARESTA 1 : G001-62  x  V111-16 =====
+B| G001-62 [G001@13:43] scope:GERAL modo:prescricao topic:periodizacao,hipertrofia,capacidade-trabalho
+B|   CLAIM: O macrociclo do Genesis encadeia bloco de capacidade de trabalho, bloco de hipertrofia e bloco de força/pico.
+B|   VERB: "that's the difference between a work capacity, hypertrophy or strength/ peaking block in the Genesis system"
+
+V| V111-16 [R111@02:48] scope:GERAL modo:None topic:periodizacao,hipertrofia
+V|   CLAIM: Ele não considera necessário implementar blocos de hipertrofia.
+V|   VERB: "the next question was about implementing hypertrophy blocks for lifters I don't really think this is necessary"
+
+===== ARESTA 2 : G001-62  x  V076-19 =====
+B| G001-62 [G001@13:43] scope:GERAL modo:prescricao topic:periodizacao,hipertrofia,capacidade-trabalho
+B|   CLAIM: O macrociclo do Genesis encadeia bloco de capacidade de trabalho, bloco de hipertrofia e bloco de força/pico.
+B|   VERB: "that's the difference between a work capacity, hypertrophy or strength/ peaking block in the Genesis system"
+
+V| V076-19 [R076@02:01] scope:GERAL modo:None topic:hipertrofia,periodizacao,meta-metodologia
+V|   CLAIM: Pesquisa sobre blocos de hipertrofia mostra resultados piores do que trabalhar força e hipertrofia juntas.
+V|   VERB: "research on doing hypertrophy blocks shows worse results first working strength and hypertrophy together"
+
+===== ARESTA 3 : G004-37  x  V061-19 =====
+B| G004-37 [G004@07:36] scope:GERAL modo:mecanismo topic:progressao,selecao-exercicio,erro-comum
+B|   CLAIM: Outro risco é ficar preso na monotonia de sempre treinar do mesmo jeito: você se aclimata e para de progredir porque o treino é parecido demais.
+B|   VERB: "you're not getting so stuck in the same type of training monotony that you acclimate to it and you're not making any progress because your training is too similar"
+
+V| V061-19 [R061@02:02] scope:GERAL modo:None topic:erro-comum,meta-metodologia
+V|   CLAIM: Novidade no treino é um pouco superestimada.
+V|   VERB: "Novelty can be a bit overrated."
+
+===== ARESTA 4 : G004-55  x  V102-12 =====
+B| G004-55 [G004@12:10] scope:GERAL modo:mecanismo topic:deload,fadiga,periodizacao
+B|   CLAIM: Além do estímulo ter deixado de ser efetivo, você acumulou muita fadiga e precisa liberá-la para poder começar o próximo ciclo.
+B|   VERB: "you also have incurred a lot of fatigue and you need to release that fatigue so that you can start your next cycle"
+
+V| V102-12 [R102@01:01] scope:GERAL modo:None topic:periodizacao,volume,deload
+V|   CLAIM: O ciclo de trabalhar demais e depois fazer deload é alternar entre extremos ineficientes em torno da carga de trabalho ideal.
+V|   VERB: "it's just a cycle of both unefficient extremes of the ideal workload"
+
+===== ARESTA 5 : G004-55  x  V102-13 =====
+B| G004-55 [G004@12:10] scope:GERAL modo:mecanismo topic:deload,fadiga,periodizacao
+B|   CLAIM: Além do estímulo ter deixado de ser efetivo, você acumulou muita fadiga e precisa liberá-la para poder começar o próximo ciclo.
+B|   VERB: "you also have incurred a lot of fatigue and you need to release that fatigue so that you can start your next cycle"
+
+V| V102-13 [R102@01:01] scope:PESSOAL modo:None topic:volume,periodizacao,deload
+V|   CLAIM: Ele prefere andar na linha, mantendo a carga de trabalho perto do ótimo em vez de oscilar entre extremos.
+V|   VERB: "it's why I really aim to ride the line more"
+
+===== ARESTA 6 : G004-58  x  V102-12 =====
+B| G004-58 [G004@12:40] scope:GERAL modo:prescricao topic:deload,fadiga,periodizacao
+B|   CLAIM: O deload precisa ser estruturado e normalmente dura uma semana, às vezes duas, dependendo do tamanho do buraco de fadiga em que você se meteu.
+B|   PARAMS: duracao_tipica=1semanas  duracao_maxima=2semanas
+B|   VERB: "so a D Lo needs to be structured usually they're a week we just as human beings seem to think in that term sometimes there two though it just depends how deep of a hole you've dug yourself into with fatigue"
+
+V| V102-12 [R102@01:01] scope:GERAL modo:None topic:periodizacao,volume,deload
+V|   CLAIM: O ciclo de trabalhar demais e depois fazer deload é alternar entre extremos ineficientes em torno da carga de trabalho ideal.
+V|   VERB: "it's just a cycle of both unefficient extremes of the ideal workload"
+
+===== ARESTA 7 : G004-58  x  V102-13 =====
+B| G004-58 [G004@12:40] scope:GERAL modo:prescricao topic:deload,fadiga,periodizacao
+B|   CLAIM: O deload precisa ser estruturado e normalmente dura uma semana, às vezes duas, dependendo do tamanho do buraco de fadiga em que você se meteu.
+B|   PARAMS: duracao_tipica=1semanas  duracao_maxima=2semanas
+B|   VERB: "so a D Lo needs to be structured usually they're a week we just as human beings seem to think in that term sometimes there two though it just depends how deep of a hole you've dug yourself into with fatigue"
+
+V| V102-13 [R102@01:01] scope:PESSOAL modo:None topic:volume,periodizacao,deload
+V|   CLAIM: Ele prefere andar na linha, mantendo a carga de trabalho perto do ótimo em vez de oscilar entre extremos.
+V|   VERB: "it's why I really aim to ride the line more"
+
+===== ARESTA 8 : G004-58  x  V102-15 =====
+B| G004-58 [G004@12:40] scope:GERAL modo:prescricao topic:deload,fadiga,periodizacao
+B|   CLAIM: O deload precisa ser estruturado e normalmente dura uma semana, às vezes duas, dependendo do tamanho do buraco de fadiga em que você se meteu.
+B|   PARAMS: duracao_tipica=1semanas  duracao_maxima=2semanas
+B|   VERB: "so a D Lo needs to be structured usually they're a week we just as human beings seem to think in that term sometimes there two though it just depends how deep of a hole you've dug yourself into with fatigue"
+
+V| V102-15 [R102@01:16] scope:GERAL modo:None topic:deload,volume
+V|   CLAIM: Nas semanas leves você ainda faz mais trabalho do que faria num deload.
+V|   VERB: "on the easy weeks you're going to do more work than you would on a D Lo"
+
+===== ARESTA 9 : G006-39  x  V061-22 =====
+B| G006-39 [G006@09:23] scope:GERAL modo:opiniao topic:periodizacao,meta-metodologia
+B|   CLAIM: Na opinião dele, toda a briga entre os defensores do DUP e os da periodização em blocos, e as guerras dentro das comunidades científicas, é bobagem.
+B|   VERB: "But all the fighting between the DUP pundits or the block periodization people and all the wars within the scientific communities, it's all a bunch of baloney in my opinion"
+
+V| V061-22 [R061@02:17] scope:GERAL modo:None topic:periodizacao,series-reps
+V|   CLAIM: A periodização ondulatória diária, em que se varia as repetições o tempo todo, mostra resultados melhores do que a periodização em blocos, em que se repete as mesmas repetições por semanas.
+V|   VERB: "This may be one reason why daily undulating periodization, where you do different reps all the time versus block periodization, where you do the same reps constantly for weeks at a time, shows that the former works better."
+
+===== ARESTA 10 : G006-40  x  V061-22 =====
+B| G006-40 [G006@09:38] scope:GERAL modo:estudo topic:periodizacao,meta-metodologia
+B|   CLAIM: Ele desqualifica os estudos que pegam 3 pessoas num estudo de 12 semanas e declaram o DUP superior, e os estudos simétricos que declaram a periodização em blocos superior.
+B|   PARAMS: tamanho_amostra=3pessoas  duracao_estudo=12semanas
+B|   VERB: "you look at these studies that say, "Oh, look how DUP made these three people in this 12-week study so much stronger. Oh, that's statistically valuable. Hooray.""
+
+V| V061-22 [R061@02:17] scope:GERAL modo:None topic:periodizacao,series-reps
+V|   CLAIM: A periodização ondulatória diária, em que se varia as repetições o tempo todo, mostra resultados melhores do que a periodização em blocos, em que se repete as mesmas repetições por semanas.
+V|   VERB: "This may be one reason why daily undulating periodization, where you do different reps all the time versus block periodization, where you do the same reps constantly for weeks at a time, shows that the former works better."
+
+===== ARESTA 11 : G006-41  x  V061-22 =====
+B| G006-41 [G006@09:38] scope:GERAL modo:opiniao topic:periodizacao,meta-metodologia
+B|   CLAIM: Todas essas estruturas de periodização são efetivas, e houve recordistas mundiais em toda categoria de peso usando cada uma delas.
+B|   VERB: "we know that all of these structures are effective. There are amazing athletes that have used every single one of these and they have been world record holders in every weight class"
+
+V| V061-22 [R061@02:17] scope:GERAL modo:None topic:periodizacao,series-reps
+V|   CLAIM: A periodização ondulatória diária, em que se varia as repetições o tempo todo, mostra resultados melhores do que a periodização em blocos, em que se repete as mesmas repetições por semanas.
+V|   VERB: "This may be one reason why daily undulating periodization, where you do different reps all the time versus block periodization, where you do the same reps constantly for weeks at a time, shows that the former works better."
+
+===== ARESTA 12 : G008-06  x  V061-19 =====
+B| G008-06 [G008@01:47] scope:GERAL modo:prescricao topic:selecao-exercicio,programacao,erro-comum
+B|   CLAIM: Se o bloco de treino tem 15 ou 18 semanas sem nenhuma mudança de exercício, um alarme deve soar.
+B|   PARAMS: duracao_exemplo_a=15semanas  duracao_exemplo_b=18semanas
+B|   VERB: "if you look at your training block and all the exercises are the same and it's like 15 weeks 18 weeks and it's no change in exercises a little warning Bell should go off"
+
+V| V061-19 [R061@02:02] scope:GERAL modo:None topic:erro-comum,meta-metodologia
+V|   CLAIM: Novidade no treino é um pouco superestimada.
+V|   VERB: "Novelty can be a bit overrated."
+
+===== ARESTA 13 : G008-07  x  V061-19 =====
+B| G008-07 [G008@01:47] scope:GERAL modo:mecanismo topic:selecao-exercicio,progressao,erro-comum
+B|   CLAIM: Depois de um período prolongado com um único grupo de exercícios você começa a estagnar e perde a novidade, e isso não leva ao melhor resultado.
+B|   VERB: "because after an extended period of time with a single exercise group you're probably going to start to get stale you're missing out on that novelty and it's not going to lead to the best results"
+
+V| V061-19 [R061@02:02] scope:GERAL modo:None topic:erro-comum,meta-metodologia
+V|   CLAIM: Novidade no treino é um pouco superestimada.
+V|   VERB: "Novelty can be a bit overrated."
+
+===== ARESTA 14 : G010-44  x  V102-12 =====
+B| G010-44 [G010@10:38] scope:GERAL modo:mecanismo topic:volume,fadiga,deload,pico,periodizacao
+B|   CLAIM: Na semana de pico de volume você deve empurrar além do que consegue recuperar de forma consistente, para então fazer deload e supercompensar no dia da competição.
+B|   VERB: "you're gonna push past probably what you can really recover from consistently so that you can then de lo and have a super compensation on that meat day"
+
+V| V102-12 [R102@01:01] scope:GERAL modo:None topic:periodizacao,volume,deload
+V|   CLAIM: O ciclo de trabalhar demais e depois fazer deload é alternar entre extremos ineficientes em torno da carga de trabalho ideal.
+V|   VERB: "it's just a cycle of both unefficient extremes of the ideal workload"
+
+===== ARESTA 15 : G010-44  x  V102-16 =====
+B| G010-44 [G010@10:38] scope:GERAL modo:mecanismo topic:volume,fadiga,deload,pico,periodizacao
+B|   CLAIM: Na semana de pico de volume você deve empurrar além do que consegue recuperar de forma consistente, para então fazer deload e supercompensar no dia da competição.
+B|   VERB: "you're gonna push past probably what you can really recover from consistently so that you can then de lo and have a super compensation on that meat day"
+
+V| V102-16 [R102@01:16] scope:GERAL modo:None topic:deload,fadiga,volume
+V|   CLAIM: Nas semanas pesadas você não deve empurrar tanto a ponto de precisar de deload na semana seguinte por ter acumulado fadiga demais.
+V|   VERB: "on the hard weeks you're aren't going to push so hard that you need to Deo the week after cuz you build so much fatigue"
+
+===== ARESTA 16 : G012-32  x  V036-01 =====
+B| G012-32 [G012@07:40] scope:PESSOAL modo:anedota topic:rpe,acessorios,intensidade
+B|   CLAIM: No dia de repetições ele mantinha os compostos em RPE moderado, na faixa de 8.
+B|   PARAMS: rpe_alvo=8RPE
+B|   VERB: "for example I would try to keep moderate rpes you know somewhere in that eight range"
+
+V| V036-01 [R036@00:00] scope:GERAL modo:None topic:rpe,intensidade
+V|   CLAIM: Dá para ficar mais forte treinando em torno de RPE 0, cerca de 10 repetições na reserva, e ele argumenta que isso é até mais ótimo.
+V|   PARAMS: rpe_alvo=0RPE  rir_alvo=10RIR
+V|   VERB: "Not only can you get stronger, train around RP0, about 10 reps in reserve, it's arguably more optimal"
+
+===== ARESTA 17 : G012-32  x  V029-16 =====
+B| G012-32 [G012@07:40] scope:PESSOAL modo:anedota topic:rpe,acessorios,intensidade
+B|   CLAIM: No dia de repetições ele mantinha os compostos em RPE moderado, na faixa de 8.
+B|   PARAMS: rpe_alvo=8RPE
+B|   VERB: "for example I would try to keep moderate rpes you know somewhere in that eight range"
+
+V| V029-16 [R029@02:17] scope:PESSOAL modo:None topic:rpe,intensidade,volume
+V|   CLAIM: Ele reconhece estar no extremo baixo do espectro, fazendo rep work a 75% com 10 repetições na reserva.
+V|   PARAMS: pct_do_max=75pct  reserva=10RIR
+V|   VERB: "doing like rep work with 75% [music] 10 reps in reserve"
+
+===== ARESTA 18 : G015-26  x  V036-01 =====
+B| G015-26 [G015@08:24] scope:GERAL modo:fato topic:rpe,autorregulacao
+B|   CLAIM: Deixar 2 repetições no tanque no AMRAP é outra forma de dizer AMRAP em RPE 8: a última repetição custa e a barra desacelera, mas não é uma travada absoluta.
+B|   PARAMS: rir=2RIR  rpe=8RPE
+B|   VERB: "reps in the tank it's another way of saying in amrap at rpe eight so you want to leave some some in the tank you want to be struggling a little bit with that last rep you're going to see some bar speeds slowing but it's not an absolute grind"
+
+V| V036-01 [R036@00:00] scope:GERAL modo:None topic:rpe,intensidade
+V|   CLAIM: Dá para ficar mais forte treinando em torno de RPE 0, cerca de 10 repetições na reserva, e ele argumenta que isso é até mais ótimo.
+V|   PARAMS: rpe_alvo=0RPE  rir_alvo=10RIR
+V|   VERB: "Not only can you get stronger, train around RP0, about 10 reps in reserve, it's arguably more optimal"
+
+===== ARESTA 19 : G015-28  x  V036-01 =====
+B| G015-28 [G015@08:54] scope:GERAL modo:opiniao topic:autorregulacao,progressao,meta-metodologia
+B|   CLAIM: A progressão por AMRAP submáximo não é novidade — o Doug Young já fazia isso décadas atrás — mas é altamente eficaz.
+B|   VERB: "back in the like the 80s the 70s maybe even it's not new but it's highly effective so I really like that element"
+
+V| V036-01 [R036@00:00] scope:GERAL modo:None topic:rpe,intensidade
+V|   CLAIM: Dá para ficar mais forte treinando em torno de RPE 0, cerca de 10 repetições na reserva, e ele argumenta que isso é até mais ótimo.
+V|   PARAMS: rpe_alvo=0RPE  rir_alvo=10RIR
+V|   VERB: "Not only can you get stronger, train around RP0, about 10 reps in reserve, it's arguably more optimal"
+
+===== ARESTA 20 : G018-26  x  V117-06 =====
+B| G018-26 [G018@06:34] scope:GERAL modo:mecanismo topic:fadiga,tecnica,progressao,aprendizado-motor
+B|   CLAIM: Esse recuo dá tempo de trabalhar volume e técnica sem fritar o sistema nervoso central nem se destruir indo pesado toda semana atrás de mais 5 libras.
+B|   PARAMS: incremento_perseguido=5lb
+B|   VERB: "working on our technique not frying our CNS or destroying ourselves because we're going so heavy every week just trying to eke out five more pounds"
+
+V| V117-06 [R117@01:01] scope:GERAL modo:None topic:fadiga,erro-comum
+V|   CLAIM: O alarmismo de fadiga do tipo você vai fritar o CNS é besteira: a fadiga é real, mas as pessoas não sabem o quanto conseguem treinar duro e ficar bem.
+V|   VERB: "fear-mongering fatigue you're going to fry your CNS bro it's crap I mean yeah fatigue is real but a lot of people don't really know how hard they can actually train and be fine"
+
+===== ARESTA 21 : G020-23  x  V102-09 =====
+B| G020-23 [G020@03:48] scope:GERAL modo:prescricao topic:deload,intensidade,progressao
+B|   CLAIM: Ao estagnar, você derruba o peso em 10% e recomeça a progressão daquele movimento: de 200 lb você volta para 180 lb.
+B|   PARAMS: corte=10%  peso_exemplo=200lb  peso_apos_corte=180lb
+B|   VERB: "what you do is whatever weight you were at you drop it by 10 percent so you've hit that Plateau you drop back ten percent let's say you were at 200 pounds you're gonna drop it back to 180 and then you're going to start the progression over again for that lift"
+
+V| V102-09 [R102@00:46] scope:GERAL modo:None topic:deload,volume,erro-comum
+V|   CLAIM: Precisar fazer deload com muita frequência é sinal de que você está fazendo trabalho demais.
+V|   VERB: "constantly de loading can be just as big of an issue if you have to do it too often you're doing too much work"
+
+===== ARESTA 22 : G020-25  x  V102-12 =====
+B| G020-25 [G020@04:19] scope:GERAL modo:prescricao topic:deload,progressao,erro-comum
+B|   CLAIM: Cada vez que bater na parede você recua e toma novo impulso, e isso se repete até chegar num peso que nem depois de vários deloads você ultrapassa.
+B|   VERB: "you back up and you take another run at it and hopefully you're going to break past that Plateau but you're going to hit another one when that happens you back up and then you go again and you do that until you come to a weight where no matter if you're deloading multiple times you hit that plateau and you cannot move past"
+
+V| V102-12 [R102@01:01] scope:GERAL modo:None topic:periodizacao,volume,deload
+V|   CLAIM: O ciclo de trabalhar demais e depois fazer deload é alternar entre extremos ineficientes em torno da carga de trabalho ideal.
+V|   VERB: "it's just a cycle of both unefficient extremes of the ideal workload"
+
+===== ARESTA 23 : G022-12  x  V010-10 =====
+B| G022-12 [G022@06:29] scope:PESSOAL modo:opiniao topic:rpe,autorregulacao,erro-comum
+B|   CLAIM: Mesmo depois de décadas treinando, ele só reconhece bem RPE 8, 9 e 10; entre 7 e 8 já começa a embolar e, se perguntado se foi 7 ou 6, ele não sabe dizer.
+B|   PARAMS: rpe_confiavel_min=8RPE  rpe_confiavel_meio=9RPE  rpe_confiavel_max=10RPE  rpe_indistinguivel_alto=7RPE  rpe_indistinguivel_baixo=6RPE
+B|   VERB: "if you ask me if it was a seven or a six I don't I still don't know if I could totally tell you um I really know eights nines and tens I mean tens are easy obviously very slow nines usually can tell eights and sevens are already starting to blend"
+
+V| V010-10 [R010@02:02] scope:GERAL modo:None topic:rpe,intensidade,programacao
+V|   CLAIM: O trabalho focado em força deve ficar na faixa de RPE 3 a RPE 6.
+V|   PARAMS: rpe_min=3RPE  rpe_max=6RPE
+V|   VERB: "I think you should be in the RP3 to RP6"
+
+===== ARESTA 24 : G023-19  x  V074-23 =====
+B| G023-19 [G023@06:04] scope:PESSOAL modo:mecanismo topic:acessorios,rpe,volume,hipertrofia
+B|   CLAIM: Reduzindo os descansos ele transforma séries de RPE 6, 7 e 8 em algo perto de 10, ganhando densidade de treino.
+B|   PARAMS: rpe_prescrito_1=6RPE  rpe_prescrito_2=7RPE  rpe_prescrito_3=8RPE  rpe_efetivo=10RPE
+B|   VERB: "so that's how I take a six seven eight and turn it into an almost to ten but by lowering those rest periods I can get more density in it"
+
+V| V074-23 [R074@02:16] scope:GERAL modo:None topic:programacao,autorregulacao
+V|   CLAIM: Ele sugere cortar o tempo de descanso até o ponto em que dá para fazer isso sem prejudicar o desempenho das séries por falta de recuperação.
+V|   VERB: "I really suggest trying to cut down on your rest time, getting to that point you can find you can do it without impairing performance on sets from being underreovered"
+
+===== ARESTA 25 : G026-12  x  V122-31 =====
+B| G026-12 [G026@02:33] scope:GERAL modo:opiniao topic:programacao,meta-metodologia
+B|   CLAIM: Ele afirma que o programa gerado será melhor, para você, do que qualquer template hoje existente.
+B|   VERB: "it's gonna be a better program than any template that is out there in existence right now for you"
+
+V| V122-31 [R122@05:48] scope:GERAL modo:None topic:meta-metodologia,programacao
+V|   CLAIM: Cobrir o básico responde por cerca de 80% do progresso, níveis extremos de dedicação pelos 10% seguintes até 90%, e os últimos 10% é que são individualização de detalhes.
+V|   PARAMS: contribuicao_basico=80%  contribuicao_dedicacao=10%  acumulado=90%  contribuicao_individualizacao=10%
+V|   VERB: "covering the basics is about 80% of the progress getting to the extremes levels of dedication is about the next 10% get you to that 90% And the last 10% is going to be the real individualizing"
+
+===== ARESTA 26 : G026-27  x  V166-08 =====
+B| G026-27 [G026@05:51] scope:GERAL modo:opiniao topic:programacao,meta-metodologia
+B|   CLAIM: Ele afirma que o sistema arrasa qualquer template estático, não importa quem o criou nem quão elaborado ele seja.
+B|   VERB: "this system blows any static template out of the water no matter who created it or how intricate that template is it's just superior in every possible way"
+
+V| V166-08 [R166@01:46] scope:GERAL modo:None topic:programacao,volume,intensidade
+V|   CLAIM: Os templates do Sheiko funcionam melhor para quem lida bem com volume: são de volume mais alto e intensidade um pouco mais baixa.
+V|   VERB: "the first one is one of sho's templates sho's programs I find work better for people who handle volume quite well they're kind of higher volume but the intensity is a bit lower"
+
+===== ARESTA 27 : G035-13  x  V054-29 =====
+B| G035-13 [G035@02:17] scope:PESSOAL modo:narrativa topic:taper,pico,volume,intensidade,periodizacao
+B|   CLAIM: Conforme baixa a intensidade dos top singles, ele sobe o trabalho de backoff em 1 série, e só então faz o taper de volume nas 3 semanas finais.
+B|   PARAMS: incremento_de_backoff=1séries  semanas_de_taper_de_volume=3semanas
+B|   VERB: "as I start lowering the intensity of those top singles I'm going to be upping my back off work by a set and then I'll taper the volume in the final three weeks leading into the meat"
+
+V| V054-29 [R054@02:47] scope:PESSOAL modo:None topic:taper,competicao
+V|   CLAIM: Ele decidiu começar o taper 2 semanas antes do meet, mantendo alguma carga de trabalho para preservar as adaptações.
+V|   PARAMS: inicio_taper=2semanas
+V|   VERB: "I've decided to taper things starting 2 weeks out again, but still keeping some work in to maintain it"
+
+===== ARESTA 28 : G035-14  x  V004-03 =====
+B| G035-14 [G035@02:32] scope:PESSOAL modo:narrativa topic:pico,taper,intensidade,periodizacao
+B|   CLAIM: A intensidade dele atinge o pico por volta de 5 a 6 semanas antes da competição.
+B|   PARAMS: pico_de_intensidade_min=5semanas  pico_de_intensidade_max=6semanas
+B|   VERB: "but intensity Peaks about six or five weeks out"
+
+V| V004-03 [R004@00:30] scope:PESSOAL modo:None topic:pico,progressao,taper
+V|   CLAIM: Nas últimas 3 semanas do pico ele passa a saltos maiores, de cerca de 30 lb por semana.
+V|   PARAMS: duracao_pico=3semanas  incremento_semanal_pico=30lb
+V|   VERB: "typically the last 3 weeks of peaking, I'll do some bigger jumps. They'll usually be around 30 lbs or so per week"
+
+===== ARESTA 29 : G036-38  x  V004-22 =====
+B| G036-38 [G036@05:35] scope:GERAL modo:prescricao topic:pico,teste-de-forca,competicao,lesao
+B|   CLAIM: Passar da própria abertura em treino coloca o atleta numa zona de risco e exige que ele se pergunte por que está fazendo isso.
+B|   VERB: "at some point you start getting into just a risky spot you know if you're going above your opener and training you have to ask yourself why"
+
+V| V004-22 [R004@05:06] scope:PESSOAL modo:None topic:agacho,teste-de-forca,pico
+V|   CLAIM: No dia do agachamento máximo ele fez singles a 100%, 97,5% e 93,75% do próprio máximo.
+V|   PARAMS: single_1=100%  single_2=97.5%  single_3=93.75%
+V|   VERB: "I did a single at 100%, 97 and a half percent, and then I did uh 375 singles, so that's like 93.75%"
+
+===== ARESTA 30 : G037-30  x  V102-09 =====
+B| G037-30 [G037@04:20] scope:PESSOAL modo:narrativa topic:deload,fadiga,recuperacao
+B|   CLAIM: Ele diz que precisava de um deload e que pode até estender esse deload para a semana seguinte.
+B|   VERB: "I needed a D Lo and it happened to fit in really well and even can continue this into next week"
+
+V| V102-09 [R102@00:46] scope:GERAL modo:None topic:deload,volume,erro-comum
+V|   CLAIM: Precisar fazer deload com muita frequência é sinal de que você está fazendo trabalho demais.
+V|   VERB: "constantly de loading can be just as big of an issue if you have to do it too often you're doing too much work"
+
+===== ARESTA 31 : G038-04  x  V102-16 =====
+B| G038-04 [G038@00:15] scope:PESSOAL modo:narrativa topic:fadiga,recuperacao,terra,volume
+B|   CLAIM: Aquela série de terra foi tão taxante que impactou a semana seguinte inteira.
+B|   VERB: "but definitely taxing uh that set actually impacted the next week uh which I just finished up"
+
+V| V102-16 [R102@01:16] scope:GERAL modo:None topic:deload,fadiga,volume
+V|   CLAIM: Nas semanas pesadas você não deve empurrar tanto a ponto de precisar de deload na semana seguinte por ter acumulado fadiga demais.
+V|   VERB: "on the hard weeks you're aren't going to push so hard that you need to Deo the week after cuz you build so much fatigue"
+
+===== ARESTA 32 : G038-05  x  V102-16 =====
+B| G038-05 [G038@00:30] scope:PESSOAL modo:prescricao topic:terra,fadiga,autorregulacao,recuperacao
+B|   CLAIM: Ele vai pegar mais leve no terra na semana seguinte porque o terra acumula fadiga rápido para ele.
+B|   VERB: "to have to take it a little easy on deadlifts probably next week uh just cuz that really accumulates fatigue quickly for me"
+
+V| V102-16 [R102@01:16] scope:GERAL modo:None topic:deload,fadiga,volume
+V|   CLAIM: Nas semanas pesadas você não deve empurrar tanto a ponto de precisar de deload na semana seguinte por ter acumulado fadiga demais.
+V|   VERB: "on the hard weeks you're aren't going to push so hard that you need to Deo the week after cuz you build so much fatigue"
+
+===== ARESTA 33 : G038-19  x  V102-09 =====
+B| G038-19 [G038@02:32] scope:PESSOAL modo:prescricao topic:deload,fadiga,autorregulacao,pico
+B|   CLAIM: Ele vai começar a fase de singles com uma semana de singles leves porque está mais fatigado do que gostaria.
+B|   VERB: "but I'll probably take a light singles week coming up as I've mentioned I'm just a little bit more fatigued than I would like"
+
+V| V102-09 [R102@00:46] scope:GERAL modo:None topic:deload,volume,erro-comum
+V|   CLAIM: Precisar fazer deload com muita frequência é sinal de que você está fazendo trabalho demais.
+V|   VERB: "constantly de loading can be just as big of an issue if you have to do it too often you're doing too much work"
+
+===== ARESTA 34 : G040-04  x  V077-20 =====
+B| G040-04 [G040@00:45] scope:PESSOAL modo:narrativa topic:terra,tecnica,competicao,series-reps
+B|   CLAIM: Ele passou a pausar um pouco mais entre as repetições de terra, em vez do touch and go que vinha usando bastante, para reforçar foco de competição.
+B|   VERB: "doing a little bit more of a pause in between some of these reps uh instead of my uh touch and go that I've been doing a lot of lately just to kind of reinforce a little bit more of a competition Focus"
+
+V| V077-20 [R077@01:46] scope:GERAL modo:None topic:terra,tecnica,series-reps
+V|   CLAIM: Não se deve fazer touch and go: é melhor soltar e até resetar a posição entre as repetições.
+V|   VERB: "Don't do touch and go and let yourself go loose and even reset position between reps."
+
+===== ARESTA 35 : G040-05  x  V123-07 =====
+B| G040-05 [G040@00:45] scope:PESSOAL modo:narrativa topic:terra,pegada,strap,tecnica
+B|   CLAIM: Mesmo pausando, ele não solta a barra entre as repetições e usa straps em boa parte dessas séries.
+B|   VERB: "I'm still not letting go of the bar and you'll also notice that I'm using straps here for a lot of these"
+
+V| V123-07 [R123@00:45] scope:GERAL modo:None topic:terra,tecnica,erro-comum,aprendizado-motor
+V|   CLAIM: Nas séries de trabalho de terra deve-se evitar touch and go e é bom soltar a tensão e até resetar a posição para praticar achar a posição a cada repetição.
+V|   VERB: "on your working sets try to avoid doing touch and go like this as well in fact it's good to Let Yourself Go loose and even reset your position"
+
+===== ARESTA 36 : G040-25  x  V042-02 =====
+B| G040-25 [G040@04:34] scope:GERAL modo:prescricao topic:pegada,strap,selecao-exercicio
+B|   CLAIM: Quem nunca teve problema de pegada não precisa treinar pegada tanto assim.
+B|   VERB: "I've never had a grip issue before and so if you've never had a grip issue um you don't really have to work grip quite as much"
+
+V| V042-02 [R042@00:00] scope:GERAL modo:None topic:pegada,strap
+V|   CLAIM: Use straps o mínimo possível para acumular o máximo de estímulo de pegada.
+V|   VERB: "first minimal strap use this one is obvious get as much grip stimulus in as you can"
+
+===== ARESTA 37 : G040-25  x  V042-07 =====
+B| G040-25 [G040@04:34] scope:GERAL modo:prescricao topic:pegada,strap,selecao-exercicio
+B|   CLAIM: Quem nunca teve problema de pegada não precisa treinar pegada tanto assim.
+B|   VERB: "I've never had a grip issue before and so if you've never had a grip issue um you don't really have to work grip quite as much"
+
+V| V042-07 [R042@00:30] scope:PESSOAL modo:None topic:pegada,volume
+V|   CLAIM: Os problemas de pegada dele surgiram quando passou a fazer menos volume e portanto menos estímulo de pegada.
+V|   VERB: "the whole reason i started having grip issues in the first place was i was doing less volume and was getting less stimulus for grip"
+
+===== ARESTA 38 : G040-27  x  V174-12 =====
+B| G040-27 [G040@04:49] scope:PESSOAL modo:mecanismo topic:strap,terra,setup,pegada
+B|   CLAIM: Ele é bem mais fraco usando straps, porque com elas não consegue entrar numa posição de largada tão boa.
+B|   VERB: "I'm actually quite a bit weaker when I use straps cuz I can't get into as uh good of a position"
+
+V| V174-12 [R174@02:05] scope:GERAL modo:None topic:equipamento,terra,strap
+V|   CLAIM: O gap de cerca de 100 lb entre terra de academia e de competição vem de três coisas: a barra, as anilhas e as straps.
+V|   PARAMS: gap=100lb
+V|   VERB: "what's the cause of this hundred pound gap three things in particular when it comes to deadlifts it's the bar the plates and straps"
+
+===== ARESTA 39 : G042-10  x  V077-20 =====
+B| G042-10 [G042@01:47] scope:PESSOAL modo:mecanismo topic:terra,tecnica,setup,sumo
+B|   CLAIM: Para ele o touch and go também é mais fácil porque ele fica numa posição melhor ao pousar o peso para a segunda repetição.
+B|   VERB: "but touchandgo reps are also easier for me because I'm in a better position when I set the weight down on my second rep"
+
+V| V077-20 [R077@01:46] scope:GERAL modo:None topic:terra,tecnica,series-reps
+V|   CLAIM: Não se deve fazer touch and go: é melhor soltar e até resetar a posição entre as repetições.
+V|   VERB: "Don't do touch and go and let yourself go loose and even reset position between reps."
+
+===== ARESTA 40 : G042-10  x  V123-07 =====
+B| G042-10 [G042@01:47] scope:PESSOAL modo:mecanismo topic:terra,tecnica,setup,sumo
+B|   CLAIM: Para ele o touch and go também é mais fácil porque ele fica numa posição melhor ao pousar o peso para a segunda repetição.
+B|   VERB: "but touchandgo reps are also easier for me because I'm in a better position when I set the weight down on my second rep"
+
+V| V123-07 [R123@00:45] scope:GERAL modo:None topic:terra,tecnica,erro-comum,aprendizado-motor
+V|   CLAIM: Nas séries de trabalho de terra deve-se evitar touch and go e é bom soltar a tensão e até resetar a posição para praticar achar a posição a cada repetição.
+V|   VERB: "on your working sets try to avoid doing touch and go like this as well in fact it's good to Let Yourself Go loose and even reset your position"
+
+===== ARESTA 41 : G045-12  x  V169-33 =====
+B| G045-12 [G045@01:46] scope:PESSOAL modo:narrativa topic:volume,pico,recuperacao
+B|   CLAIM: nos picos que ele fez o volume é muito baixo, e é isso que ele precisa fazer para as articulações e o tecido conjuntivo se recuperarem
+B|   VERB: "you'll notice that from the Peaks that I've done that my volume is really low and that's cuz that's what I have to do for my uh joints and uh connective tissue"
+
+V| V169-33 [R169@08:38] scope:GERAL modo:None topic:volume,erro-comum,acessorios,hipertrofia
+V|   CLAIM: Programas de volume baixo são o maior desperdício de tempo, e muita gente faz volume de menos, especialmente de trabalho acessório para hipertrofia.
+V|   VERB: "i think a lot of these low volume programs that you see um that's just the biggest waste of time i feel like a lot of people spend their time doing too little volume when they should be doing"
+
+===== ARESTA 42 : G045-13  x  V015-01 =====
+B| G045-13 [G045@02:02] scope:PESSOAL modo:narrativa topic:frequencia,volume,progressao,capacidade-trabalho
+B|   CLAIM: conforme ficou mais avançado e passou a levantar cargas mais pesadas, ele teve que diminuir a frequência e em alguns casos baixar o volume total
+B|   VERB: "and uh that's something that's changed as I've gotten more advanced um and started lifting heavier weights I've actually had to decrease my frequency and in some cases lower the overall"
+
+V| V015-01 [R015@00:00] scope:PESSOAL modo:None topic:volume,recuperacao
+V|   CLAIM: ele atribui uma parte enorme do próprio progresso ao longo dos anos simplesmente à quantidade de workload que conseguia fazer
+V|   VERB: "I attribute a huge amount of my progress over the years to just simply the amount of workload I could do."
+
+===== ARESTA 43 : G048-42  x  V169-33 =====
+B| G048-42 [G048@06:53] scope:PESSOAL modo:narrativa topic:volume,intensidade,recuperacao
+B|   CLAIM: ele faz volume muito baixo e intensidade alta porque é muito pouco volume que ele consegue recuperar
+B|   VERB: "that's cuz I'm having uh like very little volume that I can recover from. Um I'm just doing really low volume, but high intensity"
+
+V| V169-33 [R169@08:38] scope:GERAL modo:None topic:volume,erro-comum,acessorios,hipertrofia
+V|   CLAIM: Programas de volume baixo são o maior desperdício de tempo, e muita gente faz volume de menos, especialmente de trabalho acessório para hipertrofia.
+V|   VERB: "i think a lot of these low volume programs that you see um that's just the biggest waste of time i feel like a lot of people spend their time doing too little volume when they should be doing"
+
+===== ARESTA 44 : G048-43  x  V003-07 =====
+B| G048-43 [G048@07:08] scope:PESSOAL modo:narrativa topic:aquecimento,agacho
+B|   CLAIM: ele aqueceu devagar naquele dia e levou provavelmente 40 minutos até o primeiro single pesado
+B|   PARAMS: duracao_do_aquecimento=40min
+B|   VERB: "I warmed up slow today to make sure that I was going to be in good shape. Uh I don't know how long I spent, probably 40 minutes warming up to my first heavy"
+
+V| V003-07 [R003@01:01] scope:GERAL modo:None topic:aquecimento,intensidade
+V|   CLAIM: A maioria das pessoas consegue fazer os aquecimentos até cerca de 80% do máximo praticamente sem descanso entre eles.
+V|   PARAMS: limite_aquecimento_seguido=80%
+V|   VERB: "most people can do warm-ups up to like 80% of their max basically back-to-back-to-back"
+
+===== ARESTA 45 : G048-58  x  V038-02 =====
+B| G048-58 [G048@09:55] scope:PESSOAL modo:narrativa topic:agacho,volume,capacidade-trabalho
+B|   CLAIM: o bloco de agacho daquele treino levou provavelmente 2 horas, ou 1 hora e 40 minutos
+B|   PARAMS: duracao_estimada=2horas  duracao_alternativa_horas=1horas  duracao_alternativa_minutos=40min
+B|   VERB: "I mean, it's probably 2 hours of squatting right there, maybe an hour and 40 minutes"
+
+V| V038-02 [R038@00:00] scope:GERAL modo:None topic:erro-comum,recuperacao
+V|   CLAIM: Powerlifters têm fama de fazer duas repetições de agacho, descansar 15 minutos e levar três horas para um treino que nem é de volume alto.
+V|   PARAMS: descanso_caricato=15min  reps_exemplo=2reps  duracao_sessao_caricata=180min
+V|   VERB: "doing two reps of squats and then resting like 15 minutes taking like 3 hours just to do a basic workout that's not even that high volume"
+
+===== ARESTA 46 : G049-10  x  V077-20 =====
+B| G049-10 [G049@01:00] scope:GERAL modo:opiniao topic:terra,hipertrofia,series-reps
+B|   CLAIM: ele acha que as repetições touch and go são melhores para atingir os músculos usados no terra
+B|   VERB: "um I find those are better for hitting the muscles that are used in the deadlift"
+
+V| V077-20 [R077@01:46] scope:GERAL modo:None topic:terra,tecnica,series-reps
+V|   CLAIM: Não se deve fazer touch and go: é melhor soltar e até resetar a posição entre as repetições.
+V|   VERB: "Don't do touch and go and let yourself go loose and even reset position between reps."
+
+===== ARESTA 47 : G049-10  x  V123-07 =====
+B| G049-10 [G049@01:00] scope:GERAL modo:opiniao topic:terra,hipertrofia,series-reps
+B|   CLAIM: ele acha que as repetições touch and go são melhores para atingir os músculos usados no terra
+B|   VERB: "um I find those are better for hitting the muscles that are used in the deadlift"
+
+V| V123-07 [R123@00:45] scope:GERAL modo:None topic:terra,tecnica,erro-comum,aprendizado-motor
+V|   CLAIM: Nas séries de trabalho de terra deve-se evitar touch and go e é bom soltar a tensão e até resetar a posição para praticar achar a posição a cada repetição.
+V|   VERB: "on your working sets try to avoid doing touch and go like this as well in fact it's good to Let Yourself Go loose and even reset your position"
+
+===== ARESTA 48 : G051-12  x  V015-27 =====
+B| G051-12 [G051@01:59] scope:PESSOAL modo:opiniao topic:recuperacao,mentalidade
+B|   CLAIM: ele enxerga o próprio tempo de descanso como trabalho, porque é tempo de recuperação, e não acha isso ruim
+B|   VERB: "um and even my downtime I see is work because it's recovery time um and that's not a bad thing"
+
+V| V015-27 [R015@04:31] scope:GERAL modo:None topic:recuperacao,mentalidade
+V|   CLAIM: a melhor forma que ele achou de lidar com estresse é ter tempo programado de fazer nada
+V|   VERB: "the number one way I found to deal with stress is nothing. And what I mean by that is have programmed nothing time."
+
+===== ARESTA 49 : G051-21  x  V018-28 =====
+B| G051-21 [G051@03:30] scope:PESSOAL modo:narrativa topic:supino,tecnica,aprendizado-motor
+B|   CLAIM: hoje ele não foca em leg drive nenhum, porque o corpo dele já faz o que tem que fazer sem ele pensar
+B|   VERB: "and now I don't focus on leg drive at all it's just my body naturally does what it's supposed to do I don't have to think about it"
+
+V| V018-28 [R018@04:20] scope:GERAL modo:None topic:supino,erro-comum,tecnica
+V|   CLAIM: o problema de forma número um que ele vê no supino é gente não aproveitando o leg drive
+V|   VERB: "I think the number one form issue I see on bench is people not taking advantage of leg drive."
+
+===== ARESTA 50 : G051-22  x  V018-28 =====
+B| G051-22 [G051@03:30] scope:GERAL modo:opiniao topic:supino,tecnica
+B|   CLAIM: ele não acha o leg drive terrivelmente importante para o supino
+B|   VERB: "I also don't think leg Drive is terribly important for the bench press"
+
+V| V018-28 [R018@04:20] scope:GERAL modo:None topic:supino,erro-comum,tecnica
+V|   CLAIM: o problema de forma número um que ele vê no supino é gente não aproveitando o leg drive
+V|   VERB: "I think the number one form issue I see on bench is people not taking advantage of leg drive."
+
+===== ARESTA 51 : G051-22  x  V056-21 =====
+B| G051-22 [G051@03:30] scope:GERAL modo:opiniao topic:supino,tecnica
+B|   CLAIM: ele não acha o leg drive terrivelmente importante para o supino
+B|   VERB: "I also don't think leg Drive is terribly important for the bench press"
+
+V| V056-21 [R056@01:47] scope:GERAL modo:None topic:supino,tecnica,equipamento
+V|   CLAIM: A importância do leg drive cresce exponencialmente em cargas mais máximas, difíceis de desencaixar e estabilizar.
+V|   VERB: "The importance of leg drive goes up exponentially when you get up to more maximal weights that are a challenge to unrackck and stabilize"
+
+TOTAL ARESTAS 51

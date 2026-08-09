@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GOODLIFT | Lifters</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="powerlifting statistics, powerlifting software, powerlifting scoring, goodlift">
+  
+  <meta name="content-language" content="en" />
+  <meta name="rating" content="General" />
+  <meta name="distribution" content="Global" />
+  <meta name="classification" content="Sport, Powerlifting" />
+  <meta name="author" content="Oleksandr Kopayev" />
+  <meta name="copyright" content="All content Copyright ©1998-2026 by Oleksandr Kopayev" />
+
+  <link rel="icon" href="/images/favicon.ico?v=2" />
+
+  <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="/css/menus.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="/css/ui.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../ui/metro-ui/css/m-buttons.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../ui/metro-ui/css/m-icons.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="/css/glmessages.css" type="text/css" media="screen" />
+<link rel="canonical" href="https://goodlift.info/lifters.php">
+
+      <meta http-equiv="cache-control" content="no-cache" />
+      <link rel="stylesheet" href="/utils/mdb/css/mdb.min.css" />
+      <link rel="stylesheet" href="../ui/metro-ui/css/m-buttons.css" type="text/css" media="screen" />
+      <link rel="stylesheet" href="/css/ui.css" type="text/css" media="screen" />
+      <link rel="stylesheet" href="/css/blocks.css" type="text/css" media="screen" />
+      <link rel="stylesheet" href="/css/sheets-elements.css" type="text/css" media="screen" />
+      <link rel="stylesheet" href="/css/lifters.css" type="text/css" media="screen" />
+     
+  
+<link rel="stylesheet" id="silktide-consent-manager-css" href="/utils/cookie-banner/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
+<style id="silktide-consent-manager-overrides">
+#stcm-wrapper {
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+  --primaryColor: #B50000;
+  --backgroundColor: #ffffff;
+  --textColor: #4b494b;
+  --backdropBackgroundColor: #00000033;
+  --backdropBackgroundBlur: 0px;
+  --iconColor: #FFFFFF;
+  --iconBackgroundColor: #4B494B;
+}
+</style>
+<script src="/utils/cookie-banner/silktide-consent-manager.js" integrity="sha384-j4NIMOecmtzMWe9GJADIIe5hTlHG63aiTQ/2XorW10RNyQJg+IU+xwFVDy45wBah" crossorigin="anonymous"></script>
+<script>
+window.silktideConsentManager.init({
+  backdrop: {
+    show: true
+  },
+  icon: {
+    position: "bottomLeft"
+  },
+  prompt: {
+    position: "bottomLeft"
+  },
+  consentTypes: [
+    {
+      id: "essential",
+      label: "Essential",
+      description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+      required: true,
+      onAccept: function() {
+        console.log("Add logic for the required Essential consent type here");
+      }
+    },
+    {
+      id: "analytics",
+      label: "Analytics",
+      description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+      required: false,
+      gtag: "analytics_storage",
+      scripts: [
+        {
+          url: "https://www.googletagmanager.com/gtag/js?id=G-MFDH3YW2S0",
+          load: "async"
+        }
+      ],
+      onAccept: function() {
+        // Google Analytics 4 (G-MFDH3YW2S0)
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "G-MFDH3YW2S0");
+      }
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic.</p>",
+      acceptAllButtonText: "Accept all",
+      acceptAllButtonAccessibleLabel: "Accept all cookies",
+      rejectNonEssentialButtonText: "Reject non-essential",
+      rejectNonEssentialButtonAccessibleLabel: "Reject all non-essential cookies",
+      preferencesButtonText: "Preferences",
+      preferencesButtonAccessibleLabel: "Toggle preferences"
+    },
+    preferences: {
+      title: "Customize your cookie preferences",
+      description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+      saveButtonText: "Save and close",
+      saveButtonAccessibleLabel: "Save your cookie preferences",
+      creditLinkText: "&nbsp;",
+      creditLinkAccessibleLabel: "&nbsp;"
+    }
+  }
+});
+</script>
+</head><body>
+
+<table id="main" cellpadding="0" cellspacing="0" summary="">
+<!-- ================================ header [start] here ====================== -->
+<tr >
+<td class="left-col">&nbsp;</td>
+<td id="header">
+  <table class="logo" cellpadding="0" cellspacing="0" summary="">
+  <tr>
+  <td class="left">
+  <div class="logo"><a href="/"><img src="/images/gl-logo.png" alt="" title=""/></a></div>
+  </td>
+  <td class="right"></td>
+  </tr>
+<tr>
+<td style="height: 34px; background-color: #f1efe3; vertical-align: middle;" colspan="2">
+<div id="lmenu">
+<ul id="hmenu" style="width: auto;">
+<li class="left-indent">&nbsp;</li><li><a href="index.php">Home</a></li>
+<li><div><div class="menu-item"><a href="#">Competitions</a></div> </div><ul>
+      <li><div><div class="menu-item"> <a href="nominations.php">Nominations</a></div></div></li>
+      <li><div><div class="menu-item"><a href="competitions.php?year=2026">Results</a></div></div></li>
+      <li><a href="records_last.php?pg=1">Records</a></li>
+      <li><div><div ></div><div class="menu-item"> <a href="scores-ranking.php?yy=2026&ac=0&sx=M&eq=0&ex=0&pp=500&pg=1">Ranking</a> </div></div></li>
+    </ul></li><li class="current_mitem"><a class="current_mitem" href="/lifters.php">Lifters</a></li><li><a href="live.php">LIVE!</a></li>
+</ul>
+</div>
+<div id='rmenu'>
+<ul>
+  <li class='right-indent'>&nbsp;</li><li><a href='login.php'>LogIn</a></li><li class='right-indent2'>&nbsp;</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+
+</td>
+<td class="right-col"></td></tr>
+<tr><td class="left-col"></td>
+
+<td id="content">
+<!-- ================================ content [Start] here ==================== -->
+
+  <noscript><table class='javascript-off' cellpadding='0' cellspacing='0' summary=''><tr>
+  <td class='picture'><img class='javascript-off' src='/images/warning-32.png' alt='Warning'/></td>
+  <td class='text'>Javascript is disabled in your web browser. Please enable JavaScript in your browser for complete functionality of site.</td>
+  </tr></table>
+  </noscript><table style='width: 100%; border: 0; margin: 0 auto;' cellpadding='0' cellspacing='0' summary=''><tr><td style='padding: 0; vertical-align: middle;'><div id='placer'>&nbsp;</div></td></tr></table>
+      <div class='search-container'>
+        <form method='get' class='search-form'>
+          <fieldset>
+            <legend>&nbsp;Search Options&nbsp;</legend>
+
+            <table class='search' cellpadding='0' cellspacing='0' border='1' summary=''>
+              <tr>
+                <td class='header-title' colspan='2'>Lifters</td>
+                <td class='header-result-title'>Filter of Results</td>
+              </tr>
+
+              <tr>
+                <td class='input-title'>Family name</td>
+                <td class='input-lifter'>
+                  <div class='form-outline family-name' data-mdb-input-init>
+                    <input
+                      type='text'
+                      class='search edit form-control'
+                      name='Search'
+                      id='Search'
+                      value=''
+                      autocomplete='off'
+                      maxlength='100'
+                      default=''
+                      tabindex='1'
+                    >
+                  </div>
+                </td>
+
+                <td>
+                <div class='discipline-input'>
+                <div>Squat &ge;</div>
+                <div class='form-outline results' data-mdb-input-init>
+                  <input
+                    type='number'
+                    class='results edit form-control'
+                    min='0'
+                    max='600'
+                    step='0.5'
+                    name='Squat'
+                    id='Squat'
+                    value=''
+                    autocomplete='off'
+                    tabindex='6'
+                  >
+                </div>
+              </div>
+              </td>
+
+              </tr>
+
+              <tr>
+                <td class='input-title'>Gender</td>
+                <td class='input-lifter-gender'>
+                <div class='gender-select'>
+                  <select
+                    name='Gender'
+                    id='gender'
+                    data-mdb-select-init
+                    tabindex='2'
+                  >
+                    <option value='Any' selected>Any</option>
+                    <option value='Male'>Male</option>
+                    <option value='Female'>Female</option>
+                  </select>
+                </div>
+                </td>
+
+                <td>
+                <div class='discipline-input'>
+                <div>Bench Press &ge;</div>
+                <div class='form-outline results' data-mdb-input-init>
+                  <input
+                    type='number'
+                    class='results edit form-control'
+                    min='0'
+                    max='600'
+                    step='0.5'
+                    name='Bench'
+                    id='Bench'                    
+                    value=''
+                    autocomplete='off'
+                    tabindex='6'
+                  >
+                </div>
+              </div>
+              </td>
+
+              </tr>
+
+              <tr>
+              <td class='input-title'>Year of Birth</td>
+              <td class='input-discipline'>
+                <div class='discipline-input-left'>
+                  
+                  <div>
+                  <input                    
+                    type='number'
+                    class='bday edit form-control form-outline'
+                    min='1901'
+                    max='2026'
+                    step='1'
+                    name='Bday'
+                    id='Bday'
+                    value=''
+                    autocomplete='off'
+                    default=''
+                    tabindex='3'                    
+                  >
+                  </div>
+                  &nbsp;&minus;&nbsp;
+                  <div>
+                  <input                    
+                    type='number'
+                    class='bday edit form-control form-outline'
+                    min='1901'
+                    max='2026'
+                    step='1'
+                    name='Bday2'
+                    id='Bday2'
+                    value=''
+                    autocomplete='off'
+                    default=''
+                    tabindex='4'                    
+                  >
+                  </div>
+
+                </div>                  
+                </td>
+
+                <td>
+                <div class='discipline-input'>
+                <div>Deadlift &ge;</div>
+                <div class='form-outline results' data-mdb-input-init>
+                  <input
+                    type='number'
+                    class='results edit form-control'
+                    min='0'
+                    max='600'
+                    step='0.5'
+                    name='Deadlift'
+                    id='Deadlift'
+                    value=''
+                    autocomplete='off'
+                    tabindex='8'
+                  >
+                </div>
+              </div>
+              </td>
+
+
+              </tr>
+
+              <tr>
+                <td class='input-title'>Country</td>
+                <td class='input-lifter-country'>
+                <div class='gender-select'>
+                  <select name='Country' id='country' class='country' default='' tabindex='5' data-mdb-select-init>
+                    <option value=''>Any</option>
+    <option value='105'>Afghanistan</option><option value='86'>Algeria</option><option value='805'>American Samoa</option><option value='739'>Andorra</option><option value='36'>Argentina</option><option value='20'>Armenia</option><option value='521'>Aruba</option><option value='29'>Australia</option><option value='5'>Austria</option><option value='849'>Azerbaijan</option><option value='55'>Bahamas</option><option value='564'>Bahrain</option><option value='444'>Bangladesh</option><option value='523'>Barbados</option><option value='10'>Belarus</option><option value='31'>Belgium</option><option value='518'>Belize</option><option value='350'>Benin</option><option value='999'>Bermuda</option><option value='589'>Bolivia</option><option value='45'>Brazil</option><option value='100'>British Virgin Islands</option><option value='563'>Brunei</option><option value='40'>Bulgaria</option><option value='90'>Cameroon</option><option value='34'>Canada</option><option value='519'>Cape Verde</option><option value='75'>Cayman Islands</option><option value='526'>Central African Republic</option><option value='351'>Chile</option><option value='101'>China</option><option value='41'>Chinese Taipei</option><option value='43'>Colombia</option><option value='61'>Congo</option><option value='71'>Costa Rica</option><option value='104'>Croatia</option><option value='475'>Cyprus</option><option value='27'>Czechia</option><option value='8'>Denmark</option><option value='96'>Dominican Republic</option><option value='32'>Ecuador</option><option value='69'>Egypt</option><option value='70'>El Salvador</option><option value='297'>England</option><option value='9'>Estonia</option><option value='88'>Fiji</option><option value='22'>Finland</option><option value='7'>France</option><option value='50'>Georgia</option><option value='4'>Germany</option><option value='73'>Ghana</option><option value='6'>Great Britain</option><option value='92'>Greece</option><option value='56'>Guatemala</option><option value='76'>Guyana</option><option value='522'>Haiti</option><option value='65'>Hong Kong, China</option><option value='23'>Hungary</option><option value='42'>Iceland</option><option value='49'>India</option><option value='52'>Indonesia</option><option value='38'>Iran</option><option value='57'>Iraq</option><option value='110'>Ireland</option><option value='525'>Isle of Man</option><option value='98'>Israel</option><option value='12'>Italy</option><option value='214'>Ivory Coast</option><option value='517'>Jamaica</option><option value='33'>Japan</option><option value='187'>Jordan</option><option value='48'>Kazakhstan</option><option value='108'>Kiribati</option><option value='353'>Kuwait</option><option value='97'>Kyrgyzstan</option><option value='24'>Latvia</option><option value='103'>Lebanon</option><option value='63'>Libya</option><option value='47'>Lithuania</option><option value='19'>Luxembourg</option><option value='215'>Malaysia</option><option value='79'>Mali</option><option value='378'>Malta</option><option value='94'>Mexico</option><option value='62'>Mongolia</option><option value='68'>Montenegro</option><option value='85'>Morocco</option><option value='349'>Namibia</option><option value='449'>Namibia</option><option value='102'>Nauru</option><option value='25'>Netherlands</option><option value='743'>Neutral Athlete</option><option value='994'>Neutral Athlete B</option><option value='852'>Neutral Official</option><option value='95'>New Caledonia</option><option value='35'>New Zealand</option><option value='520'>Nicaragua </option><option value='44'>Nigeria</option><option value='345'>Niue</option><option value='300'>Northern Ireland</option><option value='26'>Norway</option><option value='87'>Oman</option><option value='379'>Oman</option><option value='16'>Pakistan</option><option value='39'>Palestine</option><option value='354'>Panama</option><option value='93'>Papua New Guinea</option><option value='54'>Peru</option><option value='30'>Philippines</option><option value='3'>Poland</option><option value='46'>Portugal</option><option value='60'>Puerto Rico</option><option value='641'>Qatar</option><option value='443'>ROC</option><option value='83'>Romania</option><option value='2'>Russia</option><option value='80'>Samoa</option><option value='566'>Saudi Arabia</option><option value='298'>Scotland</option><option value='89'>Serbia</option><option value='64'>Sierra Leone</option><option value='106'>Singapore</option><option value='21'>Slovakia</option><option value='107'>Slovenia</option><option value='565'>Solomon Islands</option><option value='37'>South Africa</option><option value='352'>South Korea</option><option value='28'>Spain</option><option value='53'>Sri Lanka</option><option value='542'>Suriname</option><option value='11'>Sweden</option><option value='91'>Switzerland</option><option value='294'>Syria</option><option value='806'>Tahiti</option><option value='74'>Tajikistan</option><option value='292'>Thailand</option><option value='380'>Tonga</option><option value='72'>Trinidad and Tobago</option><option value='524'>Tunisia</option><option value='293'>Turkiye</option><option value='82'>Turkmenistan</option><option value='346'>Tuvalu</option><option value='18'>U.S.America</option><option value='99'>US Virgin Islands</option><option value='348'>Uganda</option><option value='1'>Ukraine</option><option value='66'>United Arab Emirates</option><option value='81'>Uruguay</option><option value='59'>Uzbekistan</option><option value='58'>Venezuela</option><option value='709'>Vietnam</option><option value='299'>Wales</option><option value='445'>Zimbabwe</option>
+                  </select>
+                  </div>
+                </td>
+
+                <td>
+                <div class='discipline-input'>
+                <div>Total &ge;</div>
+                <div class='form-outline results' data-mdb-input-init>
+                  <input
+                    type='number'
+                    class='results edit form-control'
+                    min='0'
+                    max='1800'
+                    step='0.5'
+                    name='Total'
+                    id='Total'
+                    value=''
+                    autocomplete='off'
+                    tabindex='9'
+                  >
+                </div>
+              </div>
+              </td>
+
+              </tr>
+
+              <tr>
+                <td class='submit' colspan='3'>
+                  <button id='search-button' class='btn btn-primary' type='submit' value='Search' data-mdb-ripple-init tabindex='10'>Search</button>
+                  &nbsp;                  
+                  <a  class='btn btn-secondary'  href='lifters.php'  role='button'  tabindex='11'>Reset</a>
+                  <br>&nbsp;
+                </td>
+              </tr>
+            </table>
+          </fieldset>
+        </form>
+      </div>
+    <table class='page_navigator_table' cellpadding='0' cellspacing='0' border='0' summary=''>
+      <tr><td class='pageof'><div class='pageof'>Page 1 of 475</div></td><td class='pageofIndent'>&nbsp;</td> <td> <span class='nowpage'>1</span>  </td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=2'>2</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=3'>3</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=4'>4</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=5'>5</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=6'>6</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=7'>7</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=8'>8</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=9'>9</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=10'>10</a></td><td> <a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=2'>&gt;</a></td><td> <a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=475'>&gt;&gt;</a></td></tr></table><div class='lifters-counter'>The Number of Lifters found is&nbsp;&nbsp;<span class='counter'>23744</span></div><table cellpadding='0' cellspacing='0' border='0' class='result_search'><tr><td class='subtitle'>#</td><td class='subtitle'><a class='sort' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=desc&pane_number=1'>Name</a><img class='bullet' src='/images/bullet-arrow-up.png' alt='' title=''/></td><td class='subtitle'><a class='sort' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SEX&order_dir=asc&pane_number=1'>Gender</a></td><td class='subtitle'><a class='sort' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=region_name&order_dir=asc&pane_number=1'>Team</a></td><td class='subtitle'><a class='sort' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=BIRTHDAY&order_dir=asc&pane_number=1'>BY</a></td><td class='subtitle'><a class='sort' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=CNT&order_dir=asc&pane_number=1'>Starts</a></td><td class='subtitle'><a class='sort' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SQ_SUMME&order_dir=asc&pane_number=1'>SQ</a></td><td class='subtitle'><a class='sort' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=BP_SUMME&order_dir=asc&pane_number=1'>BP</a></td><td class='subtitle'><a class='sort' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=DL_SUMME&order_dir=asc&pane_number=1'>DL</a></td><td class='subtitle'><a class='sort' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SUMME&order_dir=asc&pane_number=1'>Total</a></td></tr>
+    <tr>
+
+    <td class='number n1'>1.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=27196'>.&nbsp;Jyoti</a></td><td class='text n1'><span class='gender female'></span></td><td class='text n1'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n1'>2002</td><td class='number number n1'>1</td><td class='results number n1'>205.0</td><td class='results number n1'>120.0</td><td class='results number n1'>170.0</td><td class='results number n1'>495.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>2.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=27137'>.&nbsp;Kartik</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n0'>2003</td><td class='number number n0'>1</td><td class='results number n0'>260.0</td><td class='results number n0'>180.0</td><td class='results number n0'>205.0</td><td class='results number n0'>645.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>3.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=28720'>.&nbsp;Keerthan</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n1'>2003</td><td class='number number n1'>1</td><td class='results number n1'>170.0</td><td class='results number n1'>105.0</td><td class='results number n1'>185.0</td><td class='results number n1'>460.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>4.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=29551'>.&nbsp;Komal</a></td><td class='text n0'><span class='gender female'></span></td><td class='text n0'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n0'>2000</td><td class='number number n0'>1</td><td class='results number n0'>202.5</td><td class='results number n0'>112.5</td><td class='results number n0'>211.0</td><td class='results number n0'>526.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>5.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=13453'>.&nbsp;Mohini</a></td><td class='text n1'><span class='gender female'></span></td><td class='text n1'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n1'>1987</td><td class='number number n1'>1</td><td class='results number n1'>&minus;</td><td class='results number n1'>75.0</td><td class='results number n1'>&minus;</td><td class='results number n1'>75.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>6.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=27176'>.&nbsp;Nagashree</a></td><td class='text n0'><span class='gender female'></span></td><td class='text n0'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n0'>2001</td><td class='number number n0'>1</td><td class='results number n0'>175.0</td><td class='results number n0'>70.0</td><td class='results number n0'>150.0</td><td class='results number n0'>395.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>7.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=27169'>.&nbsp;Pankaj</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n1'>2002</td><td class='number number n1'>1</td><td class='results number n1'>290.0</td><td class='results number n1'>215.0</td><td class='results number n1'>230.0</td><td class='results number n1'>735.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>8.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=27101'>.&nbsp;Shobhit</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n0'>2002</td><td class='number number n0'>1</td><td class='results number n0'>272.5</td><td class='results number n0'>177.5</td><td class='results number n0'>300.0</td><td class='results number n0'>750.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>9.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=23168'>A&nbsp;Ajeesha</a></td><td class='text n1'><span class='gender female'></span></td><td class='text n1'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n1'>2000</td><td class='number number n1'>1</td><td class='results number n1'>150.0</td><td class='results number n1'>82.5</td><td class='results number n1'>152.5</td><td class='results number n1'>385.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>10.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=29549'>A&nbsp;Aswathi</a></td><td class='text n0'><span class='gender female'></span></td><td class='text n0'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n0'>2002</td><td class='number number n0'>1</td><td class='results number n0'>175.0</td><td class='results number n0'>92.5</td><td class='results number n0'>170.0</td><td class='results number n0'>437.5</td>  </tr>
+    <tr>
+
+    <td class='number n1'>11.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=20863'>A&nbsp;Jyoshna</a></td><td class='text n1'><span class='gender female'></span></td><td class='text n1'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n1'>2006</td><td class='number number n1'>1</td><td class='results number n1'>132.5</td><td class='results number n1'>65.0</td><td class='results number n1'>130.0</td><td class='results number n1'>327.5</td>  </tr>
+    <tr>
+
+    <td class='number n0'>12.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=26063'>A Ghodekar&nbsp;Gauri</a></td><td class='text n0'><span class='gender female'></span></td><td class='text n0'><img src='/images/flags/india.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='India'  />India</td><td class='born n0'>1983</td><td class='number number n0'>1</td><td class='results number n0'>&minus;</td><td class='results number n0'>70.0</td><td class='results number n0'>&minus;</td><td class='results number n0'>70.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>13.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=27962'>A.p.&nbsp;Kumari Herat</a></td><td class='text n1'><span class='gender female'></span></td><td class='text n1'><img src='/images/flags/srilanka.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Sri Lanka'  />Sri Lanka</td><td class='born n1'>1974</td><td class='number number n1'>1</td><td class='results number n1'>72.5</td><td class='results number n1'>35.0</td><td class='results number n1'>110.0</td><td class='results number n1'>217.5</td>  </tr>
+    <tr>
+
+    <td class='number n0'>14.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=7367'>ABD Rabou&nbsp;Khaled</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/egypt.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Egypt'  />Egypt</td><td class='born n0'>1968</td><td class='number number n0'>1</td><td class='results number n0'>&minus;</td><td class='results number n0'>&minus;</td><td class='results number n0'>&minus;</td><td class='results number n0'>&minus;</td>  </tr>
+    <tr>
+
+    <td class='number n1'>15.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=7511'>Aaberg&nbsp;Jane</a></td><td class='text n1'><span class='gender female'></span></td><td class='text n1'><img src='/images/flags/denmark.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Denmark'  />Denmark</td><td class='born n1'>1981</td><td class='number number n1'>18</td><td class='results number n1'>225.0</td><td class='results number n1'>125.0</td><td class='results number n1'>240.0</td><td class='results number n1'>585.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>16.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=13770'>Aaberg&nbsp;Jarle</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/norway.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Norway'  />Norway</td><td class='born n0'>1958</td><td class='number number n0'>3</td><td class='results number n0'>205.0</td><td class='results number n0'>145.0</td><td class='results number n0'>227.5</td><td class='results number n0'>572.5</td>  </tr>
+    <tr>
+
+    <td class='number n1'>17.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=21668'>Aad&nbsp;Angelo</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/lebanon.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Lebanon'  />Lebanon</td><td class='born n1'>2005</td><td class='number number n1'>1</td><td class='results number n1'>215.0</td><td class='results number n1'>130.0</td><td class='results number n1'>245.0</td><td class='results number n1'>590.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>18.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=30290'>Aalto&nbsp;Ari</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/finland.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Finland'  />Finland</td><td class='born n0'>1965</td><td class='number number n0'>1</td><td class='results number n0'>192.5</td><td class='results number n0'>137.5</td><td class='results number n0'>220.0</td><td class='results number n0'>550.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>19.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=1979'>Aalto&nbsp;Aulis</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/finland.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Finland'  />Finland</td><td class='born n1'>1962</td><td class='number number n1'>2</td><td class='results number n1'>300.0</td><td class='results number n1'>227.5</td><td class='results number n1'>310.0</td><td class='results number n1'>832.5</td>  </tr>
+    <tr>
+
+    <td class='number n0'>20.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=16241'>Aalto&nbsp;Eetu</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/finland.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Finland'  />Finland</td><td class='born n0'>1998</td><td class='number number n0'>2</td><td class='results number n0'>215.0</td><td class='results number n0'>152.5</td><td class='results number n0'>257.5</td><td class='results number n0'>622.5</td>  </tr>
+    <tr>
+
+    <td class='number n1'>21.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=1892'>Aalto&nbsp;Elina</a></td><td class='text n1'><span class='gender female'></span></td><td class='text n1'><img src='/images/flags/finland.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Finland'  />Finland</td><td class='born n1'>1963</td><td class='number number n1'>2</td><td class='results number n1'>117.5</td><td class='results number n1'>90.0</td><td class='results number n1'>132.5</td><td class='results number n1'>340.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>22.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=21146'>Aalto&nbsp;Juha</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/finland.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Finland'  />Finland</td><td class='born n0'>1982</td><td class='number number n0'>3</td><td class='results number n0'>&minus;</td><td class='results number n0'>175.0</td><td class='results number n0'>&minus;</td><td class='results number n0'>175.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>23.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=2333'>Aarhus&nbsp;Jens</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/sweden.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Sweden'  />Sweden</td><td class='born n1'>1954</td><td class='number number n1'>11</td><td class='results number n1'>260.0</td><td class='results number n1'>200.0</td><td class='results number n1'>232.5</td><td class='results number n1'>685.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>24.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=24877'>Aaron&nbsp;Dawson</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/u.s.america.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='U.S.America'  />U.S.America</td><td class='born n0'>2003</td><td class='number number n0'>3</td><td class='results number n0'>252.5</td><td class='results number n0'>202.5</td><td class='results number n0'>265.0</td><td class='results number n0'>685.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>25.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=13484'>Aaron&nbsp;Howard</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/u.s.america.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='U.S.America'  />U.S.America</td><td class='born n1'>1952</td><td class='number number n1'>1</td><td class='results number n1'>&minus;</td><td class='results number n1'>137.5</td><td class='results number n1'>&minus;</td><td class='results number n1'>137.5</td>  </tr>
+    <tr>
+
+    <td class='number n0'>26.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=27266'>Aarsrud&nbsp;Helge</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/norway.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Norway'  />Norway</td><td class='born n0'>1968</td><td class='number number n0'>1</td><td class='results number n0'>&minus;</td><td class='results number n0'>200.0</td><td class='results number n0'>&minus;</td><td class='results number n0'>200.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>27.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=23657'>Aarti&nbsp;Ajay</a></td><td class='text n1'><span class='gender female'></span></td><td class='text n1'><img src='/images/flags/unitedarabemirates.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='United Arab Emirates'  />United Arab Emirates</td><td class='born n1'>1993</td><td class='number number n1'>1</td><td class='results number n1'>45.0</td><td class='results number n1'>35.0</td><td class='results number n1'>67.5</td><td class='results number n1'>147.5</td>  </tr>
+    <tr>
+
+    <td class='number n0'>28.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=22226'>Aas&nbsp;Emma Elise</a></td><td class='text n0'><span class='gender female'></span></td><td class='text n0'><img src='/images/flags/norway.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Norway'  />Norway</td><td class='born n0'>2003</td><td class='number number n0'>7</td><td class='results number n0'>207.5</td><td class='results number n0'>120.0</td><td class='results number n0'>208.0</td><td class='results number n0'>535.5</td>  </tr>
+    <tr>
+
+    <td class='number n1'>29.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=3072'>Aas&nbsp;Oystein</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/norway.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Norway'  />Norway</td><td class='born n1'>1974</td><td class='number number n1'>7</td><td class='results number n1'>225.0</td><td class='results number n1'>255.0</td><td class='results number n1'>260.0</td><td class='results number n1'>670.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>30.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=27638'>Aaser&nbsp;Aurora Gutuen</a></td><td class='text n0'><span class='gender female'></span></td><td class='text n0'><img src='/images/flags/norway.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Norway'  />Norway</td><td class='born n0'>2002</td><td class='number number n0'>2</td><td class='results number n0'>215.0</td><td class='results number n0'>147.5</td><td class='results number n0'>190.0</td><td class='results number n0'>552.5</td>  </tr>
+    <tr>
+
+    <td class='number n1'>31.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=10801'>Abakas&nbsp;Linas</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/lithuania.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Lithuania'  />Lithuania</td><td class='born n1'>1999</td><td class='number number n1'>5</td><td class='results number n1'>175.0</td><td class='results number n1'>122.5</td><td class='results number n1'>202.5</td><td class='results number n1'>500.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>32.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=13584'>Abakirov&nbsp;Adzhibek</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/kyrgyzstan.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Kyrgyzstan'  />Kyrgyzstan</td><td class='born n0'>1947</td><td class='number number n0'>4</td><td class='results number n0'>115.0</td><td class='results number n0'>90.0</td><td class='results number n0'>150.0</td><td class='results number n0'>350.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>33.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=6615'>Abarca Elizondo&nbsp;Maria</a></td><td class='text n1'><span class='gender female'></span></td><td class='text n1'><img src='/images/flags/costarica.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Costa Rica'  />Costa Rica</td><td class='born n1'>1981</td><td class='number number n1'>2</td><td class='results number n1'>150.0</td><td class='results number n1'>70.0</td><td class='results number n1'>170.0</td><td class='results number n1'>370.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>34.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=25607'>Abarquero Diezhandino&nbsp;Ester</a></td><td class='text n0'><span class='gender female'></span></td><td class='text n0'><img src='/images/flags/spain.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Spain'  />Spain</td><td class='born n0'>1995</td><td class='number number n0'>1</td><td class='results number n0'>132.5</td><td class='results number n0'>&minus;</td><td class='results number n0'>160.0</td><td class='results number n0'>&minus;</td>  </tr>
+    <tr>
+
+    <td class='number n1'>35.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=10680'>Abarra&nbsp;Aira</a></td><td class='text n1'><span class='gender female'></span></td><td class='text n1'><img src='/images/flags/australia.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Australia'  />Australia</td><td class='born n1'>1994</td><td class='number number n1'>1</td><td class='results number n1'>&minus;</td><td class='results number n1'>77.5</td><td class='results number n1'>&minus;</td><td class='results number n1'>77.5</td>  </tr>
+    <tr>
+
+    <td class='number n0'>36.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=17304'>Abay&nbsp;Adilet</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/kazakhstan.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Kazakhstan'  />Kazakhstan</td><td class='born n0'>2003</td><td class='number number n0'>1</td><td class='results number n0'>&minus;</td><td class='results number n0'>120.0</td><td class='results number n0'>&minus;</td><td class='results number n0'>120.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>37.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=26602'>Abbas&nbsp;Ahmad</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/qatar.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Qatar'  />Qatar</td><td class='born n1'>1990</td><td class='number number n1'>2</td><td class='results number n1'>242.5</td><td class='results number n1'>142.5</td><td class='results number n1'>322.5</td><td class='results number n1'>707.5</td>  </tr>
+    <tr>
+
+    <td class='number n0'>38.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=19804'>Abbas&nbsp;Ali</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/newzealand.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='New Zealand'  />New Zealand</td><td class='born n0'>1996</td><td class='number number n0'>1</td><td class='results number n0'>200.0</td><td class='results number n0'>125.0</td><td class='results number n0'>225.0</td><td class='results number n0'>550.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>39.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=19003'>Abbas&nbsp;Mariam</a></td><td class='text n1'><span class='gender female'></span></td><td class='text n1'><img src='/images/flags/unitedarabemirates.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='United Arab Emirates'  />United Arab Emirates</td><td class='born n1'>1987</td><td class='number number n1'>2</td><td class='results number n1'>117.5</td><td class='results number n1'>75.0</td><td class='results number n1'>162.5</td><td class='results number n1'>355.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>40.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=21703'>Abbas&nbsp;Nafea</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/iraq.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Iraq'  />Iraq</td><td class='born n0'>2005</td><td class='number number n0'>3</td><td class='results number n0'>240.0</td><td class='results number n0'>150.0</td><td class='results number n0'>252.5</td><td class='results number n0'>642.5</td>  </tr>
+    <tr>
+
+    <td class='number n1'>41.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=21831'>Abbas&nbsp;Yazan</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/unitedarabemirates.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='United Arab Emirates'  />United Arab Emirates</td><td class='born n1'>2002</td><td class='number number n1'>1</td><td class='results number n1'>185.0</td><td class='results number n1'>137.5</td><td class='results number n1'>190.0</td><td class='results number n1'>512.5</td>  </tr>
+    <tr>
+
+    <td class='number n0'>42.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=12487'>Abbasabadi&nbsp;Mohammad</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/iran.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Iran'  />Iran</td><td class='born n0'>1997</td><td class='number number n0'>1</td><td class='results number n0'>222.5</td><td class='results number n0'>147.5</td><td class='results number n0'>230.0</td><td class='results number n0'>600.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>43.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=30193'>Abbasloo&nbsp;Mohammad</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/iran.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Iran'  />Iran</td><td class='born n1'>1982</td><td class='number number n1'>1</td><td class='results number n1'>305.0</td><td class='results number n1'>182.5</td><td class='results number n1'>270.0</td><td class='results number n1'>757.5</td>  </tr>
+    <tr>
+
+    <td class='number n0'>44.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=16833'>Abbasov&nbsp;Raman</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/neutralathlete.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Neutral Athlete'  />Neutral Athlete</td><td class='born n0'>1993</td><td class='number number n0'>2</td><td class='results number n0'>&minus;</td><td class='results number n0'>325.0</td><td class='results number n0'>&minus;</td><td class='results number n0'>325.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>45.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=16833'>Abbasov&nbsp;Raman</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/russia.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Russia'  />Russia</td><td class='born n1'>1993</td><td class='number number n1'>1</td><td class='results number n1'>&minus;</td><td class='results number n1'>280.0</td><td class='results number n1'>&minus;</td><td class='results number n1'>280.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>46.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=12280'>Abd Rashid&nbsp;Abdul Aniq Hafi</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/malaysia.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Malaysia'  />Malaysia</td><td class='born n0'>2000</td><td class='number number n0'>1</td><td class='results number n0'>115.0</td><td class='results number n0'>80.0</td><td class='results number n0'>190.0</td><td class='results number n0'>385.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>47.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=24029'>Abdao&nbsp;Robert Diel</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/philippines.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Philippines'  />Philippines</td><td class='born n1'>2000</td><td class='number number n1'>1</td><td class='results number n1'>220.0</td><td class='results number n1'>130.0</td><td class='results number n1'>256.5</td><td class='results number n1'>606.5</td>  </tr>
+    <tr>
+
+    <td class='number n0'>48.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=3859'>Abdelaziz&nbsp;Aliaouate</a></td><td class='text n0'><span class='gender male'></span></td><td class='text n0'><img src='/images/flags/france.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='France'  />France</td><td class='born n0'>1965</td><td class='number number n0'>1</td><td class='results number n0'>270.0</td><td class='results number n0'>150.0</td><td class='results number n0'>280.0</td><td class='results number n0'>700.0</td>  </tr>
+    <tr>
+
+    <td class='number n1'>49.</td>
+
+    <td class='text n1'><a class='mainlink' href='lifter.php?lid=5178'>Abdelkader&nbsp;Aissa</a></td><td class='text n1'><span class='gender male'></span></td><td class='text n1'><img src='/images/flags/algeria.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Algeria'  />Algeria</td><td class='born n1'>1969</td><td class='number number n1'>2</td><td class='results number n1'>220.0</td><td class='results number n1'>155.0</td><td class='results number n1'>280.0</td><td class='results number n1'>655.0</td>  </tr>
+    <tr>
+
+    <td class='number n0'>50.</td>
+
+    <td class='text n0'><a class='mainlink' href='lifter.php?lid=29755'>Abdelli&nbsp;Bachaeur</a></td><td class='text n0'><span class='gender female'></span></td><td class='text n0'><img src='/images/flags/tunisia.png' style='width: 16px; height: 16px; border: 0; vertical-align: middle; margin-right: 0.4em;' alt=''
+  title='Tunisia'  />Tunisia</td><td class='born n0'>2009</td><td class='number number n0'>1</td><td class='results number n0'>120.0</td><td class='results number n0'>60.0</td><td class='results number n0'>130.0</td><td class='results number n0'>310.0</td>  </tr></table><table cellpadding='0' cellspacing='0' border='0' class='page_navigator_table'><tr><td class='pageof'><div class='pageof'>Page 1 of 475</div></td><td class='pageofIndent'>&nbsp;</td> <td> <span class='nowpage'>1</span>  </td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=2'>2</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=3'>3</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=4'>4</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=5'>5</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=6'>6</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=7'>7</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=8'>8</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=9'>9</a></td><td><a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=10'>10</a></td><td> <a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=2'>&gt;</a></td><td> <a class='st' href='lifters.php?Search=&Squat=&Gender=Any&Bench=&Bday=&Bday2=&Deadlift=&Country=&Total=&order=SURNAME&order_dir=asc&pane_number=475'>&gt;&gt;</a></td></tr></table>
+  <!-- ================================ content [End] here ====================== -->
+  </td>
+
+  <td class='right-col'>&nbsp;</td>
+  </tr>
+
+  <tr>
+  <td class='left-col'>&nbsp;</td>
+
+  <td id='footer' style='font-size: 1.1em; font-family: Verdana, Geneva, Sans-serif; color: #928e7f;' ><div class='footer-wrapper'><span class='copyright'>goodlift.info&nbsp;&copy;&nbsp;Oleksandr Kopayev,&nbsp;2011&ndash;2026.</span><br>
+  Software and databases are protected intellectual property. Any form of data extraction, scraping, or bulk reuse is strictly prohibited.</div></td><td class='right-col'>&nbsp;</td></tr></table>
+<!-- end of Main table -->
+      <script type='text/javascript' src='/utils/autosuggest/js/bsn.AutoSuggest_2.1.3_comp.js'></script>
+      <link rel='stylesheet' href='/utils/autosuggest/css/autosuggest_inquisitor.css' type='text/css' media='screen' charset='utf-8' />
+
+      <script src='/utils/mdb/js/mdb.umd.min.js'></script>
+    <script src='/js/menu_ie.js' type='text/javascript'></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a286ab56b829a423',t:'MTc4NjI3NzU0OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

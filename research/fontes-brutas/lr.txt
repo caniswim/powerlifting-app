@@ -1,0 +1,2485 @@
+                 INTERNATIONAL POWERLIFTING FEDERATION
+
+
+
+
+                    LIVRO DE
+       2026         REGRAS
+                    TÉCNICAS
+          No caso de qualquer conflito entre a versão em inglês e em outros
+          idiomas, a versão em inglês prevalecerá.
+
+
+
+
+CONFEDERAÇÃO BRASILEIRA
+DE LEVANTAMENTOS BÁSICOS
+
+                                             Atualização e Revisão: Deisiane Machado Moretti
+                                                           Revisão final: Prof. Gilson Clemente
+
+
+
+
+https://www.powerlifting-ipf.com.br   01.03.2026        powerbrazil.director@gmail.com
+                                                                                     LIVRO DE REGRAS
+
+                                                                                                     SUMÁRIO
+
+    1.REGRAS GERAIS DO POWERLIFTING ............................................................................................................................................ 4
+    1.1. Categorias de Idade ................................................................................................................................................................................. 5
+    1.2. Categorias de Peso Corporal ............................................................................................................................................................ 5
+    2.EQUIPAMENTOS & ESPECIFICAÇÕES ........................................................................................................................................... 7
+    2.1. Balanças .......................................................................................................................................................................................................... 7
+    2.2. Tablado ........................................................................................................................................................................................................... 7
+    2.3. Barras e Anilhas ........................................................................................................................................................................................ 7
+    2.4. Presilhas ........................................................................................................................................................................................................ 9
+    2.5. Suporte de Agachamento ................................................................................................................................................................. 9
+    2.6. Banco ............................................................................................................................................................................................................... 9
+    2.7. Relógios .......................................................................................................................................................................................................... 9
+    2.8. Luzes .............................................................................................................................................................................................................. 10
+    2.9. Cartões/Placas de Falha ...........................................................................................,....................................................................... 10
+    2.10. Placar ........................................................................................................................................................................................................... 12
+    3. EQUIPAMENTO PESSOAL ................................................................................................................................................................... 13
+    3.1. Maiôs ................................................................................................................................................................................................................ 13
+    3.2. Camisetas ................................................................................................................................................................................................... 14
+    3.3. Camisas de Suporte ............................................................................................................................................................................. 15
+    3.4. Cuecas ........................................................................................................................................................................................................... 16
+    3.5. Meias .............................................................................................................................................................................................................. 16
+    3.6. Cinto ............................................................................................................................................................................................................... 16
+    3.7. Calçados ou Botas ................................................................................................................................................................................. 17
+    3.8. Joelheiras .................................................................................................................................................................................................... 17
+    3.9. Faixas ............................................................................................................................................................................................................. 18
+    3.10. Bonés e Faixas de Suor .................................................................................................................................................................... 18
+    3.11. Fita Médica/Esparadrapo ................................................................................................................................................................ 18
+    3.12. Inspeção de Equipamento Pessoal ......................................................................................................................................... 19
+    3.13. Logos de Patrocinadores ................................................................................................................................................................ 19
+    3.14. Geral ............................................................................................................................................................................................................ 20
+    4.POWERLIFTING E REGRAS DE PERFORMANCE ................................................................................................................ 20
+    4.1. Agachamento .......................................................................................................................................................................................... 20
+    4.1.1. Causas de desqualificação no Agachamento .................................................................................................................. 21
+    4.2. Supino .......................................................................................................................................................................................................... 22
+    4.2.1. Causas de desqualificação no Supino ................................................................................................................................. 24
+    4.2.2. REGRAS PARA DEFICIENTES COMPETINDO EM CAMPEONATOS APENAS DE SUPINO DA
+    IPF............................................................................................................................................................................................................................. 24
+    4.3. Levantamento Terra ........................................................................................................................................................................... 25
+    4.3.1. Causas de desqualificação no Levantamento Terra .................................................................................................. 25
+
+
+
+
+2                                                                                                 sumário                                                                                                   01.03.2026
+                                                                                     LIVRO DE REGRAS
+
+
+
+    5.PESAGEM ..........................................................................................................................................................................................................26
+    6.ORDEM DE COMPETIÇÃO .....................................................................................................................................................................27
+    6.1. O Sistema de Round ..............................................................................................................................................................................27
+    6.2. Responsabilidades dos Oficiais ......................................................................................................................................................31
+    6.3. Regras Diversas (erros de carregamento, má conduta, apelações, etc.) ..........................................................32
+    7.ÁRBITROS ..........................................................................................................................................................................................................36
+    8. JÚRI E COMITÊ TÉCNICO .......................................................................................................................................................................41
+    8.1. Júri ......................................................................................................................................................................................................................41
+    8.2. Comitê Técnico da IPF ........................................................................................................................................................................42
+    9. RECORDES MUNDIAIS E INTERNACIONAIS ...........................................................................................................................42
+    9.1. Competições Internacionais ............................................................................................................................................................42
+    10. RESPONSABILIDADES DO TREINADOR .................................................................................................................................44
+
+
+
+
+3                                                                                                                                                                                                          01.03.2026
+                                             LIVRO DE REGRAS
+
+
+  1. Ao longo deste livro de regras, por questões de brevidade, sempre que as palavras "ele" ou "dele" aparecerem,
+     tal referência deve ser considerada aplicável a ambos os sexos. Todas as referências a gênero devem garantir
+     direitos iguais para ambos os sexos e não devem apresentar as mulheres como necessitando de regras
+     separadas, a menos que explicitamente necessário. Em competições em que ambos os sexos competem:
+
+
+(a) A Federação Internacional de Powerlifting reconhece os seguintes levantamentos que devem ser realizados
+na mesma sequência em todas as competições realizadas sob as regras da IPF:
+
+
+  1. Agachamento
+ 2. Supino
+ 3. Levantamento Terra
+ 4. Total
+
+
+(b) A competição ocorre entre levantadores em categorias definidas por sexo, peso corporal e idade. Os
+Campeonatos Abertos Masculino e Feminino permitem levantadores a partir de 1º de janeiro no ano em que
+ele/ela completa 19 anos ou mais.
+
+
+(c) No caso de um Campeonato de Powerlifting ou Supino ser combinado, por exemplo, com um Campeonato
+Sub-Júnior, Júnior, Open e Master, tendo tanto a categoria Clássica (1 categoria) quanto a Equipado (1 categoria),
+o atleta tem a opção de competir em ambos os campeonatos. O atleta deverá pagar a taxa de inscrição para
+ambos os campeonatos e será necessário competir duas vezes. Nenhum atleta tem permissão para competir 2
+vezes na Clássica ou 2 vezes na Equipado. Os Masters 3 e 4 não têm permissão para competir na Classe Open.
+Uma vez que o atleta esteja inscrito na Nominação Preliminar, ele/ela não poderá mudar sua divisão de idade. O
+atleta só poderá mudar de categoria de peso até a Nominação Final.
+
+
+(d) As regras se aplicam a todos o níveis de competição.
+
+
+(e) Cada competidor tem direito a três tentativas em cada levantamento. A melhor tentativa válida de cada atleta
+em cada levantamento conta para o total de sua competição. Se dois ou mais atletas alcançarem o mesmo total,
+o atleta mais leve fica acima do levantador mais pesado.
+
+
+(f) Se dois atletas registrarem o mesmo peso corporal na pesagem e eventualmente alcançarem o mesmo total
+ao final da competição, o atleta que atingir o total primeiro terá precedência sobre o outro. Onde prêmios são
+apresentados para o melhor agachamento, supino e levantamento terra, ou se um recorde mundial for
+quebrado, o mesmo procedimento será aplicado.
+
+
+ 2. A IPF, através de suas federações membros, realiza e sanciona os seguintes Campeonatos Mundiais. Os
+     principais eventos no calendário da IPF são os seguintes:
+
+
+     Campeonato Mundial Equipado Open de Powerlifting
+     Campeonato Mundial Equipado Sub-Junior e Junior de Powerlifting
+     Campeonato Mundial Equipado Masters de Powerlifting
+     Campeonato Mundial Equipado de Supino (Open, Sub-Junior/Junior e Master)
+     Campeonato Mundial Clássico Open de Powerlifting
+     Campeonato Mundial Clássico Sub-Junior e Junior de Powerlifting
+     Campeonato Mundial Clássico Masters de Powerlifting
+     Campeonato Mundial Clássico de Supino (Open, Sub-Junior/Junior e Master)
+     Copa do Mundo Universitária
+     Outros eventos internacionais aprovados pelo EC.
+
+
+ 4                                          regras gerais do powerlifting                        01.03.2026
+                                                LIVRO DE REGRAS
+
+O Secretário do Campeonato, em consulta com o Comitê Executivo, deverá garantir que os principais eventos
+internacionais não entrem em conflito. Se necessário, a(s) autorização(ões) pode(m) ser recusada(s) para alcançar
+um Calendário organizado. Se necessário, os eventos no Calendário podem ser combinados em um único
+campeonato.
+ 3. A IPF também reconhece e registra recordes mundiais para os mesmos levantamentos dentro das categorias
+     descritas a seguir:
+
+ 1.1. CATEGORIAS DE IDADE
+
+ HOMENS & MULHERES
+
+          OPEN             a partir de 1º de janeiro no ano-calendário em que ele/ela completa 19 anos e acima
+
+                             a partir do dia em que ele/ela completa 14 anos e durante todo o ano-calendário
+     SUB-JUNIORS
+                                                em que ele/ela completa 18 anos de idade.
+
+                              a partir de 1º de janeiro no ano-calendário em que ele/ela completa 19 anos e
+        JUNIORS
+                                durante todo o ano-calendário em que ele/ela completa 23 anos de idade
+
+                               a partir de 1º de janeiro no ano-calendário em que ele/ela completa 40 anos e
+        MASTER 1
+                                 durante todo o ano-calendário em que ele/ela completa 49 anos de idade
+
+                               a partir de 1º de janeiro no ano-calendário em que ele/ela completa 50 anos e
+       MASTER 2                  durante todo o ano-calendário em que ele/ela completa 59 anos de idade
+
+       MASTER 3                a partir de 1º de janeiro no ano-calendário em que ele/ela completa 60 anos e
+                                 durante todo o ano-calendário em que ele/ela completa 69 anos de idade
+       MASTER 4            a partir de 1º de janeiro no ano-calendário em que ele/ela completa 70 anos e acima
+
+
+A prática de levantamento competitivo para levantadores com menos de 14 anos é permitida apenas em
+competições nacionais.
+ 4. A classificação para todas as faixas etárias será determinada pelos totais dos levantadores, de acordo com as
+     regras padrão de levantamento. Medalhas para 1º, 2º e 3º lugar serão concedidas em cada categoria de peso
+     em todas as divisões etárias.
+
+
+  1.2. CATEGORIAS DE PESO CORPORAL
+
+     HOMENS                                                        MULHERES
+
+     Sub-Junior e Junior apenas - até 53,0 kg                     Sub-Junior e Junior apenas - até 43,0 kg
+     Classe 59,0 kg - até 59,0 kg                                 Classe 47,0 kg - até 47,0 kg
+     Classe 66,0 kg - de 59,01 kg até 66,0 kg                     Classe 52,0 kg - de 47,01 kg até 52,0 kg
+     Classe 74,0 kg - de 66,01 kg até 74,0 kg                     Classe 57,0 kg - de 52,01 kg até 57,0 kg
+     Classe 83,0 kg - de 74,01 kg até 83,0 kg                     Classe 63,0 kg - de 57,01 kg até 63,0 kg
+     Classe 93,0 kg - de 83,01 kg até 93,0 kg                     Classe 69,0 kg - de 63,01 kg até 69,0 kg
+     Classe 105,0 kg - de 93,01 kg até 105,0 kg                   Classe 76,0 kg - de 69,01 kg até 76,0 kg
+     Classe 120,0 kg - de 105,01 kg até 120,0 kg                  Classe 84,0 kg - de 76,01 kg até 84,0 kg
+     Classe 120,0+ kg - de 120,01 kg até ilimitado                Classe 84,0+ kg - de 84,01 kg até ilimitado
+
+
+
+
+ 5                                            regras gerais do powerlifting                            01.03.2026
+                                             LIVRO DE REGRAS
+
+5. A cada nação é permitido um máximo de oito (8) atletas distribuídos ao longo das oito (8) categorias de peso
+     corporal para homens e oito (8) atletas ao longo das oito (8) categorias de peso corporal para mulheres. Nas
+     categorias de idade Júnior e Sub-Júnior, são permitidos nove (9) para homens e nove (9) para mulheres. Não
+     deve haver mais de dois competidores de qualquer nação em uma categoria de peso corporal específica.
+
+
+6. A cada nação é permitido um máximo de cinco alternativos ou reservas. Para participar da competição, eles
+     devem ter sido nominados 60 dias antes da data dos campeonatos na nominação preliminar, com as
+     categorias de peso corporal e os melhores totais alcançados em campeonatos nacionais ou internacionais
+     nos últimos 12 meses.
+
+
+7. Cada nação deve submeter uma lista de equipe com o nome de cada atleta e sua categoria de peso corporal.
+     Os melhores totais dos campeonatos nacionais ou internacionais durante os 12 meses anteriores devem ser
+     declarados. Isso pode incluir o resultado alcançado no Campeonato Internacional do ano anterior na mesma
+     categoria de peso corporal. A data e o título da competição na qual o total foi alcançado também devem ser
+     declarados. Tais detalhes devem ser enviados ao Secretário do Campeonato da IPF ou da Região e também
+     ao Diretor do Campeonato, pelo menos, 60 dias antes da data dos Campeonatos na nominação preliminar. A
+     seleção final, submetida não mais tarde que 21 dias antes da data do Campeonato, deve ser feita a partir
+     daqueles nominados 60 dias antes da data dos Campeonatos. Isso inclui atletas reservas ou alternativos.
+     Nesta fase, cada atleta deve nominar a categoria de peso corporal em que deseja competir nesses
+     Campeonatos. Após a seleção final (nominação final), não serão permitidas mudanças na categoria de peso
+     em que o atleta foi nominado. Atletas nominados sem resultados de qualquer um dos Campeonatos acima
+     serão classificados no primeiro grupo de levantamento se sua categoria de peso corporal for dividida em
+     vários grupos. O não cumprimento de qualquer um desses requisitos pode resultar na desqualificação da
+     equipe infratora. Um atleta não pode produzir um total qualificatório através de sua federação nacional para
+     entrada em Campeonatos Mundiais, Internacionais ou Regionais enquanto estiver suspenso pela IPF ou
+     Regional.
+
+
+8. A pontuação para todos os Campeonatos Mundiais, Continentais e Regionais será: 12, 9, 8, 7, 6, 5, 4, 3 e 2
+     pontos para os primeiros nove lugares em qualquer categoria de peso corporal. Posteriormente, cada atleta
+     que fizer um total na competição receberá um ponto. A pontuação para todas as competições nacionais será
+     a critério da federação nacional.
+
+
+9. Apenas as pontuações dos cinco melhores colocados de cada nação serão contadas para a competição por
+     equipes em todos os campeonatos internacionais. Em caso de empate na pontuação, a classificação final da
+     equipe será decidida para os prêmios da equipe como no item 11. Se um membro de uma equipe for
+     encontrado em violação das Regras Anti-Doping da IPF durante um evento onde a classificação da equipe é
+     baseada na soma dos resultados individuais (pontos), os pontos do atleta que cometeu a violação serão
+     subtraídos do resultado da equipe e não poderão ser substituídos pelos pontos resultantes de outro membro
+     da equipe.
+
+
+10. Qualquer nação que seja membro da IPF há mais de três anos deve incluir pelo menos um árbitro
+     internacional entre seus oficiais de equipe nos Campeonatos Mundiais. Se um árbitro daquela nação não
+     estiver presente ou, se presente, se tornar indisponível para atuar como árbitro ou membro do júri durante os
+     campeonatos, então apenas os quatro melhores atletas daquela nação serão contados para a competição
+     por equipes.
+
+
+11. Prêmios por equipe serão dados para os três primeiros lugares com Medalhas. Serão 5 Ouros para a Melhor
+     Equipe, 5 Pratas para a 2ª Melhor Equipe e 5 Bronzes para a 3ª Melhor Equipe. Em caso de empate para a
+     classificação de uma equipe ou nação, a equipe com o maior número de primeiros lugares será classificada
+     em primeiro. No caso de empate entre duas nações com o mesmo número de primeiros lugares, a que tiver
+
+ 6                                         regras gerais do powerlifting                         01.03.2026
+                                            LIVRO DE REGRAS
+mais segundos lugares será classificada em primeiro, e assim por diante, considerando a colocação de no
+máximo cinco levantadores pontuadores. Caso equipes ou nações terminem empatadas após a aplicação deste
+procedimento, a equipe ou nação com o maior número total de pontos IPF será declarada a melhor colocada.
+Equipes com menos de 3 levantadores não receberão medalhas.
+
+
+12. Em todos os Campeonatos IPF, um prêmio de "Melhor Atleta" será dado ao atleta que apresentar o melhor
+     desempenho com base na fórmula IPF. Prêmios também serão entregues para o segundo e terceiro lugares.
+     Categorias com menos de 3 levantadores não receberão prêmios de "Melhor levantador".
+
+
+13. Nos Campeonatos Internacionais, medalhas serão entregues para primeiro, segundo e terceiro lugares em
+     cada categoria com base nos totais. Além disso, medalhas ou certificados de mérito serão concedidos para
+     primeiro, segundo e terceiro lugares nos levantamentos individuais de agachamento, supino e levantamento
+     terra em cada categoria. Cada levantador deve receber uma medalha/lembrança de participação do
+     Organizador do Evento (ByLaws 13.3). Caso um levantador não consiga sucesso em um ou ambos os
+     levantamentos de agachamento ou supino, ele/ela pode continuar competindo pelo restante da competição,
+     e o levantador será elegível para prêmios em qualquer disciplina na qual ele/ela registre um ou mias
+     levantamentos bem-sucedidos. Para receber este prêmio, o levantador deve fazer uma tentativa genuína em
+     cada uma das três disciplinas.
+     O código de vestimenta para atletas nas cerimônias de medalhas dos Campeonatos Mundiais é – conjunto
+completo de uniforme da equipe, camiseta, calçado esportivo. A conformidade será monitorada pelo
+Controlador Técnico do round. O não cumprimento desses requisitos desqualificará o levantador de receber a(s)
+medalha(s) no pódio, embora sua colocação nos resultados do concurso permaneça.
+
+
+14. É proibido chicotear e/ou agredir o atleta na frente do público e da mídia.
+
+
+15. Em todos os eventos da IPF, o organizador deve disponibilizar, para a segurança dos atletas e oficiais, um
+     paramédico qualificado de plantão durante todo o campeonato.
+
+
+                            2.EQUIPAMENTOS & ESPECIFICAÇOES
+
+ 2.1. BALANÇAS
+
+As balanças devem ser do tipo digital-eletrônico e registrar até a segunda casa decimal. Elas devem ter
+capacidade para pesar até 180 kg. Um certificado que verifique a calibração das balanças deve estar disponível e
+estar dentro do prazo de um ano a contar da data da competição
+
+
+ 2.2. TABLADO
+
+Todos os levantamentos devem ser realizados em uma plataforma medindo entre 2,5 m x 2,5 m no mínimo e 4,0
+m x 4,0 m no máximo. Não deve exceder 10 cm de altura em relação ao palco ou piso ao redor. A superfície da
+plataforma deve ser plana, firme e nivelada, e coberta com um material de carpete liso e antiderrapante (ou seja,
+livre de irregularidades e projeções). Tapetes de borracha ou materiais semelhantes não são permitidos.
+
+
+ 2.3. BARRAS E ANILHAS
+
+Para todas as competições de powerlifting organizadas sob as regras da IPF, apenas anilhas para barras são
+permitidas. O uso de anilhas que não atendam às especificações atuais invalidará a competição e qualquer
+recorde alcançado. Apenas barras e anilhas que atendem a todas as especificações podem ser usadas durante
+toda a competição e para todos os levantamentos. A barra não deve ser trocada durante a competição, a menos
+que esteja torta ou danificada de alguma forma, conforme determinado pelo Comitê Técnico, Júri ou Árbitros.
+
+
+ 7                                         regras gerais do powerlifting                        01.03.2026
+                                                       LIVRO DE REGRAS
+
+
+As barras a serem usadas em todos os Campeonatos da IPF não devem ser cromadas na área do recartilho.
+Somente barras e anilhas com aprovação oficial da IPF podem ser usadas nos Campeonatos Mundiais da IPF ou
+na definição de Recordes Mundiais. A partir de 2008, as distâncias do “recartilho” em barras aprovadas pela IPF
+se tornarão universais/padrão, baseadas em uma das barras originalmente aprovadas.
+
+(a) A barra deve ser reta, com grip bem serrilhado e ranhurado, e deve obedecer às seguintes dimensões:
+1. Comprimento total não deve exceder 2,2 m.
+2. Distância entre os colares internos não deve exceder 1,32 m nem ser inferior a 1,31 m.
+3. Diâmetro da barra não deve exceder 29 mm nem ser inferior a 28 mm.
+4. Peso da barra e das presilhas deve ser de 25 kg.
+5. Diâmetro da ponta (encaixe das anilhas) não deve exceder 52 mm nem ser inferior a 50 mm.
+6. A barra deve ter marcações de diâmetro usinadas, espaçadas a 81 cm.
+
+
+                  BARRA DE POWERLIFTING RECONHECIDA PELA IPF
+                    DIRETRIZES DE DISTÂNCIAS DE RECARTILHO
+
+Medidas em mm (distância dos recartilhos entre os colares internos).)
+
+
+
+
+                xxxxxxxxxxxxx          xxxxxxxxxxxxx           xxxx           xxxxxxxxxxxxx      xxx   xxxxxxxxxxxxx
+                                                                120                                        240
+                                                                 -
+                                                               160                                         245
+
+                                                                                                           440
+                                                                810
+
+
+                                                               1320
+
+
+
+(b) As anilhas devem obedecer ao seguinte:
+
+
+Todos os discos usados em competição devem pesar dentro de 0,25 por cento ou 10 gramas de seu valor
+nominal.
+
+                    Valor Nominal (KG)                       Máximo                           Mínimo
+                                25                           25.0625                          24.9375
+                                20                             20.05                           19.95
+                                15                            15.0375                         14.9625
+                                10                            10.025                           9.975
+                                 5                            5.0125                          4.9875
+                                2.5                            2.51                            2.49
+                                1.25                           1.26                            1.24
+                                 1                              1.01                           0.99
+                                0.5                            0.51                            0.49
+                                0.25                          0.255                            0.245
+
+
+  8                                                equipamentos e especificações                                       01.03.2026
+                                              LIVRO DE REGRAS
+ 2.O tamanho do furo no meio da anilha não deve exceder 53 mm nem ser menor que 52 mm.
+ 3.As anilhas devem seguir a faixa essa de peso: 1,25 kg, 2,5 kg, 5 kg, 10 kg, 15 kg, 20 kg e 25 kg.
+ 4.Para fins de Recordes, anilhas mais leves pesando 0,25 kg, 0,5 kg e 1,0 kg podem ser usadas, para atingir
+   um peso de pelo menos, 0,5 kg a mais do que o recorde existente.
+ 5.Anilhas pesando 20 kg ou mais não devem exceder 6 cm de espessura. Anilhas pesando 15 kg ou
+   menos não devem exceder 3 cm de espessura.
+ 6.As anilhas devem seguir o seguinte código de cores: 10 kg e abaixo - qualquer cor, 15 kg - amarelo, 20 kg
+   - azul, 25 kg - vermelho.
+ 7.Todas as anilhas devem estar claramente marcadas com seu peso e carregadas na sequência das
+   anilhas mais pesadas internamente, com as anilhas menores em ordem decrescente de peso, de modo
+   que os árbitros possam ler o peso de cada anilha.
+ 8.As anilhas mais pesadas devem ser carregadas na barra primeiro, com a face voltada para dentro; as
+   demais anilhas devem ser carregadas com a face voltada para fora.
+ 9.O diâmetro das anilhas maiores não deve ser superior a 45 cm.
+
+ 2.4. PRESILHAS
+
+(a) Sempre devem ser utilizadas.
+(b) Cada uma deve pesar 2,5 kg.
+
+ 2.5. SUPORTE DE AGACHAMENTO
+
+  1. Somente suportes de agachamento de fabricantes comerciais oficialmente registrados e aprovados pelo
+      Comitê Técnico serão permitidos para uso nos Campeonatos Internacionais de Powerlifting.
+ 2. Os suportes de agachamento devem ser projetados para ajustar de uma altura mínima de 1,00 m na posição
+      mais baixa até se estender a uma altura de pelo menos 1,70 m em incrementos de 2,5 cm.
+ 3. Todos os suportes devem ser capazes de ser fixados na altura requerida por meio de pinos.
+
+ 2.6. BANCO
+
+Somente suportes e bancos de fabricantes comerciais oficialmente registrados e aprovados pelo Comitê Técnico
+serão permitidos para uso em Campeonatos Internacionais de Powerlifting. O banco deverá estar em
+conformidade com as seguintes dimensões:
+
+         Comprimento - não inferior a 1,22 m, deve ser plano e nivelado.
+         Largura - não inferior a 29 cm e não superior a 32 cm.
+         Altura - não inferior a 42 cm e não superior a 45 cm, sendo medida do chão até o topo da superfície
+         acolchoada do banco, sem estar deprimida ou compactada. A altura dos suportes, que devem ser
+         ajustáveis, deve ser de no mínimo 75 cm a no máximo 110 cm, medidos do chão até a posição de
+         descanso da barra.
+         A largura mínima entre os interiores dos suportes de barra deve ser de 1,10 m.
+         A cabeça do banco deve se estender 22 cm além do centro dos suportes, com uma tolerância de 5 cm
+         para qualquer lado.
+         Suportes de segurança anexados devem ser usados em todos os eventos. A altura mínima dos suportes
+         de segurança deve ser de 50 cm, com 10 furos em incrementos de 2,5 cm e 50 cm de comprimento.
+
+ 2.7. RELÓGIOS
+
+Relógios de cronometragem visíveis para todos no local (plataforma, área de aquecimento) devem ser usados,
+operando continuamente com um mínimo de vinte minutos e exibindo o tempo decorrido. Além disso, deve ser
+disponibilizado um relógio que mostre o tempo restante para entrar nas próximas tentativas, visível para o
+treinador e/ou atleta.
+
+
+
+  9                                       equipamentos e especificações                          01.03.2026
+                                               LIVRO DE REGRAS
+
+ 2.8. LUZES
+
+Um sistema de luzes deve ser fornecido para que os árbitros comuniquem suas decisões. Cada árbitro controlará
+uma luz branca e uma luz vermelha. A luz branca indica um "levantamento válido", e a luz vermelha indica um
+"levantamento inválido". As luzes devem ser dispostas horizontalmente para corresponder às posições dos três
+árbitros. Elas devem ser conectadas por fios ou serem eletrônicas/sem fio de forma que acendam juntas, e não
+separadamente, quando ativadas pelos três árbitros. Para fins de emergência, ou seja, uma falha no sistema
+elétrico, os árbitros receberão pequenas bandeiras ou placas brancas e vermelhas para comunicarem suas
+decisões ao comando audível do Árbitro central, "bandeiras".
+
+
+ 2.9. CARTÕES/PLACAS DE FALHA
+
+Após as luzes serem ativadas e aparecerem, o(s) árbitro(s) deverá(ão) levantar um cartão ou placa, ou ativar o
+sistema de luzes, para indicar o(s) motivo(s) da falha no levantamento.
+
+
+Sistema de cartões numerados dos árbitros - motivo da falha.
+
+
+Cor dos cartões:
+Falha nº 1 = cartão vermelho
+Falha nº 2 = cartão azul
+Falha nº 3 = cartão amarelo
+
+
+
+
+             AGACHAMENTO                                  SUPINO                      LEVANTAMENTO TERRA
+
+
+                                                     1.VERMELHO
+
+      Falha para “flexionar” os joelhos   A barra não descer até o peito         Falha em estender totalmente
+      e descer o corpo até que o          ou abdômen, ou seja, não               os    joelhos   no   término       do
+      “topo” da superfície das coxas      alcançar o peito ou abdômen            movimento.
+      na junção com o quadril esteja      ou tocar o cinto.
+      abaixo da linha do topo dos                                                Falha em posicionar o feixe
+      joelhos.                                                                   frontal do músculo deltóide
+                                          Falha      em    abaixar   a   parte
+                                                                                 atrás da projeção da linha
+                                          inferior    da    articulação,   de
+                                                                                 imaginária da barra.
+                                          ambos os cotovelos, ao nível
+                                          ou abaixo da superfície de
+                                          cada respectiva articulação do         Falha em ficar ereto.
+                                          ombro.
+
+
+
+
+ 10                                        equipamentos e especificações                               01.03.2026
+                                                     LIVRO DE REGRAS
+
+
+              AGACHAMENTO                                      SUPINO                             LEVANTAMENTO TERRA
+
+
+                                                                    2.AZUL
+
+     Falha em assumir uma posição                 Qualquer movimento da barra               Qualquer movimento da barra
+     ereta      com         os      joelhos       para baixo no curso em que é              para baixo antes de chegar na
+     estendidos no começo e no                    elevada.                                  posição       final.     Se        a    barra
+     término do levantamento.                                                               “assentar”     quando         os       ombros
+                                                  Falha em empurrar a barra até             forem para trás, isso não deve ser
+     “Impulso” duplo ou mais de                   a extensão total dos cotovelos            razão     para         desqualificar        o
+     uma tentativa de recuperação                 com     os    braços      totalmente      levantador.
+     do movimento na parte inferior               retos        no        término       do
+     do levantamento ou qualquer                  levantamento.                             Apoiar a barra nas coxas durante
+     movimento              descendente                                                     a realização do levantamento.
+     durante a subida.                            Falha em travar os braços                 Se a barra encostar nas coxas,
+                                                  antes             do          comando     mas não for apoiada, isso não é
+                                                  “COMECE” (start).                         motivo para desqualificação.
+
+
+                                                             3.AMARELO
+
+     Mover os pés para frente ou                  Afundar       a       barra   após    a   Abaixar a barra antes de receber
+     para trás ou mover os pés                    mesma estar imóvel no peito               o sinal do Árbitro Chefe.
+     lateralmente. Balanços dos                   ou na área abdominal, de
+     pés      entre   a   ponta         e    os   forma a ajudar o levantador.              Permitir que a barra volte à
+     calcanhares são permitidos.                                                            plataforma        sem         manter        o
+                                                  Falha em cumprir os sinais                controle com ambas as mãos,
+     Deixar de cumprir os sinais                  do Árbitro Chefe no início,               por exemplo, soltar a barra das
+     do Árbitro Chefe no começo                   durante ou na conclusão do                palmas das mãos.
+     ou fim do levantamento.                      levantamento.
+                                                                                            Dar um passo para frente ou
+     Contato      com       a    barra      ou    Utilizar impulso da parte                 para trás ou movimento lateral
+     levantador       por       parte       dos   superior          do    corpo    para     dos pés. Balanço dos pés entre a
+     auxiliares/anilheiros entre os               iniciar           o      movimento        ponta     e     os     calcanhares          é
+     sinais do Árbitro Chefe, para                ascendente da barra a partir              permitido. Movimentos dos pés
+     tornar o levantamento mais                   do peito.                                 depois do comando “Desce”
+     fácil.                                                                                 (down) não é motivo de falha.
+
+                                                  Qualquer              mudança        na
+     Contato      dos     cotovelos         ou                                              Deixar de realizar qualquer um
+                                                  posição       de       levantamento
+     braços com as pernas, que dê                                                           dos     requisitos       contidos          na
+                                                  escolhida              durante        o
+     suporte      e/ou          ajuda       ao                                              descrição               geral             do
+                                                  levantamento propriamente
+     levantador. Leve contato que                                                           levantamento, que precede esta
+                                                  dito, por exemplo, qualquer
+     não propicie ajuda pode ser                                                            lista de desqualificações.
+                                                  movimento de elevação da
+     ignorado.
+                                                  cabeça, ombros ou nádegas
+                                                                                            Levantamento incompleto
+                                                  de seus pontos de contato
+     Qualquer             queda             ou
+                                                  originais         ou     movimento
+     lançamento da barra depois
+                                                  lateral das mãos na barra.
+     do término do levantamento.
+
+
+11                                                equipamentos e especificações                                           01.03.2026
+                                                   LIVRO DE REGRAS
+
+
+
+      Deixar   de   realizar   qualquer      Qualquer contato dos pés do
+      requisito contido na descrição         levantador com o banco ou
+      do levantamento, que precede           seus suportes.
+      esta lista de desqualificações.
+                                             Contato       com     a    barra     ou
+                                             levantador      por       parte      dos
+      Levantamento incompleto
+                                             auxiliares/anilheiros entre os
+                                             sinais do Árbitro Chefe, de
+                                             forma a tornar o levantamento
+                                             mais fácil.
+
+                                             Contato deliberado entre a
+                                             barra     e    os     suportes       de
+                                             descanso da barra durante o
+                                             levantamento        de     forma       a
+                                             tornar o mesmo mais fácil.
+
+                                             Deixar de realizar qualquer
+                                             requerimento          contido        na
+                                             descrição      do     levantamento
+                                             que     precede     esta     lista   de
+                                             desqualificação.
+
+                                             Levantamento incompleto
+
+
+
+
+  2.10. PLACAR
+
+Um placar claramente visível e detalhado deve ser disponibilizado para espectadores, oficiais e todas as partes
+envolvidas na competição. Os nomes dos levantadores devem ser organizados por números de lote para cada
+sessão. O recorde atual deve ser exibido e atualizado conforme necessário.
+
+
+
+                                             PLACAR DO CAMPEONATO
+      GRUPO:                            AGACHAMENTO              SUPINO                     LEVANTAMENTO
+                                                                                                TERRA
+
+                                                                                     SUB
+       LOTE    NOME NAÇÃO PESO      RD1     RD2      RD3   RD1      RD2     RD3             RD1   RD2   RD3   TOTAL   CLASS.
+                                                                                    TOTAL
+
+
+
+         1
+
+         2
+
+         3
+
+         ...
+
+        14
+
+
+
+
+ 12                                          equipamentos e especificações                                     01.03.2026
+                                            LIVRO DE REGRAS
+
+                                    3.EQUIPAMENTO PESSOAL
+
+
+3.1. MAIÔS
+
+
+MAIÔ SUPORTE (equipado)
+O maiô suporte pode ser usado apenas em competições designadas como Equipadas.
+O maiô suporte pode ser usado para todos os levantamentos em competições designadas como Equipadas
+(nas quais um maiô de levantamento sem suporte pode ser usado também).
+
+
+As alças do maiô devem ser usadas sobre os ombros do levantador o tempo todo em todos os levantamentos
+em todas as competições. Somente maiôs de levantamento com suporte de fabricantes aceitos na “Lista
+Aprovada de Vestuário e Equipamento para Uso em Competições IPF” serão permitidos para uso em
+competições. Além disso, quaisquer maiôs suporte desses fabricantes aprovados devem atender a todas as
+especificações das Regras Técnicas da IPF; maiôs suporte de fabricantes aprovados que violem qualquer Regra
+Técnica da IPF não serão permitidos para uso em competições.
+
+
+O maiô suporte deve seguir as seguintes especificações:
+
+     (a) O material do maiô deve ser de uma única camada.
+
+
+     (b) O maiô deve possuir pernas, estendendo-se um mínimo de 3 cm e um máximo de 15 cm, a partir do
+     topo do cavalo ao longo do interior da perna, medindo-se colocando o maiô na posição vertical.
+
+
+     (c) Quaisquer alterações no maiô que excedam as larguras, comprimentos e/ou espessuras pré-
+     estabelecidas tornarão a roupa ilegal para a competição.
+
+
+     (d) Apesar de alterações/pregas para ajustar/apertar os maiôs e as camisas de suporte não os tornem
+     ilegais, estas deverão ser feitas apenas sobre as costuras originais. As pregas devem ser feitas no
+     interior do maiô ou camisa. Qualquer alteração feita em outras áreas além das costuras originais do
+     fabricante são ilegais. As pregas não devem ser costuradas de volta ao corpo da peça.
+
+
+     (e) Se um ajuste/aperto tiver que ser feito nas alças dos ombros e o excesso de material é superior a 3
+     cm, este ajuste deve ser feito na parte interna das alças e o material em excesso não pode ser
+     costurado sobre as alças do maiô. Não mais do que um comprimento de 3 cm pode sobressair
+     externamente.
+
+
+     (f) O maiô pode trazer logos ou emblemas
+        do fabricante aprovado do maiô
+        da nação do levantador
+        do nome do levantador
+        de acordo com a regra de "Logos de Patrocinadores"
+
+
+     Em competições nacionais ou de menor nível, serão permitidos o logo do clube do levantador ou seu
+     patrocinador individual, sem a necessidade de submeter aos trâmites internacionais da regra “Logos
+     de Patrocinadores” da IPF. No entanto, ainda devem ser seguidas as normas de medidas e decoro na
+     inserção do logo.
+
+
+
+
+13                                         equipamento pessoal                                   01.03.2026
+                                               LIVRO DE REGRAS
+
+MAIÔS (sem suporte)
+Um "singlet" (maiô sem suporte) deve ser usado em competições designadas como Clássicas/Raw e pode ser
+usado em competições designadas como Equipadas (nas quais um maiô suporte pode ser usado).
+As alças do singlet devem ser usadas sobre os ombros do levantador em todos os momentos, em todos os
+levantamentos e em todas as competições. Apenas singlets (não-suportivos) de fabricantes aceitos na “Lista
+Aprovada de Vestuário e Equipamentos para Uso em Competições da IPF” serão permitidos para uso em
+competições.
+Além disso, qualquer singlet (sem suporte) de fabricantes aprovados deve atender a todas as especificações
+das Regras Técnicas da IPF; qualquer singlet de um fabricante aprovado que infrinja uma Regra Técnica da IPF
+não será permitido para uso em competições.
+
+
+O singlet (sem suporte) deve conformar-se às seguintes
+especificações:
+
+     (a) O maiô deve ser uma peça única e de tamanho
+     adequado, sem qualquer folga quando usado.
+     O levantador poderá utilizar um maiô aprovado com
+     pernas longas. O mesmo maiô usado para o
+     agachamento     deverá   também     ser     usado   pelo
+     levantador em todos os levantamentos.
+
+     (b) É permitido o uso de joelheira aprovada por cima do maiô de pernas longas, mas não abaixo
+     do mesmo. O árbitro Controlador Técnico deverá checar que nenhuma joelheira está sendo
+     usada por baixo do maiô. Meias de Levantamento Terra podem ser usadas sobre o singlet de
+     perna longa - mas não são obrigatórias.
+
+     (c) O maiô deve ser fabricado inteiramente de tecido ou de material têxtil sintético, detalhando que
+     nenhum suporte é dado ao levantador pelo maiô na execução de qualquer levantamento.
+
+     (d) O material do maiô deverá ser de uma única camada, mas pode ter espessura dupla do mesmo
+     material no tamanho de 12 cm x 24 cm na área do cavalo.
+
+     (e )Deve haver pernas para o maiô, estendendo-se um mínimo de 3 cm e um máximo de 25 cm, a
+     partir do topo do cavalo ao longo do interior da perna, medindo-se colocando o maiô na posição
+     vertical.
+
+     (f) O maiô pode trazer logos ou emblemas:
+        do fabricante aprovado do maiô
+        da nação do levantador
+        do nome do levantador
+        de acordo com a regra "Logos de Patrocinadores"
+     Em competições nacionais ou de menor nível, serão permitidos o logo do clube do levantador ou
+     patrocinador individual, sem a necessidade de submeter aos trâmites internacionais da regra “Logos
+     de Patrocinadores” da IPF. No entanto, ainda devem ser seguidas as normas de medidas e decoro na
+     inserção do logo.
+
+
+ 3.2. CAMISETA
+
+Uma camiseta deve ser usada sob o maiô de levantamento por todos os levantadores no agachamento,
+supino e levantamento terra. A única exceção a esse requisito é a camisa de suporte, permitida para o uso no
+lugar de uma camiseta, conforme a norma “Camisa Suporte” abaixo. A combinação de camisa suporte e
+camiseta é proibida.
+
+
+14                                             equipamento pessoal                             01.03.2026
+                                             LIVRO DE REGRAS
+A camiseta está sujeita às seguintes condições:
+
+     (a) A camiseta deve ser fabricada inteiramente de tecido ou similar sintético, e não deve conter no seu
+     total ou em parte qualquer material elástico de borracha ou similar, nem ter nenhuma costura
+     reforçada ou bolsos, botões, zíperes ou que não sejam de gola redonda ao redor do pescoço.
+
+
+     (b) Deve ter mangas justas. Essas mangas não devem terminar abaixo do cotovelo ou no deltóide. Os
+     levantadores não podem empurrar ou enrolar as mangas da camiseta até o deltóide quando
+     estiverem competindo. Conforme figuras abaixo.
+
+
+     (c) A camiseta deve ser simples, ou seja, de uma cor ou colorida e sem logos ou emblemas, ou podem
+     ostentar o logo ou emblema:
+                                                                          SIM                     NÃO
+        da nação do levantador
+        do nome do levantador
+        da região da IPF do levantador
+        do evento no qual o levantador está competindo
+        de acordo com a regra "Logos de Patrocinadores"
+     Em competições nacionais ou de menor nível, serão
+     permitidos o logo do clube do levantador ou patrocinador
+     individual, sem a necessidade de submeter aos
+     trâmites internacionais da regra “Logos de Patrocinadores”
+     da IPF. No entanto, ainda devem ser seguidas as normas de
+     medidas e decoro na inserção do logo.
+
+
+ 3.3. CAMISAS DE SUPORTE (equipado)
+
+Uma camisa suporte que foi aceita para a "Lista de Equipamentos Aprovados para uso em Competições da
+IPF” pode ser usada apenas em competições designadas como Equipadas.
+
+
+A camisa suporte deve ser conforme as seguintes especificações:
+
+     (a) A camisa deve ser fabricada inteiramente de tecido ou tecido sintético e não deve ser constituída,
+     no todo ou em parte, de qualquer emborrachado em material elástico ou semelhante, nem ter
+     nenhuma costura reforçada ou bolsos, botões, zíperes ou que não seja de gola redonda em torno do
+     pescoço.
+
+     (b) A camisa deve ter mangas. Essas mangas devem terminar abaixo do deltóide do levantador e não
+     devem estender-se sobre ou abaixo do cotovelo do levantador. As mangas não podem ser empurradas
+     ou enroladas para o deltóide quando o levantador está competindo.
+
+     (c) A camisa pode ser simples, ou seja, de uma única cor e
+                                                                                                               2
+     sem logo ou emblemas, ou pode ostentar o logo ou emblema:
+        da nação do levantador
+        do nome do levantador
+        do evento no qual o levantador está competindo
+        de acordo com a regra de "Logos de Patrocinadores".
+
+
+
+
+     (d) É proibida qualquer manipulação ou adulteração do projeto original da camisa, fornecido pelo
+     fabricante e aprovado pelo Comitê Técnico. Qualquer alteração indevida tornará a camisa ilegal para
+     uso em competições. O material deve abranger a totalidade da área do deltóide como especificado na
+     seta n° 2.
+15                                           equipamento pessoal                                  01.03.2026
+                                             LIVRO DE REGRAS
+
+
+ 3.4. CUECAS
+
+Um “suporte atlético” comercial padrão ou uma cueca comercial padrão (não são permitidos calções com
+pernas, tipo boxer ou samba canção) de qualquer mistura de algodão, nylon ou poliéster deve ser usado por
+baixo da roupa de levantamento. Mulheres podem usar sutiã comercial ou esportivo.
+Sungas ou qualquer peça feita de material emborrachado ou similar elástico, exceto na cintura, não podem ser
+usados embaixo da roupa de levantamento.
+
+
+Qualquer roupa de baixo com suporte é ilegal para uso nas competições da IPF.
+
+
+
+
+                                   SIM           SIM              SIM        NÃO
+
+ 3.5. MEIAS
+
+Meias podem ser usadas.
+(a) As meias podem ser de qualquer cor ou cores e podem ter o logo do fabricante.
+(b) O comprimento da meia não deve entrar em contato com a faixa de joelho/joelheira ou com a patela.
+(c) Meias de comprimento total da perna, meias de compressão ou meia-calça ou são estritamente proibidos.
+
+Meias de comprimento até a canela devem ser usadas para cobrir e proteger as canelas durante a execução do
+levantamento terra.
+
+ 3.6. CINTO
+
+Os competidores podem usar um cinto. Se usado, deve ficar externo ao maiô de levantamento.
+Somente cintos de fabricantes aceitos para a "Lista de Roupas e Equipamentos Aprovados para uso em
+Competições IPF" serão permitidos para uso em competições.
+
+Materiais e construção:
+
+     (a)    O corpo principal deve ser feito de couro, vinil ou material similar não elástico em uma ou mais
+     camadas que podem ser coladas e/ou costuradas juntas.
+     (b)     Não deve haver forro acolchoado, reforço ou suporte adicional de qualquer material nem na
+     superfície, nem oculto entre as lâminas do cinto.
+     (c) A fivela deve ser presa a uma ponta do cinto por tachas e/ou costura.
+     (d) O cinto pode ter uma fivela com um ou dois pinos, ou ser do tipo “solta fácil” com alavanca.
+     (e) Um passante deve estar preso próximo à fivela por tachas/ou costura.
+     (f)   O cinto pode ser neutro, ou seja, de uma ou de duas ou mais cores e sem logos, ou pode ostentar o
+     logo ou emblema
+           do nome do levantador
+           de acordo com a regra de "Logos de Patrocinadores"
+     Em competições nacionais ou de menor nível, serão permitidos o logo do clube do levantador ou
+     patrocinador individual, sem a necessidade de submeter aos trâmites internacionais da regra “Logos
+     de Patrocinadores” da IPF. No entanto, ainda devem ser seguidas as normas de medidas e decoro na
+     inserção do logo
+
+16                                          equipamento pessoal                                  01.03.2026
+                                              LIVRO DE REGRAS
+                                                                 Dimensões:
+                                                                  1. Largura Máxima do cinto: 10 cm
+                                                                  2. Espessura máxima do cinto: 13 mm ao longo do
+                                                                   comprimento principal
+                                                                  3. Largura interna máxima da fivela: 11 cm
+                                                                  4. Largura externa máxima da fivela: 13 cm
+                                                                  5. Largura máxima do passante: 5 cm
+                                                                  6. Distância entre a extremidade do cinto e da fivela
+                                                                   e a extremidade oposta do passante: 25 cm.
+
+ 3.7. CALÇADOS OU BOTAS
+
+Calçados ou botas devem ser usados.
+
+
+(a)    São    permitidos    apenas     calçados     esportivos    de    uso   interno/botas   esportivas;   botas   de
+weightlifting/powerlifting ou sapatilhas de levantamento terra. O mencionado refere-se a esportes internos,
+como luta ou basquete. Botas de caminhada não se enquadram nesta categoria.
+(b) A espessura da sola não deve exceder 5 cm em nenhum ponto.
+(c) A sola deve ser plana, ou seja, sem projeções, irregularidades ou modificações no design padrão.
+(d) Palmilhas soltas que não fazem parte do calçado fabricado devem ter espessura limitada a um centímetro.
+(e) Meias com revestimento de sola externa de borracha não são permitidas nas disciplinas -
+Agachamento/Supino/Levantamento Terra.
+(f) Os sapatos devem estar devidamente ajustados (cadarços amarrados ou tiras de velcro presas) quando
+o levantador estiver na plataforma.
+
+ 3.8. JOELHEIRAS
+
+Sendo cilíndricas e de neoprene, podem ser usadas apenas nos joelhos pelo levantador na execução de
+qualquer levantamento em competição. Joelheiras não podem ser usadas em qualquer parte do corpo que
+não sejam os joelhos. Joelheiras não podem ser usadas caso o levantador esteja usando faixas de joelho, de
+acordo com a regra "Faixas" abaixo.
+Somente joelheiras de fabricantes aceitos para a "Lista de Roupas e Equipamentos Aprovados para Uso em
+Competições IPF" serão permitidas para uso em competições. Além disso, qualquer uma dessas joelheiras de
+fabricantes aprovados deve atender a todas as especificações do Regulamento Técnico da IPF. Joelheiras que
+violem qualquer Norma Técnica IPF não devem ser autorizadas para uso em competições.
+
+
+Joelheiras devem estar de acordo com as seguintes especificações:
+      (a)   Joelheiras   devem   ser   fabricadas   inteiramente       de   uma   única   camada   de   neoprene,   ou
+predominantemente por uma única camada de neoprene e uma camada única de tecido sem suporte sobre o
+neoprene. Podem haver costuras no neoprene ou sobre o tecido no neoprene. A totalidade da fabricação da
+joelheira não deve propiciar um suporte/rebote excessivo para os joelhos do levantador.
+      (b) As joelheiras devem ter espessura máxima de 7 mm e comprimento máximo de 30 cm.
+      (c) Joelheiras não devem ter qualquer cinta, velcro, cordões, estofamento adicional ou dispositivo de apoio
+semelhante sobre/acoplado a elas. Devem ser cilíndricas e contínuas, sem buracos no neoprene ou em
+qualquer parte do material de cobertura.
+      (d) Quando utilizadas pelo levantador em competição, as joelheiras não devem estar em contato com o
+maiô (com excessão de maiôs de pernas longas) ou as meias do levantador e devem ser centralizadas sobre a
+articulação do joelho.
+      (e) Os atletas estão autorizados a receber assistência pessoal ao vestirem as joelheiras.
+      (f) É permitido o uso de joelheira sobre o maiô de pernas longas, porém é vetado o uso de joelheira por
+baixo do maiô de pernas longas.
+                                          LIVRO DE REGRAS
+
+
+ 3.9. FAIXAS
+
+Apenas faixas com uma camada de elástico tecidas comercialmente, que são cobertas com poliéster, algodão
+(ou uma combinação de ambos) ou crepe medicinal são permitidas.
+Faixas de Suporte: apenas faixas de joelho de fabricantes comerciais oficialmente registrados e aprovados pelo
+Comitê Técnico são permitidas para uso em competição de powerlifting.
+Faixas Sem Suporte: faixas de crepe medicinal, bandagem e faixas de suor não requerem aprovação do Comitê
+Técnico.
+
+PUNHOS
+     Faixas de punho não devem exceder 1 metro de comprimento e 8 cm de largura. Abas de velcro e bainhas
+     devem ser incluídas no comprimento de 1 metro. Uma tira passante pode ser presa à extremidade para
+     auxiliar no manuseio. O passante não pode estar sobre o dedão ou dedos durante o levantamento. Uma
+     combinação entre faixa de punho e faixa para suor não é permitida.
+     A área de cobertura da faixa no punho não deve se estender além de 10 cm acima e 2 cm abaixo do
+     centro da articulação do punho e não pode exceder uma largura de 12cm.
+
+JOELHOS
+     Em competições designadas como Equipadas, faixas que não excedam 2 metros de comprimento e 8 cm
+     de largura podem ser usadas. A faixa de joelho não pode se estender além de 15 cm acima e 15 cm abaixo
+     do centro da articulação do joelho e não pode exceder uma largura de cobertura total de 30 cm.
+     Joelheiras aprovadas pela IPF são permitidas. A combinação de joelheira e faixa de joelho é estritamente
+     proibida. O neoprene pode ser composto de borracha “sintética”, porém só é aceitável em joelheiras.
+     As faixas não podem estar em contato com as meias e/ou o maiô de levantamento.
+     O uso de faixas em qualquer outro lugar do corpo não é permitido.
+
+ 3.10. BONÉS E FAIXAS DE SUOR
+
+     O uso de bonés ou chapéus durante o levantamento é estritamente proibido.
+     É permitido às mulheres o uso do Hijab (lenço de cabeça) durante o levantamento. Durante o supino, o
+     júri ou os árbitros podem solicitar que o levantador prenda ou ajuste o cabelo de forma que não atrapalhe
+     a visão da performance no levantamento.
+     Faixas de suor comerciais de uma cor, pretas ou brancas, podem ser utilizadas, sem exceder 12 cm de
+     largura. Uma combinação entre faixa de punho e faixa de suor não é permitida.
+
+3.11. FITA MÉDICA/ESPARADRAPO
+
+
+     Duas camadas de fita médica/esparadrapo podem ser usadas nos polegares. Esparadrapo, ou itens
+     semelhantes, não podem ser usados em qualquer outro lugar do corpo sem permissão oficial do Júri ou
+     Árbitro Chefe. A Fita médica/esparadrapo não pode ser usada(o) pelo levantador como suporte ao segurar
+     a barra.
+     Com aprovação prévia do Júri, Médico Oficial, Paramédicos ou Paramédico pessoal em serviço, fitas
+     médicas/esparadrapos podem ser aplicados sobre um ferimento de forma que não haja nenhum
+     benefício durante o levantamento.
+     Nas competições onde não haja presença de Júri ou equipe médica em serviço, o Árbitro Chefe terá
+     jurisdição sobre o uso de fita médica/esparadrapo.
+
+
+18                                       equipamento pessoal                                  01.03.2026
+                                            LIVRO DE REGRAS
+
+     3.12. INSPEÇÃO DE EQUIPAMENTO PESSOAL
+
+
+     (a)    A inspeção de equipamento pessoal de cada levantador na competição pode ocorrer a qualquer
+     momento (os horários podem ser anunciados no Congresso Técnico) durante a competição até 30 minutos
+     antes do início da de suas respectivas categorias de peso corporal.
+
+     (b) Um mínimo de dois Árbitros devem ser apontados para realizar essa tarefa. Todos os itens devem ser
+     examinados e aprovados antes de serem carimbados ou marcados oficialmente.
+
+     (c)   Faixas mais compridas que o permitido serão rejeitadas, mas podem ser cortadas no comprimento
+     certo e reexaminadas.
+
+     (d) Qualquer item considerado sujo ou rasgado será rejeitado.
+
+     (e) A folha de inspeção assinada deve ser entregue ao presidente do Júri no fim do período de inspeção.
+
+     (f)   Se após a inspeção um levantador aparecer na plataforma vestindo ou usando qualquer item ilegal, a
+     não ser aquele que pode ter inadvertidamente passado pelos árbitros, o levantador será desqualificado
+     imediatamente da competição.
+
+     (g)     Todos os itens mencionados previamente em Roupas e Equipamentos Pessoais devem ser
+     inspecionados.
+
+     (h)   Itens como relógios, jóias, óculos, aparelhos de boca e artigos de higiene feminina não precisam ser
+     inspecionados.
+
+     (i) Antes da tentativa de quebra de um recorde mundial, o levantador será inspecionado pelo Controlador
+     Técnico. Se for identificado que ele esteja vestindo ou usando qualquer item ilegal, a não ser aqueles que
+     tiverem passado inadvertidamente pelos Árbitros, o levantador será desqualificado da competição.
+
+     (j) Árbitros e o Controlador Técnico de suas respectivas categorias de peso devem se apresentar 5 minutos
+     antes do início da inspeção do equipamento pessoal.
+
+
+
+ 3.13. LOGOS DE PATROCINADORES
+
+
+(a) Além dos logos e emblemas de fabricantes listados na "Lista de Vestuário e Equipamentos Aprovados para
+uso em Competições IPF", uma nação ou levantador pode solicitar ao secretário-geral da IPF permissão para
+um logo ou emblema adicional ser listado como aprovado para exibição em itens ou equipamento pessoal
+apenas daquela nação ou levantador requerente. Tais aplicações de logo ou emblema devem ser
+acompanhadas pelo pagamento de uma taxa determinada pelo Comitê Executivo da IPF. A IPF, através do
+Executivo, pode aprovar o logo ou emblema, mas tem o direito de recusar sua aprovação devido, na opinião do
+executivo, o logo ou emblema prejudicar qualquer interesse comercial da IPF ou deixar de cumprir as normas
+de decoro. O Executivo também tem o direito de, à sua aprovação, limitar o tamanho ou posição do logo sobre
+qualquer item de equipamento pessoal.
+
+
+Qualquer aprovação concedida permanece em vigor a partir da data na qual a aprovação se deu, pelo restante
+do ano civil e por todo o calendário civil do ano seguinte. Após isso, uma nova solicitação e o pagamento de
+uma nova taxa deverão ser feitos para que o logo ou emblema permaneça aprovado.
+
+
+
+
+19                                         equipamento pessoal                                  01.03.2026
+                                           LIVRO DE REGRAS
+
+Logos ou emblemas aprovados por meio desta regra serão listados em um anexo da "Lista de Vestuário e
+Equipamentos Aprovados para uso em Competições IPF". O Secretário-Geral da IPF emitirá uma carta de
+aprovação aos candidatos aprovados, onde conste a ilustração do logo ou emblema aprovado e indicando a
+data de aprovação e quaisquer restrições à aprovação; essa carta será prova aceitável para os Árbitros em
+competições de que o logo ou emblema é permitido.
+Os logos ou emblemas de fabricantes que não estão na "Lista de Vestuário e Equipamentos Aprovados para
+uso em Competições IPF", nem no anexo de logos ou emblemas aprovados estabelecido pela regra "Logos de
+Patrocinadores", podem ser usados apenas em camisetas, sapatos ou meias, onde o logo ou emblema é
+impresso ou bordado e não maiores de 5 cm x 2 cm de tamanho.
+
+
+ 3.14. GERAL
+
+
+ (a)    O uso de óleo, graxa ou outros lubrificantes no corpo ou no equipamento pessoal é estritamente
+ proibido.
+ (b) Talco de bebê, resina, talco ou carbonato de magnésio são as únicas substâncias que podem ser usadas
+ no corpo e na roupa, porém não nas faixas.
+ (c)   O uso de qualquer tipo de adesivo na parte de baixo do sapato é estritamente proibido. Isso se aplica a
+ qualquer adesivo próprio, como por exemplo lixa de madeira, lixa de esmeril, etc., inclusive resina e carbonato
+ de magnésio. O uso de um spray de água é aceitável.
+ (d)   Nenhuma substância estranha pode ser aplicada ao equipamento de powerlifting. Isso inclui todas as
+ substâncias a não ser aquelas que são usadas periodicamente como agente esterilizante na limpeza da
+ barra, banco ou plataforma.
+ (e) Proteções leves entre a meia e a canela podem ser usadas.
+ (f)   É permitido aos atletas o uso de colares e acessórios semelhantes. Nenhuma parte do colar ou
+ acessório deve ser colocada na boca enquanto estiverem na plataforma. O pingente ou berloque pode
+ ser usado por cima ou por baixo da camiseta; no entanto, se for considerado que o item representa um
+ risco à segurança ou interfere no levantamento, o árbitro poderá exigir que seja guardado sob a
+ camiseta ou removido.
+
+
+
+                  4.POWERLIFTING E REGRAS DE PERFORMANCE
+
+  4.1. AGACHAMENTO
+
+
+        SIM              NÃO
+
+                                       1) O levantador deve ficar de frente para a parte frontal da
+                                       plataforma, com a barra colocada horizontalmente sobre os ombros,
+                                       a uma altura não inferior ao nível do deltoide posterior. As mãos,
+                                       polegares e dedos do levantador devem estar em contato completo
+        SIM              NÃO           com a barra enquanto ela estiver posicionada nos suportes e na
+                                       posição inicial e final do levantamento. Não é necessário que os
+                                       polegares envolvam a barra. No entanto, as mãos, polegares e dedos
+                                       devem permanecer em contato completo com a barra durante toda
+                                       a duração do levantamento. As mãos podem ser posicionadas em
+                                       qualquer lugar da barra, entre ou em contato com os colares internos..
+
+
+
+20                                      Powerlifting e regras de performance                    01.03.2026
+                                                    LIVRO DE REGRAS
+2) Depois de tirar a barra dos suportes, (o levantador pode receber ajuda na remoção da barra dos suportes
+pelos auxiliares/anilheiros) o levantador deve se mover para trás para estabelecer a posição inicial. Quando o
+levantador estiver imóvel, ereto (ligeiro desvio é permitido) e com os joelhos estendidos, o Árbitro Chefe dará o
+sinal para o início do levantamento. O sinal deverá consistir de um movimento do braço para baixo e do
+comando audível “squat” (agache). Antes de receber o sinal para “agachar” o levantador pode fazer qualquer
+ajuste de posição dentro das regras, sem penalidade. Por razões de segurança será solicitado ao levantador
+que guarde a barra através do comando “replace” the bar (guarde a barra), junto com um movimento de braço
+para trás, se após um período de 5 segundos ele não estiver na posição correta para começar o levantamento.
+O Árbitro Chefe então dirá o motivo pelo qual o sinal para início não foi dado.
+
+3) Quando receber o sinal do Árbitro Chefe o levantador deve flexionar os joelhos e abaixar o corpo até que a
+superfície das pernas na junção com o quadril esteja abaixo da linha do topo dos joelhos. Apenas uma
+tentativa de descida é permitida. É considerado o começo da tentativa quando os joelhos do levantador
+iniciarem a flexão.
+
+4) O levantador deve voltar para uma posição ereta com os joelhos estendidos. Balanço/impulso duplo na
+parte mais inferior da tentativa de agachamento ou qualquer movimento para baixo não é permitido. Quando
+o levantador estiver imóvel (na posição final aparente) o Árbitro Chefe dará o sinal para guardar a barra no
+suporte.
+
+5) O sinal para guardar a barra no suporte consistirá de um movimento com o braço para trás e do comando
+audível “rack” (guarde). O levantador deve então se mover para frente e recolocar a barra nos suportes.
+Movimento dos pés após o comando “rack” (guarde) não é motivo para invalidar o movimento. Por razões de
+segurança o levantador pode pedir ajuda dos auxiliares/anilheiros para retornar e recolocar a barra nos
+suportes. O levantador deve permanecer sob a barra durante esse processo.
+
+6) Não mais do que cinco e não menos que dois auxiliares/anilheiros devem permanecer na plataforma em
+qualquer momento. Os árbitros podem decidir quanto ao número de auxiliares/anilheiros requisitados na
+plataforma em qualquer momento, se 2, 3, 4 ou 5.
+
+
+4.1.1. CAUSAS DE DESQUALIFICAÇÃO NO AGACHAMENTO
+1.     Falha em cumprir os comandos do Árbitro Chefe no começo ou término do levantamento.
+2.        Balanço/impulso duplo na parte mais inferior do levantamento, ou qualquer movimento para baixo
+durante a subida.
+3.     Falha em assumir uma posição ereta com os joelhos estendidos no início ou término do levantamento.
+4.       Dar um passo para frente ou para trás ou movimento lateral da sola dos pés. Balanço dos pés entre a
+ponta dos dedos e os calcanhares são permitidos.
+5.      Falha em flexionar os joelhos e descer o corpo até que o topo da superfície das pernas na junção com o
+quadril esteja abaixo da linha do topo dos joelhos, como mostrado no diagrama.
+6.     Contato da barra ou levantador com os auxiliares/anilheiros, entre os sinais do Árbitro Chefe, de modo que
+torne o levantamento mais fácil.
+
+                                                               7.   Contato dos cotovelos ou braços com as pernas. Leve
+                                                               contato é permitido se não houver apoio que possa
+                                                               auxiliar ou oferecer vantagens ao levantador.
+                                                               8.    Qualquer queda ou lançamento da barra depois do
+                                                               término do movimento.
+                                                               9.    Falha em realizar qualquer um dos itens citados em
+                                                               Regras de Execução para o agachamento.
+      O diagrama acima mostra a posição típica, mas não
+      obrigatória, da barra e a profundidade requerida no
+                         agachamento.
+
+
+ 21                                              Powerlifting e regras de performance                      01.03.2026
+                                            LIVRO DE REGRAS
+
+
+ 4.2. SUPINO
+
+1) O banco deve estar na plataforma com a área da cabeça voltada para frente ou em um ângulo de 45 graus.
+O Árbitro Chefe deve se posicionar ao lado da área da cabeça do banco de supino no suporte. Não é permitido
+ao levantador adentrar ao banco pela área da cabeça.
+
+2) O levantador deve deitar de costas com a cabeça, os ombros e as nádegas (a imagem POSICIONAMENTO
+INICIAL ADEQUADO e CONFIGURAÇÃO mostra o mínimo aceitável) em contato com a superfície do banco. Os
+pés devem estar retos no chão (tão retos quanto a forma do calçado permita). Mãos, polegares e dedos
+devem segurar a barrada apoiada no rack com os polegares dando a volta por completo na barra (pegada
+fechada). Essa posição do corpo deve ser mantida durante todo o levantamento. Movimentos dos pés são
+permitidos desde que permaneçam planos em contato com a plataforma. Durante sua preparação no banco,
+o atleta não pode colocar os pés no banco. O cabelo não deve esconder a parte de trás da cabeça quando
+deitado no banco. O júri ou árbitros podem requerer que o cabelo seja ajustado de acordo.
+
+3) Para conseguir firmar o pé o levantador pode usar placas com a superfície plana ou blocos não excedendo
+30 cm de altura no total, com uma dimensão mínima de 60 cm x 40 cm, para elevar a superfície da plataforma.
+Blocos de 5 cm, 10 cm, 20 cm e 30 cm devem estar disponíveis para apoio dos pés em todas as competições
+internacionais.
+
+4) Não mais que 5 e não menos que 2 auxiliares/anilheiros devem estar na plataforma em qualquer momento.
+Depois de se posicionar corretamente, o levantador pode solicitar ajuda dos auxiliares/anilheiros na remoção
+da barra dos suportes. A retirada, se assistida pelos auxiliares/anilheiros, deve ser efetuada com a distância do
+comprimento dos braços.
+
+5) O espaçamento das mãos não deve exceder 81 cm, medidos entre os dedos indicadores (ambos os
+indicadores devem estar na marca de 81 cm e os indicadores inteiros devem estar em contato com a marca de
+81 cm se a pegada máxima for utilizada). O uso da pegada reversa é proibido.
+
+6) Após retirar a barra dos suportes, com ou sem a ajuda dos auxiliares/anilheiros, o levantador deve aguardar
+o sinal do Árbitro Chefe com os braços estendidos e cotovelos travados. O sinal será dado assim que o
+levantador estiver imóvel e a barra posicionada propriamente. Por razões de segurança, será requerido ao
+levantador para guardar a barra através do comando “replace” the bar (guarde a barra), juntamente com um
+movimento do braço para trás, se depois de um período de 5 segundos ele não estiver na posição correta para
+iniciar o levantamento. O Árbitro Chefe então dirá a razão pela qual o sinal para início não foi dado.
+
+7) O sinal para iniciar a tentativa deve consistir num movimento do braço para baixo juntamente com o
+comando audível “start”(comece).
+
+8) Depois de receber o sinal o levantador deve descer a barra até o peito ou abdômen onde o lado inferior de
+ambas as articulações do cotovelo é abaixado no mesmo nível ou abaixo da superfície superior de cada
+articulação do respectivo ombro (a barra não deve tocar o cinto) e segurá-la imóvel, após o qual o Árbitro Chefe
+dará o comando audível “press” (sobe). O levantador deve então retornar a barra ao comprimento dos braços,
+com os braços estendidos e cotovelos travados. Quando segura nessa posição e imóvel, o comando audível
+“rack” (guarde) será dado juntamente com um movimento do braço para trás. Se a barra tocar o cinto ou não
+tocar no peito ou na área abdominal o comando do Árbitro Chefe será “rack”(guarde).
+
+9) A altura das barras de segurança pode ser ajustada pelo Júri por motivos de segurança.
+
+
+
+
+22                                       Powerlifting e regras de performance                      01.03.2026
+                     LIVRO DE REGRAS
+
+
+
+
+     MOVIMENTO
+      VÁLIDO
+
+
+
+
+     MOVIMENTO
+      VÁLIDO
+
+
+
+
+      MOVIMENTO
+       INVÁLIDO
+
+
+
+
+      MOVIMENTO
+       INVÁLIDO
+
+
+
+
+23                Powerlifting e regras de performance   01.03.2026
+                                             LIVRO DE REGRAS
+
+
+
+
+                               FIGURA A - POSICIONAMENTO & SETUP INICIAL APROPRIADOS
+
+
+
+4.2.1. CAUSAS PARA DESQUALIFICAÇÃO NO SUPINO
+1) Falha em cumprir os comandos do Árbitro Chefe no início, durante e/ou no término do levantamento.
+2) Qualquer mudança na posição de levantamento escolhida durante o levantamento propriamente dito, por
+exemplo: elevação da cabeça, dos ombros e/ou nádegas do banco ou movimento lateral das mãos na barra.
+3) Afundar a barra para o peito ou abdômen depois de imobilizada de forma que torne o levantamento mais
+fácil.
+4) Utilizar o impulso da parte superior do corpo para iniciar o movimento ascendente da barra a partir do
+peito.
+5) Qualquer movimento da barra para baixo enquanto estiver sendo levantada/pressionada.
+6) A barra não descer até o peito ou abdômen (i.e. não tocar o peito, abdômen ou a barra tocar o cinto).
+7) Falha em elevar a barra com completa extensão dos braços e cotovelos travados no final do levantamento.
+8) Contato dos auxiliares/anilheiros com a barra ou o levantador entre os comandos do Árbitro Chefe, de forma
+que facilite o levantamento.
+9) Qualquer contato dos pés do levantador com o banco ou seus suportes. Levantar os pés não é permitido.
+Movimento dos pés é permitido, mas deve manter contato total da sola com a plataforma.
+10) Contato deliberado entre a barra e o suporte de segurança.
+11) Falha em abaixar a parte inferior de ambas as articulações do cotovelo ao nível ou abaixo da superfície
+superior de cada articulação do respectivo ombro.
+12) Falha em cumprir qualquer um dos itens descritos em Regras de Execução.
+
+
+4.2.2. REGRAS PARA DEFICIENTES COMPETINDO EM CAMPEONATOS
+APENAS DE SUPINO DA IPF
+ Os Campeonatos de Supino devem ser organizados sem divisão especial para levantadores deficientes, por
+exemplo cegos, deficientes visuais, deficientes com mobilidade reduzida, etc. Os atletas podem ter assistência
+para chegar até o banco de supino e também para retirar-se dele através da ajuda do próprio técnico e/ou
+com o uso de muletas, bengalas ou cadeira de rodas. As regras da competição são as mesmas aplicadas aos
+não deficientes. Para levantadores que tiverem um membro inferior amputado, uma prótese será considerada
+como um membro natural. O levantador deve ser pesado sem o aparelho, com peso compensatório
+adicionado de acordo com a já estabelecida tabela de frações, ver item 5 de PESAGEM.
+
+
+Para levantadores com membros inferiores disfuncionais que necessitam de aparelhos ou similares para
+andar, o aparelho será considerado parte do membro natural e o levantador será pesado usando o aparelho.
+
+24                                        Powerlifting e regras de performance                  01.03.2026
+                                             LIVRO DE REGRAS
+
+     4.3. LEVANTAMENTO TERRA
+
+
+1) O levantador deve estar voltado para a frente da plataforma, com a barra colocada no solo horizontalmente
+na frente dos pés do levantador, segurada com uma pegada opcional com ambas as mãos e levantada até que
+o levantador fique ereto.
+
+2) No final do levantamento os joelhos devem estar travados numa posição estendida, em posição reta. O
+feixe anterior do músculo deltoide deve estar posicionado atrás da projeção da linha imaginária da barra.
+(Veja a imagem)
+
+3) O sinal do Árbitro Chefe consistirá de um movimento do braço para baixo e um comando audível
+“down”(desce). O sinal não será dado até que a barra esteja imóvel e o levantador esteja aparentemente na
+posição final.
+
+4) Qualquer elevação da barra ou qualquer tentativa deliberada para elevá-la será considerada uma tentativa.
+Uma vez iniciada a tentativa, nenhum movimento para baixo é permitido até que o levantador atinja a posição
+ereta com os joelhos travados. Se a barra assentar quando os ombros forem para trás (descer levemente na
+finalização), isso não será razão para desqualificar o levantamento.
+
+
+ REPRESENTAÇÃO ESQUEMÁTICA DA ABDUÇÃO                                O DIAGRAMA ABAIXO MOSTRA O APOIO DA BARRA
+  CORRETA DO OMBRO NA POSIÇÃO FINAL DO                                               NAS COXAS.
+          LEVANTAMENTO TERRA
+
+
+
+
+                                            A - FEIXE ANTERIOR DO
+                                             MÚSCULO DELTÓIDE
+
+                                           B – PROJEÇÃO DA LINHA
+                                           IMAGINÁRIA DA BARRA
+
+                                          α – ÂNGULO DE DEFLEXÃO
+
+
+
+
+4.3.1. CAUSAS PARA DESQUALIFICAÇÃO NO LEVANTAMENTO TERRA
+1.    Qualquer movimento da barra para baixo antes de chegar à posição final.
+2.    Falha em ficar ereto com os ombros para trás.
+3.    Falha em travar os joelhos estendidos no fim do levantamento.
+4.     Apoiar a barra nas coxas durante a realização do levantamento. Se a barra encostar nas coxas, mas não
+for apoiada, isso não é razão para desqualificação. O levantador será beneficiado em todas as decisões
+tomadas pelo árbitro se houver dúvida.
+5.     Pisar para trás ou para frente, ou mover lateralmente os pés. Balanço dos pés entre a ponta do pé e o
+calcanhar é permitido. Movimento dos pés após o comando “desce” não é motivo para invalidar o movimento.
+6.    Abaixar (descer) a barra antes de receber o sinal do Árbitro Chefe.
+7.    Permitir que a barra volte à plataforma sem manter o controle com ambas as mãos, por exemplo: soltar a
+barra das palmas das mãos.
+8.    Falha em cumprir qualquer um dos itens descritos em regras de execução.
+
+
+ 25                                       Powerlifting e regras de performance                   01.03.2026
+                                            LIVRO DE REGRAS
+
+
+                                                5.PESAGEM
+1) A pesagem dos competidores não deve ocorrer antes de 2 horas do início da competição para uma (ou
+mais) categoria(s) particular(es). Todos os levantadores na(s) categoria(s) devem participar da pesagem, que
+será realizada na presença de dois/três árbitros indicados. Categorias de peso podem ser combinadas em uma
+sessão única de levantamento.
+
+
+2)   Se ainda não tiver sido feito, grupos serão sorteados para estabelecer a ordem de pesagem. Sorteios
+também serão feitos para definir a ordem de levantamento durante a competição quando os levantadores
+pedirem os mesmos pesos para suas tentativas.
+
+
+3) O período de pesagem irá durar 1 hora e meia.
+
+
+4) A pesagem de cada competidor ocorrerá em uma sala com a porta fechada, apenas com o competidor, seu
+técnico (treinador) ou gerente do mesmo gênero e os dois/três árbitros presentes. Por razões de higiene, o
+levantador deve usar meias ou papel toalha na plataforma da balança. Atletas deverão se identificar com
+documento pessoal válido.
+
+
+5) Os levantadores podem ser pesados ​nus ou em roupas íntimas que estejam em conformidade com as
+especificações estabelecidas na seção apropriada do livro de regras e que não alterem efetivamente o peso
+do levantador. O vestuário mínimo, para efeitos de pesagem, deverá limitar-se estritamente a:
+     (a) O singlet de powerlifting aprovado;
+     (b) Uma camiseta aprovada (se aplicável à categoria);
+     (c) Roupa íntima padrão em conformidade com as especificações da IPF;
+     (d) Nenhum calçado.
+Caso haja dúvidas quanto ao peso das roupas, uma nova pesagem do atleta apenas com o singlet, poderá ser
+solicitada. Em competições com participantes de ambos os sexos, o procedimento de pesagem poderá ser
+alterado para garantir que os atletas sejam pesados ​por oficiais do mesmo sexo. Oficiais adicionais (não
+necessariamente árbitros) poderão ser designados para essa finalidade.
+
+
+Os levantadores deficientes/amputados que estão competindo em campeonatos de supino terão as seguintes
+adições ao seu ao seu peso corporal:
+
+
+
+                      Para cada amputação abaixo do tornozelo        1/54 do peso corporal
+
+                      Para cada amputação abaixo do joelho               1/36 do peso corporal
+
+                      Para cada amputação acima do joelho                1/18 do peso corporal
+
+                      Para cada falta de articulação no quadrill         1/9 do peso corporal
+
+
+
+
+Para levantadores com membros inferiores disfuncionais que necessitam de suportes de perna ou dispositivos
+semelhantes para andar, o aparelho será considerado parte do membro natural e o levantador será pesado
+usando o aparelho.
+
+
+
+
+26                                                   pesagem                                     01.03.2026
+                                            LIVRO DE REGRAS
+6) Cada levantador só pode ser pesado uma vez. Apenas aqueles cujo peso corporal for maior ou menor que os
+limites da categoria em que se inscreveram podem voltar à balança. Eles devem retornar à balança e pesar
+dentro do limite de 1 hora e meia dado à pesagem; caso contrário serão eliminados da competição. Um
+levantador só poderá ser re-pesado enquanto o tempo e a progressão dos números de lote permitirem. Um
+levantador só poderá ser pesado fora do limite de tempo de uma hora e meia se ele se apresentar dentro do
+limite de tempo, mas devido ao número de levantadores tentando se pesar, ele não puder subir na balança. A
+ele será permitido então uma re-pesagem a critério dos árbitros. O peso do levantador não poderá se tornar
+público até que todos os levantadores competindo na categoria(s) particular(es) sejam pesados.
+
+7) Um levantador só pode pesar na categoria em que foi nominado 21 dias antes da data da competição.
+No caso em que grupos são formados dentro de uma classe de peso específico, o grupo B e C poderão
+competir em um horário separado e mais cedo que o grupo A. Quando grupos competem em tempos
+separados dessa forma, o grupo A deve ter no mínimo 8 (oito) e no máximo 14 (quatorze) levantadores.
+
+8) Os levantadores devem verificar as alturas dos suportes de agachamento e supino e os blocos para os pés
+antes do início da competição. A folha com as alturas dos suportes deve ser assinada ou rubricada, depois da
+verificação, pelo levantador ou treinador. É de interesse dos levantadores. Uma cópia desse documento oficial
+vai para o Júri, o Locutor e Chefe de Tablado.
+
+
+
+
+                                    6.ORDEM DE COMPETIÇÃO
+
+
+ 6.1. O SISTEMA DE ROUND
+
+
+
+(a) Na pesagem, o levantador ou seu treinador deve declarar o peso inicial para os três levantamentos.
+Isso deve ser anotado no cartão apropriado da 1ª tentativa, assinado pelo levantador ou seu treinador e retido
+pelo oficial conduzindo a pesagem. O cartão do Locutor é o cartão apropriado da 1ª tentativa. Então, serão
+dados ao levantador 11 cartões de tentativa em branco para serem usados durante a competição: três para o
+agachamento, três para o supino e cinco para o terra.
+Cada levantamento é diferenciado pelo uso de cartões de cores diferentes. Tendo feito sua 1ª tentativa num
+levantamento, o levantador ou seu treinador deve decidir qual o peso requisitado na 2ª tentativa.
+O peso deve ser escrito no local indicado no cartão e entregue ao secretário da competição ou outro oficial
+indicado antes do término do tempo de 1 minuto permitido. O mesmo procedimento deve ser realizado para
+as segundas e terceiras tentativas nos três levantamentos.
+
+(b) A responsabilidade de entregar as tentativas no limite de tempo é exclusivamente do levantador e/ou seu
+treinador. No sistema de Round, a necessidade de muitos oficiais é eliminada, pois os cartões de tentativas são
+entregues diretamente ao oficial designado. Exemplos dos cartões de tentativas estão ilustrados abaixo.
+Lembre que o espaço das primeiras tentativas nos cartões em posse dos levantadores só devem ser usados
+para a troca permitida da primeira tentativa se preciso. Da mesma forma, os quartos e quintos quadrados no
+cartão do levantamento terra só devem ser usados para as duas trocas permitidas da terceira tentativa do
+levantamento terra se necessário. Em competições só de supino, um cartão similar ao do levantamento terra
+será usado.
+
+
+
+
+27                                               ordem de competição                             01.03.2026
+                                            LIVRO DE REGRAS
+
+
+
+      CARTÃO DO LOCUTOR
+
+      NOME, SOBRENOME:                                  DATA DE NASCIMENTO:
+      NAÇÃO:                            PESO CORP:      N. LOTE:          CATEGORIA DE PESO:
+      IPF FORMULA:
+
+      ASSINATURA: ATTLETA/TREINADOR
+
+      DISCIPLINA      1ª TENTATIVA      2ª TENTATIVA    3ª TENTATIVA      MELHOR TENTAT.
+
+      AGACHAMENTO
+
+      SUPINO
+
+      LEV. TERRA
+
+      SUBTOTAL                                                                             SUBTOTAL
+
+      LEV. TERRA
+
+      GRUPO 1,2,3                                       IPF POINTS
+                                        COLOCAÇÃO       TOTAL
+
+
+
+
+                    CARTÕES DE PEDIDA
+
+                                                                Preencha o nome e sobrenome;
+
+
+
+                                                                Assinale a disciplina e preencha
+                                                                número de lote;
+
+                                                                1,2,3 I - preencha o peso escolhido;
+                                                                3 – 1 - 1 mudança da 3 pedida;
+                                                                3 – 2 - 2 mudança da 3 pedida.
+
+
+
+
+(b)     Em sessões com 10 ou mais levantadores competindo, podem ser formados grupos com
+aproximadamente o mesmo número de levantadores. No entanto, devem ser formados grupos quando 15 ou
+mais levantadores estiverem competindo na mesma sessão. Uma sessão pode ser formada por uma única
+categoria de peso ou qualquer combinação de categorias de peso a critério do organizador com o propósito
+de apresentação. Em competições somente de Supino, grupos de até vinte (20) atletas poderão ser formados.
+Os grupos serão determinados examinando os melhores totais dos levantadores conseguidos em nível
+nacional ou internacional durante os doze meses anteriores. Os levantadores com os menores totais formarão
+o primeiro grupo a competir, e os totais maiores progressivamente formarão outros grupos à medida que se
+fizer necessário. Se um levantador não fornecer um total dos doze meses anteriores, então ele será
+automaticamente colocado no primeiro grupo a competir.
+
+
+(c) Cada levantador fará sua primeira tentativa no primeiro round, sua segunda tentativa no segundo round e
+sua terceira tentativa no terceiro round.
+
+
+
+
+28                                           ordem de competição                                   01.03.2026
+                                           LIVRO DE REGRAS
+
+(d)   Quando um grupo consistir de menos de 6 levantadores, tempos compensatórios serão adicionados no
+fim de cada round como segue: para 5 levantadores adiciona-se 1 minuto; 4 levantadores adiciona-se 2
+minutos; 3 levantadores adiciona-se 3 minutos. Três minutos é a adição máxima permitida no final do round.
+Caso um levantador siga a si mesmo quando o relógio compensatório estiver operando, 3 minutos é a adição
+máxima permitida. Para tempo compensatório quando grupos estiverem envolvidos, os pesos serão tirados da
+barra no fim do tempo compensatório, a barra será recarregada, então será contado um minuto para começar
+a tentativa.
+
+(e)   A barra deve ser carregada progressivamente durante cada round baseado no princípio de uma barra
+crescente. Em nenhum momento o peso na barra será diminuído durante um round, exceto em caso de erros
+como descrito no item (h), e nesse caso só no final do round.
+
+(f) A ordem de levantamento em cada round será determinada pelo peso escolhido pelo levantador naquele
+round. No caso de dois levantadores escolherem o mesmo peso, o levantador com o número de lote menor
+sorteado na pesagem, levantará primeiro. O mesmo se aplica ao terceiro round de tentativas no levantamento
+terra, no qual o peso pode ser mudado 2 vezes, isso se a barra ainda não estiver carregada com o peso
+originalmente escolhido pelo levantador e ter sido anunciado pelo Locutor.
+Exemplo:
+Levantador A com número de lote 5 pede 250.0 kg.
+Levantador B com número de lote 2 pede 252.5 kg.
+Levantador A falha nos 250.0 kg.
+O levantador B pode descer sua pedida para 250.0 kg e tentar ganhar?
+Não, a ordem de levantamento no round ainda é determinada pelo número de lote sorteado para o atleta.
+
+(g) Se não for bem sucedido numa tentativa, o levantador não se segue no levantamento, mas deve esperar o
+próximo round antes que possa tentar aquele peso novamente.
+
+(h) Se em um round uma tentativa não for bem sucedida devido a um erro no peso na barra, erro do anilheiro,
+falha do equipamento ou qualquer outra falha não cometida pelo levantador, o levantador será beneficiado
+com uma seguinte tentativa com o peso correto. O levantador deverá ter sua tentativa extra ao final do round
+exceto se o levantamento for uma tentativa de recorde, onde nesse caso o levantador deverá sempre seguir a
+si mesmo, não importa qual round seja. Se ocorrer do levantador ser o último levantador do round, ele
+receberá 3 minutos de acréscimo antes de realizar a tentativa; em caso de penúltimo no round, dois minutos;
+em caso de antepenúltimo no round, um minuto. Nesses casos em que os levantadores seguem a eles
+mesmos e recebem tempo de descanso compensatório, a barra será carregada assim que a nova tentativa for
+entregue. O tempo compensatório será então adicionado ao um minuto usual para começar a tentativa. O
+relógio começará a contar e o levantador terá aquele tempo para iniciar sua tentativa. Levantadores seguindo
+a si mesmos terão quatro minutos marcados no relógio, durante esse tempo o levantador pode iniciar a
+tentativa assim que estiver pronto. Os penúltimos levantadores no round receberão três minutos,
+antepenúltimos no round receberão dois minutos, todos os outros receberão apenas oum minuto usual para
+começar a tentativa. Na terceira rodada do Levantamento Terra e Single Supino, se um levantador por
+qualquer razão receber uma nova tentativa extra do júri (barra carregada erroneamente, erro dos anilheiros ou
+falha do equipamento), o levantador receberá uma nova tentativa no peso correto, o levantador deverá seguir
+a si mesmo.
+
+(i) É permitido ao levantador uma mudança no peso da primeira tentativa de cada levantamento. A mudança
+de peso pode ser para mais ou para menos que o entregue originalmente e a ordem de levantamento no 1º
+round mudará de acordo. Se ele estiver no primeiro grupo, essa mudança pode ocorrer a qualquer momento
+até três minutos antes do início do primeiro round daquele levantamento. Os grupos seguintes recebem um
+privilégio semelhante até três tentativas a partir do final do último round desse levantamento do grupo
+anterior. Um aviso prévio deste prazo será anunciado pelo locutor. Se um aviso adequado desses prazos não for
+dado, então um anúncio autorizando essas mudanças será feito e o levantador poderá fazer a mudança dentro
+de 1 minuto após o anúncio.
+29                                           ordem de competição                              01.03.2026
+                                          LIVRO DE REGRAS
+(j) O levantador deve entregar sua segunda e terceira tentativas dentro de um minuto depois de completar sua
+tentativa prévia. O um minuto será contado a partir do momento que as luzes de arbitragem forem ativadas. Se
+nenhuma pedida for entregue dentro do minuto fornecido, será acrescido 2,5 kg para sua próxima tentativa. Se
+o levantador falhar em sua tentativa anterior e não entregar o peso para uma nova tentativa dentro do tempo
+de um minuto permitido, então sua barra será carregada com o mesmo peso da tentativa falha.
+
+(k)   Pesos entregues para tentativas do segundo round em todos os três levantamentos não podem ser
+trocados. Da mesma forma, as terceiras tentativas para agachamento e supino não podem ser trocadas. Por
+essa regra, uma vez que uma tentativa é entregue, ela não pode ser revogada (retirada). A barra será carregada
+com o peso entregue e o relógio começará a correr.
+
+(l) No terceiro round do levantamento terra, são permitidas duas mudanças. A mudança de peso pode ser para
+mais ou para menos do que a terceira tentativa entregue previamente pelo levantador. No entanto, só são
+permitidas se o levantador não tiver sido chamado para a barra já carregada com o peso entregue previamente
+pelo Locutor.
+
+(m) Em competições apenas de supino, as regras são no geral as mesmas para as competições com os três
+levantamentos. No entanto, no terceiro round, duas mudanças de peso são permitidas e as regras estabelecidas
+no item (l) acima para o levantamento terra se aplicam igualmente aqui.
+
+(n) Se uma sessão de levantamento consistir de um único grupo (exemplo: até um máximo de 14 levantadores),
+um intervalo de 20 minutos será dado entre os levantamentos. Com o intuito de assegurar tempo adequado
+para aquecimento dos atletas e organização da plataforma.
+
+(o) Quando dois ou mais grupos participam de uma sessão em uma única plataforma, o levantamento será
+organizado numa base de repetição de grupos. Após o término de cada disciplina composta por mais de um
+grupo(agachamento, supino), deve ser dado um intervalo de 10 minutos entre as disciplinas.
+      Por exemplo: se houver dois grupos participando de uma sessão, o primeiro grupo irá completar os três
+rounds do agachamento. Eles serão seguidos imediatamente pelo segundo grupo que irá completar seus três
+rounds de agachamento. A plataforma será então arrumada para o supino e o primeiro grupo irá completar
+seus três rounds de supino, imediatamente seguida pelo segundo grupo que irá, da mesma forma, completar
+seus três rounds de supino. A plataforma será então arrumada para o levantamento terra e o primeiro grupo irá
+completar seus três rounds de terra, imediatamente seguido pelo segundo grupo que irá também completar
+seus três rounds de terra. Esse sistema, portanto, elimina qualquer perda de tempo a não ser o necessário para
+arrumar a plataforma entre os levantamentos.
+
+(p) Em competições onde parceiros de transmissão internacionais designados estejam presentes, o
+intervalo entre as modalidades (Agachamento, Supino e Levantamento Terra) poderá ser ajustado.
+
+
+O Comitê Técnico com a cooperação e assistência do organizador indicará os seguintes oficiais:
+
+(a)   Locutor/Anunciante: um Árbitro Nacional ou Internacional capaz de conversar em inglês e na língua da
+nação anfitriã.
+(b) Secretário Técnico: um Árbitro Internacional preferencialmente capaz de conversar e escrever em inglês e
+na língua da nação anfitriã.
+(c) Cronometrista (um árbitro qualificado).
+(d) Oficiais/Expedidores.
+(e) Marcadores.
+(f)   Auxiliares/Anilheiros: Código de vestimenta correto -Camiseta do evento ou camiseta comum de cor lisa.
+Calças esportivas de cor uniforme. Calçados de treino ou esportivos. Shorts ou bermudas poderão ser usados
+em clima quente, conforme decisão do júri.
+(g) Controlador Técnico (um árbitro internacional qualificado)
+(h) Oficiais adicionais podem ser nomeados conforme necessário, por exemplo médicos, paramédicos etc.
+
+30                                            ordem de competição                             01.03.2026
+                                          LIVRO DE REGRAS
+
+     6.2. RESPONSABILIDADES DOS OFICIAIS
+
+
+
+(a) O Locutor é responsável pelo funcionamento eficiente da competição. Ele atua como Mestre de
+Cerimônias e organiza as tentativas escolhidas pelos levantadores de forma ordenada, de acordo com os
+pesos e, se necessário, pelo número de lote. Ele anuncia o peso requisitado para a próxima tentativa e o nome
+do levantador. Quando a barra estiver carregada e a plataforma liberada para o levantamento, o Árbitro Chefe
+indicará o fato ao Locutor. Quando o Locutor anunciar que a barra está pronta e chamar o levantador para a
+plataforma, o cronômetro será disparado. Para esclarecimentos, quando o Locutor anunciar que a barra está
+"pronta/carregada", o levantador estará comprometido com a tentativa. As tentativas anunciadas pelo Locutor
+devem ser exibidas no placar suspenso em uma posição de destaque, com os nomes dos levantadores na
+ordem do número de lote.
+
+(b) O Secretário Técnico é responsável por participar da reunião técnica antes da competição. Na ausência do
+Comitê Técnico ou de um membro desse comitê, o Secretário Técnico irá compilar as escalas do Júri e dos
+Árbitros a partir dos nomes dos árbitros que se declararam disponíveis para serviço durante toda a
+competição. Ele completará as listas necessárias de “Árbitros em Serviço e Membros do Júri” para a
+competição e informará os árbitros sobre as categorias às quais foram alocados. Após a reunião técnica,
+quando as nominações finais das equipes forem compiladas, o secretário técnico providenciará uma planilha
+de pontuação, uma planilha checagem de equipamentos, uma planilha de altura de suporte e uma planilha
+de ordem de pesagem para cada categoria na competição, inserindo os nomes de todos os levantadores
+nominados na categoria. Os sorteios dos números de lote também poderão ser realizados nessa etapa para
+estabelecer a ordem de pesagem e de levantamento. Ele também fará cartões de competição para cada
+levantador na categoria. A folhas mencionadas acima, juntamente com um suprimento adequado de cartões
+de tentativa dos levantadores, será colocada no envelope apropriado para cada categoria de peso corporal na
+competição e entregue ao Árbitro Chefe dessa categoria. O Secretário Técnico participará de cada pesagem e
+aconselhará os árbitros em serviço sobre procedimentos e qualquer ponto que necessite atenção. Ele deve ser
+um Árbitro Internacional, de preferência do país anfitrião, e capaz de lidar com qualquer problema que possa
+surgir devido a dificuldades linguísticas no local. É responsabilidade do diretor do evento fornecer todas as
+planilhas em branco e documentação necessários para permitir que o Secretário Técnico realize seu trabalho.
+Um dossiê completo sobre a descrição do trabalho, juntamente com toda a documentação relevante, pode ser
+obtido gratuitamente no Comitê Técnico e estar disponível para todos os Diretores de Eventos.
+
+(c) O cronometrista é responsável por marcar exatamente o espaço de tempo entre o anúncio de que a barra
+está pronta e o início da tentativa pelo levantador. Ele também é responsável por marcar as adições de tempo
+sempre que necessário, por exemplo: depois de uma tentativa o levantador deve deixar a plataforma em 30
+segundos. Uma vez que o relógio estiver correndo para um levantador, só poderá ser parado pelo fim do
+tempo dado, pelo início do levantamento, ou a critério do Árbitro Chefe. Consequentemente, é de grande
+importância que o levantador e/ou seu treinador chequem a altura dos suportes de agachamento antes de ser
+chamado, pois uma vez anunciado que a barra está pronta, o relógio será acionado. Qualquer ajuste futuro nos
+suportes deverá ser feito no período de um minuto dado ao levantador, a não ser que ele tenha pedido uma
+altura no suporte e ela tenha sido colocada errada pelos auxiliares/anilheiros. Portanto, é essencial que a folha
+com altura do suporte seja assinada ou rubricada pelo levantador ou seu treinador. Esse é um documento
+oficial, que será verificado em qualquer contestação. É dado ao levantador um minuto para começar sua
+tentativa após chamá-lo para a barra. Se ele não começar sua tentativa nesse período de tempo, o
+cronometrista falará o tempo e o Árbitro Chefe dará o comando audível: “guarde” juntamente com um
+movimento do braço para trás. O levantamento será declarado “levantamento inválido” e a tentativa será
+perdida. Quando o levantador iniciar o levantamento dentro do tempo permitido, o relógio será parado. A
+definição de início de uma tentativa depende do levantamento que está sendo realizado. No agachamento e
+supino, o início coincide com o sinal para começar do Árbitro Chefe. Veja “Árbitros” item 3. No levantamento
+terra, o início é quando o levantador faz uma tentativa determinada para elevar a barra.
+
+
+31                                           ordem de competição                                01.03.2026
+                                                LIVRO DE REGRAS
+
+(d)    Oficiais/Expedidores: são responsáveis por recolher as tentativas de peso dos levantadores ou seus
+treinadores e passar a informação sem demora para o locutor. O levantador tem um minuto entre o término
+da última tentativa e o informe ao locutor, através do oficial, do peso requisitado para a próxima tentativa.
+
+
+(e) Os Marcadores são responsáveis por marcar corretamente o progresso da competição, e no término,
+assegurar que os três árbitros assinem a folha de pontuação oficial, certificados de recordes ou qualquer outro
+documento que necessite de assinaturas. O locutor deve fazer um anúncio disso antes que os árbitros se
+retirem do local.
+
+
+(f) Auxiliares/Anilheiros são responsáveis por carregar (montar) e descarregar (desmontar) a barra, ajustar os
+suportes de agachamento e supino como requisitados, limpar a barra ou plataforma quando pedido pelo
+Árbitro Chefe, e assegurar que a plataforma esteja bem preservada e apresente sempre uma aparência limpa
+e arrumada. Em nenhum momento pode haver menos que dois ou mais que cinco ajudantes/anilheiros na
+plataforma. Quando o levantador se preparar para sua tentativa, os auxiliares/anilheiros podem ajudá-lo a
+retirar a barra dos suportes. Eles também podem ajudá-lo a recolocar a barra após a tentativa. No entanto, não
+podem encostar no levantador ou na barra durante a tentativa propriamente dita, por exemplo: durante o
+período de tempo entre os comandos de início e término. A única exceção a essa regra é se o levantamento
+está prejudicado e provavelmente resultará em lesão ao levantador, os auxiliares/anilheiros poderão, pelo
+pedido do Árbitro Chefe ou do próprio levantador, se aproximar e tirar a barra do levantador. Se o levantador
+for privado de uma tentativa bem sucedida por erro dos auxiliares/anilheiros e sem falha própria, será
+beneficiado com outra tentativa a critério dos árbitros e júri no final do round.
+
+
+(g) O Controlador Técnico garantirá que o levantador é aquele anunciado e está adequadamente equipado
+antes que ele suba à plataforma. Ele também deve participar da checagem dos equipamentos.
+
+
+
+
+ 6.3. REGRAS DIVERSAS (ERROS DE CARREGAMENTO, MÁ CONDUTA, RECURSOS, ETC.)
+
+
+1) Número de treinadores de cada nação para cada grupo de atletas na área de aquecimento
+      1 atleta = 3 treinadores
+      2 atletas no mesmo grupo = 3 treinadores
+      2 atletas em grupos diferentes (ex.: grupo A e grupo B) = 5 treinadores
+      3 atletas no mesmo grupo = 5 treinadores
+      3 atletas em grupos diferentes (ex.: grupo A e grupo B) = 6 treinadores
+      4 atletas = 6 treinadores, sendo esse o número máximo de treinadores permitidos.
+
+Número de treinadores, para cada grupo em competição/área de preparação:
+Levantamento Equipado
+      1 atleta = 2 treinadores
+      2 atletas = 4 treinadores
+      3 atletas = 5 treinadores
+      4 atletas = 6 treinadores, sendo esse o número máximo de treinadores permitidos.
+Levantamento Clássico/Raw
+      1 atleta = max 2 treinadores em 1 grupo
+      2 atletas = max 2 treinadores em 1 grupo
+      3 atletas = max 2 treinadores em 1 grupo
+      3 atletas = max 3 treinadores em 2 grupos
+      4 atletas = max 4 treinadores em 2 grupos, sendo esse o número máximo de treinadores permitidos.
+
+
+
+32                                               ordem de competição                              01.03.2026
+                                            LIVRO DE REGRAS
+
+Durante qualquer competição que esteja ocorrendo numa plataforma ou palco, apenas o levantador e UM (1)
+treinador, membros do Júri, árbitros em ofício e auxiliares/anilheiros são permitidos ao redor da plataforma ou
+sobre o palco. Durante a execução do levantamento, apenas o levantador, auxiliares/anilheiros e os árbitros
+podem estar presentes na plataforma. Os treinadores devem permanecer na área designada aos treinadores
+como definido pelo Júri ou Oficial Técnico responsável. A área técnica deve ser feita de tal forma que permita
+ao treinador posicionar-se com uma boa vista para o levantador e com a possibilidade de dar instruções e
+sinais para o levantador sobre os detalhes técnicos (por exemplo, a profundidade do agachamento).
+
+
+A área técnica não deve estar a uma distância superior a 5 metros da plataforma, e deve ser mais longa do
+que o deslocamento do levantamento, permitindo uma área de deslocamento para o treinador ver o
+levantador a partir de qualquer vista traseira, lateral ou frontal. O código de vestimenta para técnicos em
+eventos internacionais deve ser agasalho de treino da equipe nacional, ou uma camiseta aprovada pela IPF,
+ou short esportivo mais uma camiseta aprovada pela IPF ou da equipe, NÃO USAR BONÉS, NÃO TIRAR FOTOS
+ou FAZER VÍDEOS. O técnico deve aderir a este código, caso contrário, por decisão do Controlador Técnico ou
+do Júri, isso poderá resultar na exclusão do técnico da sala de aquecimento do evento e dos arredores da
+competição. VER RESPONSABILIDADES DO TREINADOR na Página 44.
+
+2) O levantador não deve colocar a faixa, arrumar a roupa ou cheirar amônia à vista do público. A única
+exceção a essa regra é o ajuste do cinto.
+
+
+3) Em competições internacionais entre dois levantadores ou duas nações competindo em categorias de
+peso diferentes, os levantadores podem se alternar independente do peso requerido para as tentativas. O
+levantador que pedir o peso mais leve em seu levantamento inicial levantará primeiro e portanto definirá a
+ordem para as tentativas alternadas durante aquele levantamento.
+
+
+4) Nas competições reconhecidas pela IPF, o peso da barra deve sempre ser múltiplo de 2,5 kg, a não ser em
+tentativas de recorde, no agachamento, supino e levantamento terra. A progressão deve ser de pelo menos
+2,5kg entre todas as tentativas.
+
+
+     (a) Em uma tentativa de recorde, o peso da barra deve ser no mínimo 0,5 kg maior que o do recorde atual.
+     (b) Durante o curso da competição um levantador pode requisitar uma tentativa de recorde que não seja
+     múltipla de 2,5kg. Se a tentativa for bem sucedida, será acrescentada tanto ao levantamento individual
+     como ao total.
+     (c)   Tentativas de recorde poderão ser feitas em qualquer ou em todas as tentativas prescritas pelo
+     levantador.
+     (d)   Um levantador só pode usar incrementos menores que 2,5 kg para tentativas de recorde no
+     campeonato em que ele estiver competindo. Exemplo: um atleta Master levantando em uma competição
+     Open não pode usar menos de 2,5 kg para alcançar um recorde de categoria Master.
+     (e) No caso de um peso divulgado para o próximo round, que não seja múltiplo de 2,5 kg para exceder o
+     recorde, o peso será reduzido para o múltiplo de 2,5 kg mais próximo se um outro competidor exceder
+     esse peso no round anterior.
+     Exemplo 1:
+O recorde atual é 302,5 kg.
+O levantador A agachou com 300 kg no 1º round, então pede 303,0 kg; o levantador B agachou com 305 kg
+no 1º round. A 2ª tentativa do levantador A agora é reduzida para 302,5 kg.
+     Exemplo 2:
+O recorde atual é 300 kg.
+O levantador A colocou somente 1 kg de incremento (301,0 kg) tendo atingido sua primeira tentativa de 300
+kg no cenário acima. O levantador B agachou com 305 kg no 1º round. O levantador A precisará agora
+acrescentar os 2,5 kg mais próximos acima (302,5 kg).
+
+33                                           ordem de competição                               01.03.2026
+                                             LIVRO DE REGRAS
+
+5) O Árbitro Chefe será o único responsável pelas decisões tomadas em caso de erro no carregamento da
+barra ou anúncios (chamadas) incorretos pelo locutor. Suas decisões serão dadas para o locutor que fará a
+chamada correta. Exemplos de erros de carregamento:
+
+
+     (a) Se a barra é carregada com um peso menor que o requisitado originalmente e a tentativa é bem
+     sucedida, o levantador pode aceitar a tentativa bem sucedida ou escolher fazer novamente a tentativa
+     com o peso originalmente requisitado. Se a tentativa não for bem sucedida, o levantador será beneficiado
+     com outra tentativa futura com o peso originalmente requisitado. Em ambos os casos acima, as tentativas
+     futuras só poderão ser realizadas no fim do round em que o erro ocorreu.
+     (b) Se a barra é carregada com um peso maior que o pedido originalmente e a tentativa for bem
+     sucedida, o levantador será beneficiado com a tentativa. No entanto, o peso pode ser reduzido novamente
+     se requisitado por outros levantadores. Se a tentativa não for bem sucedida, o levantador será beneficiado
+     com uma tentativa futura no fim do round em que o erro ocorreu.
+     (c) Se o carregamento não for o mesmo em cada ponta da barra; ou qualquer mudança ocorra com a
+     barra ou anilhas durante a execução do levantamento; ou a plataforma estiver desarrumada; se apesar
+     desses fatores, o levantamento for bem sucedido, o levantador pode aceitar a tentativa ou escolher fazer a
+     tentativa mais uma vez. Se a tentativa bem sucedida não for um múltiplo de 2,5 kg, então o menor
+     múltiplo de 2,5 kg mais próximo será marcado na folha de pontuação. Se a tentativa não for bem
+     sucedida, o levantador será beneficiado com uma tentativa futura. As tentativas futuras só ocorrerão no
+     fim do round em que o erro ocorreu.
+     (d) Se o locutor errar por anunciar um peso menor ou maior que o requisitado pelo levantador, o Árbitro
+     Chefe tomará as mesmas decisões que em erros no carregamento.
+     (e) Se por alguma razão não for possível ao levantador ou seu treinador permanecer na proximidade da
+     plataforma de forma a acompanhar o progresso da competição e o levantador perder sua tentativa
+     porque o locutor não o anunciou no peso apropriado, então o peso será reduzido o necessário e o
+     levantador permitido a realizar sua tentativa, mas apenas no fim do round.
+     (f) Se o próprio levantador for privado de uma tentativa bem-sucedida por erro de um anilheiro/auxiliar,
+     barra carregada incorretamente ou qualquer outra falta onde não haja culpa do atleta, ele receberá outra
+     tentativa, a critério dos Árbitros e do Júri, ao final do round. Se qualquer levantamento for uma tentativa
+     de recorde, o levantador deverá sempre seguir a si mesmo, não importa em qual round seja.
+
+
+
+
+34                                             ordem de competição                                 01.03.2026
+                                           LIVRO DE REGRAS
+6) Três tentativas mal sucedidas em qualquer levantamento eliminarão automaticamente o levantador da
+competição pelo total. Ele ainda pode competir por premiação nos levantamentos individuais caso realize
+uma tentativa verdadeira em cada uma das disciplinas, ou seja, dentro da sua capacidade. Caso isso seja
+questionável o Júri irá decidir.
+
+7) A não ser para a remoção inicial da barra dos suportes, o levantador não receberá qualquer ajuda dos
+auxiliares/anilheiros para se posicionar para a tentativa.
+
+8) No fim da tentativa, o levantador deve deixar a plataforma em até 30 segundos; a falha em cumprir essa
+regra pode resultar em desqualificação da tentativa a critério dos árbitros. Essa regra foi criada para
+levantadores que podem ter se machucado (lesionado) durante a realização do levantamento, também para
+os menos aptos fisicamente, como os levantadores deficientes visuais.
+
+9) O cabelo da atleta deve ser arrumado (trançado ou preso) de forma a não interferir na capacidade dos
+árbitros de avaliar o levantamento.
+
+10) Espera-se que os levantadores entrem e saiam da área ou plataforma de levantamento de forma
+respeitosa, abstendo-se de jogar o cinto no chão ou de se envolver em qualquer conduta que possa ser
+prejudicial à integridade do esporte.
+
+11) Se, durante o aquecimento ou competição, um levantador se lesionar ou de outra forma exibir sinais de
+uma condição que possa ser excessiva ou significativa para pôr em risco a sua saúde e o bem estar do
+competidor, o médico oficial tem o direito de examiná-lo. Se o médico não considerar aconselhável que o
+levantador continue, ele pode, em consulta com o Júri, insistir no afastamento do levantador da competição.
+O Head Coach ou o Técnico devem ser informados de tal decisão oficialmente. Para evitar contaminação,
+uma solução de uma parte de alvejante (água sanitária) para dez partes de água é recomendada para limpar
+o sangue, ou tecidos, da barra ou da plataforma, e também da área de aquecimento quando ocorrerem
+“acidentes”.
+
+12)   Qualquer levantador ou treinador, que por razão de má-conduta na plataforma de competição ou
+próximo dela estiver prestes a desonrar o esporte, será advertido oficialmente. Se a má conduta continuar, o
+Júri, ou Árbitros na ausência do Júri, podem desqualificar o levantador ou o treinador e ordenar que o
+levantador ou treinador deixem o local. O Head Coach deve ser informado oficialmente tanto da advertência
+quanto da desqualificação.
+
+13) O Júri e Árbitros podem, por decisão da maioria, desqualificar imediatamente um levantador ou oficial se
+eles acreditarem que qualquer má conduta seja séria o suficiente para justificar a desqualificação imediata ao
+invés de uma advertência oficial. O Head Coach deve ser informado da desqualificação.
+
+14) Em competições internacionais, todas as apelações contra as decisões do árbitro, reclamações sobre o
+progresso da competição ou contra o comportamento de qualquer pessoa ou pessoas participando da
+competição devem ser feitas para o Júri. O Júri pode requerer que a apelação seja por escrito. A apelação ou
+queixa deve ser apresentada ao Presidente do Júri pelo Head Coach, treinador ou em sua ausência pelo
+levantador. Isso deve ser feito imediatamente após a ação sobre a qual a apelação ou queixa é feita. Ela não
+será considerada se esses termos não forem seguidos.
+
+15) Se considerado necessário, o Júri pode suspender temporariamente o progresso da competição e se
+retirar para decidir o veredicto. Depois de todas as considerações e chegando a um veredicto pela maioria, o
+Júri retornará e o Presidente irá informar ao queixoso sua decisão. O veredicto do Júri será considerado final e
+não haverá direito de apelação a nenhum outro organismo. Quando a competição for recomeçada, o próximo
+levantador terá três minutos para iniciar seu levantamento. No caso da queixa ser feita contra um levantador
+ou oficial de uma equipe oponente,“o Júri não considerará reclamações referentes a decisões da arbitragem
+em levantamentos performados por atletas de times adversários”, a queixa escrita deve ser acompanhada
+pela soma de 75 Euros em dinheiro ou quantia equivalente em qualquer moeda corrente. Se o Júri julgar em
+seu veredicto que a queixa é de natureza fútil (incoerente) ou maldosa, então uma porção ou a soma inteira
+poderá ser retida e doada para a IPF a critério do Júri.
+                                          LIVRO DE REGRAS
+16) O Júri pode utilizar a tecnologia de replay instantâneo como uma ferramenta oficial para revisar
+levantamentos durante competições sancionadas pela IPF. O replay instantâneo pode ser usado
+para ajudar o Júri a determinar a correção das decisões dos árbitros ou para confirmar a validade
+de um levantamento em casos onde a evidência visual possa esclarecer uma questão técnica ou
+processual. Quando utilizado, o seguinte deve ser aplicado:
+
+
+     (a) O sistema de replay instantâneo deve ser operado apenas pelo Júri ou por um oficial
+     designado sob supervisão do Júri.
+     (b) O Júri pode iniciar a revisão por seu próprio critério ou mediante protesto apresentado de
+     acordo com as regras.
+     (c) A decisão do Júri, após a revisão do replay instantâneo, será final e obrigatória.
+     (d) O uso do replay instantâneo não deve atrasar indevidamente a competição e deve ser
+     conduzido de maneira a manter o fluxo do evento.
+     (e) O replay instantâneo só pode ser empregado em eventos do Calendário IPF ou outras
+     competições onde o equipamento técnico necessário e o pessoal estejam disponíveis.
+
+
+                                             7. ÁRBITROS
+1) Os árbitros devem ser em número de três, o Árbitro Chefe ou Árbitro Central e dois árbitros laterais. As
+credenciais internacionais dos Árbitros, e do Controlador Técnico, devem estar em dia e colocadas sobre a
+mesa do Júri.
+2) O Árbitro Chefe é responsável por dar os sinais necessários para todos os três levantamentos.
+3) Os sinais requeridos para os três levantamentos são os seguintes:
+
+
+     LEVANTAMENTO                        INÍCIO                                  TÉRMINO
+                              Um sinal visual consistindo de
+                                                                  Um sinal visual consistindo de um
+                              um movimento do braço para
+                                                                  movimento do braço para trás
+      AGACHAMENTO             baixo   juntamente    com    o
+                                                                  juntamente com o comando audível
+                              comando      audível    “squat”
+                                                                  “rack” (guarde).
+                              (agache).
+
+                              Um sinal visual consistindo de
+                              um movimento do braço para
+                              baixo     acompanhado        do
+                              comando      audível     “start”
+                              (comece).
+                                                                  Um sinal visual consistindo de um
+                                                                  movimento do braço para trás
+           SUPINO                                                 acompanhado do comando audível
+                              DURANTE:
+                                                                  “rack” (guarde).
+                              O comando audível “press”
+                              (sobe) depois que a barra
+                              estiver imóvel no peito, e um
+                              movimento     ascendente    do
+                              braço.
+
+                                                                  Um sinal visual consistindo de um
+      LEVANTAMENTO                                                movimento do braço para baixo
+                                Nenhum sinal é necessário.
+          TERRA                                                   acompanhado do comando audível
+                                                                  “down” (desce).
+
+      Quando o levantador falhar em completar o agachamento ou supino, o comando é “rack” (guarde).
+
+
+
+
+36                                                  árbitros                                   01.03.2026
+                                              LIVRO DE REGRAS
+4) Uma vez a barra reposicionada nos suportes ou na plataforma no final do levantamento, os árbitros
+anunciarão suas decisões por meio de luzes. Branca para “levantamento válido” e vermelha para
+“levantamento inválido”. Os cartões serão então levantados para indicar a razão de não ter sido válido.
+
+5) Os três árbitros podem se sentar onde consideram ser a melhor posição de observação, em volta da
+plataforma em uma variação não superior a 4 metros, para visualizar melhor cada um dos três levantamentos.
+No entanto, o Árbitro Central deve sempre ter em mente a necessidade de estar visível ao levantador que
+estiver realizando agachamento ou terra, e os árbitros laterais devem sempre ter em mente que precisam
+estar visíveis ao Árbitro Central para que ele possa ver seus braços serem levantados.
+
+6) Antes da competição, os três árbitros devem juntamente se certificar que:
+      (a) A plataforma e equipamentos da competição cumprem a regra em todos os pontos. Barras e anilhas
+      foram checadas em relação a discrepância de peso e que seja feito o descarte de equipamento defeituoso.
+      Uma segunda barra e presilhas devem estar prontas e disponíveis em caso de dano na barra e presilhas
+      originais.
+      (b) As balanças funcionam corretamente e estão precisas (com certificado atual).
+      (c) Os levantadores sejam pesados dentro dos limites de peso e tempo para sua categoria de peso.
+      (d) As roupas e equipamento pessoal do levantador foram inspecionados para cumprir a regra em todos
+      os pontos. É dever do levantador assegurar que todos os itens que deseja usar na plataforma tenham
+      passado pelo exame minucioso dos árbitros examinadores. Levantadores descobertos vestindo ou usando
+      equipamento que não foram checados podem ser penalizados, por exemplo, com a desqualificação da
+      última tentativa.
+
+7) Durante a competição, os três árbitros devem juntamente se certificar que:
+      (a) O peso da barra carregada é o mesmo que o anunciado pelo locutor. Os árbitros podem receber
+      planilhas de carga para essa finalidade. É responsabilidade de todos os 3 árbitros.
+      (b) Na plataforma, o equipamento pessoal do levantador está de acordo com as regras. Se qualquer árbitro
+      tiver motivo para duvidar da integridade do levantador a esse respeito, ele deve, após o término do
+      levantamento, informar ao Árbitro Central sua suspeita. O presidente do Júri deve então examinar o
+      equipamento pessoal do levantador. Se ele estiver vestindo ou usando qualquer item ilegal a não ser
+      aquele que pode ter passado inadvertidamente pelos árbitros examinadores, o levantador será
+      desqualificado imediatamente da competição. Se estiver vestindo qualquer item ilegal que passou por
+      engano pelos árbitros examinadores, e o levantamento no qual foi feita a descoberta foi bem sucedido, o
+      resultado deste levantamento será rejeitado e o levantador será beneficiado com uma nova tentativa
+      (com o item ilegal removido) no final do round. Se um Controlador Técnico estiver trabalhando, o
+      equipamento do levantador será examinado antes que ele (a) seja autorizado a subir na plataforma.
+
+8) Antes do início do agachamento ou supino os árbitros laterais levantarão um braço e o manterão elevado
+até que o levantador esteja em posição correta para iniciar o levantamento. Se entre os árbitros a opinião da
+maioria for de que a falta existe, o Árbitro Central não dará o sinal para o início do levantamento. O levantador
+tem o resto do tempo não expirado para corrigir a posição da barra ou a sua para então receber o sinal para
+começar. Uma vez iniciado o levantamento, os árbitros laterais não poderão chamar a atenção para faltas
+durante a execução do levantamento.
+
+9) Os árbitros devem se abster de comentários e não receber qualquer documento ou comentário verbal
+sobre o progresso da competição. Portanto, é essencial que o número de ordem/lote de cada levantador
+acompanhe seu nome na tabela de pontuação para que os árbitros possam acompanhar a ordem de
+levantamento.
+
+10) Um árbitro não pode tentar influenciar as decisões dos outros árbitros.
+
+11)   O Árbitro Central pode consultar os laterais, o Júri ou qualquer oficial se necessário para acelerar a
+competição.
+
+37                                                     árbitros                                  01.03.2026
+                                          LIVRO DE REGRAS
+12) O Árbitro Chefe pode, a seu critério, ordenar que a barra e/ou a plataforma sejam limpas. Se o levantador
+ou treinador pedirem que a barra e/ou a plataforma sejam limpas, o pedido deve ser feito para o Árbitro
+Central/Controlador Técnico e não para os auxiliares/anilheiros. No round final do Terra a barra deve ser limpa
+antes de cada tentativa, e em qualquer um dos outros dois rounds caso solicitada pelo levantador ou seu
+técnico.
+
+13) Depois da competição, os três árbitros devem assinar a folha de pontuação oficial, certificados de recordes
+ou qualquer outro documento que necessite suas assinaturas.
+
+14) Em Competição Internacional, os árbitros serão selecionados pelo Comitê Técnico e devem ter provado
+sua competência em Campeonatos Internacionais ou Nacionais.
+
+15) Em Competição Internacional, 2 árbitros da mesma nacionalidade podem ser selecionados para julgar em
+uma competição onde mais de uma nação compete, e a nação que os árbitros representam não tem
+levantadores nominados para o Campeonato. Se uma categoria é composta por mais de um grupo, todos os
+grupos devem ter os mesmos árbitros. Se a mudança de árbitros tem que ser feita, ela deve ocorrer somente
+entre as disciplinas, de modo que todos os levantadores tenham os mesmos árbitros na mesma disciplina.
+
+16) A seleção de um árbitro para ser Árbitro Central em uma categoria não impede sua seleção como árbitro
+lateral em outra categoria.
+
+17) Em Campeonatos Mundiais, ou qualquer campeonato em que tentativas para recordes mundiais
+estiverem para ser feitos, apenas árbitros categoria 1 ou categoria 2 da IPF julgarão. Cada nação pode indicar
+um máximo de quatro árbitros para trabalharem em Campeonatos Mundiais, mais dois árbitros categoria 1
+que poderão servir (trabalhar) como Júri, se houver número insuficiente. Todos os árbitros nominados a
+atender no campeonato devem estar disponíveis por no mínimo dois dias.
+
+18) Árbitros e membros do Júri deverão estar uniformizados como a seguir:
+
+
+
+                                                    Homens, inverno: Blazer azul ecsuro com emblema
+                                                    apropriado da IPF no peito esquerdo. Calça cinza
+                                                    (não jeans) com uma camisa branca e gravata da
+                                                    IPF apropriada.
+                                                    Homens, verão: Calça cinza (não jeans) com uma
+                                                    camisa branca e gravata da IPF apropriada.
+
+
+
+                                                    Mulheres, inverno: Blazer azul escuro com emblema
+                                                    apropriado da IPF no peito esquerdo. Saia ou calça
+                                                    cinza (não jeans), blusa ou camisa branca e
+                                                    lenço/gravata apropriado.
+
+                                                    Mulheres, verão: Saia ou calça cinza (não jeans),
+                                                    blusa      ou   camisa   branca    e   lenço/gravata
+                                                    apropriado.
+
+
+Os emblemas e gravatas/lenços da IPF são vermelhos para os árbitros categoria 1 e azuis para árbitros
+categoria 2. O Júri determinará se o uniforme de verão ou inverno será usado. Calçados esportivos,
+conhecidos como “tênis” não combinam com Blazer e Calça! Sapatos sociais/diurnos pretos e meias pretas
+deverão ser usados. Sapatos abertos (sandálias) não são permitidos.
+
+
+
+
+38                                                  árbitros                                    01.03.2026
+                                              LIVRO DE REGRAS
+
+
+19) As qualificações para um Árbitro Categoria 2 são as seguintes:
+     (a) Ser árbitro nacional com pelo menos dois anos de experiência, tendo atuado na posição de árbitro em
+     um mínimo de dois Campeonatos Nacionais de Powerlifting durante este período.
+     (b) Deve ser recomendado pela sua Federação Nacional.
+     (c) Deve fazer o exame escrito/computadorizado em inglês e o exame prático em um Campeonato
+     Mundial, Campeonato Continental ou Campeonato Regional.
+     (d) Deve obter uma pontuação de aprovação de 85% ou mais no exame escrito e 85% ou mais no exame
+     prático.
+
+20) As qualificações para um Árbitro Categoria 1 são as seguintes:
+     (a) Deve ser um árbitro Categoria 2 em situação regular por um período de pelo menos 4 anos, atuando
+     em pelo menos seis (6) campeonatos internacionais (Mundial e/ou Regional) e seis (6) campeonatos
+     nacionais.
+     (b) Deve fazer o exame prático e escrito/computadorizado Categoria 1 em qualquer Campeonato Mundial
+     (excluindo o Campeonato Mundial de Supino), Campeonato Continental, Jogos Regionais ou Torneio
+     Internacional.
+     (c) Deve julgar pelo menos 75 tentativas, das quais 35 devem ser agachamentos, enquanto atua como
+     Árbitro Central. As tentativas da primeira rodada dos levantadores serão contabilizadas.
+     (d) O candidato também receberá 25 pontos/créditos e será observado quanto à competência pelo(s)
+     examinador(es) durante a vistoria de equipamentos, pesagem e enquanto estiver sentado na plataforma.
+     Uma dedução de 0,5 (meio ponto/crédito) será feita para qualquer erro que possa contrariar as regras
+     técnicas. O examinador será um membro do Comitê Técnico da IPF ou um Oficial nomeado pelo Comitê
+     Técnico da IPF e pelo Registrador de Árbitros.
+     (e) O candidato deve obter pelo menos 90% no total de seu exame. Isso inclui os 75 pontos nas suas
+     decisões feitas na plataforma em comparação com as dos membros do Júri e não com as dos seus colegas
+     árbitros de plataforma. Os outros 25 pontos vêm de suas decisões e desempenho das funções necessárias,
+     ou seja, vistoria de equipamentos, pesagem e controle de plataforma.
+     (f) Deve ser nominado pela sua Federação Nacional ao Presidente do Comitê Técnico e ao Diretor de
+     Arbitragem três meses antes do exame. As bases para indicação devem ser:
+
+        1. Competência do candidato como árbitro.
+        2. Colocação anterior como categoria
+        3. Disponibilidade para arbitrar em futuros eventos internacionais.
+        4. Conhecimento da língua inglesa.
+
+     (g) Um requisito para o candidato da Categoria I é que ele/ela seja capaz de conversar em inglês em um
+     nível que permita total compreensão em disputas, especialmente quando solicitado a participar de um
+     júri. Nesse sentido, os examinadores decidirão a proficiência do candidato. Se um candidato passar no
+     exame de categoria 1, mas não falar inglês, ele/ela será um Árbitro Regional de Categoria 1 e só poderá
+     fazer parte do Júri em encontros regionais ou nacionais.
+
+21) A seleção de um candidato para exame pela IPF será sujeita aos seguintes critérios:
+     (a) número de indicações recebidas;
+     (b) número disponível de posições para exame;
+     (c) os requisitos atuais para árbitro categoria 1 entre as várias nações.
+
+
+
+
+39                                                      árbitros                                01.03.2026
+                                            LIVRO DE REGRAS
+22) Os procedimentos dos testes são os seguintes:
+
+      (a) Categoria 2
+      Um exame escrito/computadorizado em inglês será aplicado somente depois que uma completa e
+      abrangente clínica de regras tenha sido conduzida por um árbitro de categoria 1 aprovado, que tenha sido
+      indicado como Examinador Principal pelo Comitê Técnico da IPF e pelo Diretor de Arbitragem. Um exame
+      prático será aplicado depois do exame escrito/computadorizado durante a competição, o candidato será
+      árbitro lateral e irá julgar um total de 100 tentativas, 40 das quais devem ser de agachamento. O
+      candidato deve ser examinado pelo Júri e deve acertar no mínimo 85% de todas as suas decisões quando
+      comparado com a maioria dos árbitros examinadores. O julgamento começará no primeiro round de
+      tentativas.O exame escrito/computadorizado e prático para categoria 2 será realizado apenas em conjunto
+      com as organizações de Campeonatos Internacionais ou Regionais.
+
+      (b) Categoria 1
+      Um exame prático e exame escrito/computadorizado será aplicado a um candidato em qualquer
+      Campeonato Mundial (excluindo o Campeonato Mundial de Supino), Campeonato Continental,
+      Campeonatos Regionais. O candidato será examinado pelo Júri. O candidato deve acertar no mínimo 90%
+      de todas as suas decisões quando comparado com a maioria dos membros do Júri examinador, isso inclui
+      examinar a competência do candidato em lidar com todos os outros serviços, como checar equipamentos
+      e procedimentos de pesagem. O julgamento começa no primeiro round de tentativas.
+
+23) A taxa de exame deve ser paga ao Tesoureiro da IPF antes do exame. Todas as folhas de pontuação de
+exame serão corrigidas pelo(s) árbitro(s) examinador(es). Quando a correção estiver completa, o candidato
+será informado do resultado. As folhas de pontuação corrigidas serão enviadas ao Diretor de Arbitragem.
+
+24) Após receber os resultados do exame, o Diretor de Arbitragem informará ao Secretário Nacional da
+Federação do candidato os resultados e enviará as credenciais adequadas ao candidato.
+
+25) Um candidato fazendo um exame prático será examinado pelo Júri (para Categoria 1) ou pelos árbitros
+examinadores indicados (para Categoria 2) para determinar seu sucesso ou fracasso.
+
+26) Ao passar no exame, a data de promoção do árbitro será a data de seu exame.
+
+27)     Os candidatos que não passarem no exame poderão refazer a prova nos mesmos campeonatos e
+precisam pagar novamente pelo exame.
+
+28) Inscrição:
+      (a) Todos os árbitros devem se re-inscrever com a IPF a fim de manter sua qualificação atual e num nível
+      aceitável.
+      (b) A re-inscrição deve ocorrer no dia primeiro de janeiro de cada ano Olímpico.
+      (c)   O Secretário Técnico em uma competição internacional deve enviar ao Diretor de Arbitragem uma
+      lista sob a forma de arquivo do Excel dos árbitros participantes imediatamente após uma competição.
+      (d)   A Federação Nacional do árbitro é responsável por enviar a taxa de inscrição de 50 Euros para o
+      Tesoureiro da IPF e um currículo de sua experiência internacional e nacional durante o período de registro
+      prévio ao Diretor de Arbitragem da IPF.
+      (e) Um árbitro que tenha estado inativo por um período de quatro anos ou que deixar de se re-inscrever
+      perderá suas credenciais. Terá, então, que fazer novamente os exames.
+      (f)   Um cartão que tenha sido emitido dentro dos doze meses anteriores ao dia primeiro de janeiro em
+      cada ano olímpico não precisa ser renovado até o dia primeiro de janeiro do ano olímpico seguinte.
+
+
+29) O Diretor de Arbitragem da IPF deverá fornecer a cada Federação Nacional:
+      (a) Uma lista atual de árbitros credenciados. Atualizada anualmente.
+      (b) Uma lista de árbitros que precisam se re-inscrever para que se mantenham credenciados.
+
+30) Árbitros Internacionais, tanto Categoria 1 como 2, devem ter arbitrado um mínimo de 2 Campeonatos
+Internacionais de Powerlifting ou Supino e 2 Campeonatos Nacionais de Powerlifting durante o período de 4
+anos entre os anos Olímpicos para serem aceitos em sua atualização de registro.
+                                          LIVRO DE REGRAS
+
+
+                                  8.JÚRI & COMITÊ TÉCNICO
+
+
+     8.1. JÚRI
+
+1)     Em Campeonatos Mundiais e Continentais, um júri será indicado para presidir cada sessão de
+levantamento.
+
+2) O Júri consistirá de três ou cinco árbitros categoria 1, na ausência de um membro do Comitê Técnico, o
+membro mais antigo dos três ou cinco será designado Presidente do Júri. A mesa com cinco árbitros só será
+montada em Campeonatos Mundiais Open Masculino e Feminino (Mundial Open) e nos Jogos Mundiais
+(World Games).
+
+3) Os membros do Júri devem ser todos de nações diferentes, com exceção do Presidente da IPF e do
+Diretor do Comitê Técnico.
+
+4) A função do Júri é assegurar que as regras técnicas sejam aplicadas corretamente.
+
+5) Durante a competição o Júri pode, por voto da maioria, substituir qualquer árbitro cujas decisões, em sua
+opinião, provem que ele é incompetente. O árbitro deve receber uma advertência antes de qualquer ação de
+dispensa.
+
+6) A imparcialidade dos árbitros não pode ser posta em dúvida, mas um erro na arbitragem pode ocorrer de
+boa fé. Nesse caso, deve-se permitir que o árbitro explique porque tomou a decisão que foi a causa de sua
+advertência.
+
+7) Se uma reclamação é feita ao Júri contra um árbitro, então o árbitro pode ser informado da reclamação. O
+Júri não deve colocar tensão desnecessária nos árbitros de plataforma.
+
+
+8) Se um erro sério ocorrer na arbitragem, o qual contrarie as regras técnicas, o Júri pode tomar as medidas
+necessárias para corrigir o erro. Eles podem, a seu critério, beneficiar o levantador com uma futura tentativa.
+
+9) Apenas em circunstâncias extremas, quando houver um erro óbvio ou espalhafatoso na arbitragem, o
+Júri, em consulta verbal ou eletronicamente com os árbitros, e por unanimidade de votos do júri com (3)
+Membros do Júri ou com voto majoritário de cinco (5) Membros do Júri poderá reverter a decisão. Somente a
+decisão de 2 a 1 pelos árbitros pode ser considerada pelo júri. O replay do levantamento pode ser observado
+a partir da filmagem oficial para tomada de decisão.
+
+10) A seleção de levantadores para teste de dopagem (anti-doping) deve sempre ser feita pela CCES
+(Canadian Center for Ethics in Sports).
+
+11) Os membros do Júri estarão posicionados para garantir uma visão desimpedida da competição.
+
+12) Antes de cada competição, o Presidente do Júri deve se convencer de que os outros membros do Júri
+têm um conhecimento completo de seu papel e de qualquer regulamento novo que retifique ou complete
+aqueles contidos na edição atual do manual.
+
+13) Se houver música para acompanhar os levantamentos, o Júri determinará o volume. A música deve parar
+quando o levantador sacar a barra no agachamento e no supino ou começar a puxar a barra no
+levantamento terra.
+
+14) As credenciais dos árbitros serão assinadas ao final da categoria de peso.
+
+
+
+41                                            júri e comitê técnico                             01.03.2026
+                                             LIVRO DE REGRAS
+
+     8.2. COMITÊ TÉCNICO DA IPF
+
+1)    Consistirá de um Presidente, que será um árbitro de categoria 1 eleito pela Assembléia Geral, e por até dez
+membros de várias nações indicados pelo Comitê Executivo em consulta com o Presidente do Comitê
+Técnico. E um representante dos levantadores/técnicos.
+
+2)     Será encarregado do exame de todos os requerimentos e propostas de natureza técnica entregues pelas
+federações afiliadas.
+
+3)      Indica o Árbitro Chefe, laterais e o Júri para os Campeonatos Mundiais. Pode também designar Árbitros
+que estão presentes e não indicados por sua nação e disponíveis em caso de Árbitros insuficientes. Árbitros
+nacionais podem ser indicados como Controladores Técnicos.
+
+4)          Treina e instrui árbitros que ainda não chegaram ao nível internacional e reavalia aqueles que já
+atingiram este nível.
+
+5)     Informa a Assembleia Geral da IPF, Presidente e Secretário Geral através do Diretor de Arbitragem quais
+são os árbitros elegíveis para arbitrar depois de exame e reavaliação.
+
+6)      Organiza cursos para árbitros antes de qualquer competição importante como Campeonatos Mundiais.
+Os custos envolvidos na organização de tais cursos ou práticas virão da Federação que organizá-los.
+
+7)      Faz propostas à Assembléia Geral da IPF para retirar a credencial de um árbitro internacional quando
+julgar a ação necessária.
+
+8)     Pública via Executivo, material de natureza técnica que trata de métodos de treinamento e realização de
+levantamentos de competições.
+
+9)
+      (a)     Será responsável por inspecionar todo equipamento pessoal da competição como definido no
+      manual. Além de equipamentos fornecidos por vários fabricantes com a única intenção de poderem usar
+      as palavras “Aprovado pela IPF” em seus comerciais/propagandas. Se o(s) item(ns) entregue(s) estiver(em)
+      de acordo com todas as regras e normatizações atuais da IPF, uma taxa por cada item será coletada pelo
+      Executivo da IPF e um certificado de aprovação será dado pelo Comitê Técnico.
+      (b)    No final de cada ano, uma taxa de renovação de cada item como a recolhida pelo Executivo da IPF
+      deve ser paga à IPF com o fim de re-certificar a aprovação. Se o modelo foi mudado, o item deve ser
+      entregue ao Comitê Técnico para inspeção e certificação.
+      (c)    Se a qualquer momento depois que o certificado de aprovação foi entregue, o fabricante mudar o
+      modelo do equipamento de competição ou pessoal que foi previamente submetido à aprovação e ele não
+      estiver mais de acordo com as regras e regulamentos atuais da IPF, a IPF deve retirar a aprovação. A IPF
+      não fornecerá outro certificado até que as mudanças no modelo (desenho) sejam corrigidas e o(s) item(ns)
+      seja(m) submetido(s) à inspeção do Comitê Técnico.
+
+
+                         9.RECORDES MUNDIAIS E INTERNACIONAIS
+
+     9.1. COMPETIÇÕES INTERNACIONAIS
+
+1)     Recordes mundiais e internacionais só podem ser realizados nos campeonatos acima mencionados. Isto
+é, serão aceitos em campeonatos sancionados e reconhecidos pela IPF, Recordes Mundiais e Internacionais
+só serão aceitos sem pesagem da barra ou do levantador, desde que o levantador tenha se pesado
+corretamente antes da competição e que os árbitros ou a Comissão Técnica tenham verificado o peso da
+barra e dos discos antes da competição.
+
+42                                               júri e comitê técnico                            01.03.2026
+                                             LIVRO DE REGRAS
+Os recordes masculinos e femininos da categoria 40-49 que excederem o recorde Open serão incluídos na
+categoria Open, se for o caso. Os recordes masculinos e femininos da 50-59 excedendo os obtidos na faixa
+etária de 40 a 49 anos serão incluídos na categoria 40-49. Os recordes da 60-69 masculinos e femininos que
+excedam os obtidos entre os 50 e os 59 anos serão incluídos na categoria 50-59, na categoria 40-49 e na
+categoria Open, se for o caso. Os recordes masculinos e femininos de 70 anos mais que excedam os obtidos
+na faixa etária entre 60 e 69 anos serão incluídos na categoria 60-69 e na categoria 50-59 ou 40-49, e na
+categoria Open, se for o caso. Da mesma forma, os recordes Sub-Júnior 14-18 que excederem os obtidos no
+grupo Júnior de 19 a 23 anos serão incluídos neste grupo, e na categoria Open, se for o caso. Recordes da
+Júnior 19-23 que excederem recorde Open serão incluídos na Open, se for o caso.
+
+Nota: A partir de 2021, começa-se a registrar os recordes do World Games.
+Os recordes devem ser registrados naquela categoria de peso corporal à qual pertence o atleta de acordo
+com o seu peso corporal. Os padrões de recorde inicial devem ser iguais aos recordes mundiais no
+powerlifting em 14/07/2021.
+
+2) Requerimentos para reconhecimento de um recorde mundial e internacional são os seguintes:
+
+     (a) A competição internacional deve ocorrer com aprovação da IPF.
+     (b) Cada um dos árbitros julgadores deve ter uma Credencial atual de Árbitro Internacional da IPF e ser
+     membro de uma Federação Nacional associada à IPF. Deve haver árbitros de 3 nações diferentes na
+     plataforma e deve haver 3 membros do Júri.
+     (c) A boa fé e competência dos árbitros de todas as nações filiadas são indiscutíveis.
+     (d) Apenas barras, anilhas e “Racks” indicados na lista atualizada de aparelhos e equipamentos aprovados
+     pela IPF para uso em competições sancionadas pela IPF, conforme vigente na época, podem ser usados
+     para estabelecer Recordes Internacionais e Mundiais.
+     (e) Recordes em levantamentos individuais devem ser acompanhados pelo total dos três levantamentos.
+     O recorde só de Supino pode ser estabelecido em uma competição de Powerlifting, e não é necessário
+     que o levantador obtenha um total, mas que tenha ao menos uma tentativa de boa fé no Agachamento e
+     no Levantamento Terra.
+     (f) No caso de dois atletas solicitarem o mesmo peso para um novo recorde individual, e o primeiro por
+     número de lote obtiver sucesso, 0,5 kg será adicionado automaticamente pelo sistema (se não for um
+     múltiplo de 2,5 kg), para confirmação do recorde. O detentor do recorde é o atleta que primeiro realiza o
+     levantamento.
+     (g) Novos Recordes só são válidos se excederem o recorde anterior em pelo menos 0,5 kg.
+     (h) Se um atleta tentar estabelecer um recorde mundial no levantamento terra e for colocado no final da
+     rodada em virtude de um protesto, os atletas remanescentes do grupo que tentarem o recorde mundial
+     terão que aumentar sua tentativa em 0,5 kg. Se mais de um atleta está tentando estabelecer um recorde
+     mundial na mesma disciplina e um levantador recebe uma nova tentativa em virtude de um protesto, o
+     levantador deve seguir a si mesmo.
+     (i) Todos os recordes quebrados sob as mesmas condições que as listadas acima devem ser reconhecidos
+     e registrados.
+
+3) Recordes mundiais individuais de supino podem ser estabelecidos em campeonatos internacionais ou
+mundiais exclusivamente de supino ou como citado em (a) abaixo. O mesmo critério se aplica a todos os
+recordes mundiais de powerlifting.
+
+     (a) Se um levantador exceder o recorde individual de supino enquanto estiver participando de uma
+     competição de powerlifting com os três levantamentos, ele pode reivindicar o recorde individual de
+     supino, se ele realizou ao menos uma tentativa verdadeira tanto no Agachamento como no
+     Levantamento Terra.
+     (b) Se um levantador, em um campeonato individual de supino, exceder o recorde de supino de
+     campeonatos de powerlifting, ele não pode reivindicar o recorde de supino de campeonatos de
+     powerlifting.
+43                                       recordes mundiais e internacionais                      01.03.2026
+                                       LIVRO DE REGRAS
+
+                           10.RESPONSABILIDADES DO TÉCNICO
+
+1) OS OBJETIVOS DA RESPONSABILIDADE DE UM TÉCNICO
+É garantir o sucesso do treinamento de seus levantadores em nível internacional, incentivar a
+participação no esporte de Powerlifting e ajudar cada levantador a alcançar os melhores resultados que
+seu potencial indica.
+
+2) QUAL É A RESPONSABILIDADE DO TREINADOR?
+O treinador tem muitas responsabilidades associadas aos objetivos acima; ele/ela precisa ter um
+caráter forte e uma abordagem disciplinada o tempo todo, e deve sempre estar no comando.
+
+3) COMO TREINADOR, VOCÊ DEVE GARANTIR O SEGUINTE
+O número de treinadores de cada nação para cada grupo de levantamento na área de
+aquecimento:
+1 Atleta = 3 Treinadores
+2 Atletas no mesmo grupo = 3 Treinadores
+2 Atletas em dois grupos diferentes (por exemplo: grupo A e B) = 5 Treinadores
+3 Atletas no mesmo grupo = 5 Treinadores
+3 Atletas em dois grupos diferentes (por exemplo: grupo A e B) = 6 Treinadores
+4 Atletas = 6 Treinadores, número máximo de treinadores permitidos.
+
+O número de Treinadores para cada grupo de levantamento na área de preparação/competição:
+Levantamento Equipado
+
+1 Atleta = 2 Treinadores
+2 Atletas = 4 Treinadores
+3 Atletas = 5 Treinadores
+4 Atletas = 6 Treinadores, o número máximo de Treinadores permitidos.
+
+O número de Técnicos para cada grupo de levantamento na área de preparação/competição:
+Levantamento Clássico
+1 Atleta = máximo de 2 Treinadores em um grupo
+2 Atletas = máximo de 2 Treinadores em um grupo
+3 Atletas = máximo de 2 Treinadores em um grupo
+3 Atletas = máximo de 3 Treinadores em dois grupos
+4 Atletas = máximo de 4 Treinadores em dois grupos, número máximo de Treinadores permitidos
+
+4) Promotores devem instalar uma zona de observação para técnicos na área de aquecimento com
+um monitor de TV ligado à plataforma de levantamento para que os técnicos possam acompanhar os
+levantamentos. Se isso não for possível, então uma Zona de Observação deve ser instalada atrás da
+mesa do locutor para que os técnicos possam assistir aos levantamentos.
+
+5) O Head Coach deve garantir que apenas um treinador acompanhe os atletas até a área técnica
+durante o levantamento, e deve estar devidamente vestido.
+
+6) Os comportamentos dos treinadores e levantadores na área de aquecimento e de preparação são
+responsabilidade do Head Coach.
+
+7) O Head Coach deve garantir que cada um de seus assistentes receba um crachá com foto para ter
+acesso à área de aquecimento, preparação e levantamento.
+
+44                                     responsabilidades do treinador                   01.03.2026
+                                                                                  LIVRO DE REGRAS
+
+8) O Head Coach deve combinar com o organizador um horário fixo de treinamento para sua equipe.
+
+9)      O Head Coach deve garantir que todos os equipamentos usados durante o treino sejam
+recolocados nos racks, que as plataformas fiquem organizadas e que a área de treino seja mantida
+limpa (sem lixo, etc.). O mesmo se aplica após a competição.
+
+10) O Head Coach deve se certificar que seus atletas entreguem aos árbitros, durante a pesagem, os
+seguintes itens: Anexo 2, Perfil do Atleta e Passaporte.
+
+11) O Head Coach deve se certificar durante a vistoria de equipamento que todo o equipamento de
+seus atletas está de acordo com as Normas Técnicas da IPF.
+
+12) Tanto o Head Coach quanto seus treinadores assistentes presentes nas áreas de aquecimento,
+preparação e competição devem estar cientes e respeitar suas obrigações referentes às Normas
+Técnicas de Anti-Doping da IPF.
+
+13) É responsabilidade do Head Coach garantir que na área de aquecimento e/ou preparação não
+haja a presença de familiares e/ou crianças.
+
+14) O Head Coach deve se certificar que os atletas estejam devidamente preparados e aptos à
+plataforma quando seu nome for chamado para a cerimônia de premiação.
+
+15)      Durante o aquecimento e a preparação, qualquer consumo de álcool pelo Head Coach,
+treinadores assistentes e seus atletas presentes nas áreas acima citadas é estritamente proibido. Sob
+nenhuma                 circunstância                     qualquer               pessoa              alcoolizada                  poderá             permanecer                     na        área          de
+aquecimento, isso deve ser assegurado pelo Head Coach.
+
+16) Treinadores/Atletas aptos: os treinadores nominados devem pertencer à Federação Nacional de
+Powerlifting. Cada federação nacional tem autonomia para estabelecer suas próprias regras e
+procedimentos referentes aos seus treinadores e atletas do time nacional.
+
+17) Fotografias e filmagens: na área de aquecimento, para alguns atletas, é necessário observar o
+próprio levantamento em vídeo para que se façam as correções necessárias no movimento. Isso
+facilita a comunicação entre treinador e atleta, que pode ocorrer em vários níveis.
+
+
+18)      Declaro que li e compreendi o descrito acima. Eu entendo que o descumprimento do
+esperado me tornará elegível para ações disciplinares pelo Comitê Disciplinar da IPF, ou, no caso
+do descumprimento do item 10 acima, serão aplicados processos de revisão e audiências
+devidamente especificados nas Normas de Anti-Doping da IPF.
+
+
+
+
+      NOME do Head Coach…………………………………………...........................................................................................……..............................
+
+
+      NOME do Treinador………………………………….…………................................................................................................…………………………….
+
+      Federação Nacional........................................................................................................................................................................................
+
+      ASSINATURA …………………………………….................................................. DATA ……………...........................................................................
+
+
+
+
+45                                                                                responsabilidades do treinador                                                                          01.03.2026
+

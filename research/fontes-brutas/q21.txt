@@ -1,0 +1,13 @@
+Fantasia como meta de 12 meses. Hipótese de carreira, não plano — e não é o que decide nada agora.
+OS NÚMEROS, SEM SUAVIZAR (IPF-REALIDADE §2, §6.2, §6.4, §9): recorde mundial 93 kg clássico open = 927,5 kg (William Ball, 13/06/2026). Você está a −239,5 kg do declarado (688) e a −279,5 kg do ajustado (~648) — 74,2% e 69,9% do alvo. O alvo se move: a 93 kg subiu ~40 kg em 3 anos, ~10–13 kg/ano. Nenhum brasileiro na história dessas duas categorias chegou a menos de 115 kg de um recorde mundial. Pódio nacional: −22,5 kg (bronze 83 kg 2026) a −49,5 kg (bronze 93 kg 2026). Índice CBLB de convocação internacional: −47,0 kg na 93 kg.
+BASE DE PROJEÇÃO — coorte MEDIDA do OpenPowerlifting (AVALIACAO.md §4.1, dump CC0): estreantes com total 580–700 kg pesando 80–95 kg tiveram mediana +32,5 kg no ano 1, +52,5 no 2, +67,5 no 3, +75 no 5, +70 no 7, com a curva achatando já no ano 3. Sobre os ~648 ajustados: ~680 em 1 ano, ~700 em 2, ~715 em 3. Isso põe pódio nacional e índice de convocação dentro do alcance, e deixa 927,5 fora dele. Este corte está documentado só em AVALIACAO.md §4.1, não em IPF-REALIDADE.md — não é auditável hoje.
+CONCORDÂNCIA INDEPENDENTE, e só isso: V060-03 (estudo com ~15.000 praticantes; a taxa de progresso cai pela metade), V060-05 (6 meses para +100 lb → 12 meses para os próximos 100) e V125-18 (cada +100 lb leva ~o dobro do anterior). São o Vena narrando literatura — modo estudo, tier R. Concordam com a coorte na direção. Não projeto ano de chegada por halving: essa aritmética produz um número falso com aparência de conta. V122-22 (os melhores naturais ficam por volta de 600 DOTS) é opinião de uma pessoa, não dado — você está em DOTS 405 legal / 452 declarado, e não uso isso como teto.
+ISTO NÃO MUDA O PLANO DOS PRÓXIMOS 24 MESES. O Bloco 1 segue sendo ficar legal, não ficar mais forte, e a prioridade nº 1 segue sendo o estadual de out/nov de 2026.
+ESCADA DATADA — distância de CALENDÁRIO ≠ distância de FORÇA:
+Estadual, out/nov 2026 — calendário: filiação via equipe + nominação. Força: nenhuma, não há índice de marca.
+Brasileiro Clássico, fev/2027 — calendário: exige o estadual de 2026 (NÃO CONFIRMADO, §10.9). Força: nenhuma; o último com total na 93 em 2026 fez 430 kg.
+Pódio Brasileiro 93 kg, 2028–29 — força: −49,5 do declarado / −89,5 do ajustado.
+Índice de convocação 93 kg (735 kg), 2028–30 — força: −47,0 / −87,5.
+Sul-Americano (set), no ano seguinte à convocação — calendário: Brasileiro → seleção CBLB.
+Recorde mundial — sem data.
+REABERTURA: depois do SEGUNDO meet (Brasileiro fev/2027, se o estadual sair), quando existirem dois totais de plataforma e uma taxa medida. Até lá, fechada.
