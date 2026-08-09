@@ -1,5 +1,13 @@
 import { useMemo } from 'react';
 import { useStorage } from '../../../contexts/StorageContext';
+import { painRegionLabels } from '../../../domain/painRegions';
+import {
+  PAIN_GATE,
+  painFlagDefault,
+  painFlagThreshold,
+  painGateScope,
+} from '../../../domain/painGate';
+import type { PainRegion } from '../../../types';
 
 export interface SurveyAlert {
   type: 'warning' | 'danger';
@@ -85,23 +93,37 @@ export function useSurveyTrends(): SurveyTrends {
       }
     }
 
-    // Check recurring pain
+    // Dor. O peitoral tem gate próprio (PROGRAMA.md §1.2) e alerta a UMA
+    // ocorrência no limiar do gate; as demais regiões só na recorrência.
+    // A tabela de rótulos vinha copiada aqui dentro e teria ficado sem peitoral
+    // exatamente na revisão que o adicionou — agora é a mesma do resto do app.
     const allPainEntries = preSurveys.flatMap(s => s.painEntries);
-    const painCount: Record<string, number> = {};
-    allPainEntries.forEach(p => { painCount[p.region] = (painCount[p.region] || 0) + 1; });
-    Object.entries(painCount).forEach(([region, count]) => {
-      if (count >= 3) {
-        // Map region to PT-BR label inline
-        const labels: Record<string, string> = {
-          lower_back: 'Lombar', upper_back: 'Dorsal',
-          left_knee: 'Joelho Esq', right_knee: 'Joelho Dir',
-          left_shoulder: 'Ombro Esq', right_shoulder: 'Ombro Dir',
-          left_hip: 'Quadril Esq', right_hip: 'Quadril Dir',
-          left_elbow: 'Cotovelo Esq', right_elbow: 'Cotovelo Dir',
-          left_wrist: 'Punho Esq', right_wrist: 'Punho Dir',
-          neck: 'Pescoço', other: 'Outro',
-        };
-        alerts.push({ type: 'danger', message: `Dor recorrente: ${labels[region] || region}` });
+    const painCount: Record<PainRegion, number> = {} as Record<PainRegion, number>;
+    const painPeak: Record<PainRegion, number> = {} as Record<PainRegion, number>;
+    allPainEntries.forEach(p => {
+      painCount[p.region] = (painCount[p.region] || 0) + 1;
+      painPeak[p.region] = Math.max(painPeak[p.region] || 0, p.intensity);
+    });
+    (Object.keys(painCount) as PainRegion[]).forEach((region) => {
+      const count = painCount[region];
+      const label = painRegionLabels[region] ?? region;
+      const scope = painGateScope(region);
+      if (scope === 'peitoral' && painPeak[region] >= painFlagThreshold(region)) {
+        alerts.push({
+          type: 'danger',
+          message: `Gate ${PAIN_GATE.secao}: ${label} ${painPeak[region]}/10 (${count}×)`,
+        });
+      } else if (scope === 'ambiguo' && painPeak[region] >= painFlagThreshold(region)) {
+        // A gaveta ambígua é SUSPEITA, não evento do gate. Anunciá-la como
+        // "Gate §1.2" faria o alerta vermelho mentir sobre o que aconteceu — e
+        // um alerta que exagera é o caminho mais curto para o atleta parar de
+        // ler os vermelhos. É a mesma distinção que o rollup semanal faz.
+        alerts.push({
+          type: 'warning',
+          message: `${label} ${painPeak[region]}/10 (${count}×): confirme se era peitoral antes de descartar o gate ${PAIN_GATE.secao}`,
+        });
+      } else if (count >= painFlagDefault.occurrences) {
+        alerts.push({ type: 'danger', message: `Dor recorrente: ${label}` });
       }
     });
 

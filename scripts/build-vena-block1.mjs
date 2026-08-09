@@ -26,6 +26,7 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { EXERCISE_MAP } from './exercise-map.mjs';
+import { parseGateDor } from './gate-dor.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = join(ROOT, 'src/data/program/vena-block1/source/PROGRAMA.md');
@@ -1005,6 +1006,7 @@ function build() {
   const eixos = parseEixos(md);
   const derivacoes = parseDerivacoes(md);
   const papeis = parsePapeis(md);
+  const gateDor = parseGateDor(md);
   const ancoras = parseTextBlock(md, 'ancoras');
   const calibracao = parseTextBlock(md, 'calibracao');
   const grade = parseGrade(md);
@@ -1147,6 +1149,28 @@ export const VENA_BLOCK1_INVARIANTS: ReadonlyArray<{
 
 /** Eixos declarados por coluna da grade de rampas. */
 export const VENA_BLOCK1_AXES: Readonly<Record<string, { eixo: string; unidade: string; regra: string }>> = ${JSON.stringify(eixos, null, 2)};
+
+/**
+ * Gate de dor de peitoral, lido da TABELA de \`§1.2\` do markdown — não digitado
+ * aqui e não digitado no app. \`src/domain/painGate.ts\` é o único consumidor, e
+ * \`npm run check:gate\` reprova o build se o comportamento divergir da tabela.
+ */
+export const VENA_BLOCK1_PAIN_GATE: Readonly<{
+  secao: string;
+  escala: readonly [number, number];
+  limiarMinimo: number;
+  degraus: ReadonlyArray<{
+    id: 'encerra_sessao' | 'recua_degrau' | 'congela';
+    severidade: number;
+    sinal: string;
+    acao: string;
+    eventos: number;
+    limiar: number;
+    janelaSessoes: number | null;
+    estiramentoAgudo: boolean;
+  }>;
+  retorno: { sinal: string; acao: string; semanas: number; picoMaximo: number };
+}> = ${JSON.stringify(gateDor, null, 2)};
 
 /** Âncoras de tradução RPE↔% e protocolo de calibração das semanas 1–3. */
 export const VENA_BLOCK1_CALIBRATION: Readonly<{ ancoras: string[]; protocolo: string[] }> = ${JSON.stringify({ ancoras, protocolo: calibracao }, null, 2)};

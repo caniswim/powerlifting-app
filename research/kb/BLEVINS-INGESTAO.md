@@ -331,6 +331,28 @@ importam, porque propagam para dose:
 Sem transcrição: `transcript: null` e `source: null` no manifesto, sem legenda em
 `transcripts/` nem em `captions/`. 50 de 51.
 
+> **Fechado em 09/08/2026 — o `G033` é inextraível, e não por falha do pipeline.**
+> *"Garrett Blevins - Arnold 2017 3 IPF World Records"*, 2:45, é filmagem de
+> plataforma com trilha sonora: **não tem fala**. Duas evidências independentes.
+> (1) `yt-dlp --list-subs` responde `has no automatic captions` e `has no
+> subtitles` — o YouTube não legenda faixa sem fala detectada, então a ausência de
+> legenda é o sintoma, não a causa. (2) O áudio inteiro passado no
+> `large-v3-turbo` devolve só alucinação de silêncio: `Music` ×5,
+> `Transcription by CastingWords` ×2, `We'll be right back` ×2, `Thank you` —
+> assinatura clássica de trilha sem voz, e o modelo ainda transcreve 11 s além da
+> duração do vídeo.
+>
+> Não há `verbatim` a extrair, e portanto não há claim `tier: R` possível. O fato
+> valioso do vídeo — três recordes mundiais IPF no Arnold 2017 — está no **título**
+> e em metadado, não no corpus; se ele for entrar na base, entra como credencial
+> `tier: E` com URL, num passe que não é este, e nunca como `R`.
+>
+> Para que ninguém pague esta investigação de novo, o motivo agora fica **gravado
+> no manifesto**: `fetch-captions.mjs` passou a escrever `semLegenda: { motivo,
+> verificadoEm }` na entrada do vídeo quando a busca falha. Antes, `transcript:
+> null` era ambíguo entre "ninguém buscou" e "não existe o que buscar", e os 21
+> nulos do Blevins misturavam os dois casos. Ver `DEFEITOS-PONTUAIS.md` §5.
+
 ### 6.4 O `G024` saiu magro de propósito
 
 Marcado alta prioridade, rendeu 4 claims. Fora da abertura e do fecho, é música,

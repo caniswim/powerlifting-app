@@ -3,7 +3,7 @@
  *
  * Origem: src/data/program/vena-block1/source/PROGRAMA.md
  * Gerador: scripts/build-vena-block1.mjs
- * sha256(origem): 1027c4465733419c
+ * sha256(origem): fe22eaa30c0eb822
  *
  * 18 semanas · 86 sessões · 614 blocos de prescrição.
  * Para regenerar: npm run build:vena
@@ -11,7 +11,7 @@
 import type { PrescribedWeek } from '../../../types';
 
 /** Hash do markdown de origem que produziu este arquivo. */
-export const VENA_BLOCK1_SOURCE_HASH = '1027c4465733419c';
+export const VENA_BLOCK1_SOURCE_HASH = 'fe22eaa30c0eb822';
 
 /** Levantamentos que exigem `trainingMax` no perfil antes de sugerir carga. */
 export const VENA_BLOCK1_REQUIRES_TRAINING_MAX = ['squat', 'bench', 'deadlift'] as const;
@@ -608,6 +608,73 @@ export const VENA_BLOCK1_AXES: Readonly<Record<string, { eixo: string; unidade: 
     "eixo": "parada_peito",
     "unidade": "rpe",
     "regra": "teto"
+  }
+};
+
+/**
+ * Gate de dor de peitoral, lido da TABELA de `§1.2` do markdown — não digitado
+ * aqui e não digitado no app. `src/domain/painGate.ts` é o único consumidor, e
+ * `npm run check:gate` reprova o build se o comportamento divergir da tabela.
+ */
+export const VENA_BLOCK1_PAIN_GATE: Readonly<{
+  secao: string;
+  escala: readonly [number, number];
+  limiarMinimo: number;
+  degraus: ReadonlyArray<{
+    id: 'encerra_sessao' | 'recua_degrau' | 'congela';
+    severidade: number;
+    sinal: string;
+    acao: string;
+    eventos: number;
+    limiar: number;
+    janelaSessoes: number | null;
+    estiramentoAgudo: boolean;
+  }>;
+  retorno: { sinal: string; acao: string; semanas: number; picoMaximo: number };
+}> = {
+  "secao": "§1.2",
+  "escala": [
+    0,
+    10
+  ],
+  "limiarMinimo": 2,
+  "degraus": [
+    {
+      "id": "encerra_sessao",
+      "severidade": 3,
+      "sinal": "≥4/10 ou estiramento agudo",
+      "acao": "encerra a sessão, cai ao degrau das S1–S2 por 1 semana, re-sobe a metade da velocidade, reporta",
+      "eventos": 1,
+      "limiar": 4,
+      "janelaSessoes": null,
+      "estiramentoAgudo": true
+    },
+    {
+      "id": "recua_degrau",
+      "severidade": 2,
+      "sinal": "2 eventos ≥2/10 em 3 sessões de supino",
+      "acao": "recua um degrau do eixo que mudou mais recentemente e segura 2 semanas. A duração nunca desce abaixo de 1,0 s",
+      "eventos": 2,
+      "limiar": 2,
+      "janelaSessoes": 3,
+      "estiramentoAgudo": false
+    },
+    {
+      "id": "congela",
+      "severidade": 1,
+      "sinal": "1 evento ≥2/10",
+      "acao": "congela TM_supino e o degrau de exposição (SUP-V1, SUP-V4, PAUSA-P, PEC-SETS, FP-SETS, FP4-SETS, FP-RPE, FP4-RPE não sobem). Sem recuo.",
+      "eventos": 1,
+      "limiar": 2,
+      "janelaSessoes": null,
+      "estiramentoAgudo": false
+    }
+  ],
+  "retorno": {
+    "sinal": "RETORNO",
+    "acao": "re-sobe um degrau só após 2 semanas consecutivas com pico ≤1/10 em todas as sessões de supino",
+    "semanas": 2,
+    "picoMaximo": 1
   }
 };
 

@@ -31,7 +31,15 @@ Antes de tocar em qualquer coisa, leia — na íntegra, não por diagonal:
 | `research/verification.md` | A arquitetura anti-alucinação. O princípio *onde um compilador pode verificar, agente não deve*. |
 | `research/kb/SCHEMA.md` | O registro tipado da claim. Enumerados, tiers, frames. |
 | `research/kb/PROTOCOLO-EXTRACAO.md` | A instrução única do agente extrator. Vocabulário de tópicos fechado. |
+| `research/kb/ENUMERADOS.md` | Por que cada gaveta de `frame`, `topic` e `modo` existe — **e por que as recusadas não existem**. Leia antes de propor ampliar qualquer enumerado. |
+| `research/tools/kb.mjs` | Os enumerados fechados em código, importados por todo checker. A lista viva de `frame` e `modo`. |
+| `research/kb/INSTRUMENTO.md` | Como a base é **medida**: o que é prova mecânica, o que é julgamento, e como se roda a medição de novo. |
+| `research/kb/CANARIOS.json` | Os canários da medição, com o predicado que prova cada um. **Não mostrar a quem responde.** |
+| `research/kb/ESTADO.md` | **Onde a base está, hoje, e com que instrumento cada número foi obtido.** É o primeiro arquivo a ler depois deste. Diz o que foi provado por compilador e o que continua sendo julgamento de agente. |
+| `research/kb/GATE-DOR.md` | O gate de dor do §1.2 do `PROGRAMA.md`: como a tabela vira comportamento do app, o que a trava cobre e o que ela **não** cobre. |
+| `research/kb/DEFEITOS-PONTUAIS.md` | Os seis defeitos nomeados de 9/8 e o conserto de cada um, inclusive o `CONFIRMADO` falso do `verify-suspects.mjs`. |
 | `research/kb/*.md` (ROSTER-CURADO, IPF-REALIDADE, PADROES-EXTERNOS, FONTES-ADICIONAIS) | Pesquisa curada, escrita à mão, com procedência linha a linha. |
+| `research/kb/PREDICOES-BLOCO1.md` | **O registro pré-comprometido do bloco 1.** 22 previsões falseáveis com prazo e com a claim que morre em cada desfecho. Só admite **anotação** a partir de 10/08/2026 — editar uma previsão é apagar a medição. Era `research/predicoes.md`, órfão; a procedência e a auditoria estão no cabeçalho dele. |
 | `research/tools/*.mjs`, `whisper-window.py` | O pipeline. |
 | `research/corpus/ipf/rulebook-2026.md` | O regulamento IPF 2026 em markdown citável — é contra ele que o checker confere todo `tier: O`. |
 
@@ -63,7 +71,7 @@ Antes de tocar em qualquer coisa, leia — na íntegra, não por diagonal:
 ### Ainda não existe, apesar de documentado
 
 `research/kb/topics/*.md` (as visões temáticas geradas que o `SCHEMA.md` descreve) e
-`research/synth/` (as sínteses com `basis`) estão **vazios**, e não há gerador. Ver §9.
+`research/synth/` (as sínteses com `basis`) estão **vazios**, e não há gerador. Ver §8.9.
 
 ---
 
@@ -98,9 +106,18 @@ node research/tools/fetch-captions.mjs
 node research/tools/check-claims.mjs --only R014
 
 # 5. CHECAGEM COMPLETA. <1 s cada.
-node research/tools/check-claims.test.mjs   # o checker ainda pega o que promete?
-node research/tools/check-claims.mjs        # 5.090 claims em ~0,3 s
-npm run check:kb                            # os três acima, encadeados
+node research/tools/check-claims.test.mjs   # o checker ainda pega o que promete? (34 recusas + 2 avisos + 3 aceitações)
+node research/tools/check-claims.mjs        # 6.909 claims em ~0,3 s
+node research/tools/check-answer.test.mjs   # 34 casos
+node research/tools/check-canarios.test.mjs # 35 casos
+node research/tools/check-canarios.mjs      # os canários ainda calibram? (ver INSTRUMENTO.md)
+npm run check:kb                            # todos, encadeados — e está dentro do npm run build
+
+# 5b. MEDIR UMA RESPOSTA — o outro lado do compilador. Ver research/kb/INSTRUMENTO.md.
+node research/tools/check-answer.mjs --resposta r.md --pergunta "o enunciado"
+#    Acusa todo número da resposta que não aparece em nada que ela cita.
+#    Rode SEMPRE ao ingerir fonte nova: `check-canarios.mjs` é o passo que teria
+#    pego o canário do Blevins virando respondível horas depois de escrito.
 
 # 6. REPARO CIRÚRGICO COM WHISPER — opcional, caro, e o último passo.
 node research/tools/list-suspects.mjs              # o que vale escutar
@@ -110,7 +127,7 @@ node research/tools/verify-suspects.mjs --only R002 # baixa áudio, corta janela
 ```
 
 Fonte nova (Blevins) usa os mesmos passos 1 e 3 com `--source blevins`. Os passos 2 e 5
-**ainda não aceitam `--source`** — ver §9.
+**ainda não aceitam `--source`** — ver §8.2, que registra o conserto parcial.
 
 ---
 
@@ -167,10 +184,33 @@ banal — alguém "melhora" a normalização até ela apagar caracteres demais, 
 vira prefixo de qualquer outra, e o `✓` continua verde.
 
 `check-claims.test.mjs` monta um extract sintético a partir de uma claim **real já
-aprovada**, muta-a de 19 formas específicas, e exige que o checker recuse cada uma **pela
+aprovada**, muta-a de formas específicas, e exige que o checker recuse cada uma **pela
 mensagem certa** (aceitar qualquer erro seria satisfeito por um typo no próprio teste).
-Estado atual: 19/19. Se você adicionar uma regra ao checker, adicione o caso aqui — senão
+Estado atual: **34 recusas + 2 sinalizações + 3 aceitações**. As três aceitações não são decoração: um
+checker fica trivialmente "correto" recusando tudo, e foi recusando demais que uma trava
+já inventou uma dose. Se você adicionar uma regra ao checker, adicione o caso aqui — senão
 a regra não tem garantia nenhuma.
+
+### O que verifica a resposta, e não só a base
+
+`check-claims.mjs` prova que a BASE é fiel à fonte. Ele não olha para o que um agente
+responde usando a base. `check-answer.mjs` é o outro lado: resolve os ids que a resposta
+cita, monta a piscina de números do que ela citou, e acusa todo número órfão — **órfão com
+unidade ao lado é ERRO, órfão sem unidade é aviso** (`--estrito` promove). Os limites dele
+estão declarados no próprio cabeçalho e no `INSTRUMENTO.md`; dois continuam abertos e
+estão em §8.
+
+`check-canarios.json` + `check-canarios.mjs` medem o **julgador**, não a resposta: 15
+perguntas cujo desfecho é conhecido por contagem (5 respondíveis, 5 impossíveis, 5
+armadilhas). O recontador refaz as contagens e falha quando um canário morre — inclusive
+quando um filtro tem typo, que é a falha silenciosa central, já que predicado que nunca
+casa fica em zero para sempre e zero é o resultado que "impossível" reporta como sucesso.
+
+**A lição mais cara de 9/8/2026 mora aqui.** A medição daquele dia disse "3 falhas em 29"
+e era mentira: dois canários provaram que o avaliador estava respondendo do próprio
+conhecimento, não da base. **Nenhum número de qualidade da base pode ser citado sem dizer
+com que instrumento foi obtido e se os canários daquele instrumento passaram.** Número sem
+instrumento é opinião com cara de medida.
 
 ---
 
@@ -250,22 +290,71 @@ nessa parte, preserve a distinção.
 **`--only` casa por prefixo.** `files.filter(f => f.startsWith(only))` — `--only R15`
 valida `R150`…`R159`. Use o ref completo.
 
+**Repartição de lote por aritmética modular perde e duplica lote, e ninguém percebe.** O
+passe de `modo`/`conditions` foi repartido com `ls research/extract/*.jsonl | sort | awk
+'NR%18==k'`. `NR` é 1-indexado e o `k` que os agentes usaram era 0-indexado: um agente
+pegou a fatia de outro e escreveu por cima dela, e **a fatia do agente nº 12 nunca rodou**
+— R012, R030, R048, R066, R084, R102, R120, R138, R156, R174, 278 claims, progressão
+aritmética de passo 18, perfeitamente invisível. Só foi encontrada por auditoria, semanas
+de trabalho depois. Três consequências operacionais:
+- **Reparta por lista explícita**, escrita num arquivo, não por fórmula que cada agente
+  reavalia. A fórmula tem de ser avaliada UMA vez, pelo orquestrador.
+- **Confira a cobertura depois**, não a soma dos relatórios: `∪ lotes == todos os
+  arquivos` é uma linha de código e cada relatório dizia que estava tudo certo.
+- **A catraca é o que salva.** Foi `TETO_SEM_MODO` — e não a leitura dos relatórios — que
+  tornou o lote perdido detectável. Trava que só desce vale mais que 18 confirmações.
+
+**Commite um passe por vez.** A auditoria de fidelidade tentou isolar o dano de 18 agentes
+comparando `HEAD` com a árvore, e não conseguiu: a árvore carregava vários passes não
+commitados ao mesmo tempo, então cada mudança fora de escopo teve de ser atribuída
+casando-a com decisão escrita nos documentos. **Evidência forte, não prova.** Um commit por
+passe teria tornado aquela auditoria determinística. Adote isso antes do próximo fan-out.
+
 **Teto de 20 subagentes simultâneos.** É o limite do harness. Lote de 10 vídeos por agente,
 até 20 agentes: ~200 vídeos por rodada, ~15–20 min. Passar disso não acelera, enfileira.
 E os workers de rede são propositalmente baixos (yt-dlp conc. 3–4) porque o throttle do
 YouTube é por IP: subir isso com outro processo yt-dlp rodando atrasa os dois.
 
-**Aviso não é erro.** `check-claims.mjs` emite ~77 avisos de "número por extenso sem param"
-(`quatorze dias`). A lista tem falso positivo demais para barrar commit ("um" é artigo),
-mas serve de alvo para o passe de reparo. Não os trate como ruído permanente.
+**Aviso não é erro, e a lista de avisos não é a lista de tarefas.** Hoje `check-claims.mjs`
+emite **24 avisos**: 23 de "prescrição com dose e sem `conditions`" — o lugar de olhar
+duas vezes, não uma fila a zerar. Foi exatamente tratar o contador de avisos como alvo que
+produziu o pior defeito do passe de `conditions`: o aviso só enxerga `modo: prescricao`
+com param em `FRAMES_DOSE`, então as 278 claims de um lote que nunca rodou não geraram um
+único aviso e o build ficou verde com um décimo do corpus do Vena sem sequer a etiqueta
+que permitiria olhar. **Quando o alvo vira o contador, o campo é preenchido onde o contador
+olha e as arestas fracas nascem para zerar linhas.**
+
+**Aresta de `conditions` que cruza vídeo erra muito mais.** Medição da auditoria: 42 % de
+erro nas cross-vídeo (5 de 12) contra 9 % dentro do mesmo vídeo. Faz sentido: aresta
+cross-vídeo é, por construção, o agente aproximando duas coisas que nunca foram ditas
+juntas. Restaram **7** na base e elas estão nomeadas em `ESTADO.md`. Preferir aresta
+ausente a aresta fabricada é a regra da casa — condição que não limita nada faz a
+prescrição **parecer** qualificada, que é pior do que ela aparecer nua.
 
 ---
 
 ## 6. O que NÃO fazer
 
+**Não cite nenhum número de qualidade da base sem dizer com que instrumento ele foi obtido
+e se os canários daquele instrumento passaram.** Esta é a lição mais cara de 9/8/2026. A
+medição daquele dia disse **"3 falhas em 29"** e era mentira: dois canários provaram que o
+avaliador estava respondendo do próprio conhecimento em vez da base, e o placar inteiro
+daquela rodada virou teto, não medida. "A base acerta 90 %" sem instrumento nomeado não é
+um resultado fraco — é um número inventado com aparência de resultado. Se você não pode
+dizer *qual* medição, *quando*, e *se os canários dela estavam vivos*, não escreva o
+número. Ver `research/kb/INSTRUMENTO.md` e `research/kb/ESTADO.md`.
+
 **Não coloque pesquisa no scratchpad da sessão.** É literalmente como os 564 mil palavras
 morreram. Artefato caro nasce em `research/` e é commitado no mesmo dia. Scratchpad serve
-para log de build e arquivo intermediário descartável, nada mais.
+para log de build e arquivo intermediário descartável, nada mais. E o scratchpad é
+**compartilhado entre os agentes do fan-out**: num passe de 18 agentes, dois deles tiveram
+o próprio script sobrescrito no meio do trabalho por um script de outro lote. Se for
+escrever ferramenta de lote, use nome único por lote.
+
+**Não trate `relato-de-programa` como prescrição.** São 447 claims que descrevem o método
+de outra pessoa, 174 delas com dose completa (`85 % do 5RM`, `+10 lb/semana`). O campo
+`modo` existe para essa distinção e nenhuma trava protege quem a ignora na hora de
+consultar. O filtro que pode virar treino é, e só é, `scope: GERAL` + `modo: prescricao`.
 
 **Não regenere o manifesto sem rodar `verify-manifest.mjs` depois.** `build-manifest.mjs
 --refresh` seguido de `fetch-captions.mjs` sem verificação é o caminho curto para uma base
@@ -303,62 +392,90 @@ um cara que agacha 400 kg, a coisa mais importante da base. Na dúvida, `PESSOAL
 
 ---
 
-## 7. Estado atual (snapshot de 9/8/2026, ~10:00)
+## 7. Estado atual (snapshot de 9/8/2026, fechamento da rodada)
 
-Deduzido do repositório. Reconfira com os comandos do §4 antes de confiar.
+Deduzido do repositório com os comandos do §4 e com `npm run check:kb`. **Todo número
+abaixo veio de contagem mecânica, não de leitura.** Para o que é julgamento de agente e
+não foi provado por compilador, leia `research/kb/ESTADO.md` — ele existe exatamente para
+essa separação.
+
+**Números da base — `node research/tools/check-claims.mjs`**
+
+| | |
+|---|---|
+| claims | **6.909** em 231 lotes |
+| por fonte | Vena `V###` **4.947** · Blevins `G###` **1.819** · IPF `F001` **143** |
+| tiers | `R:6766` · `O:143` |
+| vídeos com claim | 230 |
+| tópicos distintos | 74 de 74 do vocabulário (nenhum morto; o menor tem 3) |
+| `modo` | narrativa 1471 · mecanismo 1403 · **prescricao 1134** · opiniao 1119 · fato 595 · relato-de-programa 447 · anedota 243 · estudo 239 · avaliacao-de-terceiro 115 · sem modo 143 (são as `tier: O`, isentas por regra) |
+| `conditions` | 502 claims condicionadas, **678 arestas**, das quais **7 cruzam vídeo** |
+| `conflicts` | 31 |
+| erros do checker | **0** |
+| avisos | **24**: 23 de "prescrição com dose e sem `conditions`" + 1 de valor fora da escala do frame (`V033-10`, declarado `suspect`) |
 
 **Vena (`R`) — corpus principal**
-- [x] Manifesto: 197 vídeos, 196 citáveis, 15,1 h. Todos os 197 com `date`.
+- [x] Manifesto: 197 vídeos, 196 citáveis, 15,1 h, todos com `date`.
 - [x] `verify-manifest.mjs` passa: 6 âncoras, 258 timestamps, offset único.
-- [x] `dates.json`: 197/197.
-- [x] Transcrições: **181 de 197**. Os 16 sem transcrição são `R178`–`R196` (vlogs
-      antigos de PR, sem legenda automática em inglês). Nenhum deles tem citação no
-      `PROGRAMA.md` — perda aceitável, mas confirme antes de citar qualquer um.
-- [x] Legendas brutas: 181 `.json3.gz` guardados.
-- [x] Extração: **181 arquivos** (180 vídeos + `F001`), **5.090 claims** (`R:4947`,
-      `O:143`), 180 vídeos com claim. Todo vídeo citável com transcrição tem extract.
-- [~] **`R191.jsonl` está vazio** (0 byte). Passa em qualquer contagem por nome. Verificar
-      se é vídeo sem conteúdo extraível ou lote perdido.
-- [x] `check-claims.mjs` passa: 0 erros, 79 avisos de número por extenso.
-- [x] `check-claims.test.mjs`: 14/14.
-- [~] Contradições registradas: **apenas 3** `conflicts` em 5 mil claims. Baixo demais para
-      um corpus onde a run 1 achou C1–C25. Provável subregistro — ver §5 (`--only`).
+- [x] Transcrições: **181 de 197**. Os 16 sem transcrição são `R178`–`R196` (vlogs antigos
+      de PR, sem legenda automática em inglês) e nenhum tem citação no `PROGRAMA.md`.
+- [x] Extração: 4.947 claims, `modo` em **4.947 de 4.947**.
+- [~] **`R191.jsonl` continua com 0 byte.** Passa em qualquer contagem por nome. Ainda não
+      se sabe se é vídeo sem conteúdo extraível ou lote perdido. Ver §5.
+- [~] `R132.jsonl` pula os ids `V132-25` e `V132-28` — buraco de sequência, sem dano
+      conhecido, sem explicação registrada.
 
 **IPF (`F`) — documento normativo**
-- [x] `research/corpus/ipf/rulebook-2026.md` (52 KB) + os 2 PDFs oficiais, versionados.
-- [x] `research/extract/F001.jsonl`: 143 claims `tier: O`, todas conferidas contra o
-      markdown do rulebook (parágrafo existe + verbatim literal presente).
+- [x] `research/corpus/ipf/rulebook-2026.md` + os 2 PDFs oficiais, versionados.
+- [x] 143 claims `tier: O`, todas conferidas contra o markdown (parágrafo existe +
+      verbatim literal presente). `tier: O` não leva `scope` nem `modo`, por regra.
+- [x] `sources.mjs` ganhou o discriminador `kind: 'canal' | 'normativo'`: a fonte `ipf`
+      entra sem `channelId`, sem `postRun1`, sem `testado`, e `channelVideosUrl()` lança
+      em vez de montar uma URL que não existe.
 
-**Blevins (`G`) — segunda fonte**
-- [~] `build-manifest.mjs --source blevins` **rodando agora**: 354 vídeos, 41,2 h,
-      225/354 datados no último check.
-- [ ] Transcrições: 0.
-- [ ] Extração: 0.
-- [ ] **Bloqueado**: `verify-manifest.mjs` e `check-claims.mjs` não aceitam `--source`
-      (§9). Extrair claim `G###` hoje produziria claim que nenhum checker valida.
+**Blevins (`G`) — segunda fonte, compete testado na IPF**
+- [x] Manifesto: 354 vídeos, 41,2 h. Transcrições: **333**.
+- [x] Extração: **1.819 claims** em 50 vídeos. Nasceram todas com `modo`.
+- [x] `G033` é **inextraível e isso está registrado no manifesto**, não deduzido: é
+      filmagem de plataforma sem fala. `fetch-captions.mjs` grava
+      `semLegenda: {motivo, verificadoEm}` porque `transcript: null` significava duas
+      coisas com consertos opostos ("ainda não baixei" e "não existe legenda").
 
 **Verificação com Whisper**
-- [~] `list-suspects.mjs`: 128 alvos (58 marcados `suspect:true` + 70 candidatos de
-      negação, de 1.948 varridos).
-- [~] `verify-suspects.mjs`: rodado só para `R002` — 6 janelas, **6 `DIVERGENTE`, 0
-      `CONFIRMADO`**. Precisa de julgamento humano antes de rodar em escala; 6/6
-      divergente pode ser sinal de problema no comparador, não nas claims.
-- [ ] `research/kb/SUSPEITOS-VERIFICADOS.md` — referenciado por `verify-suspects.mjs`
-      como destino do veredito humano, **não existe**.
+- [~] **74 claims com `suspect: true`; 53 delas sem `suspectWhy`.** O passe de Whisper
+      recebe 53 janelas sem saber se procura número ou negação. Ver §8.8.
+- [x] 4 claims com `verified: "whisper"` e `verbatimWhisper` ao lado do `verbatim`
+      original, que **nunca** é reescrito.
+- [x] O `CONFIRMADO` falso do comparador foi consertado: `norm()` apagava o ponto decimal,
+      `0.8` virava `0 8` e casava com o `8` da legenda — a única ferramenta feita para
+      pegar erro de número era cega justamente para o erro de décimo.
+- [ ] `research/kb/SUSPEITOS-VERIFICADOS.md` continua **não existindo, de propósito**:
+      gerá-lo com 11 de 148 alvos criaria um documento que parece completo.
 
-**Sínteses e visões**
-- [ ] `research/synth/` — vazio.
-- [ ] `research/kb/topics/*.md` — não existe, e não há gerador.
-- [ ] Substitutos de `DECISION_RULES.md` / `CONTRADICTIONS.md` / `GAPS.md`: só o que
-      `research/recuperado/kb-sintese.md` preservou da run 1.
+**Instrumento de medição**
+- [x] `check-answer.mjs` + 34 casos de teste; `CANARIOS.json` (15) +
+      `check-canarios.mjs` + 35 casos. `npm run check:kb` encadeia tudo, então **canário
+      morto quebra o build**, deliberadamente.
+- [x] O canário `C07` estava mal escrito e foi reescrito em 9/8: a redação antiga era
+      respondível com id pelo corpus, e um julgador honesto respondendo bem teria
+      invalidado a rodada inteira pela tabela de leitura do próprio arquivo.
 
----
+**Gate de dor (o lado do app que consome a base)**
+- [x] `npm run check:gate` roda o `buildWeekDoc` **de produção** contra 33 cenários
+      derivados da tabela do §1.2 do `PROGRAMA.md`, nos dois momentos de coleta (pré e
+      pós-sessão), mais 16 testes. A tabela é a fonte única: nenhum limiar é digitado em
+      código.
+- [~] O que a trava **não** cobre está em `research/kb/GATE-DOR.md` e resumido em §8.
+
+**Sínteses e visões — continuam vazias**
+- [ ] `research/synth/` vazio; `research/kb/topics/*.md` não existe e não há gerador.
 
 ## 8. Divergências entre o que os documentos dizem e o que o código faz
 
-Encontradas ao escrever este RUNBOOK. Nenhuma é fatal hoje; todas mordem depois.
-As de 1 a 6 e a 11 foram **resolvidas em 9/8/2026**; ficam registradas com o conserto ao
-lado porque o defeito que elas descrevem volta na próxima fonte nova.
+Encontradas ao escrever este RUNBOOK e nas auditorias do fechamento. Nenhuma é fatal hoje;
+todas mordem depois. As riscadas foram **resolvidas em 9/8/2026**; ficam registradas com o
+conserto ao lado porque o defeito que elas descrevem volta na próxima fonte nova.
+**Divergência não resolvida não some desta lista** — some só quando for consertada.
 
 1. ~~**`npm run check:kb` não está no `npm run build`.**~~ **RESOLVIDO** — `scripts.build`
    agora roda `check:kb` antes do `tsc -b`. A base deixou de depender de quem lembrar.
@@ -385,17 +502,22 @@ lado porque o defeito que elas descrevem volta na próxima fonte nova.
    (`manifest.json` e `dates.json`), não no nível da claim. Ou o schema muda, ou o checker
    passa a derivar `date` do `src` — a segunda parece melhor, porque duplicar a data em
    cada claim é justamente o tipo de cópia que diverge.
-8. **`suspectWhy` está documentado e não é usado por ninguém.** As 58 claims com
-   `suspect: true` não têm o campo; `list-suspects.mjs` já trata a ausência como
-   `"numero"`, então a família "negação" depende inteiramente da pontuação heurística e
-   nunca da marcação do extrator.
+8. ~~**`suspectWhy` está documentado, é enumerado fechado no `PROTOCOLO-EXTRACAO.md`, e não
+   tem trava nenhuma.**~~ **RESOLVIDO parcialmente** — valor fora de `numero`/`negacao` é
+   erro, `suspectWhy` sem `suspect` é erro, e a ausência virou catraca
+   (`TETO_SEM_SUSPECT_WHY = 53`, só desce). **A dívida continua de pé: 74 claims com
+   `suspect: true`, 53 sem `suspectWhy`**, e o passe de Whisper recebe essas 53 janelas
+   sem saber se procura número ou negação. A trava impede que a dívida cresça; quem a paga
+   é a tarefa #24.
 9. **`SCHEMA.md` descreve `research/kb/topics/*.md` como "geradas, não editar" — não
    existem e não há gerador.** O mesmo vale para `research/synth/`, que o `SCHEMA.md` e o
    `PROTOCOLO-EXTRACAO.md` citam como o lugar onde mora síntese com `basis`.
-10. **A tabela de `frame` do `SCHEMA.md` está desatualizada** (falta `mm` e `m`, que o
-    checker aceita). O próprio `SCHEMA.md` já avisa que a lista viva é a do
-    `check-claims.mjs`, então isto é sabido — mas o exemplo de `conflicts` no mesmo arquivo
-    usa `"V0088"`, que não é um id válido pelo formato `V{ref}-{seq}` que ele mesmo define.
+10. ~~**A tabela de `frame` do `SCHEMA.md` está desatualizada**, e o exemplo de `conflicts`
+    usa `"V0088"`, que não é id válido pelo formato que o próprio arquivo define.~~
+    **RESOLVIDO** — a tabela foi reescrita com as 52 gavetas, o exemplo virou `V088-12`, e
+    a regra de id que o arquivo documentava (`V{ref}-{seq}`, que a base nunca usou para o
+    corpus G) foi substituída pela regra real, agora travada no compilador. As decisões de
+    enumerado passaram a morar em `research/kb/ENUMERADOS.md`.
 11. ~~**Tiers `E` e `U` não têm nenhuma trava no checker.**~~ **RESOLVIDO** — `E` exige
     `source.name` e `source.url` navegável; `U` exige `source.date` em ISO. Feito antes do
     passe de elites de propósito: trava que chega depois do dado chega tarde.
@@ -403,3 +525,42 @@ lado porque o defeito que elas descrevem volta na próxima fonte nova.
     `research/corpus/blevins/.tmp/` recebem os `.json3` brutos do yt-dlp e só são limpos no
     caminho feliz do `fetch-captions.mjs`. Se ele morrer no meio, os arquivos ficam lá — e
     um `git add research/` os varre (§5). Só `.audio/` e `.venv-whisper/` estão ignorados.
+13. ~~**`TETO_SEM_MODO` declarava 4.947 e a realidade era 278.**~~ **RESOLVIDO** — a catraca
+    chegou a **zero**: o mapa está vazio, prefixo ausente vale zero, e `modo` é obrigatório
+    para toda claim que não seja `tier: O`. `SCHEMA.md` e `ENUMERADOS.md` foram corrigidos
+    no mesmo passe, porque documento e constante divergindo em silêncio é o defeito nº 3
+    deste projeto e ele acabara de se repetir dentro da própria trava que o descreve.
+14. ~~**`conditions` aceitava ciclo.**~~ **RESOLVIDO** — par mútuo (`A` condiciona `B` e
+    `B` condiciona `A`) agora é **erro**. Limitação é assimétrica; havia 5 pares e o molde
+    era sempre o mesmo: a regra geral apontada como condição do exemplo que ela própria
+    gera, que é `basis` com nome errado. Os 5 foram desfeitos.
+15. ~~**`scope: PESSOAL` + `modo: prescricao` não tinha trava**, apesar de o `SCHEMA.md`
+    definir os dois como excludentes.~~ **RESOLVIDO como aviso** — as 13 ocorrências foram
+    abertas e corrigidas (10 eram `modo` errado, 3 eram `scope` errado), e hoje são zero.
+    Aviso e não erro porque o checker não tem como escolher qual dos dois campos consertar.
+16. **`relato-de-programa` com dose não dispara aviso nenhum, e são 174 claims.** O aviso
+    de "dose sem `conditions`" só olha `modo: prescricao`. Mover a especificação de um
+    programa alheio para `relato-de-programa` é certo para o filtro que vira treino e abre
+    um buraco no gate de segurança: `85 % do 5RM`, `+10 lb/semana`, `3 a 5 min de descanso`
+    ficam citáveis sem que nada reclame. **Deliberadamente NÃO liguei o aviso**, porque
+    seriam 174 avisos que a fonte quase nunca permite resolver — aviso impossível de zerar
+    é como se ensina alguém a ignorar avisos. O conserto certo é do lado do consumidor:
+    quem lê a base nunca pode tratar `relato-de-programa` como prescrição.
+17. **Não existe campo `genero` por vídeo, e ele é o conserto determinístico de
+    `relato-de-programa` / `avaliacao-de-terceiro`.** O discriminador dos dois valores é
+    uma propriedade do VÍDEO (review de programa, form check, vlog), não da claim — e a
+    extração normalizou a claim para prosa geral antes de as gavetas existirem. Medido:
+    nos 20 vídeos de review do Blevins, 82 % das claims em `prescricao` não nomeiam o
+    programa no texto; nos 5 de form check, 90 % não têm marcador de pessoa específica.
+    Hoje **cada agente decide isso abrindo o manifesto à mão** — 18 agentes traçaram 18
+    linhas diferentes, e isso está registrado lote a lote. O sinal já existe em prosa:
+    `research/corpus/blevins/TRIAGEM.md` tem título e gênero por ref. Ver `ENUMERADOS.md`
+    §8 e `ESTADO.md`.
+18. **`research/kb/PROTOCOLO-EXTRACAO.md` não tem regra escrita para `narrativa` ×
+    `anedota` × `fato` em material PESSOAL, e 17 dos 18 lotes relataram ter inventado a
+    sua.** O buraco nomeado por quase todos: **falta gaveta para prática pessoal habitual**
+    ("ele treina terra 3× por semana", "ele come 400 g de fruta por dia") — não é episódio,
+    então `narrativa` aperta; não é história, então `anedota` aperta. Ninguém forçou o
+    enumerado, e é a decisão certa; mas são centenas de claims apoiadas numa fronteira que
+    o registro não define. Antes de qualquer consulta que dependa desses três valores,
+    escreva a regra.

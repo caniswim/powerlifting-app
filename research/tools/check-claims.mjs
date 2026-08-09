@@ -22,6 +22,10 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { SOURCES, paths } from './sources.mjs';
+// Os enumerados moram em `kb.mjs` desde que o `check-canarios.mjs` passou a
+// precisar deles: duas cópias da mesma lista fechada é o defeito que o SCHEMA.md
+// documenta na abertura, e não vale a pena reintroduzi-lo por conveniência.
+import { TIERS, SCOPES, CERTAINTY, MODOS, FRAMES, FRAMES_DOSE, FRAMES_ESCALA, SUSPECT_WHY, carregarTopicos } from './kb.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 // `--extract <dir>` existe para o teste do próprio checker: ele monta um extract
@@ -45,45 +49,7 @@ const AT_TOLERANCE_SEC = 45;
  */
 const AT_PARAGRAFO = /^§\d+(?:\.[0-9A-Za-z_]+)*$/;
 
-const TIERS = new Set(['R', 'E', 'L', 'I', 'U', 'O']);
-const SCOPES = new Set(['GERAL', 'PESSOAL']);
-const CERTAINTY = new Set(['explicit', 'implied']);
-// Enumerado fechado, mas não pequeno por esporte: faltar gaveta é pior do que
-// ter gaveta demais. Sem `semanas` e `contagem`, o primeiro lote escreveu os
-// números por extenso para não inventar frame — a trava empurrou o dado para
-// fora da trava, que é o oposto do que ela existe para fazer.
-const FRAMES = new Set([
-  '1RM_treino', '1RM_legal', 'TM', 'pct_TM', 'pct_1RM',
-  'RPE', 'RIR', 'kg', 'lb', 'reps', 'series', 'pct', 'cm',
-  'seg', 'min', 'horas', 'dias', 'semanas', 'meses', 'anos', 'x_semana',
-  'contagem', 'idade', 'DOTS',
-  'g', 'kcal', 'ml', 'graus', 'bpm', 'pct_FCmax', 'mmHg', 'g_por_kg', 'g_por_lb',
-  'polegadas', 'escala_dor', 'n_amostra', 'IMC',
-  // O regulamento mede equipamento em milímetro e metro (13 mm de cinto, 1 m de
-  // faixa de punho). Sem estas duas gavetas, 13 mm viraria 1,3 cm na conversão do
-  // agente — que é exatamente o erro de unidade que o enumerado existe para barrar.
-  'mm', 'm',
-]);
-
-/**
- * O vocabulário de tópicos, lido do PRÓPRIO protocolo.
- *
- * `PROTOCOLO-EXTRACAO.md` diz, em caixa alta, que o vocabulário é FECHADO — e
- * durante toda a extração nada verificou isso. Uma claim usou o tópico `idade`,
- * que nunca existiu na lista, e passou. Regra sem trava é sugestão, e uma gaveta
- * inventada é pior do que parece: sem banco vetorial, `topic` É o mecanismo de
- * recuperação, e um sinônimo solto esconde a claim de quem procura.
- *
- * A lista é lida do markdown em vez de duplicada aqui porque já erramos assim
- * uma vez: o enumerado de `frame` cresceu no código e o SCHEMA.md ficou
- * descrevendo outra coisa. Documento e trava precisam ser o mesmo objeto.
- */
-const TOPICS = (() => {
-  const md = readFileSync(join(ROOT, 'research/kb/PROTOCOLO-EXTRACAO.md'), 'utf8');
-  const bloco = /## Vocabulário de tópicos[^\n]*\n[\s\S]*?```\n([\s\S]*?)```/.exec(md);
-  if (!bloco) throw new Error('vocabulário de tópicos não encontrado em PROTOCOLO-EXTRACAO.md');
-  return new Set(bloco[1].split(/\s+/).filter(Boolean));
-})();
+const TOPICS = carregarTopicos(ROOT);
 
 /**
  * `mandaEm` declara em que assuntos uma fonte vence outra quando discordam, e só
@@ -161,8 +127,66 @@ if (byRef.size === 0) {
   process.exit(1);
 }
 
-/** Refs escritos na prosa da claim, de qualquer corpus — `[R159 @03:05]`, `G042`. */
-const REF_NA_PROSA = new RegExp(`\\[?[${[...fontePorPrefixo.keys()].join('')}]\\d+[^\\]]*\\]?`, 'g');
+/**
+ * A REGRA DE ID, e por que ela é assimétrica.
+ *
+ * O `SCHEMA.md` dizia `V{ref}-{seq}` e chamava a colisão de "impossível por
+ * construção". Era verdade com uma fonte só. Com duas, `ref = G010` produz
+ * `V010-01`, que já é do `R010.jsonl` do Vena — e os seis agentes que extraíram
+ * o Blevins bateram nisso e resolveram cada um do seu jeito: metade escreveu
+ * `G001-01`, metade escreveu `VG028-01`. As 702 do segundo grupo ficaram
+ * irresolvíveis pelo `check-evidence.mjs`, cuja regex é `^[A-Z]\d{3}-\d+$`, **em
+ * silêncio**: a ferramenta respondia "nada a fazer" em vez de "não existe".
+ *
+ * A regra real, agora travada:
+ *
+ *   arquivo `{refPrefix}{NNN}.jsonl`  →  id `{idPrefix}{NNN}-{seq}`
+ *
+ * `idPrefix` vem de `sources.mjs` e é igual ao `refPrefix` para toda fonte nova.
+ * Só o Vena carrega `V`, porque os 4.947 ids dele já estão citados por
+ * `conflicts`, `basis` e `conditions` e renumerar id publicado é a única coisa
+ * que o esquema proíbe em letras grandes. Corpus sem fonte registrada (o
+ * regulamento, `F001.jsonl`) usa o próprio prefixo do arquivo.
+ *
+ * Não travar isso custou meia ingestão de arestas inverificáveis. Travar custa
+ * doze linhas.
+ */
+const FORMA_DO_ID = /^[A-Z]\d{3}-\d+$/;
+for (const src of Object.values(SOURCES)) {
+  if (!/^[A-Z]$/.test(src.idPrefix ?? '')) {
+    console.error(
+      `sources.mjs: fonte "${src.id}" precisa de idPrefix de UMA letra maiúscula ` +
+        `(o check-evidence.mjs resolve id por /^[A-Z]\\d{3}-\\d+$/)`,
+    );
+    process.exit(1);
+  }
+}
+function idEsperadoDoArquivo(file) {
+  const m = /^([A-Za-z]+)(\d{3,})$/.exec(file.replace(/\.jsonl$/, ''));
+  if (!m) return null;
+  return `${fontePorPrefixo.get(m[1])?.idPrefix ?? m[1]}${m[2]}`;
+}
+
+/**
+ * Refs escritos na prosa da claim, de qualquer corpus — `[R159 @03:05]`, `G042`.
+ *
+ * Duas alternativas, e a ordem entre elas é a correção de um furo real. A versão
+ * anterior era uma só, `\[?[RGF]\d+[^\]]*\]?`, e o `[^\]]*` é GULOSO: numa claim
+ * como "como ele já dizia em R159, o volume sobe para 47 séries", o casamento
+ * começa em `R159` e vai até o fim da frase, porque não há `]` para pará-lo. O
+ * `47` some junto com o ref, e a trava de "número sem procedência" — a que
+ * impede um fator inventado de entrar — fica DESLIGADA para todo número que
+ * venha depois de uma citação na prosa. Nenhuma claim de hoje exibe o defeito, e
+ * é justamente por isso que ele passou: a forma `[R159 @03:05]` que o protocolo
+ * ensina traz o `]` que estanca o casamento, e a forma sem colchete ainda não
+ * apareceu. O passe que vai preencher `conditions` e escrever claims `I` citando
+ * outras é onde ela aparece.
+ *
+ * A forma entre colchetes precisa ser consumida inteira (o `@03:05` de dentro
+ * não é dado da claim). A forma nua é exatamente `{LETRA}{NNN}` e nada além.
+ */
+const PREFIXOS = [...fontePorPrefixo.keys()].join('');
+const REF_NA_PROSA = new RegExp(`\\[[${PREFIXOS}]\\d+[^\\]]*\\]|\\b[${PREFIXOS}]\\d{3}\\b`, 'g');
 
 /**
  * Carrega a transcrição já normalizada, com um mapa de deslocamento → segundo.
@@ -262,6 +286,18 @@ for (const file of allFiles) {
     if (!c.id) return errors.push(`${where}: sem id`);
     if (seen.has(c.id)) return errors.push(`${where}: id ${c.id} duplicado (já em ${seen.get(c.id)})`);
     seen.set(c.id, where);
+
+    // A regra de id — ver o bloco grande acima. Vale para o extract inteiro e
+    // não só para o recorte de `--only`: id fora do padrão é invisível para a
+    // ferramenta que resolve citação, e invisível é pior do que errado.
+    if (!FORMA_DO_ID.test(c.id)) {
+      errors.push(`${where}: id "${c.id}" não tem a forma {LETRA}{NNN}-{seq} — o check-evidence.mjs não resolve`);
+    } else {
+      const esperado = idEsperadoDoArquivo(file);
+      if (esperado && !c.id.startsWith(`${esperado}-`)) {
+        errors.push(`${where}: id "${c.id}" não pertence a ${file} — o arquivo aloca ${esperado}-NN`);
+      }
+    }
   });
 }
 
@@ -282,7 +318,31 @@ for (const c of claims) {
   if (c.certainty && !CERTAINTY.has(c.certainty)) {
     errors.push(`${w}: certainty "${c.certainty}" fora do enumerado`);
   }
+  // `modo` ficou sem trava do começo da base até aqui, apesar de estar no
+  // SCHEMA.md como enumerado fechado desde o primeiro dia. Vale exatamente pelo
+  // motivo do `topic`: é campo de RECUPERAÇÃO, e filtrar `modo: prescricao` é a
+  // consulta que decide o que pode virar treino. Um valor fora da lista não
+  // quebra nada visivelmente — só some da consulta.
+  if (c.modo && !MODOS.has(c.modo)) errors.push(`${w}: modo "${c.modo}" fora do enumerado`);
   if (!c.claim?.trim()) errors.push(`${w}: claim vazia`);
+
+  // Regra normativa não tem modo pelo mesmo motivo que não tem scope: ela não é
+  // opinião, mecanismo nem narrativa, e `tier: O` já diz tudo o que `modo` diria.
+  if (c.tier === 'O' && c.modo) {
+    errors.push(`${w}: tier O não leva modo — regra não é prescrição de ninguém, é norma`);
+  }
+
+  // O aviso que o SCHEMA.md promete desde o primeiro dia e que nunca existiu no
+  // código: prescrição com dose e sem `conditions`. O achado mais grave da
+  // auditoria de escopo foi "supino 6× por semana" extraído sem "nunca acima de
+  // RPE 5", que ele diz na mesma frase. Separada da condição, a prescrição não
+  // fica incompleta — fica perigosa, porque parece completa.
+  //
+  // Aviso e não erro porque prescrição incondicional existe de verdade. Mas é
+  // aqui que o passe de `conditions` tem de olhar, e é a lista dele.
+  if (c.modo === 'prescricao' && !(c.conditions?.length) && (c.params ?? []).some((p) => FRAMES_DOSE.has(p.frame))) {
+    warnings.push(`${w}: prescrição com dose e sem conditions — confirmar se é mesmo incondicional`);
+  }
 
   // Procedência exigida por tier — a trava contra interpretação virar citação.
   if (c.tier === 'R') {
@@ -341,6 +401,44 @@ for (const c of claims) {
   for (const x of c.conflicts ?? []) {
     if (!byId.has(x)) errors.push(`${w}: conflicts aponta para ${x}, que não existe`);
   }
+  // `conditions` é, segundo o próprio SCHEMA.md, "a aresta mais importante da
+  // base" — e era a única lista de ids que ninguém resolvia. `basis` e
+  // `conflicts` tinham trava desde o primeiro dia; esta não. Um id de condição
+  // que não existe não deixa a prescrição incompleta, deixa ela PARECENDO
+  // condicionada: o consumidor vê que há uma condição, não consegue abri-la, e
+  // segue mesmo assim. É o modo de falha exato que a auditoria de escopo
+  // descreveu, agora com um carimbo de segurança por cima.
+  for (const x of c.conditions ?? []) {
+    if (x === c.id) errors.push(`${w}: conditions aponta para a própria claim`);
+    else if (!byId.has(x)) errors.push(`${w}: conditions aponta para ${x}, que não existe`);
+    // "A limita B" e "B limita A" ao mesmo tempo não é uma relação de limitação,
+    // é um par de arestas em que uma das duas está invertida. A auditoria de
+    // `conditions` achou 5 pares mútuos na base e mostrou o molde: a REGRA GERAL
+    // apontada como condição do EXEMPLO que ela mesma gera (`V112-14` ↔
+    // `V112-15`). Isso é `basis`, não `conditions` — e o dano é o de sempre, a
+    // prescrição parecendo qualificada por algo que não a qualifica. Assimetria
+    // é verificável sem agente nenhum, então é erro e não aviso.
+    else if ((byId.get(x).conditions ?? []).includes(c.id)) {
+      errors.push(
+        `${w}: conditions é assimétrica e ${c.id} ↔ ${x} apontam um para o outro — ` +
+          `uma das duas arestas está invertida (regra geral apontando para o próprio exemplo é basis, não conditions)`,
+      );
+    }
+  }
+
+  // `scope: PESSOAL` + `modo: prescricao` é contradição de definição: PESSOAL é
+  // "ele descreve o que ELE faz", prescricao é "ele diz para VOCÊ fazer". A
+  // auditoria de escopo abriu as 13 ocorrências que existiam e 10 estavam
+  // erradas — o Blevins narrando a própria autorregulação ("I'll probably have
+  // to pull back on the single") gravado como ordem para o leitor. Aviso e não
+  // erro porque as 3 restantes eram `scope` errado, não `modo`, e as duas saídas
+  // são legítimas; erro forçaria o agente a escolher uma sem olhar a fonte.
+  if (c.scope === 'PESSOAL' && c.modo === 'prescricao') {
+    warnings.push(
+      `${w}: scope PESSOAL com modo prescricao — o esquema define os dois como excludentes; ` +
+        `ou a claim narra o que ele faz (modo) ou é endereçada ao leitor (scope)`,
+    );
+  }
 
   // Números: unidade e frame obrigatórios, enumerado fechado.
   for (const p of c.params ?? []) {
@@ -348,15 +446,82 @@ for (const c of claims) {
     if (p.value === undefined || p.value === null) errors.push(`${w}: param ${p.name} sem value`);
     if (!p.frame) errors.push(`${w}: param ${p.name} sem frame — foi assim que 215 kg virou training max`);
     else if (!FRAMES.has(p.frame)) errors.push(`${w}: param ${p.name} com frame "${p.frame}" fora do enumerado`);
+    // Valor fora da escala fechada do próprio frame. `RPE 12` não é alto, é
+    // inexistente — e o único caso da base nasceu de legenda quebrada ("2 and a
+    // half to 3 RPE" virando "2 and 12 to 3"). É a família dos gramas gravados
+    // como `kg`, uma camada abaixo: o frame está certo e o valor não cabe nele.
+    //
+    // `suspect: true` rebaixa para aviso, e essa é a saída HONESTA e não a
+    // frouxa: `suspect` quer dizer "este número está declarado como provável
+    // defeito de ASR e o passe de Whisper é o dono dele". Sem a válvula, a única
+    // forma de o build passar seria eu adivinhar o número que a fonte disse —
+    // que é o defeito que esta base existe para não ter.
+    else if (FRAMES_ESCALA.has(p.frame) && typeof p.value === 'number') {
+      const [min, max] = FRAMES_ESCALA.get(p.frame);
+      if (p.value < min || p.value > max) {
+        const msg = `${w}: param ${p.name} vale ${p.value} e o frame "${p.frame}" só admite ${min}–${max}`;
+        if (c.suspect) warnings.push(`${msg} — declarado suspect, é alvo do passe de Whisper`);
+        else errors.push(`${msg} — número fora da escala não é valor alto, é valor inexistente`);
+      }
+    }
+  }
+
+  // `suspectWhy` é enumerado fechado no PROTOCOLO-EXTRACAO.md e nunca teve trava.
+  if (c.suspectWhy && !SUSPECT_WHY.has(c.suspectWhy)) {
+    errors.push(
+      `${w}: suspectWhy "${c.suspectWhy}" fora do enumerado — o passe de Whisper precisa saber ` +
+        `se procura "numero" ou "negacao", e texto livre não diz`,
+    );
+  }
+  if (c.suspectWhy && !c.suspect) {
+    errors.push(`${w}: suspectWhy sem suspect — a razão da suspeita sem a suspeita não é lida por ninguém`);
+  }
+
+  // `pct_XRM` sem dizer QUAL X é pior do que não ter o frame: "85 %" com cara de
+  // percentual de máximo, e um 5RM está uns 15 % abaixo de um 1RM. O X é a metade
+  // do dado, então ele é obrigatório e mora num param próprio, onde dá para
+  // consultá-lo — e não escondido na prosa, onde só um leitor humano o encontra.
+  const params = c.params ?? [];
+  if (params.some((p) => p.frame === 'pct_XRM')) {
+    const xb = params.find((p) => p.name === 'xrm_base');
+    if (!xb) {
+      errors.push(
+        `${w}: frame pct_XRM exige um param companheiro "xrm_base" com o X (frame reps) — ` +
+          `85 % de um 5RM não é 85 % de um 1RM`,
+      );
+    } else if (xb.frame !== 'reps') {
+      // A mensagem acima já dizia "(frame reps)" e nada conferia. Mensagem que
+      // promete o que a trava não cobra é a mesma divergência silenciosa entre
+      // documento e código, só que dentro de uma linha. O X de um XRM é sempre
+      // um número de repetições; `xrm_base` em `kg` seria a carga, e aí "85 %"
+      // volta a não ter base declarada — que é o buraco inteiro do `pct_XRM`.
+      errors.push(
+        `${w}: xrm_base tem frame "${xb.frame}" — o X de um XRM é número de repetições (frame reps)`,
+      );
+    }
   }
 
   // Todo número na prosa precisa ter param correspondente. Número solto na
   // claim é número sem procedência, e é assim que um fator inventado entra.
-  const declared = new Set((c.params ?? []).map((p) => String(p.value).replace(',', '.')));
+  const declared = new Set();
+  for (const p of params) {
+    const v = String(p.value).replace(',', '.');
+    declared.add(v);
+    // Valor textual (`5/3/1`, `5x5`, `T3`, `RPE 8-9`) carrega dígitos que a prosa
+    // repete um a um. Sem isto, declarar o nome do programa como `rotulo` não
+    // satisfaria a regra, e o agente voltaria a fabricar `series: 5, reps: 5`
+    // para uma frase que não prescreve série nenhuma — que foi o que aconteceu
+    // em G019-20/G020-01/G020-41 antes desta linha existir.
+    for (const d of v.matchAll(/\d+(?:[.,]\d+)?/g)) declared.add(d[0].replace(',', '.'));
+  }
+  // Id ANTES de ref, e não o contrário: `G001-01` é id de claim e `G001` é ref
+  // de vídeo, e o prefixo de um é o prefixo do outro. Removido o ref primeiro,
+  // sobra `-01` e o `01` vira "número sem procedência" — um erro inventado pela
+  // ordem de duas substituições.
   const stripped = (c.claim ?? '')
-    .replace(REF_NA_PROSA, ' ')          // refs de vídeo, de qualquer corpus
-    .replace(/\b1RM\b/gi, ' ')
-    .replace(/\bV\d{3}-\d+\b/g, ' ');     // ids de claim
+    .replace(/\b[A-Z]\d{3}-\d+\b/g, ' ')  // ids de claim, de qualquer corpus
+    .replace(REF_NA_PROSA, ' ')           // refs de vídeo, de qualquer corpus
+    .replace(/\b1RM\b/gi, ' ');
   for (const m of stripped.matchAll(/\d+(?:[.,]\d+)?/g)) {
     const n = m[0].replace(',', '.');
     if (!declared.has(n) && !declared.has(String(Number(n)))) {
@@ -376,8 +541,14 @@ for (const c of claims) {
   // Artigo definido antes do numeral marca enumeração de conjunto já conhecido
   // ("os dois sítios", "nos dois", "ambas as mãos"), não medida. Prescrição de
   // verdade sai escrita com dígito — "2 séries", não "as duas séries".
+  // `[ôóo]` e não `[óo]`: a claim V044-11 escreve "ômega três" com circunflexo, a
+  // exclusão nunca casou, e o aviso ficou ali de aviso permanente sem conserto —
+  // que é exatamente o efeito que este bloco de comentário diz querer evitar. A
+  // exclusão do provérbio ("dois passos à frente, um passo atrás", G006-16) entra
+  // pelo mesmo motivo, e é estreita de propósito: "dar dois passos para trás" no
+  // walkout É medida, e continua avisando.
   const NAO_E_MEDIDA =
-    /\b(?:os|as|nos|nas|d[oa]s|aos|às|ambos|ambas|nenhum dos|nenhuma das)\s+(?:dois|duas|tr[êe]s)\b|\b[óo]mega\s+tr[êe]s\b|\b(?:dois|duas|tr[êe]s)\s+(?:cotovelos?|m[ãa]os?|joelhos?|p[ée]s?|ombros?|esc[áa]pulas?|movimentos?)\b/gi;
+    /\b(?:os|as|nos|nas|d[oa]s|aos|às|ambos|ambas|nenhum dos|nenhuma das)\s+(?:dois|duas|tr[êe]s)\b|(?<![a-zà-ÿ])[ôóo]mega\s+tr[êe]s\b|\bdois passos [àa] frente\b|\b(?:dois|duas|tr[êe]s)\s+(?:cotovelos?|m[ãa]os?|joelhos?|p[ée]s?|ombros?|esc[áa]pulas?|movimentos?)\b/gi;
   const prosa = (c.claim ?? '').replace(NAO_E_MEDIDA, ' ');
   const spelled = [...new Set([...prosa.matchAll(EXTENSO)].map((m) => m[0].toLowerCase()))];
   if (spelled.length > 0 && (c.params ?? []).length === 0) {
@@ -504,10 +675,102 @@ for (const c of claims) {
   }
 }
 
+/**
+ * A CATRACA DO `modo` — como um campo obrigatório entra numa base que já tem
+ * 4.947 registros sem ele.
+ *
+ * Exigir `modo` hoje reprovaria o corpus inteiro do Vena e o build junto. Não
+ * exigir nunca é como o campo passou a ingestão inteira sem trava. A saída é uma
+ * dívida COM TETO: quantas claims ainda podem estar sem `modo`, e o teto só
+ * desce. Quando chegar a zero, `modo` virou obrigatório sem que ninguém precise
+ * se lembrar de ligar nada.
+ *
+ * O teto é conferido contra o extract INTEIRO, e não contra o recorte de
+ * `--only`: senão cada agente rodando no próprio lote veria um teto folgado e a
+ * soma estouraria sem ninguém ver.
+ *
+ * **O teto é POR PREFIXO DE ID, e isso é a correção de um furo real.** Um teto
+ * global só de número vaza da forma mais fácil de encontrar: preencher `modo` em
+ * uma claim antiga do Vena abre exatamente uma vaga para uma claim NOVA nascer
+ * sem `modo`, e a soma não se move. O documento afirmava em três lugares que
+ * "lote novo sem modo estoura o teto e falha o build", e era falso — bastava
+ * qualquer preenchimento no mesmo passe para o build sair verde. E o passe
+ * seguinte faz as duas coisas ao mesmo tempo, com dezoito agentes em paralelo,
+ * que é o cenário exato.
+ *
+ * A dívida real não é um número, é um conjunto: as 4.947 claims do Vena escritas
+ * antes de o campo existir, todas com id `V###`. Corpus nenhum mais tem direito
+ * a ela — o Blevins nasceu com o campo em 1.819 de 1.819. Então o teto vira um
+ * mapa, o do Vena desce conforme o passe avança, e todo prefixo ausente do mapa
+ * vale ZERO: uma claim nova sem `modo` falha o build no primeiro registro,
+ * qualquer que seja o que aconteça com a dívida antiga.
+ *
+ * **A dívida foi paga em 2026-08-09 e o mapa está VAZIO de propósito.** As
+ * 4.947 claims do Vena foram preenchidas em dois passes (18 agentes, mais o
+ * lote que ficou de fora e foi rodado no fechamento: R012, R030, R048, R066,
+ * R084, R102, R120, R138, R156, R174, 278 claims). Prefixo ausente vale zero,
+ * então `modo` é agora OBRIGATÓRIO para toda claim que não seja `tier: O`, sem
+ * que ninguém tenha precisado ligar nada — que era exatamente o desenho. Não
+ * reabra uma linha aqui para deixar um lote novo passar: a catraca só desce.
+ */
+const TETO_SEM_MODO = {};
+const semModo = allClaims.filter((c) => c.tier !== 'O' && !c.modo);
+const semModoPorPrefixo = new Map();
+for (const c of semModo) {
+  const p = String(c.id ?? '?')[0];
+  semModoPorPrefixo.set(p, [...(semModoPorPrefixo.get(p) ?? []), c]);
+}
+for (const [p, lista] of semModoPorPrefixo) {
+  const teto = TETO_SEM_MODO[p] ?? 0;
+  if (lista.length > teto) {
+    errors.push(
+      `${lista.length} claims sem modo com id ${p}###, e o teto declarado para ${p} é ${teto} — ` +
+        `claim nova tem de nascer com modo (ex.: ${lista.slice(0, 3).map((c) => c.id).join(', ')})`,
+    );
+  } else if (lista.length > 0 && lista.length < teto) {
+    warnings.push(
+      `${lista.length} claims ${p}### ainda sem modo — baixe TETO_SEM_MODO.${p} em check-claims.mjs para ${lista.length}`,
+    );
+  }
+}
+
+/**
+ * A CATRACA DO `suspectWhy`, no mesmo desenho da do `modo` — e pelo mesmo motivo.
+ *
+ * O `PROTOCOLO-EXTRACAO.md` fecha o campo em `numero`/`negacao` e escreve o
+ * porquê: é o mesmo passe de reparo com Whisper que resolve os dois, e ele
+ * precisa saber o que procurar. Sem o campo, `list-suspects.mjs` assume `numero`
+ * e a família `negacao` some — a marcação de quem de fato leu o trecho é jogada
+ * fora e trocada por heurística.
+ *
+ * Exigir presença hoje reprovaria 53 claims que já existem. Não exigir nunca é
+ * como o campo atravessou duas ingestões inteiras sem uma linha de código. Então
+ * teto declarado, que só desce: claim nova sem `suspectWhy` estoura, e quando o
+ * passe de Whisper zerar a dívida o campo vira obrigatório sozinho. Foi
+ * exatamente esta mecânica que tornou detectável o lote de 278 claims que um dos
+ * 18 agentes nunca rodou — trava que só desce vale mais que 18 confirmações.
+ */
+const TETO_SEM_SUSPECT_WHY = 53;
+const semPorque = allClaims.filter((c) => c.suspect && !c.suspectWhy);
+if (semPorque.length > TETO_SEM_SUSPECT_WHY) {
+  errors.push(
+    `${semPorque.length} claims com suspect e sem suspectWhy, e o teto declarado é ${TETO_SEM_SUSPECT_WHY} — ` +
+      `claim nova tem de dizer se a suspeita é "numero" ou "negacao" ` +
+      `(ex.: ${semPorque.slice(-3).map((c) => c.id).join(', ')})`,
+  );
+} else if (semPorque.length > 0 && semPorque.length < TETO_SEM_SUSPECT_WHY) {
+  warnings.push(
+    `${semPorque.length} claims com suspect e sem suspectWhy — ` +
+      `baixe TETO_SEM_SUSPECT_WHY em check-claims.mjs para ${semPorque.length}`,
+  );
+}
+
 const tierCount = new Map();
 const topicCount = new Map();
+const modoCount = new Map();
 for (const c of claims) {
   tierCount.set(c.tier, (tierCount.get(c.tier) ?? 0) + 1);
+  modoCount.set(c.modo ?? '—', (modoCount.get(c.modo ?? '—') ?? 0) + 1);
   for (const t of c.topic ?? []) topicCount.set(t, (topicCount.get(t) ?? 0) + 1);
 }
 
@@ -516,6 +779,8 @@ console.log(`  tiers ..................... ${[...tierCount].sort((a, b) => b[1] 
 console.log(`  tópicos distintos ......... ${topicCount.size}`);
 console.log(`  vídeos com claim .......... ${new Set(claims.filter((c) => c.src).map((c) => c.src)).size}`);
 console.log(`  contradições registradas .. ${claims.filter((c) => c.conflicts?.length).length}`);
+console.log(`  condições registradas ..... ${claims.filter((c) => c.conditions?.length).length}`);
+console.log(`  modos ..................... ${[...modoCount].sort((a, b) => b[1] - a[1]).map(([m, n]) => `${m}:${n}`).join('  ')}`);
 
 if (VERBOSE) {
   console.log('\n  tópicos mais densos:');
@@ -524,10 +789,27 @@ if (VERBOSE) {
   }
 }
 
+// Avisos saem AGRUPADOS POR ESPÉCIE, e não numa lista corrida cortada em 15.
+// Assim que a checagem de `conditions` entrou, um único tipo de aviso passou a
+// ocupar a lista inteira e escondeu os cinco avisos de número por extenso — que
+// são os que alguém consegue resolver hoje. Uma espécie ruidosa não pode enterrar
+// uma espécie acionável só por ser mais numerosa.
 if (warnings.length > 0) {
-  console.log(`\n${warnings.length} aviso(s):`);
-  for (const x of warnings.slice(0, 15)) console.log(`  ⚠ ${x}`);
-  if (warnings.length > 15) console.log(`  … e mais ${warnings.length - 15}`);
+  const especie = (msg) => {
+    const corpo = msg.split(/: /).slice(1).join(': ') || msg;
+    return corpo.replace(/ \(.*$/, '').replace(/ —.*$/, '');
+  };
+  const porEspecie = new Map();
+  for (const x of warnings) {
+    const k = especie(x);
+    porEspecie.set(k, [...(porEspecie.get(k) ?? []), x]);
+  }
+  console.log(`\n${warnings.length} aviso(s), em ${porEspecie.size} espécie(s):`);
+  for (const [k, lista] of [...porEspecie].sort((a, b) => b[1].length - a[1].length)) {
+    console.log(`\n  ${lista.length}× ${k}`);
+    for (const x of lista.slice(0, VERBOSE ? lista.length : 4)) console.log(`    ⚠ ${x}`);
+    if (!VERBOSE && lista.length > 4) console.log(`    … e mais ${lista.length - 4} (--verbose mostra tudo)`);
+  }
 }
 
 if (errors.length > 0) {

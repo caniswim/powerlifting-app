@@ -1,5 +1,45 @@
 # Registro pré-comprometido — Bloco 1
 
+> ## Procedência deste arquivo
+>
+> **Como ele nasceu.** Um agente da rodada de planejamento o escreveu em
+> `research/predicoes.md`, na raiz de `research/`, em 09/08/2026 — numa rodada em
+> que a instrução era **não editar nada**. Ficou órfão: fora de `research/kb/`,
+> fora do `RUNBOOK.md`, sem ninguém tendo decidido que ele deveria existir. Arquivo
+> sem dono não fica neutro; ele vira autoridade por antiguidade, e daqui a três
+> meses alguém o cita como se tivesse sido encomendado.
+>
+> **O que foi conferido antes de ele ficar, em 09/08/2026** (`DEFEITOS-PONTUAIS.md`
+> §6 tem o comando de cada item):
+>
+> - os **24 ids** `V###-##` citados aqui resolvem, todos, contra a base — nenhum
+>   fabricado. Este arquivo afirmava isso de si mesmo no rodapé; agora a afirmação
+>   foi executada em vez de acreditada;
+> - os rótulos `[GERAL]` e `[PESSOAL]` batem com o `scope` gravado na claim, nos
+>   **15 ids** em que o texto declara o escopo. Confundir os dois é o erro mais caro que esta
+>   base tem, e era o mais fácil de cometer escrevendo prosa;
+> - as paráfrases entre aspas foram conferidas contra a `claim` e o `verbatim` de
+>   8 ids de maior carga (`V115-22`, `V115-24`, `V040-24`, `V116-15`, `V092-22`,
+>   `V027-23`, `V001-08`, `V101-14`) — nenhuma distorce a fonte;
+> - `F001 §6.3.6`, citado em **P20**, existe e diz o que P20 diz que diz
+>   (`F001-129`: três tentativas falhas em qualquer movimento eliminam o atleta).
+>
+> **O que NÃO foi conferido, e não dá para conferir.** Se as previsões são *boas*.
+> Determinismo prova fidelidade à fonte, não correção da fonte — e os intervalos
+> aqui saem de `design.md` e `baseline.md`, cuja fragilidade o próprio arquivo
+> declara no aviso de procedência abaixo. Um id que resolve não vira um número que
+> acerta.
+>
+> **Por que ele fica.** Ele é falseável, tem prazo, e a coluna "o que morre"
+> nomeia a claim que cai em cada desfecho. É o único artefato do repositório que
+> pode ERRAR de forma visível — e o valor dele é exatamente esse. O que estava
+> errado era o endereço, não o conteúdo.
+>
+> **Regra a partir daqui.** A regra de "só anotação, nunca edição" vale desde
+> 10/08/2026 e está preservada: a mudança de `research/predicoes.md` para
+> `research/kb/PREDICOES-BLOCO1.md` e este bloco de procedência aconteceram em
+> 09/08/2026, antes do prazo, e **nenhuma linha de previsão foi tocada**.
+
 **Escrito em 2026-08-09, ANTES da primeira sessão.**
 Semana 1 = 10/08/2026 (seg) a 16/08/2026. Semana *n* termina em `09/08/2026 + 7n`.
 

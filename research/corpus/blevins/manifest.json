@@ -441,7 +441,11 @@
       "url": "https://www.youtube.com/watch?v=gN3fmewCW9E",
       "date": "2017-03-09",
       "transcript": null,
-      "source": null
+      "source": null,
+      "semLegenda": {
+        "motivo": "sem legenda em inglês",
+        "verificadoEm": "2026-08-09"
+      }
     },
     {
       "ref": "G034",

@@ -1,12 +1,22 @@
 import type { PainRegion } from '../types';
 
+/**
+ * Rótulos e ORDEM DE EXIBIÇÃO das regiões de dor.
+ *
+ * A ordem das chaves é a ordem da grade na UI, e o peitoral vem primeiro por
+ * decisão de segurança: é o tecido lesionado deste atleta e o único com gate
+ * formal no programa (`PROGRAMA.md §1.2`). Região que exige registro fiel não
+ * pode estar no fim de uma lista de 16 botões.
+ */
 export const painRegionLabels: Record<PainRegion, string> = {
+  left_chest: 'Peitoral Esq',
+  right_chest: 'Peitoral Dir',
   lower_back: 'Lombar',
   upper_back: 'Dorsal',
-  left_knee: 'Joelho Esq',
-  right_knee: 'Joelho Dir',
   left_shoulder: 'Ombro Esq',
   right_shoulder: 'Ombro Dir',
+  left_knee: 'Joelho Esq',
+  right_knee: 'Joelho Dir',
   left_hip: 'Quadril Esq',
   right_hip: 'Quadril Dir',
   left_elbow: 'Cotovelo Esq',

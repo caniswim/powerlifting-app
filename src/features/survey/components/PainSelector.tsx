@@ -1,5 +1,6 @@
 import { ScaleSelector } from '../../../components/ui';
 import { painRegionLabels } from '../../../domain/painRegions';
+import { PAIN_GATE, painGateScope } from '../../../domain/painGate';
 import type { PainEntry, PainRegion } from '../../../types';
 
 interface PainSelectorProps {
@@ -90,6 +91,17 @@ export function PainSelector({
             ))}
           </div>
 
+          {/*
+            O programa manda logar dor referida de bíceps COMO peitoral
+            (PROGRAMA.md §1.2, [R95 @03:10]) — o tendão do peitoral se insere
+            perto do bíceps. Sem esta linha, o registro correto depende de o
+            atleta lembrar da claim na hora de apertar o botão.
+          */}
+          <p className="text-[11px] leading-snug text-text-muted">
+            Fisgada ou dor no bíceps entra como <strong>peitoral</strong> até prova em
+            contrário. Na dúvida sobre a região, registre peitoral, não "Outro".
+          </p>
+
           {painEntries.length > 0 && (
             <div className="space-y-3 pt-2 border-t border-border">
               {painEntries.map((entry) => (
@@ -105,6 +117,13 @@ export function PainSelector({
                     lowLabel="Leve"
                     highLabel="Forte"
                   />
+                  {painGateScope(entry.region) === 'peitoral' &&
+                    getRegionIntensity(entry.region) >= PAIN_GATE.limiarMinimo && (
+                      <p className="text-[11px] leading-snug text-accent-red">
+                        Gate {PAIN_GATE.secao} disparado a partir de {PAIN_GATE.limiarMinimo}/10:
+                        o supino não sobe carga nem degrau de exposição esta semana.
+                      </p>
+                    )}
                 </div>
               ))}
             </div>

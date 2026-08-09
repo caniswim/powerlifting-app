@@ -8,6 +8,14 @@ import type {
 } from '../../types';
 import { prescribedWeeklyVolume } from '../../domain/volumeTargets';
 import { painRegionLabels } from '../../domain/painRegions';
+import {
+  describePainGate,
+  evaluatePainGate,
+  painFlagDefault,
+  painGateScope,
+  PAIN_GATE,
+} from '../../domain/painGate';
+import type { GateReading } from '../../domain/painGate';
 import { addSet, newRollupAcc, toRollup } from './complianceRollup';
 import { ROLLUP_SCHEMA_VERSION } from './rollupTypes';
 import type {
@@ -359,10 +367,29 @@ function buildNotes(sessions: SessionDoc[]): WeekDoc['notes'] {
 }
 
 /**
+ * Leitura de peitoral por sessão, para a janela do gate de §1.2.
+ *
+ * Uma sessão entra na lista só se colheu log de peitoral; é o que torna a janela
+ * de "3 sessões de supino" contável sem o rollup precisar saber quais sessões
+ * tinham supino. Os dois lados são somados no mesmo tecido — o pico da sessão é
+ * o maior valor entre esquerdo e direito, pré e pós.
+ */
+function buildGateReadings(sessions: SessionDoc[]): GateReading[] {
+  const out: GateReading[] = [];
+  for (const sess of sessions) {
+    const entries = [...(sess.pre?.pain ?? []), ...(sess.post?.newPain ?? [])]
+      .filter((p) => painGateScope(p.region) === 'peitoral');
+    if (entries.length === 0) continue;
+    out.push({ date: dayOf(sess.date), peak: Math.max(...entries.map((p) => p.intensity)) });
+  }
+  return out.sort((a, b) => a.date.localeCompare(b.date));
+}
+
+/**
  * Sinalizadores determinísticos. Não são julgamento — são onde olhar primeiro.
  * A conversa semanal decide o que fazer; isto só evita que algo passe batido.
  */
-function buildFlags(doc: Omit<WeekDoc, 'flags'>): string[] {
+function buildFlags(doc: Omit<WeekDoc, 'flags'>, sessions: SessionDoc[]): string[] {
   const flags: string[] = [];
   const { adherence, compliance, surveys, pain, bodyweight } = doc;
 
@@ -403,9 +430,31 @@ function buildFlags(doc: Omit<WeekDoc, 'flags'>): string[] {
     flags.push(`estresse médio em ${surveys.averages.stressLevel}`);
   }
 
+  // GATE DE PEITORAL — o limiar vem da tabela de PROGRAMA.md §1.2, não daqui.
+  // Fica ANTES das outras linhas de dor: é o único item desta função que aponta
+  // para uma ação já prescrita, e não para "olhe isto".
+  const gate = evaluatePainGate(buildGateReadings(sessions));
+  if (gate) flags.push(describePainGate(gate));
+
   for (const p of pain) {
-    if (p.occurrences >= 3 || p.maxIntensity >= 6) {
-      flags.push(`dor em ${painRegionLabels[p.region] ?? p.region}: ${p.occurrences}×, pico ${p.maxIntensity}/10`);
+    const scope = painGateScope(p.region);
+    const label = painRegionLabels[p.region] ?? p.region;
+    if (scope === 'peitoral') {
+      // O degrau já saiu acima; aqui fica só o registro por lado, que o gate
+      // agrega e portanto perderia.
+      flags.push(`dor em ${label}: ${p.occurrences}×, pico ${p.maxIntensity}/10`);
+    } else if (scope === 'ambiguo') {
+      if (p.maxIntensity >= PAIN_GATE.limiarMinimo || p.occurrences >= painFlagDefault.occurrences) {
+        flags.push(
+          `dor em ${label}: ${p.occurrences}×, pico ${p.maxIntensity}/10 — ` +
+            `a gaveta "Outro" não distingue peitoral; confirme a região antes de descartar o gate ${PAIN_GATE.secao}`,
+        );
+      }
+    } else if (
+      p.occurrences >= painFlagDefault.occurrences ||
+      p.maxIntensity >= painFlagDefault.maxIntensity
+    ) {
+      flags.push(`dor em ${label}: ${p.occurrences}×, pico ${p.maxIntensity}/10`);
     }
   }
 
@@ -452,5 +501,5 @@ export function buildWeekDoc(input: WeekInput, prev: WeekDoc | null = null): Wee
     notes: buildNotes(sessions),
   };
 
-  return { ...base, flags: buildFlags(base) };
+  return { ...base, flags: buildFlags(base, sessions) };
 }

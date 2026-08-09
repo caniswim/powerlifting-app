@@ -406,6 +406,20 @@ que o gate não conseguia reduzir.
 | **≥4/10 ou estiramento agudo** | encerra a sessão, cai ao degrau das S1–S2 por 1 semana, re-sobe **a metade da velocidade**, reporta |
 | **RETORNO** | re-sobe um degrau só após **2 semanas consecutivas com pico ≤1/10** em todas as sessões de supino |
 
+⚠️ **ESTA TABELA É LIDA POR MÁQUINA — ela é a fonte única do limiar, e o app não tem
+cópia dele.** `scripts/gate-dor.mjs` a converte em `VENA_BLOCK1_PAIN_GATE`, e
+`src/domain/painGate.ts` a consome; `npm run check:gate` reprova o build se o
+comportamento do rollup semanal divergir dos TRÊS DEGRAUS de agravamento. Mudar um número
+neles muda o app no mesmo passe. **Duas células ainda não têm comportamento nenhum e a
+trava não pode prendê-las**: a linha `RETORNO` (o app não decide re-subida, e nada mede as
+2 semanas limpas) e o gatilho `estiramento agudo` (não existe campo na pesquisa para
+registrá-lo). As duas são lidas e travadas contra o gerado, mas só governam a conversa
+semanal — mudá-las não muda o app. Reformatar a tabela sem manter a gramática
+(`≥N/10`, `N eventos`, `em N sessões`, `≤N/10`, e os verbos `congela` / `recua um degrau` /
+`encerra a sessão`) quebra o build em vez de desligar o gate em silêncio. **Este acoplamento
+existe porque as duas coisas já divergiram**: o programa mandava congelar a 2/10 e o app só
+levantava bandeira a 6/10, sem sequer ter a região peitoral no enumerado de dor.
+
 ⚠️ **Desvio consciente de `design.md` §4-B, que recua no 1º evento** (SPEC §7-#3): a base
 diz o oposto — *"um único treino mais doloroso não significa que o programa de reabilitação
 não está funcionando"* `[R1 @01:04]` `[GERAL]` e *"picos isolados de dor um dia ou outro são

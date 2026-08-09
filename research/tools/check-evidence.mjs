@@ -21,6 +21,7 @@
  *   node research/tools/check-evidence.mjs V014-03 V052-11 …
  *   node research/tools/check-evidence.mjs --grep "training max"
  *   node research/tools/check-evidence.mjs --topic profundidade --modo prescricao
+ *   node research/tools/check-evidence.mjs --topic agacho --limit 0   # sem corte
  */
 
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
@@ -40,7 +41,34 @@ const topico = arg('--topic');
 const modo = arg('--modo');
 const scope = arg('--scope');
 const tier = arg('--tier');
-const LIMITE = Number(arg('--limit') ?? 40);
+
+/**
+ * O DEFAULT DE `--limit`, e por que 120.
+ *
+ * O default era 40, calibrado para uma base que não existe mais: com 6.909
+ * claims em 74 tópicos, 62 dos 74 tópicos passavam de 40 e a saída padrão era
+ * quase sempre um pedaço. O aviso de corte existia, mas cabia numa linha no meio
+ * do cabeçalho, e "40 de 990" lido de passagem vira "eu vi o assunto".
+ *
+ * 120 é a MEDIANA do tamanho dos tópicos hoje. É o único número não arbitrário
+ * disponível: metade dos tópicos sai completa, e o outro lado sai cortado mas com
+ * um aviso que não dá para não ver. Aumentar até cobrir `agacho` (990 claims,
+ * ~6.000 linhas) não é opção — despejar isso no contexto de um agente destrói a
+ * consulta seguinte, e um corte anunciado é melhor do que um contexto estourado.
+ *
+ * Se a base crescer, este número deve ser recalculado, não chutado: a mediana
+ * sai de contar `topic` em `research/extract/*.jsonl`.
+ *
+ * `--limit 0` desliga o corte.
+ */
+const LIMITE_PADRAO = 120;
+const limiteArg = arg('--limit');
+const LIMITE = limiteArg === null ? LIMITE_PADRAO : Number(limiteArg);
+if (!Number.isFinite(LIMITE) || LIMITE < 0) {
+  console.error(`--limit "${limiteArg}" não é número ≥ 0 (use 0 para "sem corte")`);
+  process.exit(2);
+}
+const SEM_CORTE = LIMITE === 0;
 
 const ids = process.argv
   .slice(2)
@@ -117,8 +145,71 @@ if (filtrando) {
   ]
     .filter(Boolean)
     .join(' · ');
-  console.log(`\n${achados.length} claim(s) para ${filtro}${achados.length > LIMITE ? ` (mostrando ${LIMITE})` : ''}:\n`);
-  for (const c of achados.slice(0, LIMITE)) console.log(mostrar(c));
+  // Os mesmos filtros, mas na forma de linha de comando — o aviso de corte
+  // devolve o comando pronto para copiar, e um comando que o leitor precisa
+  // remontar à mão é um comando que ninguém roda.
+  const filtroCmd = [
+    grepTermo && `--grep ${JSON.stringify(grepTermo)}`,
+    topico && `--topic ${topico}`,
+    modo && `--modo ${modo}`,
+    scope && `--scope ${scope}`,
+    tier && `--tier ${tier}`,
+  ]
+    .filter(Boolean)
+    .join(' ');
+  const cortou = !SEM_CORTE && achados.length > LIMITE;
+  const mostrados = cortou ? achados.slice(0, LIMITE) : achados;
+  const ocultas = achados.length - mostrados.length;
+
+  /**
+   * O AVISO DE CORTE, e por que ele é grande.
+   *
+   * Antes era um parêntese no cabeçalho: `990 claim(s) para topic=agacho
+   * (mostrando 40)`. Tecnicamente correto e praticamente invisível — quem lê
+   * "40 de 990" de passagem conclui que viu o assunto, e decide com 4 % da
+   * evidência achando que decidiu com tudo. Essa é a leitura errada mais cara
+   * que esta ferramenta pode induzir, porque ela produz exatamente a confiança
+   * que a ferramenta existe para tirar.
+   *
+   * Então o aviso aparece DUAS vezes — antes da listagem e depois dela, porque
+   * saída longa se lê pelas pontas —, diz quantas ficaram fora em vez de quantas
+   * entraram, declara que o corte é por ordem de arquivo e não por relevância, e
+   * mostra a composição do que sumiu. Ver "ficaram 850 fora, sendo 62
+   * prescrições" torna impossível confundir a amostra com o assunto.
+   */
+  const banner = (titulo) => {
+    const linha = '━'.repeat(74);
+    const porChave = (fn) => {
+      const t = {};
+      for (const c of achados.slice(mostrados.length)) {
+        const k = fn(c) ?? '—';
+        t[k] = (t[k] ?? 0) + 1;
+      }
+      return Object.entries(t)
+        .sort((a, b) => b[1] - a[1])
+        .map(([k, n]) => `${k} ${n}`)
+        .join(' · ');
+    };
+    const cmd = ['node research/tools/check-evidence.mjs', filtroCmd, '--limit 0'].join(' ');
+    return (
+      `\n${linha}\n` +
+      `  ⚠  ${titulo}\n` +
+      `     VOCÊ ESTÁ VENDO ${mostrados.length} DE ${achados.length}. FICARAM ${ocultas} CLAIMS DE FORA.\n` +
+      `     O corte é por ordem de arquivo, NÃO por relevância — as ${ocultas} que\n` +
+      `     sumiram não são as menos importantes, são as que vieram depois no disco.\n` +
+      `     entre as ocultas, por modo:  ${porChave((c) => c.modo)}\n` +
+      `     entre as ocultas, por tier:  ${porChave((c) => c.tier)}\n` +
+      `     Para ver tudo:  ${cmd}\n` +
+      `     Enquanto não vir tudo, a frase "a base diz X sobre isto" não se sustenta.\n` +
+      `${linha}\n`
+    );
+  };
+
+  console.log(`\n${achados.length} claim(s) para ${filtro}:\n`);
+  if (cortou) console.log(banner('SAÍDA TRUNCADA'));
+  for (const c of mostrados) console.log(mostrar(c));
+  if (cortou) console.log(banner('SAÍDA TRUNCADA — fim da amostra'));
+
   // Zero resultado NÃO é prova de ausência — é prova de que este vocabulário não
   // acha. Quem lê isto tende a concluir a coisa errada, então o aviso vem junto.
   if (achados.length === 0) {

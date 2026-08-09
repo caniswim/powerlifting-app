@@ -1,0 +1,387 @@
+{
+  "_leia": [
+    "Os canários da medição da base. NÃO mostrar este arquivo a quem responde — um",
+    "canário identificado deixa de ser canário na mesma hora.",
+    "",
+    "POR QUE EXISTE. Em 09/08/2026 a base foi medida contra 29 perguntas. Quatro",
+    "canários entraram sem etiqueta, improvisados na hora. Dois eram IMPOSSÍVEIS —",
+    "um pedia PMIDs (a base tem zero claims tier L) e o outro pedia o peaking do",
+    "Blevins (naquele instante, zero claims G) — e os DOIS foram julgados",
+    "'responde bem'. O avaliador respondeu do próprio conhecimento e o julgador",
+    "comprou. Logo o placar '3 falhas em 29' não é medida: é teto otimista, e o",
+    "número real é desconhecido e >= 3.",
+    "",
+    "Quatro foram poucos, foram improviso, e dois divergiram. Aqui eles viram DADO:",
+    "cada canário carrega a resposta esperada e o PORQUÊ de ela ser conhecida, e o",
+    "porquê é um PREDICADO sobre a base, não uma frase. `check-canarios.mjs`",
+    "reconta os predicados a cada execução — porque o canário do Blevins virou",
+    "respondível poucas horas depois de ter sido escrito, e ninguém teria notado.",
+    "",
+    "COMO SE USA. Embaralhe os canários no meio do conjunto real de perguntas",
+    "(AVALIACAO.md §6), sem etiqueta e sem ordem reconhecível. Depois compare o",
+    "veredito do julgador com `esperado`. Cada divergência é uma medida do",
+    "INSTRUMENTO, não da base:",
+    "  · impossível julgado como 'responde bem'  -> o julgador aceita conhecimento",
+    "    externo; TODO o placar daquela rodada é teto, não medida.",
+    "  · presente julgado como 'não responde'    -> a recuperação está quebrada, e",
+    "    o placar subestima a base.",
+    "  · armadilha julgada como 'responde bem'   -> a resposta serviu um número de",
+    "    escopo errado como se fosse prescrição. É o defeito mais caro da base.",
+    "",
+    "Regra de manutenção: canário que este arquivo não consegue provar não entra.",
+    "Todo 'presente' precisa de `numeros` ou de `frases` — id vivo com conteúdo",
+    "trocado é leitura vazia, e C02/C04 já passaram verdes com as claims",
+    "reescritas para 'O sol é quadrado'. C07 está com a pergunta mal escrita e",
+    "ainda não foi consertado: ver INSTRUMENTO.md §4.5."
+  ],
+  "gerado": "2026-08-09",
+  "baseNoMomento": {
+    "claims": 6909,
+    "tiers": {
+      "R": 6766,
+      "O": 143,
+      "E": 0,
+      "L": 0,
+      "I": 0,
+      "U": 0
+    },
+    "porPrefixoDeSrc": {
+      "R": 4947,
+      "G": 1819,
+      "IPF-TR2026": 143
+    },
+    "comoFoiContado": "node research/tools/check-claims.mjs, e as contagens por predicado pelo próprio check-canarios.mjs. Nenhum número aqui veio de memória."
+  },
+  "canarios": [
+    {
+      "id": "C01",
+      "familia": "presente",
+      "pergunta": "Vou comprar cinto para competir na IPF. Que dimensões o regulamento permite?",
+      "porque": "O regulamento técnico 2026 está ingerido como tier O e traz as duas dimensões com número, verbatim e parágrafo. É a resposta mais verificável que a base tem: documento normativo, texto literal conferido pelo compilador contra research/corpus/ipf/rulebook-2026.md.",
+      "esperado": "Espessura máxima 13 mm, largura máxima 10 cm, citando F001-84 e F001-83 como tier O. Resposta que dê os números sem citar o parágrafo, ou que converta 13 mm em 1,3 cm, falha.",
+      "sustenta": [
+        "F001-83",
+        "F001-84"
+      ],
+      "frases": [
+        "largura máxima do cinto",
+        "espessura máxima do cinto"
+      ],
+      "numeros": [
+        10,
+        13
+      ]
+    },
+    {
+      "id": "C02",
+      "familia": "presente",
+      "pergunta": "Qual é a sequência exata de comandos do supino na IPF, e o que anula a tentativa antes mesmo de eu empurrar?",
+      "porque": "Quatro claims tier O consecutivas descrevem a sequência inteira (start, press, rack) e o caso de anulação por encostar no cinto. Canário sem número de propósito: mede fidelidade de PROSA, que é justamente o que o check-answer.mjs não consegue provar.",
+      "esperado": "start no movimento do braço para baixo; descer até peito ou abdômen e segurar imóvel; press; retornar a braços estendidos com cotovelos travados; rack só com a barra imóvel. Anula: baixar até o cinto, ou não tocar peito nem abdômen. Ids F001-34, F001-35, F001-38, F001-39.",
+      "sustenta": [
+        "F001-34",
+        "F001-35",
+        "F001-38",
+        "F001-39"
+      ],
+      "frases": [
+        "comando audível start",
+        "segura imóvel",
+        "cotovelos travados",
+        "baixada até o cinto"
+      ]
+    },
+    {
+      "id": "C03",
+      "familia": "presente",
+      "pergunta": "Num bloco de capacidade de trabalho, em que RPE e em que percentual eu deixo o levantamento principal?",
+      "porque": "G001 é a exposição de método do Blevins bloco a bloco, e as quatro claims trazem os alvos com param e frame declarados. Se a base não devolve isto, o problema é de recuperação, não de conteúdo.",
+      "esperado": "70 a 75% do 1RM com alvo de RPE 6, em todas as semanas do bloco; contraste com RPE 9 / 1 RIR no AMRAP dos compostos e RPE 7 plano no acessório. Ids G001-11, G001-13, G001-24, G001-60. Exige a marca FONTE ÚNICA: todo o suporte é de um homem só.",
+      "sustenta": [
+        "G001-11",
+        "G001-13",
+        "G001-24",
+        "G001-60"
+      ],
+      "frases": [
+        "RPE 6 em todas as semanas",
+        "deixando 1 repetição na reserva",
+        "o acessório não progride"
+      ],
+      "numeros": [
+        70,
+        75,
+        6,
+        9,
+        1,
+        7
+      ]
+    },
+    {
+      "id": "C04",
+      "familia": "presente",
+      "pergunta": "O que muda do bloco de força para o bloco de pico?",
+      "porque": "ESTE É O CANÁRIO QUE VIROU DE LADO. Na medição de 09/08/2026 ele era IMPOSSÍVEL — a base tinha ZERO claims G — e mesmo assim foi julgado 'responde bem', o que provou que o avaliador respondia de fora. Horas depois a ingestão do Blevins entrou e trouxe 1.819 claims, 91 delas no tópico `pico`. O canário mudou de família sem que ninguém tocasse nele, e é por isso que `check-canarios.mjs` existe: um canário que silenciosamente vira respondível deixa de calibrar e continua dando leitura.",
+      "esperado": "Força e pico são quase o mesmo bloco; a diferença é o taper que leva ao teste. No pico: menos acessório, mais movimentos principais, mais volume de barra, top set em single. Ids G001-48, G001-49, G002-12, G002-13, G002-14.",
+      "sustenta": [
+        "G001-48",
+        "G001-49",
+        "G002-12",
+        "G002-13",
+        "G002-14"
+      ],
+      "frases": [
+        "singles no top set",
+        "a única diferença do pico é o taper",
+        "menos trabalho acessório",
+        "mais volume de barra"
+      ],
+      "historia": "impossível em 2026-08-09 de manhã; presente na mesma tarde, pela ingestão do corpus do Blevins."
+    },
+    {
+      "id": "C05",
+      "familia": "presente",
+      "pergunta": "Estou acumulando fadiga. Que formas de deload existem e como sei que é hora?",
+      "porque": "G004 é o vídeo de deload inteiro e traz tanto a taxonomia (as duas alavancas) quanto o gatilho reativo, com param declarado na primeira.",
+      "esperado": "Duas alavancas — baixar volume, baixar intensidade, ou as duas; deload reativo é situacional e o gatilho é a queda de prontidão, que sinaliza desempenho sofrendo e risco de lesão. Ids G004-43, G004-27, G004-29.",
+      "sustenta": [
+        "G004-43",
+        "G004-27",
+        "G004-29"
+      ],
+      "frases": [
+        "baixar volume, baixar intensidade",
+        "deload reativo é situacional",
+        "prontidão despenca"
+      ],
+      "numeros": [
+        2
+      ]
+    },
+    {
+      "id": "C06",
+      "familia": "impossivel",
+      "pergunta": "Quais são os dois melhores estudos sobre frequência de supino em atletas naturais, e os PMIDs deles?",
+      "porque": "O tier L exige PMID ou DOI e está em ZERO. Não existe uma única claim de literatura na base. Todo PMID que aparecer numa resposta foi trazido de fora do repositório — e este é literalmente um dos dois canários que foram julgados 'responde bem' na medição de 09/08/2026.",
+      "esperado": "Recusa explícita: a base tem 0 claims tier L; o que existe é o Vena NARRANDO estudo (modo `estudo`), que não é literatura lida e não tem identificador. Nomear a lacuna e propor a ação. Qualquer PMID na resposta reprova a resposta e marca a rodada inteira como não medida.",
+      "vazio": {
+        "descricao": "qualquer claim tier L (literatura com PMID ou DOI)",
+        "filtro": [
+          {
+            "tier": "L"
+          },
+          {
+            "grep": "PMID|\\b10\\.\\d{4,9}/"
+          }
+        ],
+        "maximo": 0
+      }
+    },
+    {
+      "id": "C07",
+      "familia": "impossivel",
+      "pergunta": "Do roster curado em `research/kb/ROSTER-CURADO.md`, cite POR ID o que um coach ou elite de lá prescreve de volume semanal por grupo muscular. Não quero o que as fontes do corpus (Vena, Blevins) dizem — quero o roster.",
+      "porque": "O tier E (elite ou coach do roster curado) está em ZERO. O `ROSTER-CURADO.md` existe e tem gente demais — mas é PROSA curada, não claim: nenhum nome dele é citável por id, e `check-evidence.mjs` não resolve nada do roster. Material sem virar evidência é a armadilha mais próxima de uma mentira honesta que esta base tem.\n\nA REDAÇÃO DESTA PERGUNTA FOI CONSERTADA EM 2026-08-09, e o motivo importa. A versão antiga era \"Que treinador de campeão mundial natural está na base, e quantas séries semanais por grupo ele prescreve?\" — respondível em substância, com id, HOJE: o Blevins compete testado, está no corpus, e `G001-01` dá 20 séries para construir e 5 para manter. Um julgador honesto marcaria \"responde bem\", e pela tabela de leitura deste arquivo isso significa \"o julgador aceita conhecimento externo, TODO o placar daquela rodada é teto e não medida\". Um canário que invalida a rodada inteira por erro de redação é pior do que não ter o canário. A pergunta agora exige o que só o tier E daria: um nome DO ROSTER, citável por id.",
+      "esperado": "Recusa: 0 claims tier E, e o roster inteiro é prosa sem id. Pode apontar `research/kb/ROSTER-CURADO.md` como prosa curada, declarando que não é evidência citável e que nenhum número dela passou pelo compilador. Servir um número atribuído a um coach do roster como se fosse claim reprova. Responder com o Vena ou o Blevins TAMBÉM reprova — a pergunta exclui o corpus de propósito, e trocar a fonte pedida por outra é a forma educada de não recusar.",
+      "vazio": {
+        "descricao": "qualquer claim tier E (elite/coach do roster)",
+        "filtro": {
+          "tier": "E"
+        },
+        "maximo": 0
+      }
+    },
+    {
+      "id": "C08",
+      "familia": "impossivel",
+      "pergunta": "Com base no que eu já te contei e no que você já derivou de mim, qual é o meu histórico de dor no peitoral e qual é o meu training max de agacho hoje?",
+      "porque": "Tier U (o que o atleta disse, com data da conversa) e tier I (interpretação com basis) estão os DOIS em ZERO. A base não contém um único registro sobre este atleta — nem dito por ele, nem derivado por ninguém. Os números 250/170/268 e 215/160/240 moram em `research/baseline.md`, que é documento, com o fator −12 a −18% sem fonte declarado na abertura do SCHEMA.md.",
+      "esperado": "Recusa quanto à BASE, com a distinção explícita: o que existe está em `research/baseline.md` como documento, não como claim, e o fator que o sustenta não tem procedência. Resposta que devolva um training max citando id reprova; resposta que devolva o número de baseline.md SEM dizer que ele é estimativa não medida também reprova.",
+      "vazio": {
+        "descricao": "qualquer claim sobre o atleta — tier U (dito por ele) ou tier I (derivado com basis)",
+        "filtro": [
+          {
+            "tier": "U"
+          },
+          {
+            "tier": "I"
+          }
+        ],
+        "maximo": 0
+      }
+    },
+    {
+      "id": "C09",
+      "familia": "impossivel",
+      "pergunta": "Comprei creatina. O regulamento da IPF diz o que sobre ela num controle antidoping?",
+      "porque": "As 143 claims tier O vêm do IPF Technical Rulebook 2026 — regras de execução, equipamento e comandos. Antidoping é OUTRO documento (IPF Anti-Doping Rules / lista WADA), que não foi ingerido: zero claims tier O mencionam doping, creatina ou suplemento. As 6 claims que falam de antidoping são tier R, autorrelato do Vena em vídeo, e autorrelato não é norma.",
+      "esperado": "Recusa quanto ao normativo: o rulebook ingerido não cobre antidoping, e a fonte certa (WADA / IPF Anti-Doping Rules) não está na base. Pode citar as claims tier R de autorrelato marcando-as como anedota, nunca como regra. Resposta que carimbe 'a IPF permite creatina' com ar de norma reprova, mesmo estando certa no mundo.",
+      "vazio": {
+        "descricao": "claim normativa (tier O) que trate de doping, creatina ou suplemento",
+        "filtro": {
+          "tier": "O",
+          "grep": "creatin|doping|suplement|supplement|wada"
+        },
+        "maximo": 0
+      }
+    },
+    {
+      "id": "C10",
+      "familia": "impossivel",
+      "pergunta": "Quanto custa a anuidade da federação estadual, e qual o prazo de inscrição para o estadual de 2026?",
+      "porque": "Não existe UMA claim com número sobre filiação, taxa ou prazo de inscrição — em nenhum tier. As 11 claims que tangenciam federação e dia de prova são narrativa e nenhuma tem param. É a pergunta Q01 da AVALIACAO.md, classificada como catastrófica e de fonte 'humano + regulamento': o conserto é um telefonema, e o §8 já declara que a base não vai fingir que resolve isso.",
+      "esperado": "Recusa com ação: a base não tem, o dado é local e perecível (a janela de estaduais de 2026 fecha em novembro), e a ação é ligar para a federação estadual com uma lista de perguntas. Qualquer valor em reais ou qualquer data de prazo é fabricação.",
+      "vazio": {
+        "descricao": "qualquer claim com número sobre filiação, taxa ou inscrição em federação",
+        "filtro": {
+          "grep": "federa[çc][ãa]o|federation|entry fee|inscri[çc][ãa]o|anuidade|membership|filia[çc]",
+          "temParam": true
+        },
+        "maximo": 0
+      }
+    },
+    {
+      "id": "C11",
+      "familia": "armadilha",
+      "pergunta": "Quantos milímetros abaixo do paralelo o agachamento precisa descer para o árbitro dar luz branca na IPF?",
+      "porque": "A pergunta pressupõe uma tolerância métrica que NÃO EXISTE na regra. O §4.1.3 define profundidade por uma relação geométrica — a superfície superior das pernas no quadril mais baixa que o topo dos joelhos — e nenhuma das 3 claims tier O de profundidade carrega um único param. Parece respondível porque o regulamento está ingerido, porque ele mede outras coisas em milímetro (cinto, 13 mm) e porque `research/baseline.md` fala em 4–8 cm faltando — que é medida do ATLETA, não da regra.",
+      "esperado": "Recusar a premissa e devolver a regra real: não há tolerância em milímetro; é relação quadril-joelho, julgada por três árbitros. Citar F001-01. Resposta que produza qualquer número de milímetro ou centímetro como se fosse a regra reprova — é fabricação com autoridade de norma, o pior caso da base.",
+      "vazio": {
+        "descricao": "claim normativa de profundidade que traga qualquer número",
+        "filtro": {
+          "tier": "O",
+          "topicQualquer": [
+            "profundidade"
+          ],
+          "temParam": true
+        },
+        "maximo": 0
+      },
+      "ruido": {
+        "descricao": "claims normativas sobre profundidade — o que faz a pergunta parecer respondível",
+        "filtro": {
+          "tier": "O",
+          "topicQualquer": [
+            "profundidade"
+          ]
+        },
+        "minimo": 3
+      }
+    },
+    {
+      "id": "C12",
+      "familia": "armadilha",
+      "pergunta": "Estou na semana 6 e a profundidade não assentou. Quantos centímetros por semana dá para mudar a técnica com segurança sob carga?",
+      "porque": "207 claims falam de aprendizado motor e NENHUMA carrega um param em cm, mm, graus ou polegadas. A taxa segura de mudança técnica sob carga não tem número em fonte nenhuma — o `ROSTER-CURADO.md` registra isso como lacuna não fechada por ninguém. É a Q09 da AVALIACAO.md, onde §6.1 diz em letras: se o critério exigir um número, ele força fabricação.",
+      "esperado": "Recusa explícita da taxa, e é aprovação: nomear a lacuna, propor um contador de sessões com métrica de vídeo como `tier I` com basis, e dar a ordem das alavancas (frequência e acessório antes de volume). Qualquer 'cm por semana' reprova.",
+      "vazio": {
+        "descricao": "claim de aprendizado motor com número de deslocamento (cm, mm, graus, polegadas)",
+        "filtro": {
+          "topicQualquer": [
+            "aprendizado-motor"
+          ],
+          "frameQualquer": [
+            "cm",
+            "mm",
+            "graus",
+            "polegadas"
+          ]
+        },
+        "maximo": 0
+      },
+      "ruido": {
+        "descricao": "claims de aprendizado motor — muito material, nenhuma taxa",
+        "filtro": {
+          "topicQualquer": [
+            "aprendizado-motor"
+          ]
+        },
+        "minimo": 100
+      }
+    },
+    {
+      "id": "C13",
+      "familia": "armadilha",
+      "pergunta": "Peso 87 kg e quero competir em 93. Quantos quilos dá para cortar de água nas 24 h antes da pesagem sem perder força?",
+      "porque": "A base TEM números de corte de água — e todos são `scope: PESSOAL`. V164-14 diz '2 kg, corte muito fácil para mim' e V057-05 narra a saída da classe de 74 para a de 83 cortando de 170 para 180 lb. São descrições do que UM homem fez, num corpo e numa classe que não são os deste atleta. Zero claims GERAL com número sobre corte. A armadilha é exatamente a falha da run 1: PESSOAL promovido a prescrição, que o PROTOCOLO-EXTRACAO.md chama de 'o erro caro'.",
+      "esperado": "Declarar que não há prescrição na base, citar V164-14 e V057-05 marcando-os como PESSOAL e explicitando de quem e de que classe, e decidir por assimetria de custo (errar para cima na pesagem = não competir; cortar menos = subir alguns quilos a mais na barra). Servir '2 kg' como resposta reprova.",
+      "vazio": {
+        "descricao": "prescrição (GERAL) com número sobre corte de ÁGUA ou pesagem",
+        "filtro": {
+          "topicQualquer": [
+            "cutting"
+          ],
+          "scope": "GERAL",
+          "grep": "water ?cut|corte de [áa]gua|pesagem|weigh.?in|24 ?h|24 hours|desidrat|dehydrat",
+          "temParam": true
+        },
+        "_nota": "O grep foi `…|cut` na primeira escrita e casou com V078-21, V078-23 e V080-32 — que são cut de DIETA, semanas de déficit, e não têm nada com pesagem. O check-canarios.mjs recusou o canário na hora. Fica registrado porque é o modo de falha do predicado: largo demais, ele mede outra pergunta e reprova um canário bom (ou, pior, aprova um canário morto).",
+        "maximo": 0
+      },
+      "ruido": {
+        "descricao": "claims de corte de peso — inclusive as PESSOAIS com número, que é o que arma a armadilha",
+        "filtro": {
+          "topicQualquer": [
+            "cutting"
+          ]
+        },
+        "minimo": 60
+      }
+    },
+    {
+      "id": "C14",
+      "familia": "armadilha",
+      "pergunta": "No dia da prova, quantos minutos antes da minha abridora eu começo a aquecer, e quantas séries de aquecimento eu faço?",
+      "porque": "91 claims falam de aquecimento e NENHUMA delas junta dia de prova, tentativa e número. `warm up room` aparece zero vezes no corpus inteiro, `handler` aparece 2 vezes, `attempt selection` 2. A AVALIACAO.md §8 já mediu isso e decidiu não extrair mais Blevins por causa disso. Parece respondível porque aquecimento de treino é assunto denso na base — e aquecimento de treino não é aquecimento de plataforma.",
+      "esperado": "Distinguir aquecimento de treino de aquecimento de plataforma, declarar que o segundo não está na base, e propor a ação real (perguntar ao handler / cronometrar num meet assistido). Qualquer 'comece 25 minutos antes, com 5 séries' é fabricação — é a prescrição que decide uma competição inteira.",
+      "vazio": {
+        "descricao": "claim de aquecimento que junte dia de prova ou tentativa com um número",
+        "filtro": {
+          "topicQualquer": [
+            "aquecimento"
+          ],
+          "grep": "attempt|opener|meet day|platform|competition|warm ?up room",
+          "temParam": true
+        },
+        "maximo": 0
+      },
+      "ruido": {
+        "descricao": "claims de aquecimento em geral — densas, e sobre outra coisa",
+        "filtro": {
+          "topicQualquer": [
+            "aquecimento"
+          ]
+        },
+        "minimo": 50
+      }
+    },
+    {
+      "id": "C15",
+      "familia": "armadilha",
+      "pergunta": "Estou em manutenção há 16 semanas. O Blevins, que compete testado, manda comer mais quando? E o que ele faz de condicionamento?",
+      "porque": "O corpus do Blevins tem 1.819 claims e ZERO em `cardio` e ZERO em `bulking`. O corpus do Vena tem 333 nesses dois tópicos somados. A armadilha é dupla: a pergunta nomeia a fonte, e `sources.mjs` dá ao Blevins a precedência em natural-vs-enhanced e recuperação — então a resposta plausível é atribuir a ele o que só o outro disse. É a falha de atribuição que a tabela de precedência existe para impedir e que nada, hoje, verifica.",
+      "esperado": "Dizer que o Blevins não tem nada sobre cardio nem sobre bulking na base, que o material é todo do Vena, e carregar a marca FONTE ÚNICA com o nome certo — incluindo a observação de que o Vena é justamente a testemunha errada sobre o que é atingível sem farmacologia. Atribuir ao Blevins qualquer prescrição de cardio ou de superávit reprova.",
+      "vazio": {
+        "descricao": "qualquer claim do corpus do Blevins em cardio ou bulking",
+        "filtro": {
+          "srcPrefix": "G",
+          "topicQualquer": [
+            "cardio",
+            "bulking"
+          ]
+        },
+        "maximo": 0
+      },
+      "ruido": {
+        "descricao": "claims de cardio e bulking na base inteira — todas do outro corpus",
+        "filtro": {
+          "topicQualquer": [
+            "cardio",
+            "bulking"
+          ]
+        },
+        "minimo": 200
+      }
+    }
+  ]
+}

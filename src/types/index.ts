@@ -462,7 +462,18 @@ export type MuscleGroup =
 export type ExerciseMuscleMap = Record<string, Partial<Record<MuscleGroup, number>>>;
 
 // Pain
+/**
+ * Regiões de dor.
+ *
+ * `left_chest`/`right_chest` são lateralizadas de propósito: o padrão do
+ * enumerado já lateraliza tudo que é par (joelho, ombro, quadril, cotovelo,
+ * punho) e uma lesão de peitoral é unilateral — saber o lado distingue recidiva
+ * do lado lesionado de dor nova do outro lado, e é isso que a conversa semanal
+ * precisa decidir. O GATE de `PROGRAMA.md §1.2`, porém, conta os dois lados como
+ * UM tecido: ver `painGateGroup` em `src/domain/painGate.ts`.
+ */
 export type PainRegion =
+  | 'left_chest' | 'right_chest'
   | 'lower_back' | 'upper_back'
   | 'left_knee' | 'right_knee'
   | 'left_shoulder' | 'right_shoulder'

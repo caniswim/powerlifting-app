@@ -61,8 +61,30 @@ const SKIP_AUDIO = argv.includes('--skip-audio');
 
 const toSec = (s) => String(s).trim().split(':').map(Number).reduce((a, p) => a * 60 + p, 0);
 
+/**
+ * O separador decimal é protegido ANTES da limpeza de pontuação.
+ *
+ * Sem essa proteção `0.8` virava `0 8`, e o comparador então achava o `8` da
+ * legenda dentro do `0.8` do áudio e cravava CONFIRMADO — cegando o passe
+ * exatamente para o erro de décimo, que é a forma mais cara de errar número
+ * numa base de nutrição (`8 g/lb` são dez vezes `0,8 g/lb`, e a legenda
+ * automática do YouTube come o `0.` com frequência). Aconteceu de verdade em
+ * `V041-21` e `V041-22`.
+ *
+ * O ponto sobrevive só ENTRE dígitos: ponto final de frase continua virando
+ * espaço, senão `weight.` viraria um token diferente de `weight` e o
+ * alinhamento perderia palavra. O `·` é só um portador temporário, escolhido
+ * por não ser letra nem número e portanto não aparecer em transcrição.
+ */
 const norm = (s) =>
-  (s ?? '').normalize('NFC').toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
+  (s ?? '')
+    .normalize('NFC')
+    .toLowerCase()
+    .replace(/(\d)[.,](\d)/g, '$1·$2')
+    .replace(/[^\p{L}\p{N}\s·]/gu, ' ')
+    .replace(/·/g, '.')
+    .replace(/\s+/g, ' ')
+    .trim();
 
 // `--report` só renderiza o markdown a partir do JSON já adjudicado: não baixa
 // áudio, não roda Whisper, não toca no julgamento. Assim reformatar o relatório

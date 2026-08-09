@@ -14,8 +14,10 @@
  *
  * Custo típico: 6 leituras (athlete + state + 4 semanas).
  *
- * ⚠️ Os caminhos abaixo repetem `src/services/firebase/paths.ts` — este script
- * é Node puro e não importa TypeScript. Mexeu num, mexa no outro.
+ * ⚠️ Os caminhos abaixo repetem `src/services/firebase/paths.ts`. Mexeu num,
+ * mexa no outro. (Os rótulos de dor NÃO são mais cópia: vêm de
+ * `src/domain/painRegions.ts`, que o Node executa direto por só ter import de
+ * tipo. O mesmo tratamento serve para qualquer outro enumerado repetido aqui.)
  */
 
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -120,12 +122,21 @@ const DAY_LABELS = {
 };
 const dayLabel = (t) => DAY_LABELS[t] ?? t;
 
-const PAIN_LABELS = {
-  lower_back: 'lombar', upper_back: 'dorsal', left_knee: 'joelho esq', right_knee: 'joelho dir',
-  left_shoulder: 'ombro esq', right_shoulder: 'ombro dir', left_hip: 'quadril esq',
-  right_hip: 'quadril dir', left_elbow: 'cotovelo esq', right_elbow: 'cotovelo dir',
-  left_wrist: 'punho esq', right_wrist: 'punho dir', neck: 'pescoço', other: 'outro',
-};
+/**
+ * Rótulos de dor lidos do MESMO módulo que a UI usa.
+ *
+ * Esta tabela era uma terceira cópia manual do enumerado — a segunda ficou
+ * escondida dentro de `useSurveyTrends`. Quando `left_chest`/`right_chest`
+ * entraram, as duas cópias teriam impresso a chave crua justamente na região que
+ * o gate de §1.2 governa. `painRegions.ts` só tem import de tipo, então o Node
+ * o executa direto.
+ */
+const { painRegionLabels } = await import(
+  pathToFileURL(resolve(ROOT, 'src/domain/painRegions.ts')).href
+);
+const PAIN_LABELS = Object.fromEntries(
+  Object.entries(painRegionLabels).map(([k, v]) => [k, v.toLowerCase()]),
+);
 
 const DEPTH_LABELS = { below_parallel: 'abaixo', at_parallel: 'paralelo', above_parallel: 'ACIMA', unknown: '?' };
 const BAR_LABELS = {

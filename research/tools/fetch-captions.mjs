@@ -209,10 +209,30 @@ async function worker() {
       // de datação gravou (o Vena tem nos 197); a que vem de carona aqui serve
       // para vídeo que falhou lá, e não pode reabrir uma decisão já tomada.
       if (r.date && v.date === null) v.date = r.date;
+      // Tentativa anterior que falhou e agora deu certo: o registro da falha some
+      // junto, senão sobra um "não tem legenda" ao lado de uma legenda.
+      delete v.semLegenda;
       done += 1;
     } catch (err) {
       failed += 1;
-      failures.push({ ref: v.ref, title: v.title, why: String(err.message ?? err).slice(0, 120) });
+      const why = String(err.message ?? err).slice(0, 120);
+      failures.push({ ref: v.ref, title: v.title, why });
+      /**
+       * A FALHA FICA GRAVADA NO MANIFESTO, e não só no console.
+       *
+       * `transcript: null` sozinho é ambíguo entre duas coisas com consertos
+       * opostos: "ninguém buscou ainda" e "buscamos, e este vídeo não tem
+       * legenda para buscar". Os 21 nulos do Blevins misturavam as duas, e o
+       * `G033` custou uma investigação inteira para redescobrir um fato que o
+       * pipeline já sabia e jogou fora — o relatório da ingestão registrou
+       * "sem transcrição" sem poder dizer por quê.
+       *
+       * Com `semLegenda` gravado, a próxima pessoa lê o motivo e a data em vez
+       * de gastar rede e Whisper para chegar na mesma conclusão. E continua
+       * sendo só um registro de tentativa: `--force` tenta de novo, e sucesso
+       * apaga o campo acima.
+       */
+      v.semLegenda = { motivo: why, verificadoEm: new Date().toISOString().slice(0, 10) };
     }
     if ((done + failed) % 20 === 0) {
       console.log(`  ${done + failed}/${done + failed + queue.length} · ok ${done} · falha ${failed}`);

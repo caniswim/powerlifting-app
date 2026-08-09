@@ -85,7 +85,7 @@ fisgada de 3/10 no peito só pode ser registrada como `other` — e `other` não
 disparam**. Isto não é lacuna de conhecimento; é bug de enum.
 **Conserto:** `chest`, `left_pec`/`right_pec`, `triceps`, `lat`, `adductor`, `hamstring`
 — e uma trava que exige que toda região citada por `PROGRAMA.md` §1.2 exista no enum.
-**Resolve:** Q03, Q05, Q25, Q27, e P10–P12 de `predicoes.md`.
+**Resolve:** Q03, Q05, Q25, Q27, e P10–P12 de `PREDICOES-BLOCO1.md`.
 
 ### D2 · `buildFlags` dispara em 6/10 contra um gate que para em 4/10 · `src/services/sync/weeklyRollup.ts:404`
 ```ts
@@ -165,7 +165,7 @@ a recuperação por proximidade é mecânica e barata.
 
 ### D8 · Trava de id em documentos, não só em claims
 `check-claims.mjs` recusa o build se um id citado em `research/kb/*.md`,
-`research/synth/*.md`, `design.md`, `baseline.md` ou `predicoes.md` não resolver. É a mesma
+`research/synth/*.md`, `design.md`, `baseline.md` ou `PREDICOES-BLOCO1.md` não resolver. É a mesma
 trava que já protege a extração, estendida à camada que governa as cargas. Junto: a tabela
 `research/kb/CITACOES-EXTERNAS.md`, uma linha por sobrenome citado em `design.md` /
 `PROGRAMA.md`, mapeando para um id tier L **ou** para a marca `SEM FONTE NA BASE`. Hoje
@@ -260,7 +260,7 @@ produto do agente é **o protocolo**, não o número: o número é do corpo dele
 fator de −12 a −18% que hoje governa 215/160/240 e portanto toda carga do bloco, e que
 `baseline.md` §1 é o único dos três a citar **nenhuma** fonte.
 *Verificar:* `baseline.md` §1 passa a citar o vídeo e a data; o fator sem fonte sai;
-P01–P03 de `predicoes.md` ficam anotáveis contra um denominador medido.
+P01–P03 de `PREDICOES-BLOCO1.md` ficam anotáveis contra um denominador medido.
 
 **A7 · Registrar o atleta como claims tier U.** Peitoral rompido, nunca fez single, mudou a
 técnica na semana 1, 87 kg, manutenção 2.600 kcal verificada, marcas de treino. Hoje tier U
@@ -356,7 +356,7 @@ o próximo agente não re-derive nem declare errado.
 | N1 | **O telefonema à federação estadual.** Nenhum documento substitui, e é **perecível**: a janela de estaduais de 2026 fecha em novembro e o Brasileiro exige estadual no ano anterior | linha em `design.md` com data-limite **30/09/2026** e o custo do atraso (12 meses), amarrada a P22 | Q01, Q23 |
 | N2 | **O fisioterapeuta que põe a mão no peitoral.** F4 compra arcabouço e horizonte; não compra a decisão | `INDEX.md` §4 + teto declarado dentro da própria síntese de dor | Q03, Q25 |
 | N3 | **A calibração de RPE.** Impossível sozinho, e governa toda carga | toda carga derivada de RPE sai com `RPE não calibrado — viés desconhecido`, até A6 medir | Q12, Q11, Q06 |
-| N4 | **O árbitro federado olhando três vídeos.** `IPF-CHECKLIST.md` ensina a aferir sozinho; ninguém sabe o erro dessa aferição | P08 já está marcada **hoje infalsificável** em `predicoes.md`; fica assim, não é removida | Q13, Q09, Q14 |
+| N4 | **O árbitro federado olhando três vídeos.** `IPF-CHECKLIST.md` ensina a aferir sozinho; ninguém sabe o erro dessa aferição | P08 já está marcada **hoje infalsificável** em `PREDICOES-BLOCO1.md`; fica assim, não é removida | Q13, Q09, Q14 |
 | N5 | **Recorde mundial: meta ou fantasia.** ~240 kg de distância. Sob qualquer resposta possível o plano dos próximos 24 meses é idêntico | UMA resposta, ≤400 palavras, com **data de reabertura**; quatro perguntas para um delta de decisão zero é consumo de ansiedade | Q21 |
 | N6 | **Status farmacológico da fonte.** Discordância irredutível I-1 | fica em `AVALIACAO.md` §5, e o eixo de ajuste declarado é carga absoluta (A4) — que aponta para cima | Q07 |
 | N7 | **Academia com barra rígida e anilha calibrada.** Logística local | `INDEX.md` §4, com o flag que já existe (`thick_plastic`) como medida do dano | Q29 |

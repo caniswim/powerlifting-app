@@ -58,8 +58,11 @@ function roda(claims) {
       porArquivo.set(f, [...(porArquivo.get(f) ?? []), JSON.stringify(c)]);
     }
     for (const [f, linhas] of porArquivo) writeFileSync(join(dir, f), `${linhas.join('\n')}\n`);
-    execFileSync('node', [CHECKER, '--extract', dir], { encoding: 'utf8', stdio: 'pipe' });
-    return { passou: true, saida: '' };
+    // A saída sai mesmo quando o checker PASSA: caso de aviso precisa ler o
+    // texto do aviso, e sem isso "o checker passou" seria a única informação
+    // disponível — que é exatamente o que um aviso não emitido também produz.
+    const out = execFileSync('node', [CHECKER, '--extract', dir, '--verbose'], { encoding: 'utf8', stdio: 'pipe' });
+    return { passou: true, saida: out };
   } catch (err) {
     return { passou: false, saida: `${err.stdout ?? ''}${err.stderr ?? ''}` };
   } finally {
@@ -143,6 +146,14 @@ const CASOS = [
     mutar: (c) => { c.params[0].frame = 'quilos_mais_ou_menos'; },
   },
   {
+    // `modo` governa a consulta que decide o que pode virar treino. Um valor
+    // fora do enumerado não quebra nada visivelmente — a claim simplesmente
+    // some do filtro `modo: prescricao` e ninguém percebe a ausência.
+    nome: 'modo fora do enumerado fechado',
+    esperado: /modo .* fora do enumerado/,
+    mutar: (c) => { c.modo = 'prescrição'; },
+  },
+  {
     nome: 'tier fora do enumerado fechado',
     esperado: /tier .* fora do enumerado/,
     mutar: (c) => { c.tier = 'X'; },
@@ -168,14 +179,163 @@ const CASOS = [
     mutar: (c) => { c.conflicts = ['V999-99']; },
   },
   {
+    // `conditions` é, pelo SCHEMA.md, "a aresta mais importante da base", e foi a
+    // única lista de ids sem trava até 2026-08-09. Condição que não abre é pior
+    // do que condição ausente: parece que a prescrição está qualificada.
+    nome: 'conditions apontando para claim inexistente',
+    esperado: /conditions aponta/,
+    mutar: (c) => { c.conditions = ['V999-99']; },
+  },
+  {
+    // "A limita B" e "B limita A" ao mesmo tempo não descreve limitação nenhuma:
+    // uma das duas arestas está invertida. A auditoria achou 5 pares mútuos, e o
+    // molde é sempre o mesmo — a regra geral apontada como condição do exemplo
+    // que ela própria gera, que é `basis` com nome errado.
+    nome: 'ciclo em conditions: duas claims apontando uma para a outra',
+    esperado: /conditions é assimétrica/,
+    montar: (clone) => {
+      const a = clone(); const b = clone();
+      a.id = `${a.id.split('-')[0]}-90`; b.id = `${b.id.split('-')[0]}-91`;
+      a.conditions = [b.id]; b.conditions = [a.id];
+      return [a, b];
+    },
+  },
+  {
+    // `RPE 12` não é um valor alto, é um valor que não existe. O único caso da
+    // base nasceu de legenda quebrada e passou por toda trava porque 12 é um
+    // número sintaticamente válido num campo numérico.
+    nome: 'valor fora da escala fechada do próprio frame',
+    esperado: /só admite 0–10/,
+    mutar: (c) => { c.params = [{ name: 'rpe_alvo', value: 12, unit: 'RPE', frame: 'RPE' }]; c.claim = 'O alvo é RPE 12.'; },
+  },
+  {
+    nome: 'suspectWhy com valor fora do enumerado fechado',
+    esperado: /suspectWhy .* fora do enumerado/,
+    mutar: (c) => { c.suspect = true; c.suspectWhy = 'achei estranho'; },
+  },
+  {
+    nome: 'suspectWhy sem suspect — razão da suspeita que ninguém lê',
+    esperado: /suspectWhy sem suspect/,
+    mutar: (c) => { c.suspectWhy = 'numero'; },
+  },
+  {
+    // A catraca do `suspectWhy`, no mesmo desenho da do `modo`: teto declarado
+    // que só desce, para o campo virar obrigatório sozinho quando a dívida
+    // acabar. Sem ela, lote novo volta a marcar `suspect` sem dizer o quê.
+    nome: 'lote estourando o teto de suspect sem suspectWhy',
+    esperado: /teto declarado é 53/,
+    montar: (clone, base) => {
+      const pref = base.id.split('-')[0];
+      return Array.from({ length: 54 }, (_, i) => {
+        const c = clone();
+        c.id = `${pref}-${String(i + 1).padStart(2, '0')}`;
+        c.suspect = true;
+        delete c.suspectWhy;
+        return c;
+      });
+    },
+  },
+  {
+    // O esquema define `PESSOAL` ("ele descreve o que ELE faz") e `prescricao`
+    // ("ele diz para VOCÊ fazer") como mutuamente excludentes. A base tinha 13
+    // ocorrências do par e 10 estavam erradas.
+    nome: 'scope PESSOAL com modo prescricao é sinalizado',
+    aviso: true,
+    esperado: /PESSOAL com modo prescricao/,
+    mutar: (c) => { c.scope = 'PESSOAL'; c.modo = 'prescricao'; },
+  },
+  {
+    // A válvula da trava de escala. `suspect: true` quer dizer "este número está
+    // declarado como provável defeito de ASR e o passe de Whisper é o dono".
+    // Sem a válvula, a única forma de o build passar seria adivinhar o número
+    // que a fonte disse — o defeito que esta base existe para não ter. Caso de
+    // aviso e não de aceitação muda: tem de sobrar RASTRO, não silêncio.
+    nome: 'valor fora da escala, mas declarado suspect, vira aviso e não erro',
+    aviso: true,
+    esperado: /declarado suspect, é alvo do passe de Whisper/,
+    mutar: (c) => {
+      c.params = [{ name: 'rpe_alvo', value: 12, unit: 'RPE', frame: 'RPE' }];
+      c.claim = 'O alvo é RPE 12.';
+      c.suspect = true; c.suspectWhy = 'numero';
+    },
+  },
+  {
+    nome: 'id fora da forma que o check-evidence.mjs resolve',
+    esperado: /não tem a forma/,
+    // Exatamente o que 702 claims do Blevins tinham: irresolvível, em silêncio.
+    mutar: (c) => { c.id = `V${c.id}`; },
+  },
+  {
+    nome: 'id que não pertence ao arquivo em que está',
+    esperado: /não pertence a/,
+    mutar: (c) => { c.id = 'Z777-01'; },
+  },
+  {
+    nome: 'percentual de XRM sem dizer qual XRM',
+    esperado: /xrm_base/,
+    mutar: (c) => { c.params[0].frame = 'pct_XRM'; },
+  },
+  {
+    // A mensagem do caso acima sempre disse "(frame reps)" e nada conferia.
+    // `xrm_base` em kg é a CARGA do XRM, não o X: o "85 %" volta a ficar sem
+    // base declarada, que é o buraco inteiro que o `pct_XRM` foi aberto para
+    // fechar.
+    nome: 'xrm_base declarado, mas com frame que não é reps',
+    esperado: /o X de um XRM é número de repetições/,
+    mutar: (c) => {
+      c.claim = 'A carga de trabalho fica em 85% do máximo de referência.';
+      c.params = [
+        { name: 'intensidade', value: 85, unit: '% do XRM', frame: 'pct_XRM' },
+        { name: 'xrm_base', value: 100, unit: 'kg', frame: 'kg' },
+      ];
+    },
+  },
+  {
+    nome: 'regra normativa carregando modo',
+    esperado: /tier O não leva modo/,
+    mutar: (c) => { c.tier = 'O'; c.modo = 'fato'; },
+  },
+  {
     nome: 'verbatim curto demais para ser evidência',
     esperado: /curto demais/,
     mutar: (c) => { c.verbatim = 'the squat'; },
   },
   {
+    // FURO REAL, achado atacando a trava. `REF_NA_PROSA` usava `[^\]]*`, que é
+    // guloso: um ref NU na prosa (`R159`, sem colchete) fazia o casamento correr
+    // até o fim da frase por falta de um `]` que o parasse, e todo número depois
+    // dele sumia da checagem de procedência — a trava que impede um fator
+    // inventado de entrar, desligada por uma citação.
+    nome: 'número solto depois de um ref nu na prosa',
+    esperado: /número sem procedência/,
+    mutar: (c) => {
+      c.claim = 'Como ele já dizia em R159, o volume sobe para 47 séries por semana.';
+      c.params = [];
+    },
+  },
+  {
+    nome: 'número solto depois de um ref entre colchetes',
+    esperado: /número sem procedência/,
+    mutar: (c) => {
+      c.claim = 'Como em [G042 @03:05], o volume sobe para 47 séries por semana.';
+      c.params = [];
+    },
+  },
+  {
     nome: 'JSON inválido no meio do arquivo',
     esperado: /JSON inválido/,
     bruto: true,
+  },
+  {
+    // FURO REAL. O teto era um número global, e um número global vaza pelo
+    // caminho mais óbvio: preencher `modo` numa claim antiga abre uma vaga para
+    // uma claim nova nascer sem ele. O passe seguinte faz as duas coisas ao
+    // mesmo tempo. Aqui a claim nova tem prefixo `G`, que não tem dívida
+    // declarada, e por isso precisa falhar por si só — sem depender de contagem
+    // de mais ninguém.
+    nome: 'claim nova (prefixo sem dívida declarada) nascendo sem modo',
+    esperado: /sem modo com id G###|teto declarado para G/,
+    mutar: (c) => { delete c.modo; },
   },
 ];
 
@@ -206,10 +366,29 @@ for (const caso of CASOS) {
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
+  } else if (caso.montar) {
+    // Defeito que só existe entre DUAS claims (ciclo em `conditions`) não cabe
+    // numa mutação de registro único.
+    r = roda(caso.montar(clone, base));
   } else {
     const c = clone();
     caso.mutar(c);
     r = roda([c]);
+  }
+
+  // Caso de AVISO: o checker tem de continuar passando (aviso não é erro) e o
+  // texto do aviso tem de estar na saída. Sem as duas metades, um aviso apagado
+  // do código passa despercebido — ele some exatamente como um aviso não emitido.
+  if (caso.aviso) {
+    if (r.passou && caso.esperado.test(r.saida)) {
+      console.log(`  ✓ ${caso.nome}`);
+    } else {
+      console.error(
+        `  ✗ ${caso.nome}\n      ${r.passou ? 'o checker passou mas NÃO emitiu o aviso' : 'o checker reprovou — aviso virou erro'}`,
+      );
+      falhas += 1;
+    }
+    continue;
   }
 
   if (r.passou) {
@@ -226,8 +405,63 @@ for (const caso of CASOS) {
   }
 }
 
+/**
+ * O outro lado, e ele não é decorativo: um checker fica "correto" na hora em que
+ * recusa tudo. Estes casos são registros LEGÍTIMOS que ele precisa aceitar, e
+ * cada um existe porque a trava já empurrou o dado para fora dela uma vez.
+ */
+const CASOS_QUE_PASSAM = [
+  {
+    // Sem `rotulo` e sem extrair os dígitos de dentro de um valor textual, a
+    // trava de "número sem procedência" obrigava o agente a declarar
+    // `series: 5, reps: 5` para uma frase que não prescreve série nenhuma.
+    nome: 'nome de programa com dígito declarado como rotulo',
+    mutar: (c) => {
+      c.claim = 'O StrongLifts 5x5 é o programa comparado aqui.';
+      c.params = [{ name: 'programa', value: '5x5', unit: 'nome', frame: 'rotulo' }];
+    },
+  },
+  {
+    nome: 'posição numa sequência declarada como ordinal',
+    mutar: (c) => {
+      c.claim = 'Na fase 2 os incrementos ficam menores.';
+      c.params = [{ name: 'fase', value: 2, unit: 'fase', frame: 'ordinal' }];
+    },
+  },
+  {
+    nome: 'percentual de XRM com o xrm_base declarado',
+    mutar: (c) => {
+      c.claim = 'A carga de trabalho fica em 85% do 5RM.';
+      c.params = [
+        { name: 'intensidade', value: 85, unit: '% do XRM', frame: 'pct_XRM' },
+        { name: 'xrm_base', value: 5, unit: 'reps', frame: 'reps' },
+      ];
+    },
+  },
+];
+
+for (const caso of CASOS_QUE_PASSAM) {
+  const c = clone();
+  caso.mutar(c);
+  const r = roda([c]);
+  if (r.passou) {
+    console.log(`  ✓ aceita: ${caso.nome}`);
+  } else {
+    console.error(
+      `  ✗ aceita: ${caso.nome}\n      o checker RECUSOU um registro legítimo\n` +
+        `      ${r.saida.split('\n').find((l) => l.includes('✗'))?.trim() ?? '(sem linha de erro)'}`,
+    );
+    falhas += 1;
+  }
+}
+
 if (falhas > 0) {
-  console.error(`\n${falhas} de ${CASOS.length} defeito(s) passariam despercebidos pelo checker.\n`);
+  console.error(`\n${falhas} caso(s) de ${CASOS.length + CASOS_QUE_PASSAM.length} falharam.\n`);
   process.exit(1);
 }
-console.log(`\n✓ o compilador pega os ${CASOS.length} defeitos que promete pegar\n`);
+const nAviso = CASOS.filter((c) => c.aviso).length;
+console.log(
+  `\n✓ o compilador RECUSA os ${CASOS.length - nAviso} defeitos que promete recusar, ` +
+    `SINALIZA os ${nAviso} que promete sinalizar sem reprovar, ` +
+    `e ACEITA os ${CASOS_QUE_PASSAM.length} registros legítimos que a trava já expulsou\n`,
+);
