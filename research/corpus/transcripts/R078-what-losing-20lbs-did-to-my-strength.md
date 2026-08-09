@@ -1,0 +1,20 @@
+---
+ref: R078
+videoId: 0JXe-xpTIbg
+title: "What losing 20LBS did to my STRENGTH⁉️"
+url: https://www.youtube.com/watch?v=0JXe-xpTIbg
+durationSec: 164
+source: captions
+words: 692
+---
+[00:00] I just finished cutting from 261.8 to 241.8 lbs in 6 weeks and this is what it did to my strength. Well, I haven't maxed out yet. I'm 6 weeks into a 12week cycle and will maxed out the end. But here are some side-by-side comparisons with last cycle to compare. The speed is similar and also I am doing lots of accessory
+[00:15] work to failure and my performance here has not dropped. So ultimately I call this cut a great success in terms of strength. Now how did I maintain my strength so well and how did I cut weight so quickly in general was very targeted with this. Maintaining strength in the death set comes down to a few factors. One is higher baseline body fat
+[00:30] percentages. These help spare muscle loss. And after my bulk to fill out the 120 kilo class, I definitely had the room, but also making sure I prioritized the rest of my recovery. I got good sleep at least 7 and usually 8 hours per night. Very high protein, usually in the 250 to 280 g range, and also just managing
+[00:45] stress with good relaxation in my schedule. Do this and you can maintain recovery while the calorie aspect is compromised. Something else that helped my strength is Tasty Games, sponsoring this video. They make these delicious creatine gummies, way better than the powder. No, they didn't cause this hair loss. That's a myth. It was my desire to look like Caillou that did that.
+[01:01] They do lead to more muscle growth, a one for boost on strength on average. Link below to that. They're third party tested so you know that you're getting in terms of dosages as well as actual content, no contaminants. You can pick some up at the link below in the description and pin comment. Thanks to Tasty Gains. As for the cutting itself, it's just calories in versus
+[01:16] calories out, bro. Okay, real talk. I hate when so many fitness influencers talk about dieting and just say that like, yeah, basically everybody who consumes fitness content knows that. We just want actional advice here. Anyways, here's some of mine. One, cut out liquid calories. Easy to over consume there. And also go
+[01:31] for zero calorie drinks occupy stomach space, coffee, tea, water, sparkling water, diet soda, etc. I also like to increase food volume with vegetables, like just 100 calories of dressing on the salad or 100 calories of oil with some garlic and onion powder to saute or roast some veggies. Seems to make a ton of tasty food that I
+[01:46] genuinely enjoy eating for very little calories and fills up stomach space. And lastly, I didn't cut foods I like, just ate them in smaller portions. I still went out to eat a few times. I had some pizza, had some barbecue, drank some beer, I ate burgers. I find it's better to keep them in to scratch that itch rather than try and force to not. The other is
+[02:01] to just not overreact to short-term fluctuations in weight. Water weight and guide content can fluctuate by pounds dayto-day. But if you're cutting at even 4 lbs per week, as I was at my highest, that's barely half a pound per day of change on average. And if you're doing a 1 lb per week cut, that's going to be just 17th of a pound per
+[02:16] day, easily lost in the noise. So focus on your moving average of a few days and how that's changing with time. Lastly, take some refeed breaks if need be with fatigue building. You can even eat a maintenance to help you not feel like you're going backwards. It really can make things more manageable. It can let you catch up on fatigue as well as fulfill any cravings.
+[02:32] So, that's basically it, guys. See the pin comment or description for where to contact me for coaching and programs, my other socials, and links to all claims made as well as links to Tasty Gains. Please like, comment, and subscribe if you haven't already. And once again, thanks for watching.

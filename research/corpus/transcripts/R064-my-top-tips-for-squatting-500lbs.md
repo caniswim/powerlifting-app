@@ -1,0 +1,21 @@
+---
+ref: R064
+videoId: ZOM1_ke1BMA
+title: "My TOP TIPS for SQUATTING 500+LBS ✅"
+url: https://www.youtube.com/watch?v=ZOM1_ke1BMA
+durationSec: 181
+source: captions
+words: 758
+---
+[00:00] So, one thing that really helped my gains is this cool new AI calorie tracking app. It doesn't work and that pissed me off, which fueled my gym sessions. Okay, real talk. I've gotten to a decent squat level, and here are the biggest things that help build it to 500 lb and beyond. The first, big quads. Simple, no way
+[00:15] around it. You want a big squat, you're going to need big quads. Now, I really did quad isolation work for this, and that's simply because I could handle a freakish amount of volume at times over 50 sets a week. But now that I've gone stronger and squats are more taxing, I do more isolation work proportionally. The basic formula I have though is
+[00:30] do as much squat volume as you can handle. Then if you're limited by something other than your quads, say your lower back, add an extra isolation work for the quads until they are fully trained. Everybody on my channel is already familiar with squat plugs. So scoop right through that and go to midfoot balance. This is key because without being balanced
+[00:45] over midoot, you can't push fully with your legs. Your body won't let you because it knows you'll fall over if it pushes while you're off balance. Now, how do we work this? First, make sure you're over midfoot at the top of your rep. You can sort of rock back and forwards on your feet a bit to find midfoot in the middle of those two extremes.
+[01:00] As you descend, focus on grabbing the floor with a tripod foot. This will give you a good feel for where mid-foot balance is. Tempo squats and pause squats can be good for working this. They both punish you if you're off balance and you get a natural feel for what is good balance during the movement. This can be easier than queuing as sometimes people get distracted
+[01:15] trying to think of cues while they're actually lifting. You can see my video on bar path for more on midoot balance as well. I have a link to it below in the description and pinned comment. Something else that keeps me balanced is Odyssey benchmat. It provides extra grip for slippery benches. They keep you balanced on the bench while I lift and that's important in my Mar commercial
+[01:30] gym where the benches are slippery. If you can't push as hard as you can with your legs without sliding, you're leaking leg drive and this mat works to fix that. You can get 10% off of code batten all one word. Link below in the description pin comment. Thank you to Odyssey. My parents literally named me Matt after this.
+[01:46] Anyways, being balanced over midfoot lets us work what I consider to be real key to a good squat, a good balance. The demands for the squat are highest, just above parallel. It's why most people fail there unless they have stability issues. Being balanced over midfoot is important as like I said, we must in order to be able to fully push over legs, be balanced
+[02:01] over midfoot. We also want to make sure we practice timing the bounce right. Feeling for the stretch in our adductors as we send the hole, I found this easiest way to work this. It's also important that we don't rapidly shift into a good morning squat out of the hole. People get the issue here backwards though. Our body is stronger in a more bent over position. That's why
+[02:16] we do it. It lets us use more busier chain. The real issue is the rapid shift throws us off balance and can collapse our upper back. To counteract this ensure we hinge back enough at the hips to allow our torso angle on the eentric to essentially mirror what we do on the concentric. I find pauses
+[02:31] above parallel that is squatting all the way down, getting a good bounce, then pausing just above parallel are a great way to work this. We work on timing and getting a good bounce at the bottom. But then if we rapidly shift in position, we're going to be punished when we try to pause. So, big quads, big balance,
+[02:46] big toe to get balance over midfoot, I guess. See the pinned comment in the description for where to contact me for coaching and programs, my socials, plus link to Odyssey benchmats. Please like, comment, and subscribe if you haven't already. And once again, thanks for watching.

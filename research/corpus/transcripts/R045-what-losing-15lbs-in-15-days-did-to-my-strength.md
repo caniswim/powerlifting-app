@@ -1,0 +1,21 @@
+---
+ref: R045
+videoId: ZCUJShjunY4
+title: "What losing 15LBS in 15 DAYS did to my strength ✅"
+url: https://www.youtube.com/watch?v=ZCUJShjunY4
+durationSec: 181
+source: captions
+words: 711
+---
+[00:00] So, to start this training cycle, I dropped 15 lbs in 15 days. And what did it do to my strength? Well, here's a side-by-side comparison of 75 lbs on squats last cycle versus this cycle. Pretty much exactly the same. My performance on my accessories is more or less the same as well.
+[00:15] So, in other words, I maintain my strength just fine. I went over all the science of this before in my previous cut video on why you probably can handle more aggressive cuts than you think without losing muscle. If you want to see that and the science behind it, I'll link the video down below in the description and pin comment. But the summary of it is
+[00:30] basically you just have to manage your other recovery variables. High protein, good sleep, and manage stress. Another big mistake is cutting the volume or workload preemptively. It's better to react to how you actually feel. I actually was doing more workload considering I quite significantly upped my cardio
+[00:46] and I managed just fine. Again, most people can benefit from pushing themselves more than they think is possible to test their actual limits. Worst case, you just have to dial it back a bit. Another thing is every strength athlete should be having a plan of what to do with their body weight in order to maximize gains.
+[01:01] I think ideal body fat ratios are going to depend a [music] bit on your personal preferences for leanness as well. I will say though, don't be that person flip-flopping all the time where they're fat every time they bulk and start to cut, then [music] worry about losing strength or being too small and start bulking again. Follow a plan for a decent amount of
+[01:16] change in body weight. I was going to say a decent amount of time, but then I realized a 15-day cut really isn't that long. Again, I go over science in that other video, but you probably want to go for a fast cut and slow bulbs. Now, something else that's helped me a lot is Odyssey's liquid chalk that they just came out with, and I'm using on this deadlift here.
+[01:31] This stuff is formulated with hydrophilic compounds, which keep your hands even drier. It's useful for not creating a mess at your gym if they're touchy about chalk. I have some old Karens at my gym that have been complaining about my chalk use before. I can tell them to use code Matt Venna, all one word for 10% off. Link in the description and pin
+[01:46] comment. Thank you to Odyssey. Now, the other thing I get asked a lot about is what is the optimal body fat percentage for powerlifting? When you get to the very top levels, minimizing the fat level you are is worthwhile, but I do think getting super lean does have some issues. Anecdotally, people like that seem to get injured
+[02:02] more often. Think John Hack currently or Dan Green, the famous example of leanness and powerlifting for years. I do believe there could be something there with energy availability that may be playing a role. Another thing about energy availability like that is it seems to make it easier to handle a bit more training load.
+[02:17] Anybody who has gotten very lean talks about how it starts to affect how they feel at some point. So for the most people trying to maximize strength in the long term, a bit higher body fat percentage may help energy availability and fuel [music] training to be better. The extra leanness being better may be something that only really applies to
+[02:32] elite level lifters. You know, the people who don't have a ton of hypertrophy left to squeeze out. So for them, just minimizing their body weight to maximize [music] their strength to body weight ratio is optimal. Also, one last myth to dispel. body fat percentage and body weight do not affect the [music] size of your squat plug.
+[02:48] Anyways, see the description and pin comment for where to contact me for coaching programs, my socials, links, soul studies, and Odyssey's nude liquid chalk. Please like, comment, and subscribe if you haven't already. And once again, thanks for watching.

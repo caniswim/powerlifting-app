@@ -1,0 +1,23 @@
+---
+ref: R072
+videoId: I1OgATmx4f4
+title: "The BIGGEST MISTAKES of LIFETIME INTERMEDIATES ✅"
+url: https://www.youtube.com/watch?v=I1OgATmx4f4
+durationSec: 202
+source: captions
+words: 762
+---
+[00:00] The biggest thing that elite lifters do that lifetime intermediates don't is a squat plug. Like biggest thing, literally. Okay, real talk. I would argue that I've reached an elite level as a lifter and have many friends, peers, and clients who are as well. I'm talking over 500 dots
+[00:15] scores, competing at worlds, or even some world champions and record holders. I've had lifters who came to me as intermediates and ended up elite or at least very strong. Not everybody has it in them to become a world champion, but you can get to a very high level. In terms of controllable factors, here are the biggest differences I've seen between
+[00:30] those who reach high levels of strength and lifetime intermediate type lifters. Number one is simply how much of your life is dedicated to lifting. They tend to be obsessed. Of course, this isn't fully controllable. Some people have obligations with work or family or school or whatever, or they can't spend hours in the gym training
+[00:45] and making their life revolve around lifting. I have myself altered my life to favor lifting. I would plan my work and university schedules around it. Again, not everybody has that luxury, but it is a big factor here. There's going to be some effort and time involved, and this isn't something to blame people who don't. I'm just stating the fact. Don't want to beat around the bush
+[01:00] about it. The second is low neuroticism. Not worrying small stuff or sweating every detail, freaking out about every negative or setback. This has been well-studied in other sports, and high neuroticism has consistently been linked to worse performance. Now, how can you work on this? One is success
+[01:15] and momentum. Part of why I like submax training is it's easy to start low and slowly add, and mentally adds up seeing things constantly increase over time week to week. The other factor is minimizing bad days. If you keep up your sleep, calories, protein, and stick to your program with good effort, it's going to be rare that you
+[01:31] have an actual really bad workout. And if you have a bad workout or setback, keep a process-oriented approach. That's focusing on things you can control in the process, like your effort or those recovery variables. These actually make you stronger and are in your control, so they should be worried
+[01:46] about. It's logical versus an outcome-oriented approach, focusing on results which you cannot control completely. Now, something else I can include in your progress of getting stronger is creatine, like from Tasty Gains, sponsor of this video. They make these creatine gummies, no gritty creatine taste, third-party tested so no
+[02:01] contaminants, natural dosages they claim. Creatine is linked to a 1/3 increase in the rate of gain in training studies, link to that below. That's a huge benefit over time. If you really want to make progress at the gym, there's no real reason not to be using creatine. You can get some Tasty Gains for yourself at the link in the description and pinned comment.
+[02:16] Thank you to Tasty Gains. Now, another factor I see of lifters making it to an elite level before stopping as a lifetime intermediate is staying healthy. It's hard to make progress if you have spend time you could have used building instead just rehabbing and rebuilding. Plus, a lot of people just lose motivation or wanting to avoid pain,
+[02:32] quit lifting. Now, there's some things we can control to prevent injuries. I have a whole video on this linked below. The short answer though, load management. Simply don't do too much. Plus, having a baseline cardiovascular fitness level as well as movement variation included in your program helping to prevent overuse injuries.
+[02:47] And lastly, mindset plays a role again. Mental beliefs on pain can actually exacerbate the issues and make you feel more pain even in the absence of any damage. For example, belief in ability to rehab was linked with better rehab outcomes for rotator cuff tears versus the degree of damage or disability. So, that's basically it.
+[03:02] Don't take lots of your time. Don't be overly neurotic and focus on what you can control and stay healthy. These may sound pretty boring, but that's the thing. There's no real secret, just basics done well for a long time. See the pinned comment in the description for where to contact me for coaching programs plus link to Tasty Gains. Please
+[03:17] like, comment, and subscribe if you haven't already. And once again, thanks for watching.

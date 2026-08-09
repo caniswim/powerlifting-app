@@ -1,0 +1,21 @@
+---
+ref: R067
+videoId: SOIXogSiXkE
+title: "Why I ALWAYS Bench Before I Squat/Deadlift ✅"
+url: https://www.youtube.com/watch?v=SOIXogSiXkE
+durationSec: 174
+source: captions
+words: 735
+---
+[00:00] I always bench first in my workouts for one simple reason. My lower body is too raw after squat plug insertion to squat or deadlift. Okay, real talk. My squat plug never leaves my orififices and I actually always bench first because I want to prioritize it. Exercise order matters. It can affect strength
+[00:15] and hypertrophy outcomes even if you're working different muscles. The ones later in a session get less quality work as you're a bit fatigued. Let's talk about how to optimize exercise order for powerlifting. Now, the first thing to make sure you're doing is giving your lifts an opportunity to work them fresh. A lot of people do SBD days, all
+[00:30] three lifts in one to practice for the beat, and they do have their use. More on that later. However, if you're always following that order, your lifts after squats don't get prioritized. Most commonly, I see deadlifts always done either after squats on the same day or the day following squats never worked fresh. This is a big deal, especially
+[00:45] as there's big overlap between the muscles of the two. But again, studies show even if you're working movements involving different muscles, the ones worked later get worse strength results due to systemic fatigue. So again, try to make sure bench gets some time prioritized as well. If you have a lift that's weaker or you're trying to bring it up, this is important
+[01:01] as well. Put it at first in most or even all of your sessions if you want to focus it. It's part of the reason I'm benching first as it's my worst lift. I also find a lot of people sort of phone in their weaker lift at the end of the session as they're less motivated to do it. So, benching first for me makes me give it a bit more priority mentally. Something else that helps
+[01:16] my bench is this mat from Odyssey. They're non-slip mats which help you really grip on your bench. They you properly use leg drive and stay tight without sliding on the bench. Big for me at my more commercial gym I've been training at. These really are a game changer for your bench. People never really know how much leg drive helps until they get to train with proper friction.
+[01:31] You can get 10% off of code Matt Vvena. All one word link in description comment. Thank you to Odyssey. Now, another reason I bench first is because it's less fatiguing as bench uses less overall musculature compared to squats and deadlifts. I can get more overall stimulus benching first. And arching with good leg drive actually works well as a
+[01:46] lower body warm-up. Believe it or not, they can also keep this fatigue in mind when you have lighter and heavier days in your training. For example, a light bench and a heavy squat day combined. Squat first. But then if you have a heavy bench and light squat day, bench first. This is an easy way to ensure each lift gets its due and
+[02:01] really milk the benefits of exercise order for all it's worth. Now lastly, let's talk about SPD days again. This is training all three lifts in one day like a meat. And they are useful for practicing that skill and particularly for knowing how the fatigue can affect your lifts. If you're always used to deadlifting fresh, your attempts may be way too heavy if
+[02:16] you aren't accounting for the fatigue of squatting first in the meat. Bench can also really suffer for some people whose squats fatigue their elbows or shoulders. if somebody generally has good work capacity or if they have a tight schedule, SPD days can be kept year round. But for people who have the scheduling to space out the lifts, particularly squats and
+[02:31] deadlifts, you only need to do a few SPD days and prep for a meet to see how the fatigue really affects things. Then for the bulk of your training, you can split up the lifts to keep them fresh and maximize the training stimulus. Anyways, keep in mind how exercise order affects your programming. See the pin comment in the description for where to contact me
+[02:46] for coaching programs, my socials, and all to see bench bats. Please like, comment, and subscribe if you haven't already. And once again, thanks for watching.

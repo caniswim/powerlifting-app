@@ -1,0 +1,19 @@
+---
+ref: R052
+videoId: WTi7EwjdX9w
+title: "What To Do BEFORE You Max Out"
+url: https://www.youtube.com/watch?v=WTi7EwjdX9w
+durationSec: 153
+source: captions
+words: 652
+---
+[00:00] You can fail weights you're strong enough to hit. What I mean is there are mistakes you can make that do not let you produce as much force as you're capable of. I'm going to go over the things I do before attempting the new max. The things that let you lift to your full potential because there's nothing worse than missing a lift you have the strength to hit. The first
+[00:15] is hype. Getting hyped is important, but there's an optimal range you must find for yourself. A big theory in sports science is the inverted U. We want to be at the top there where performance is optimal. Get too hyped and you get sloppy of technique or waste energy. not hyped enough and just simply do not lift with max effort.
+[00:30] It's going to vary based on the individual and even the lift. I have to be real hyped for deadlifts, but on bench where I'm more technical, I need to be a bit calmer. The next is form cues. Don't use them. Consciously queuing beyond the beginner stage of motor learning throws off performance. You should only use form cues that you really have
+[00:46] down automatically. Other ones that aren't automatic will just throw you off. When you actually lift, just try to think of nothing or something really basic and try to use an external queue in that case that is referencing something outside your body as opposed to inside like think of throwing the bar towards the ceiling on bench rather than contracting your pec.
+[01:01] Again, studies show this performs better for strength. The next is to remember to use your mat from Odyssey if you're maxing your bench. Odyssey makes these great non-slip mats. You place them on the bench and no more sliding. This helps you properly use leg drive to its full abilities. A real game changer. If you have never tried a non-slip bench before,
+[01:16] you'll really see the difference. These are great, especially in commercial gym settings. I remember what a difference switching to a grippy bench made for me as a noob who'd only used a bad one. You can get 10% off of code Matt Venna, all one word. See the link in the description bin comment. Thank you to Odyssey. Now, another mistake I see going into maxing
+[01:31] out is not taking your warm-up seriously. It really does make a difference treating every rep like a one rep max. One, there's the mental aspect. You really get into the zone and hyped when you're moving things fast. But there's also post-activation potentiation. You can achieve this by just doing high velocity movements such as moving your warm-ups fast.
+[01:47] Don't come in flat. Set the tone right away, even from your first rep with the bar. And the last thing is simply making good attempt selection. First off, we need to have a realistic goal for what you can hit based on how we feel warming up. Don't get too emotionally attached to certain numbers. Make an accurate judgment. If you take too big a jump and miss, you'll fatigue
+[02:02] yourself. And even if you go back down, you won't be able to hit what you could have fresh because you're fatigued. While warming up, don't take too many small jumps as well and fatigue yourself before you actually get to the max. And conversely, don't take too big of jumps where you don't acclimate to the weight. I usually say 5 to 10% jumps are good depending on how sensitive to
+[02:17] fatigue you are on the lift. So that's basically it. Follow these tips and use the squat plug and you'll be golden maxing out. See the description pin comment for where to contact me for coaching programs, my socials, and Odyssey benchmats. Please like, comment, and subscribe if you haven't already. And once again, thanks for watching.

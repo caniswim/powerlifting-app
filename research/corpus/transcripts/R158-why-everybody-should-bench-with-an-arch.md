@@ -1,0 +1,26 @@
+---
+ref: R158
+videoId: uBF4__rnJJ0
+title: "WHY EVERYBODY SHOULD BENCH WITH AN ARCH"
+url: https://www.youtube.com/watch?v=uBF4__rnJJ0
+durationSec: 257
+source: captions
+words: 940
+---
+[00:00] okay so i think we've all seen the videos somebody is benching with a two inch range of motion and a huge arch and due to these videos i think it's gone a bad rap as a way that's just meant to cheat the lift and cut range of motion as much as possible when you're talking about powerlifting competitions you're not exactly
+[00:15] wrong a large part of it the biggest part of it is just to cut range motion make it easier left the most weight for competition that being said for somebody who's just a general strength athlete or looking to gain hypertrophy even though usually you want more range of motion for
+[00:30] that there are benefits from an arch for people with these goals and even though you may cut a small amount of range of motion from a small arch the benefits far away first off let's talk stability most benches themselves suck they're slippery they're narrow even
+[00:45] if you're lucky like me to have a good one you can still benefit from the increased stability you can get with a small arch let me demonstrate this in more detail so a common thing you'll see is people when they bench they end up sliding on the bench it's unstable for them easy way to fix that
+[01:00] is with an arch so what we want to do instead of just lying flat on the bench focus on getting the weight on the traps and the neck and a way to actually help that is you can pull the back of your shirt down to expose more skin and then with a small arch
+[01:15] you can put your weight on your traps in your neck now remember what i said about benches being thin as well the main problem with that is you can't get your scapula properly retracted and have it actually placed on the bench you want both your shoulder blades on the bench itself if we do
+[01:30] what i just said getting more weights on the trap and the neck you now raise your scapulas off the bench and you're in a better position to retract them onto the bench then you can press more of your weight back down onto them and now they're firmly supported on the bench now the other big benefit of
+[01:46] an arch is proper transfer of light drive a lot of people think light drive is just pushing the bar straight upwards with driving with your legs you're not exactly wrong that is a big part of it and you can argue whether that's beneficial for strength or hypertrophy whether it's just taken away from the left or not
+[02:01] regardless the thing a lot of people miss is it can actually help you really press the bar horizontally your bar path to go back towards your head i've done a whole video on why this is beneficial i'll link in the description and pin comment to summarize that video really quickly essentially
+[02:16] we have studies and elite bench pressers stronger ones have a bar path more flirt back towards their head biomechanically it decreases the moment arms it's more efficient to lift the weight so what that essentially means is you're going to be lifting more weight for strength that's beneficial for hypertrophy
+[02:32] it's probably going to even out because even though you're maybe using less weight the moment that the muscles have to overcome is really what the resistance is not necessarily the weight on the bar either way it can be beneficial for you so remember what i just said about getting your traps properly planted on the bench
+[02:47] with an arch if we don't have that when we use our leg drive what we're probably going to do is push ourselves up the bench again we're going to slide that's going to take away from our leg drive less force is actually being transferred into the bar and it's more being transferred into moving our actual body proper
+[03:02] arching is also going to involve planting your feet in an efficient way to drive your rib cage so what i like to think of when i'm using my legs in the bench is i'm trying to push my rib cage upwards towards the bar now again we don't have to cut a huge amount of range
+[03:17] of motion doing this but with our traps properly planted we can get a small arch and then when we get our leg drive we can think of basically pushing the ribcage to push the bar that way we
+[03:33] get that flared bar path which like i said is beneficial so that's essentially it we're gonna be more stable on the bench we're not gonna be moving around side to side sliding whatever we can get our scapulas in a better position so they're firmly planted on the bench really stable position for them to press
+[03:48] the weight from as well we can officially use our leg drive to get proper bar path to move more weight i hope this video was helpful i hope you understand that these benefits far away a small kind of range of motion we don't need a huge arch to do this basically just enough to get the weight on your traps and neck
+[04:03] that's gonna be more than enough shouldn't have to cut more than maybe an inch or two of range of motion thanks for watching again like comment more topics you want me to cover below subscribe share the video to help me grow the channel and again thanks for watching

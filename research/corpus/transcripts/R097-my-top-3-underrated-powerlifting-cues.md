@@ -1,0 +1,20 @@
+---
+ref: R097
+videoId: xXCfHufnqpo
+title: "My Top 3 UNDERRATED Powerlifting Cues ✅"
+url: https://www.youtube.com/watch?v=xXCfHufnqpo
+durationSec: 157
+source: captions
+words: 697
+---
+[00:00] What's up guys? Back with another video. Here giving my most underrated cue for each lift. I tried to make the cues as universally applicable as possible. There's some cues that will work great for one person and then terribly for another because they have different leverages or forms and thus different needs. My first cue on squats is proper bracing
+[00:15] before you unrack. A lot of people overlook this. If you don't get tight and in proper position before you unrack, it's going to be nearly impossible to fix because you have hundreds of pounds weighing down on you from the bar after you unrack. My basic checklist is as follows. First, you're going to want to drive your back into the bar with your
+[00:30] legs. At the same time, drive your elbows under the bar and bend the bar around your back with your arms. Get your midfoot under the bar and make sure you rotate your body forwards like this before you unrack. You want to make sure your body's fully under the bar, not pitched forwards. Also note that I push with about 50% effort before I unrack,
+[00:46] so there's some tension in the bar before I try my full unrack. This is kind of like pulling slack on deadlifts. I don't want to go from zero to 100 with no tightness built, which will just throw me out of position when I try to fully unrack. You'll also see that I take a breath and brace my core before I actually unrack, so I build that intra-abdominal pressure before I'm
+[01:01] trying to lift the bar off of the hooks. Lastly, I just focus on squeezing the glutes. Doing all of this, ensuring you're building tightness before you actually unrack the bar, will keep you in a much better position during your squat. You won't have your chest pre-collapsed before you've even started the reps. Next, on bench, it's getting your weight supported
+[01:16] on your traps and neck. This leads to a lot of other important things. First, when your weight is supported on your traps and neck, you can better retract your scapula as you aren't laying on it. Secondly, it serves as an anchor point for you. It really lets you use your leg drive without just sliding right off the bench. And lastly, it angles your
+[01:31] torso slightly, which can help with your arch. Even if you don't want to cut that range of motion, you don't want to have an arch, you don't have to push your arch up at all. It just puts the pecs in a stronger position being slightly angled like this. It's why you see me raise my hips up off the bench in my unrack in these clips. It lets me really get my weight on my traps and neck and then support
+[01:46] them when I put my hips back down. Even once you put your hips back down, continuously drive your traps and necks into the bench with the drive from your legs. Now, lastly on deadlifts, it's doing that a raise like motion while we're wedging into the bar. Now, what does this do? It basically helps us transfer force into the floor and thus the
+[02:01] bar. The quads and our hip extensors transfer their force through the shin. Our calf has to keep the ankle extending to transfer that force into the ground. So, when we flex our calves like this, it's kind of like pulling the slack for our legs. Pulling the slack prevents us from getting thrown off when we suddenly start pulling because we've built tightness.
+[02:16] This is the same concept. When we try to push our force through our legs, if our calf isn't actively contracting, it's going to cause our ankles to bend first and we kind of leak power before it contracts. We can properly pull and exert force through the floor. So, that's basically it, guys. Cues on each lift as I've enumerated it can really help. I hope you enjoyed this video and these
+[02:31] cues help your lifts. Please like, comment, and subscribe if you haven't already. And once again, thanks for watching.

@@ -1,0 +1,22 @@
+---
+ref: R076
+videoId: -E-W1I9t_wk
+title: "GETTING FAT vs GETTING STRONG"
+url: https://www.youtube.com/watch?v=-E-W1I9t_wk
+durationSec: 184
+source: captions
+words: 770
+---
+[00:00] So, after cutting 20 lbs in 6 weeks, I'm back on my bulking diet and I'm trying to fill out the 120 kilo class. I want to talk about some things you can do filling out for powerlifting. The first is bulking and cutting cycles. Obviously, I did a whole video on that link below. Basics of bulking to build muscle, cutting as need be to stay lean, but I go
+[00:15] over more details on how to do this more efficiently and some common mistakes to avoid. Now, speaking of gains and body weight, people often use body weight multiples in lifting. I'm sure most people who watch my channel know that strength doesn't scale linearly with body weight, but it is still useful to be able to track relative strength as you gain weight. I
+[00:30] recommend using dot score, best coefficient in my opinion, for comparing strength to body weight. You should see your dots increase as you gain weight. If it's going down, you may be getting too much fat proportionally and either want to slow the rid of gain or even cut to lean out a bit. Now, the next thing to focus is proper hypertrophy
+[00:45] work in a program. I'm as big of an SBD fanboy as it gets. I've done it nearly daily for 10 years, but I don't think they are the best for hypertrophy simply because they're more fatiguing. Not because I don't think you can build muscle from them. You don't need to straw man the extreme of this argument, but a lot of powerlifterss would be better off
+[01:00] if they dropped the ego they had attached to SPD and went for less fatiguing movements. You'll need to do high bar squats, close grip bench, and opposite stance deadlifts for high reps and a hypertrophy block. You can get more bang for your buck with some less fatiguing isolation work. And again, a lot of powerlifting programs for accessory work is
+[01:15] terrible. will often be lazy stuff like just three sets of eight to 12 reps at RP8. Now, would that work? Yeah, if done to true RP8, but many people aren't going to do true RP8. So, I'm a fan of doing at least one set to failure to see where your intensity is really at, and it forces actual effort on your accessories.
+[01:31] Not some phone in work you skip half the time after doing your squat, bench, and deadlift. Now, something else that helps build muscle is creatine, like from Tasty Gains, sponsor this video. I've been enjoying their creatine gummies for months now, and I've seen my muscle measurements go up at the same body weight after this cut compared to what I was
+[01:46] before when I was bulking, indicating the hypertrophy is going well. Creatine has been linked to one-third increase in the rate of muscle gain in studies linked below. They taste great and are third party tested on low risk of contaminants or false dosages. You can get some with the link in the description and pin comment. Thank you to Tasty Gains. Now,
+[02:01] something you don't need like creatine is hypertrophy blocks. In fact, research on doing hypertrophy blocks shows worse results first working strength and hypertrophy together. link below to that. Any good strength program will focus on hypertrophy. And a big mistake is assuming the two styles of trainings are different or there isn't some overlap between
+[02:16] the two. Muscle is the biggest factor in long-term strength development. You should be making your hypertrophy work just as serious a part of your program as your strength work. Don't phone in the effort at the end of your session. Another common myth is high reps being better for hypertrophy. Low reps are just as effective. On some movements, it
+[02:31] can be easier. For example, you're going to get way less leg burn doing a set of six on leg extensions than a set of 20 reps. I do think high reps can still be useful. For example, moving like lateral raises where it can be easier to cheat. But given low reps may be less fatiguing and frankly feel easier, they are underutilized.
+[02:46] Try making some of your movements, particularly ones you feel a burn on, lower reps, and you should see a benefit. Anyways, that's it for the video, guys. See the description and pin comment for where to contact me for coaching and programs, my socials, link to all claims made, and tasty gains creatine gummies. Please like, comment, and subscribe if
+[03:01] you haven't already. And once again, thanks for watching.

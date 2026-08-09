@@ -1,0 +1,21 @@
+---
+ref: R136
+videoId: CztHsZiUGC8
+title: "(LACK OF) CARDIO IS KILLING YOUR GAINS ❌"
+url: https://www.youtube.com/watch?v=CztHsZiUGC8
+durationSec: 175
+source: captions
+words: 726
+---
+[00:00] a lot of lifters are held back by their lack of cardio don't be that guy who gets winded going up the stairs contrary to popular belief cardio is not going to kill your gains in fact it can lead to more gains and reduce your injury risk I'll go over the evidence and how to implement some cardio in your training now first
+[00:15] off the claim that cardio will kill your gains or the interference effect that doing cardio un lifting means the adaptations cancel out the evidence for this now shows the opposite of anything a meta analysis of 43 studies showed no negative effects for strength and hypertrophy now I do think you could get to a point where
+[00:30] you're doing so much work overall you could get too much systemic fatigue but that's more a load management issue and we don't need much cardio to actually enhance our gains now there are some studies that show cardio enhances games the first by Lumberg at all had people do unilateral training for each leg single leg extensions on both legs
+[00:45] but on just one of them they did cardio as well high-intensity single leg cycling and the cardio leg ended up growing twice as much the second study by Johnson at all had both groups do 10 weeks of lifting same program but one of the groups did six weeks of cardio training before starting the lifting the cardio group grew
+[01:00] significantly more and the amount of growth seemed to correlate with capillarization a cardio-based adaptation it seems that some level of cardiovascular fitness enhances gains you can read these studies link below if you want to learn more about the mechanisms but that's not too important lastly there's also the evidence that cardio prevents injury
+[01:16] and obviously not being injured as much will lead to better long-term progress I'll link to a systematic review below that goes over the link between cardiovascular endurance and injury risk in athletes I'll link below to these other studies I've mentioned so far as well so that's why you should include cardio it's going to enhance your gains and you know if you care about
+[01:31] not dying young it's probably a good thing too now how do we go about implementing cardio to a powerlifting or other lifting program now one of the Dead simple ways I'll have people do this is just to do some cardio in their warm-ups you're going to warm up anyways so let's kill two birds with one stone 5 to 10 minutes each day may not be a ton but we don't need a ton to
+[01:46] keep up a decent Baseline and like with lifting there's diminishing returns with more work so we're going to get most of the benefit from the first bit of volume of cardio work that we're doing if you have more time you can do dedicated sessions but like with lifting I suggest starting slow and adding with time biggest mistake see people make is starting with too
+[02:01] much and ending up too fatigued because it's unsustainable again we don't need much volume to get the benefits here don't overdo it I find two 10minute sessions a week is a good start I find low impact forms like cycling or rowing are less fatiguing and The Meta analysis on the interference effect seems to work T
+[02:16] it also suggests doing cardio after your lifting sessions not before people tend to do it on rest days but I find it's actually best to do it after your lower body workouts on the same day that way you maximize the recovery time before your next lower body lifting session and I suggest Zone to intens this is about 60 to 70%
+[02:31] of your max heart rate which is 220 minus age take your pulse for 10 seconds and multiply by 6 and you'll get a good enough estimate you can add more as your Fitness builds to keep it challenging basic Progressive overload here and that's basically it simple as that just a bit of cardio it's going to enhance your gains I hope this video convinces
+[02:47] you to implement it in your own program for your gains and for your health please like comment and subscribe if you haven't already and once again thanks for watching

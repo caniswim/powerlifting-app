@@ -1,0 +1,22 @@
+---
+ref: R073
+videoId: l-Ml_2Reduc
+title: "Why TOO MUCH SQUAT/BENCH/DEADLIFT is SUB-OPTIMAL ❌"
+url: https://www.youtube.com/watch?v=l-Ml_2Reduc
+durationSec: 189
+source: captions
+words: 734
+---
+[00:00] Squat, bench, and deadlift are killing your gains. As predicted in my last video by a commenter, I am becoming a crossfitter. Okay, real talk. One of the biggest issues I see of powerlifters is overemphasis on SBD. It can be very bad for beginner or intermediate lifters. Now, how can
+[00:15] that be? Powerlifting is the squat, bench, and deadlift. How could doing them be bad? Well, comes down to a concept while known in other sports, early specialization. Essentially, focusing too much on a specific set of skills in one sport harms long-term development. It's been well studied and I'll link some resources
+[00:30] below if you want to read more. It comes down to a few key issues. One, it impairs motor learning, essentially how efficient our form becomes. It risks injury due to overuse. And it hurts more broad athletic development, which is the case of lifting is usually hypertrophy, but can also be general physical preparedness.
+[00:45] And lastly, just mentally, it can lead to burnout. Let's break all of these down. Starting with motor learning, it has actually been demonstrated that being too stringent with movement and not allowing your body to try out different movement patterns through variation actually impairs motor learning. Many people talk about the principle of specificity. You
+[01:00] get good at what you practice. And while this does work as a general rule, going to extremes does seem to harm motor learning. Your body can transfer over skills from other similar movement patterns. Plus, going through slightly different movement patterns can often let you get more skill practice in in general as you aren't overusing the exact
+[01:16] same body part as much overworking them. Now, something else you'll never learn the skill of is leg drive on a subpar bench, unless you have an Odyssey benchmat. Odyssey makes non-slip benchmats that you can place on benches to allow you to resist sliding via friction. This friction allows you to properly apply
+[01:31] leg drive to build tightness and lift more weight. It really is a night and day difference if you aren't somebody who is lifting on a competition specific bench pad or even if you are as they can get worn out and slippery with time. You can get 10% off of code MattFetta, link in the description and pin comment. Anyways,
+[01:46] another way focusing on the big three can hurt you is the development of other qualities. Now, powerlifting is about lifting the most weight. In part is neurological and strength gains, but the big part is also hypertrophy. And squat bench, deadlift can be fatiguing versus other movements where you may get more bang for your buck. Plus, you may be limited by
+[02:01] one body part. My back limits how much squatting I can do, but my quads may still be able to handle more. I would say most of the time you see somebody stuck in intermediate phase, it's usually just them lacking muscle mass. And in more extreme cases, some lifters can lack conditioning needed to be able to handle a good amount of workload and also stay healthy.
+[02:17] Staying healthy is another important aspect. If you look at the lifters who have the best progress long term, they tend to be the ones who stay healthy. They don't have to spend time rehabbing and then rebuilding back up. They're just straight building in general. And lack of movement variation has been linked to higher rates of injury, particularly overuse injuries.
+[02:32] Doing some other movements can help prevent this. You aren't working the exact same tissue in the exact same way over and over again, overloading them. So, what's the practical takeaway? You can still do squat, bench, and deadlift. In fact, it should still be the bulk of your work, but make sure you're getting a good mix of some other movement patterns. Some pressing
+[02:47] different planes like incline or HP or dips, for example, for bench. Make sure you've got a good amount of accessory work mixed in, isolated muscles to make sure you're getting them fully worked. I'd recommend a good amount of cardio to keep your basic fitness up to par as well. See the pin comment in the description for where to contact me for coaching
+[03:02] and programs, plus all the sleep benchmats. Please like, comment, and subscribe if you haven't already. And once again, thanks for watching.

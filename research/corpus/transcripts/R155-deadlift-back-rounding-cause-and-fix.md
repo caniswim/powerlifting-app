@@ -1,0 +1,31 @@
+---
+ref: R155
+videoId: pJ4O4KOD4Kw
+title: "DEADLIFT BACK ROUNDING | CAUSE AND FIX"
+url: https://www.youtube.com/watch?v=pJ4O4KOD4Kw
+durationSec: 335
+source: captions
+words: 1118
+---
+[00:00] what's up guys let's talk about backgrounding in the deadlift what causes it and what we can do to get rid of it so a lot of people will say it's because your spinal extensors are weak so your back's rounding in a conventional deadlift that may be the case
+[00:16] but there are people who aren't limited by spinal extension who still round their backs during deadlifts during sumo for example the demands for spinal extension are pretty low they're nowhere near the maximal strength of the spinal extensors the knee extensor
+[00:31] demands are actually near their maximal demands but you'll see people who round their back during sumo why is that well we gotta understand what's happening biomechanically when we round our spine so i set up for my deadlift and no matter what the further i have to bend down
+[00:46] the longer my moment arms are becoming this is the moment arms for knee extension hip extension and spinal extension they're all getting longer the further i have to bend down one thing that affects how far i have to bend down is how long my torso is
+[01:02] when we round our back we essentially make our torso shorter so we don't have to bend down as far this means my moment arms are going to be shorter because i don't have to bend down as far and when the moment arm is shorter it's easier to lift a given weight even if the spinal
+[01:17] sensors are another limiting factor one of these other moment arms is it's still going to be easier to lift the weight with a rounded spine so now for the sake of argument i'm not gonna get into it in this video but let's assume around the backs are 100 safe no injury risk at all
+[01:33] would that mean we should always lift with around the back to lift the most weight it's making a moment arm shorter right well it's not as simple as that if you lift with a really rounded over back and you get your lockout it's kind of hard to then extend your spine because you're basically
+[01:48] coming to a point you have no momentum so you're essentially making your lockout harder and people are going to fall into two camps for some people it's in that benefit for some people it's not i used to be one of the people who was better off with a rounded spine
+[02:04] and now for reasons i'm going to get into later i'm better off keeping my back fully extended so you gotta find out what works for you are you better off making those moment arms shorter by rounding your spine and compromising your lockout strength a bit or are you better off keeping these mobile arms longer fighting
+[02:20] through them and having a smooth lockout which one's gonna let you lift the most weight so let's say you're one of those people who is better off keeping your spine extended the problem is you're still your body's still gonna want to naturally around the spine to make these moment arms easier
+[02:35] it's a natural thing to do what can we do to prevent this well the best thing to do is really ingrain a motor pattern that's not going to do that your body is going to automatically move in the way it's used to moving so we have to practice moving
+[02:50] in the way we want us to move your body gets used to that pattern of engaging muscles in a certain way your motor pattern so we want to ingrain that first off just during our deadlifts of course we want to cue keeping our back extended now if
+[03:05] i ask you to lift a really light weight like for me one plate i can basically do whatever form i want and i can complete the lift eventually as we get closer and closer to maximal weights it's gonna be harder to maintain that form and our body's gonna naturally do the form that's
+[03:20] strongest for us in that given moment so that's what you have to do you have to find a threshold where your body's gonna start to naturally round you're gonna start below that you're gonna do your work there get stronger and green that motor pattern and that threshold is going to rise a bit and you get closer to
+[03:35] that threshold by adding weight progressively overloading again engrain that motor pattern at this heavier weight and repeat repeat repeat eventually you're going to be better and better at extending your spine and maximal weights closer and closer
+[03:50] to your max simple sometimes special exercises are really good at ingraining a certain motor pattern and this is one of those cases and this is the big reason i think i became one of those people who's stronger keeping their spine extended that's because i started doing tons
+[04:06] of paused deadlifts you're going to want to do them in a specific way because again your back is going to tend to round right as you start to pull so what you want to do is pause the lifts right off the floor as close as you can to the floor an inch or less it doesn't have to be super
+[04:21] long i'd say a second half a second you can do longer if you want but i don't think you need to basically again you're grading that motor pattern forcing your body to really keep that spine extended and also because it's going to be naturally hard to maintain a
+[04:36] pause when your back is rounded your body does not like to do it pause deadlifts are great for working this so to summarize your backgrounds because it shortens moment arms it may be in that benefit for you it may not
+[04:51] if you are somebody's going to be getting that benefit from keeping their back rounded i say just do it i'm going to make a whole video on this but i don't think rounded backs are particularly dangerous as long as your body's adapted to it
+[05:07] not you're somebody who's better off keeping your back extended you're going to look more weight that way you're going to want to grain that motor pattern by keeping the weight light enough to maintain it and then progressively overloading from there and probably implementing positive lifts so this was helpful cleared up
+[05:22] a lot of misconceptions i see about backgrounding on the internet thanks for watching please like the video comment more topics you want me to go over below subscribe share the video help me grow channel and again thanks for watching

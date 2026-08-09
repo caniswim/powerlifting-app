@@ -1,0 +1,21 @@
+---
+ref: R134
+videoId: zc78byVq3m8
+title: "THE MYTH ABOUT REP RANGES ❌"
+url: https://www.youtube.com/watch?v=zc78byVq3m8
+durationSec: 178
+source: captions
+words: 761
+---
+[00:00] so one of the most basic Bro Science pieces of advices you'll hear with lifting is low reps build strength High Reps build muscle and this isn't true studies show that basically any rep range will build muscle equally well for the same proximity to failure and number of sets and while higher percentages of your Maxs do seem to increase strength
+[00:15] bar implying that low reps are better it's a bit misleading taken at face value let's go more into the Nuance of rep ranges starting with higher reps build more muscle which is a bigger myth in my opinion so like I said actual science shows that any rep range can build muscle equally well save the extreme ones below 30% of our Max
+[00:30] but there are some arguments against High rep ranges they can be harder to endure the discomfort of train the failure on and training the failure seems to cause more growth plus there's more metabolic fatigue at these increased rep ranges not in a way that causes more growth just impairs recovery so this would imply that low rep ranges are actually
+[00:45] better avoiding this metabolic fatigue the issue with low rep ranges though is it can be hard to be strict on form not using momentum on curls for example or following a specific arm path on a row to work specific back muscles so for these reasons it seems the actual basic Bro Science pery rep
+[01:00] range of 8 to 12 reps may be best after all it should just be clear that other rep ranges will build muscle too any differences we're talking here are small don't get too caught up in the Minor Details now what about building strength This research shows that higher percentages of your rart max transfer better to strength and this would favor lower reps
+[01:15] which I do agree you should be the bulk of your strength training but there are some use for higher reps as well first off going higher in absolute load on more fatig and lifts like squats and dead lifts I find is more fatigue on your body especially the soft tissues and this may outweigh the metabolic fatigue of higher rep stuff I mentioned before High
+[01:30] Reps can also be useful for working form especially initially let's say we do sets of two Reps versus sets of 10 reps on both of these were four reps away from failure on the set of 10 reps the first eight reps are all easier than any of the Reps on the set of two reps we're further from failure which makes us Superior
+[01:46] for learning form it's a lot easier to focus on working the technique as when we get near the failure or maximal weights our body is going to start taking over and we're just going to do stuff automatically at some point we do want to try out to form at higher absolute loads and closer to failure but this higher rep stuff is good initially when we're First Learning
+[02:01] the form these high rep sets are also useful for people who cannot handle a lot of stimulus in general or are injury-prone if they can't handle a lot of work near failure more of the Reps will be further from failure on higher rep sets if they can't handle a lot of work at higher percentages of their Max they will be using a later load on
+[02:16] these higher reps and if they can't handle a lot of sets they're getting more reps in to make sure they're practicing form enough I also like doing higher rep sets the day before a heavy single day basically get a bunch of reps in Grease the groove of your form so to speak and make technique feel locked in for single and lastly we all
+[02:31] know that bigger muscles play a role in strength in fact research suggests it's the most important factor especially beyond the beginner stage link below to my video going over this so given what I said earlier about how High Reps can be useful for hypertrophy that by extension means they will be useful for building strength as well so I hope this video helped you understand rep
+[02:46] ranges a bit more and get away from the dogmatic view that High Reps are only for building muscle low reps are only for building strength when there's more mix between the two please like comment and subscribe if you haven't already and once again thanks for watching

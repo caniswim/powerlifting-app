@@ -1,0 +1,21 @@
+---
+ref: R058
+videoId: 0Qy2eSAqeGI
+title: "Why I SQUATTED more than my DEADLIFT"
+url: https://www.youtube.com/watch?v=0Qy2eSAqeGI
+durationSec: 173
+source: captions
+words: 724
+---
+[00:00] I outsquatted my deadlift for a long time, but recently my deadlift has caught up. Let's go over the factors as to why. The first was leverages. I bought one of those medieval stretchers and now with my longer arms, I have better deadlift leverages. You can get 10% off with my code Matt 10. Link below. Okay, real talk. Moving up in body weight
+[00:15] did help my squat leverages. My hamstrings hit my calves. My stomach hit my hips and thighs. I had a thicker torso that resisted my chest collapsing, but it also hurt my deadlift leverages. My arms would hit my legs and my sides, and I really couldn't get upright off the floor. However, as I mentioned before, I did a 20
+[00:30] lb cut after my last competition to lean out before bulking back up, and my body composition has improved immensely. Thus, my leverages have gotten better at the same weight and even better than when I was lighter before. The next thing is mentality. For a while, as my deadlift suffered, I started to really focus in on my squat. I did really
+[00:45] hyped for squat days and excited about hitting big singles. On deadlifts, I wasn't approaching the sessions with nearly the same intent. This is common with lifts. You get in feedback cycles. You like them, you try hard, you get better results. Or vice versa. you don't like them, you don't try as hard and you get worse results. Try to recognize
+[01:00] if you're getting in the latter one and nip it right in the bud. Now, the next thing that helped was quitting pause deadlifts. I still think they're a great exercise for most people. I program it for most people I coach. The issue I had with them was it impaired my ability to wedge into the bar properly, though. That is, I would be too passive trying not to produce
+[01:16] too much force that I blast right past the sticking point. I started doing them more at knee height trying to get around it, but that really just messed up with my timing. I had to practice to lock it efficiently. I just think I'm at a bit of an outlier here with this exercise, but it goes to show why everybody doesn't need to follow every popular exercise, even if it works for a ton
+[01:31] of people. Now, something else that helped my training was a bench mat from Odyssey. They make these nonset mats you can use on commercial gym benches to provide friction that then allows you to use proper leg drive. That's a big game changer. And if you've never trained on an actual grippy bench, like say a powerlifting competition one, you don't even realize
+[01:46] how much you're missing out. You get 10% off of code Matt Fenna. All one word. Link in the description pin comment below. Thank you to Odyssey. Now, the next thing that helped me was accessories. I upped my upper back volume and also hit more hamstring isolation work. My quads, glutes, and adductors got enough work from squats and deadl
+[02:01] combined, but hamstrings do not get trained while squats. Plus, the upper back may be worked a bit from squats and deadlifts. But to truly grow it, you need to do a good amount of isolation work. Going in harder on this has really paid dividends. But the lowest hanging fruits for most powerlifters, I find, is improving their accessory work. More work than the true
+[02:16] failure, at least occasionally, to see if intensity is properly dialed in. Get more muscle to lift more. Simple. Now, there are multiple factors I've identified here, and there's very likely others as well that I haven't accounted for. And that's the thing. People will hyperfixate on one variable and think it must be the difference maker for them, whether that's positive
+[02:32] or negative. But obviously, our bodies are real complex systems. There's so many mechanisms and variables going on all at once. It's rarely ever just one thing. So, keep an open mind and don't missing the forest for the trees. See the description and pin comment for to contact me for coaching programs, my socials, and
+[02:47] Odyssey Benjamats. Please like, comment, and subscribe if you haven't already. And once again, thanks for watching.
