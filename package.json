@@ -12,6 +12,7 @@
     "check:vena": "node scripts/build-vena-block1.mjs --check",
     "validate:program": "node scripts/validate-program.mjs",
     "check:notes": "node scripts/check-notes-parser.mjs",
+    "check:kb": "node research/tools/verify-manifest.mjs && node research/tools/check-claims.test.mjs && node research/tools/check-claims.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "briefing": "node scripts/weekly-briefing.mjs"

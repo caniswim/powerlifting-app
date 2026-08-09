@@ -20,7 +20,14 @@ import { dirname, join } from 'node:path';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const MANIFEST = join(ROOT, 'research/corpus/manifest.json');
-const EXTRACT = join(ROOT, 'research/extract');
+// `--extract <dir>` existe para o teste do próprio checker: ele monta um extract
+// sintético com claims deliberadamente quebradas e exige que cada uma seja
+// pega. Sem isso não haveria como saber se este arquivo ainda verifica alguma
+// coisa — e um checker silenciosamente quebrado é pior do que checker nenhum,
+// porque carimba 4 mil claims de aprovado.
+const extractIdx = process.argv.indexOf('--extract');
+const EXTRACT =
+  extractIdx >= 0 ? process.argv[extractIdx + 1] : join(ROOT, 'research/extract');
 const VERBOSE = process.argv.includes('--verbose');
 
 /** Quanto o `at` da claim pode divergir de onde o verbatim realmente aparece. */
@@ -259,8 +266,14 @@ for (const c of claims) {
     if (!path) warnings.push(`${w}: source.text ausente — verbatim não verificado`);
     else if (!doc) warnings.push(`${w}: ${path} não existe — verbatim não verificado`);
     else {
-      const anchor = new RegExp(`§${c.at.slice(1).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![\\w.])`);
-      if (!anchor.test(doc.raw)) errors.push(`${w}: parágrafo ${c.at} não existe em ${path}`);
+      // `at` ausente já virou erro acima; aqui só não vale derrubar o processo com
+      // TypeError e esconder os outros 4 mil registros por causa de um campo vazio.
+      if (c.at) {
+        const alvo = c.at.slice(1).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        if (!new RegExp(`§${alvo}(?![\\w.])`).test(doc.raw)) {
+          errors.push(`${w}: parágrafo ${c.at} não existe em ${path}`);
+        }
+      }
       const needle = norm(c.verbatim ?? '');
       if (needle.length < 12) {
         errors.push(`${w}: verbatim curto demais (${needle.length} chars) para ser evidência`);
