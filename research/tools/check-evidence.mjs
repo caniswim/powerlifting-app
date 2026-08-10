@@ -363,6 +363,20 @@ function imprimirRoteamento(texto, { comoComplemento = false } = {}) {
     console.log('');
   }
 
+  /**
+   * A PÁGINA AO LADO. É a regra 3 do protocolo do `RECUPERACAO.md`, e ela sai
+   * IMPRESSA porque `idsMostrados` é o contrato do canário: calcular sem
+   * imprimir faria o canário passar por causa de linhas que não estão na tela.
+   */
+  if (r.vizinhos.length > 0) {
+    console.log(`\n  A PÁGINA AO LADO — ${r.vizinhos.length} claim(s) adjacentes, no MESMO vídeo, ao que`);
+    console.log('  já saiu acima. O extrator emitiu as claims na ordem em que o assunto foi dito,');
+    console.log('  então a de ao lado costuma ser a que completa a resposta: a condição que');
+    console.log('  desarma a prescrição, ou o número que a frase anterior prometeu.\n');
+    for (const v of r.vizinhos) console.log(`${compacto(v.c)}   ← ao lado de ${v.deQuem}`);
+    console.log('');
+  }
+
   const grandes = r.rotas.filter((t) => t.claims > LIMITE_PADRAO);
   if (grandes.length > 0 && r.estreitar.length > 0) {
     console.log(`\n  ⚠  TÓPICO GRANDE: ${grandes.map((t) => `${t.topico} tem ${t.claims}`).join(', ')} claims, e você viu ${r.claims.length}.`);

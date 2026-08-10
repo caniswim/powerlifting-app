@@ -73,7 +73,7 @@
 import { readFileSync } from 'node:fs';
 import {
   palavras, raiz, normalizar, indexar, subIndice, buscarRelaxada,
-  prosaDaClaim, VAZIAS,
+  prosaDaClaim, VAZIAS, vizinhosNoMesmoSrc,
 } from './busca.mjs';
 
 // ── constantes, todas declaradas como julgamento ─────────────────────────────
@@ -803,18 +803,69 @@ export function responder(claims, pergunta, {
 
   const params = porNomeDeParam(claims, indice, perfil, pergunta);
 
+  /**
+   * ── A PÁGINA AO LADO, e ela é a regra 3 do protocolo ─────────────────────
+   *
+   * *"Leia os vizinhos do id que você já achou."* O `RECUPERACAO.md` §3.4 mediu
+   * o caso: a Q19 parou doze ids antes de V010-13, no mesmo vídeo que já estava
+   * citando. A porta livre faz isso desde 09/08; a porta nova nasceu sem, e a
+   * medição de 10/08 mostrou o custo — `quanto baixar o peso quando o RPE vem
+   * acima do alvo` devolvia V033-03 e V033-04 pelo canal de param e **não**
+   * V033-05, que é a claim IMEDIATAMENTE ao lado e a que traduz os 3 % em 25 lb.
+   *
+   * Mesma função da porta livre (`vizinhosNoMesmoSrc`), e não uma segunda
+   * implementação: duas cópias divergiriam em silêncio.
+   *
+   * O foco é o que está NA TELA em detalhe — as primeiras claims roteadas e as
+   * do canal de param —, nunca a lista inteira: ±3 ids sobre 40 focos seriam
+   * 240 ids, e uma lista de 240 não é abrir a página ao lado, é despejo. O raio
+   * é 2 e não 3 porque aqui o foco já vem ordenado por relevância dentro de um
+   * tópico, e não de uma busca pobre.
+   */
+  const naTela = new Set([
+    ...claimsRoteadas.map((x) => x.c.id), ...params.lista.map((x) => x.c.id),
+  ]);
+  /**
+   * CADA CANAL TEM SUA COTA, e isso foi medido. Com uma fila só, os oito focos
+   * do roteamento consumiam as 16 vagas e o canal de param nunca chegava a
+   * abrir vizinho nenhum — V033-05 (*3 % são 25 lb para mim*) ficava de fora
+   * porque V033-04 é a 10ª linha do canal de param. É o mesmo defeito de "corte
+   * por ordem de fila" que a `busca.mjs` já denuncia em outro lugar; a correção
+   * é a mesma: quem tem evidência diferente não disputa a mesma vaga.
+   *
+   * O canal de param entra INTEIRO no foco porque ele sai inteiro na tela.
+   */
+  const vizRoteado = vizinhosNoMesmoSrc(
+    claims,
+    claimsRoteadas.slice(0, DETALHE_ROTEADO).map((x) => x.c),
+    { vistos: naTela, porFoco: 1, teto: DETALHE_ROTEADO, raio: 2 },
+  );
+  const vizParam = vizinhosNoMesmoSrc(
+    claims,
+    params.lista.map((x) => x.c),
+    {
+      vistos: new Set([...naTela, ...vizRoteado.map((v) => v.c.id)]),
+      porFoco: 1,
+      teto: TETO_PARAM,
+      raio: 2,
+    },
+  );
+  const vizinhos = [...vizRoteado, ...vizParam];
+
   return {
     pergunta,
     ...rota,
     porTopico: porTopicoResultado,
     claims: claimsRoteadas,
     params,
+    vizinhos,
     estreitar,
     // O contrato do canário: **o que o agente VÊ**. Tudo o que cabe na tela, e
     // nada além — achado no lugar 400 não é achado.
     idsMostrados: new Set([
       ...claimsRoteadas.map((x) => x.c.id),
       ...params.lista.map((x) => x.c.id),
+      ...vizinhos.map((v) => v.c.id),
     ]),
     teto,
     indice,

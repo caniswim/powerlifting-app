@@ -1,5 +1,6 @@
 {
   "_leia": "CANDIDATO, VERMELHO DE PROPÓSITO — NÃO está no npm run check:kb. Escrito por um terceiro que não participou do conserto de 09/08/2026, sobre um caso que a MEDICAO-02 não usou. Roda com: node research/tools/check-canarios.mjs --canarios research/kb/CANARIOS-CANDIDATOS.json . Ele falha hoje: a camada de recuperação não devolve V038-07 nem V074-10 a partir de \"rest between sets\" nem de \"descanso entre séries\", que casam ZERO literal. Ele entra no CANARIOS.json no dia em que passar — canário vermelho de nascença dentro do build é como se desliga uma trava.",
+  "tetoDeTela": 40,
   "gerado": "2026-08-09 (auditoria independente da camada de recuperação)",
   "baseNoMomento": {
     "claims": 6909,

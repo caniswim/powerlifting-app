@@ -312,6 +312,31 @@ const perguntar = (pergunta, extra = {}) => responder(claims, pergunta, {
     `inventados: ${invalidos.join(', ')} — é o que separa roteamento de busca por texto`);
 }
 
+// ── a fiação da PÁGINA AO LADO ───────────────────────────────────────────────
+//
+// Regra 3 do protocolo do `RECUPERACAO.md`, e o caso é o da Q11: V033-05 (*3 %
+// são 25 lb para mim*) não chega por canal nenhum — `pct_por_rpe` nomeia uma
+// peça só da pergunta e a prosa dela fala de 800 lb, não de RPE. Ela chega por
+// ser a claim IMEDIATAMENTE adjacente a V033-04, no mesmo vídeo.
+//
+// Os números aqui são literais escritos à mão: quem verifica não importa
+// `DETALHE_ROTEADO` nem `TETO_PARAM` de `roteador.mjs`.
+{
+  const r = perguntar('quanto baixar o peso quando o RPE vem acima do alvo?');
+  const v = r.vizinhos.find((x) => x.c.id === 'V033-05');
+  ok('fiação: V033-05 entra pela página ao lado, e a saída DIZ de quem ela é vizinha',
+    Boolean(v) && v.deQuem === 'V033-04',
+    `vizinhos: ${r.vizinhos.map((x) => `${x.c.id}<-${x.deQuem}`).slice(0, 6).join(' ')}`);
+  ok('fiação: o que entra pela página ao lado conta como MOSTRADO',
+    r.idsMostrados.has('V033-05'),
+    'calcular sem imprimir faria o canário passar por linha que não existe na tela');
+  ok('a página ao lado é do MESMO vídeo e a no máximo 2 ids de distância',
+    r.vizinhos.every((x) => x.c.src === (r.claims.find((y) => y.c.id === x.deQuem)?.c.src
+      ?? r.params.lista.find((y) => y.c.id === x.deQuem)?.c.src)
+      && Math.abs(Number(x.c.id.split('-')[1]) - Number(x.deQuem.split('-')[1])) <= 2),
+    'um "vizinho" de outro vídeo, ou a 5 ids, não é abrir a página ao lado');
+}
+
 // ── a assinatura derivada, que é como se audita o perfil ─────────────────────
 {
   const a = assinaturaDoTopico(PERFIS, 'periodizacao', 20).map((x) => x.termo);

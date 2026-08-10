@@ -24,6 +24,18 @@
     "                  custar uma rodada inteira de aquisição contra o sintoma",
     "                  errado.",
     "",
+    "`tambemPelaBuscaLivre` (10/08/2026) — e ele existe porque a família",
+    "sem-injecao quase virou vaga ocupada. Medido: o roteamento NÃO chama",
+    "expandirPorVocabulario, então a injeção de 09/08 é estruturalmente",
+    "impossível pela porta nova, e nenhuma das 14 mutações rodadas contra",
+    "roteador.mjs conseguiu fazer T09/T10/T11 acusarem — as regressões que",
+    "existem aparecem como perda de RECALL na família mapeia. Enquanto isso o",
+    "defeito continuava vivo do outro lado: trocar `longas.every` por",
+    "`longas.some` em busca.mjs:555 reinjeta V170-34 nas três perguntas e o",
+    "check:kb inteiro passava verde. Com o campo ligado, os mesmos `proibidos`",
+    "são cobrados também contra recuperar(), que é a porta que --busca usa.",
+    "Canário tem de morder onde o defeito mora, não onde ele não cabe.",
+    "",
     "A REGRA DE HIGIENE QUE ESTE ARQUIVO CARREGA. `tetoDeTela` mora AQUI e não em",
     "roteador.mjs. Em 09/08 o canário presente-escondido importava TETO_VIZINHANCA",
     "da própria ferramenta que ele media: trocar 40 por 400 deixava o check:kb",
@@ -143,9 +155,9 @@
       "id": "T04",
       "familia": "mapeia",
       "pergunta": "quanto baixar o peso quando o RPE vem acima do alvo?",
-      "porque": "O caso Q11, na formulação REALISTA — a que a ONDA-2B §10 mediu devolvendo zero, e que existe justamente porque nenhum agente digita `2 a 3%` sem já saber a resposta. Quem acha aqui não é o roteamento por assunto: é o canal do NOME DO PARAM. `peso_por_rpe_min` nomeia duas peças da pergunta, e a claim é a resposta mesmo dizendo `subir` onde a pergunta diz `baixar`.",
+      "porque": "O caso Q11, na formulação REALISTA — a que a ONDA-2B §10 mediu devolvendo zero, e que existe justamente porque nenhum agente digita `2 a 3%` sem já saber a resposta. Quem acha aqui não é o roteamento por assunto: é o canal do NOME DO PARAM. `peso_por_rpe_min` nomeia duas peças da pergunta, e a claim é a resposta mesmo dizendo `subir` onde a pergunta diz `baixar`. V033-05 (10/08) nao chega por canal nenhum: `pct_por_rpe` nomeia uma peca so, e a prosa dela fala de 800 lb e 25 lb, nao de RPE. Ela chega pela PAGINA AO LADO — e a claim imediatamente adjacente a V033-04, no mesmo video, e e ela que traduz os 3 % em quilos. Apagar vizinhosNoMesmoSrc de responder() derruba este canario e nomeia o mecanismo.",
       "topicos": ["rpe"],
-      "sustenta": ["V033-03", "V033-04"],
+      "sustenta": ["V033-03", "V033-04", "V033-05"],
       "tetoDeTela": 40
     },
     {
@@ -190,6 +202,7 @@
       "porque": "A medição de precisão de 09/08, virada trava. Com a expansão antiga, esta pergunta devolvia ZERO das 40 claims sobre sono (a base tem 62 para /sono/) e punha V170-34 e V170-33 — supinar seis dias por semana — em 1º e 2º. O conserto foi feito no mesmo dia e nada o travava: reverter o `every` para `some` passava verde em check:kb, busca.test.mjs e nos 19 canários.",
       "topicos": ["sono"],
       "proibidos": ["V170-34", "V170-33", "V175-53"],
+      "tambemPelaBuscaLivre": true,
       "tetoDeTela": 40
     },
     {
@@ -199,6 +212,7 @@
       "porque": "O segundo caso da mesma medição, e o mais sutil: `## lesao` disparava a partir de `deload`, porque a expressão `load management` contém `load`. Uma pergunta de planejamento semanal trazia o vocabulário de lesão junto, e com ele o supino de alta frequência.",
       "topicos": ["deload"],
       "proibidos": ["V170-34", "V170-33"],
+      "tambemPelaBuscaLivre": true,
       "tetoDeTela": 40
     },
     {
@@ -208,6 +222,7 @@
       "porque": "O terceiro e o quarto casos da medição de precisão (calorias e corte de peso) numa pergunta só, porque na voz do atleta eles são a mesma pergunta. Toda pergunta de planejamento semanal contém `semana`, e era `semana` que abria a porta.",
       "topicos": ["cutting"],
       "proibidos": ["V170-34", "V170-33", "V175-53"],
+      "tambemPelaBuscaLivre": true,
       "tetoDeTela": 40
     },
     {

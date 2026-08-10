@@ -82,7 +82,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { TIERS, SCOPES, MODOS, FRAMES, carregarTopicos, carregarClaims, numerosDaClaim } from './kb.mjs';
-import { recuperar, indexar, carregarVocabulario, prosaDaClaim, TETO_VIZINHANCA } from './busca.mjs';
+import { recuperar, indexar, carregarVocabulario, prosaDaClaim } from './busca.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const arg = (f) => {
@@ -109,6 +109,32 @@ if (claims.length === 0) {
 const TOPICS = carregarTopicos(ROOT);
 const PREFIXOS = new Set(claims.map((c) => String(c.src ?? '').slice(0, 1)).filter(Boolean));
 
+/**
+ * ── O TETO DE TELA É DADO DO JSON, NUNCA CONSTANTE DA FERRAMENTA ─────────────
+ *
+ * Até 10/08/2026 este arquivo importava `TETO_VIZINHANCA` de `busca.mjs` — a
+ * ferramenta que ele mede — e o passava de volta para `recuperar()`. Os dois
+ * lados da comparação eram o MESMO símbolo, que é o modo de falha nº 4 desta
+ * casa. A repro está no `ONDA-2B.md` §1.1 e foi rodada: trocar 40 por 400 em
+ * `busca.mjs` deixava `npm run check:kb` inteiro verde, e C16–C19 continuavam
+ * certificando um esconderijo que não estava mais sendo aberto.
+ *
+ * Agora o número mora em `CANARIOS.json` (`tetoDeTela`, no topo ou por
+ * canário), e a ausência dele é ERRO — não um default silencioso vindo daqui,
+ * que seria a mesma trava com uma linha a menos. Mudar a constante da
+ * ferramenta passou a não mudar o que este arquivo cobra; mudar o número do JSON
+ * é uma edição visível no canário, que é onde essa decisão deve estar.
+ */
+const TETO_DO_ARQUIVO = doc.tetoDeTela;
+if (!Number.isInteger(TETO_DO_ARQUIVO)) {
+  console.error(
+    `✗ ${ARQUIVO}: falta "tetoDeTela" no topo. Este número é DADO do canário, nunca constante `
+      + 'da ferramenta que ele mede — foi assim que TETO_VIZINHANCA passou de 40 para 400 com o '
+      + 'check:kb verde (ONDA-2B.md §1.1).',
+  );
+  process.exit(2);
+}
+
 // ── o DSL de predicado ───────────────────────────────────────────────────────
 //
 // Pequeno de propósito. Um predicado que precisasse de código para ser escrito
@@ -132,7 +158,7 @@ const CAMPOS_CANARIO = new Set([
 
 /** As chaves aceitas em `buscaCega` — mesmos nomes das opções da linha de
  *  comando, porque é a linha de comando que o canário está encenando. */
-const CAMPOS_BUSCA_CEGA = new Set(['descricao', 'termos', 'filtro']);
+const CAMPOS_BUSCA_CEGA = new Set(['descricao', 'termos', 'filtro', 'tetoDeTela']);
 const CHAVES_FILTRO_CEGO = new Set(['topic', 'modo', 'scope', 'tier']);
 
 /**
@@ -335,6 +361,11 @@ for (const can of doc.canarios ?? []) {
       for (const k of Object.keys(bc)) {
         if (!CAMPOS_BUSCA_CEGA.has(k)) erros.push(`${onde} buscaCega: campo "${k}" não existe (conhecidos: ${[...CAMPOS_BUSCA_CEGA].join(', ')})`);
       }
+      // O teto do canário, com o do arquivo como base. Nada disto vem de `busca.mjs`.
+      const teto = bc.tetoDeTela ?? TETO_DO_ARQUIVO;
+      if (!Number.isInteger(teto)) {
+        erros.push(`${onde} buscaCega: "tetoDeTela" não é inteiro — o teto é dado do canário, não da ferramenta`);
+      }
       const filtro = bc.filtro ?? {};
       for (const [k, v] of Object.entries(filtro)) {
         if (!CHAVES_FILTRO_CEGO.has(k)) erros.push(`${onde} buscaCega.filtro: chave "${k}" não existe (conhecidas: ${[...CHAVES_FILTRO_CEGO].join(', ')})`);
@@ -376,7 +407,7 @@ for (const can of doc.canarios ?? []) {
           filtros: filtro,
           idx: INDICE,
           vocabulario: VOCAB,
-          teto: TETO_VIZINHANCA,
+          teto,
         });
         const faltando = ids.filter((i) => !r.idsMostrados.has(i));
         if (faltando.length > 0) naoRecuperados.push({ termo, faltando });
@@ -395,7 +426,7 @@ for (const can of doc.canarios ?? []) {
         erros.push(
           `${onde}: A CAMADA DE RECUPERAÇÃO REGREDIU — a busca cega "${termo}" `
             + `${Object.keys(filtro).length ? `(com ${Object.entries(filtro).map(([k, v]) => `--${k} ${v}`).join(' ')}) ` : ''}`
-            + `não devolve ${faltando.join(', ')} dentro das ${TETO_VIZINHANCA} primeiras.\n`
+            + `não devolve ${faltando.join(', ')} dentro das ${teto} primeiras.\n`
             + '        ISTO NÃO É PERDA DE CONTEÚDO: os ids existem e o conteúdo deles foi conferido acima.\n'
             + '        É a busca que parou de achar — conserte research/tools/busca.mjs ou\n'
             + '        research/kb/VOCABULARIO.md, e NÃO saia comprando fonte nova.',

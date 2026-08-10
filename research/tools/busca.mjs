@@ -566,6 +566,76 @@ export function expandirPorVocabulario(consulta, entradas) {
   return usados;
 }
 
+/**
+ * ── OS VIZINHOS DE ARQUIVO, e a lição mais barata da MEDICAO-02 ─────────────
+ *
+ * A Q19 parou **doze ids antes** de V010-13, **no mesmo vídeo que já estava
+ * citando**. O extrator emitiu as claims na ordem em que o assunto foi dito,
+ * então a claim ao lado da que você achou é, com frequência, a que completa a
+ * resposta — a condição que desarma a prescrição, o número que a frase anterior
+ * prometeu, o *"e no agacho eu uso 3 %"* logo depois do *"2 a 3 %"*.
+ *
+ * Barato e literal: ±`raio` ids no mesmo `src`, a partir do que já está na tela.
+ * Não é ranqueamento nenhum — é abrir a página ao lado.
+ *
+ * **Uma função só, usada pelas duas portas.** `recuperar()` (busca livre) e
+ * `responder()` (roteamento) chamam esta mesma implementação. Duas cópias
+ * divergiriam em silêncio, que é o modo de falha nº 3 desta casa — e o
+ * `RECUPERACAO.md` §7 já registra que `check-evidence` e `check-canarios`
+ * compartilham `recuperar()` exatamente por isso.
+ *
+ * A varredura é POR FOCO e não em ordem de arquivo: varrendo o disco, o
+ * primeiro vídeo da lista consumia todas as vagas e os vizinhos das outras
+ * claims nunca saíam — o mesmo defeito de "corte por ordem de arquivo" que esta
+ * ferramenta denuncia no banner de alargamento de filtro.
+ */
+export function vizinhosNoMesmoSrc(claims, foco, {
+  vistos = new Set(), porFoco = 4, teto = 18, raio = 3,
+} = {}) {
+  const jaVi = new Set(vistos);
+  /**
+   * ── EM RODADAS, E POR DISTÂNCIA — as duas correções são medidas ───────────
+   *
+   * **Sem fila.** Servir cada foco até o limite antes de passar ao próximo faz o
+   * primeiro da fila comer o orçamento inteiro: medido em 10/08/2026, os seis
+   * primeiros focos do canal de param consumiam as 12 vagas e V033-05 — a claim
+   * IMEDIATAMENTE ao lado da 10ª linha, e a que traduz *3 %* em *25 lb* — nunca
+   * era alcançada. É o mesmo defeito de "corte por ordem de fila" que esta
+   * ferramenta denuncia no banner de alargamento de filtro, cometido aqui.
+   * A vaga é disputada por DISTÂNCIA e não por posição na fila, e cada foco
+   * leva no máximo `porFoco`.
+   *
+   * **Distância.** *Abrir a página ao lado* é literal: o vizinho de distância 1
+   * vem antes do de distância 2. Sem ordenar, quem decidia era a ordem do
+   * arquivo, e a claim anterior ganhava da seguinte por acidente de varredura.
+   */
+  const candidatos = [];
+  foco.forEach((f, i) => {
+    const n = NUMERO_DO_ID(f.id);
+    for (const c of claims) {
+      if (c.src !== f.src || c.id === f.id) continue;
+      const d = Math.abs(NUMERO_DO_ID(c.id) - n);
+      if (d > raio || Number.isNaN(d)) continue;
+      candidatos.push({ c, deQuem: f.id, i, d });
+    }
+  });
+  // Distância primeiro, foco depois: a página ao lado de QUALQUER foco vale mais
+  // que a terceira página adiante do primeiro deles.
+  candidatos.sort((a, b) => a.d - b.d || a.i - b.i || a.c.id.localeCompare(b.c.id));
+  const out = [];
+  const usadoPorFoco = new Map();
+  for (const cand of candidatos) {
+    if (out.length >= teto) break;
+    if (jaVi.has(cand.c.id)) continue;
+    const n = usadoPorFoco.get(cand.i) ?? 0;
+    if (n >= porFoco) continue;
+    usadoPorFoco.set(cand.i, n + 1);
+    jaVi.add(cand.c.id);
+    out.push({ c: cand.c, deQuem: cand.deQuem });
+  }
+  return out;
+}
+
 export function recuperar(claims, { grep = null, filtros = {}, casarGenero = null, piso = PISO_POBRE, teto = TETO_VIZINHANCA, idx = null, vocabulario = [] } = {}) {
   const indice = idx ?? indexar(claims);
   const rx = grep ? new RegExp(grep, 'i') : null;
@@ -617,29 +687,11 @@ export function recuperar(claims, { grep = null, filtros = {}, casarGenero = nul
    */
   const naTela = new Set([...literal.map((c) => c.id), ...relaxada.map((r) => r.c.id)]);
   const foco = [...literal.slice(0, 8), ...relaxada.slice(0, DETALHE_VIZINHANCA).map((r) => r.c)];
-  const vizinhosDeArquivo = [];
   // Só quando o resultado é pobre — que é quando alguém está prestes a escrever
   // "a base não tem". Este conjunto entra em `idsMostrados`, e `idsMostrados` é
   // o contrato do canário: **o que o agente VÊ**. Calcular sem imprimir faria o
   // canário passar por causa de linhas que não existem na tela.
-  if (pobre) {
-    // Por foco, e não em ordem de arquivo: varrendo o disco, o primeiro vídeo da
-    // lista consumia as 18 vagas e os vizinhos das outras claims nunca saíam —
-    // exatamente o defeito de "corte por ordem de arquivo" que o aviso de
-    // truncagem desta ferramenta já denuncia em outro lugar.
-    const vistos = new Set(naTela);
-    for (const f of foco) {
-      let n = 0;
-      for (const c of claims) {
-        if (n >= 4 || vizinhosDeArquivo.length >= 18) break;
-        if (vistos.has(c.id) || c.src !== f.src) continue;
-        if (Math.abs(NUMERO_DO_ID(f.id) - NUMERO_DO_ID(c.id)) > 3) continue;
-        vistos.add(c.id);
-        vizinhosDeArquivo.push({ c, deQuem: f.id });
-        n += 1;
-      }
-    }
-  }
+  const vizinhosDeArquivo = pobre ? vizinhosNoMesmoSrc(claims, foco, { vistos: naTela }) : [];
 
   const alargamento = alargarFiltro(claims, { rx, filtros, casarGenero });
 

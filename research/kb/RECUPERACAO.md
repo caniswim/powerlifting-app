@@ -4,6 +4,18 @@
 `MEDICAO-02.md` mediu, e ele existe porque o conserto que aquele relatório
 propôs — *"protocolo de busca em dois passes"* — não bastava.
 
+> **ADENDO DE 10/08/2026 — leia antes dos §1–§9.** A camada descrita abaixo
+> (`busca.mjs`, `--busca`) **reprovou no ataque cego de 09/08** e ganhou uma
+> segunda porta, que hoje é a principal: **`--pergunta`, que resolve
+> *pergunta → tópico → claims*** em vez de *pergunta → texto*. A **PARTE II**
+> (§10 em diante) descreve a porta nova, mede o que ela fecha e o que não
+> fecha, e registra as duas regras de higiene que os §1–§9 violaram.
+>
+> **Os §1–§9 continuam válidos e não foram reescritos.** Eles descrevem a porta
+> livre, que continua existindo, continua sendo o instrumento certo para *"quem
+> diz exatamente isto?"*, e continua sendo cobrada por canário. O que mudou é
+> qual porta um agente abre primeiro para responder ao atleta: **é a nova.**
+
 ---
 
 ## 1. O defeito, com o número na mão
@@ -393,3 +405,585 @@ um atleta com o peitoral rompido há quatro meses. O que a torna segura são as
 - **O que NÃO foi feito:** `AVALIACAO.md` continua **intocado** — o instrumento
   fica estável para a terceira medição. Nenhuma claim foi editada, nenhuma fonte
   foi ingerida. Este trabalho é inteiramente de recuperação.
+
+---
+---
+
+# PARTE II — A PORTA NOVA: `pergunta → tópico → claims`
+
+**Data: 10/08/2026.** A PARTE I acima é de 09/08 e continua de pé. Esta parte
+existe porque a camada dela **reprovou no ataque cego do mesmo dia**, e porque
+as três reprovações apontam todas para o mesmo lugar.
+
+---
+
+## 10. Por que a busca livre estava resolvendo um problema já resolvido
+
+Os três furos do ataque, e o terceiro é o que muda o desenho:
+
+1. **A precisão foi destruída pela expansão de vocabulário.** Uma seção inteira
+   do `VOCABULARIO.md` disparava quando **uma** palavra de 4+ letras casava, e
+   `semana` está em toda pergunta de planejamento. Medido:
+   `--busca "quantas horas de sono por semana"` devolvia **0 de 40** claims sobre
+   sono e punha **V170-34/V170-33 — *supinar seis dias por semana* — em 1º e 2º**.
+   *Para um atleta com o peitoral rompido há quatro meses.* Consertado no mesmo
+   dia (`longas.every`), e **nada travava o conserto**.
+2. **`TETO_VIZINHANCA` era os dois lados da comparação.** O canário importava a
+   constante da ferramenta que ele mede: `40 → 400` deixava o `check:kb` inteiro
+   verde.
+3. **`busca.test.mjs` roda sobre 12 claims sintéticas** e não cobre a fiação:
+   `const relaxada = false` apagava a vizinhança inteira e os 35 casos passavam.
+
+E o caso que decidiu o desenho: **`descanso-entre-series`**.
+`--busca "quanto descansar entre as séries"` devolvia, do conjunto todo, **só
+G015-11** — `relato-de-programa` do GZCLP, exatamente a gaveta que esta base
+manda nunca tratar como prescrição. `--topic descanso-entre-series` devolve as
+**12** na hora, com `param` tipado em minutos.
+
+> **A base já tinha resolvido o problema que a busca livre estava tentando
+> resolver.** Existe um vocabulário **FECHADO de 74 tópicos**, declarado no
+> `PROTOCOLO-EXTRACAO.md`, cobrado pelo `check-claims.mjs` em **toda** claim.
+
+O roteamento certo é **pergunta → tópico → claims**, e ele é melhor por três
+razões — a terceira é a que decide:
+
+1. **o alvo é fechado e pequeno**: 74 gavetas, não 6.912 textos;
+2. **mapear pergunta a assunto é o que um modelo faz bem**, e a base já mapeou
+   cada claim ao assunto dela uma vez, na extração;
+3. **um compilador pode conferir o resultado.** Tópico inventado é **erro**, não
+   silêncio. Uma busca por texto que erra devolve lixo plausível; um roteamento
+   que erra devolve um nome que ou está na lista fechada ou é recusado por
+   `rotasValidas()` — e `responder()` **lança** se algum passar.
+
+O texto livre não sai de cena: ele **desce um nível**. Deixa de ser a porta e
+vira a **ordenação dentro do tópico**, medida com `df` recontado **dentro** do
+tópico (`subIndice`) — porque `squat` não distingue nada entre 990 claims de
+agacho.
+
+---
+
+## 11. A FERRAMENTA — `research/tools/roteador.mjs`
+
+### 11.1 De onde vem o sinal do mapeamento — três canais, nenhum inventado
+
+| canal | o que é | cobertura |
+|---|---|---|
+| **corpus** | para cada tópico, quais raízes aparecem MUITO nele e pouco fora (`perfilarTopicos`, `pesoDoTermo`) | **os 74**, sem ninguém escrever nada |
+| **nome do tópico** | dado da lista fechada: `descanso-entre-series` casa a pergunta que diz "descanso entre séries" | os 74 |
+| **`VOCABULARIO.md`** | expressão de duas palavras ou mais, casada INTEIRA, **confirma** um tópico | 10 dos 74 |
+
+O peso de um termo para um tópico é **frequência dentro × log do lift**.
+`log(lift)` sozinho premia o acidente (uma raiz em 2 claims da base, as duas no
+mesmo tópico, teria lift 3.000); multiplicar pela frequência dentro é o que
+transforma *"esta palavra é rara fora"* em *"esta palavra é a palavra deste
+assunto"*. Lift ≤ 1 vale **zero**, e não negativo: palavra comum não é evidência
+CONTRA um assunto.
+
+**O canal do corpus fecha de graça o buraco que o §8.1 declarou inalcançável.**
+`ciclo` e `cycle` não compartilham raiz nenhuma e nenhuma radicalização os junta
+— mas **as duas são fortemente distintivas de `periodizacao`**, porque a claim é
+pt-BR e o `verbatim` é inglês e as duas línguas moram no mesmo tópico. Medido:
+`assinaturaDoTopico(PERFIS, 'periodizacao')` traz `ciclo` **e** `cycle`, e há um
+caso em `roteador.test.mjs` que exige isso. **Sem dicionário e sem embedding.**
+
+**O uso do `VOCABULARIO.md` aqui é o OPOSTO do que quebrou a precisão em 09/08.**
+Lá ele **injetava termos na consulta**; aqui ele apenas **confirma um tópico**.
+Confirmação errada custa um nome a mais numa lista de no máximo cinco, impressa
+com o termo e a contagem que a justificam. Injeção errada custava *supinar seis
+dias por semana* no topo de uma pergunta sobre sono.
+
+### 11.2 A família de prefixo, e por que ela existe SÓ no roteamento
+
+A pergunta é escrita por humano e conjuga (*agachando*, *supinar*, *descansar*);
+a base é declarativa e nomeia (*agachamento*, *supino*, *descanso*). A
+radicalização de `busca.mjs` é plural e só plural — de propósito, porque stemmer
+erra em silêncio dentro de um texto metade inglês.
+
+Aqui a assimetria é legítima, e vale escrever por quê: **o custo de um erro de
+prefixo no roteamento é limitado e visível.** No pior caso acrescenta um nome a
+uma lista curta, que sai impressa com a justificativa e que um compilador confere
+contra a lista fechada.
+
+A regra é a mais burra que resolve: **5 letras iniciais em comum, valendo ≥ 0,6
+da palavra mais curta, com diferença de comprimento ≤ 5.** Os três números foram
+medidos nos dois sentidos antes de serem escritos:
+
+- casam: `agachando`/`agachamento`, `descansar`/`descanso`, `treinando`/`treino`,
+  `peitoral`/`peito`, `joelheira`/`joelho`;
+- **não** casam: `powerlifting`/`powerbuilding` (5 de 12 — dois assuntos com
+  opinião oposta um sobre o outro nesta base), `power`/`powerlifting` (diferença
+  7 — sem esta terceira condição, *"preciso fazer cardio treinando
+  powerlifting?"* roteava para `powerbuilding` (5 claims) na frente de `cardio`
+  (230)), `pesado`/`pesagem`, `cinto`/`cintura`, `banco`/`bancada`,
+  `morto`/`morte`.
+
+### 11.3 Os dois canais que NÃO são roteamento, e por que saem em seções próprias
+
+**O NOME DO PARAM.** `peso_por_rpe_min` não é prosa: é o dado que a Q11
+procurava, tipado, com `frame` e unidade. Uma pergunta que diz *"quanto **peso**
+quando o **RPE** vem acima do alvo"* nomeia **duas** peças desse nome — e a claim
+que carrega o param é a resposta **mesmo quando a prosa dela não compartilha
+verbo nenhum com a pergunta** (a claim diz *subir*; a pergunta diz *baixar*).
+Duas peças e não uma, porque `peso` sozinho está em metade dos params da base.
+
+Ele sai como seção própria e não misturado ao roteamento, e a razão é medida:
+bônus multiplicativo dentro do tópico levantou o alvo da Q11 de 72º para 47º
+(ainda fora da tela) **e empurrou o alvo da Q19 para fora**. Canal separado só
+acrescenta.
+
+**A PÁGINA AO LADO.** É a regra 3 do protocolo do §5, e a porta nova **nasceu
+sem ela** — a medição de 10/08 mostrou o custo: V033-05 (*"3 % para mim, que
+agacho 800 lb, são 25 lb"*) **não chega por canal nenhum**. `pct_por_rpe` nomeia
+uma peça só, e a prosa dela fala de 800 lb e 25 lb, não de RPE. Ela chega por ser
+a claim **imediatamente adjacente** a V033-04, no mesmo vídeo.
+
+`vizinhosNoMesmoSrc` é **uma função só, usada pelas duas portas** — duas cópias
+divergiriam em silêncio, que é o modo de falha nº 3. Extraí-la obrigou a
+consertar dois defeitos que a versão embutida tinha:
+
+- **corte por ordem de fila.** Servir cada foco até o limite antes de passar ao
+  próximo faz o primeiro comer o orçamento inteiro: medido, os seis primeiros
+  focos do canal de param consumiam as 12 vagas e V033-05 nunca era alcançada.
+  É o mesmo defeito que esta ferramenta denuncia no banner de alargamento de
+  filtro, cometido dentro dela.
+- **ordem de arquivo decidindo distância.** *Abrir a página ao lado* é literal:
+  o vizinho de distância 1 vem antes do de distância 2. Sem ordenar, quem
+  decidia era a ordem de varredura, e a claim anterior ganhava da seguinte por
+  acidente.
+
+### 11.4 A etiqueta erra, e a afinidade é quem conserta
+
+O `topic` foi escrito claim a claim, por lote, por agentes diferentes. Ele é
+fechado e é conferido pelo compilador — **mas conferido contra a lista, não
+contra o conteúdo**. Medido, e é o caso que originou a peça:
+
+> **V038-07** — *"pode haver benefício em descansar 8 minutos em vez de 5"*,
+> `GERAL`, `descanso_longo=8 min` — está etiquetada `recuperacao, agacho, terra`.
+> **Não** está em `descanso-entre-series`. **V074-10** — *"descansar 10 minutos
+> ajuda o agacho"* — idem.
+
+Rotear para `descanso-entre-series` e olhar só as 12 claims declaradas devolve
+**uma** das três que a pergunta pedia. **Roteamento puro por etiqueta herda todo
+erro de etiquetagem, em silêncio** — o mesmo modo de falha da camada de ontem com
+outra roupa.
+
+A `afinidade` é o perfil do tópico aplicado de volta a cada claim: *esta claim
+fala como as claims deste tópico falam?* A saída marca **`declarado` × `afim`**
+de forma diferente, porque afirmar que uma claim está num tópico em que ela não
+está é uma mentira barata de contar e cara de descobrir. E a claim afim vale
+**0,6** da declarada: sem o desconto, *"quantas horas de sono por semana"*
+devolvia em 1º, 2º e 4º claims de `cardio` — porque `hora` é raro dentro do
+conjunto de `sono` e "horas de cardio" casava melhor que "dormir". **0,6 e não
+zero**, porque eliminar seria a trava estreita do modo de falha nº 2, e é por
+aqui que as claims da C20 que a etiqueta esqueceu entram.
+
+**Tópico forçado não ganha afins**, e a assimetria é a razão de a afinidade
+existir: ela conserta a etiqueta quando o ROTEADOR está adivinhando a gaveta;
+quando um humano digita `--topic cinto`, ele não está adivinhando. Medido:
+`cinto` tem 54 claims declaradas, e com 60 afins junto o par F001-83/F001-84 (as
+duas dimensões do regulamento IPF, tier O, tipadas) caía para 64º e 67º.
+
+---
+
+## 12. OS DOIS CASOS QUE MORDEM
+
+### 12.1 A pergunta que não mapeia para tópico nenhum
+
+**Dizer isso é melhor que devolver lixo** — e há **duas** maneiras de não mapear,
+que mandam consertos opostos. É a mesma distinção `vazio` × `pobre` do §3.5, um
+nível acima, e a `MEDICAO-02` §2.2 mediu que confundi-las custa uma rodada de
+aquisição inteira.
+
+```
+$ node research/tools/check-evidence.mjs --pergunta "qual a capital da França?"
+  palavras de assunto: capital franca
+  ⚠  2 NÃO existe(m) em claim nenhuma: capital, franca
+
+  ⚠  ESTA PERGUNTA NÃO MAPEIA PARA NENHUM DOS 74 TÓPICOS.
+     FORA DE DOMÍNIO: nenhuma palavra de assunto desta pergunta aparece em
+     claim nenhuma. A base não fala disto, e dizer isso é a resposta certa.
+```
+
+```
+$ node research/tools/check-evidence.mjs --pergunta "quem ganhou o Oscar de melhor filme?"
+  ⚠  ESTA PERGUNTA NÃO MAPEIA PARA NENHUM DOS 74 TÓPICOS.
+     SEM ASSUNTO: as palavras existem na base, mas nenhuma DISTINGUE um tópico
+     — são palavras que aparecem em todo lugar. Reescreva a pergunta com o
+     substantivo do assunto (o exercício, a variável, o equipamento), ou use
+     --topic <tópico> para escolher a gaveta você mesmo.
+
+     os mais próximos, TODOS abaixo do piso de 0.65:
+       bulking                  0.61  (ganhou)
+       …
+     ISTO NÃO É "A BASE NÃO TEM". É "esta pergunta não achou a gaveta".
+```
+
+A última linha é deliberada: **a recusa do roteamento nunca pode ser lida como
+lacuna de conteúdo**, que é o erro que a `MEDICAO-02` orçou uma rodada contra.
+
+**O piso é 0,65, e ele é julgamento com a medição ao lado.** As duas populações
+que o fixam moram no `ROTAS.json` — 25 perguntas na voz do atleta que **têm** de
+mapear, 10 que **não podem** —, e foram escritas **antes** de o piso ter valor.
+`check-rotas.mjs` roda as duas a cada execução e reporta a margem:
+
+```
+ℹ  calibração do piso: 25 perguntas de dentro (menor score 0.72) × 10 de fora (maior 0.61)
+```
+
+**A margem é estreita de um lado só, e está escrita para não ser confundida com
+folga**: o pior caso de fora é *"quem ganhou o Oscar de melhor filme?"*, porque
+`ganhou` é palavra desta base (ganhar peso, ganhar massa). Se as duas populações
+se cruzarem, o checker **recusa** com a mensagem certa: *não existe piso que
+separe as duas; o roteamento precisa de sinal NOVO, não de um número diferente.*
+
+E **a trava não sabe qual é o piso**: ela afirma *"toda pergunta de dentro mapeia,
+nenhuma de fora mapeia"*, que é a coisa que se quer verdadeira. Mover o piso para
+qualquer lado quebra um dos dois lados.
+
+### 12.2 A pergunta que mapeia para tópico grande demais
+
+`agacho` tem **990**. Três coisas saem na tela, e nenhuma é "confie no rank":
+
+1. **o tamanho, ao lado do nome** (`← GRANDE`), porque ver 40 de 990 não é ver o
+   assunto;
+2. **a gaveta INTEIRA como comando**, com a nota `(cabe numa leitura)` quando o
+   tópico é pequeno. Para `cinto` (54) **ver tudo é estritamente melhor que
+   ranquear**;
+3. **o estreitamento que de fato funciona**: entre as claims que a pergunta
+   puxou, quais **outros** tópicos aparecem junto — com o comando pronto.
+   **Cruzar dois tópicos é filtro de conjunto, verificável — não mais uma
+   palavra.**
+
+E a ordenação interna usa raridade recontada **dentro** do tópico, mais o peso da
+rota **ao quadrado** da razão para o primeiro colocado: um segundo tópico com
+70 % do score contribui com 49 %, um com 40 % contribui com 16 %. Isso admite o
+tópico secundário (recall) sem deixá-lo disputar o topo da tela (precisão).
+Linear, o quarto tópico de uma lista empatada empurrava claim de outro assunto
+para o 1º lugar — **que é o defeito de 09/08 com outra roupa**.
+
+---
+
+## 13. A PROVA — contra os casos MEDIDOS, com o comando e a saída
+
+Posições medidas em 10/08/2026 contra as 6.912 claims. `lista` é a lista roteada
+(40 na tela: 8 inteiras + índice); `param` é o canal do nome do param (12 na
+tela); `ao lado` é a página ao lado.
+
+### 13.1 Q05 — `six times` × `six days a week`
+
+```
+$ node research/tools/check-evidence.mjs --pergunta "posso supinar seis vezes por semana?"
+
+  ROTEOU PARA 2 de 74 tópicos do vocabulário FECHADO:
+
+     frequencia  ·  score 1.99  ·  245 claims etiquetadas  ← GRANDE
+         0.81  semana                       em 124 das 245 claims do tópico, 669 na base
+         0.50  vezes por semana             VOCABULARIO.md
+         0.46  vez                          em 66 das 245 claims do tópico, 315 na base
+         0.14  supinar → supino             em 45 das 245 claims do tópico, 557 na base
+
+     supino  ·  score 1.83  ·  694 claims etiquetadas  ← GRANDE
+         1.25  supinar → supino             em 429 das 694 claims do tópico, 557 na base
+         0.90  supino                       nome do tópico
+   …
+   4º  frequencia + supino
+      V170-34  R170@07:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+        A chave para o supino é seis dias por semana ou outra frequência alta, bem
+        submáximo, alto volume, mais muito trabalho acessório de hipertrofia.
+        params: freq_supino=6 dias/semana [x_semana]
+        condições: V170-36, V170-44
+```
+
+**V170-34 em 4º, V175-53 em 7º.** A pergunta nunca disse `six`, `days` nem
+`week` — disse *"supinar seis vezes por semana"*. E as duas `conditions` que
+desarmam V170-34 saem junto, que é o caso canônico do `SCHEMA.md`.
+
+### 13.2 Q16 — o ciclo, e o par `ciclo`/`cycle` sem dicionário
+
+```
+$ node research/tools/check-evidence.mjs --pergunta "quanto tempo deve durar um ciclo de treino?"
+
+     periodizacao  ·  score 1.01  ·  332 claims etiquetadas  ← GRANDE
+         0.53  ciclo                        em 90 das 332 claims do tópico, 250 na base
+         0.50  ciclo de treino              VOCABULARIO.md
+         0.14  treino                       em 55 das 332 claims do tópico, 465 na base
+```
+
+**V070-20 em 1º, V125-07 em 7º, V108-08 em 14º.** Os três dentro da tela.
+
+**V125-07 é o caso que o §8.1 declarava inalcançável** — *"16 semanas é a duração
+ótima de um ciclo de treino"*, com `param duracao_ciclo=16`. Pela porta livre ela
+saía em **60º** a partir de `training cycle length`, fora do teto de 40, e o §8.1
+escreveu, com todas as letras, que *"a ferramenta não fecha este caso"*. **Ela
+está fechada.** O que a fecha não é vocabulário novo: é a gaveta.
+
+### 13.3 Q19 — doze ids depois, no mesmo vídeo
+
+```
+$ node research/tools/check-evidence.mjs --pergunta "quantas séries por músculo por semana?"
+
+  ROTEOU PARA 5 de 74: proximidade-da-falha(132), frequencia(245), series-reps(367),
+                       hipertrofia(355), volume(750)
+```
+
+**V010-13 em 25º**, dentro da tela, no índice compacto. A `ONDA-2B` §10 registrou
+este caso como *"destravado, frágil"* pela porta livre; aqui ele é estrutural — a
+claim mora nas gavetas que a pergunta abriu.
+
+**E é o caso que mostra por que a cobertura não pode ser trava estreita:** com
+piso de cobertura valendo para todo canal, esta pergunta roteava para `taper` (só
+`semana` casou) e para `descanso-entre-series` (só `serie`), e os dois ocupavam
+as vagas de `hipertrofia` e `volume` — onde V010-13 mora. Coincidência de uma
+palavra não é assunto; nome de gaveta é.
+
+### 13.4 Q11 — o filtro de segurança, e a formulação REALISTA
+
+A `ONDA-2B` §10 registrou que a Q11 na formulação realista devolvia **zero** de
+V033-03/04/05 pela porta livre, e que o C19 só passava porque a busca cega dele
+(`2 a 3%`) **já contém a resposta** — *nenhum agente digita `2 a 3%` sem já saber
+o número*.
+
+```
+$ node research/tools/check-evidence.mjs --pergunta "quanto baixar o peso quando o RPE vem acima do alvo?"
+
+  O NOME DO DADO, NÃO A PROSA — 20 claim(s) têm `param` cujo NOME contém
+  duas ou mais palavras da sua pergunta.
+
+    V033-04   PESSOAL fato    aula   No agacho e no terra ele fica na ponta alta dessa faixa, 3% por RPE.
+                                     [peso_por_rpe=3]   ← nomeia: peso + rpe
+    V033-03   PESSOAL fato    aula   Para ele, subir 1 RPE na barra corresponde a cerca de 2 a 3% de peso.
+                                     [delta_rpe=1 peso_por_rpe_min=2 peso_por_rpe_max=3]   ← nomeia: peso + rpe
+
+  A PÁGINA AO LADO — 20 claim(s) adjacentes, no MESMO vídeo, ao que já saiu acima.
+
+    V033-05   PESSOAL fato    aula   Para ele, que agacha e puxa 800 lb, 3% equivale a cerca de 25 lb.
+                                     [pct_por_rpe=3 carga_referencia=800 equivalente_kg_lb=25]   ← ao lado de V033-04
+```
+
+**As três, sem que a pergunta contenha o número.** V033-03 em 12º e V033-04 em
+10º **no canal de param**; V033-05 **pela página ao lado**. Nenhuma delas sai
+pela lista roteada — o assunto delas é `rpe`, mas o que as identifica é o **nome
+do dado**, não a prosa.
+
+E a razão de fundo continua valendo, impressa em toda saída roteada: **nenhum
+filtro de `modo`/`scope`/`tier` é aplicado no roteamento.** As três são
+`PESSOAL` + `fato`. Filtro de segurança estreita a SAÍDA, não a busca.
+
+### 13.5 O C20, que a camada de ontem não resolvia
+
+```
+$ node research/tools/check-evidence.mjs --pergunta "quanto descansar entre as séries?"
+  ROTEOU PARA 1 de 74: descanso-entre-series (12 claims)  (cabe numa leitura)
+```
+
+**V074-23 em 6º, V038-07 em 16º, V074-10 em 20º** — e duas delas **não estão
+etiquetadas** no tópico (§11.4). Pela porta livre, esta pergunta devolvia só
+G015-11, `relato-de-programa` do GZCLP.
+
+**C20 continua vermelho pela porta velha** e por isso continua em
+`CANARIOS-CANDIDATOS.json`, fora do `check:kb`, como manda a regra: canário
+vermelho de nascença dentro do build é como se desliga uma trava. O caso está
+fechado **pela porta nova**, e é o T05 do `ROTAS.json` que o cobra.
+
+### 13.6 Q14 — o caso que o §8.4 recusou virar canário
+
+```
+$ node research/tools/check-evidence.mjs --pergunta "qual profundidade o agacho precisa ter para valer na competição?"
+  ROTEOU PARA 3 de 74: profundidade(87), agacho(990), competicao(457)
+```
+
+**G029-28 em 8º** (era 22º) e **G027-31 em 19º** (era 49º). **G029-18 continua
+fora**, e não vou fingir que não. O §8.4 diagnosticou este caso como *"tópico
+errado, não vocabulário"* — o diagnóstico estava certo, e é por isso que dois dos
+três subiram. O terceiro é dívida, registrada no §16.
+
+---
+
+## 14. AS TRAVAS — e as duas regras de higiene, cumpridas e conferidas
+
+### 14.1 `research/kb/ROTAS.json` + `research/tools/check-rotas.mjs`
+
+14 canários sobre a **base real**, dentro do `npm run check:kb`, em três famílias
+que apontam em direções **opostas**:
+
+| família | quantos | o que cobra |
+|---|---|---|
+| `mapeia` | 9 | **recall** — a pergunta abre as gavetas NOMEADAS e os ids saem dentro do teto |
+| `sem-injecao` | 3 | **precisão** — ids de outro assunto **não** podem aparecer |
+| `nao-mapeia` | 2 | **recusa** — e com o `motivo` certo, porque `fora-de-dominio` e `sem-assunto` mandam consertos opostos |
+
+`--rotas <arquivo>` existe para que **um conjunto de canários escrito por outra
+pessoa, que este autor nunca viu, possa ser rodado sem tocar em código**. É a
+única forma honesta de medir alcance: canário escrito por quem fez a ferramenta
+mede a ferramenta contra si mesma.
+
+### 14.2 Regra 1 — nenhuma trava lê a constante que ela verifica
+
+**Violada em dois lugares, consertada nos dois.**
+
+- **`check-rotas.mjs` não importa constante nenhuma de `roteador.mjs`** — só
+  funções. O teto é `tetoDeTela`, campo do `ROTAS.json`, e **a ausência dele é
+  ERRO**, não um default silencioso vindo da ferramenta (que seria a mesma trava
+  com uma linha a menos).
+- **`check-canarios.mjs` importava `TETO_VIZINHANCA` de `busca.mjs`** — a
+  ferramenta que ele mede — e o escrevia na mensagem de falha. Corrigido:
+  `tetoDeTela` passou a morar no `CANARIOS.json` (no topo, com override por
+  `buscaCega.tetoDeTela`), a ausência é erro, e `check-canarios.test.mjs` ganhou
+  **três casos que neutralizam os dois lados**: um exige a recusa quando o campo
+  some, e dois exigem que **o número impresso seja o do arquivo** (1, 7 e 3 —
+  nunca 40).
+
+**Conferido neutralizando os dois lados**, que é a instrução do `ONDA-2B` §1.1:
+
+| mutação | antes de 10/08 | agora |
+|---|---|---|
+| `TETO_VIZINHANCA 40 → 400` em `busca.mjs` | `check:kb` **verde** | **inerte** — o checker não lê mais essa constante |
+| `tetoDeTela 40 → 5` no `CANARIOS.json` | (campo não existia) | **C16 e C18 vermelhos**, com `dentro das 5 primeiras` na mensagem |
+| `tetoDeTela` removido | (campo não existia) | **exit 2**, com a mensagem que nomeia o defeito |
+
+### 14.3 Regra 2 — teste sobre corpus sintético não prova recuperação
+
+`roteador.test.mjs` é dividido **explicitamente**: a primeira metade testa as
+peças sobre um corpus de bolso (um teste de peça precisa de um corpus cujo
+conteúdo ele conheça exatamente); **a segunda metade chama `responder()` — a
+mesma função da CLI e do `check-rotas.mjs` — sobre `research/extract/*.jsonl`**,
+e afirma coisas que só são verdadeiras se o caminho inteiro estiver ligado.
+46 casos, e **nenhum número esperado é importado de `roteador.mjs`**.
+
+### 14.4 A família `sem-injecao` quase virou vaga ocupada — e o que se fez
+
+Isto é o achado mais desconfortável desta rodada e ele fica escrito.
+
+**Rodei 14 mutações contra `roteador.mjs`** — teto, piso, fração, `MAX_TOPICOS`,
+afinidade, `TETO_AFINS`, canal de param, peso do nome, cobertura, peso da rota ao
+quadrado, e combinações. **Nenhuma delas fez T09/T10/T11 acusarem.** As
+regressões que existem aparecem como **perda de recall na família `mapeia`**:
+
+| mutação | quem mordeu |
+|---|---|
+| `MIN_PECAS_DO_PARAM 2 → 9` (canal de param desligado) | T04 |
+| `TETO_AFINS 60 → 0` (afinidade desligada) | T05 |
+| `PESO_NOME 0.9 → 0` | T08 |
+| cobertura desligada (`score` = soma pura) | T03 |
+| `PESO_AFIM 0.6 → 1` + `TETO_AFINS 600` | T05 |
+| peso da rota linear em vez de ao quadrado, **+** `FRACAO 0,05` **+** `MAX 20` | T02, T05 |
+| tudo junto | T01, T02, T05 |
+| `PISO_ROTA 0.65 → 0.2` | **calibração** (duas perguntas de fora mapearam) |
+| `vizinhos = []` (página ao lado desligada) | T04 **e** 2 casos de `roteador.test.mjs` |
+| `TETO_ROTEADO 40 → 400`; `FRACAO 0.4 → 0.05`; `PESO_AFIM 0.6 → 0`; peso linear sozinho | **ninguém** |
+
+A razão de T09/T10/T11 não morderem é estrutural e é boa notícia: **o roteamento
+não chama `expandirPorVocabulario`**, então a injeção de 09/08 é impossível pela
+porta nova. Só que o defeito **continuava vivo do outro lado** — e nada o media:
+
+```
+$ sed -i '' 's/longas.every/longas.some/' research/tools/busca.mjs
+$ npm run check:kb     # → exit 0, VERDE, com V170-34 de volta ao topo de "sono"
+```
+
+**Um canário que nenhuma mutação faz morder ocupa a vaga.** O conserto foi fazer
+a família cobrar **as duas portas**: campo `tambemPelaBuscaLivre` no `ROTAS.json`,
+e os mesmos `proibidos` passam também por `recuperar()`, que é o que `--busca`
+usa. Depois disso:
+
+```
+✗ rota T09: PRECISÃO REGREDIU NA BUSCA LIVRE — --busca "quantas horas de sono por
+  semana?" devolveu V170-34, V170-33, V175-53, que é de outro assunto.
+✗ rota T10: … "quando fazer deload na semana?" devolveu V170-34, V170-33 …
+✗ rota T11: … "quantas calorias por dia na semana de corte de peso?" devolveu … 
+✗ 3 problema(s) em 14 canário(s) de roteamento
+```
+
+Revertida a mutação, os 14 voltam a verde. **É o item §2 do `ONDA-2B` fechado —
+não pela família nova que aquele item propôs, e sim no lugar onde o defeito de
+fato mora.**
+
+**O que continua sem trava, e está escrito para não ser esquecido:** quatro
+mutações da tabela acima passam verdes. Três delas afrouxam o roteamento sem que
+nenhum id errado apareça (medido: com `FRACAO 0,05` e `MAX 20`, *"quantas horas
+de sono por semana"* roteia para 10 tópicos e **ainda assim** não devolve
+V170-34, porque o peso ao quadrado reduz `frequencia` a 4,6 % de contribuição).
+`TETO_ROTEADO 40 → 400` é inerte por construção (regra 1). **Isto não é prova de
+que não há um quinto buraco.**
+
+---
+
+## 15. AS DUAS PORTAS, e qual se abre primeiro
+
+| | `--pergunta` (10/08) | `--grep` / `--busca` (09/08) |
+|---|---|---|
+| resolve | pergunta → **tópico** → claims | pergunta → **texto** |
+| alvo | **fechado**, 74 nomes | aberto, 6.912 textos |
+| erro | **recusado por compilador** | resultado ruim que passa por bom |
+| use para | *"do que a base fala quando eu pergunto isto?"* | *"quem diz exatamente isto?"* |
+| trava | `check-rotas.mjs` (14) + `roteador.test.mjs` (46) | `check-canarios.mjs` (19) + `busca.test.mjs` (35) |
+
+**As duas continuam existindo, e isso não é indecisão.** `--grep` é o instrumento
+certo para conferir uma citação, e é o que os canários `presente-escondido` usam
+como busca cega — eles precisam da busca **literal** que a medição registrou. A
+mudança é qual porta um agente abre primeiro para responder ao atleta, e a
+resposta é: **a nova**.
+
+O protocolo do §5 continua valendo inteiro, com uma linha na frente:
+
+> **0. Comece por `--pergunta`.** Se ela não mapear, leia qual das duas recusas
+> saiu antes de escrever qualquer coisa: `fora-de-dominio` e `sem-assunto`
+> mandam consertos opostos, e nenhuma das duas é *"a base não tem"*.
+
+---
+
+## 16. O QUE A CAMADA NOVA **NÃO** RESOLVE — medido em 10/08
+
+1. **G029-18 (Q14) continua fora da tela.** Dois dos três subiram (§13.6); o
+   terceiro não. O `## tecnica` e o `## setup` continuam sem seção no
+   `VOCABULARIO.md`, e a dívida do §8.4 continua aberta.
+2. **A margem do piso é de 0,11, e estreita de um lado só.** `ganhou` é palavra
+   desta base. Uma pergunta de fora escrita com mais palavras ambíguas pode
+   atravessar. O que existe contra isso é a calibração de 25 × 10 rodada a cada
+   `check:kb`, e ela **recusa** quando as duas populações se cruzam — o que é
+   melhor que um número diferente, mas não é uma prova.
+3. **A afinidade admite 60 claims não etiquetadas por tópico.** É o que conserta
+   a etiqueta esquecida (V038-07) e é, por construção, uma porta lateral. Ela sai
+   marcada `(afim)` na tela e vale 0,6 — mas quem lê depressa vai ler `afim` como
+   `declarado`.
+4. **O roteamento não conhece `conditions`.** Ele acha V170-34; o que a torna
+   segura para este atleta são as `conditions` (V170-36, V170-44) e o `modo`, que
+   o formatador imprime **sempre**. **O determinismo desta camada prova fidelidade
+   à recuperação, não correção da fonte.** V170-34 continua sendo *"supine seis
+   dias por semana"* dito por um homem que não compete testado, para um atleta com
+   o peitoral rompido há quatro meses.
+5. **Não existe estimativa de recall na base inteira.** Para tê-la seriam
+   precisos muito mais que 14 pares (pergunta, ids corretos). **Este documento
+   prova que os buracos conhecidos fecharam. Ele não prova que não há um quinto.**
+6. **Quatro mutações passam verdes** (§14.4). Os números que elas mexem não são
+   cobrados por canário nenhum hoje.
+
+---
+
+## 17. Procedência da PARTE II
+
+- **Arquivos novos:** `research/tools/roteador.mjs`,
+  `research/tools/roteador.test.mjs` (46 casos, metade sobre a base real),
+  `research/tools/check-rotas.mjs`, `research/kb/ROTAS.json` (14 canários + as
+  duas populações de calibração).
+- **Arquivos alterados:** `research/tools/check-evidence.mjs` (`--pergunta`,
+  `--topic` forçado, a seção da página ao lado), `research/tools/busca.mjs`
+  (`vizinhosNoMesmoSrc` extraída e compartilhada pelas duas portas, com os dois
+  defeitos de seleção consertados), `research/tools/check-canarios.mjs` e
+  `research/kb/CANARIOS.json` + `CANARIOS-CANDIDATOS.json` (`tetoDeTela` deixou
+  de ser importado da ferramenta), `research/tools/check-canarios.test.mjs`
+  (3 casos novos, 45 no total), `package.json` (`check:kb` encadeia
+  `roteador.test.mjs` e `check-rotas.mjs`), este arquivo.
+- **Base no momento:** **6.912 claims**, **74 tópicos**, contados por
+  `check-claims.mjs` e `carregarTopicos(PROTOCOLO-EXTRACAO.md)`. Nenhum número
+  desta parte veio de memória.
+- **As mutações do §14.4** foram aplicadas, medidas e **revertidas** nesta
+  sessão, uma a uma, com `check:kb` verde antes e depois.
+- **`npm run check:kb`:** verde, exit 0 — 19 canários de conteúdo + **14 de
+  roteamento** (9 mapeia · 3 sem-injecao · 2 nao-mapeia), 73 termos vivos e 26
+  mortos no índice, 45 casos em `check-canarios.test.mjs`, 46 em
+  `roteador.test.mjs`. **`npm run build`:** verde, exit 0. `eslint` limpo.
+- **O que NÃO foi feito:** `AVALIACAO.md` continua **intocado** — o instrumento
+  fica estável para a terceira medição. Nenhuma claim foi editada, nenhuma fonte
+  foi ingerida, nenhum tópico foi acrescentado ao vocabulário fechado. Este
+  trabalho é inteiramente de recuperação.

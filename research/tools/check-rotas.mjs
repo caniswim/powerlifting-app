@@ -41,6 +41,25 @@
  *                 aparecer. Cobra precisão, que é o que nada media em 09/08 e
  *                 que já regrediu a zero uma vez.
  *
+ * ─────────────────────────────────────────────────────────────────────────────
+ * E A FAMÍLIA `sem-injecao` COBRA AS DUAS PORTAS, PORQUE O DEFEITO MORA NA VELHA
+ *
+ * Medido em 10/08/2026, e é a razão de o campo `tambemPelaBuscaLivre` existir:
+ * o roteamento **não chama** `expandirPorVocabulario`, então a injeção de 09/08
+ * é estruturalmente impossível pela porta nova. Rodadas 14 mutações contra
+ * `roteador.mjs` — teto, piso, fração, afinidade, canal de param, peso ao
+ * quadrado, tudo — e **nenhuma** delas conseguiu fazer T09/T10/T11 acusarem: as
+ * regressões que existem aparecem como perda de RECALL na família `mapeia`.
+ *
+ * Um canário que nenhuma mutação faz morder é um canário que ocupa a vaga. E o
+ * defeito que ele foi escrito para pegar continua vivo do outro lado: trocar
+ * `longas.every` por `longas.some` em `busca.mjs:555` reinjeta V170-34 —
+ * *supinar seis dias por semana* — nas três perguntas, e o `npm run check:kb`
+ * inteiro passava verde.
+ *
+ * Então os `proibidos` são cobrados **também contra `recuperar()`**, que é a
+ * porta que `--busca` usa. Um campo do JSON liga isso, não uma constante daqui.
+ *
  * Uso:
  *   node research/tools/check-rotas.mjs [--rotas <arquivo>] [--extract <dir>] [--verbose]
  *
@@ -54,7 +73,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { carregarTopicos, carregarClaims } from './kb.mjs';
-import { indexar, carregarVocabulario } from './busca.mjs';
+import { indexar, carregarVocabulario, recuperar } from './busca.mjs';
 import { responder, perfilarTopicos, rotasValidas } from './roteador.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -94,7 +113,7 @@ const MOTIVOS = new Set(['fora-de-dominio', 'sem-assunto']);
  */
 const CAMPOS = new Set([
   'id', 'familia', 'pergunta', 'porque', 'topicos', 'sustenta', 'proibidos',
-  'motivo', 'tetoDeTela', 'forcaTopico', 'nota',
+  'motivo', 'tetoDeTela', 'forcaTopico', 'nota', 'tambemPelaBuscaLivre',
 ]);
 
 const erros = [];
@@ -238,8 +257,44 @@ for (const caso of doc.casos ?? []) {
     );
   }
 
+  /**
+   * A MESMA PROIBIÇÃO, PELA PORTA VELHA — e é onde o defeito de 09/08 mora.
+   *
+   * `recuperar()` é o que `--busca` chama, com `piso: Infinity` (que é como a
+   * CLI liga a vizinhança para uma pergunta em linguagem natural). É ele que
+   * expande pelo `VOCABULARIO.md`, e é a expansão que injetava. O roteamento
+   * não usa esse caminho, então sem esta cobrança a família `sem-injecao` fica
+   * verde para sempre e não mede nada.
+   */
+  let injetadosLivre = [];
+  if (caso.tambemPelaBuscaLivre) {
+    if (!(caso.proibidos ?? []).length) {
+      erros.push(`${onde}: "tambemPelaBuscaLivre" sem "proibidos" — não há o que cobrar`);
+      linha.ok = false;
+    }
+    const rl = recuperar(claims, {
+      grep: caso.pergunta, piso: Infinity, teto, idx: INDICE, vocabulario: VOCAB,
+    });
+    injetadosLivre = (caso.proibidos ?? []).filter((i) => rl.idsMostrados.has(i));
+    if (injetadosLivre.length > 0) {
+      linha.ok = false;
+      erros.push(
+        `${onde}: PRECISÃO REGREDIU NA BUSCA LIVRE — --busca "${caso.pergunta}" devolveu `
+          + `${injetadosLivre.join(', ')},\n`
+          + '        que é de outro assunto. Este é o defeito medido em 09/08 e consertado no mesmo\n'
+          + '        dia em busca.mjs (`longas.every`, expandirPorVocabulario): uma seção do índice\n'
+          + '        disparava quando UMA palavra de 4+ letras casava, e `semana` está em toda\n'
+          + '        pergunta. A porta nova (--pergunta) não passa por aí; a velha passa, e é ela\n'
+          + '        que este canário cobra. Não reescreva o canário — reverta a regressão.',
+      );
+    }
+  }
+
   linha.detalhe = [
     `${roteados.length} tópico(s)`,
+    caso.tambemPelaBuscaLivre
+      ? (injetadosLivre.length ? `${injetadosLivre.length} injetado(s) na busca livre` : 'busca livre limpa')
+      : null,
     (caso.sustenta ?? []).length ? `${(caso.sustenta ?? []).length - faltandoId.length}/${(caso.sustenta ?? []).length} ids` : null,
     (caso.proibidos ?? []).length ? `${(caso.proibidos ?? []).length} proibido(s) fora` : null,
   ].filter(Boolean).join('  ');

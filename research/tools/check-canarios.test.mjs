@@ -68,9 +68,20 @@ const canario = (extra) => ({
   ...extra,
 });
 
-function roda(canarios) {
+/**
+ * O `tetoDeTela` é DADO do arquivo de canários, não constante de `busca.mjs` — e
+ * este harness escreve 40 à mão, LITERAL, sem importar nada da ferramenta. É a
+ * regra de higiene do `ONDA-2B.md` §1.1: até 10/08/2026 o checker importava
+ * `TETO_VIZINHANCA` da própria ferramenta que ele mede, e trocar 40 por 400
+ * deixava `npm run check:kb` inteiro verde.
+ *
+ * `topo` permite a um caso omitir ou mudar o campo, que é o que fixa os dois
+ * lados: um caso exige a RECUSA quando ele falta, e outro exige que o número
+ * cobrado seja o do arquivo e não o da ferramenta.
+ */
+function roda(canarios, topo = { tetoDeTela: 40 }) {
   const f = join(dir, `canarios-${Math.random().toString(36).slice(2)}.json`);
-  writeFileSync(f, JSON.stringify({ gerado: '2026-08-09', canarios }, null, 1));
+  writeFileSync(f, JSON.stringify({ ...topo, gerado: '2026-08-09', canarios }, null, 1));
   try {
     return { passou: true, saida: execFileSync('node', [CHECKER, '--extract', dir, '--canarios', f, '--verbose'], { encoding: 'utf8', stdio: 'pipe' }) };
   } catch (err) {
@@ -347,6 +358,61 @@ const CASOS = [
     ],
     esperado: /id duplicado/,
   },
+  // ── o teto de tela é DADO do arquivo, e os dois lados são cobrados ────────
+  //
+  // ONDA-2B §1.1: até 10/08/2026 o checker importava `TETO_VIZINHANCA` de
+  // `busca.mjs` — a ferramenta que ele mede — e trocar 40 por 400 deixava o
+  // `check:kb` inteiro verde. Os dois casos abaixo neutralizam os DOIS lados,
+  // que é a instrução literal do item: um cobra a recusa quando o número some
+  // do arquivo, o outro prova que o número IMPRESSO é o do arquivo.
+  {
+    nome: 'arquivo de canários sem tetoDeTela é recusado — o teto não pode vir da ferramenta',
+    topo: {},
+    canarios: [canario({ vazio: { descricao: 'tier L', filtro: { tier: 'L' } } })],
+    esperado: /falta "tetoDeTela" no topo/,
+  },
+  {
+    // O alvo é de outro vídeo e não compartilha raiz nenhuma com a busca cega:
+    // a recuperação não o alcança em teto nenhum. O que estes dois casos medem
+    // não é o alcance — é o NÚMERO IMPRESSO na mensagem, que tem de ser o do
+    // arquivo. Se voltar a sair 40 quando o arquivo diz 1, o checker voltou a
+    // ler a constante de `busca.mjs`.
+    nome: 'o teto cobrado é o do arquivo (1), não o default de busca.mjs (40)',
+    topo: { tetoDeTela: 1 },
+    canarios: [canario({
+      familia: 'presente-escondido',
+      sustenta: ['V900-01'],
+      frases: ['agacha ereto demais'],
+      buscaCega: { descricao: 'busca de outro assunto', termos: ['treadmills'] },
+    })],
+    esperado: /dentro das 1 primeiras/,
+  },
+  {
+    // O mesmo canário com outro número no arquivo. Dois valores diferentes,
+    // duas mensagens diferentes: é a prova de que o número vem de fora.
+    nome: 'o mesmo canário com tetoDeTela 7 imprime 7',
+    topo: { tetoDeTela: 7 },
+    canarios: [canario({
+      familia: 'presente-escondido',
+      sustenta: ['V900-01'],
+      frases: ['agacha ereto demais'],
+      buscaCega: { descricao: 'busca de outro assunto', termos: ['treadmills'] },
+    })],
+    esperado: /dentro das 7 primeiras/,
+  },
+  {
+    // E o override por canário, que é o que o T14 do ROTAS.json usa para a
+    // gaveta que cabe inteira na tela.
+    nome: 'buscaCega.tetoDeTela sobrescreve o do topo',
+    topo: { tetoDeTela: 40 },
+    canarios: [canario({
+      familia: 'presente-escondido',
+      sustenta: ['V900-01'],
+      frases: ['agacha ereto demais'],
+      buscaCega: { descricao: 'busca de outro assunto', termos: ['treadmills'], tetoDeTela: 3 },
+    })],
+    esperado: /dentro das 3 primeiras/,
+  },
 ];
 
 console.log('\nTeste do recontador de canários');
@@ -354,7 +420,7 @@ console.log(`  base de bolso: ${BASE.length} claims sintéticas\n`);
 
 let falhas = 0;
 for (const caso of CASOS) {
-  const r = roda(caso.canarios);
+  const r = roda(caso.canarios, caso.topo ?? { tetoDeTela: 40 });
   if (caso.aprova) {
     if (r.passou) console.log(`  ✓ ${caso.nome}`);
     else {

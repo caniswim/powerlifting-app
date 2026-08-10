@@ -611,9 +611,33 @@ mesmo vídeo e leva ao mesmo lugar. E `--grep doctor|diagnos|MRI|surgeon` contin
   node research/tools/check-evidence.mjs --topic dor --modo prescricao --scope GERAL --limit 0
   ```
 - **Base antes → depois:** 6.909 → **6.912** claims (tier R 6.766 → **6.769**).
-  `condições registradas` 502 → **511** claims (678 → **701** arestas), sendo o segundo
-  passe (§4.4) 5 claims e 6 arestas — nenhuma claim nova foi criada nele.
+  `condições registradas` 502 → **512** claims (678 → **702** arestas), sendo o segundo
+  passe (§4.4) 5 claims e 7 arestas — nenhuma claim nova foi criada nele.
   `contradições registradas` 31 → **37** claims (40 → **48** arestas).
+
+  > **Estes dois totais já estiveram errados, e o modo de falha é o nº 5 desta casa.** A
+  > versão de 9/8/2026 dizia `511 claims / 701 arestas` e `5 claims e 6 arestas` no segundo
+  > passe. Os dois números foram fechados **antes** de `V138-21` — a quinta do §4.4, achada
+  > ao fechar as outras quatro — entrar, e ninguém recontou depois: `V138-21` acrescenta
+  > exatamente 1 claim e 1 aresta, que é a diferença inteira. A soma do passe também estava
+  > internamente torta, com a quinta contada nas claims (5) e não nas arestas (6 em vez de
+  > 7 — são 2+1+2+1+1). Número escrito à mão em prosa não tem quem o verifique, que é o
+  > oposto do princípio desta base. **Recontagem, e ela é a autoridade sobre as linhas
+  > acima:**
+  >
+  > ```
+  > cat research/extract/*.jsonl | node -e 'let s="";process.stdin.on("data",d=>s+=d)
+  >   .on("end",()=>{let cc=0,ca=0,fc=0,fa=0;for(const l of s.trim().split("\n")){
+  >   if(!l.trim())continue;const c=JSON.parse(l);
+  >   if((c.conditions||[]).length){cc++;ca+=c.conditions.length}
+  >   if((c.conflicts||[]).length){fc++;fa+=c.conflicts.length}}
+  >   console.log("condicoes",cc,"/",ca,"  contradicoes",fc,"/",fa)})'
+  > → condicoes 512 / 702   contradicoes 37 / 48
+  > ```
+  >
+  > Rode antes de citar qualquer um dos quatro. E note o que a recontagem **não** separa:
+  > ela mede a base inteira, e os `G*.jsonl` são de outro dono nesta onda — se o total
+  > subir sem que nenhum `R*.jsonl` desta família mude, a diferença é de lá, não daqui.
 - **`check-canarios.mjs`** continua `5 presente · 5 impossivel · 5 armadilha`, exit 0, e
   passa a imprimir a deriva `total de claims: 6909 → 6912`. **O `baseNoMomento` do
   `CANARIOS.json` NÃO foi atualizado**: aquele bloco registra a base no dia em que os
