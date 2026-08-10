@@ -78,7 +78,6 @@
  *   tópicos é filtro de conjunto — verificável — e não mais uma palavra.
  */
 
-import { readFileSync } from 'node:fs';
 import {
   palavras, raiz, normalizar, indexar, subIndice, buscarRelaxada,
   prosaDaClaim, VAZIAS, vizinhosNoMesmoSrc,
@@ -1112,10 +1111,4 @@ export function assinaturaDoTopico(perfis, topico, n = 14) {
     .filter((x) => x.peso > 0)
     .sort((a, b) => b.peso - a.peso || a.termo.localeCompare(b.termo))
     .slice(0, n);
-}
-
-/** As perguntas de calibração vivem em arquivo, não em código: quem verifica o
- *  piso não pode importar o piso. Ver `research/kb/ROTAS.json`. */
-export function carregarRotas(arquivo) {
-  return JSON.parse(readFileSync(arquivo, 'utf8'));
 }

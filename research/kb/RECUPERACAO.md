@@ -1,5 +1,25 @@
 # RECUPERAÇÃO — a base escondia o que tinha, e o conserto está na ferramenta
 
+> **VEREDITO — 12/08/2026, os dois números, contra 6.912 claims, teto de tela 40.**
+>
+> **No conjunto PÚBLICO (P01–P18, que o construtor enxergava): 8 de 18 devolvem
+> algum id esperado. No conjunto CEGO (B01–B12, escrito depois pelo ataque, que
+> ninguém enxergava): 0 de 12. A distância é 44 pontos percentuais.**
+>
+> **Em 10 dos 12 cegos a gaveta que contém a resposta ABRIU e a resposta não
+> chegou à tela; só B02 e B05 são falha de roteamento. Forçando a gaveta com
+> `--topic`, 9 dos 12 devolvem na hora. O que falta não é roteamento: as 40 vagas
+> da tela são distribuídas pelo ranking global e não por gaveta, então
+> `agacho`(990 claims) leva 39 vagas e `sapato`(18) leva zero.**
+>
+> Os dois números saem separados a cada `node research/tools/check-canarios.mjs`,
+> por conjunto — somá-los imprimiria `8 de 30`, que é a média dos dois e apaga a
+> distância. A próxima onda precisa de um conjunto cego NOVO: B01–B12 estão
+> publicados a partir deste commit e, por isso, queimados.
+
+<details>
+<summary>Veredito anterior — 11/08/2026, medido só no conjunto público</summary>
+
 > **VEREDITO — 11/08/2026, medido pelos canários `presente-escondido` P01–P18 de
 > `research/kb/CANARIOS.json`, contra 6.912 claims, teto de tela 40.**
 >
@@ -26,6 +46,8 @@
 > CORPUS e passa a casá-la contra um **vocabulário de entrada na voz do atleta**
 > — `research/kb/GLOSSARIO-TOPICOS.json`, 74 gavetas, 1.988 termos, consolidado
 > dos oito lotes de `research/kb/entrada/`. Ver **PARTE III (§19)**.
+
+</details>
 
 **Data: 09/08/2026.** Este arquivo é o conserto do modo de falha que a
 `MEDICAO-02.md` mediu, e ele existe porque o conserto que aquele relatório
@@ -1329,8 +1351,22 @@ $ node research/tools/check-evidence.mjs --pergunta "fisgada de 3/10 no peitoral
 
 **`dor` abre.** Ela não abria. E o que a abre é `fisgada` — a palavra que a
 própria ferramenta declara não existir em claim nenhuma, na linha de cima da
-mesma tela. `V079-34` e `V027-23`, duas das cinco claims que carregam o limiar de
-dor, chegam à tela; `V001-06`, `V138-19` e `V086-21` continuam fora. **Isso é o
+mesma tela.
+
+> **CORREÇÃO DE 12/08/2026 — o parágrafo abaixo estava errado, e o erro tinha
+> causa.** Ele dizia *"`V079-34` e `V027-23`, duas das cinco claims que carregam
+> o limiar de dor, chegam à tela"*. **É UMA, não duas.** Medido com o `telaDe()`
+> do próprio `check-canarios.mjs`, que é a definição que o gate usa:
+> **`V079-34` sai em 36º de 40** (linha comprimida do índice, prosa truncada, sem
+> verbatim) e **`V027-23` sai na posição 56 — além do teto de 40.** `V001-06`,
+> `V138-19` e `V086-21` não são recuperadas por canal nenhum. **A causa é a
+> divergência de definição de tela** (RUNBOOK §8.44): o gate mede 40 e o CLI
+> imprime 68, e quem escreveu a frase contou pela tela do CLI. O texto original
+> fica abaixo, riscado, porque apagá-lo apagaria o rastro de que foi afirmado
+> assim — modo de falha nº 5 desta casa, pela quarta vez.
+
+~~`V079-34` e `V027-23`, duas das cinco claims que carregam o limiar de dor,
+chegam à tela; `V001-06`, `V138-19` e `V086-21` continuam fora.~~ **Isso é o
 soterramento, e está registrado como falha aberta no §21.**
 
 Note também de onde vem o `0.80` de `dor`: `peito` e `supino`, as duas gavetas
@@ -1404,13 +1440,51 @@ ordenação.
 2. **O P10** (`com quanto por cento do meu melhor levantamento eu monto as
    porcentagens do treino`) continua sem abrir gaveta nenhuma que contenha a
    resposta — é o único dos sete que sobrou.
-3. **`lesao` não abre na pergunta da fisgada.** Ela fica em 4º, atrás de `peito`,
-   `supino` e `dor`, e as vagas acabam. Como as cinco claims de limiar estão
-   TAMBÉM em `dor`, o custo medido é zero hoje; a assimetria está registrada em
-   `T16.nota` no `ROTAS.json` para não ser confundida com sucesso.
-4. **A base continua sem uma única claim sobre quando uma lesão exige avaliação
+3. **`lesao` não abre na pergunta da fisgada.** Ela fica em 4º com **0,74** —
+   ACIMA do piso de 0,65 — e perde no corte da fração (0,4 × 2,26 = 0,90), atrás
+   de `peito`, `supino` e `dor`. Como as cinco claims de limiar estão TAMBÉM em
+   `dor`, o custo medido é zero hoje; a assimetria está registrada em `T16.nota`
+   no `ROTAS.json` para não ser confundida com sucesso.
+   **Desde 12/08 a tela NOMEIA a gaveta que ficou de fora** (§21.1), então o
+   leitor deixou de precisar deste parágrafo para saber que faltou olhar ali.
+4. **A gaveta que não casou NADA continua invisível às duas portas.**
+   `autorregulacao` etiqueta V001-06 e V138-19 — duas das cinco claims de limiar
+   de dor — e não é nomeada na pergunta da fisgada nem pelo aviso novo, porque
+   não pontuou por conta própria em canal nenhum. É a mesma condição que
+   `rotear()` exige para o bônus de `naoConfundirCom` (*o aviso levanta um
+   candidato, nunca inventa um*), e mudá-la só na tela criaria um segundo
+   critério para divergir do primeiro. Fica aberto e escrito.
+5. **A base continua sem uma única claim sobre quando uma lesão exige avaliação
    presencial.** Isso é conteúdo, não recuperação, e continua sendo o agravante
    mais caro deste corpus (`MEDICAO-02` §6.2).
+
+### 21.1 O aviso da gaveta que não abriu — o que a tela passou a dizer
+
+`rotear()` sempre calculou `candidatos`, e até 12/08/2026 essa lista só era
+impressa no ramo do **"não mapeia"**: quando a pergunta não achava gaveta
+nenhuma, a tela dizia o que quase achou; quando ela achava três de quatro, a tela
+saía **cheia e muda**. É o pior dos dois, é o que o `RUNBOOK.md` §8.37 chamou de
+*"responder com ar de completa"*, e agora a tela imprime:
+
+```
+  ⚠  GAVETAS QUE PONTUARAM E **NÃO** ABRIRAM — a tela abaixo não as inclui.
+     Vagas: 3 de 5 · corte = 40 % do 1º lugar = 0.90 · piso de mapeamento = 0.65
+       lesao                  0.74  acima do piso, perdeu a vaga no corte
+       competicao             0.68  acima do piso, perdeu a vaga no corte  ←  supino declara(m) "não confundir com competicao"
+       ombros                 0.52  abaixo do piso  ←  peito e supino declara(m) "não confundir com ombros"
+     Uma tela cheia não é uma tela completa. Estas gavetas existem e não foram lidas.
+```
+
+**É DIAGNÓSTICO, não recuperação, e a distinção é o que o torna barato:** nenhuma
+claim entra ou sai por causa dele. O bloco vive em `check-evidence.mjs`, não toca
+`responder()` nem `idsMostrados` — que é o que os canários medem —, e a medida
+dos 18 continuou **exatamente** a mesma depois dele (0/8/1/11).
+
+Só entra gaveta que **pontuou sozinha**, e a regra é a mesma do bônus de
+`naoConfundirCom` de propósito. Sem ela vira ruído, e foi medido: `descanso-entre-series`
+declara que se confunde com `sono`, então *quanto descansar entre as séries* — a
+pergunta mais bem roteada desta base, um tópico só, score 3,45 — passava a
+imprimir `sono` como gaveta não lida.
 
 ## 22. AS TRAVAS, E A PROVA POR MUTAÇÃO
 
@@ -1435,7 +1509,15 @@ tópico faltando. Três mutações passavam verdes sem ele.
 
 ### 22.1 A tabela de mutação — comando, e quem ficou vermelho
 
-Cada constante desta camada foi mutada e o `check:kb` rodado. Nenhuma sobreviveu.
+> **CORRIGIDO EM 12/08/2026, por remedição.** A frase que estava aqui era *"Cada
+> constante desta camada foi mutada e o `check:kb` rodado. Nenhuma sobreviveu."*
+> **Ela era falsa nas duas metades.** A tabela abaixo tem 21 mutações e a camada
+> tem 29 constantes; oito nunca foram mutadas, e das mutadas só um dos dois
+> sentidos foi tentado em quase todas. A remedição varreu **as 29, nos dois
+> sentidos — 56 mutações**: **50 ficaram vermelhas e 6 sobreviveram**, e as seis
+> estão nomeadas no §22.2. Nenhuma constante mudou de valor por causa disso; o
+> que mudou foi a frase, que dizia sucesso sem sucesso — o modo de falha nº 5
+> desta casa, escrito no documento que existe para não cometê-lo.
 
 | mutação (em `roteador.mjs` / `glossario.mjs`) | quem ficou vermelho |
 |---|---|
@@ -1491,6 +1573,36 @@ corpus de volta como canal amortecido, ela compra **0,03** de margem (maior de
 fora 0,47 contra 0,50) e nenhum caso depende dela. Está escrito assim, com o
 número, em vez de continuar repetindo a justificativa de quando ela decidia.
 
+### 22.2 A varredura completa — 12/08/2026, as 29 constantes nos dois sentidos
+
+As **29** constantes de `roteador.mjs` e `glossario.mjs` foram zeradas E
+infladas, uma de cada vez, com este subconjunto do `check:kb` rodado a cada
+mutação (subconjunto próprio: vermelho aqui é vermelho no `check:kb` inteiro):
+
+```
+node research/tools/roteador.test.mjs && node research/tools/check-canarios.test.mjs \
+ && node research/tools/build-glossario.mjs --check && node research/tools/check-glossario.mjs \
+ && node research/tools/check-canarios.mjs && node research/tools/check-rotas.mjs
+```
+
+**56 mutações · 50 vermelhas · 6 verdes.** As 50 estão cobertas e não se repetem
+aqui. **As seis que sobreviveram, e é isso que importa:**
+
+| mutação que passou VERDE | o que ela de fato muda, medido |
+|---|---|
+| `DETALHE_ROTEADO 8 → 40` | nada na tela: a tela enche com 40 claims roteadas antes de a página ao lado ser consultada, então focos a mais não cabem. O sentido que morde é o outro, e `8 → 0` fica **vermelho** (T05, T16). |
+| `PESO_NOME_COMPOSTO 1.2 → 12` | nenhum caso travado tem um nome composto disputando vaga; `1.2 → 0` fica **vermelho** (T15). Só o lado de baixo tem canário. |
+| `TETO_PARAM 12 → 120` | o canal de param tem 11 casamentos na maior pergunta travada — o teto nunca corta. `12 → 0` fica **vermelho**. |
+| `FRACAO_DA_PALAVRA_GLOSSARIO 0.6 → 0` | **era o pior dos seis, e foi fechado.** Sem a fração, `powerlift` passa a alcançar `powerbuilding` — os dois assuntos que esta base declara ter opinião oposta um sobre o outro. O teste que existia (`power` não junta `powerlifting`) **não defendia esta constante**: `power` É termo do glossário e o curto-circuito da palavra exata o resolve antes das três condições rodarem. Canário novo em `roteador.test.mjs`, sobre `powerlift`, que não é termo do glossário — a mutação agora fica **vermelha**. |
+| `DIFERENCA_MAXIMA_GLOSSARIO 5 → 99` | continua **sem canário**, e está declarado com o número: sobre as 279 palavras distintas das 91 perguntas travadas, ela muda **3** (`sobre`→`sobrecarregado`, `condicao`→`condicionamento`, `desce`→`descendente`), e as três são ampliações benignas ou corretas. A justificativa que o comentário dá (`power` não casa `powerlifting`) é entregue pelo curto-circuito, não por ela. É uma guarda copiada do lado do corpus — onde `DIFERENCA_MAXIMA 5 → 99` fica **vermelha** — cuja necessidade do lado do glossário não está demonstrada. |
+| `MIN_TERMOS 10 → 0` (`check-glossario.mjs`) | é constante de TRAVA, não de camada: afrouxá-la não pode ficar vermelho, por construção. O sentido que prova que ela está ligada é o outro, e `10 → 20` fica **vermelho** (`barra-baixa` tem 11 termos). |
+
+**O padrão vale mais que a lista: todas as seis sobreviventes são no sentido de
+AFROUXAR.** Apertar sempre foi pego. Um teto que sobe e um piso que desce passam
+porque a camada continua achando o que já achava — e é exatamente assim que uma
+camada apodrece sem nenhum vermelho, que é o que aconteceu com
+`TETO_VIZINHANCA 40 → 400` em 09/08 (§18.3).
+
 ## 23. Procedência da PARTE III
 
 - **Arquivos novos:** `research/kb/GLOSSARIO-TOPICOS.json`,
@@ -1512,3 +1624,167 @@ número, em vez de continuar repetindo a justificativa de quando ela decidia.
 - **Verificação:** `npm run check:kb` exit 0 · `npm run check:gate` exit 0 ·
   `npm run build` exit 0. As 21 mutações da tabela do §22.1 foram aplicadas,
   medidas e revertidas.
+
+### 23.1 O passe de VERIFICAÇÃO de 12/08/2026
+
+O agente que construiu a PARTE III **morreu por falha de harness durante a
+verificação final**, não por defeito do trabalho — então a parte menos confiável
+era justamente a que ele estava rodando. Este passe não reconstruiu nada; ele
+conferiu, e mexeu só onde achou defeito.
+
+- **Conferido e correto, sem alteração:** as 74 gavetas estão no glossário, sem
+  repetido, todo nome dentro da lista fechada, todas com glosa; **114** colisões
+  de termo e **114** regras de desempate, **zero** ambiguidade silenciosa e
+  **zero** regra morta (recontado à mão, fora do `check-glossario.mjs`); os oito
+  lotes estão todos presentes (10+10+9+9+9+9+9+9 = 74). Os quatro números do
+  placar (`0/8/1/11`) batem, um a um, com o que está gravado em
+  `perguntaDoAtleta` nos 18 canários. A Porta A (`--topicos`) existe, está
+  documentada no `_leia` do artefato e cabe num prompt (**84 linhas, ~15 KB**).
+- **Defeito corrigido — a frase do §22.1** que declarava cobertura total de
+  mutação. Ver o aviso lá e a varredura completa no §22.2.
+- **Defeito corrigido — o teste vazio de `power`.** Ele passava pelo
+  curto-circuito da palavra exata e não exercia as constantes que dizia
+  defender; `FRACAO_DA_PALAVRA_GLOSSARIO 0.6 → 0` passava VERDE. Canário novo
+  sobre `powerlift` em `roteador.test.mjs` (61 casos agora, eram 60).
+- **Defeito corrigido — a tela muda.** Ver §21.1.
+- **Código morto removido:** `carregarRotas()` em `roteador.mjs` — exportada,
+  documentada com uma regra de higiene, e **chamada por ninguém**
+  (`check-rotas.mjs` lê o JSON direto) — mais o `readFileSync` que só ela usava;
+  e o import `raiz` em `glossario.mjs`, que nunca foi usado. Nenhum dos dois é
+  pego pelo `npm run lint`: o `eslint.config.js` só cobre `**/*.{ts,tsx}`, então
+  `research/tools/*.mjs` não é lintado. **Isso continua aberto.**
+- **NÃO foi tocado:** ordenação dentro do tópico, valor de constante nenhuma,
+  `GLOSSARIO-TOPICOS.json`, os lotes, `CANARIOS.json`, `ROTAS.json` e as claims.
+
+---
+
+## PARTE V — O ATAQUE CEGO DE 12/08/2026, E O QUE ELE MEDIU
+
+### 24.1 Os dois números, e por que a média é proibida
+
+O terceiro ataque cego desta base escreveu **doze perguntas novas** (B01–B12 em
+`research/kb/CANARIOS.json`, família `presente-escondido`, conjunto
+`cego-2026-08-12`) contra as 6.912 claims, **sem ver a ferramenta e sem ver os
+dezoito canários públicos**. As 21 claims que elas esperam foram achadas por
+busca própria e conferidas uma a uma com `check-evidence.mjs`.
+
+| | público P01–P18 | cego B01–B12 |
+|---|---|---|
+| devolvem **todos** os ids esperados | 0 de 18 | **0 de 12** |
+| devolvem **algum** id esperado | 8 de 18 (44 %) | **0 de 12 (0 %)** |
+| **não** abrem gaveta nenhuma com a resposta | 1 de 18 | **2 de 12** |
+| abrem o `topicoDaResposta` declarado | 11 de 18 | **4 de 12** |
+
+O zero vale pelas **três** definições de tela que esta camada tem: o teto de 40
+do `check-canarios.mjs`, as 68 claims que o CLI de fato imprime, e o bloco de
+detalhe das 8 primeiras. Não é diferença de régua.
+
+**A distância entre 44 % e 0 % é a medida de quanto o conjunto público foi
+absorvido pela construção.** Ela não é ruído de amostra: das 8 públicas que
+passam, apenas **2** sobrevivem a uma paráfrase leve, e a pergunta-vitrine da
+onda do glossário colapsa ao trocar uma única palavra —
+`--pergunta "levantar peso já conta como exercício cardiovascular"` **não abre
+`cardio`**, e `"musculação sozinha já serve de exercício cardiovascular"` não
+mapeia para tópico nenhum (`cardio` em 0,63 contra o piso de 0,65). O conserto
+de 11/08 foi na FRASE, não no conceito.
+
+Por isso `check-canarios.mjs` passou a imprimir o placar **por conjunto** e a
+exigir o campo `conjunto` em todo canário da porta nova: somados, os dois dão
+`8 de 30`, que é a média de 44 % com 0 % e apaga exatamente a quantidade que o
+conjunto cego existe para medir.
+
+### 24.2 O diagnóstico é o oposto do que o zero sugere
+
+**Em 10 dos 12 a camada ABRIU uma gaveta que contém a resposta e a resposta não
+chegou à tela.** Só B02 e B05 são falha de roteamento pura. E o conteúdo está a
+um comando de distância: forçando a gaveta com `--topic`, **9 dos 12 devolvem na
+hora** — B11 com `--topic ordem-exercicio` devolve G014-10 e G016-10; B05 com
+`--topic descanso-entre-series`; B07 com `--topic faixa`; B08 com
+`--topic estagnacao`; B10 com `--topic genetica`; B12 com `--topic sapato`. A
+pergunta da fisgada com `--topic dor` devolve **as cinco** claims do limiar.
+
+**O mecanismo, medido caso a caso:** as 40 vagas da tela são preenchidas pelo
+ranking global, então cada gaveta leva vagas na proporção do próprio tamanho.
+
+```
+B07   competicao(457):36   equipamento(199):4        F001-94 mora em equipamento
+B11   supino(694):26  agacho(990):24  ordem-exercicio(29):1   as DUAS respostas em ordem-exercicio
+B12   agacho(990):39                                          a resposta é de sapato(18)
+B10   progressao(741):36  genetica(45):—                      as duas respostas em genetica
+FISG  peito(31):19  supino(694):33  dor(119):5                as cinco claims em dor
+```
+
+**A doença nº 2 come integralmente o conserto da doença nº 1.** Consertar
+roteamento sem consertar alocação de vagas por gaveta era garantidamente zero, e
+foi. Uma gaveta roteada acima do piso precisa de **vagas garantidas independentes
+do tamanho dela**, e o bloco de detalhe de 8 precisa reservar espaço para a
+gaveta MENOR, não para a maior. Isso é a divergência §8.39 do RUNBOOK, agora com
+o mecanismo medido, e é o item 0 da `ONDA-2C.md`.
+
+### 24.3 O que ficou de pé, dito sem generosidade
+
+- **O roteamento generalizou.** 10 de 12 abrem a gaveta certa em perguntas que
+  ninguém otimizou. O trabalho dos oito agentes que escreveram o vocabulário de
+  entrada leva o atleta à gaveta certa; é o que vem depois que perde.
+- **Fora de domínio, 3 de 3.** Bolo de cenoura, nginx/ssl e embreagem de carro
+  dizem `NÃO MAPEIA` e a camada distingue *fora de domínio* de *sem assunto*.
+- **O índice está certo, pela segunda vez confirmado.** As 21 claims esperadas
+  pelos 12 cegos existem e estão etiquetadas nas gavetas certas. **Não é problema
+  de etiqueta e não é falta de conteúdo** — não compre corpus contra este
+  sintoma.
+- **O painel `GAVETAS QUE PONTUARAM E NÃO ABRIRAM` é instrumento real e fraco:**
+  nomeia uma gaveta que de fato contém a resposta em **2 de 12** (B08
+  `progressao`, B12 `tecnica`) e em **nenhuma** das duas falhas de roteamento. O
+  filtro *"só gaveta que pontuou sozinha"*, que existe para tirar ruído, engoliu
+  o sinal útil em B03 (`mentalidade`) e B09 (`lesao`). Divergência §8.45.
+
+### 24.4 Os dois consertos que este fechamento fez, e o que eles não fazem
+
+**(a) O placar por conjunto** — `check-canarios.mjs`, descrito no §24.1. Campo
+`conjunto` obrigatório na porta nova, dois casos novos em
+`check-canarios.test.mjs` (55 casos agora, eram 53): um exige a recusa quando o
+campo falta, o outro exige que dois conjuntos imprimam dois placares e não a
+média.
+
+**(b) A âncora no corpus** — `check-glossario.mjs`. O ataque provou, contra o
+gate REAL, que **26 das 74 gavetas podiam ter a lista `entrada` inteira
+substituída por dez strings sem sentido com `npm run check:kb` e
+`npm run check:gate` em exit 0** — entre elas `descanso-entre-series`, a gaveta
+cuja falha criou esta camada. Trinta e cinco por cento do artefato desta onda não
+era testado por nada: as travas que existiam conferem FORMA, e forma sobrevive a
+uma lista de lixo. A trava nova confronta cada termo de entrada com o texto das
+claims que a base etiquetou naquela gaveta — dado independente, extraído meses
+antes do glossário. **Piso em 35 %, mediana medida em 92 %, pior gaveta `dor` com
+53 %.**
+
+O piso é baixo de propósito e essa é a parte que não pode ser esquecida: **um
+vocabulário de entrada bom é justamente o que NÃO está no corpus** — `fisgada`
+não aparece em nenhuma das 6.912 claims e é o termo mais importante do arquivo.
+Subir o piso inverteria o propósito do artefato e faria o próximo autor encher a
+lista com jargão da base, que é o modo de falha nº 2 desta casa.
+
+**O que a âncora NÃO pega, dito antes que alguém confie demais:** ela recusa
+lixo, não recusa uma lista de termos reais porém ERRADOS para aquela gaveta.
+Trocar a entrada de `sono` pela de `fadiga` passa. Quem cobra acerto de
+roteamento continua sendo `check-rotas.mjs` e os canários.
+
+**Verificação dos dois:** varredura das 74 gavetas trocando a `entrada` por
+`zzqa`…`zzqj` → **0 de 74 ficam verdes** (eram 26), com o arquivo restaurado byte
+a byte. E o caminho real do ataque, ponta a ponta: mutar `descanso-entre-series`
+em `research/kb/entrada/lote-6.json`, rodar `build-glossario.mjs` e
+`npm run check:kb` → **exit 1**.
+
+### 24.5 O que este fechamento NÃO consertou, e por quê
+
+- **A alocação de vagas por gaveta** (§8.39). É o item 0 da fila e não cabia
+  aqui: mexer nela move a medida dos 30 canários, e a medida acabou de ser
+  gravada. Quem mexer reescreve o registro e diz o número novo em voz alta.
+- **As 5 mutações de constante que ficam verdes** (§8.41), todas no sentido de
+  AFROUXAR: `DETALHE_ROTEADO 8→80`, `DIFERENCA_MAXIMA_GLOSSARIO 5→50`,
+  `MIN_TERMOS 10→0`, `PESO_NOME_COMPOSTO 1.2→12`, `TETO_PARAM 12→120`.
+- **As duas definições de tela** (§8.44): o gate mede 40, o CLI imprime 68. O
+  placar não muda com a régua — 8/18 e 0/12 valem para as duas —, mas foi essa
+  divergência que produziu o erro corrigido no §20.1.
+- **A precisão** (§8.46): 32 de 33 perguntas devolvem exatamente 40 claims. Não
+  existe resposta estreita nesta camada, nem para uma pergunta de sim/não sobre
+  uma única claim de regulamento.

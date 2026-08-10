@@ -260,7 +260,37 @@ phase('Construir')
 
 const obra = await agent(
   `${CTX}\n${DIAGNOSTICO}\n\n` +
-    `## SUA TAREFA: CONSERTAR O ROTEAMENTO — E SÓ ELE\n\n` +
+    `## ATENÇÃO — O TRABALHO JÁ ESTÁ EM DISCO. VOCÊ VERIFICA, NÃO RECONSTRÓI.\n\n` +
+    `Um agente com esta mesma tarefa rodou até o fim e **morreu por falha do harness durante a ` +
+    `verificação final**, não por defeito do trabalho. O que ele fez está no repositório e está ` +
+    `commitado (\`42fd97b\`):\n\n` +
+    `- \`research/kb/entrada/lote-1..8.json\` — o vocabulário de entrada dos 74 tópicos\n` +
+    `- \`research/kb/GLOSSARIO-TOPICOS.json\` — o artefato consolidado\n` +
+    `- \`research/tools/glossario.mjs\`, \`build-glossario.mjs\`, \`check-glossario.mjs\` — novos\n` +
+    `- \`roteador.mjs\`, \`check-canarios.mjs\`, \`check-rotas.mjs\`, \`check-evidence.mjs\`, ` +
+    `\`roteador.test.mjs\`, \`RECUPERACAO.md\`, \`CANARIOS.json\` — modificados\n\n` +
+    `\`npm run check:kb\`, \`npm run check:gate\` e \`npm run build\` estão **verdes**, e o ` +
+    `\`check:kb\` imprime: \`1 de 18\` sem gaveta que contenha a resposta (era 7), \`8 de 18\` ` +
+    `devolvem algum id esperado (era 3), \`11 de 18\` roteiam para o tópico certo.\n\n` +
+    `**NÃO reconstrua. NÃO reescreva o que já funciona.** O modo de falha nº 1 desta casa é ` +
+    `refazer por cima do que já está certo; o nº 5 é dizer que está tudo bem sem conferir. Você ` +
+    `escapa dos dois assim:\n\n` +
+    `1. **Confira a cobertura de verdade:** os 74 tópicos estão no glossário, sem repetido, todo ` +
+    `nome existe no vocabulário fechado, todo tópico tem glosa, e todo termo reivindicado por dois ` +
+    `tópicos tem desempate declarado. Lote que faltou é erro que você **reporta**.\n` +
+    `2. **Ataque as constantes por mutação** — este é o item que o agente anterior estava rodando ` +
+    `quando morreu, então é o menos confiável de todos. Toda constante do roteamento e do ` +
+    `glossário: zere, inverta, e exija que \`check:kb\` fique VERMELHO. Mostre o comando e o ` +
+    `vermelho de cada uma. Ontem duas constantes iam a zero com o build verde.\n` +
+    `3. **Ache o que ficou pela metade.** Ele foi morto no meio de uma edição de ` +
+    `\`check-canarios.mjs\`. Procure função órfã, teste que não roda, documento que descreve ` +
+    `código que não existe, constante declarada e nunca usada.\n` +
+    `4. **Rode os dois casos do diagnóstico** — a fisgada no peitoral e o \`levantar peso\` → ` +
+    `\`cardio\` — e cole a saída dos dois.\n\n` +
+    `Só conserte o que estiver de fato quebrado. Seu relatório é o que o atacante vai receber: ` +
+    `descreva o que EXISTE, não o que você faria.\n\n` +
+    `A tarefa original, para você saber o que estava sendo pedido:\n\n` +
+    `## A TAREFA: CONSERTAR O ROTEAMENTO — E SÓ ELE\n\n` +
     `**Escopo fechado: pergunta → tópico.** Ordenação DENTRO do tópico não é sua; o soterramento ` +
     `é a doença nº 2 e vai ser atacada depois, com número na mão. Se você mexer em ordenação, ` +
     `mistura as duas medições e ninguém vai saber o que consertou o quê.\n\n` +

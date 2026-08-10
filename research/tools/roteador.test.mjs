@@ -253,6 +253,25 @@ const perguntar = (pergunta, extra = {}) => responder(claims, pergunta, {
   ok('e NÃO junta `power` com `powerlifting` nem `powerbuilding`',
     !familiaNoGlossario(GLOSSARIO, 'power').some((t) => /power(lifting|building)/.test(t)),
     `power → ${familiaNoGlossario(GLOSSARIO, 'power').join(', ')}`);
+  /**
+   * ── E O CASO ACIMA NÃO PROVA A REGRA DE PREFIXO, porque `power` É termo do
+   *    glossário e o curto-circuito da palavra exata o resolve antes das três
+   *    condições rodarem. Medido em 12/08/2026 por mutação: com o teste de
+   *    `power` sozinho, `FRACAO_DA_PALAVRA_GLOSSARIO 0.6 → 0` passava VERDE no
+   *    `check:kb` inteiro — a constante que separa `powerlifting` de
+   *    `powerbuilding` no espaço do glossário não tinha canário nenhum.
+   *
+   *    `powerlift` NÃO é termo do glossário, então ele cai no balde de prefixo e
+   *    as três condições decidem de verdade: prefixo comum `power` (5) sobre
+   *    `powerbuilding` (13) dá 5 < 0,6 × 9, e só a fração recusa esse par —
+   *    a diferença de comprimento (4) passaria. É o par que esta base declara
+   *    ter opinião oposta um sobre o outro.
+   */
+  ok('e a regra de prefixo do glossário RODA: `powerlift` alcança `powerlifting` e recusa `powerbuilding`',
+    familiaNoGlossario(GLOSSARIO, 'powerlift').includes('powerlifting')
+      && !familiaNoGlossario(GLOSSARIO, 'powerlift').includes('powerbuilding'),
+    `powerlift → ${familiaNoGlossario(GLOSSARIO, 'powerlift').join(', ')} — `
+      + 'sem a fração da palavra mais curta, os dois assuntos viram um só');
   ok('e a palavra que JÁ é termo do glossário fica sozinha, sem arrastar vizinho de prefixo',
     familiaNoGlossario(GLOSSARIO, 'fisgada').join(',') === 'fisgada',
     `fisgada → ${familiaNoGlossario(GLOSSARIO, 'fisgada').join(', ')} — `

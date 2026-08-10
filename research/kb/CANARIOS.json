@@ -53,6 +53,43 @@
     "sobrescreve por canário quando a gaveta é grande o bastante para justificar.",
     "40 é o que cabe numa leitura; achado no lugar 400 não é achado.",
     "",
+    "",
+    "A SEXTA ENTRADA — B01–B12, o CONJUNTO CEGO de 12/08/2026, e a razão de ele",
+    "existir. Os dezoito P## acima eram o conjunto que o CONSTRUTOR enxergava. O",
+    "ataque cego de 12/08 escreveu doze perguntas novas, contra a base e não contra",
+    "a ferramenta, e mediu:",
+    "",
+    "     0 de 12 devolvem QUALQUER id esperado, por qualquer definição de tela",
+    "             (teto de 40 do checker, as 68 claims que o CLI imprime, o bloco",
+    "             de detalhe das 8 primeiras)",
+    "    10 de 12 ABREM uma gaveta que contém a resposta e mesmo assim não a",
+    "             entregam  (gavetasComResposta não vazio)",
+    "     2 de 12 são falha de ROTEAMENTO pura: B02 e B05, nenhuma gaveta com a",
+    "             resposta abriu",
+    "     4 de 12 abrem o topicoDaResposta declarado",
+    "",
+    "Contra 8 de 18 no conjunto público, na MESMA camada e no mesmo dia. A distância",
+    "entre 44 % e 0 % é a medida de quanto o conjunto público foi absorvido pela",
+    "construção — e das 8 públicas que passam, só 2 sobrevivem a uma paráfrase leve.",
+    "",
+    "O DIAGNÓSTICO É O OPOSTO DO QUE O ZERO SUGERE. Forçando a gaveta com --topic,",
+    "9 dos 12 devolvem na hora. O roteamento GENERALIZOU; o que não funciona é a",
+    "alocação de vagas: as 40 vagas da tela são distribuídas pelo ranking global, e",
+    "não por gaveta. Medido caso a caso — B11 `supino`(694):26  `agacho`(990):24",
+    "`ordem-exercicio`(29):1, com as DUAS respostas em ordem-exercicio; B07",
+    "`competicao`(457):36  `equipamento`(199):4, com a proibição que desclassifica na",
+    "inspeção em equipamento; B12 `agacho`(990):39. Consertar roteamento sem",
+    "consertar alocação de vagas por gaveta era garantidamente zero, e foi.",
+    "",
+    "A REGRA QUE ESTA ONDA COMPROU CARO, e ela vale para B01–B12 a partir de agora:",
+    "**conjunto de teste publicado vira conjunto de treino.** Os P## foram escritos",
+    "às cegas em 10/08 e em 12/08 já estavam absorvidos; os B## acabam de ser",
+    "gravados aqui e a partir deste commit estão igualmente queimados. **A próxima",
+    "onda de roteamento ou de ordenação precisa de um conjunto cego NOVO, escrito",
+    "por quem não viu a ferramenta nem este arquivo, antes de qualquer conserto.**",
+    "Medir o conserto com o conjunto que o consertador leu é o modo de falha nº 5",
+    "desta casa, e ele já apareceu cinco vezes.",
+    "",
     "Regra de manutenção: canário que este arquivo não consegue provar não entra.",
     "Todo 'presente' precisa de `numeros` ou de `frases` — id vivo com conteúdo",
     "trocado é leitura vazia, e C02/C04 já passaram verdes com as claims",
@@ -580,6 +617,7 @@
     {
       "id": "P01",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "dói no meio do braço quando a barra desce no supino, será que puxei alguma coisa",
       "porque": "a claim se chama \"tendinite de peitoral\" e usa \"bíceps\" como o nome ERRADO que ela vem corrigir. O atleta não sabe que é peitoral — é justamente por isso que ele pergunta. Ele diz \"meio do braço\", que não está em claim nem em verbatim nenhum. Uma pergunta com a palavra \"bíceps\" dentro acha (testei: passa), o que mostra que o canário só mede porque o atleta não tem o vocabulário do diagnóstico.",
       "esperado": "dizer que dor percebida no bíceps em quem supina costuma ser tendinite de PEITORAL, porque o tendão do peitoral se insere perto do bíceps, e que ele estima 90% dos casos assim. Mandar procurar o bíceps reprova, e para este atleta — peitoral rompido — reprova caro.",
@@ -612,6 +650,7 @@
     {
       "id": "P02",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "dá pra treinar sentindo um incômodo leve no peitoral ou tenho que parar até sarar",
       "porque": "a resposta é numérica e mora numa ESCALA: \"cerca de 2 numa escala de dez pontos\" e \"limiar em que dá para continuar treinando com desconforto leve\". O atleta não pergunta por número nenhum — ele pergunta se pode ou não pode. O verbatim é \"a 2 out of 10 level of pain\", e nada em \"incômodo leve\", \"peitoral\" ou \"sarar\" toca essa frase. É o canário mais caro da lista: quem responde \"pare até sarar\" contradiz a base inteira, e quem responde \"vai treinando\" perde o teto de 2/10.",
       "esperado": "treinar é possível ABAIXO de um limiar, e o limiar é numérico: cerca de 2 numa escala de 0 a 10, com a ressalva de que a heurística se ajusta por pessoa e por lesão. Responder \"pare até sarar\" contradiz a base; responder \"vai treinando\" sem o teto de 2/10 é pior, porque sai com ar de completo.",
@@ -646,6 +685,7 @@
     {
       "id": "P03",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "toda vez que subo a carga no supino o ombro reclama, o que ele fez quando aconteceu com ele",
       "porque": "é o caso do C19 em outro assunto: a resposta certa está inteiramente fora do filtro de segurança. Os três são scope PESSOAL e nenhum é modo prescricao — quem filtrar --modo prescricao --scope GERAL, que é a trava correta, vê zero e declara lacuna. A regra da base (baixar intensidade e compensar com volume quando a lesão inflama) só existe como prática dele. E o vocabulário também esconde: a base escreve \"inflama lesões antigas\", o atleta escreve \"o ombro reclama\".",
       "esperado": "o que ELE fez: baixar a intensidade do supino, inclusive abaixo do que parecia necessário, e compensar com volume — servido COM a marca de que é prática pessoal (PESSOAL, mecanismo/narrativa) e não prescrição geral. Declarar que a base não tem o caso reprova.",
@@ -678,6 +718,7 @@
     {
       "id": "P04",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "cortei quase todo o supino porque estava doendo, tem problema nisso",
       "porque": "a base responde \"sim, tem\" — mas a palavra da resposta é \"destreinou\", que o atleta não usa e provavelmente não conhece. Ele pergunta se cortar volume é seguro; a base diz que ele já supinava sem dor e mesmo assim a força tinha ido embora. É o contrapeso exato do P02 e do gate de dor: sem estes dois ids, a recomendação segura vira \"corte tudo\", que a própria base registra como o erro que custou o ciclo dele. Também é PESSOAL+narrativa, fora de qualquer filtro de prescrição.",
       "esperado": "sim, tem problema: ele cortou tanto o volume de supino que chegou a treinos de 3 singles com 225 lb, e semanas depois supinava sem dor mas tinha DESTREINADO e a força não estava lá. É o contrapeso do P02 — sem estes dois ids a resposta segura vira \"corte tudo\", que a própria base registra como o erro que custou o ciclo dele.",
@@ -710,6 +751,7 @@
     {
       "id": "P05",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "meu peitoral já rompeu uma vez, que jeito de supinar força menos",
       "porque": "a base chama isso de \"variação\", \"largura de pegada\" e \"prevenir overuse\"; o atleta chama de \"jeito de supinar que força menos\". A regra que ele precisa — escolher a variação que ALIVIA a lesão específica, não a que é melhor no geral — está escrita como \"variations that make it easier for you\", sem a palavra peitoral em lugar nenhum. Pior: V089-20 é a evidência de que um ângulo pode não doer nada enquanto o de competição dói muito, e é anedota, então some de qualquer filtro de prescrição.",
       "esperado": "escolher a variação que ALIVIA a lesão específica e não a que é melhor no geral — pegada fechada, alternância de largura de pegada, inclinado baixo —, com o registro de que um ângulo pode ser indolor enquanto o de competição dói muito. Uma lista de \"melhores variações de supino\" em geral reprova.",
@@ -743,6 +785,7 @@
     {
       "id": "P06",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "minha munhequeira pode ser de qualquer tamanho na competição",
       "porque": "a base escreve \"faixa de punho\" (verbatim: wrist wrap). \"Munhequeira\" APARECE na base — em F001-99, que proíbe combinar faixa de punho com munhequeira de suor — ou seja, a palavra do atleta existe e aponta para a claim errada. É armadilha de vocabulário com isca instalada, e a resposta certa é um limite dimensional que desclassifica no dia (F001-105) se estiver errado.",
       "esperado": "não: um metro de comprimento e oito centímetros de largura no máximo, velcro e alças contando dentro do metro, e a cobertura do punho limitada a 10 cm acima e 2 cm abaixo do centro da articulação, com no máximo 12 cm de largura coberta. É tier O, regulamento, e é o tipo de resposta que não admite paráfrase.",
@@ -781,6 +824,7 @@
     {
       "id": "P07",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "preciso comprar tênis de agachamento com salto ou meu all star serve",
       "porque": "é o mesmo assunto nos DOIS corpora com termos diferentes: o Vena diz \"flat versus salto é preferência pessoal\" e o Blevins diz \"calçado plano, desde que seja estável\" — nenhum dos dois escreve \"tênis de agachamento\", \"comprar\" ou marca de tênis. A condição que decide (mobilidade de tornozelo) está numa claim e a negação da compra está na outra, em corpora distintos: achar só uma responde metade e a metade errada, porque V104-29 sozinho sugere comprar o salto.",
       "esperado": "quem não tem restrição de tornozelo não precisa de sapato de salto: dá para agachar em calçado plano desde que seja estável, e flat versus salto é em boa parte preferência. O salto ajuda quem tem pouca mobilidade de tornozelo ou fêmur longo e precisa alcançar profundidade. Mandar comprar reprova.",
@@ -816,6 +860,7 @@
     {
       "id": "P08",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "minha mão está descascando no terra, uso alguma coisa pra segurar a barra",
       "porque": "os dois canais nomeiam o objeto igual (\"strap\") e o problema diferente: Vena escreve \"mãos destruídas\" e prescreve o mínimo possível, Blevins narra \"rasgar calos e perder treinos\" e conta que passou a usar mais. O atleta descreve a PELE (\"descascando\"), que não é palavra de nenhuma das quatro claims. A resposta boa precisa dos dois lados — a prescrição de dose e o precedente de quem usou mais por causa da mão — e cada lado vive num corpus.",
       "esperado": "strap sim, mas o mínimo necessário: a regra é usar apenas na medida de não destruir as mãos, porque o estímulo de pegada é o que se está trocando. E há o precedente pessoal dos dois lados — strap em repetições de back off para poupar as mãos ao longo do ciclo.",
@@ -852,6 +897,7 @@
     {
       "id": "P09",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "travei no supino, não sobe mais, o que eu faço com a carga",
       "porque": "a base escreve \"estagnar\" / \"stall out\"; o atleta escreve \"travei\" e \"não sobe mais\". E o assunto é a gaveta que a base mais teme: os DOIS números concretos (voltar 10 %, voltar para 90 %) são relato-de-programa — são o StrongLifts e o Greyskull, não prescrição —, enquanto o que é prescricao (G008-25/26) não traz número. Uma resposta que sirva \"tire 10 %\" como conselho está exatamente no defeito mais caro da base, e uma que só cite as prescrições genéricas deixa o atleta sem ação.",
       "esperado": "não abandonar o programa: recuar a carga (10% menos, ou 90% do peso em que estagnou) e retomar a progressão dali, e verificar se o programa tem mudança de protocolo para quando se estagna. Responder \"troque de programa\" é o oposto do que a base diz.",
@@ -889,6 +935,7 @@
     {
       "id": "P10",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "com quanto por cento do meu melhor levantamento eu monto as porcentagens do treino",
       "porque": "o nome do conceito é \"training max\" e o atleta não tem esse nome — ele descreve o cálculo. Além disso o tópico inteiro é praticamente um corpus só: das 45 claims de training-max, UMA é do Vena, e ela é modo fato, não prescricao. Os 90 % que respondem a pergunta são relato-de-programa do push pull legs e do nSuns. Servir esse 90 % como recomendação é promover escopo; declarar que a base não define training max é declarar ausente o que ela tem.",
       "esperado": "com um training max, tipicamente 90% do melhor máximo real mais recente — e não com o máximo em si. Responder com o 1RM cheio reprova, porque é exatamente o erro que o conceito existe para evitar.",
@@ -920,6 +967,7 @@
     {
       "id": "P11",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "de quantas em quantas semanas eu preciso pegar leve",
       "porque": "\"pegar leve\" é como se fala e \"deload\" é como a base escreve — e a base registra explicitamente (G004-03) que nem ela tem acordo sobre a diferença entre deload, taper e semana leve. O par prescricao/relato aqui inverte a resposta: o único número redondo (a cada 4 semanas) é do template do Wendler, relato-de-programa, e a claim de opinião que o acompanha diz que isso é 25 % da vida em deload. O que é prescricao (G004-27) recusa o calendário e manda disparar por gatilho. Responder \"a cada 4 semanas\" é copiar o imperativo do Wendler como se fosse conselho.",
       "esperado": "os dois lados: o deload fixo a cada quarta (ou quinta) semana existe e é o que os templates fazem, e a objeção medida de que isso é passar 25% do tempo em deload — contra o deload REATIVO, tomado quando um gatilho do programa dispara. Servir só o número fixo perde a metade que muda a decisão.",
@@ -959,6 +1007,7 @@
     {
       "id": "P12",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "na última série eu vou até não conseguir mais ou paro antes",
       "porque": "as três claims chamam a coisa de \"repetições em reserva\" e \"RPE\"; o atleta chama de \"ir até não conseguir mais\". As três se contradizem de propósito e a diferença é de MODO, não de conteúdo: a única prescricao manda deixar 4 a 7 na reserva, e as duas que mandam ir até a falha são o Wendler e o Greyskull descritos por fora. Para um atleta com histórico de ruptura de peitoral em reexposição de supino, servir o imperativo do Greyskull como conselho é o dano concreto que esta família de canário existe para pegar.",
       "esperado": "depende do programa, e a base tem os dois extremos escritos: 4 a 7 repetições em reserva como faixa de construção de força, contra o AMRAP do template do Wendler e o Greyskull LP, onde NÃO se deve deixar repetições na reserva. Uma resposta única sem a condição do programa reprova.",
@@ -996,6 +1045,7 @@
     {
       "id": "P13",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "meu supino para no meio do caminho e não sobe mais",
       "porque": "a base tem 31 claims sobre isso e escreve \"sticking point\" em TODAS — nenhuma traduz. O atleta descreve a posição (\"no meio do caminho\") e o sintoma (\"não sobe\"). Note que a mesma frase em português, \"trava no meio\", também não acha: testei e devolve zero dos três. É o caso mais puro de assunto grande e bem coberto que fica invisível por uma expressão em inglês que ninguém digita numa conversa de domingo.",
       "esperado": "sticking point na metade inferior não é erro técnico: é biomecanicamente a parte mais difícil, e o conserto é construir peitoral e deltoide anterior, além de velocidade na primeira metade e, se for logo acima do peito, mais ênfase de ombro pela pegada. Responder \"sua técnica está errada\" reprova.",
@@ -1031,6 +1081,7 @@
     {
       "id": "P14",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "como eu sei se o treino da semana tá pesado demais no total",
       "porque": "a base tem uma unidade de medida para exatamente isso — o \"stress index\", uma série dura em RPE 8 a 9 — e o nome dela não aparece em nenhuma pergunta humana. O número que responde mora só em params (rpe_min/rpe_max, rir_min/rir_max); a prosa diz \"uma unidade de estresse equivale a cerca de uma série dura\", sem os dígitos soltos. O tópico foi criado em 2026-08-09 justamente para que se pudesse FILTRAR por isso: se a busca livre não chega lá, a gaveta nova não está pagando o que custou.",
       "esperado": "existe uma unidade de conta: uma unidade de estresse ≈ uma série dura, feita em RPE 8 a 9 ou com 1 a 2 repetições em reserva. É isso que torna \"pesado demais no total\" uma pergunta com resposta em número, e não uma impressão.",
@@ -1064,6 +1115,7 @@
     {
       "id": "P15",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "até onde dá pra chegar de força sem usar nada",
       "porque": "o atleta diz \"sem usar nada\"; a base diz \"natural\" e mede em DOTS, uma unidade que ele não citou porque não sabe que a resposta é expressa nela. É a pergunta de expectativa que um natural de 28 anos que nunca competiu faz, e a base tem UM número para ela. Um único id sustentando o canário é de propósito: se a recuperação não trouxer essa claim, a resposta vai ser fabricada a partir do conhecimento externo do modelo, que é o modo de falha que os canários impossíveis já pegaram uma vez.",
       "esperado": "os melhores naturais ficam por volta de 600 DOTS — a resposta é uma marca, e uma marca relativa (DOTS), não um total absoluto. Responder com totais de agacho/supino/terra sem a normalização reprova.",
@@ -1093,6 +1145,7 @@
     {
       "id": "P16",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "levantar peso já conta como exercício pro coração",
       "porque": "a base escreve \"benefício cardiovascular\", \"aptidão aeróbia\" e \"limiar\"; o atleta escreve \"conta como exercício pro coração\". As três claims respondem \"não, passado o básico\", e a terceira é prescricao — mas a única palavra em comum entre a pergunta e as claims é \"exercício\", que é ruído puro numa base de 6.909 claims sobre treino. O tópico cardio tem mais de 230 claims: é assunto abundante ficando invisível por registro de linguagem.",
       "esperado": "conta pouco: o benefício cardiovascular de levantar aparece sobretudo em populações muito destreinadas e acaba passado um limiar aeróbio bem básico; daí em diante é preciso trabalho aeróbio dedicado. Responder \"sim, levantar já é cardio\" é o erro que este canário existe para pegar.",
@@ -1128,6 +1181,7 @@
     {
       "id": "P17",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "com quanta antecedência eu tenho que escolher a categoria de peso",
       "porque": "o número está POR EXTENSO na prosa (\"vinte e um dias\") e só existe como dígito dentro de params.name/value — 21 não aparece em claim nem em verbatim em português. Qualquer busca por número falha por construção, e a busca por palavra falha porque o regulamento chama de \"nomeado\", não de \"escolher a categoria\". É o caso exato do quarto item do método: o dado está tipado e a prosa o esconde. Para um atleta de 87 kg decidindo entre 83 e 93, errar esse prazo custa a inscrição.",
       "esperado": "vinte e um dias antes da data da competição — o atleta só pode pesar na categoria em que foi nomeado nesse prazo. É tier O e é data, não estimativa.",
@@ -1158,6 +1212,7 @@
     {
       "id": "P18",
       "familia": "presente-escondido",
+      "conjunto": "publico-2026-08-10 (P01-P18, ja absorvido pela construcao de 11/08)",
       "pergunta": "quando o peso para de subir de 2,5 em 2,5 quilos no supino, o que eu faço",
       "porque": "duas camadas. A palavra da base é \"microcarregar\" (microloading), que nenhum atleta digita — ele descreve o incremento que parou de funcionar. E o número que responde (o degrau de 5 lb que o supino deixa de aguentar) existe SÓ em params: a prosa fala de necessidade, não de quantidade. Some-se que a claim é relato-de-programa dentro de um review, então ela também não pode ser servida como prescrição — o imperativo é do autor do template, não do canal.",
       "esperado": "microcarregar: quando o salto padrão para de subir no supino, o passo é reduzir o incremento, não trocar o programa. Responder \"faça um deload\" ou \"troque de programa\" perde o que a base de fato registra para este ponto.",
@@ -1180,6 +1235,346 @@
         "gavetasComResposta": [
           "progressao",
           "supino"
+        ],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B01",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "faz quase um ano que aquele ponto perto da axila reclama quando a barra encosta e nesse tempo a carga não andou nada, será que uma coisa segura a outra",
+      "porque": "A claim fala \"tendão do peitoral\", \"supino\", \"dor\" e \"progresso\". O atleta com histórico de peitoral não diz nada disso: diz \"aquele ponto perto da axila\" (o tendão insere ali, e \"axila\" não existe em claim nenhuma nem em entrada de tópico nenhuma), \"a barra encosta\" em vez de supino, e \"reclama\" em vez de dor. O nexo que ele está perguntando — dor crônica de baixo grau ligada à ausência de progresso — é exatamente o que V027-25 diz, e não tem nome no vocabulário do atleta. É o caso mais caro desta base repetido com outra frase: peito lesionado, tela cheia, nenhuma menção ao que a base sabe.",
+      "esperado": "sim, uma coisa segura a outra: dor moderada e persistente piora a qualidade do treino e o resultado é patinar sem progresso, enquanto a dor também não melhora — e há quem conviva anos com problema de tendão do peitoral no supino nessa situação. Responder \"são coisas separadas, ajuste o programa\" perde o que a base registra.",
+      "sustenta": [
+        "V027-24",
+        "V027-25"
+      ],
+      "frases": [
+        "years of pec tendon",
+        "spinning my wheels and not making progress"
+      ],
+      "historia": "node research/tools/check-evidence.mjs V027-24 V027-25 → os dois ✓. V027-24 = \"conviveu anos com problemas de tendão do peitoral no supino\" (dor/supino/lesao); V027-25 = \"a dor moderada piorava a qualidade do treino e o resultado foi patinar sem progresso\" (dor/progressao/erro-comum/supino/peito). Achados ANTES de a pergunta ser escrita, por node research/tools/check-evidence.mjs --grep \"pec tear|pec strain|torn pec|pectoral\" --limit 0 e --topic peito --limit 0.",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "dor",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": false,
+        "gavetasComResposta": [
+          "lesao"
+        ],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B02",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "além do treino normal, valeria eu enfiar uns exercícios extras só pra fortalecer o peitoral e proteger ele",
+      "porque": "A pergunta usa \"peitoral\" e \"exercícios extras\", então a camada abre `peito` (31 claims) e `acessorios` (384) e devolve tela cheia de ativação de peitoral e trabalho de isolamento — tudo plausível, tudo dizendo implicitamente \"sim, faça\". A resposta (\"não: isso só empilha carga sobre o tecido que já está sensível\") mora em `lesao`+`erro-comum`+`volume`, e nenhuma palavra da pergunta carrega \"carga\", \"lesão\" ou \"volume\". O atleta com histórico de peitoral recebe o conselho CONTRÁRIO ao da base, sem nenhum sinal de que falta algo. É uma das duas falhas de ROTEAMENTO puro dos doze: nenhuma gaveta roteada contém a resposta.",
+      "esperado": "não: empilhar exercícios especiais extras sobre a região dolorida só adiciona carga e piora a gestão de carga. Responder \"sim, fortaleça com acessórios\" é o erro que este canário existe para pegar, e é o erro que a tela cheia de `peito` e `acessorios` induz.",
+      "sustenta": [
+        "V001-19"
+      ],
+      "frases": [
+        "you're hurting your load management"
+      ],
+      "historia": "node research/tools/check-evidence.mjs V001-19 → ✓ \"Empilhar exercícios especiais extras para a região dolorida só adiciona carga e piora a gestão de carga\" (lesao/erro-comum/volume). Achado navegando a vizinhança de V001-05/06/07 (o bloco de reabilitação) a partir de node research/tools/check-evidence.mjs --grep \"pec tear|pec strain|torn pec|pectoral\" --limit 0.",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "lesao",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": false,
+        "gavetasComResposta": [],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B03",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "sinto o incômodo mas o exame não mostrou nada, pode ser coisa da minha cabeça",
+      "porque": "AMBÍGUA de propósito, no mesmo molde do bug `levantar peso` → `peso-corporal`: \"exame\" puxa para `saude` e \"coisa da minha cabeça\" puxa para `mentalidade` (550 claims) — duas leituras erradas do mesmo par de palavras. A resposta é literalmente \"dor sem dano tecidual existe e tem componente psicossocial\", mas nenhuma claim usa \"exame\" nem \"cabeça\". `dor` ABRE em 1º com 1,00 e as duas claims continuam fora da tela: soterramento dentro da gaveta certa.",
+      "esperado": "não é invenção sua: é possível sentir dor sem nenhum dano tecidual, e fatores psicossociais entram nisso — o que pede calma, não descarte do sintoma. Responder \"se o exame não mostrou nada, não é nada\" reprova.",
+      "sustenta": [
+        "V001-20",
+        "V118-08"
+      ],
+      "frases": [
+        "pain with absolutely no damage",
+        "even without tissue damage due to psychosocial factors"
+      ],
+      "historia": "node research/tools/check-evidence.mjs V001-20 V118-08 → os dois ✓. V001-20 = \"É possível sentir dor sem nenhum dano tecidual\" (dor); V118-08 = \"dor pode ocorrer mesmo sem dano tecidual por fatores psicossociais\" (dor/lesao/mentalidade). Achados por node research/tools/check-evidence.mjs --grep \"soreness|sore \" --topic dor --limit 0 (V118-07 saiu na tela, V118-08 estava na página ao lado) e pela vizinhança de V001.",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "dor",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": true,
+        "gavetasComResposta": [
+          "dor",
+          "lesao"
+        ],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B04",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "nas últimas repetições do supino a sensação de onde vem a força muda de lugar, isso é normal",
+      "porque": "A gaveta certa (`supino`, 694 claims) ABRE em 1º e a resposta continua invisível — soterramento puro dentro da maior gaveta relevante, que leva 33 das 40 vagas. O atleta descreve fenomenologia (\"a sensação de onde vem a força muda de lugar\"); a base descreve mecanismo (\"o peitoral fadiga primeiro e o padrão vira tríceps-dominante\"). Nenhuma das palavras se encontra, e \"sensação\" ainda desvia para `rpe`. Importa para ESTE atleta: com histórico de peitoral, saber que o peitoral é quem entrega primeiro na série muda onde ele para.",
+      "esperado": "é normal e tem mecanismo: no supino o peito é ativado preferencialmente e fadiga primeiro, então a série vai ficando mais dominada por tríceps e deltoide — o padrão do movimento muda dentro da própria série. Responder \"é impressão\" ou \"é falta de técnica\" perde o mecanismo que a base registra.",
+      "sustenta": [
+        "V049-17",
+        "V009-09"
+      ],
+      "frases": [
+        "fatigues first",
+        "tricep dominant pattern"
+      ],
+      "historia": "node research/tools/check-evidence.mjs V049-17 V009-09 → os dois ✓. V049-17 = \"No supino o peito é ativado preferencialmente e fadiga primeiro\" (supino/peito/fadiga); V009-09 = \"o peitoral pode fatigar primeiro e o padrão passa a ser mais dominante de tríceps\" (supino/tecnica/fadiga). Achados em node research/tools/check-evidence.mjs --topic peito --limit 0 e na vizinhança do grep de peitoral.",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "supino",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": true,
+        "gavetasComResposta": [
+          "supino"
+        ],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B05",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "eu espero me sentir 100% antes de encarar a próxima e o treino vira duas horas, isso pode estar me atrapalhando",
+      "porque": "A SEGUNDA falha de roteamento puro dos doze, e a mais amarga: `descanso-entre-series` é exatamente a gaveta cuja falha criou esta camada inteira, e ela não abre. \"me sentir 100%\", \"encarar a próxima\" e \"duas horas\" roteiam para `sono`, `autorregulacao`, `fadiga`, `teste-de-forca` e `dor` — nenhuma contém a resposta. A palavra \"descanso\" não aparece na pergunta porque o atleta descreve o COMPORTAMENTO (esperar até se sentir pronto), não o parâmetro. Prova de que o conteúdo está a um comando de distância: --topic descanso-entre-series devolve as duas na hora.",
+      "esperado": "pode: descanso muito longo tem desvantagens que os estudos não capturam — a mais óbvia é o tempo — e há a suspeita de que muita gente passa do ponto, descansando mais de 10 minutos o tempo todo. Responder \"descanse o quanto precisar, não há limite superior\" perde o que a base registra.",
+      "sustenta": [
+        "V038-17",
+        "V038-06"
+      ],
+      "frases": [
+        "rest for over 10 minutes all the time",
+        "the first really obvious one is limited time"
+      ],
+      "historia": "node research/tools/check-evidence.mjs --topic descanso-entre-series --limit 0 (a gaveta inteira, 12 claims) → V038-17 = \"vê gente descansando mais de 10 minutos o tempo todo e suspeita que muitos passam do ponto\" (erro-comum/recuperacao/descanso-entre-series) e V038-06 = \"há desvantagens de descansos longos que os estudos não capturam, e a mais óbvia é tempo limitado\" (recuperacao/programacao/descanso-entre-series). node research/tools/check-evidence.mjs V038-17 V038-06 → os dois ✓.",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "descanso-entre-series",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": false,
+        "gavetasComResposta": [],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B06",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "meu pé desliza no chão quando abro a base pra puxar, posso passar alguma coisa embaixo pra grudar melhor",
+      "porque": "Pergunta que pode desclassificar o atleta na inspeção, e a camada abre `terra` (748 claims, 39 das 40 vagas) e devolve técnica de terra. A regra que proíbe qualquer adesivo na sola mora em `sapato`+`equipamento`, e a palavra do regulamento é \"adesivo\"/\"resina\", que o atleta não digita — ele diz \"passar alguma coisa embaixo pra grudar\". `sapato` tem 18 claims e não abre; `equipamento`, 199, também não.",
+      "esperado": "não: qualquer forma de adesivo na sola do calçado é estritamente proibida em competição IPF, inclusive lixa e resina — borrifar água é o que se aceita. O caminho legal é trocar o calçado, como no relato de quem saiu de um Converse escorregadio. Responder \"use giz/spray de aderência\" desclassifica.",
+      "sustenta": [
+        "F001-103",
+        "V020-34"
+      ],
+      "frases": [
+        "adhesive on the underside of footwear is strictly forbidden",
+        "which are super slippery on the"
+      ],
+      "historia": "node research/tools/check-evidence.mjs F001-103 V020-34 → os dois ✓. F001-103 = IPF-TR2026 §3.14.c, tier O (sapato/equipamento); V020-34 = troca de Converse por Vans e passou a escorregar bem menos (terra/sapato/equipamento). Achados por node research/tools/check-evidence.mjs --topic sapato --limit 0.",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "sapato",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": false,
+        "gavetasComResposta": [
+          "terra"
+        ],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B07",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "na competição dá pra usar duas coisas no joelho ao mesmo tempo, uma por cima da outra",
+      "porque": "O atleta não sabe que \"faixa de joelho\" e \"joelheira\" são duas categorias distintas de equipamento no regulamento — ele diz \"duas coisas no joelho\". A camada abre `competicao` (457 claims, 36 das 40 vagas) e `equipamento` (199) fica com 4; a claim que proíbe a combinação, F001-94, não cabe nas 4. `faixa` nunca abre. É o caso que mostra a alocação de vagas doente: a gaveta com a resposta ABRIU e levou um décimo das vagas da maior.",
+      "esperado": "não: a combinação de faixa de joelho com joelheira é estritamente proibida, e faixa de joelho só é permitida em competição equipada — no clássico ela nem entra. Responder \"pode, desde que dentro da medida\" desclassifica na inspeção.",
+      "sustenta": [
+        "F001-94"
+      ],
+      "frases": [
+        "a combination of the two is strictly forbidden"
+      ],
+      "historia": "node research/tools/check-evidence.mjs F001-94 → ✓ IPF-TR2026 §3.9.KNEE, tier O (equipamento/faixa). Achado por node research/tools/check-evidence.mjs --topic faixa --limit 0.",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "faixa",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": false,
+        "gavetasComResposta": [
+          "equipamento"
+        ],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B08",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "o agacho e o terra continuam subindo, só o supino que parou de andar, eu mexo no programa inteiro ou só nesse",
+      "porque": "A pergunta nomeia os três levantamentos, então a camada abre `programacao`, `supino`, `erro-comum`, `terra` e `agacho` — as gavetas grandes — e as 40 vagas se dividem entre elas por tamanho. `estagnacao` tem 45 claims, é onde as duas respostas moram, e não abre. A palavra da base é \"stall\"/\"estagnou\"; o atleta diz \"parou de andar\".",
+      "esperado": "só nesse: quando um movimento estagna e o resto ainda sobe, segure aquele e continue extraindo ganho dos outros — e a redução de peso é só no levantamento que estagnou, não em todos. Responder \"faça deload geral\" ou \"troque de programa\" é o erro que estas duas claims contradizem diretamente.",
+      "sustenta": [
+        "G020-26",
+        "G014-28"
+      ],
+      "frases": [
+        "you just hold that one",
+        "only drop back on the lift that you stalled out on"
+      ],
+      "historia": "node research/tools/check-evidence.mjs G020-26 G014-28 → os dois ✓, os dois relato-de-programa dentro de review (o imperativo é do autor do template, não do canal). G020-26 (progressao/autorregulacao/estagnacao); G014-28 (progressao/erro-comum/estagnacao). Achados por node research/tools/check-evidence.mjs --topic estagnacao --limit 0.",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "estagnacao",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": false,
+        "gavetasComResposta": [
+          "erro-comum"
+        ],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B09",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "subo dois lances de escada e chego ofegante, isso pode ter a ver com eu viver me machucando",
+      "porque": "A gaveta certa ABRE (`condicionamento` em 3º, 0,72) e a claim não chega à tela: `dor` e `cardio` levam 38 das 40 vagas. A pergunta liga dois assuntos que o atleta não sabe que estão ligados — falta de aptidão aeróbia e recorrência de lesão — e a base liga explicitamente, numa claim só. Nenhuma palavra em comum: a base diz \"aerobically unfit\" e \"susceptible to injury\"; o atleta diz \"ofegante\" e \"viver me machucando\".",
+      "esperado": "pode: quem está fora de forma aerobicamente fica muito suscetível a lesão, se lesiona repetidamente e a saúde declina em geral. Responder \"são coisas independentes\" perde o mecanismo que a base registra, e para um atleta com histórico de lesão essa ligação muda a decisão sobre condicionamento.",
+      "sustenta": [
+        "V013-18"
+      ],
+      "frases": [
+        "susceptible to injury"
+      ],
+      "historia": "node research/tools/check-evidence.mjs V013-18 → ✓ \"quem está fora de forma aerobicamente fica muito suscetível a lesão\" (lesao/condicionamento/saude). Achado por node research/tools/check-evidence.mjs --topic condicionamento --limit 0.",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "condicionamento",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": true,
+        "gavetasComResposta": [
+          "condicionamento"
+        ],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B10",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "meu parceiro de treino bate recorde toda semana faz meses e comigo isso durou pouco, é normal essa diferença",
+      "porque": "O nome do conceito na base é \"progressão linear\" e a variação individual é etiquetada em `genetica` (45 claims), que não abre. `progressao` abre em 1º com 741 claims e leva 36 das 40 vagas — as duas claims que respondem estão DENTRO de `progressao` e mesmo assim não cabem. É soterramento e ausência de cota ao mesmo tempo: a gaveta certa está aberta, é a maior, e a resposta específica perde para 36 claims genéricas de progressão.",
+      "esperado": "é normal: a progressão linear acaba mais cedo para uns do que para outros — alguns sustentam meses no mesmo programa, outros só algumas semanas — e quanto vai durar não dá para saber de antemão; é preciso descobrir o que funciona para a própria fisiologia. Responder \"você está fazendo algo errado\" reprova.",
+      "sustenta": [
+        "G019-03",
+        "G019-04"
+      ],
+      "frases": [
+        "some people it's just a couple of weeks",
+        "works for your specific physiology"
+      ],
+      "historia": "node research/tools/check-evidence.mjs G019-03 G019-04 → os dois ✓, os dois modo fato. G019-03 (progressao/genetica); G019-04 (progressao/genetica/autorregulacao). Achados por node research/tools/check-evidence.mjs --topic genetica --limit 0.",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "genetica",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": false,
+        "gavetasComResposta": [
+          "progressao"
+        ],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B11",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "quando cai agacho e supino na mesma sessão, tanto faz qual eu faço primeiro",
+      "porque": "O melhor caso de roteamento dos doze e ainda assim zero: `ordem-exercicio` ABRE em 3º com 0,86, e ela tem 29 claims contra 694 de `supino` e 990 de `agacho`. As vagas saem 26 para `supino`, 24 para `agacho` e UMA para `ordem-exercicio` — e as duas respostas moram em `ordem-exercicio`. É a demonstração mais limpa de que abrir a gaveta certa não serve de nada enquanto as 40 vagas forem distribuídas pelo ranking global e não por gaveta.",
+      "esperado": "não tanto faz: no template em questão os movimentos de membro superior são feitos primeiro, e a regra geral registrada é manter membro superior e membro inferior separados quando possível. Responder \"a ordem é indiferente\" contradiz as duas claims — e note que G014-10 é relato-de-programa, então vale como o que aquele template manda, não como prescrição universal.",
+      "sustenta": [
+        "G014-10",
+        "G016-10"
+      ],
+      "frases": [
+        "upper body movements are meant to be done first",
+        "keep those upper body and lower body movements separated"
+      ],
+      "historia": "node research/tools/check-evidence.mjs G014-10 G016-10 → os dois ✓. G014-10 (ordem-exercicio/supino/ombros, relato-de-programa); G016-10 (programacao/recuperacao/ordem-exercicio, prescricao). Achados por node research/tools/check-evidence.mjs --topic ordem-exercicio --limit 0 (a gaveta inteira, 29 claims).",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "ordem-exercicio",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": true,
+        "gavetasComResposta": [
+          "ordem-exercicio",
+          "supino"
+        ],
+        "recuperados": [],
+        "veredito": "falha"
+      }
+    },
+    {
+      "id": "B12",
+      "familia": "presente-escondido",
+      "conjunto": "cego-2026-08-12 (B01-B12, escrito pelo ataque, absorvido a partir deste commit)",
+      "pergunta": "no vídeo o meu pé parece desabar pro lado no fundo do agacho, isso é do pé mesmo",
+      "porque": "`agacho` (990 claims) abre em 1º e leva 39 das 40 vagas. A resposta é de calçado — o cano alto do tênis esticando parece colapso de tornozelo e de arco — e mora em `sapato` (18 claims), que não abre; a segunda claim liga o desvio de joelho à instabilidade do arco e está em `agacho`, e ainda assim não cabe nas 39. A palavra da base é \"arch collapsing\" e \"high top\"; o atleta diz \"desabar pro lado\".",
+      "esperado": "pode não ser do pé: com tênis de cano alto o tecido do cano estica e dá a APARÊNCIA de colapso de tornozelo e de arco — e o desvio dos joelhos também gera instabilidade no arco. Responder \"é fraqueza do pé, treine o arco\" atribui a causa errada, e a decisão que muda é trocar o calçado antes de mudar o treino.",
+      "sustenta": [
+        "G031-17",
+        "G030-15"
+      ],
+      "frases": [
+        "arch collapsing on my foot when in reality",
+        "instability uh in your arch"
+      ],
+      "historia": "node research/tools/check-evidence.mjs G031-17 G030-15 → os dois ✓. G031-17 (sapato/equipamento/erro-comum, anedota de form-check); G030-15 (agacho/tecnica/sapato, mecanismo). Achados por node research/tools/check-evidence.mjs --topic sapato --limit 0.",
+      "perguntaDoAtleta": {
+        "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+        "topicoDaResposta": "sapato",
+        "tetoDeTela": 40,
+        "medidoEm": "2026-08-12",
+        "abriuOTopico": false,
+        "gavetasComResposta": [
+          "agacho"
         ],
         "recuperados": [],
         "veredito": "falha"

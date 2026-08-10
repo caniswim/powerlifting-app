@@ -172,6 +172,83 @@ for (const t of fechados) {
   }
 }
 
+/**
+ * ═════════════════════════════════════════════════════════════════════════════
+ * 5. A ÂNCORA NO CORPUS — o buraco que o ataque cego de 12/08/2026 mediu
+ * ═════════════════════════════════════════════════════════════════════════════
+ *
+ * O ATAQUE, LITERAL: trocar a lista `entrada` inteira de um tópico por dez
+ * strings sem sentido (`zzqa`…`zzqj`), regerar o artefato e rodar `npm run
+ * check:kb` e `npm run check:gate` deixava **26 dos 74 tópicos VERDES** — entre
+ * eles `descanso-entre-series`, que é a gaveta cuja falha criou esta camada
+ * inteira, e `genetica`, `cinto`, `sono`, `rpe`, `mobilidade`, `profundidade`,
+ * `training-max`, `recuperacao`, `terra`, `intensidade`, `comandos-ipf`. Trinta
+ * e cinco por cento do artefato que oito agentes escreveram não era testado por
+ * nada. É o modo de falha nº 4 desta casa — trava que se testa a si mesma — em
+ * escala nova: as travas 1–4 acima conferem FORMA (nome fechado, glosa
+ * presente, colisão declarada), e forma sobrevive intacta a uma lista de lixo.
+ *
+ * A ÂNCORA. Cada termo de entrada é confrontado com o texto das claims que a
+ * BASE etiquetou naquele tópico — dado independente, extraído meses antes deste
+ * artefato, e que nenhuma edição do glossário move. Um termo conta como
+ * ancorado quando alguma palavra dele de 4+ letras compartilha os 5 primeiros
+ * caracteres (sem acento) com alguma palavra do texto daquela gaveta.
+ *
+ * O PISO É BAIXO DE PROPÓSITO, E ISSO É A PARTE IMPORTANTE. Medido em
+ * 12/08/2026 sobre as 74 gavetas: a mediana ancora **92 %** e a pior gaveta é
+ * `dor` com **53 %**. O piso está em 35 % — folga de dezoito pontos sobre a pior
+ * — porque esta trava existe para recusar LIXO, não para empurrar o artefato na
+ * direção do corpus. **Um vocabulário de entrada bom é justamente o que NÃO está
+ * no corpus:** `fisgada` não aparece em nenhuma das 6.912 claims e é o termo
+ * mais importante deste arquivo. Subir o piso inverteria o propósito do artefato
+ * e faria o autor da próxima gaveta encher a lista com palavras da base —
+ * exatamente o modo de falha nº 2 (a trava estreita empurra o dado para fora
+ * dela). Se uma gaveta legítima cair abaixo de 35 %, o conserto NÃO é acolchoar
+ * a lista com jargão: é dizer isso em voz alta e mudar este número com o motivo
+ * escrito ao lado.
+ *
+ * O QUE ELA NÃO PEGA, dito antes que alguém confie demais: ela recusa lixo, não
+ * recusa uma lista de termos reais porém ERRADOS para aquela gaveta. Trocar a
+ * entrada de `sono` pela entrada de `fadiga` passa aqui. Quem cobra acerto de
+ * roteamento é `check-rotas.mjs` e os canários; esta trava só garante que existe
+ * dado, e não enchimento, do outro lado.
+ */
+const FRACAO_MINIMA_ANCORADA = 0.35;
+const SEM_ACENTO = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const PALAVRAS = (s) => SEM_ACENTO(s).split(/[^a-z0-9]+/).filter((w) => w.length >= 4);
+const RAIZ = (w) => w.slice(0, 5);
+
+const raizesDoTopico = new Map();
+for (const c of claims) {
+  for (const t of c.topic ?? []) {
+    if (!raizesDoTopico.has(t)) raizesDoTopico.set(t, new Set());
+    const alvo = raizesDoTopico.get(t);
+    for (const w of PALAVRAS(`${c.claim ?? ''} ${c.verbatim ?? ''} ${c.verbatimWhisper ?? ''}`)) alvo.add(RAIZ(w));
+  }
+}
+
+const ancoragem = [];
+for (const t of doc.topicos ?? []) {
+  if (!fechados.has(t.topico)) continue;
+  const raizes = raizesDoTopico.get(t.topico) ?? new Set();
+  const entrada = t.entrada ?? [];
+  if (entrada.length === 0) continue;
+  const ancorados = entrada.filter((e) => PALAVRAS(e).some((w) => raizes.has(RAIZ(w))));
+  const fracao = ancorados.length / entrada.length;
+  ancoragem.push({ topico: t.topico, ancorados: ancorados.length, de: entrada.length, fracao });
+  if (fracao < FRACAO_MINIMA_ANCORADA) {
+    erros.push(
+      `tópico "${t.topico}": só ${ancorados.length} de ${entrada.length} termos de entrada `
+        + `(${(fracao * 100).toFixed(0)} %) têm QUALQUER parentesco com o texto das claims que a base `
+        + `etiquetou nessa gaveta — mínimo ${(FRACAO_MINIMA_ANCORADA * 100).toFixed(0)} %. `
+        + 'Uma lista sem nenhuma âncora no corpus passa em toda trava de FORMA deste arquivo: foi '
+        + 'assim que 26 das 74 gavetas puderam virar dez strings sem sentido com o check:kb verde. '
+        + 'Se esta gaveta é legitimamente slang puro, não acolchoe a lista com jargão da base — '
+        + 'mude FRACAO_MINIMA_ANCORADA com o motivo escrito ao lado.',
+    );
+  }
+}
+
 // ── 3 e 4: as colisões e o desempate ────────────────────────────────────────
 
 const dono = new Map();
@@ -269,6 +346,10 @@ if (VERBOSE) {
     const r = regras.get(termo);
     console.log(`     "${termo}" ${[...quem].sort().join(' + ')} → vence ${(r?.vence ?? []).join(' + ') || '(sem regra)'}`);
   }
+  console.log('  ℹ  âncora no corpus, as 8 gavetas mais frouxas:');
+  for (const a of [...ancoragem].sort((x, y) => x.fracao - y.fracao).slice(0, 8)) {
+    console.log(`     ${a.topico.padEnd(24)} ${a.ancorados}/${a.de}  ${(a.fracao * 100).toFixed(0)} %`);
+  }
 }
 
 if (erros.length > 0) {
@@ -283,8 +364,14 @@ console.log(
   `\nGlossário de entrada — ${vistos.size} de ${fechados.size} gavetas com glosa, ${nTermos} termos na voz `
     + `do atleta, recontados contra ${claims.length} claims`,
 );
+const pior = [...ancoragem].sort((x, y) => x.fracao - y.fracao)[0];
 console.log(
   `✓ nenhum tópico fora da lista fechada, nenhuma gaveta sem glosa, e as ${colisoes.size} colisões têm `
     + 'desempate declarado e co-etiquetado na base',
+);
+console.log(
+  `✓ toda gaveta ancora ao menos ${(FRACAO_MINIMA_ANCORADA * 100).toFixed(0)} % dos termos de entrada no `
+    + `texto das claims que a base etiquetou nela — a mais frouxa é "${pior.topico}" com `
+    + `${pior.ancorados}/${pior.de} (${(pior.fracao * 100).toFixed(0)} %)`,
 );
 process.exit(0);

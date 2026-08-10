@@ -1,108 +1,87 @@
-# Retomar — parado em 9 de agosto de 2026, 20h15
+# Retomar — 12 de agosto de 2026, fechamento da onda do glossário de entrada
 
-A onda 2B foi **pausada no meio**, a pedido. Nada quebrou; o build está verde. Este
-arquivo existe para que amanhã não comece com arqueologia.
+**Nada está pendente no meio.** Os três gates estão verdes, o trabalho da onda está
+absorvido no repositório, e a fila está em `research/kb/ONDA-2C.md`. Este arquivo é curto
+de propósito: o que ele tem é o que **não** está escrito em outro lugar.
 
 ## O comando
 
 ```bash
 cd /Users/brunnovert/Documents/Dev/powerlifting-app
-npm run check:kb && npm run check:gate && npm run build   # confirmar que ainda está verde
+npm run check:kb && npm run check:gate && npm run build
 ```
 
-E para retomar o workflow de onde parou:
+`check:kb` imprime, ao passar, o placar da recuperação **por conjunto**. Verde ali quer
+dizer *"a medida não mudou"*, nunca *"a camada acha"*.
+
+## O estado, em quatro números que não podem ser somados
 
 ```
-Workflow({ scriptPath: "research/workflows/onda2b.js",
-           resumeFromRunId: "wf_626a69ef-699" })
+conjunto PÚBLICO  (P01–P18, que o construtor da onda enxergava)
+    0 de 18 devolvem TODOS os ids  ·  8 de 18 devolvem ALGUM  ·  1 de 18 sem gaveta
+
+conjunto CEGO     (B01–B12, escrito pelo ataque depois do conserto)
+    0 de 12 devolvem TODOS os ids  ·  0 de 12 devolvem ALGUM  ·  2 de 12 sem gaveta
 ```
 
-O script saiu de `/tmp` e mora em `research/workflows/onda2b.js`, **com conteúdo
-idêntico**. O cache do resume casa por `(prompt, opts)` de cada `agent()`, não pelo
-caminho do arquivo, então mudar de lugar não invalida nada.
+**O número que manda é o cego: ZERO.** A distância entre 44 % e 0 % é o tamanho da
+absorção do conjunto público pela construção. Somar os dois dá `8 de 30`, que é a média e
+apaga a distância — por isso o `check-canarios.mjs` exige o campo `conjunto` e imprime os
+dois separados.
 
-**Se o resume não pegar** (ele é, em princípio, da mesma sessão — hoje funcionou
-atravessando duas, mas não conte com isso): nada de importante se perde. Os dois
-agentes que terminaram gravaram o trabalho deles no repositório, e o que eles
-devolveram está salvo em `research/kb/CANARIOS-ESCONDIDOS.json` e
-`research/kb/DIVIDA-DOR-RELATO.md`. O pior caso é relançar do zero e pagar de novo
-por dois agentes.
+**E o diagnóstico é o oposto do que o zero sugere:** em **10 dos 12** a gaveta com a
+resposta ABRIU e a resposta não chegou à tela; forçando com `--topic`, **9 dos 12**
+devolvem na hora. O gargalo deixou de ser roteamento e virou **soterramento** — a tela não
+tem cota de vagas por gaveta.
 
-## Onde a onda 2B parou
+## Onde ler o resto, nesta ordem
 
-| agente | estado | onde está o resultado |
-|---|---|---|
-| `canarios` | ✅ terminou, e **já absorvido** | os 18 entraram em `research/kb/CANARIOS.json` como `presente-escondido` com bloco `perguntaDoAtleta`, medidos e vermelhos. `CANARIOS-ESCONDIDOS.json` fica como o registro do que o terceiro escreveu |
-| `divida-dor` | ✅ terminou | código e claims já no repo; raciocínio em `research/kb/DIVIDA-DOR-RELATO.md` |
-| `roteamento` | ✅ entregue e medido | `research/tools/roteador.mjs`, `check-rotas.mjs`, `ROTAS.json` — **15** canários de roteamento verdes |
-| `atacar` | ✅ terminou | o ataque cego mediu **3 de 18** e diagnosticou roteamento; achados no `RECUPERACAO.md` §18 e no `RUNBOOK.md` §8.36–38 |
-| `fechar` | ✅ terminou (10/08) | canários gravados e ligados ao `check-canarios.mjs`; veredito no topo do `RECUPERACAO.md`; fila nova em `research/kb/ONDA-2C.md` |
+1. **`research/kb/RECUPERACAO.md`** — o veredito de duas linhas está no topo; a **PARTE V
+   (§24)** é o ataque cego de 12/08 inteiro, com o mecanismo do soterramento medido caso a
+   caso e os dois consertos que este fechamento fez.
+2. **`research/kb/ONDA-2C.md`** — a fila. O **item 0** mudou de nome: era roteamento, hoje
+   é cota de vagas por gaveta, e o **§0.3** responde com número a pergunta da frota de
+   modelo barato (resposta: não agora, e por quê).
+3. **`research/RUNBOOK.md` §8** — as **29** divergências abertas. As novas desta rodada são
+   a **44** (duas definições de tela), a **45** (o painel fraco) e a **46** (precisão); a
+   **43** e a **47** entraram e foram fechadas no mesmo passe, riscadas, porque a lição de
+   cada uma não fecha com o item.
+4. **`research/kb/ESTADO.md`** — o que está provado por compilador e o que continua sendo
+   julgamento.
 
-## ⚠️ A parte cega, e como não estragá-la
+## A parte cega, e a regra que não pode ser reaprendida
 
-Os 18 canários de `CANARIOS-ESCONDIDOS.json` foram escritos **antes** do conserto,
-por um agente que não viu a ferramenta, e o agente que constrói a busca **nunca os
-recebeu**. É isso que faz o teste valer: na onda anterior o construtor escreveu o
-próprio canário e calibrou os termos de busca *sobre a resposta*
-(`buscaCega.termos = ["2 a 3%"]`), o que mede exatamente zero, porque nenhum atleta
-digita a resposta que está procurando.
+**Conjunto de teste publicado vira conjunto de treino.** Os P01–P18 foram escritos às cegas
+em 10/08 e em 12/08 já estavam absorvidos: das 8 que passam, só 2 sobrevivem a uma
+paráfrase leve, e a pergunta-vitrine da onda colapsa ao trocar *"coração"* por
+*"cardiovascular"*. **Os B01–B12 estão publicados em `research/kb/CANARIOS.json` a partir
+deste commit e estão igualmente queimados.**
 
-Salvei o arquivo no repositório porque perder 18 canários é pior do que o risco
-abaixo — mas o risco existe e é este: **se o agente de roteamento for relançado do
-zero, ele pode LER esse arquivo enquanto navega o repositório e otimizar para ele.**
+**A próxima onda de recuperação precisa de um conjunto cego NOVO**, escrito por quem não
+viu a ferramenta nem o `CANARIOS.json`, **antes** de qualquer conserto. Se o construtor e o
+avaliador forem o mesmo, o número não mede a camada — mede o conserto. Aconteceu cinco
+vezes nesta casa, a última dentro do documento de verificação que existia para pegá-la.
 
-Duas saídas, e a primeira é melhor:
-
-1. **Retomar pelo `resumeFromRunId`.** O agente de roteamento continua com o prompt
-   original, que não contém os canários. A cegueira se mantém.
-2. **Se for relançar do zero:** mover `CANARIOS-ESCONDIDOS.json` para fora da árvore
-   antes, e devolver depois da fase de construção.
-
-## O que a onda 2B ainda tem de responder
-
-A pergunta que paga a onda, e ela ainda não foi feita: **dos 18 canários, quantos a
-camada nova de fato encontra?** E: **das sete falhas medidas — Q02, Q05, Q11, Q14,
-Q16, Q19, Q29 — quantas o roteamento destrava, verificado às cegas?**
-
-Na onda 2A o construtor relatou destravadas que o ataque cego não conseguiu
-reproduzir. Por isso o número que vale é o do atacante, nunca o de quem consertou.
+Operacionalmente: se a onda for tocada por agentes, o agente que constrói **não** recebe o
+arquivo de canários no prompt, e o agente que ataca escreve as perguntas **antes** de ver
+qualquer diff.
 
 ## Contexto que não pode ser reaprendido
 
-- **Não ingerir mais corpus.** `MEDICAO-02.md` mediu que o gargalo não é conteúdo, e
-  falseou a previsão de que o Blevins consertaria as três piores perguntas — as três
-  eram claim do **Vena** que ninguém achou.
-- **A correção de rumo desta onda:** roteamento por **tópico fechado** (74 termos),
-  não busca por texto livre. O caso que provou isso é `descanso-entre-series`: a
-  busca livre não achava nada nas 40 primeiras, e `--topic` devolve as 12 claims na
-  hora.
-- **Nenhuma trava pode ler a constante que ela verifica.** Modo de falha nº 4 desta
-  casa, e ontem apareceu três vezes — uma delas dentro do arquivo que cita esse modo
-  de falha.
-- **Nenhum número de qualidade da base** pode ser citado sem dizer com que
-  instrumento foi obtido e se os canários daquele instrumento passaram.
-
-## Depois da 2B
-
-`research/kb/ONDA-2C.md` (a escrever no fechamento), na ordem:
-
-1. **Triagem de banalidade** (tarefa #34) — o atleta pediu, reagindo a `V014-03`
-   ("ficar adequadamente hypado") pesar o mesmo que `V014-12` ("rotacionar sob a
-   barra"). **Marcar, não apagar.** Exige calibração: dois agentes independentes na
-   mesma amostra de 150, e **abaixo de ~85 % de concordância o campo é ruído e não
-   deve ser construído**.
-2. **Fatos do atleta como tier U** (tarefa #28) — tier U = 0 hoje. A calibração de
-   RPE fica **fora**: depende de ele treinar, e ele não vai treinar esta semana.
-3. **Whisper nos 53 `suspect`** (tarefa #31).
-4. **Ledger de contradições e sínteses + INDEX** (tarefas #25, #26) — **por último**,
-   porque reparo vem antes de síntese: erro de dado vira norma para o próximo agente.
-
-E, só depois de tudo isso, a **revisão do programa de treino já gerado** — que é o
-que o atleta pediu para deixar por último.
+- **Não ingerir mais corpus.** Medido três vezes, a última em 12/08: as 21 claims esperadas
+  pelos 12 cegos existem, estão nas gavetas certas, e `--topic` devolve 9 de 12 na hora.
+  **O gargalo é seleção e ordenação, não conteúdo.**
+- **Nenhuma trava pode ler a constante que ela verifica** (modo de falha nº 4). A variante
+  nova, medida nesta rodada: uma trava que confere só a FORMA de um artefato de julgamento
+  não é trava — 26 das 74 gavetas do glossário passavam com dez strings sem sentido.
+- **Nenhum número de qualidade da base** pode ser citado sem dizer com que instrumento foi
+  obtido, **de que conjunto**, e se os canários daquele instrumento passaram.
+- **`npm run lint` está vermelho e já estava** (17 erros em `src/pages/*.tsx`, React). Não é
+  um dos três gates, e o `eslint.config.js` não cobre `research/tools/` — divergência 42.
 
 ## O que é dele, não meu
 
-Fora do caminho crítico, e ele resolve quando der: o telefonema à federação (o
-Brasileiro exige estadual no ano anterior, o que empurra um estadual para out/nov de
-2026), a tarde de medição filmada que tira 215/160/240 de estimativa, e a linha de
-calibração de RPE.
+Fora do caminho crítico, e ele resolve quando der: o telefonema à federação (o Brasileiro
+exige estadual no ano anterior, o que empurra um estadual para out/nov de 2026), a tarde de
+medição filmada que tira 215/160/240 de estimativa, e a linha de calibração de RPE — que
+fica fora do passe de tier `U` porque depende de ele treinar.

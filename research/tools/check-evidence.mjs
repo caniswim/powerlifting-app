@@ -90,6 +90,7 @@ import {
 } from './busca.mjs';
 import {
   responder, perfilarTopicos, assinaturaDoTopico, termosDaPergunta, DETALHE_ROTEADO,
+  MAX_TOPICOS, FRACAO_DO_MELHOR,
 } from './roteador.mjs';
 import { carregarGlossario, indexarGlossario, catalogoDeTopicos } from './glossario.mjs';
 
@@ -361,6 +362,92 @@ function imprimirRoteamento(texto, { comoComplemento = false } = {}) {
         : w.canal;
       const veio = w.comoNaBase && w.comoNaBase !== w.termo ? `${w.termo} → ${w.comoNaBase}` : w.termo;
       console.log(`        ${String(w.peso.toFixed(2)).padStart(5)}  ${veio.padEnd(28)} ${onde}`);
+    }
+  }
+
+  /**
+   * ── A GAVETA QUE PONTUOU E FICOU DE FORA — e ela sai IMPRESSA ─────────────
+   *
+   * `rotear()` sempre calculou `candidatos` (os 8 primeiros com score), e até
+   * 12/08/2026 essa lista só era impressa no ramo do "NÃO MAPEIA". Ou seja:
+   * quando a pergunta não achava gaveta nenhuma, a tela dizia o que quase
+   * achou; quando ela achava três de quatro, a tela ficava CHEIA e MUDA. É o
+   * pior dos dois, e está registrado no `RUNBOOK.md` §8.37: *"o perigo não é
+   * responder errado, é responder com ar de completa"*.
+   *
+   * O caso medido é o do peitoral deste atleta. Em
+   * `fisgada de 3/10 no peitoral na terceira série de supino pausado, continuo?`
+   * abrem `peito` (2,26), `supino` (1,71) e `dor` (1,64); **`lesao` pontua 0,74,
+   * fica ACIMA do piso de 0,65 e mesmo assim não abre** — perde na fração do
+   * primeiro colocado (0,4 × 2,26 = 0,90). Três das cinco claims que carregam o
+   * limiar de 2–3/10 estão em `lesao`, e `dor` ainda declara
+   * `naoConfundirCom: autorregulacao`, que também fica fechada. Nada disso
+   * aparecia na tela.
+   *
+   * Isto é DIAGNÓSTICO, não recuperação: nenhuma claim entra ou sai por causa
+   * deste bloco. Ele não toca `responder()` nem `idsMostrados`, que é o que os
+   * canários medem — a tela ganha o aviso sem que a medida se mexa.
+   */
+  {
+    const abertos = new Set(r.rotas.map((x) => x.topico));
+    // O corte e o número de vagas vêm de `roteador.mjs` porque esta é a CLI que
+    // IMPRIME o roteamento, não a trava que o verifica: repetir 0,4 aqui criaria
+    // um segundo lugar para divergir, que é o modo de falha nº 3 desta casa.
+    const corte = (r.rotas[0]?.score ?? 0) * FRACAO_DO_MELHOR;
+    const fechados = r.candidatos.filter((c) => !abertos.has(c.topico) && c.score > 0);
+    // Quem uma gaveta ABERTA declara que se confunde com ela, e que ficou de
+    // fora: é o único canal em que a base diz, por escrito, que faltou olhar ali.
+    const avisadas = new Map();
+    for (const a of abertos) {
+      for (const b of GLOSSARIO.confusao?.get(a) ?? []) {
+        if (abertos.has(b)) continue;
+        if (!avisadas.has(b)) avisadas.set(b, []);
+        avisadas.get(b).push(a);
+      }
+    }
+    /**
+     * A GAVETA TEM DE TER PONTUADO SOZINHA PARA SER NOMEADA — a mesma condição
+     * que `rotear()` exige para dar o bônus de `naoConfundirCom`, e pelo mesmo
+     * motivo: *o aviso levanta um candidato que já existe, nunca inventa um.*
+     * Aplicar aqui uma regra diferente da que a camada aplica lá seria criar um
+     * segundo critério para divergir do primeiro.
+     *
+     * Sem isso a tela vira ruído, e foi medido: `descanso-entre-series` declara
+     * que se confunde com `sono`, então *quanto descansar entre as séries* — a
+     * pergunta mais bem roteada desta base, um tópico só, score 3,45 — passava a
+     * imprimir `sono` como gaveta "não lida". Trocar uma tela muda por uma tela
+     * de ruído não é conserto.
+     *
+     * Entram duas coisas, e as duas pontuaram por conta própria:
+     *   · o candidato ACIMA DO PISO que perdeu a vaga no corte — pela definição
+     *     da própria camada, `score >= piso` quer dizer "esta pergunta é sobre
+     *     esta gaveta"; perder para um primeiro colocado mais forte esconde isso
+     *     mas não o desfaz. É o `lesao` a 0,74 da pergunta do peitoral;
+     *   · o candidato que uma gaveta ABERTA declara como confundível — o
+     *     `naoConfundirCom` é o único canal em que a base diz, por escrito, que
+     *     quem procura ali também tem de olhar aqui.
+     *
+     * LIMITAÇÃO CONHECIDA, e ela é a mesma de `rotear()`: `autorregulacao`
+     * etiqueta V001-06 e V138-19 — duas das cinco claims de limiar de dor — e
+     * NÃO é nomeada na pergunta da fisgada, porque não casou nada sozinha.
+     * Gaveta que a pergunta não toca por canal nenhum continua invisível às duas
+     * portas. Está registrado no RECUPERACAO.md §21.
+     */
+    const nomes = fechados
+      .filter((c) => c.score >= r.piso || avisadas.has(c.topico))
+      .slice(0, 5);
+    if (nomes.length > 0) {
+      console.log('\n  ⚠  GAVETAS QUE PONTUARAM E **NÃO** ABRIRAM — a tela abaixo não as inclui.');
+      console.log(`     Vagas: ${r.rotas.length} de ${MAX_TOPICOS} · corte = ${Math.round(FRACAO_DO_MELHOR * 100)} % do 1º lugar`
+        + ` = ${corte.toFixed(2)} · piso de mapeamento = ${r.piso}`);
+      for (const c of nomes) {
+        const quem = avisadas.get(c.topico);
+        const porQue = c.score >= r.piso ? 'acima do piso, perdeu a vaga no corte' : 'abaixo do piso';
+        console.log(`       ${c.topico.padEnd(22)} ${c.score.toFixed(2)}  ${porQue}`
+          + `${quem ? `  ←  ${quem.join(' e ')} declara(m) "não confundir com ${c.topico}"` : ''}`);
+        console.log(`         abrir mesmo assim: node research/tools/check-evidence.mjs --pergunta ${JSON.stringify(texto)} --topic ${c.topico}`);
+      }
+      console.log('     Uma tela cheia não é uma tela completa. Estas gavetas existem e não foram lidas.');
     }
   }
 

@@ -68,7 +68,7 @@
 
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { normalizar, palavras, raiz, sequencia } from './busca.mjs';
+import { normalizar, palavras, sequencia } from './busca.mjs';
 
 /**
  * O peso de um termo de DUAS OU MAIS palavras casado inteiro na pergunta.

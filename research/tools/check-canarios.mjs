@@ -158,7 +158,7 @@ const CHAVES = new Set([
 const CAMPOS_CANARIO = new Set([
   'id', 'familia', 'pergunta', 'porque', 'esperado',
   'sustenta', 'numeros', 'frases', 'vazio', 'ruido', 'historia',
-  'buscaCega', 'perguntaDoAtleta',
+  'buscaCega', 'perguntaDoAtleta', 'conjunto',
 ]);
 
 /**
@@ -289,7 +289,36 @@ const GLOSSARIO = indexarGlossario(carregarGlossario(ROOT), termosDaPergunta);
 // só se algum canário for medido por ela.
 const PRECISA_ROTEAR = (doc.canarios ?? []).some((c) => c.perguntaDoAtleta);
 const PERFIS = PRECISA_ROTEAR ? perfilarTopicos(claims) : null;
+/**
+ * ── O PLACAR É POR CONJUNTO, E ESSA É A LIÇÃO MAIS CARA DE 12/08/2026 ────────
+ *
+ * Até este dia havia um placar só, somando todos os canários da porta nova. Na
+ * hora em que os 12 canários CEGOS (B01–B12) entraram ao lado dos 18 PÚBLICOS
+ * (P01–P18), o número único passou a imprimir `8 de 30 devolvem algum id` — que
+ * é verdade e é uma mentira ao mesmo tempo. A medida real são DOIS números:
+ * **8 de 18 no conjunto que o construtor enxergava e 0 de 12 no conjunto que ele
+ * não viu.** A média dos dois esconde exatamente a quantidade que se queria
+ * medir, que é a DISTÂNCIA entre eles — o tamanho da otimização para o conjunto
+ * visível. Somar os dois é o modo de falha nº 5 desta casa executado por uma
+ * ferramenta, e ela existe para pegar esse modo de falha.
+ *
+ * Por isso `conjunto` é OBRIGATÓRIO em todo canário da porta nova, o placar sai
+ * por conjunto, e o total só sai depois — nunca sozinho.
+ *
+ * `conjunto` é dado do canário, e cegueira não é propriedade permanente: um
+ * conjunto cego publicado vira conjunto de treino no commit seguinte. O nome
+ * carrega a data em que foi escrito exatamente para que ninguém leia um número
+ * de 12/08 como se ainda fosse cego seis ondas depois.
+ */
+const placarPorConjunto = new Map();
 const placarDaPorta = { total: 0, passa: 0, algumId: 0, semGaveta: 0, abriuOTopico: 0 };
+const contarNo = (nome, campo) => {
+  if (!placarPorConjunto.has(nome)) {
+    placarPorConjunto.set(nome, { total: 0, passa: 0, algumId: 0, semGaveta: 0, abriuOTopico: 0 });
+  }
+  placarPorConjunto.get(nome)[campo] += 1;
+  placarDaPorta[campo] += 1;
+};
 
 /**
  * O QUE O ATLETA VÊ, EM ORDEM. `responder` devolve três canais — as claims
@@ -533,6 +562,14 @@ for (const can of doc.canarios ?? []) {
           erros.push(`${onde} perguntaDoAtleta: campo "${k}" não existe (conhecidos: ${[...CAMPOS_PERGUNTA].join(', ')})`);
         }
       }
+      if (!String(can.conjunto ?? '').trim()) {
+        linha.ok = false;
+        erros.push(
+          `${onde}: canário da porta nova sem "conjunto". O placar é POR CONJUNTO — somar o `
+            + 'conjunto que o construtor enxergava com o conjunto cego imprime uma média que '
+            + 'esconde a distância entre os dois, que é a única coisa que o conjunto cego mede.',
+        );
+      }
       const teto = pa.tetoDeTela;
       if (!Number.isInteger(teto)) {
         linha.ok = false;
@@ -577,11 +614,12 @@ for (const can of doc.canarios ?? []) {
           .sort();
         const veredito = recuperados.length === ids.length && ids.length > 0 ? 'passa' : 'falha';
 
-        placarDaPorta.total += 1;
-        if (veredito === 'passa') placarDaPorta.passa += 1;
-        if (recuperados.length > 0) placarDaPorta.algumId += 1;
-        if (gavetas.length === 0) placarDaPorta.semGaveta += 1;
-        if (abriuOTopico) placarDaPorta.abriuOTopico += 1;
+        const conjunto = String(can.conjunto ?? '').trim() || '(sem conjunto declarado)';
+        contarNo(conjunto, 'total');
+        if (veredito === 'passa') contarNo(conjunto, 'passa');
+        if (recuperados.length > 0) contarNo(conjunto, 'algumId');
+        if (gavetas.length === 0) contarNo(conjunto, 'semGaveta');
+        if (abriuOTopico) contarNo(conjunto, 'abriuOTopico');
 
         const mesmo = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
         const divergencias = [];
@@ -689,7 +727,15 @@ for (const [t, n] of Object.entries(registrado.tiers ?? {})) {
 }
 
 if (JSON_OUT) {
-  console.log(JSON.stringify({ ok: erros.length === 0, resultados, deriva, tiersAgora, placarDaPorta, erros }, null, 2));
+  console.log(JSON.stringify({
+    ok: erros.length === 0,
+    resultados,
+    deriva,
+    tiersAgora,
+    placarDaPorta,
+    placarPorConjunto: Object.fromEntries(placarPorConjunto),
+    erros,
+  }, null, 2));
   process.exit(erros.length > 0 ? 1 : 0);
 }
 
@@ -707,17 +753,27 @@ console.log(
  * Sem esta linha impressa, um `check:kb` inteiro verde leria como se a
  * recuperação estivesse resolvida — que é o modo de falha nº 5 desta casa
  * (relatório que diz sucesso sem sucesso), agora escrito por uma ferramenta.
+ *
+ * E ele sai POR CONJUNTO antes de sair somado, pela razão escrita em
+ * `placarPorConjunto`: `8 de 30` é a média de `8 de 18` com `0 de 12`, e a
+ * média apaga a distância que o conjunto cego existe para medir.
  */
+const bloco = (p, titulo) => (
+  `\n  ${titulo}\n`
+  + `    ${p.passa} de ${p.total} devolvem TODOS os ids esperados dentro do teto de tela\n`
+  + `    ${p.algumId} de ${p.total} devolvem ALGUM id esperado\n`
+  + `    ${p.semGaveta} de ${p.total} não roteiam para gaveta NENHUMA que contenha a resposta`
+  + ' — nesses, o defeito é de roteamento e ordenar melhor não conserta\n'
+  + `    ${p.abriuOTopico} de ${p.total} roteiam para o tópico em que a resposta está `
+  + 'etiquetada (`topicoDaResposta`)'
+);
+
 if (placarDaPorta.total > 0) {
-  console.log(
-    `\n  RECUPERAÇÃO PELA PORTA NOVA (--pergunta), medida e registrada:\n`
-    + `    ${placarDaPorta.passa} de ${placarDaPorta.total} devolvem TODOS os ids esperados dentro do teto de tela\n`
-    + `    ${placarDaPorta.algumId} de ${placarDaPorta.total} devolvem ALGUM id esperado\n`
-    + `    ${placarDaPorta.semGaveta} de ${placarDaPorta.total} não roteiam para gaveta NENHUMA que contenha a resposta`
-    + ' — nesses, o defeito é de roteamento e ordenar melhor não conserta\n'
-    + `    ${placarDaPorta.abriuOTopico} de ${placarDaPorta.total} roteiam para o tópico em que a resposta está `
-    + 'etiquetada (`topicoDaResposta`)',
-  );
+  console.log('\n  RECUPERAÇÃO PELA PORTA NOVA (--pergunta), medida e registrada, POR CONJUNTO:');
+  for (const [nome, p] of placarPorConjunto) console.log(bloco(p, `conjunto "${nome}" — ${p.total} canário(s)`));
+  if (placarPorConjunto.size > 1) {
+    console.log(bloco(placarDaPorta, 'TODOS os conjuntos somados — leia POR CONJUNTO acima, não aqui'));
+  }
 }
 
 if (VERBOSE) {

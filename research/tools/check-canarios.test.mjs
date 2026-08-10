@@ -110,6 +110,10 @@ writeFileSync(join(dir2, 'R901.jsonl'), BASE2.map((c) => JSON.stringify(c)).join
 const daPorta = (bloco, extra = {}) => ({
   id: 'T01',
   familia: 'presente-escondido',
+  // `conjunto` é obrigatório na porta nova desde 12/08/2026 — sem ele o placar
+  // somaria o conjunto que o construtor enxergava com o conjunto cego e
+  // imprimiria uma média. Ver o bloco `placarPorConjunto` em check-canarios.mjs.
+  conjunto: 'teste',
   pergunta: 'cardio atrapalha o ganho de força?',
   porque: 'porque de teste',
   esperado: 'esperado de teste',
@@ -542,6 +546,30 @@ const CASOS = [
       recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa',
     })],
     esperado: /o tópico da resposta é palpite/,
+  },
+  // ── o placar é POR CONJUNTO, e a média é proibida ─────────────────────────
+  //
+  // Em 12/08/2026 os 12 canários CEGOS entraram ao lado dos 18 PÚBLICOS e o
+  // placar único passou a imprimir `8 de 30`, que é a média de `8 de 18` com
+  // `0 de 12`. A média apaga a DISTÂNCIA entre os dois, que é a única coisa que
+  // um conjunto cego mede. Os dois casos abaixo fixam os dois lados: a recusa
+  // quando o campo falta, e a separação de fato quando ele está lá.
+  {
+    nome: 'porta nova: canário sem "conjunto" é recusado — placar somado esconde a distância',
+    base: dir2,
+    canarios: [(() => { const c = daPorta({ tetoDeTela: 3, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' }); delete c.conjunto; return c; })()],
+    esperado: /sem "conjunto"[\s\S]*esconde a distância/,
+  },
+  {
+    nome: 'porta nova: dois conjuntos imprimem DOIS placares, não a média',
+    base: dir2,
+    aprova: true,
+    canarios: [
+      daPorta({ tetoDeTela: 3, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' }, { id: 'T01', conjunto: 'publico' }),
+      daPorta({ tetoDeTela: 1, recuperados: ['V901-03'], veredito: 'falha' }, { id: 'T02', conjunto: 'cego' }),
+    ],
+    // um placar diz 1 de 1 e o outro diz 0 de 1; a média (1 de 2) nunca aparece sozinha
+    esperado: /conjunto "publico"[\s\S]*1 de 1 devolvem TODOS[\s\S]*conjunto "cego"[\s\S]*0 de 1 devolvem TODOS/,
   },
   {
     nome: 'presente-escondido sem buscaCega e sem perguntaDoAtleta é recusado',
