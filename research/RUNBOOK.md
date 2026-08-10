@@ -531,13 +531,23 @@ no fim.
 > consertada) · **17** (dívida: **74** claims de gênero) · **18** (dívida: `pratica-pessoal`) ·
 > **19** (dívida: **111** params de TAXA) · **20** · **21** · **22** · **23** · **24** ·
 > **26** · **27** · **28** · **29** · **30** · **32** · **33** · **34** · **35** ·
-> **39** (soterramento: 0 de 18 públicos e **0 de 12 cegos** devolvem os ids; o mecanismo
-> está medido) · **40** (gaveta que não pontuou é invisível) · **41** (a cobertura de
-> mutação declarada era falsa; **5** mutações continuam verdes) · **42** (`npm run lint`
+> **39** (soterramento: **11 de 12 cegos** abrem a gaveta certa e não entregam — o número
+> PIOROU) · **40** (gaveta que não pontuou é invisível) · **41** (a cobertura de
+> mutação declarada era falsa) · **42** (`npm run lint`
 > não cobre `research/tools/`) · **44** (duas definições de "tela": o gate mede 40, o CLI
 > imprime 68) · **45** (o painel de gavetas não abertas nomeia gaveta útil em 2 de 12) ·
-> **46** (precisão: 32 de 33 perguntas devolvem exatamente 40 claims).
-> São **29**. O plano de execução delas está em **`research/kb/ONDA-2C.md`**
+> **46** (precisão: a tela aprendeu a encolher, mediana 40 → 34, mas 2 de 10 estreitas
+> ainda devolvem 40) · **48** (a alocação é soma zero: abrir a gaveta certa MAIS uma
+> vizinha devolve menos que abrir só a certa) · **49** (`PISO_VAGAS`: a asserção
+> tautológica saiu; a ESCOLHA do valor fica aberta) · **50** (**soterramento DENTRO da
+> gaveta certa: 5 de 33 ids** — a doença seguinte, e ela é ORDENAÇÃO) · **52** (`grep`
+> devolve zero em silêncio no `roteador.mjs`) · **53** (as varreduras que ESCOLHERAM as
+> constantes não reproduzem) · **54** (o canário do cinto continua reprovado; o relatório
+> exibiu outra frase) · **55** (a precisão do TOPO piorou: mediana da resposta certa 6 → 8) ·
+> **56** (a fisgada perde 2 das 5 sob paráfrase) · **57** (buracos de roteamento com "não
+> sei" silencioso sobre fato que a base tem literal) · **58** (a cobertura de mutação do
+> vocabulário: o número que vale é `troca` **71/74**, não `lixo` 74/74).
+> São **39**. O plano de execução delas está em **`research/kb/ONDA-2C.md`**
 > (o `ONDA-2B.md` é a fila anterior; o `ONDA-2.md` é a de antes dela, e os critérios de
 > aceite deste último estão desatualizados — ver §8.33).
 >
@@ -565,6 +575,21 @@ no fim.
 > e a **41** ganharam o número medido e continuam abertas. **Saldo: fecharam duas e
 > abriram três.** O número que manda é o CEGO: **0 de 12**, contra 8 de 18 no conjunto
 > público. Não some os dois — ver o placar por conjunto do `check-canarios.mjs`.
+>
+> **Fechamento de 12/8/2026 (noite), depois da AUDITORIA CEGA da onda 2D (12 perguntas
+> novas, D01–D12 em `research/kb/CANARIOS.json`):** entraram **onze** — a **51**, fechada
+> no mesmo passe que a abriu, e as dez abertas **48**, **49**, **50**, **52**, **53**,
+> **54**, **55**, **56**, **57** e **58**. A **39** e a **46** ganharam número medido e
+> continuam abertas; a **41** foi reescrita com a cobertura de mutação remedida.
+> **Saldo: fechou uma e abriu dez.** Isso é o esperado quando um ataque mede o que o
+> construtor não escolheu publicar, e não é regressão: **nove das dez já eram verdade
+> antes, sem estarem escritas.** O número que manda continua sendo o CEGO: **2 de 12 e
+> 3 de 33 ids**, contra 7 de 18 no conjunto público — 2,3 vezes de distância.
+>
+> **A regra que esta lista compra de novo, terceira vez:** o construtor não fecha o
+> próprio item, e o relatório do construtor escolhe quais números publicar mesmo quando
+> não mente em nenhum. Das dez novas, **seis** (49, 53, 54, 55, 56, 58) são números que
+> estavam a um comando de distância e não foram rodados.
 
 1. ~~**`npm run check:kb` não está no `npm run build`.**~~ **RESOLVIDO** — `scripts.build`
    agora roda `check:kb` antes do `tsc -b`. A base deixou de depender de quem lembrar.
@@ -935,6 +960,15 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     entrega zero — e entregou. Não confundir com falta de conteúdo: os ids existem, estão
     conferidos, e o `check-canarios.mjs` imprime os números por conjunto a cada execução.
     É o item 0 da `ONDA-2C.md`.
+    **REMEDIDA EM 12/8/2026 (noite), contra o conjunto cego NOVO D01–D12, e o número
+    PIOROU: soterramento de 10 para 11 de 12.** A cota por gaveta foi construída
+    (`vagasPorGaveta` em `roteador.mjs`) e produziu ganho real e minúsculo — os doze cegos
+    saem de **0 de 12 / 0 de 33 ids** para **2 de 12 / 3 de 33**
+    (`node research/tools/auditoria/legado.mjs`). **O conserto nomeado acima não era o
+    conserto suficiente**: trocou *"a gaveta grande come tudo"* por *"as vagas se repartem
+    entre gavetas erradas"*, que é a §8.48. A parte desta divergência que a onda 2D de
+    fato fechou é o mecanismo de tamanho (`agacho(990)` não leva mais 39 vagas); a parte
+    que continua aberta é a que o atleta sente. **Aberta.**
 40. **Gaveta que a pergunta não toca por canal nenhum é invisível às duas portas.**
     `autorregulacao` etiqueta V001-06 e V138-19 e não aparece na pergunta da fisgada nem
     no aviso novo de gavetas não abertas, porque não pontuou sozinha — e o aviso usa, de
@@ -955,7 +989,23 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     Continuam verdes `DETALHE_ROTEADO 8→80`, `DIFERENCA_MAXIMA_GLOSSARIO 5→50`,
     `MIN_TERMOS 10→0`, `PESO_NOME_COMPOSTO 1.2→12` e `TETO_PARAM 12→120`. O subconjunto de
     checks usado é suficiente: `grep -l 'roteador.mjs\|glossario.mjs' research/tools/*.mjs`
-    mostra que nenhum outro passo do `check:kb` importa esses módulos. **Aberta.**
+    mostra que nenhum outro passo do `check:kb` importa esses módulos.
+    **REMEDIDA EM 12/8/2026 (noite), e desta vez pela ferramenta e não à mão:**
+    `node research/tools/mutacao-entrada.mjs --constantes` roda as 18 mutações contra o
+    gate real e **18 de 18 morrem** — as cinco listadas acima estão todas fechadas,
+    inclusive `TETO_PARAM 12→120`, que morre hoje em `roteador.test.mjs`. **E o relato de
+    travas da onda 2D contém um achado FALSO na direção oposta:** ele declarou
+    `DETALHE_ROTEADO 8→80` como *"mutante equivalente, 0 de 67 perguntas com saída
+    diferente"*. Medido mutando `roteador.mjs` e rodando
+    `node research/tools/medir-alocacao.mjs` nos dois estados, com restauração conferida
+    por `cmp`: a mutação muda a **mediana da tela de 34 para 40 e o máximo de 56 para 60
+    em TODAS as linhas da varredura**, e muda a contagem de ids. Não é equivalente, e ela
+    morre no gate (`alocacao.test.mjs`). A
+    lição, quarta vez escrita, agora nos dois sentidos: **cobertura de mutação declarada
+    por quem fez o conserto não é cobertura, e "mutante equivalente" declarado por quem
+    fez o conserto também não é.** Sobrevivem hoje **três**, todas no ledger e todas
+    dívida honesta, nomeadas no `RECUPERACAO.md` §25.8. **Aberta**, porque a lição não
+    fecha com o item.
 42. **`npm run lint` não cobre `research/tools/`.** O `eslint.config.js` tem um bloco só,
     `files: ['**/*.{ts,tsx}']`, então nenhum dos ~30 `.mjs` do pipeline é lintado. Foi
     assim que `carregarRotas()` ficou exportada e sem chamador nenhum, e que o import
@@ -1024,6 +1074,15 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     gaveta pequena devolveria pouco. **Fora de domínio passa:** 3 de 3 (bolo de cenoura,
     nginx/ssl, embreagem de carro) dizem `NÃO MAPEIA` e separam corretamente *fora de
     domínio* de *sem assunto*.
+    **REMEDIDA EM 12/8/2026 (noite): a previsão acima estava certa e o conserto funcionou
+    em parte.** `node research/tools/auditoria/estreitas.mjs` — a tela MEDIANA caiu de 40
+    para **34**, e **6 de 10** perguntas de resposta única devolvem menos de 35 linhas.
+    **Fica aberto o que não encolheu, e são dois casos com diagnóstico oposto:** *"quanto
+    tempo de descanso entre as séries de agacho pesado"* abre UMA gaveta de 12 claims e
+    ainda devolve **40 linhas** — 28 delas de `param` e página ao lado, ou seja, a cota por
+    gaveta encolheu a rota e os outros canais preencheram o buraco; e *"com quanta
+    antecedência eu tenho que escolher a categoria de peso"* devolve 40 abrindo `bulking`
+    e `cutting`, que é gaveta errada, não tela larga. **Aberta.**
 47. ~~**O placar da porta nova somava conjuntos, e a soma escondia a medida.**~~
     **RESOLVIDO em 12/8/2026, no mesmo passe que o abriu.** No instante em que os 12
     canários CEGOS entraram ao lado dos 18 PÚBLICOS, o placar único do
@@ -1042,3 +1101,164 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     partir deste commit. Por isso o nome do conjunto carrega a data em que foi escrito: um
     número medido com um conjunto que já foi lido não é um número cego, e nada além da data
     avisa disso.
+48. **A ALOCAÇÃO É SOMA ZERO: abrir a gaveta certa MAIS uma vizinha devolve menos do que
+    abrir só a certa — e nenhuma trava vê isso.** Achado pela auditoria cega de 12/8
+    (noite), com `node research/tools/auditoria/diagnostico.mjs`:
+    `--topic convencional` devolve as 3 claims do D05 e `--topic convencional sumo terra`
+    devolve **ZERO**; `--topic comandos-ipf` devolve F001-11 e `--topic comandos-ipf
+    agacho` devolve **ZERO**. A vaga é TETO e a sobra não volta ao bolo (é decisão
+    deliberada da onda 2D, `RECUPERACAO.md` §25), então cada gaveta a mais divide o
+    orçamento e nenhuma delas recebe o suficiente para chegar à claim que responde.
+    **É a causa direta de o soterramento ter subido de 10 para 11 de 12** (§8.39): o
+    roteador melhorou e passou a abrir MAIS gavetas certas, e abrir mais gavetas certas
+    piorou a resposta. **Nenhum dos 21 casos de `alocacao.test.mjs` cobre isto**, porque
+    todos medem UMA pergunta contra a alocação que ela produz, e nunca a mesma pergunta com
+    N e com N+1 gavetas. O canário que falta é comparativo, não absoluto. **Aberta**, e é
+    o item 0 da próxima onda junto com a 50.
+49. ~~**`alocacao.test.mjs` afirmava `magra >= 3`, que é `PISO_VAGAS >= 3` reescrito como
+    asserção.**~~ **A ASSERÇÃO FOI REMOVIDA em 12/8/2026 (noite); a ESCOLHA do valor fica
+    aberta.** Modo de falha nº 4 desta casa dentro do arquivo escrito para provar que as
+    constantes foram ganhas — e o arquivo abre com a frase *"nenhuma trava pode ler a
+    constante que ela verifica"*. Duas medições o desmontam:
+    `node research/tools/auditoria/piso.mjs` mostra que piso 1, 2, 3 e 4 devolvem as CINCO
+    da fisgada nas MESMAS posições 13/18/36/38/39 — **o piso não muda a saída da pergunta
+    em cujo bloco a asserção estava escrita**; e
+    `node research/tools/medir-alocacao.mjs --pisos 1,2,3,4 --expoentes 3 --cotas 0` dá
+    piso 1 = **63/160 ids, 18/65 completos** contra piso 3 = **62/160, 17/65**.
+    **Nenhuma asserção nova foi posta no lugar, e isso é deliberado:** escrevi uma
+    substituta ("toda gaveta aberta entrega ao menos uma linha"), mutei seis constantes
+    contra ela e ela não ficou vermelha em nenhuma — **trava que não sabe morrer é
+    decoração**. O arquivo tem 20 casos agora, eram 21.
+    **`PISO_VAGAS` NÃO ficou descoberto**, e isto foi medido mutando `roteador.mjs` e
+    restaurando com `cmp`: `3→1` e `3→0` morrem em `EXPOENTE_SURPRESA ↑` (`agacho` e
+    `supino` caem para uma linha cada na pergunta ORDEM); `3→8` morre em
+    `EXPOENTE_SURPRESA ↓` (G014-10 sai da tela). As duas são asserções de SAÍDA, com número
+    diferente do da constante. **O que fica ABERTO é uma escolha, não uma lacuna:** a
+    bancada prefere 1 e as travas de saída preferem 3, e reescolher o valor reescreve o
+    registro medido dos 42 canários da porta nova — é onda própria, com conjunto cego
+    próprio, e não se decide dentro do passe que a descobriu.
+50. **SOTERRAMENTO DENTRO DA GAVETA CERTA: 5 de 33 ids não chegam nem com a gaveta certa
+    forçada sozinha. É a doença seguinte, e ela é ORDENAÇÃO, não alocação.**
+    `node research/tools/auditoria/vale-a-frota.mjs` força, uma de cada vez, cada gaveta que
+    etiqueta algum id esperado: **28 de 33 ids (85 %) chegam** — para esses o que falta é
+    VAGA, e a claim já está bem ordenada dentro da gaveta dela. Os outros cinco não chegam
+    de jeito nenhum: **V008-10** (D03, em `sono`/`nutricao`/`recuperacao`), **V001-21** e
+    **V001-22** (D09, em `dor`/`lesao`), **V001-24** e **V001-25** (D10, em
+    `mentalidade`/`lesao`).
+    **O D09 é o caso puro:** a camada abre UMA gaveta, a certa (`dor`, 119 claims), a tela
+    sai com **35 das 40 vagas ocupadas** — sobra espaço — e as duas claims não aparecem nem
+    forçando `dor`, nem forçando `lesao`. Nenhuma quantidade de vaga alcança uma claim que
+    está abaixo do corte de relevância dentro da própria gaveta. **É esta divergência, e o
+    número 28/5, que responde por escrito a pergunta do atleta sobre a frota de modelo
+    barato** — ver `ONDA-2C.md` §0.3. **Aberta.**
+51. ~~**A bancada que produziu o veredito da auditoria nascia em diretório `gitignored`.**~~
+    **RESOLVIDO em 12/8/2026, no mesmo passe que a abriu.** Os onze arquivos de medição da
+    auditoria cega foram escritos em `research/tools/scan/`, que está no `.gitignore` desde
+    9/8 (linha `research/tools/scan/`, junto com sobra de `fetch-captions` interrompido).
+    **O instrumento citado por um veredito publicado teria nascido perdido** — que é
+    exatamente o erro que o relatório auditado dizia ter evitado ao tirar
+    `medir-alocacao.mjs` de lá. Conserto: a bancada mora em **`research/tools/auditoria/`**,
+    que é versionada, com os `import` inalterados (mesma profundidade de diretório). O
+    `scan/` continua ignorado e continua sendo o lugar certo para rascunho descartável;
+    **a regra que fica é a da memória do projeto: artefato caro nasce em `research/` e é
+    commitado no mesmo dia.**
+52. **`grep` devolve ZERO linhas em silêncio em `research/tools/roteador.mjs`.** O arquivo
+    contém um byte NUL — separador deliberado de chave de memo, `${topico}\0${afins}` — e
+    isso faz o `grep` tratar 93 KB de JavaScript como binário e não imprimir nada, **sem
+    aviso e com exit 1**, que é indistinguível de "o símbolo não existe". A auditoria de
+    12/8 perdeu três rodadas concluindo que as constantes de alocação não estavam no
+    arquivo. **Use `grep -a`.** Isto vai enganar o próximo agente exatamente como enganou
+    este, e a divergência fica aberta porque o conserto tem dois lados ruins: trocar o
+    separador mexe em código quente por razão de ferramenta, e um comentário no topo do
+    arquivo não é lido por quem está usando `grep` justamente para não abrir o arquivo.
+53. **AS VARREDURAS QUE ESCOLHERAM AS CONSTANTES NÃO REPRODUZEM.** O `RECUPERACAO.md` §25
+    justifica cada constante com uma varredura, e nenhuma das três bate com a bancada que o
+    próprio documento cita. Remedido em 12/8 (noite), **com os D01–D12 já dentro do
+    `CANARIOS.json`**, o que muda o total de ids esperados de 127 para 160 e por isso os
+    números absolutos não são comparáveis linha a linha com os do relatório — **as
+    ORDENS entre os valores são, e é isso que decidiu as constantes**:
+
+    | o que o §25 escreveu | `node research/tools/medir-alocacao.mjs` hoje | veredito |
+    |---|---|---|
+    | *"piso 1/2/3 empatam em 60 ids"* | `--pisos 1,2,3,4` → **63 / 62 / 62 / 60** ids e **18 / 17 / 17 / 16** completos | **falso** — não há empate e **piso 1 ganha em todas as colunas** |
+    | *"expoente 1→57, 2→57, 3→60, 4→59, 5→60; 3 é o menor inteiro do platô"* | `--pisos 3 --expoentes 1,2,3,4,5` → **57 / 59 / 62 / 62 / 62** | **números falsos, conclusão certa** — não existe o vale em 4 que o texto usou como razão, e o platô real começa em 3 |
+    | *"canários completos antes: 13"* | `--legado` → `"completos":14` | **falso** |
+
+    **Os números de manchete reproduzem** (mediana 34, legado 48 ids); são as varreduras de
+    calibração que não. É o modo de falha nº 3 na forma mais cara: **a prosa que justifica
+    um número não é gerada pelo comando que produz o número**, e ninguém confere
+    justificativa — o leitor confere a manchete. O caso do expoente é o mais instrutivo
+    porque a escolha estava CERTA e a razão escrita estava ERRADA, e uma razão errada não
+    protege a constante na próxima vez. **Aberta**, e o conserto não é reescrever a prosa:
+    é a bancada imprimir a tabela em formato colável e o documento citar a saída literal,
+    nunca um resumo dela.
+54. **O canário do cinto continua REPROVADO, e o relatório exibiu uma terceira frase.**
+    O `RECUPERACAO.md` §25 mostra *"o cinto pode ter mais de 13 mm de espessura na IPF"*
+    devolvendo 31 linhas com F001-84 em 2º — e isso reproduz. Mas essa frase é uma das
+    perguntas ESTREITAS da bancada `medir-alocacao.mjs`, **não é a frase que o gate cobra**.
+    Medido com `node research/tools/auditoria/tres-saidas.mjs`: o **C01** do `CANARIOS.json`
+    (*"Vou comprar cinto para competir na IPF. Que dimensões o regulamento permite?"*)
+    devolve 30 linhas com F001-83 e F001-84 **os dois FORA**; e o **T14** do `ROTAS.json`
+    só passa com `forcaTopico: cinto` e `tetoDeTela: 60`, entregando F001-83 em 49º e
+    F001-84 em 51º. Sem `--topic`, com teto 40 ou 60, os dois ficam fora.
+    **Exibir uma frase que passa ao lado de um canário que reprova é a forma mais barata de
+    um relatório dizer sucesso sem sucesso** (modo de falha nº 5). **Aberta.**
+55. **A PRECISÃO DO TOPO PIOROU, e o relatório disse que ela "não foi medida" quando ela
+    estava a um comando.** `node research/tools/auditoria/topo.mjs`: dos **45** ids
+    presentes nas duas telas (legado e atual), **17 DESCERAM e 11 subiram**, e a **posição
+    MEDIANA da resposta certa foi de 6 para 8**. No topo da própria pergunta-vitrine, o 2º
+    e o 3º lugar são lixo relevante-por-pouco — G007-28, tabela de volume de supino de um
+    programa, e G022-31, cortar supino inclinado com halteres — enquanto V079-34, a claim
+    do limiar de dor, está em 13º. **A tela ficou mais completa e menos precisa**, e isso é
+    um preço, não um empate: numa tela de 40 o atleta lê as primeiras. Continua valendo o
+    que a §8.31 já dizia — não há julgador medindo precisão, e `injecao` continua 0, mas
+    `injecao` só pega gaveta errada aberta, não lixo relevante-por-pouco em 3º. **Aberta.**
+56. **A camada acha quando o atleta JÁ SABE o vocabulário — que é o oposto do que ela
+    promete.** `node research/tools/auditoria/parafrase.mjs`: a fisgada entrega **5 de 5**
+    com a frase escrita e **3 de 5** sob paráfrase sem jargão (*"senti uma pontada nível 3
+    de 10 no peito na 3ª série do supino com pausa, sigo o treino"*) — caem V138-19 e
+    V086-21, que ocupavam as vagas 38 e 39 de 40. **O caso mais caro desta base tem margem
+    de duas vagas e não sobrevive à reescrita.** Dos 12 casos medidos, 10 continuam
+    devolvendo algum id e **P16 e P13 perdem TUDO**. E o contra-exemplo que fecha o
+    diagnóstico: **D05 vai de 1/3 para 3/3 e D08 de 2/3 para 3/3 sob paráfrase**, porque a
+    paráfrase usou a jargona da gaveta (`terra sumo`, `convencional`, `barra nas costas`).
+    É exatamente o que os canários `presente-escondido` existem para reprovar. **Aberta.**
+57. **BURACOS DE ROTEAMENTO COM "NÃO SEI" SILENCIOSO SOBRE FATO QUE A BASE TEM LITERAL.**
+    `node research/tools/auditoria/estreitas.mjs`: *"quantos minutos tenho para entrar na
+    plataforma depois de chamado"* devolve **0 linhas** e imprime *"esta pergunta não achou
+    a gaveta"* — e **F001-130 traz `prazo_iniciar_tentativa = 1 min`**, tier O, verbatim
+    literal do rulebook. *"quantas tentativas eu tenho em cada movimento"* devolve **2
+    linhas** e **F001-119 traz `tentativas_por_movimento = 3`**. As duas são perguntas que
+    um estreante faz na semana da primeira competição, as duas têm resposta tipada em
+    `params`, e as duas caem abaixo do piso de 0.65 — em uma delas a gaveta mais próxima é
+    `ordem-exercicio` com 0.55. **O aviso da tela está correto e é honesto** (*"isto não é
+    'a base não tem'"*), o que não impede o atleta de sair sem a resposta. **Aberta.**
+58. **A cobertura de mutação do vocabulário de entrada: o número que vale é o do PIOR
+    ataque, e ele NÃO é o `lixo` 74/74 que ficou circulando.** O relato de travas da onda
+    2D publica quatro ataques de `mutacao-entrada.mjs` e o resumo que se repetiu foi o
+    `lixo`, que é o mais fácil deles. **Remedido em 12/8 à noite, com os D01–D12 já dentro
+    do gate** (`node research/tools/mutacao-entrada.mjs --ataque <nome> --jobs 8`, ~6,5 min
+    cada):
+
+    | ataque | cobertura | quem pega | gavetas descobertas |
+    |---|---|---|---|
+    | `lixo` | **74/74** | 65 `check-glossario.test.mjs` · 4 `alocacao.test.mjs` · 3 `roteador.test.mjs` · 2 `build-glossario.mjs` | — |
+    | `troca` | **71/74** | 46 `check-glossario.test.mjs` · 12 `check-canarios.mjs` · 7 `alocacao.test.mjs` · 4 `roteador.test.mjs` · 2 `build-glossario.mjs` | `agacho`, `aprendizado-motor`, `core` |
+
+    **`enchimento` (74/74) e `enchimento-ptbr` (70/74) são números herdados do relato da
+    onda 2D e NÃO foram re-medidos aqui** — estão escritos como herdados de propósito, para
+    não virarem medida por repetição.
+    **A `troca` melhorou de 68/74 para 71/74 sem ninguém tocar em trava**, e a razão é boa:
+    absorver os doze canários cegos no `CANARIOS.json` fez o `check-canarios.mjs` passar a
+    pegar 12 mutações, e três gavetas antes descobertas (`barra-alta`, `convencional`,
+    `intensidade`) ficaram cobertas. **Canário cego absorvido é cobertura de mutação de
+    graça** — é um argumento a mais para absorver conjunto cego no commit em que ele é
+    publicado, em vez de deixá-lo em arquivo solto.
+    **A ressalva que agrava, e ela foi confirmada:** **65 das 74** mortes do `lixo` vêm de
+    `check-glossario.test.mjs`, cujo caso 1 é a MESMA regra de âncora que o
+    `check-glossario.mjs` já roda no gate — a cobertura de 74/74 é **uma regra contada duas
+    vezes**, e se ela cair caem as 74 juntas. Na `troca`, que é o ataque honesto, a
+    dependência daquele arquivo cai para 46 de 71 e os canários entram no lugar.
+    O conserto das três da `troca` não é trava e sim canário no `ROTAS.json`: nenhuma regra
+    determinística chama de lixo um vocabulário de termos REAIS porém errados para a gaveta
+    sem chamar `fisgada` de lixo também (é o residual já escrito na §8.43). **Aberta.**

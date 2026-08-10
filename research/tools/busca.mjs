@@ -616,12 +616,23 @@ export function vizinhosNoMesmoSrc(claims, foco, {
       if (c.src !== f.src || c.id === f.id) continue;
       const d = Math.abs(NUMERO_DO_ID(c.id) - n);
       if (d > raio || Number.isNaN(d)) continue;
-      candidatos.push({ c, deQuem: f.id, i, d });
+      candidatos.push({ c, deQuem: f.id, i, d, depois: NUMERO_DO_ID(c.id) > n });
     }
   });
   // Distância primeiro, foco depois: a página ao lado de QUALQUER foco vale mais
   // que a terceira página adiante do primeiro deles.
-  candidatos.sort((a, b) => a.d - b.d || a.i - b.i || a.c.id.localeCompare(b.c.id));
+  //
+  // E, empatados os dois, a página SEGUINTE vale mais que a anterior. É o próprio
+  // motivo de o canal existir, escrito no bloco acima: *o extrator emitiu as
+  // claims na ordem em que o assunto foi dito, então a de ao lado costuma ser a
+  // que completa a resposta*. Quem completa é a seguinte; a anterior é a que
+  // introduz. Até 12/08/2026 o desempate era alfabético, o que dá o mesmo que
+  // "a anterior primeiro", e ninguém percebia porque a tela era grande o
+  // bastante para levar as duas. Com a tela encolhida pela alocação por gaveta,
+  // o T05 passou a devolver V003-16 no lugar de V003-18 — que é o id com o
+  // número (5 min em agachamento e terra, 3 no supino) que o canário cobra.
+  candidatos.sort((a, b) => a.d - b.d || a.i - b.i
+    || (b.depois ? 1 : 0) - (a.depois ? 1 : 0) || a.c.id.localeCompare(b.c.id));
   const out = [];
   const usadoPorFoco = new Map();
   for (const cand of candidatos) {

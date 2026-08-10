@@ -61,6 +61,47 @@
 > publicados e estão queimados. **A próxima onda de recuperação precisa de um conjunto
 > cego NOVO antes de qualquer conserto.**
 
+> **O número da onda 2D — ALOCAÇÃO DE VAGAS POR GAVETA (12/08/2026), medido contra o
+> conjunto cego NOVO D01–D12, que ninguém tinha visto: 2 de 12 devolvem algum id, ZERO
+> devolvem todos, 3 de 33 ids esperados chegam à tela (9 %). No conjunto PÚBLICO
+> P01–P18, na mesma camada e no mesmo dia: 7 de 18 e 2 de 18. O visível está 2,3 vezes
+> acima do cego.** Contra o estado de 11/08 rodado no mesmo comando
+> (`node research/tools/auditoria/legado.mjs`), os mesmos doze cegos saíam de **0 de 12 e
+> 0 de 33**: o ganho é real, é atribuível à alocação, e é de **três ids em trinta e três**.
+> O atleta continua sem resposta em **10 das 12** perguntas dele.
+>
+> **O defeito que a onda existiu para matar PIOROU: soterramento de 10 para 11 de 12.**
+> Em nove casos a gaveta com a resposta ABRIU e nenhum id chegou; só D11 é roteamento
+> puro. A alocação por gaveta trocou *"a gaveta grande come tudo"* por *"as vagas se
+> repartem entre gavetas erradas"*, e a prova é contraintuitiva: em D05,
+> `--topic convencional` devolve as três claims e `--topic convencional sumo terra`
+> devolve **ZERO**. **Abrir a gaveta certa mais uma vizinha é pior do que abrir só a
+> certa** (`RUNBOOK.md` §8.48), e nenhuma trava vê isso.
+>
+> **O que a onda entregou de verdade, e reproduz duas vezes:** a fisgada — a pergunta mais
+> cara desta base para este atleta — devolve as CINCO claims do limiar de dor sem
+> `--topic`; a tela MEDIANA caiu de 40 para 34; os 53 canários com id esperado vão de 48
+> para 59 ids. **E o preço que o relatório não mediu:** a posição MEDIANA da resposta
+> certa foi de 6 para 8, e 17 dos 45 ids presentes nas duas telas DESCERAM
+> (`RUNBOOK.md` §8.55). A tela ficou mais completa e menos precisa.
+>
+> **O gargalo tem nome novo, e ele NÃO é mais alocação.** Forçando sozinha a gaveta que
+> contém a resposta (`node research/tools/auditoria/vale-a-frota.mjs`), **28 de 33 ids
+> chegam** — para esses o que falta é vaga. **5 de 33 não chegam nem assim**: estão
+> soterrados DENTRO da gaveta certa. O caso puro é D09, em que abre UMA gaveta, a certa
+> (`dor`), a tela sai com 35 das 40 vagas ocupadas, e as duas claims não aparecem nem
+> forçando. **O próximo alvo é ORDENAÇÃO DENTRO DA GAVETA** (`RUNBOOK.md` §8.50) — e é
+> esse mesmo 28/5 que responde à pergunta do atleta sobre a frota de modelo barato, no
+> `ONDA-2C.md` §0.3.
+>
+> **E a lição do instrumento, quarta vez:** o relatório da onda 2D é o mais honesto das
+> cinco ondas e ainda assim foi honesto **nos números que escolheu publicar, não nos que
+> decidiram as constantes**. As varreduras que justificaram `PISO_VAGAS` e
+> `EXPOENTE_SURPRESA` não reproduzem (§8.53), e a asserção que "matava" o mutante
+> `PISO_VAGAS 3→1` era a constante reescrita como asserção — modo de falha nº 4 dentro do
+> arquivo escrito para provar que as constantes foram ganhas. Removida (§8.49). **D01–D12
+> estão publicados a partir deste commit e queimados**, como os B## antes deles.
+
 Este arquivo é curto de propósito. O mapa do sistema está em `research/RUNBOOK.md`; o
 registro está em `SCHEMA.md`; o porquê de cada gaveta está em `ENUMERADOS.md`; como a base
 é medida está em `INSTRUMENTO.md`. Aqui está só: **onde a base está, o que foi provado, o

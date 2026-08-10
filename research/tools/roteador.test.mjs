@@ -37,7 +37,7 @@ import {
 } from './glossario.mjs';
 import {
   termosDaPergunta, perfilarTopicos, familiaDoTermo, pesoDoTermo, pesoDaPalavra,
-  rotasValidas, responder, conjuntoDoTopico, nomeiaOParam, assinaturaDoTopico,
+  rotasValidas, responder, conjuntoDoTopico, nomeiaOParam, porNomeDeParam, assinaturaDoTopico,
 } from './roteador.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -272,6 +272,37 @@ const perguntar = (pergunta, extra = {}) => responder(claims, pergunta, {
       && !familiaNoGlossario(GLOSSARIO, 'powerlift').includes('powerbuilding'),
     `powerlift → ${familiaNoGlossario(GLOSSARIO, 'powerlift').join(', ')} — `
       + 'sem a fração da palavra mais curta, os dois assuntos viram um só');
+  /**
+   * ── E A TERCEIRA CONDIÇÃO, `DIFERENCA_MAXIMA_GLOSSARIO`, TAMBÉM PRECISA DA
+   *    SUA — porque ela é a que sobrou sem canário depois que `powerlift`
+   *    cobriu a fração.
+   *
+   * Medido por mutação em 12/08/2026: `DIFERENCA_MAXIMA_GLOSSARIO 5 → 50`
+   * sobrevivia VERDE ao `check:kb` inteiro. Era uma das cinco mutações de
+   * constante que passavam, e as cinco AFROUXAVAM — o padrão é o diagnóstico:
+   * os testes cobriam só o lado que aperta.
+   *
+   * `fisiculturista` é o par certo para cobrar esta condição especificamente,
+   * e não por acaso:
+   *   · não é termo do glossário, então o curto-circuito da palavra exata não
+   *     resolve nada e as três condições rodam de verdade;
+   *   · o prefixo comum com `fisico` é `fisi` … na verdade `fisic` (5) sobre
+   *     mínimo 6, que PASSA na fração de 0,6 — quem recusa o par é só a
+   *     diferença de comprimento (14 contra 6, oito letras).
+   *
+   * Com a constante em 5 ele alcança `fisiculturismo` e mais nada. Com 50 ele
+   * arrasta `fisico` e `fisica`, que são termos de OUTRAS gavetas — e aí uma
+   * pergunta sobre fisiculturismo passa a pontuar gaveta de físico. É o bug do
+   * `power`/`powerlifting` remontado no eixo do comprimento.
+   */
+  ok('e a DIFERENÇA DE COMPRIMENTO roda: `fisiculturista` não arrasta `fisico`/`fisica`',
+    familiaNoGlossario(GLOSSARIO, 'fisiculturista').includes('fisiculturismo')
+      && !familiaNoGlossario(GLOSSARIO, 'fisiculturista').some((t) => /^fisic[oa]$/.test(t)),
+    `fisiculturista → ${familiaNoGlossario(GLOSSARIO, 'fisiculturista').join(', ')} — `
+      + 'oito letras de diferença não é conjugação, é outra palavra');
+  ok('e o mesmo no eixo do `cardio`: `cardiaco` não alcança `cardiovascular`',
+    !familiaNoGlossario(GLOSSARIO, 'cardiaco').includes('cardiovascular'),
+    `cardiaco → ${familiaNoGlossario(GLOSSARIO, 'cardiaco').join(', ')}`);
   ok('e a palavra que JÁ é termo do glossário fica sozinha, sem arrastar vizinho de prefixo',
     familiaNoGlossario(GLOSSARIO, 'fisgada').join(',') === 'fisgada',
     `fisgada → ${familiaNoGlossario(GLOSSARIO, 'fisgada').join(', ')} — `
@@ -413,6 +444,60 @@ const perguntar = (pergunta, extra = {}) => responder(claims, pergunta, {
     `saíram ${r.claims.length} — despejar isso no contexto de um agente destrói a consulta seguinte`);
   ok('e o padrão não é tão apertado que deixe de ser uma amostra (>= 20)',
     r.claims.length >= 20, `saíram ${r.claims.length}`);
+}
+
+/**
+ * ── O TETO DO CANAL DE PARAM, pelo mesmo motivo e com o mesmo cuidado ────────
+ *
+ * Medido por mutação em 12/08/2026: `TETO_PARAM 12 → 120` sobrevivia VERDE ao
+ * `check:kb` inteiro. O canal de param é o único que lê o dado TIPADO em vez do
+ * texto, e ele não passa pelo roteamento — então nenhum canário de gaveta o
+ * alcança, e o orçamento de tela do `responder()` o esconde: sem teto próprio,
+ * *quantas séries e repetições por semana com que percentual* devolve 31 linhas.
+ *
+ * O 12 aqui é literal e escrito à mão. Se ele viesse de `roteador.mjs`, a trava
+ * leria a constante que verifica — que é o modo de falha nº 4 e é exatamente
+ * como esta mutação sobreviveu.
+ */
+{
+  const solto = porNomeDeParam(claims, INDICE, PERFIS, 'quantas series e repeticoes por semana com que percentual', { teto: 500 });
+  const padrao = porNomeDeParam(claims, INDICE, PERFIS, 'quantas series e repeticoes por semana com que percentual');
+  ok('o canal de param tem teto PRÓPRIO, e ele é de tela: no máximo 12 linhas',
+    padrao.lista.length <= 12,
+    `saíram ${padrao.lista.length} — o canal de param não passa por gaveta nenhuma, então nada mais o segura`);
+  ok('e o teto está de fato MORDENDO nesta pergunta (senão o caso acima não prova nada)',
+    solto.lista.length > 12,
+    `sem teto saem ${solto.lista.length}: se não passar de 12, troque a pergunta — um teto que nunca corta não é medido`);
+}
+
+/**
+ * ── O NOME COMPOSTO NÃO PODE FECHAR AS OUTRAS GAVETAS ────────────────────────
+ *
+ * Medido por mutação em 12/08/2026: `PESO_NOME_COMPOSTO 1,2 → 12` sobrevivia
+ * VERDE. Era uma das cinco que passavam, e as cinco AFROUXAVAM — nesta casa os
+ * testes cobriam só o lado que aperta.
+ *
+ * O dano de um peso dez vezes maior não é o número do score, é o SILÊNCIO que
+ * ele produz: as rotas são filtradas por `FRACAO_DO_MELHOR` do melhor score,
+ * então um canal que sozinho vale 12 empurra toda gaveta legítima para baixo do
+ * corte. A pergunta abaixo nomeia uma gaveta pelo nome composto inteiro E
+ * carrega a palavra que abre outra; as duas têm de sair. Com o peso em 12, a
+ * segunda desaparece — e o atleta com histórico de peitoral perde a gaveta do
+ * peitoral por ter escrito o nome de um assunto de descanso.
+ *
+ * Este caso afirma uma RELAÇÃO ("a segunda gaveta sobrevive ao lado da
+ * nomeada"), não um número importado — é o que o torna legível quando a
+ * alocação de vagas mudar embaixo dele.
+ */
+{
+  const r = perguntar('descanso entre series com fisgada no peitoral');
+  const rotas = r.rotas.map((x) => x.topico);
+  ok('o nome composto NOMEIA a gaveta e ela vem em 1º',
+    rotas[0] === 'descanso-entre-series', `rotas: ${rotas.join(', ')}`);
+  ok('e o nome composto NÃO fecha a gaveta que a outra palavra abriu',
+    rotas.some((t) => ['peito', 'dor', 'lesao'].includes(t)),
+    `rotas: ${r.rotas.map((x) => `${x.topico}:${x.score.toFixed(2)}`).join(' ')} — `
+      + 'um nome que vale 10x sozinho apaga toda gaveta legítima pelo corte de FRACAO_DO_MELHOR');
 }
 
 // ── o invariante que só o alvo FECHADO torna possível ────────────────────────

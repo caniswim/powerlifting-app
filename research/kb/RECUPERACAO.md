@@ -1,5 +1,119 @@
 # RECUPERAÇÃO — a base escondia o que tinha, e o conserto está na ferramenta
 
+> **VEREDITO — 12/08/2026 (noite), medido contra o conjunto cego D01–D12, que
+> ninguém tinha visto. 6.912 claims, teto de tela 40.**
+>
+> ```
+> CEGO       (D01-D12)   2 de 12 devolvem ALGUM id · 0 de 12 devolvem TODOS ·  3 de 33 ids (9 %)
+> PÚBLICO    (P01-P18)   7 de 18 devolvem ALGUM id · 2 de 18 devolvem TODOS
+> SOTERRADOS             11 de 12 cegos abrem a gaveta com a resposta e não a entregam
+> ```
+>
+> **A distância entre cego e público é de 22 pontos percentuais em "algum id"
+> (16,7 % contra 38,9 %) e de 11 pontos em "todos os ids" (0 % contra 11,1 %). O
+> visível está 2,3 vezes acima do cego.** Os números saem separados por conjunto
+> a cada `node research/tools/check-canarios.mjs`; a soma dos três conjuntos é
+> impressa depois de todos eles e nunca sozinha, porque a média apaga essa
+> distância, que é a única coisa que um conjunto cego mede.
+>
+> **O ganho é real e é minúsculo.** Contra o estado de 11/08 rodado no mesmo
+> comando (`node research/tools/auditoria/legado.mjs`), os mesmos doze cegos
+> saem de **0 de 12 para 2 de 12** e de **0 de 33 ids para 3 de 33**. O atleta
+> continua sem resposta em **10 das 12** perguntas dele.
+>
+> **O defeito que esta onda existiu para matar PIOROU.** O soterramento era 10
+> de 12 e é **11 de 12**. Em nove casos a gaveta com a resposta ABRIU e nenhum id
+> chegou; só o D11 é falha de roteamento pura. A alocação por gaveta trocou *"a
+> gaveta grande come tudo"* por *"as vagas se repartem entre gavetas erradas"* — e
+> a prova é contraintuitiva e está gravada: em D05, `--topic convencional`
+> devolve as três claims e `--topic convencional sumo terra` devolve **zero**.
+> **Abrir a gaveta certa mais uma vizinha é pior do que abrir só a certa**, e
+> nenhuma trava vê isso (§8.48).
+>
+> **O que é verdade do relatório da tarde, reproduzido duas vezes:** a FISGADA
+> entrega as CINCO sem `--topic` (13/18/36/38/39); a ORDEM (B11) reproduz linha
+> por linha; a tela MEDIANA caiu de 40 para 34; as regressões declaradas do
+> público (P11 perde G004-11, P13 perde V119-20) reproduzem exatas.
+>
+> **O ganho global, na régua de hoje.** O relatório da tarde publicou *"48 → 59
+> ids em 127, completos 13 → 17"*. **Esses números não reproduzem mais, e não
+> porque estivessem errados: a entrada dos D01–D12 no `CANARIOS.json` acrescentou
+> 12 casos e 33 ids à bancada.** Hoje
+> `node research/tools/medir-alocacao.mjs` lê **48 → 62 ids em 160**, com
+> `--legado` imprimindo `completos: 14` contra 17 agora. A conta fecha exata —
+> `59 + 3 = 62`, `127 + 33 = 160`, `53 + 12 = 65` casos —, e os `+3` são
+> justamente os três ids que o conjunto cego novo devolve. O `13` do relatório era
+> `14` desde sempre (§8.53).
+>
+> **O que era mentira útil, e por que fica escrito:** as varreduras que
+> ESCOLHERAM as constantes não reproduzem (§8.53), e a asserção que "matava" o
+> mutante `PISO_VAGAS 3→1` era a constante reescrita como asserção — modo de
+> falha nº 4 dentro do arquivo escrito para provar que as constantes foram
+> ganhas. Removida (§8.49). **E o preço que ninguém tinha medido: a posição
+> MEDIANA da resposta certa foi de 6 para 8** — dos 45 ids presentes nas duas
+> telas, 17 desceram e 11 subiram (§8.55).
+>
+> **A doença seguinte tem nome, e não é alocação.** Forçando sozinha a gaveta que
+> contém a resposta, **28 dos 33 ids chegam** — para esses o que falta é VAGA.
+> Os outros **5 de 33 não chegam nem assim**: estão soterrados DENTRO da gaveta
+> certa, e o caso puro é o D09, em que abre UMA gaveta, a certa (`dor`), a tela
+> sai com 35 das 40 vagas ocupadas, e as duas claims não aparecem nem forçando.
+> **O próximo alvo é ORDENAÇÃO DENTRO DA GAVETA** (§8.50), e é esse mesmo número
+> que responde por escrito a pergunta do atleta sobre a frota de modelo barato,
+> no `ONDA-2C.md` §0.3: `node research/tools/auditoria/vale-a-frota.mjs`.
+>
+> **D01–D12 estão publicados a partir deste commit e, portanto, queimados**, como
+> os B01–B12 antes deles. A próxima onda precisa de conjunto cego novo, escrito
+> antes do conserto por quem não viu a ferramenta.
+
+<details>
+<summary>Veredito anterior — 12/08/2026 (tarde), o relatório da alocação por gaveta, antes da auditoria cega</summary>
+
+> **VEREDITO — 12/08/2026 (tarde), os três números, contra 6.912 claims, teto de
+> tela 40.**
+>
+> **CEGO (B01–B12, escrito pelo ataque antes desta onda): 2 de 12 devolvem algum
+> id esperado — era 0 de 12. PÚBLICO (P01–P18): 7 de 18 — era 8 de 18.**
+>
+> **O número público CAIU, e ele caiu de propósito.** P11 perdeu o único id que
+> tinha na tela (G004-11, que saía em 29º pelo ranking global) quando a rota
+> deixou de ocupar as 40 vagas sozinha. Em compensação, os canários que devolvem
+> **TODOS** os ids esperados foram de **0 de 18 para 2 de 18** (P06 e P07): a tela
+> passou a completar respostas em vez de encostar nelas. A distância entre cego e
+> público caiu de 44 para **22 pontos percentuais** (16,7 % contra 38,9 %) — e
+> parte dessa queda é o público piorando, não só o cego melhorando. Está dito
+> assim porque a média de um número que sobe com outro que desce é a forma mais
+> barata de um relatório mentir.
+>
+> **SOTERRADOS: 10 dos 12 cegos tinham a gaveta certa aberta e a resposta fora da
+> tela. Hoje são 8.** Sobre o conjunto inteiro de 53 canários com id esperado
+> (os 19 do `ROTAS.json` + os 34 do `CANARIOS.json` + os três casos nomeados da
+> onda), os ids que chegam à tela vão de **46 de 127 para 59 de 127** — **48 → 59**
+> se o ganho da alocação for isolado do desempate da página ao lado, que mudou
+> junto —, e os casos em que TODOS os ids chegam vão de **13 para 17**.
+>
+> **O caso mais caro desta base está fechado.** *"fisgada de 3/10 no peitoral na
+> terceira série de supino pausado, continuo?"*, **sem `--topic`**, devolve as
+> CINCO claims do limiar de dor — V079-34 (13º), V001-06 (18º), V027-23 (36º),
+> V086-21 (38º), V138-19 (39º). Em 11/08 chegava uma, em 36º.
+>
+> **E a tela aprendeu a devolver pouco:** o tamanho MEDIANO caiu de 40 para 34, e
+> *"o cinto pode ter mais de 13 mm de espessura na IPF"* devolve 31 linhas com
+> F001-84 em 2º, contra 40 linhas antes.
+>
+> **O que se pagou:** dois canários públicos perderam um id cada (P11 perde
+> G004-11, P13 perde V119-20) porque a rota deixou de ocupar as 40 vagas
+> sozinha. Está gravado no `CANARIOS.json`, com o veredito medido, inclusive nos
+> que falham. Ver **PARTE VI (§25)**.
+>
+> Os números saem separados por conjunto a cada
+> `node research/tools/check-canarios.mjs` — somá-los imprimiria a média e
+> apagaria a distância. **B01–B12 estão publicados e queimados**; a próxima onda
+> precisa de conjunto cego novo.
+
+<details>
+<summary>Veredito anterior — 12/08/2026 (manhã), o diagnóstico do soterramento</summary>
+
 > **VEREDITO — 12/08/2026, os dois números, contra 6.912 claims, teto de tela 40.**
 >
 > **No conjunto PÚBLICO (P01–P18, que o construtor enxergava): 8 de 18 devolvem
@@ -16,6 +130,9 @@
 > por conjunto — somá-los imprimiria `8 de 30`, que é a média dos dois e apaga a
 > distância. A próxima onda precisa de um conjunto cego NOVO: B01–B12 estão
 > publicados a partir deste commit e, por isso, queimados.
+
+
+</details>
 
 <details>
 <summary>Veredito anterior — 11/08/2026, medido só no conjunto público</summary>
@@ -1788,3 +1905,405 @@ em `research/kb/entrada/lote-6.json`, rodar `build-glossario.mjs` e
 - **A precisão** (§8.46): 32 de 33 perguntas devolvem exatamente 40 claims. Não
   existe resposta estreita nesta camada, nem para uma pergunta de sim/não sobre
   uma única claim de regulamento.
+
+
+---
+
+# PARTE VI — A ALOCAÇÃO DE VAGAS POR GAVETA (12/08/2026)
+
+## 25. O defeito era de ALOCAÇÃO, e ele custava a resposta inteira
+
+### 25.1 O mecanismo, medido
+
+A onda de 11/08 consertou o roteamento e entregou zero: em 10 dos 12 canários
+cegos a gaveta que contém a resposta ABRIU e a resposta não chegou à tela. O
+passo seguinte era o culpado, e ele era literalmente uma linha:
+
+```js
+const claimsRoteadas = [...acumulado.values()]
+  .sort((a, b) => b.score - a.score)
+  .slice(0, teto);            // <- as 40 vagas, por ranking global
+```
+
+Cada gaveta despejava até 40 claims num balaio comum, ordenava-se tudo junto e
+cortava-se em 40. **Ordenar tudo junto e cortar é dar as vagas por TAMANHO de
+gaveta**, porque a gaveta grande tem mais bilhetes na rifa:
+
+| pergunta | como as 40 vagas eram divididas |
+|---|---|
+| B11 | `supino`(694):29 `agacho`(990):25 **`ordem-exercicio`(29):9** |
+| B07 | `competicao`(457):36 `equipamento`(199):4 ← F001-94 está aqui |
+| B12 | `agacho`(990):39 |
+| fisgada | `peito`(31):33 `supino`(694):9 **`dor`(119):6** ← as 5 estão aqui |
+
+### 25.2 Quantas vagas uma gaveta merece, e por quê
+
+A resposta tem três partes, e as três estão em `vagasPorGaveta` /`alocarVagas`
+em `research/tools/roteador.mjs`.
+
+**1. Um PISO por gaveta aberta (`PISO_VAGAS = 3`).** O roteador não é confiável o
+bastante na ORDEM em que abre as gavetas para que a última leve zero: em 8 dos 10
+soterrados a gaveta da resposta abriu e não era a primeira. Varrido de 1 a 8
+contra os 53 canários: 1, 2 e 3 empatam em 60 ids; 4 cai para 58, 5 para 57, 8
+para 55. **3 é o maior valor que ainda não custa nada** — o mais forte que a
+propriedade "vaga garantida" consegue ser de graça.
+
+**2. A sobra por `score × SURPRESA DO TAMANHO`, com a surpresa ao cubo.**
+`agacho` pontuar 0,90 numa pergunta deste atleta não é notícia: são 990 claims e
+ele agacha em toda pergunta que faz. `ordem-exercicio` pontuar 0,86 com 29 claims
+é notícia — a pergunta teve de ser SOBRE ordem de exercício. A forma é o idf da
+gaveta, `log(N/n)`, que é a mesma conta que o `pesoDoTermo` já faz um nível
+abaixo. Varrido:
+
+| expoente | ids na tela | casos completos |
+|---|---|---|
+| 1 | 57 de 127 | 16 |
+| 2 | 57 | 16 |
+| **3** | **60** | **17** |
+| 4 | 59 | 16 |
+| 5 | 60 | 17 |
+
+**3 é o menor inteiro do platô.** Com 1, `ordem-exercicio` leva 9 das vagas da
+rota na B11 e G014-10 (14ª DENTRO da gaveta) não sai; com 3 ela leva 16 e sai.
+
+**3. E a vaga é TETO, não é direito.** A sobra NÃO volta ao bolo: se `cinto` tem
+duas claims para dizer, as outras vagas dela evaporam em vez de irem para
+`competicao`(457), que tem distribuição chapada. É isso que faz a tela encolher.
+
+### 25.3 A EXCEÇÃO que a própria base declara
+
+A surpresa aponta para o lado errado num caso, e é o mais caro: na pergunta da
+fisgada, `peito`(31) é mais surpreendente que `dor`(119) e levaria mais vagas —
+e as cinco claims do limiar de dor estão em `dor`.
+
+O desempate não é heurística nova: está no `naoConfundirCom` do glossário, e
+`peito` declara, no lote 1, que *"QUALQUER sintoma no peitoral vai para dor,
+mesmo mencionando a palavra peito"*. A regra é uma frase: **quando o dono de uma
+gaveta aberta diz por escrito que a resposta é na gaveta ao lado, a gaveta ao
+lado não sai da tela com menos vagas do que quem a apontou.** Sem ela, `dor` leva
+7 vagas e V001-06 (9ª dentro de `dor`) não chega; com ela, `dor` empata com
+`peito` em 16.
+
+### 25.4 As 40 vagas são de QUATRO canais, e três deles não existiam para a medição
+
+O segundo defeito, e ele estava escondido atrás do primeiro: quem conta a tela
+(`telaDe()` do `check-canarios.mjs`, e o `check-rotas.mjs`) enfileira
+`claims → params → vizinhos` e corta em 40. **Com a rota ocupando as 40, os
+outros canais eram calculados, impressos e cortados fora da tela.** O caso que
+prova: *quanto baixar o peso quando o RPE vem acima do alvo* tem a resposta
+(V033-03/04/05) no canal de PARAM, e o canal de param nunca chegava à tela.
+
+Hoje a rota leva `FRACAO_DA_ROTA = 0,55` do teto — 22 das 40 —, e os outros três
+têm orçamento próprio (`TETO_PARAM` 12, `VAGAS_DA_LIGACAO` 8, `DETALHE_ROTEADO`
+8 por canal de vizinhança). A fração é FRAÇÃO e não número absoluto de propósito:
+com absoluto, `TETO_ROTEADO 40 → 400` vira mutação inerte e a constante passa a
+mentir.
+
+### 25.5 O LEDGER — o canal que não casa palavra nenhuma
+
+Toda claim desta base carrega `conditions` e `conflicts`: 543 das 6.912 declaram
+ao menos um. É a única coisa nesta base que já é um grafo, e até 12/08 a
+recuperação não a lia.
+
+V086-21 — *"treinar com dor leve pode ser aceitável, MAS os sintomas precisam
+estar melhorando ao longo do tempo"* — **não compartilha uma palavra** com
+*"fisgada de 3/10 no peitoral…"*. Nenhuma ordenação por texto pode alcançá-la, e
+nenhuma alocação de vaga conserta isso: não é vaga que falta, é caminho. O
+caminho existe, tipado, na claim que já está na tela: V079-34 declara
+`conditions: V079-39, V027-23, V086-21` e `conflicts: V027-25`.
+
+**A razão é de segurança, não de placar.** Dizer a um atleta com histórico de
+ruptura de peitoral que 2–3/10 de dor é faixa boa para empurrar, sem dizer que
+lesão menor é justamente a que se treina através demais, é pior do que não
+responder. Por isso o foco do canal é a **prescrição** (`MODO_QUE_PUXA_LIGACAO`):
+é a prescrição que pode machucar, e é a condição dela que tem de viajar junto.
+
+O canal viaja dentro de `r.vizinhos` com `canal: 'ligacao'` — e não num campo
+novo. Um campo `ligacoes` que o `telaDe()` não enfileira seria conteúdo
+calculado, impresso e invisível para toda medição, que é o defeito que esta onda
+existe para consertar, cometido de novo com outro nome.
+
+### 25.6 O que foi tentado e MEDIDO NÃO FUNCIONAR
+
+Está escrito porque a próxima onda vai ter a mesma ideia.
+
+- **Penhasco por gaveta (`QUEDA_NA_GAVETA`).** Cada gaveta pararia de oferecer
+  abaixo de uma fração do 1º lugar dela. A forma parecia dar razão (`cinto` cai
+  1,00 · 0,86 · **0,40**), mas a MESMA forma aparece onde a resposta está na
+  cauda: `descanso-entre-series` cai 1,00 · 0,67 · 0,62 · 0,35 e as três claims
+  do T05 vivem entre 0,11 e 0,18. Varrido: queda 0 → 60 ids; 0,15 → 55; 0,45 →
+  36. **A forma do score dentro da gaveta não distingue "achou" de "não tem mais
+  o que dizer" nesta base.** A constante saiu; a frase ficou.
+- **Foco da página ao lado na tela inteira.** O argumento era que
+  `vizinhosNoMesmoSrc` disputa a vaga por DISTÂNCIA, então foco largo só
+  acrescenta candidato melhor. Com 22 focos há mais candidatos de distância 1 do
+  que vagas, e o desempate vira a ordem do foco: o T05 perdia V003-18 e V074-24,
+  que são os dois ids que o `viaPaginaAoLado` cobra POR CANAL. 58 ids contra 57 e
+  a página ao lado de 1 de 2: não compensa. O que consertou de verdade foi o
+  desempate em `busca.mjs` — **entre a página anterior e a seguinte, a SEGUINTE é
+  a que completa** (o desempate era alfabético, que dá o mesmo que "a anterior
+  primeiro").
+- **Cota fixa para a claim AFIM.** `TETO_AFINS` é 60 e `ordem-exercicio` tem 29
+  declaradas: dois terços da gaveta passavam a ser claims de outro lugar, e
+  G014-10 caía de 12º para 30º dentro da própria gaveta. Mas cota fixa quebra o
+  caso oposto: V170-34 (*supinar seis dias por semana*) é AFIM de `frequencia` e
+  caía de 4º para 11º. A regra que ficou é condicional e é um FATO, não um
+  ajuste: **a cota só existe quando a gaveta inteira não cabe nas vagas dela.**
+
+### 25.7 O placar, e o que se pagou
+
+Contra os 53 canários com id esperado (19 do `ROTAS.json`, 34 do `CANARIOS.json`,
+mais os três casos nomeados da onda), medido por
+`node research/tools/medir-alocacao.mjs` — que roda o estado anterior no mesmo
+comando (`--legado`) para o "antes" não depender de ninguém lembrar:
+
+| | 11/08 (ranking global) | 12/08 (vaga por gaveta) |
+|---|---|---|
+| ids que chegam à tela | 46 de 127 · 48 hoje¹ | **59 de 127** |
+| canários com TODOS os ids | 13 de 53 · 14 hoje¹ | **17 de 53** |
+| canários com ALGUM id | 28 de 53 · 29 hoje¹ | **31 de 53** |
+| tamanho MEDIANO da tela | 40 | **34** |
+| `viaPaginaAoLado` (canal cobrado por nome) | 2 de 2 | 2 de 2 |
+| injeção (id de outro assunto) | 0 | 0 |
+
+¹ A primeira coluna tem dois números porque **duas coisas mudaram nesta onda**, e
+somá-las numa só seria atribuir à alocação um ganho que não é dela. `46` é o que
+o ranking global entregava no início da onda; `48` é o que ele entrega HOJE,
+depois de o desempate da página ao lado passar a preferir a página SEGUINTE
+(§25.6). O ganho da alocação, isolado, é **48 → 59**. Rode os dois no mesmo
+comando: `node research/tools/medir-alocacao.mjs --legado` e sem a flag.
+
+> **A TABELA ACIMA NÃO REPRODUZ MAIS, e a razão não é regressão.** Em 12/08 à
+> noite os canários cegos **D01–D12 entraram no `CANARIOS.json`**, e a bancada lê
+> o arquivo: os 53 casos viraram **65** e os 127 ids viraram **160**. Hoje o mesmo
+> comando imprime **48 → 62 ids em 160**, com `--legado` dando `completos: 14`
+> contra 17 agora. A conta fecha exata — `59 + 3 = 62` e `127 + 33 = 160` —, e os
+> `+3` são precisamente os três ids que o conjunto cego novo devolve. Ou seja:
+> **os números desta tabela continuam certos para a régua em que foram medidos, e
+> qualquer comparação futura tem de usar a régua de hoje.** Ver §26 e §8.53.
+
+**E o que piorou, que é a parte que não pode faltar.** Dois canários públicos
+perderam um id cada, e os dois pelo mesmo motivo — a rota deixou de ocupar as 40
+vagas sozinha:
+
+- **P11** (*de quantas em quantas semanas eu preciso pegar leve*) perde G004-11,
+  que saía em 29º pelo ranking global — e como era o ÚNICO id dele na tela, o
+  canário sai da coluna "devolve algum". **É por isso que o placar público cai de
+  8 para 7.**
+- **P13** (*meu supino para no meio do caminho e não sobe mais*) perde V119-20,
+  que saía em 36º, e continua devolvendo V170-42.
+
+Os dois estavam no rodapé da tela cheia. É o preço declarado da tela que encolhe,
+e está gravado no `CANARIOS.json` com o veredito medido — inclusive nos que
+falham. Do outro lado da mesma conta, P06 e P07 passaram a devolver TODOS os ids
+(0 de 18 → 2 de 18 na coluna que mais importa), e é essa a troca: menos canários
+encostando na resposta, mais canários COMPLETANDO.
+
+### 25.8 O que esta onda NÃO resolveu
+
+- **B11 continua incompleto.** G014-10 chega (21º); **G016-10 não chega e não vai
+  chegar por aqui**: ela casa UMA palavra da pergunta (`e`), não tem `conditions`
+  nem `conflicts`, e o único caminho seria a página ao lado a partir de G016-09 —
+  que precisaria de um orçamento de vizinhança maior do que a tela inteira
+  comporta. É recuperação por conteúdo, não por alocação.
+- **A precisão do topo não foi medida contra um julgador.** `injecao` continua em
+  0 pelos `topicosProibidos` do `ROTAS.json`, que é uma medida estreita: ela pega
+  gaveta errada aberta, não claim relevante-por-pouco ocupando o 3º lugar.
+- **Três mutações de AFROUXAMENTO do ledger sobrevivem** —
+  `VAGAS_DA_LIGACAO 8→80`, `TETO_LIGACAO 8→80`, `LIGACOES_POR_FOCO 4→40` — e o
+  motivo está medido: **o ledger é esparso.** Nenhuma das 53 perguntas põe mais
+  de 8 ligações na tela, então subir o teto não muda saída nenhuma. Não é trava
+  faltando: é constante folgada num grafo que ainda não é denso. Quando o ledger
+  bidirecional da tarefa #25 existir, ela aperta. **Dívida declarada, não
+  arredondada.**
+- **`TETO_PARAM 12→120` continua verde**, como já estava antes desta onda
+  (§24.5) e pelo mesmo motivo: nenhuma pergunta medida produz mais de 12
+  casamentos de nome de param, então o teto não corta nada e subi-lo não muda
+  saída nenhuma. `DETALHE_ROTEADO 8→80`, que estava na mesma lista, **morreu**
+  nesta onda.
+
+### 25.9 As travas, e a prova por mutação
+
+`research/tools/alocacao.test.mjs` (21 casos, dentro do `npm run check:kb`) roda
+sobre as **6.912 claims reais** — corpus de bolso não prova recuperação — e
+**não importa constante nenhuma de `roteador.mjs`**: os números são literais
+escritos à mão a partir da varredura. Cada constante nova tem DOIS casos, um para
+cada sentido.
+
+Prova por mutação, com o arquivo restaurado byte a byte depois de cada uma:
+
+As colunas são quantos casos ficam VERMELHOS em cada trava: `aloc` =
+`alocacao.test.mjs`, `rotas` = `check-rotas.mjs`, `rot` = `roteador.test.mjs`,
+`can` = `check-canarios.mjs`.
+
+```
+PISO_VAGAS = 3 → 1                                 aloc:3  rotas:0  rot:0  can:0  VERMELHO
+PISO_VAGAS = 3 → 8                                 aloc:3  rotas:0  rot:2  can:3  VERMELHO
+EXPOENTE_SURPRESA = 3 → 1                          aloc:4  rotas:0  rot:0  can:3  VERMELHO
+EXPOENTE_SURPRESA = 3 → 30                         aloc:3  rotas:5  rot:0  can:2  VERMELHO
+COTA_AFIM = 0 → 1                                  aloc:3  rotas:0  rot:0  can:2  VERMELHO
+FRACAO_DA_ROTA = 0.55 → 1                          aloc:13 rotas:0  rot:2  can:3  VERMELHO
+FRACAO_DA_ROTA = 0.55 → 0.2                        aloc:10 rotas:16 rot:4  can:7  VERMELHO
+VAGAS_DA_LIGACAO = 8 → 0                           aloc:3  rotas:3  rot:0  can:1  VERMELHO
+VAGAS_DA_LIGACAO = 8 → 80                          aloc:0  rotas:0  rot:0  can:0  *** SOBREVIVEU ***
+TETO_LIGACAO = 8 → 1                               aloc:3  rotas:3  rot:0  can:1  VERMELHO
+TETO_LIGACAO = 8 → 80                              aloc:0  rotas:0  rot:0  can:0  *** SOBREVIVEU ***
+LIGACOES_POR_FOCO = 4 → 1                          aloc:3  rotas:3  rot:0  can:1  VERMELHO
+LIGACOES_POR_FOCO = 4 → 40                         aloc:0  rotas:0  rot:0  can:0  *** SOBREVIVEU ***
+MODO_QUE_PUXA_LIGACAO 'prescricao' → 'narrativa'   aloc:3  rotas:3  rot:0  can:1  VERMELHO
+TETO_ROTEADO = 40 → 400                            aloc:14 rotas:0  rot:3  can:3  VERMELHO
+TETO_ROTEADO = 40 → 4                              aloc:11 rotas:0  rot:4  can:0  VERMELHO
+DETALHE_ROTEADO = 8 → 80                           aloc:3  rotas:0  rot:0  can:1  VERMELHO
+TETO_PARAM = 12 → 120                              aloc:0  rotas:0  rot:0  can:0  *** SOBREVIVEU ***
+TETO_AFINS = 60 → 600                              aloc:5  rotas:4  rot:3  can:5  VERMELHO
+PESO_AFIM = 0.6 → 6                                aloc:5  rotas:7  rot:0  can:6  VERMELHO
+```
+
+**17 de 20 vermelhas, e 10 delas no sentido de AFROUXAR** — que era exatamente o
+lado que as travas desta casa não cobriam. Duas dívidas antigas foram pagas de
+quebra: **`DETALHE_ROTEADO 8 → 80` estava na lista de sobreviventes de 11/08
+(§24.5) e agora morre**, porque a página ao lado passou a ter teto cobrado por
+canário. As três que sobrevivem estão nomeadas no §25.8 com o motivo medido.
+
+**E duas constantes foram REMOVIDAS por mentirem**: `VAGAS_DO_PARAM`, que
+duplicava `TETO_PARAM` (a mutação `12 → 120` era matematicamente inerte, que é a
+forma mais barata de uma constante mentir), e `VAGAS_DO_LADO`, que duplicava
+`DETALHE_ROTEADO`.
+
+### 25.10 Procedência da PARTE VI
+
+- A alocação: `research/tools/roteador.mjs` — `surpresaDaGaveta`,
+  `vagasPorGaveta`, `alocarVagas`, `porLigacaoDeclarada`.
+- A bancada de calibração: `research/tools/medir-alocacao.mjs` (a varredura completa,
+  com `--legado` para o estado anterior) e `research/tools/medir-vagas.mjs` (os
+  casos nomeados, com a distribuição de vagas impressa).
+- As travas: `research/tools/alocacao.test.mjs`.
+- Nenhum número desta parte veio de memória: todos saem de um dos dois comandos
+  acima, na base real.
+
+---
+
+# PARTE VII — A AUDITORIA CEGA DE 12/08/2026 (noite), E O QUE ELA DESMONTOU
+
+A PARTE VI é o relatório de quem construiu a alocação por gaveta. Esta parte é o
+que sobrou dele depois de um ataque que não tinha visto a ferramenta, escreveu
+doze perguntas novas contra a BASE, e remediu tudo. **O relatório da tarde é o
+mais honesto das cinco ondas — e ainda assim foi honesto nos números que ele
+escolheu publicar, não nos que decidiram as constantes.** É por isso que esta
+parte existe.
+
+## 26. Os três números, e a distância entre eles
+
+```
+CEGO       (D01-D12)   2 de 12 algum id · 0 de 12 todos ·  3 de 33 ids (9 %)
+PÚBLICO    (P01-P18)   7 de 18 algum id · 2 de 18 todos
+SOTERRADOS             11 de 12 abrem a gaveta com a resposta e não a entregam
+```
+
+`node research/tools/check-canarios.mjs` imprime os três conjuntos separados.
+Contra o estado de 11/08 rodado no mesmo comando
+(`node research/tools/auditoria/legado.mjs`): os mesmos doze cegos saíam de
+**0 de 12 e 0 de 33 ids**. O ganho é real, é atribuível à alocação, e é de
+**três ids em trinta e três**.
+
+## 26.1 O defeito-alvo piorou: a alocação é SOMA ZERO
+
+Soterramento de 10 para **11 de 12**. Em nove casos (D01 D02 D03 D04 D06 D07 D09
+D10 D12) a gaveta com a resposta ABRIU e nenhum id chegou; em dois chegou parte
+(D05 1/3, D08 2/3); só D11 é roteamento puro.
+
+**O mecanismo, que ninguém tinha medido e nenhuma trava vê**
+(`node research/tools/auditoria/diagnostico.mjs`):
+
+| caso | forçando a gaveta certa SOZINHA | forçando ela MAIS as vizinhas |
+|---|---|---|
+| D05 | `--topic convencional` → **os 3** | `--topic convencional sumo terra` → **ZERO** |
+| D06 | `--topic comandos-ipf` → **F001-11** | `--topic comandos-ipf agacho` → **ZERO** |
+
+**Abrir a gaveta certa mais uma vizinha é pior do que abrir só a certa.** A
+alocação por gaveta trocou *"a gaveta grande come tudo"* por *"as vagas se
+repartem entre gavetas erradas"*. Divergência §8.48 do RUNBOOK.
+
+## 26.2 A LINHA QUE SEPARA VAGA DE ORDEM — e é ela que decide a próxima onda
+
+`node research/tools/auditoria/vale-a-frota.mjs` força, uma de cada vez, cada
+gaveta que etiqueta algum id esperado, e conta:
+
+```
+ids esperados pelas 12 perguntas cegas ........................ 33
+ids que chegam HOJE, sem --topic .............................. 3
+ids que chegam FORÇANDO a gaveta certa sozinha ................ 28   (85 %)
+perguntas COMPLETAS forçando a gaveta certa sozinha ........... 9 de 12
+```
+
+**28 de 33 estão a uma VAGA de distância** — a claim já está bem ordenada dentro
+da gaveta dela e o que faltou foi orçamento. **5 de 33 não chegam nem assim**, e
+esses estão soterrados DENTRO da gaveta certa:
+
+| caso | id | gavetas |
+|---|---|---|
+| D03 | V008-10 | `sono` `nutricao` `recuperacao` |
+| D09 | V001-22 | `dor` `lesao` |
+| D09 | V001-21 | `dor` |
+| D10 | V001-24 | `mentalidade` `lesao` |
+| D10 | V001-25 | `mentalidade` `lesao` |
+
+**O D09 é o caso puro e o mais caro desta base depois da fisgada:** abre UMA
+gaveta, a certa (`dor`, 119 claims), a tela sai com **35 das 40 vagas ocupadas**,
+e V001-21 e V001-22 não aparecem nem forçando `dor`, nem forçando `lesao`. Sobra
+espaço na tela e a resposta não entra: isso não é alocação, é ORDENAÇÃO.
+Divergência §8.50, e é o alvo da onda seguinte.
+
+## 26.3 A trava que se testava a si mesma, dentro do arquivo que provava as constantes
+
+`alocacao.test.mjs` afirmava `magra >= 3`, que é `PISO_VAGAS >= 3` reescrito como
+asserção. Ele "matava" o mutante `3→1` sem medir saída nenhuma — modo de falha
+nº 4 desta casa, no arquivo escrito para provar que as constantes foram ganhas.
+Duas medições o desmontam:
+
+- `node research/tools/auditoria/piso.mjs` — piso 1, 2, 3 e 4 devolvem as CINCO
+  da fisgada nas MESMAS posições 13/18/36/38/39. **O piso não muda a saída da
+  pergunta em cujo bloco a asserção estava escrita.**
+- `node research/tools/medir-alocacao.mjs --pisos 1,2,3,4 --expoentes 3 --cotas 0`
+  — piso 1 dá **63/160 ids e 18/65 completos**; piso 3 dá **62/160 e 17/65**.
+
+A asserção foi **removida**, e nenhuma foi posta no lugar: escrevi uma
+substituta ("toda gaveta aberta entrega ao menos uma linha"), mutei seis
+constantes contra ela, e ela não ficou vermelha em nenhuma. **Trava que não sabe
+morrer é decoração**, e este arquivo existe para não ter decoração.
+
+**`PISO_VAGAS` não ficou descoberto**, e isto foi medido mutando `roteador.mjs`:
+`3→1` e `3→0` morrem em `EXPOENTE_SURPRESA ↑`; `3→8` morre em
+`EXPOENTE_SURPRESA ↓`. As duas são asserções de SAÍDA, com número diferente do
+da constante. O que fica aberto é uma **escolha** — a bancada prefere 1, as
+travas de saída preferem 3 — e ela é §8.49, não é lacuna de teste.
+
+## 26.4 O preço que o relatório da tarde não mediu
+
+`node research/tools/auditoria/topo.mjs`: dos 45 ids presentes nas duas telas,
+**17 desceram e 11 subiram**, e a **posição MEDIANA da resposta certa foi de 6
+para 8**. O relatório da tarde escreveu *"precisão do topo não foi medida"* — era
+um comando, e o resultado é negativo (§8.55).
+
+`node research/tools/auditoria/parafrase.mjs`: a fisgada entrega **5 de 5** com a
+frase escrita e **3 de 5** sob paráfrase sem jargão. Em compensação D05 vai de
+1/3 para 3/3 e D08 de 2/3 para 3/3 — **porque a paráfrase usou a jargona da
+gaveta**. A camada acha quando o atleta já sabe o vocabulário, que é o oposto do
+que a família `presente-escondido` existe para cobrar (§8.56).
+
+## 26.5 Procedência da PARTE VII
+
+A bancada inteira está em **`research/tools/auditoria/`**, e ela está aí por um
+motivo que vale registrar: ela nasceu em `research/tools/scan/`, que é
+**gitignored**, e o instrumento que produziu este veredito teria nascido perdido
+— que é exatamente o erro que o relatório auditado dizia ter evitado (§8.51).
+
+- `auditoria-onda2d.mjs` — a tela, e ela é a MESMA `telaDe()` do
+  `check-canarios.mjs`, cortada no `tetoDeTela` do `CANARIOS.json`.
+- `cegos.mjs` — as doze perguntas e a medição do conjunto cego.
+- `diagnostico.mjs` — gaveta a gaveta, forçada sozinha e em conjunto.
+- `vale-a-frota.mjs` — a linha que separa VAGA de ORDEM, e o número que responde
+  a pergunta do atleta sobre a frota de modelo barato.
+- `legado.mjs` · `topo.mjs` · `parafrase.mjs` · `piso.mjs` · `estreitas.mjs` ·
+  `tres-saidas.mjs` · `publicos.mjs` · `duas-telas.mjs` · `precisao.mjs` ·
+  `fisgada.mjs`.

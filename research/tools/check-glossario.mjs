@@ -70,7 +70,11 @@ const arg = (f) => {
   return i >= 0 ? process.argv[i + 1] : null;
 };
 const EXTRACT = arg('--extract') ?? join(ROOT, 'research/extract');
-const ARQUIVO = join(ROOT, 'research/kb/GLOSSARIO-TOPICOS.json');
+/** `--arquivo` existe para o `check-glossario.test.mjs` apontar o checador para
+ *  glossários sintéticos. Sem ele o único jeito de exercitar a trava seria
+ *  mutilar o artefato de verdade em disco — e uma trava que nunca é rodada
+ *  contra um caso que ela DEVE reprovar é uma trava não medida. */
+const ARQUIVO = arg('--arquivo') ?? join(ROOT, 'research/kb/GLOSSARIO-TOPICOS.json');
 const VERBOSE = process.argv.includes('--verbose');
 
 if (!existsSync(ARQUIVO)) {
@@ -196,24 +200,89 @@ for (const t of fechados) {
  *
  * O PISO É BAIXO DE PROPÓSITO, E ISSO É A PARTE IMPORTANTE. Medido em
  * 12/08/2026 sobre as 74 gavetas: a mediana ancora **92 %** e a pior gaveta é
- * `dor` com **53 %**. O piso está em 35 % — folga de dezoito pontos sobre a pior
- * — porque esta trava existe para recusar LIXO, não para empurrar o artefato na
- * direção do corpus. **Um vocabulário de entrada bom é justamente o que NÃO está
- * no corpus:** `fisgada` não aparece em nenhuma das 6.912 claims e é o termo
- * mais importante deste arquivo. Subir o piso inverteria o propósito do artefato
- * e faria o autor da próxima gaveta encher a lista com palavras da base —
- * exatamente o modo de falha nº 2 (a trava estreita empurra o dado para fora
- * dela). Se uma gaveta legítima cair abaixo de 35 %, o conserto NÃO é acolchoar
- * a lista com jargão: é dizer isso em voz alta e mudar este número com o motivo
- * escrito ao lado.
+ * `dor` com **51 %**. O piso está em 35 % — folga de dezesseis pontos sobre a
+ * pior — porque esta trava existe para recusar LIXO, não para empurrar o
+ * artefato na direção do corpus. **Um vocabulário de entrada bom é justamente o
+ * que NÃO está no corpus:** `fisgada` não aparece em nenhuma das 6.912 claims e
+ * é o termo mais importante deste arquivo. Subir o piso inverteria o propósito
+ * do artefato e faria o autor da próxima gaveta encher a lista com palavras da
+ * base — exatamente o modo de falha nº 2 (a trava estreita empurra o dado para
+ * fora dela). Se uma gaveta legítima cair abaixo de 35 %, o conserto NÃO é
+ * acolchoar a lista com jargão: é dizer isso em voz alta e mudar este número com
+ * o motivo escrito ao lado. `check-glossario.test.mjs` trava os DOIS sentidos —
+ * há um caso lá que exige que uma lista de slang puro continue passando.
+ *
+ * ── A ÂNCORA LÊ SÓ A CLAIM pt-BR, E NÃO O `verbatim` INGLÊS ─────────────────
+ *
+ * Medido em 12/08/2026, e é o conserto de um buraco que a primeira versão desta
+ * âncora tinha. Ela lia `claim + verbatim + verbatimWhisper`, e o `verbatim` é a
+ * transcrição LITERAL EM INGLÊS do vídeo. Resultado: o ataque de enchimento —
+ * trocar a `entrada` de uma gaveta pelas dez palavras mais frequentes da prosa
+ * dela — produzia `your, that, some, more, with, just, like, this, going`,
+ * ancorava 100 % e deixava **70 das 74 gavetas VERDES**. Um vocabulário de
+ * stopword inglesa passava por "ponte na voz do atleta".
+ *
+ * O atleta digita em português. Tirar o `verbatim` custou quase nada — a pior
+ * gaveta caiu de 53 % para 51 %, e `faixa` de 100 % para 76 % — e fecha o canal
+ * inteiro: stopword inglesa não ancora em nada.
  *
  * O QUE ELA NÃO PEGA, dito antes que alguém confie demais: ela recusa lixo, não
- * recusa uma lista de termos reais porém ERRADOS para aquela gaveta. Trocar a
- * entrada de `sono` pela entrada de `fadiga` passa aqui. Quem cobra acerto de
- * roteamento é `check-rotas.mjs` e os canários; esta trava só garante que existe
- * dado, e não enchimento, do outro lado.
+ * recusa uma lista de termos reais porém ERRADOS para aquela gaveta. Quem cobra
+ * acerto de roteamento é `check-rotas.mjs` e os canários; esta trava só garante
+ * que existe dado, e não enchimento, do outro lado.
+ *
+ * Isso está MEDIDO, e não estimado: `node research/tools/mutacao-entrada.mjs
+ * --ataque troca` dá a cada gaveta a lista de outra e roda o gate inteiro. Em
+ * 12/08/2026, **68 das 74 morrem** — as outras travas e os canários pegam a
+ * troca — e **6 sobrevivem**: `agacho`, `aprendizado-motor`, `barra-alta`,
+ * `convencional`, `core` e `intensidade`. Essas seis são dívida declarada, e o
+ * conserto delas é canário de roteamento no `ROTAS.json`, não trava aqui: quem
+ * distingue vocabulário CERTO de vocabulário TROCADO é uma pergunta com
+ * resposta esperada, e isso este arquivo não tem como saber.
  */
 const FRACAO_MINIMA_ANCORADA = 0.35;
+
+/**
+ * ═════════════════════════════════════════════════════════════════════════════
+ * 6. O ENCHIMENTO — a mutação que a âncora sozinha NÃO mata
+ * ═════════════════════════════════════════════════════════════════════════════
+ *
+ * A âncora recusa a palavra que não existe na base. Ela não recusa a palavra que
+ * existe em TODA a base, e essa é a diferença entre lixo e enchimento:
+ *
+ *     entrada de `descanso-entre-series` trocada pelas dez palavras pt-BR mais
+ *     frequentes da própria gaveta:
+ *       entre · series · tempo · treino · serie · ficar · fazer · cerca …
+ *       → ancora 100 %, e o gate ficava VERDE.
+ *
+ * É a rota de fuga natural de qualquer trava de ancoragem, e é o modo de falha
+ * nº 2 em pessoa: a trava pede parentesco com o corpus, e o jeito mais barato de
+ * dar parentesco com o corpus é copiar as palavras mais comuns dele. Pior: essas
+ * palavras são ATIVAMENTE nocivas ao roteamento. Uma palavra comum que só UMA
+ * gaveta reivindica recebe idf 1,0 no `glossario.mjs` e passa a sequestrar toda
+ * pergunta que a contenha — é o bug do `peso` reconstruído de propósito.
+ *
+ * A MEDIDA. Para cada raiz de 5 letras, em quantas das 74 gavetas ela aparece na
+ * prosa pt-BR. Um termo é GENÉRICO quando **todas** as suas palavras de 4+
+ * letras estão em `LIMIAR_GENERICO` gavetas ou mais. `fisgada` está em 0 → não é
+ * genérica, e é isso que mantém o artefato de pé: ausência do corpus é o
+ * contrário de enchimento, não um caso dele.
+ *
+ * OS DOIS NÚMEROS, MEDIDOS SOBRE AS 74 GAVETAS REAIS EM 12/08/2026:
+ *   · com `LIMIAR_GENERICO = 60` de 74, a mediana das gavetas tem **0 %** de
+ *     termos genéricos e a pior — `volume` — tem 4 de 35, **11 %**;
+ *   · o teto está em **25 %**, mais que o dobro da pior gaveta legítima;
+ *   · o ataque de enchimento fica em 40 % (`sono`) a 80 %
+ *     (`descanso-entre-series`) e morre.
+ *
+ * Um termo de VÁRIAS palavras todas comuns (`tempo entre series`) também conta
+ * como genérico, e isso é deliberado: ele só roteia pelo canal de frase inteira,
+ * e uma lista feita desses casa por coincidência de prosa. Custa pouco — é
+ * exatamente o que mantém a pior gaveta real em 11 % e não em 0 %.
+ */
+const LIMIAR_GENERICO = 60;
+const TETO_GENERICO = 0.25;
+
 const SEM_ACENTO = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 const PALAVRAS = (s) => SEM_ACENTO(s).split(/[^a-z0-9]+/).filter((w) => w.length >= 4);
 const RAIZ = (w) => w.slice(0, 5);
@@ -223,9 +292,21 @@ for (const c of claims) {
   for (const t of c.topic ?? []) {
     if (!raizesDoTopico.has(t)) raizesDoTopico.set(t, new Set());
     const alvo = raizesDoTopico.get(t);
-    for (const w of PALAVRAS(`${c.claim ?? ''} ${c.verbatim ?? ''} ${c.verbatimWhisper ?? ''}`)) alvo.add(RAIZ(w));
+    for (const w of PALAVRAS(c.claim ?? '')) alvo.add(RAIZ(w));
   }
 }
+
+/** Em quantas das gavetas da base esta raiz aparece. É o denominador do
+ *  enchimento, e é contado sobre a BASE — não sobre o glossário, que é o dado
+ *  que está sendo julgado. */
+const gavetasDaRaiz = new Map();
+for (const raizes of raizesDoTopico.values()) {
+  for (const r of raizes) gavetasDaRaiz.set(r, (gavetasDaRaiz.get(r) ?? 0) + 1);
+}
+const ehGenerico = (termo) => {
+  const ws = PALAVRAS(termo);
+  return ws.length > 0 && ws.every((w) => (gavetasDaRaiz.get(RAIZ(w)) ?? 0) >= LIMIAR_GENERICO);
+};
 
 const ancoragem = [];
 for (const t of doc.topicos ?? []) {
@@ -235,16 +316,32 @@ for (const t of doc.topicos ?? []) {
   if (entrada.length === 0) continue;
   const ancorados = entrada.filter((e) => PALAVRAS(e).some((w) => raizes.has(RAIZ(w))));
   const fracao = ancorados.length / entrada.length;
-  ancoragem.push({ topico: t.topico, ancorados: ancorados.length, de: entrada.length, fracao });
+  const genericos = entrada.filter(ehGenerico);
+  const fracaoG = genericos.length / entrada.length;
+  ancoragem.push({
+    topico: t.topico, ancorados: ancorados.length, de: entrada.length, fracao, genericos: genericos.length, fracaoG,
+  });
   if (fracao < FRACAO_MINIMA_ANCORADA) {
     erros.push(
       `tópico "${t.topico}": só ${ancorados.length} de ${entrada.length} termos de entrada `
-        + `(${(fracao * 100).toFixed(0)} %) têm QUALQUER parentesco com o texto das claims que a base `
-        + `etiquetou nessa gaveta — mínimo ${(FRACAO_MINIMA_ANCORADA * 100).toFixed(0)} %. `
+        + `(${(fracao * 100).toFixed(0)} %) têm QUALQUER parentesco com o texto pt-BR das claims que a `
+        + `base etiquetou nessa gaveta — mínimo ${(FRACAO_MINIMA_ANCORADA * 100).toFixed(0)} %. `
         + 'Uma lista sem nenhuma âncora no corpus passa em toda trava de FORMA deste arquivo: foi '
         + 'assim que 26 das 74 gavetas puderam virar dez strings sem sentido com o check:kb verde. '
         + 'Se esta gaveta é legitimamente slang puro, não acolchoe a lista com jargão da base — '
         + 'mude FRACAO_MINIMA_ANCORADA com o motivo escrito ao lado.',
+    );
+  }
+  if (fracaoG > TETO_GENERICO) {
+    erros.push(
+      `tópico "${t.topico}": ${genericos.length} de ${entrada.length} termos de entrada `
+        + `(${(fracaoG * 100).toFixed(0)} %) são ENCHIMENTO — toda palavra deles aparece na prosa de `
+        + `${LIMIAR_GENERICO}+ das ${raizesDoTopico.size} gavetas da base (teto ${(TETO_GENERICO * 100).toFixed(0)} %). `
+        + `Exemplos: ${genericos.slice(0, 6).map((g) => `"${g}"`).join(', ')}.\n`
+        + '        Palavra que a base inteira usa não é ponte para gaveta nenhuma, e é pior que\n'
+        + '        inócua: uma palavra comum reivindicada por UMA gaveta recebe idf 1,0 no\n'
+        + '        glossario.mjs e sequestra toda pergunta que a contenha — é o bug do `peso`\n'
+        + '        remontado. A gaveta real mais carregada de enchimento tem 11 %.',
     );
   }
 }
@@ -346,9 +443,13 @@ if (VERBOSE) {
     const r = regras.get(termo);
     console.log(`     "${termo}" ${[...quem].sort().join(' + ')} → vence ${(r?.vence ?? []).join(' + ') || '(sem regra)'}`);
   }
-  console.log('  ℹ  âncora no corpus, as 8 gavetas mais frouxas:');
+  console.log('  ℹ  âncora no corpus pt-BR, as 8 gavetas mais frouxas:');
   for (const a of [...ancoragem].sort((x, y) => x.fracao - y.fracao).slice(0, 8)) {
     console.log(`     ${a.topico.padEnd(24)} ${a.ancorados}/${a.de}  ${(a.fracao * 100).toFixed(0)} %`);
+  }
+  console.log('  ℹ  enchimento, as 8 gavetas mais carregadas:');
+  for (const a of [...ancoragem].sort((x, y) => y.fracaoG - x.fracaoG).slice(0, 8)) {
+    console.log(`     ${a.topico.padEnd(24)} ${a.genericos}/${a.de}  ${(a.fracaoG * 100).toFixed(0)} %`);
   }
 }
 
@@ -365,13 +466,19 @@ console.log(
     + `do atleta, recontados contra ${claims.length} claims`,
 );
 const pior = [...ancoragem].sort((x, y) => x.fracao - y.fracao)[0];
+const piorG = [...ancoragem].sort((x, y) => y.fracaoG - x.fracaoG)[0];
 console.log(
   `✓ nenhum tópico fora da lista fechada, nenhuma gaveta sem glosa, e as ${colisoes.size} colisões têm `
     + 'desempate declarado e co-etiquetado na base',
 );
 console.log(
-  `✓ toda gaveta ancora ao menos ${(FRACAO_MINIMA_ANCORADA * 100).toFixed(0)} % dos termos de entrada no `
-    + `texto das claims que a base etiquetou nela — a mais frouxa é "${pior.topico}" com `
+  `✓ toda gaveta ancora ao menos ${(FRACAO_MINIMA_ANCORADA * 100).toFixed(0)} % dos termos de entrada na `
+    + `prosa pt-BR das claims que a base etiquetou nela — a mais frouxa é "${pior.topico}" com `
     + `${pior.ancorados}/${pior.de} (${(pior.fracao * 100).toFixed(0)} %)`,
+);
+console.log(
+  `✓ nenhuma gaveta passa de ${(TETO_GENERICO * 100).toFixed(0)} % de enchimento (termo cujas palavras `
+    + `todas aparecem em ${LIMIAR_GENERICO}+ gavetas) — a mais carregada é "${piorG.topico}" com `
+    + `${piorG.genericos}/${piorG.de} (${(piorG.fracaoG * 100).toFixed(0)} %)`,
 );
 process.exit(0);

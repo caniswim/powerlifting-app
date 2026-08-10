@@ -453,6 +453,11 @@ function imprimirRoteamento(texto, { comoComplemento = false } = {}) {
 
   console.log(`\n  ${r.claims.length} claim(s), ordenadas pela sua pergunta DENTRO dos tópicos roteados`);
   console.log('  (raridade recontada dentro do tópico: `squat` não distingue nada entre 990).');
+  if (r.vagas && r.vagas.size > 0) {
+    console.log(`  AS VAGAS FORAM DIVIDIDAS POR GAVETA, não por ranking global: `
+      + `${[...r.vagas].map(([t, n]) => `${t} ${n}`).join(' · ')}`);
+    console.log('  (gaveta pequena que pontua é sinal FORTE: a fatia é score × log(base/tamanho)³).');
+  }
   console.log('  NENHUM filtro de modo/scope/tier foi aplicado — filtro de segurança estreita');
   console.log('  a saída, não a busca, e foi ele que escondeu V033-03/04/05 da Q11.\n');
   r.claims.slice(0, DETALHE_ROTEADO).forEach((x, i) => {
@@ -482,12 +487,33 @@ function imprimirRoteamento(texto, { comoComplemento = false } = {}) {
    * IMPRESSA porque `idsMostrados` é o contrato do canário: calcular sem
    * imprimir faria o canário passar por causa de linhas que não estão na tela.
    */
-  if (r.vizinhos.length > 0) {
-    console.log(`\n  A PÁGINA AO LADO — ${r.vizinhos.length} claim(s) adjacentes, no MESMO vídeo, ao que`);
+  /**
+   * O LEDGER SAI EM SEÇÃO PRÓPRIA, antes da página ao lado.
+   *
+   * As duas famílias trazem *o que completa o que já saiu*, e a diferença
+   * importa para quem lê: o vizinho é uma vizinhança de ARQUIVO (a claim
+   * seguinte no mesmo vídeo, que costuma completar) e a ligação é uma
+   * declaração TIPADA da própria claim — ela diz, no campo `conditions`, de que
+   * a prescrição depende, e no `conflicts`, quem a contradiz. Imprimir as duas
+   * juntas apagaria a distinção entre "provavelmente completa" e "a base diz que
+   * condiciona".
+   */
+  const ligacoes = r.vizinhos.filter((v) => v.canal === 'ligacao');
+  const aoLado = r.vizinhos.filter((v) => v.canal !== 'ligacao');
+  if (ligacoes.length > 0) {
+    console.log(`\n  O QUE A PRESCRIÇÃO DECLARA — ${ligacoes.length} claim(s) que as prescrições acima`);
+    console.log('  apontam por `conditions` e `conflicts`. Não casam palavra nenhuma da sua pergunta:');
+    console.log('  elas chegam porque a claim que já está na tela DIZ que depende delas. Prescrição');
+    console.log('  sem a condição que a desarma é a forma perigosa de acertar.\n');
+    for (const v of ligacoes) console.log(`${compacto(v.c)}   ← ${v.vinculo} ${v.deQuem}`);
+    console.log('');
+  }
+  if (aoLado.length > 0) {
+    console.log(`\n  A PÁGINA AO LADO — ${aoLado.length} claim(s) adjacentes, no MESMO vídeo, ao que`);
     console.log('  já saiu acima. O extrator emitiu as claims na ordem em que o assunto foi dito,');
     console.log('  então a de ao lado costuma ser a que completa a resposta: a condição que');
     console.log('  desarma a prescrição, ou o número que a frase anterior prometeu.\n');
-    for (const v of r.vizinhos) console.log(`${compacto(v.c)}   ← ao lado de ${v.deQuem}`);
+    for (const v of aoLado) console.log(`${compacto(v.c)}   ← ao lado de ${v.deQuem}`);
     console.log('');
   }
 
