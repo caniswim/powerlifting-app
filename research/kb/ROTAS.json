@@ -167,7 +167,9 @@
       "porque": "O C20 do CANARIOS-CANDIDATOS.json, que a camada de 09/08 não resolvia: `--busca` devolvia só G015-11, relato-de-programa do GZCLP, que é a gaveta que a base manda nunca tratar como prescrição. Duas das três claims certas NÃO estão etiquetadas em `descanso-entre-series` — V038-07 é `recuperacao, agacho, terra` e V074-10 é `programacao, agacho` —, então este caso cobra as duas metades da camada: rotear para a gaveta certa E alcançar o que a etiqueta esqueceu de pôr nela.",
       "topicos": ["descanso-entre-series"],
       "sustenta": ["V038-07", "V074-10", "V074-23"],
-      "tetoDeTela": 40
+      "viaPaginaAoLado": ["V003-18", "V074-24"],
+      "tetoDeTela": 40,
+      "nota": "viaPaginaAoLado cobra o CANAL, não só a presença. V003-18 (`5 minutos em agachamento e terra e 3 minutos no supino`) e V074-24 (`ao encurtar o descanso, não se deve apressar a si mesmo` — a condição de V074-23) não estão etiquetados em descanso-entre-series e não são alcançados por texto: eles chegam à tela como a claim IMEDIATAMENTE ao lado do que o roteamento já mostrou. Com DETALHE_ROTEADO em 0 o canal morre inteiro e os dois somem; sem este campo, o caso continuava verde e a mutação passava (ataque de 10/08/2026)."
     },
     {
       "id": "T06",
@@ -249,6 +251,16 @@
       "sustenta": ["F001-83", "F001-84"],
       "tetoDeTela": 60,
       "nota": "tetoDeTela 60 e não 40: a gaveta tem 54 claims declaradas e o caso é sobre ver a GAVETA INTEIRA, não sobre ranquear dentro dela. O número é do canário, e está escrito aqui em vez de ser herdado da ferramenta de propósito."
+    },
+    {
+      "id": "T15",
+      "familia": "mapeia",
+      "pergunta": "quanto vale a carga de treino da semana?",
+      "porque": "O NOME COMPOSTO da gaveta pesando por si, que era o segundo modo de falha nº 4 achado pelo ataque de 10/08/2026: `PESO_NOME_COMPOSTO 1.2 → 0` deixava o check:kb inteiro verde porque nenhum caso dependia dele. Este depende, e foi medido nos dois estados: com o peso, `carga-de-treino` sai em 1º com 1,20; com o peso em 0, o tópico DESAPARECE da lista e a pergunta vai para [frequencia, taper, periodizacao, deload] — que é exatamente o P14 do CANARIOS.json, a gaveta criada em 09/08 para isto e que o roteamento não estava abrindo. `carga` e `treino` soltas são palavras de toda a base; o que distingue a gaveta é o nome inteiro.",
+      "topicos": ["carga-de-treino"],
+      "sustenta": ["G005-34"],
+      "tetoDeTela": 40,
+      "nota": "só G005-34 em sustenta, e G008-34 fora de propósito: G008-34 responde a mesma pergunta (`uma série dura é 1 a 2 repetições em reserva`) e NÃO chega à tela hoje, por não estar etiquetada em carga-de-treino. Pôr um id que não sai transformaria este canário em vermelho de nascença; ele está registrado como falha aberta no P14 do CANARIOS.json, que é o lugar de canário que falha."
     }
   ]
 }

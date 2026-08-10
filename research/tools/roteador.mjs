@@ -850,7 +850,20 @@ export function responder(claims, pergunta, {
       raio: 2,
     },
   );
-  const vizinhos = [...vizRoteado, ...vizParam];
+  /**
+   * CADA VIZINHO DIZ DE QUAL CANAL VEIO, e isso não é enfeite de saída.
+   *
+   * Sem a etiqueta, os dois canais são indistinguíveis do lado de fora, e um
+   * canário que exige "este id tem de sair" fica satisfeito por qualquer um dos
+   * dois. Foi assim que `DETALHE_ROTEADO 8 → 0` sobreviveu verde ao ataque de
+   * 10/08/2026: `vizRoteado` morria inteiro, o teste de V033-05 continuava
+   * passando porque V033-05 vem de `vizParam`, e nada acusava. Com o canal
+   * declarado, `viaPaginaAoLado` no ROTAS.json cobra o canal por nome.
+   */
+  const vizinhos = [
+    ...vizRoteado.map((v) => ({ ...v, canal: 'rota' })),
+    ...vizParam.map((v) => ({ ...v, canal: 'param' })),
+  ];
 
   return {
     pergunta,

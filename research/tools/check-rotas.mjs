@@ -97,6 +97,31 @@ if (claims.length === 0) {
   process.exit(2);
 }
 
+/**
+ * ── O TETO DO TOPO É COBRADO AQUI, E POR ISSO DEIXOU DE SER LETRA MORTA ──────
+ *
+ * O `_leia` deste arquivo apresenta `tetoDeTela` como a cura do modo de falha
+ * nº 4 — o número mora no JSON e não em `roteador.mjs`. O ataque de 10/08/2026
+ * mostrou que o campo do TOPO era decorativo: todos os 12 casos que precisam de
+ * teto carregam o seu, `caso.tetoDeTela ?? doc.tetoDeTela` nunca caía no de
+ * cima, e renomear a linha de cima para `"MORTO"` deixava este checker em
+ * exit 0. Pior, a chamada de `responder` escrevia `teto: teto ?? 40` — o mesmo
+ * 40 hardcoded dentro da ferramenta que o arquivo diz não poder tê-lo.
+ *
+ * Agora o teto do topo é lido ANTES de qualquer caso e a ausência dele é erro
+ * de carga. Repro que passou a falhar:
+ *   sed -i '' 's/^  "tetoDeTela": 40,/  "MORTO": 40,/' research/kb/ROTAS.json
+ *   node research/tools/check-rotas.mjs   → exit 2
+ */
+const TETO_DO_ARQUIVO = doc.tetoDeTela;
+if (!Number.isInteger(TETO_DO_ARQUIVO)) {
+  console.error(
+    `✗ ${ARQUIVO}: falta "tetoDeTela" no topo. Este número é DADO do canário, nunca constante da `
+      + 'ferramenta que ele mede. Os casos podem sobrescrevê-lo; nenhum default vem daqui.',
+  );
+  process.exit(2);
+}
+
 const TOPICOS = carregarTopicos(ROOT);
 const VOCAB = carregarVocabulario(ROOT).entradas;
 // Índice e perfil montados UMA vez. `responder` os refaria por caso, e um
@@ -114,6 +139,7 @@ const MOTIVOS = new Set(['fora-de-dominio', 'sem-assunto']);
 const CAMPOS = new Set([
   'id', 'familia', 'pergunta', 'porque', 'topicos', 'sustenta', 'proibidos',
   'motivo', 'tetoDeTela', 'forcaTopico', 'nota', 'tambemPelaBuscaLivre',
+  'viaPaginaAoLado',
 ]);
 
 const erros = [];
@@ -143,7 +169,7 @@ for (const caso of doc.casos ?? []) {
    * silencioso vindo da ferramenta. Um default aqui seria a mesma trava que se
    * testa a si mesma, com uma linha a menos.
    */
-  const teto = caso.tetoDeTela ?? doc.tetoDeTela;
+  const teto = caso.tetoDeTela ?? TETO_DO_ARQUIVO;
   if (caso.familia !== 'nao-mapeia' && !Number.isInteger(teto)) {
     erros.push(
       `${onde}: sem "tetoDeTela" (nem no caso nem no topo do arquivo). Este número é DADO do `
@@ -181,7 +207,7 @@ for (const caso of doc.casos ?? []) {
     vocabulario: VOCAB,
     idx: INDICE,
     perfis: PERFIS,
-    teto: teto ?? 40,
+    teto,
     forcar: caso.forcaTopico ? [caso.forcaTopico] : [],
   });
   const roteados = r.rotas.map((x) => x.topico);
@@ -244,6 +270,41 @@ for (const caso of doc.casos ?? []) {
         + '        Os ids existem e o conteúdo deles foi conferido acima. É a recuperação que\n'
         + '        parou de achar, e NÃO uma lacuna da base.',
     );
+  }
+
+  /**
+   * ── O CANAL DA PÁGINA AO LADO, COBRADO PELO NOME ─────────────────────────
+   *
+   * `viaPaginaAoLado` são ids que só chegam à tela pelo canal `rota` de
+   * `vizinhos` — a claim adjacente ao que o roteamento já pôs em detalhe. Não
+   * basta exigir que o id apareça: `sustenta` já faz isso, e `sustenta` fica
+   * satisfeito se o id vier por qualquer outro caminho.
+   *
+   * O ataque de 10/08/2026 mediu o preço da falta desta cobrança:
+   * `DETALHE_ROTEADO 8 → 0` matava `vizRoteado` inteiro, a saída perdia 8 das
+   * 10 linhas de A PÁGINA AO LADO, e `npm run check:kb` continuava em exit 0.
+   * O único teste que citava o canal — V033-05 em roteador.test.mjs — passava
+   * porque V033-05 vem de `vizParam`, o outro canal. Canário tem de morder
+   * onde o defeito mora.
+   */
+  const viaLado = caso.viaPaginaAoLado ?? [];
+  const foraDoCanal = viaLado.filter(
+    (i) => porId.has(i) && !r.vizinhos.some((v) => v.c.id === i && v.canal === 'rota'),
+  );
+  if (foraDoCanal.length > 0) {
+    linha.ok = false;
+    erros.push(
+      `${onde}: O CANAL "A PÁGINA AO LADO" DO ROTEAMENTO PAROU DE ENTREGAR — `
+        + `${foraDoCanal.join(', ')} não saem mais como vizinhos de canal "rota" para\n`
+        + `        "${caso.pergunta}". Hoje o canal traz `
+        + `${r.vizinhos.filter((v) => v.canal === 'rota').length} claim(s).\n`
+        + '        Estes ids são a claim IMEDIATAMENTE ao lado do que o roteamento já mostrou, e\n'
+        + '        é por eles que o número da resposta chega à tela sem estar etiquetado no tópico.\n'
+        + '        Olhe DETALHE_ROTEADO e o raio de vizinhança em research/tools/roteador.mjs.',
+    );
+  }
+  if (viaLado.length > 0 && caso.familia === 'nao-mapeia') {
+    erros.push(`${onde}: "viaPaginaAoLado" num caso nao-mapeia — a tela desse caso é vazia de propósito`);
   }
 
   const injetados = (caso.proibidos ?? []).filter((i) => r.idsMostrados.has(i));

@@ -59,6 +59,73 @@ const BASE = [
 writeFileSync(join(dir, 'G900.jsonl'), BASE.filter((c) => c.src === 'G900').map((c) => JSON.stringify(c)).join('\n'));
 writeFileSync(join(dir, 'R900.jsonl'), BASE.filter((c) => c.src === 'R900').map((c) => JSON.stringify(c)).join('\n'));
 
+/**
+ * ── A SEGUNDA BASE DE BOLSO, para a PORTA NOVA (`perguntaDoAtleta`) ──────────
+ *
+ * Ela é separada da primeira por uma razão só: os casos de cima contam claims
+ * ("3 claim(s)", "2 claim(s)") e acrescentar linhas à primeira base quebraria
+ * essas contagens por acidente — que é o defeito nº 1 desta casa, copiar a
+ * convenção do vizinho sem olhar para o que ela sustenta.
+ *
+ * Três claims no mesmo tópico e uma fora dele. A ordem em que o roteamento as
+ * devolve para a pergunta `cardio atrapalha o ganho de força?` é estável e
+ * MEDIDA: V901-03, V901-01, V901-02. É isso que torna possível provar que
+ * `tetoDeTela` é limite de POSIÇÃO — com 1 entra só a primeira, com 2 entram
+ * duas, com 3 entram as três — sem importar constante nenhuma da ferramenta.
+ */
+const BASE2 = [
+  {
+    id: 'V901-01', src: 'R901', at: '01:00', tier: 'R', scope: 'GERAL', modo: 'prescricao',
+    topic: ['cardio'],
+    claim: 'Ele manda fazer cardio de zona 2 na esteira.',
+    verbatim: 'do zone two cardio on the treadmill',
+    params: [],
+  },
+  {
+    id: 'V901-02', src: 'R901', at: '02:00', tier: 'R', scope: 'PESSOAL', modo: 'narrativa',
+    topic: ['cardio'],
+    claim: 'Ele mesmo faz vinte minutos de bicicleta.',
+    verbatim: 'i do twenty minutes on the bike',
+    params: [{ name: 'tempo', value: 20, unit: 'min', frame: 'min' }],
+  },
+  {
+    id: 'V901-03', src: 'R901', at: '03:00', tier: 'R', scope: 'GERAL', modo: 'fato',
+    topic: ['cardio'],
+    claim: 'O cardio leve não atrapalha o ganho de força.',
+    verbatim: 'light cardio does not kill your gains',
+    params: [],
+  },
+  {
+    id: 'V901-04', src: 'R901', at: '04:00', tier: 'R', scope: 'GERAL', modo: 'opiniao',
+    topic: ['tecnica'],
+    claim: 'A maioria agacha ereto demais.',
+    verbatim: 'most people squat way too upright',
+    params: [],
+  },
+];
+const dir2 = mkdtempSync(join(tmpdir(), 'canarios-porta-'));
+writeFileSync(join(dir2, 'R901.jsonl'), BASE2.map((c) => JSON.stringify(c)).join('\n'));
+
+/** O canário da porta nova, com o bloco inteiro escrito à mão neste arquivo. */
+const daPorta = (bloco, extra = {}) => ({
+  id: 'T01',
+  familia: 'presente-escondido',
+  pergunta: 'cardio atrapalha o ganho de força?',
+  porque: 'porque de teste',
+  esperado: 'esperado de teste',
+  sustenta: ['V901-01', 'V901-02', 'V901-03'],
+  frases: ['cardio'],
+  perguntaDoAtleta: {
+    descricao: 'descrição de teste',
+    topicoDaResposta: 'cardio',
+    medidoEm: '2026-08-10',
+    abriuOTopico: true,
+    gavetasComResposta: ['cardio'],
+    ...bloco,
+  },
+  ...extra,
+});
+
 const canario = (extra) => ({
   id: 'T01',
   familia: 'impossivel',
@@ -79,11 +146,11 @@ const canario = (extra) => ({
  * lados: um caso exige a RECUSA quando ele falta, e outro exige que o número
  * cobrado seja o do arquivo e não o da ferramenta.
  */
-function roda(canarios, topo = { tetoDeTela: 40 }) {
-  const f = join(dir, `canarios-${Math.random().toString(36).slice(2)}.json`);
+function roda(canarios, topo = { tetoDeTela: 40 }, extract = dir) {
+  const f = join(extract, `canarios-${Math.random().toString(36).slice(2)}.json`);
   writeFileSync(f, JSON.stringify({ ...topo, gerado: '2026-08-09', canarios }, null, 1));
   try {
-    return { passou: true, saida: execFileSync('node', [CHECKER, '--extract', dir, '--canarios', f, '--verbose'], { encoding: 'utf8', stdio: 'pipe' }) };
+    return { passou: true, saida: execFileSync('node', [CHECKER, '--extract', extract, '--canarios', f, '--verbose'], { encoding: 'utf8', stdio: 'pipe' }) };
   } catch (err) {
     return { passou: false, saida: `${err.stdout ?? ''}${err.stderr ?? ''}` };
   }
@@ -413,6 +480,83 @@ const CASOS = [
     })],
     esperado: /dentro das 3 primeiras/,
   },
+
+  // ── A PORTA NOVA: `perguntaDoAtleta` ──────────────────────────────────────
+  //
+  // Os oito casos abaixo neutralizam o bloco que mede a recuperação por
+  // roteamento. Três coisas precisam de prova, e são as três que o ataque de
+  // 10/08/2026 mostrou faltarem em alguma trava desta casa:
+  //
+  //   1. `tetoDeTela` é limite de POSIÇÃO e vem do canário. Os três primeiros
+  //      casos rodam o MESMO canário com 1, 2 e 3, e a lista de ids muda junto.
+  //      Um checker que lesse o teto de `roteador.mjs` daria a mesma resposta
+  //      nos três.
+  //   2. A comparação contra o registro morde NOS DOIS SENTIDOS. Piorar acusa, e
+  //      MELHORAR acusa — sem isso, um canário registrado como vermelho ficaria
+  //      verde para sempre e voltaria a ser prosa.
+  //   3. O canário não pode declarar um tópico da resposta que não guarda a
+  //      resposta: seria medir a abertura da gaveta errada, que é o P16.
+  {
+    nome: 'porta nova: tetoDeTela 1 deixa entrar só a 1ª da tela',
+    base: dir2,
+    aprova: true,
+    canarios: [daPorta({ tetoDeTela: 1, recuperados: ['V901-03'], veredito: 'falha' })],
+  },
+  {
+    nome: 'porta nova: tetoDeTela 2 deixa entrar duas — o teto é POSIÇÃO',
+    base: dir2,
+    aprova: true,
+    canarios: [daPorta({ tetoDeTela: 2, recuperados: ['V901-01', 'V901-03'], veredito: 'falha' })],
+  },
+  {
+    nome: 'porta nova: tetoDeTela 3 entrega as três e o veredito vira "passa"',
+    base: dir2,
+    aprova: true,
+    canarios: [daPorta({ tetoDeTela: 3, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' })],
+  },
+  {
+    // O mesmo registro do caso anterior, com o teto em 1: se o número do JSON
+    // não estivesse ligado, este caso continuaria verde.
+    nome: 'porta nova: baixar o teto para 1 com o registro de 3 ACUSA',
+    base: dir2,
+    canarios: [daPorta({ tetoDeTela: 1, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' })],
+    esperado: /A MEDIDA DA PORTA NOVA MUDOU[\s\S]*agora \[V901-03\]/,
+  },
+  {
+    nome: 'porta nova: MELHORAR também acusa — canário vermelho não fica verde em silêncio',
+    base: dir2,
+    canarios: [daPorta({ tetoDeTela: 3, recuperados: [], veredito: 'falha' })],
+    esperado: /veredito: registrado "falha", agora "passa"/,
+  },
+  {
+    nome: 'porta nova: sem tetoDeTela é recusado — o limite de posição é dado do canário',
+    base: dir2,
+    canarios: [daPorta({ recuperados: [], veredito: 'falha' })],
+    esperado: /limite de POSIÇÃO é dado do canário/,
+  },
+  {
+    nome: 'porta nova: topicoDaResposta que não etiqueta nenhum id de sustenta é recusado',
+    base: dir2,
+    canarios: [daPorta({
+      tetoDeTela: 3, topicoDaResposta: 'sono', abriuOTopico: false,
+      recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa',
+    })],
+    esperado: /o tópico da resposta é palpite/,
+  },
+  {
+    nome: 'presente-escondido sem buscaCega e sem perguntaDoAtleta é recusado',
+    base: dir2,
+    canarios: [{
+      id: 'T01',
+      familia: 'presente-escondido',
+      pergunta: 'cardio atrapalha o ganho de força?',
+      porque: 'porque de teste',
+      esperado: 'esperado de teste',
+      sustenta: ['V901-03'],
+      frases: ['cardio'],
+    }],
+    esperado: /exige buscaCega\.termos ou perguntaDoAtleta/,
+  },
 ];
 
 console.log('\nTeste do recontador de canários');
@@ -420,7 +564,7 @@ console.log(`  base de bolso: ${BASE.length} claims sintéticas\n`);
 
 let falhas = 0;
 for (const caso of CASOS) {
-  const r = roda(caso.canarios, caso.topo ?? { tetoDeTela: 40 });
+  const r = roda(caso.canarios, caso.topo ?? { tetoDeTela: 40 }, caso.base ?? dir);
   if (caso.aprova) {
     if (r.passou) console.log(`  ✓ ${caso.nome}`);
     else {
@@ -447,6 +591,7 @@ for (const caso of CASOS) {
 }
 
 rmSync(dir, { recursive: true, force: true });
+rmSync(dir2, { recursive: true, force: true });
 
 if (falhas > 0) {
   console.error(`\n${falhas} de ${CASOS.length} caso(s) falharam — os canários não estão sendo recontados de verdade.\n`);

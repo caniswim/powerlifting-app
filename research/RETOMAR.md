@@ -32,11 +32,11 @@ por dois agentes.
 
 | agente | estado | onde está o resultado |
 |---|---|---|
-| `canarios` | ✅ terminou | `research/kb/CANARIOS-ESCONDIDOS.json` — 18 canários `presente-escondido` |
+| `canarios` | ✅ terminou, e **já absorvido** | os 18 entraram em `research/kb/CANARIOS.json` como `presente-escondido` com bloco `perguntaDoAtleta`, medidos e vermelhos. `CANARIOS-ESCONDIDOS.json` fica como o registro do que o terceiro escreveu |
 | `divida-dor` | ✅ terminou | código e claims já no repo; raciocínio em `research/kb/DIVIDA-DOR-RELATO.md` |
-| `roteamento` | ⏸ parado no meio | já produziu `research/tools/roteador.mjs`, `check-rotas.mjs`, `ROTAS.json` e 14 canários de roteamento verdes |
-| `atacar` | ⏳ não começou | é a fase que **vale** a onda — ver abaixo |
-| `fechar` | ⏳ não começou | |
+| `roteamento` | ✅ entregue e medido | `research/tools/roteador.mjs`, `check-rotas.mjs`, `ROTAS.json` — **15** canários de roteamento verdes |
+| `atacar` | ✅ terminou | o ataque cego mediu **3 de 18** e diagnosticou roteamento; achados no `RECUPERACAO.md` §18 e no `RUNBOOK.md` §8.36–38 |
+| `fechar` | ✅ terminou (10/08) | canários gravados e ligados ao `check-canarios.mjs`; veredito no topo do `RECUPERACAO.md`; fila nova em `research/kb/ONDA-2C.md` |
 
 ## ⚠️ A parte cega, e como não estragá-la
 

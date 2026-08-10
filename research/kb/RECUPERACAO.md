@@ -1,5 +1,14 @@
 # RECUPERAÇÃO — a base escondia o que tinha, e o conserto está na ferramenta
 
+> **VEREDITO — 10/08/2026, medido pelos canários `presente-escondido` P01–P18 de
+> `research/kb/CANARIOS.json`, contra 6.912 claims, teto de tela 40.**
+>
+> **NÃO. A camada de recuperação não acha o que a base tem: 0 de 18 perguntas
+> escritas na voz do atleta devolvem todos os ids que respondem, 3 de 18 devolvem
+> algum, e em 7 de 18 nenhuma gaveta aberta contém a resposta.** O número sai
+> impresso a cada `node research/tools/check-canarios.mjs`; verde ali quer dizer
+> que a medida não mudou, não que a camada acha.
+
 **Data: 09/08/2026.** Este arquivo é o conserto do modo de falha que a
 `MEDICAO-02.md` mediu, e ele existe porque o conserto que aquele relatório
 propôs — *"protocolo de busca em dois passes"* — não bastava.
@@ -872,6 +881,16 @@ regressões que existem aparecem como **perda de recall na família `mapeia`**:
 | `vizinhos = []` (página ao lado desligada) | T04 **e** 2 casos de `roteador.test.mjs` |
 | `TETO_ROTEADO 40 → 400`; `FRACAO 0.4 → 0.05`; `PESO_AFIM 0.6 → 0`; peso linear sozinho | **ninguém** |
 
+> **CORREÇÃO DE 10/08, à noite — esta tabela errava 2 das 4 mutações que declarava
+> verdes, e a lista não era confiável como lista.** Rerodadas uma a uma pelo
+> ataque cego: `TETO_ROTEADO 40 → 400` dá **VERMELHO** (`roteador.test.mjs`, caso
+> *"a saída PADRÃO cabe"*) e `PESO_AFIM 0.6 → 0` dá **VERMELHO** (caso
+> *"fiação: alça"*). Sobrevivem de verdade só `FRACAO_DO_MELHOR 0.4 → 0.05` e o
+> peso da rota linear — e a elas somavam-se **duas que esta tabela não listava**,
+> `DETALHE_ROTEADO 8 → 0` e `PESO_NOME_COMPOSTO 1.2 → 0`. As duas foram fechadas
+> no mesmo dia (§18). Uma lista de buracos conhecidos escrita por quem fez o
+> conserto não é medida: é o modo de falha nº 5 desta casa em forma de tabela.
+
 A razão de T09/T10/T11 não morderem é estrutural e é boa notícia: **o roteamento
 não chama `expandirPorVocabulario`**, então a injeção de 09/08 é impossível pela
 porta nova. Só que o defeito **continuava vivo do outro lado** — e nada o media:
@@ -916,7 +935,8 @@ que não há um quinto buraco.**
 | alvo | **fechado**, 74 nomes | aberto, 6.912 textos |
 | erro | **recusado por compilador** | resultado ruim que passa por bom |
 | use para | *"do que a base fala quando eu pergunto isto?"* | *"quem diz exatamente isto?"* |
-| trava | `check-rotas.mjs` (14) + `roteador.test.mjs` (46) | `check-canarios.mjs` (19) + `busca.test.mjs` (35) |
+| trava | `check-rotas.mjs` (**15**) + `roteador.test.mjs` (46) | `busca.test.mjs` (35) |
+| trava comum | `check-canarios.mjs` — **37** canários, dos quais **18** medem esta porta (`perguntaDoAtleta`) e 4 medem a livre (`buscaCega`) | idem |
 
 **As duas continuam existindo, e isso não é indecisão.** `--grep` é o instrumento
 certo para conferir uma citação, e é o que os canários `presente-escondido` usam
@@ -955,8 +975,11 @@ O protocolo do §5 continua valendo inteiro, com uma linha na frente:
 5. **Não existe estimativa de recall na base inteira.** Para tê-la seriam
    precisos muito mais que 14 pares (pergunta, ids corretos). **Este documento
    prova que os buracos conhecidos fecharam. Ele não prova que não há um quinto.**
-6. **Quatro mutações passam verdes** (§14.4). Os números que elas mexem não são
-   cobrados por canário nenhum hoje.
+6. ~~**Quatro mutações passam verdes** (§14.4).~~ **Eram duas, e havia duas
+   outras não listadas — e hoje NENHUMA das seis conhecidas passa verde.** Ver a
+   correção no §14.4 e a tabela do §18.3. A lista conhecida ficou vazia, o que
+   não é o mesmo que não haver uma sétima.
+7. **O gargalo não é ordenação, é ROTEAMENTO — e o número é 7 de 18.** Ver §18.
 
 ---
 
@@ -987,3 +1010,118 @@ O protocolo do §5 continua valendo inteiro, com uma linha na frente:
   fica estável para a terceira medição. Nenhuma claim foi editada, nenhuma fonte
   foi ingerida, nenhum tópico foi acrescentado ao vocabulário fechado. Este
   trabalho é inteiramente de recuperação.
+
+---
+
+## 18. O ATAQUE CEGO DE 10/08 (à noite), e o que ele mudou
+
+Um terceiro reescreveu 18 perguntas na **voz do atleta** — sem a palavra da
+resposta dentro — e mediu esta camada contra elas. Os 18 pares (pergunta, ids)
+entraram em `research/kb/CANARIOS.json` como família `presente-escondido` com o
+bloco `perguntaDoAtleta` (P01–P18), **medidos e vermelhos**, e o placar sai
+impresso a cada `check-canarios.mjs`:
+
+```
+  RECUPERAÇÃO PELA PORTA NOVA (--pergunta), medida e registrada:
+    0 de 18 devolvem TODOS os ids esperados dentro do teto de tela
+    3 de 18 devolvem ALGUM id esperado
+    7 de 18 não roteiam para gaveta NENHUMA que contenha a resposta
+```
+
+### 18.1 A frase do construtor não é a frase do atleta
+
+O §13 mede seis casos e diz que a camada os destrava. O ataque reproduziu
+**dois** (Q05 e Q19). A diferença não está na camada, está na **pergunta**: as
+frases da tabela do §13 já contêm a palavra da resposta — *quanto **baixar** o
+peso*, *quanto tempo dura um **ciclo*** —, e quando a mesma dúvida é escrita como
+o atleta a escreve (*"minha série de aferição veio em RPE 8 pela terceira semana
+seguida, o que faço com a carga"*), Q11, Q14, Q16 e Q29 voltam a não achar nada.
+**O §13 não está errado nos números; está errado no que os números medem.**
+
+### 18.2 O defeito dominante é de roteamento, não de ordenação
+
+Em 7 dos 18 (P02, P06, P09, P10, P14, P15, P16) **nenhum tópico roteado contém
+um id esperado** — ordenar melhor dentro da gaveta não alcança uma claim que não
+está no conjunto. O pior é o **P16**: `levantar peso já conta como exercício pro
+coração` roteia para `peso-corporal` com 0,73 (piso 0,65) porque o `peso` de
+*levantar peso* foi lido como peso **corporal**; `cardio` (onde V013-04/05/06
+respondem exatamente isso) nunca abre, e a tela sai cheia, plausível e errada —
+o mesmo lixo que a família `nao-mapeia` foi escrita para proibir, e que nenhum
+canário pegava. **A precisão, essa, está boa** e não é onde gastar a próxima
+onda: as três recusas testadas saem certas e com o motivo certo, e o piso é
+cobrado dos dois lados (0,65 → 0,60 e 0,65 → 0,73 dão vermelho).
+
+### 18.3 As três travas que estavam mortas, e as repro que passaram a falhar
+
+| o que estava morto | repro que hoje falha |
+|---|---|
+| `DETALHE_ROTEADO 8 → 0` matava o canal inteiro da PÁGINA AO LADO com `check:kb` verde. O único teste que citava o canal (V033-05) passava porque V033-05 vem de `vizParam`, o **outro** canal. | `vizinhos` passou a declarar `canal`, e o T05 do `ROTAS.json` ganhou `viaPaginaAoLado: ["V003-18","V074-24"]` — o *5 min em agacho e terra, 3 no supino* e a condição de V074-23, que **só** chegam à tela por esse canal. `sed 's/DETALHE_ROTEADO = 8/= 0/'` → `check-rotas` exit 1. |
+| `PESO_NOME_COMPOSTO 1.2 → 0` verde: nenhum caso dependia do nome composto da gaveta. | T15, `quanto vale a carga de treino da semana?`. Com o peso, `carga-de-treino` sai em 1º; com 0, o tópico **desaparece** e a pergunta cai em `[frequencia, taper, periodizacao, deload]` — que é exatamente o P14. `sed` → exit 1. |
+| O `"tetoDeTela": 40` do **topo** do `ROTAS.json` era letra morta (todo caso carrega o seu), e `check-rotas.mjs:180` escrevia `teto: teto ?? 40` — o 40 hardcoded dentro da ferramenta que o arquivo diz não poder tê-lo. | O teto do topo é lido antes de qualquer caso e a ausência é erro de carga; o `?? 40` saiu. `sed 's/"tetoDeTela": 40,/"MORTO": 40,/'` → exit 2. |
+
+**E as duas que a correção do §14.4 deixou de pé caíram sozinhas, pelos 18 canários
+novos.** Rodadas depois de gravá-los, uma a uma, com reversão e `md5` conferido:
+
+| mutação | quem morde hoje |
+|---|---|
+| `FRACAO_DO_MELHOR 0.4 → 0.05` | `check-canarios.mjs` — P02 passa a abrir `dor`, P05 ganha `ombros`, e outros; a **medida** muda e o registro acusa |
+| peso da rota `** 2 → ** 1` (linear) | `check-canarios.mjs`, mesma via |
+| `TETO_ROTEADO 40 → 400` | `roteador.test.mjs` |
+| `PESO_AFIM 0.6 → 0` | `roteador.test.mjs`, `check-rotas.mjs` **e** `check-canarios.mjs` |
+| `DETALHE_ROTEADO 8 → 0` | `check-rotas.mjs` (T05, `viaPaginaAoLado`) |
+| `PESO_NOME_COMPOSTO 1.2 → 0` | `check-rotas.mjs` (T15) |
+
+**Das seis mutações conhecidas, nenhuma passa mais verde.** Isso não quer dizer que
+não há uma sétima — quer dizer que a lista conhecida ficou vazia, o que é o máximo
+que uma lista pode dizer sobre si mesma. E note **por que** as duas primeiras caem:
+não por uma trava escrita contra elas, e sim porque afrouxar o roteamento move a
+medida de 18 perguntas reais. Um canário que registra uma medida ruim vale mais como
+detector do que um que registra uma boa.
+
+### 18.4 O canário que falha entra assim mesmo
+
+`perguntaDoAtleta` não cobra **passar** — cobra que a **medida** continue a
+mesma. `recuperados`, `abriuOTopico` e `gavetasComResposta` são registro, e
+divergência é erro **nos dois sentidos**: melhorar também acusa. É a única forma
+de um canário vermelho não virar verde em silêncio, e de o número deste veredito
+não poder mudar sem alguém escrevê-lo. `check-canarios.test.mjs` tem 8 casos
+novos (53 no total) que provam o mecanismo, incluindo os três que rodam o mesmo
+canário com `tetoDeTela` 1, 2 e 3 e obtêm três listas diferentes — que é a prova
+de que o limite de **posição** vem do canário, e não de `roteador.mjs`.
+
+### 18.5 O item mais caro que continua aberto: Q03/P02
+
+`fisgada de 3/10 no peitoral na terceira série de supino pausado, continuo?`
+devolve 40 claims de peito/supino e **nenhuma** de V079-34, V001-06, V138-19,
+V086-21 ou V027-23, pelas **duas** portas. A palavra `fisgada` não existe na base,
+e a gaveta `dor` só abre quando a palavra literal *dor* está na pergunta. A
+camada não responde nem certo nem errado: **responde com ar de completa**, sem
+sinal nenhum de que existe um limiar de 2–3/10 e uma ressalva do outro lado.
+Para este atleta — peitoral rompido, bloco de reexposição — é o caso que mais
+custa. O `§9.3` chamava isto de *"de outro dono"*; não é: é o item 1 da
+`ONDA-2C.md`.
+
+---
+
+### 18.6 Procedência do §18
+
+- **Arquivos alterados:** `research/kb/CANARIOS.json` (18 canários
+  `presente-escondido` novos, P01–P18, com `perguntaDoAtleta`; `_leia`
+  ampliado), `research/tools/check-canarios.mjs` (o bloco da porta nova e o
+  placar impresso), `research/tools/check-canarios.test.mjs` (segunda base de
+  bolso + 8 casos, 53 no total), `research/tools/roteador.mjs` (`vizinhos`
+  passou a declarar `canal`), `research/tools/check-rotas.mjs` (teto do topo
+  cobrado, `?? 40` removido, `viaPaginaAoLado`), `research/kb/ROTAS.json`
+  (T05 ganhou `viaPaginaAoLado`, T15 é novo — 15 casos), este arquivo,
+  `research/kb/ESTADO.md`, `research/RUNBOOK.md` §8, `research/kb/ONDA-2C.md`
+  (novo).
+- **Nenhuma claim foi editada**, nenhuma fonte foi ingerida, nenhum tópico
+  entrou no vocabulário fechado. `MEDICAO-02.md` mediu que o gargalo não é
+  conteúdo.
+- **As perguntas P01–P18 e os ids esperados foram escritos por um terceiro**, que
+  não participou do conserto de 10/08, e chegaram em
+  `research/kb/CANARIOS-ESCONDIDOS.json`. O que este passe fez foi torná-los
+  executáveis e registrar a medida — não escolhê-los.
+- **Verificação:** `npm run check:kb` exit 0 · `npm run check:gate` exit 0 ·
+  `npm run build` exit 0 · `eslint` limpo nos arquivos tocados. As três mutações
+  do §18.3 foram aplicadas, medidas, e revertidas com `md5` conferido.

@@ -83,6 +83,10 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { TIERS, SCOPES, MODOS, FRAMES, carregarTopicos, carregarClaims, numerosDaClaim } from './kb.mjs';
 import { recuperar, indexar, carregarVocabulario, prosaDaClaim } from './busca.mjs';
+// Só FUNÇÕES. Nenhuma constante de `roteador.mjs` entra aqui: os números que
+// este arquivo cobra são dados do CANARIOS.json, e a razão está no bloco de
+// `tetoDeTela` mais abaixo.
+import { responder, perfilarTopicos } from './roteador.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const arg = (f) => {
@@ -153,8 +157,19 @@ const CHAVES = new Set([
 const CAMPOS_CANARIO = new Set([
   'id', 'familia', 'pergunta', 'porque', 'esperado',
   'sustenta', 'numeros', 'frases', 'vazio', 'ruido', 'historia',
-  'buscaCega',
+  'buscaCega', 'perguntaDoAtleta',
 ]);
+
+/**
+ * As chaves de `perguntaDoAtleta` — a PORTA NOVA (`--pergunta`, roteamento por
+ * tópico), medida com a pergunta do canário escrita na voz do atleta. Nenhum
+ * destes números vem de `roteador.mjs`.
+ */
+const CAMPOS_PERGUNTA = new Set([
+  'descricao', 'topicoDaResposta', 'tetoDeTela', 'medidoEm',
+  'abriuOTopico', 'gavetasComResposta', 'recuperados', 'veredito',
+]);
+const VEREDITOS = new Set(['passa', 'falha']);
 
 /** As chaves aceitas em `buscaCega` — mesmos nomes das opções da linha de
  *  comando, porque é a linha de comando que o canário está encenando. */
@@ -268,6 +283,33 @@ const idsVistos = new Set();
 // 6.912 claims por canário, e um checker lento é um checker que sai do `check:kb`.
 const INDICE = indexar(claims);
 const VOCAB = carregarVocabulario(ROOT).entradas;
+// O perfil de tópicos é caro e só a porta nova precisa dele. Montado uma vez, e
+// só se algum canário for medido por ela.
+const PRECISA_ROTEAR = (doc.canarios ?? []).some((c) => c.perguntaDoAtleta);
+const PERFIS = PRECISA_ROTEAR ? perfilarTopicos(claims) : null;
+const placarDaPorta = { total: 0, passa: 0, algumId: 0, semGaveta: 0 };
+
+/**
+ * O QUE O ATLETA VÊ, EM ORDEM. `responder` devolve três canais — as claims
+ * roteadas, o canal de nome-de-param e a página ao lado — e a tela é a
+ * concatenação deles, sem repetição. A posição é contada AQUI, sobre essa
+ * ordem, para que `tetoDeTela` seja um limite de POSIÇÃO e não um botão interno
+ * da ferramenta: com `tetoDeTela` em 5 o canário perde o que sai em 6º, e isso
+ * é o que prova que o campo está ligado.
+ */
+function telaDe(r) {
+  const ordem = [];
+  const visto = new Set();
+  const push = (c, canal) => {
+    if (visto.has(c.id)) return;
+    visto.add(c.id);
+    ordem.push({ id: c.id, canal });
+  };
+  for (const x of r.claims) push(x.c, 'rota');
+  for (const x of r.params.lista) push(x.c, 'param');
+  for (const v of r.vizinhos) push(v.c, v.canal ?? 'viz');
+  return ordem;
+}
 
 for (const can of doc.canarios ?? []) {
   const onde = `canário ${can.id ?? '(sem id)'}`;
@@ -352,12 +394,26 @@ for (const can of doc.canarios ?? []) {
   if (can.familia === 'presente-escondido') {
     const ids = can.sustenta ?? [];
     const bc = can.buscaCega;
-    if (!bc?.termos?.length) {
+    /**
+     * DUAS PORTAS, e o canário tem de encenar pelo menos uma.
+     *
+     *   `buscaCega`        — a porta livre (`--busca`, `recuperar()`): os termos
+     *                        que a MEDICAO-02 registrou que o agente digitou.
+     *   `perguntaDoAtleta` — a porta nova (`--pergunta`, roteamento por tópico):
+     *                        a pergunta do campo `pergunta` deste canário,
+     *                        escrita na voz de quem não tem o vocabulário da
+     *                        resposta.
+     *
+     * Sem nenhuma das duas, o canário vira um "presente" comum e para de medir
+     * recuperação — que é a única coisa que a quarta família existe para medir.
+     */
+    if (!bc?.termos?.length && !can.perguntaDoAtleta) {
       erros.push(
-        `${onde}: família "presente-escondido" exige buscaCega.termos — a busca que a medição registrou. `
-          + 'Sem ela o canário vira um "presente" comum e para de medir recuperação.',
+        `${onde}: família "presente-escondido" exige buscaCega.termos ou perguntaDoAtleta — a busca `
+          + 'que a medição registrou, ou a pergunta na voz do atleta. Sem uma das duas o canário '
+          + 'vira um "presente" comum e para de medir recuperação.',
       );
-    } else {
+    } else if (bc?.termos?.length) {
       for (const k of Object.keys(bc)) {
         if (!CAMPOS_BUSCA_CEGA.has(k)) erros.push(`${onde} buscaCega: campo "${k}" não existe (conhecidos: ${[...CAMPOS_BUSCA_CEGA].join(', ')})`);
       }
@@ -434,6 +490,133 @@ for (const can of doc.canarios ?? []) {
       }
       linha.detalhe += `, ${bc.termos.length} busca(s) cega(s)${Object.keys(filtro).length ? ' + filtro' : ''}`;
     }
+
+    /**
+     * ═════════════════════════════════════════════════════════════════════════
+     * A PORTA NOVA — `--pergunta`, a pergunta escrita na voz do atleta
+     * ═════════════════════════════════════════════════════════════════════════
+     *
+     * O QUE SE COBRA AQUI NÃO É "PASSAR". É que a MEDIDA continue a mesma.
+     *
+     * Dezoito destes canários entraram em 10/08/2026 medidos e VERMELHOS: três
+     * devolvem algum id esperado, nenhum devolve todos, e em sete o roteamento
+     * não abre gaveta nenhuma que contenha a resposta. Um canário que só entrasse
+     * depois de passar seria decorativo — mediria o conserto de quem o escreveu,
+     * e foi assim que o relato de 10/08 declarou cinco casos destravados quando o
+     * ataque cego reproduziu dois.
+     *
+     * Então o campo `medido` é um REGISTRO, e a comparação é contra ele:
+     *   · `recuperados`        — quais ids esperados chegam à tela, dentro de
+     *                            `tetoDeTela` posições;
+     *   · `abriuOTopico`       — o tópico onde a resposta mora foi roteado;
+     *   · `gavetasComResposta` — quais tópicos ROTEADOS de fato etiquetam algum
+     *                            id esperado. Vazio = o defeito é de ROTEAMENTO,
+     *                            não de ordenação, e ordenar melhor não conserta.
+     *
+     * Qualquer diferença é erro, NOS DOIS SENTIDOS. Regressão é óbvia. Melhora
+     * também é erro, e de propósito: a única forma de este arquivo continuar
+     * dizendo a verdade sobre a camada é que ninguém possa melhorar a camada sem
+     * reescrever a linha que diz quanto ela achava. Reescrever o registro é uma
+     * decisão — e vai junto com o veredito no topo do RECUPERACAO.md, que é onde
+     * o número aparece para quem lê.
+     *
+     * NADA aqui vem de `roteador.mjs`: o teto é `tetoDeTela` do canário, a
+     * pergunta é o campo `pergunta`, e os ids são os que uma busca independente
+     * confirmou que respondem. `responder()` entra como função e nada mais.
+     */
+    const pa = can.perguntaDoAtleta;
+    if (pa) {
+      for (const k of Object.keys(pa)) {
+        if (!CAMPOS_PERGUNTA.has(k)) {
+          erros.push(`${onde} perguntaDoAtleta: campo "${k}" não existe (conhecidos: ${[...CAMPOS_PERGUNTA].join(', ')})`);
+        }
+      }
+      const teto = pa.tetoDeTela;
+      if (!Number.isInteger(teto)) {
+        linha.ok = false;
+        erros.push(
+          `${onde} perguntaDoAtleta: "tetoDeTela" ausente ou não inteiro. O limite de POSIÇÃO é dado `
+            + 'do canário, nunca constante da ferramenta de busca — foi assim que a trava se testou '
+            + 'a si mesma em 09/08.',
+        );
+      } else if (!TOPICS.has(pa.topicoDaResposta)) {
+        linha.ok = false;
+        erros.push(`${onde} perguntaDoAtleta: tópico "${pa.topicoDaResposta}" fora do vocabulário fechado`);
+      } else if (!VEREDITOS.has(pa.veredito)) {
+        linha.ok = false;
+        erros.push(`${onde} perguntaDoAtleta: "veredito" tem de ser ${[...VEREDITOS].join(' ou ')}`);
+      } else {
+        /**
+         * O tópico declarado precisa ETIQUETAR pelo menos um dos ids. Sem isto,
+         * `topicoDaResposta` é palpite, e `abriuOTopico` mediria a abertura de
+         * uma gaveta que não tem a resposta dentro — o mesmo lixo plausível que
+         * o P16 documenta.
+         */
+        const etiquetados = ids.filter((i) => (porId.get(i)?.topic ?? []).includes(pa.topicoDaResposta));
+        if (etiquetados.length === 0) {
+          linha.ok = false;
+          erros.push(
+            `${onde} perguntaDoAtleta: nenhum id de sustenta está etiquetado em `
+              + `"${pa.topicoDaResposta}" — o tópico da resposta é palpite, e a medida de `
+              + 'roteamento deste canário não significa nada. Ancore-o na gaveta em que a claim está.',
+          );
+        }
+
+        const r = responder(claims, can.pergunta, {
+          topicos: TOPICS, vocabulario: VOCAB, idx: INDICE, perfis: PERFIS, teto,
+        });
+        const rotas = r.rotas.map((x) => x.topico);
+        const tela = telaDe(r).slice(0, teto).map((x) => x.id);
+
+        const recuperados = ids.filter((i) => tela.includes(i));
+        const abriuOTopico = rotas.includes(pa.topicoDaResposta);
+        const gavetas = rotas
+          .filter((t) => ids.some((i) => (porId.get(i)?.topic ?? []).includes(t)))
+          .sort();
+        const veredito = recuperados.length === ids.length && ids.length > 0 ? 'passa' : 'falha';
+
+        placarDaPorta.total += 1;
+        if (veredito === 'passa') placarDaPorta.passa += 1;
+        if (recuperados.length > 0) placarDaPorta.algumId += 1;
+        if (gavetas.length === 0) placarDaPorta.semGaveta += 1;
+
+        const mesmo = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+        const divergencias = [];
+        if (!mesmo(recuperados, pa.recuperados)) {
+          divergencias.push(
+            `ids na tela: registrado [${(pa.recuperados ?? []).join(', ') || '—'}], agora `
+              + `[${recuperados.join(', ') || '—'}]`,
+          );
+        }
+        if (pa.abriuOTopico !== abriuOTopico) {
+          divergencias.push(`abriuOTopico: registrado ${pa.abriuOTopico}, agora ${abriuOTopico} (rotas: ${rotas.join(', ') || '—'})`);
+        }
+        if (!mesmo(gavetas, pa.gavetasComResposta)) {
+          divergencias.push(
+            `gavetasComResposta: registrado [${(pa.gavetasComResposta ?? []).join(', ') || '—'}], agora `
+              + `[${gavetas.join(', ') || '—'}]`,
+          );
+        }
+        if (pa.veredito !== veredito) {
+          divergencias.push(`veredito: registrado "${pa.veredito}", agora "${veredito}"`);
+        }
+
+        if (divergencias.length > 0) {
+          linha.ok = false;
+          erros.push(
+            `${onde}: A MEDIDA DA PORTA NOVA MUDOU — "${can.pergunta}"\n`
+              + divergencias.map((d) => `          · ${d}`).join('\n') + '\n'
+              + '        Isto não é automaticamente uma regressão: MELHORAR também cai aqui, e cai\n'
+              + '        de propósito. O registro é o que este arquivo sabe sobre a camada, e ele só\n'
+              + '        muda por decisão — junto com o veredito do topo do research/kb/RECUPERACAO.md.\n'
+              + '        Se piorou, conserte research/tools/roteador.mjs; se melhorou, reescreva a\n'
+              + '        linha e diga o número novo em voz alta.',
+          );
+        }
+        linha.porta = { veredito, achou: recuperados.length, de: ids.length, abriu: abriuOTopico, gavetas: gavetas.length };
+        linha.detalhe += `, porta nova ${veredito} ${recuperados.length}/${ids.length}`;
+      }
+    }
   }
 
   if (can.familia === 'impossivel' || can.familia === 'armadilha') {
@@ -503,7 +686,7 @@ for (const [t, n] of Object.entries(registrado.tiers ?? {})) {
 }
 
 if (JSON_OUT) {
-  console.log(JSON.stringify({ ok: erros.length === 0, resultados, deriva, tiersAgora, erros }, null, 2));
+  console.log(JSON.stringify({ ok: erros.length === 0, resultados, deriva, tiersAgora, placarDaPorta, erros }, null, 2));
   process.exit(erros.length > 0 ? 1 : 0);
 }
 
@@ -513,6 +696,24 @@ console.log(
   `  presente ... ${porFamilia('presente')}   presente-escondido ... ${porFamilia('presente-escondido')}   `
   + `impossivel ... ${porFamilia('impossivel')}   armadilha ... ${porFamilia('armadilha')}`,
 );
+
+/**
+ * O PLACAR SAI SEMPRE, e sai mesmo com tudo verde.
+ *
+ * O verde deste arquivo quer dizer "a medida não mudou", e não "a camada acha".
+ * Sem esta linha impressa, um `check:kb` inteiro verde leria como se a
+ * recuperação estivesse resolvida — que é o modo de falha nº 5 desta casa
+ * (relatório que diz sucesso sem sucesso), agora escrito por uma ferramenta.
+ */
+if (placarDaPorta.total > 0) {
+  console.log(
+    `\n  RECUPERAÇÃO PELA PORTA NOVA (--pergunta), medida e registrada:\n`
+    + `    ${placarDaPorta.passa} de ${placarDaPorta.total} devolvem TODOS os ids esperados dentro do teto de tela\n`
+    + `    ${placarDaPorta.algumId} de ${placarDaPorta.total} devolvem ALGUM id esperado\n`
+    + `    ${placarDaPorta.semGaveta} de ${placarDaPorta.total} não roteiam para gaveta NENHUMA que contenha a resposta`
+    + ' — nesses, o defeito é de roteamento e ordenar melhor não conserta',
+  );
+}
 
 if (VERBOSE) {
   console.log('');
@@ -534,4 +735,8 @@ if (erros.length > 0) {
   process.exit(1);
 }
 
-console.log('\n✓ todo canário impossível continua impossível, e todo presente continua presente\n');
+console.log(
+  '\n✓ todo canário impossível continua impossível, todo presente continua presente, e a medida da '
+  + 'porta nova é exatamente a registrada\n'
+  + '  (verde aqui quer dizer "a medida não mudou", NÃO "a recuperação acha" — o placar acima é o que diz isso)\n',
+);

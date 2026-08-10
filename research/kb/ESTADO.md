@@ -21,6 +21,22 @@
 > quem consertou, que contou 4 de 4. A onda existiu para produzir este número; a tabela e a
 > prova estão no §2, e o trabalho que sobrou está em `research/kb/ONDA-2B.md`.
 
+> **O número da onda 2B, e ele é pior que o da 2A porque agora é medida e não teto:
+> das 18 perguntas escritas na VOZ DO ATLETA, a camada de recuperação devolve todos os
+> ids que respondem em ZERO delas, algum id em TRÊS, e em SETE não abre gaveta nenhuma
+> que contenha a resposta.** O número vem dos canários `presente-escondido` P01–P18 de
+> `CANARIOS.json` (`node research/tools/check-canarios.mjs` o imprime a cada execução) e
+> foi escrito por um terceiro, não por quem consertou. O veredito de uma linha está no
+> topo do `RECUPERACAO.md`. **O gargalo é ROTEAMENTO, não ordenação**: em sete casos
+> nenhum ranqueamento alcança uma claim que não está no conjunto aberto. O trabalho que
+> sobrou está em `research/kb/ONDA-2C.md`.
+>
+> **E a lição do instrumento, outra vez:** o relato da onda 2B declarou cinco casos
+> destravados; o ataque cego reproduziu dois. A diferença não é a camada, é a frase — as
+> perguntas da tabela do construtor já continham a palavra da resposta. **Modo de falha
+> nº 5 desta casa, agora em forma sutil: medir com o instrumento calibrado no próprio
+> conserto.**
+
 Este arquivo é curto de propósito. O mapa do sistema está em `research/RUNBOOK.md`; o
 registro está em `SCHEMA.md`; o porquê de cada gaveta está em `ENUMERADOS.md`; como a base
 é medida está em `INSTRUMENTO.md`. Aqui está só: **onde a base está, o que foi provado, o
@@ -98,7 +114,12 @@ FONTE, não CORREÇÃO DA FONTE**, e nenhuma trava desta base prova a segunda.
 | `modo: 'anedota'` não cresce em lote novo | catraca `TETO_ANEDOTA = { V: 196, G: 47 }` em `check-claims.mjs`, **por prefixo** de id. A proibição existia só em markdown; teto global vazaria, porque retagar uma anedota antiga abre exatamente uma vaga para uma nova |
 | **Prescrição com dose de DOR e sem `conditions` acusa** — novo em 9/8 | `escala_dor` entrou em `FRAMES_DOSE` (`kb.mjs:322`), que é a gaveta onde a dose de dor mora e que o aviso não olhava: modo de falha nº 2 num lugar novo. Provado que **arma**, não que se testa a si mesmo: apagar `conditions` de `V001-06` move o contador de `23×` para `24×` em `npm run check:kb`; restaurar volta a 23×. **Limite declarado: o predicado ainda exige `modo === 'prescricao'`**, e `V138-19` (limiar 2 a 4/10, quatro params `escala_dor`) é `modo: opiniao` — apagar as `conditions` dela não move nada. Ampliou-se o eixo do frame e deixou-se aberto o eixo do modo (`ONDA-2B.md` §4.1) |
 | A base já não serve o número de dor cru no filtro que vira treino | `check-evidence.mjs:160-161` é o **único** formatador de claim do repositório e imprime `condições:` e `conflita:` **sempre** — em modo id, `--grep`, `--topic` e na vizinhança; `research/kb/topics/` não existe, então não há segunda visão por onde o número vaze. `--grep "push at"` e `--grep "out of 10"` devolvem V079-34 e V001-06 com as arestas. **Este invariante quebra no dia em que as visões geradas existirem** (`ONDA-2B.md` §11.2) |
-| Os canários da medição continuam vivos | `check-canarios.mjs`: 5 presentes, **4 `presente-escondido`**, 5 impossíveis, 5 armadilhas |
+| Os canários da medição continuam vivos | `check-canarios.mjs`: 5 presentes, **22 `presente-escondido`** (4 pela busca cega + **18 pela pergunta do atleta**), 5 impossíveis, 5 armadilhas — **37 no total** |
+| **A recuperação é MEDIDA, e a medida não pode mudar em silêncio** — novo em 10/8 | `check-canarios.mjs`, bloco `perguntaDoAtleta` dos canários P01–P18. Cada um registra `recuperados`, `abriuOTopico` e `gavetasComResposta`, e a divergência é erro **nos dois sentidos**: melhorar acusa igual a piorar, que é o que impede um canário vermelho de virar verde sem alguém escrever o número novo. O placar sai impresso mesmo com tudo verde, porque verde aqui quer dizer *"a medida não mudou"*, não *"a camada acha"*. **O que ele diz hoje: 0/18, 3/18, 7/18** |
+| O limite de POSIÇÃO da tela é dado do canário, e está ligado | `check-canarios.test.mjs`: três casos rodam o **mesmo** canário com `tetoDeTela` 1, 2 e 3 sobre a mesma base e obtêm três listas diferentes de ids. Um checker que lesse o teto de `roteador.mjs` daria a mesma resposta nas três |
+| O canal *"a página ao lado"* do roteamento entrega pelo NOME do canal | `check-rotas.mjs`, campo `viaPaginaAoLado` do T05. Até 10/8, `DETALHE_ROTEADO 8 → 0` matava o canal inteiro com `check:kb` verde — o único teste que o citava passava porque o id vinha do **outro** canal. Hoje a mutação dá exit 1 |
+| O nome COMPOSTO do tópico pesa, e alguém cobra | `check-rotas.mjs`, T15 (`quanto vale a carga de treino da semana?`). `PESO_NOME_COMPOSTO 1.2 → 0` fazia a gaveta `carga-de-treino` desaparecer da rota com `check:kb` verde; hoje dá exit 1 |
+| O `tetoDeTela` do topo do `ROTAS.json` não é decoração | `check-rotas.mjs` o lê antes de qualquer caso e recusa a ausência; o `teto ?? 40` hardcoded dentro do checker foi removido. Renomear a linha do JSON → exit 2 |
 | A camada de recuperação acha **os quatro casos que a MEDICAO-02 nomeou**, pela busca cega que a medição registrou | `check-canarios.mjs`, família `presente-escondido` (C16–C19). Cobra os dois lados: a busca cega continua não achando no literal, **e** `recuperar()` acha os ids. Desligar a vizinhança (`relaxada = false`) derruba os quatro — medido por mutação em 9/8. **Leia o parágrafo abaixo da tabela antes de citar esta linha: o TETO da tela e o aviso de alargamento NÃO estão travados, e os 35 casos de `busca.test.mjs` não cobrem a fiação.** Ver `RECUPERACAO.md` e `ONDA-2B.md` §1 |
 | Todo termo do índice de vocabulário ainda acha, e todo termo declarado morto ainda não acha | `check-vocabulario.mjs`: 73 termos vivos conferidos **dentro do tópico que os declara** e 26 termos mortos conferidos contra a base inteira. A trava recusou o arquivo na primeira execução — a redação inicial dava `six days per week` como morto, e V114-19 diz isso. Confirmado em 9/8 contra a acusação de que ele só varria a prosa: ele usa `textoDaClaim` (`busca.mjs:141`), que inclui `params` e `topic` |
 | As **funções** da camada de recuperação fazem o que prometem, sobre um corpus sintético | `busca.test.mjs`: **35 casos** em pares — para cada mecanismo, um que TEM de ser achado e um que NÃO pode ser. **Isto não é cobertura do corpus real**: são ~12 claims `V901-*` e as funções são chamadas diretamente. Ver abaixo |
@@ -162,7 +183,8 @@ nada**, e portanto não impedem reincidência. Cada uma tem a data em que vira t
 | ~~"Enquanto a lista não zerar, virar recusa fecharia o build sobre dado legítimo"~~ | — | **ESTA FRASE ERA FALSA e ficou gravada aqui, que é onde ela ia impedir a catraca de nascer.** O detector emite **por família**, e sete famílias emitem **zero**. `ano_calendario` e `indice_adimensional` podem virar recusa hoje, a custo zero de build — provado reintroduzindo um defeito de cada num tree copiado: o detector acusa, `check-claims.mjs` continua exit 0. O argumento de TAXA é bom **para TAXA e só para TAXA**. Trabalho no `ONDA-2B.md` §8 |
 | O universo e o intervalo de `pratica-pessoal` | `candidatos-pratica-pessoal.mjs --ic` e `--recall` | o instrumento é um detector com **recall medido de 22 %**; a catraca especificada em cima dele ficaria verde com ~300 claims de dívida (`RUNBOOK.md` §8.21) |
 | A fila de revisão de gênero | `check-evidence.mjs --genero <g> --modo prescricao` | a catraca `TETO_PRESCRICAO_EM_GENERO_RESTRITO` **mede e não reprova**. **O teto desceu de 76 para 74 em 9/8**, e a catraca foi atacada por mutação: devolver `G020-17` a `prescricao` dá exit 1; promover uma claim de `G028`, que não está no mapa, dá `teto declarado é 0` e exit 1; baixar `G020` para 5 nomeia o número exato. **Não é trava que se testa a si mesma** — o mapa é literal, e a soma 57 (review) + 17 (form-check) = 74 é recontada de fora |
-| A precisão da camada de recuperação | — | **nada mede.** Não há comando e não há trava: a regressão que pôs *"supinar seis dias por semana"* no topo de perguntas sobre sono passou verde em `check:kb`, em `busca.test.mjs` e nos 19 canários. A quinta família de canário (`ausente-injetado`) é o `ONDA-2B.md` §2 |
+| ~~A precisão da camada de recuperação~~ | `node research/tools/check-rotas.mjs` | **VIROU TRAVA em 10/8, nas duas portas.** A família `sem-injecao` do `ROTAS.json` (T09/T10/T11) cobra os `proibidos` no roteamento **e**, pelo campo `tambemPelaBuscaLivre`, contra `recuperar()` — que é onde o defeito de 9/8 morava. Reconferido: `sed 's/longas.every/longas.some/'` em `busca.mjs` → exit 1 nomeando V170-34. **O que ainda não é trava é o RECALL**, e a medida dele é a linha de baixo |
+| O RECALL da camada de recuperação | `node research/tools/check-canarios.mjs` (o placar sai impresso) | **É medida, e não é trava — de propósito.** Os 18 canários P01–P18 estão registrados como **falhando**, com o número ao lado: 0/18 completos, 3/18 parciais, 7/18 sem gaveta. Transformá-los em erro fecharia o build sobre um defeito conhecido; o que a trava garante é que **a medida não mude em silêncio**, nos dois sentidos. Conserto: item 0 da `ONDA-2C.md` |
 
 ### Julgamento de agente — nenhum compilador olhou
 
@@ -413,8 +435,20 @@ solta para este atleta.
 
 ## 4. O que a próxima rodada tem de atacar, em ordem
 
-> ## ⇒ A FILA DE HOJE É `research/kb/ONDA-2B.md`
+> ## ⇒ A FILA DE HOJE É `research/kb/ONDA-2C.md` (10/08/2026)
 >
+> **Escrita no fechamento da onda 2B, depois do segundo ataque cego.** Ela traz, na
+> ordem: **consertar o roteamento** (item 0 — os canários P01–P18 já estão escritos e já
+> estão vermelhos), a triagem de banalidade com o portão de calibração de dois agentes na
+> mesma amostra de 150 e corte em 85 % (#34), os fatos do atleta em `tier U` (#28, com a
+> calibração de RPE **fora**), o Whisper nos 53 `suspect` (#31), e — por último, e a ordem
+> não é negociável — o ledger de contradições e as sínteses (#25, #26). **Reparo vem
+> antes de síntese.** E ela repete o que já foi medido duas vezes: **não ingira mais
+> corpus, o gargalo não é conteúdo.**
+>
+> ### A fila anterior, `research/kb/ONDA-2B.md`
+>
+
 > **Escrita no fechamento da onda 2A (9/8/2026), depois do ataque.** É ela que traz o
 > trabalho que sobrou, na ordem, com *quantos* / *onde* / *como se verifica*: as três
 > travas mortas da camada de recuperação, o canário de precisão que não existe, C20, os

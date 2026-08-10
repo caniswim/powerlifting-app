@@ -1,4 +1,17 @@
 {
+ "_leia": [
+  "REGISTRO HISTÓRICO — NÃO É MAIS A AUTORIDADE, e não é lido por ferramenta nenhuma.",
+  "",
+  "Este é o arquivo COMO O TERCEIRO O ESCREVEU, em 10/08/2026, antes de ver a camada.",
+  "É por isso que ele fica: o valor destes 18 canários vem de terem sido escritos por",
+  "quem não construiu a busca, e apagar o original apagaria a prova disso.",
+  "",
+  "A AUTORIDADE HOJE É research/kb/CANARIOS.json, onde os mesmos 18 vivem como família",
+  "`presente-escondido` com o bloco `perguntaDoAtleta` — com a medida registrada, as",
+  "âncoras de conteúdo (`frases`, `numeros`) e o `check-canarios.mjs` recontando tudo a",
+  "cada execução. Se os dois divergirem, o CANARIOS.json vence; e o lugar de editar um",
+  "canário é lá, nunca aqui."
+ ],
  "canarios": [
   {
    "id": "P01",

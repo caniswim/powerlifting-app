@@ -521,15 +521,20 @@ no fim.
 > `topics/` vazios) · **12** (`.tmp` fora do `.gitignore`) · **16** (deliberadamente não
 > consertada) · **17** (dívida: **74** claims de gênero) · **18** (dívida: `pratica-pessoal`) ·
 > **19** (dívida: **111** params de TAXA) · **20** · **21** · **22** · **23** · **24** ·
-> **26** · **27** · **28** · **29** · **30** · **31** · **32** · **33** · **34** · **35**.
-> São **23**. O plano de execução delas está em **`research/kb/ONDA-2B.md`**
-> (o `ONDA-2.md` é a fila anterior, e os critérios de aceite dele estão desatualizados —
-> ver §8.33).
+> **26** · **27** · **28** · **29** · **30** · **32** · **33** · **34** · **35** ·
+> **36** (roteamento: 7 de 18 não abrem a gaveta) · **37** (`fisgada`: o vocabulário do
+> sintoma não alcança a gaveta `dor`).
+> São **24**. O plano de execução delas está em **`research/kb/ONDA-2C.md`**
+> (o `ONDA-2B.md` é a fila anterior; o `ONDA-2.md` é a de antes dela, e os critérios de
+> aceite deste último estão desatualizados — ver §8.33).
 >
-> **Fechadas em 9/8/2026, no fechamento da onda 2A:** nenhuma. A onda 2A **abriu** nove
-> divergências (27–35) e **não fechou nenhuma das que já estavam na lista** — as duas que
-> ela tocou (17 e 19) mudaram de tamanho, não de estado. Registrar isso é o ponto da lista:
-> divergência não resolvida não some daqui.
+> **Fechada em 10/8/2026, no fechamento da onda 2B:** a **31** (a parte que estava aberta:
+> nada travava o conserto da precisão da busca livre) e a **38** (as mutações do roteador
+> sem trava, fechada no mesmo passe que a abriu — ela fica escrita, riscada, porque a
+> lição dela não fecha). Continuam abertas as outras 22 já listadas, e entraram duas
+> novas — **36** e **37** —, ambas medidas pelo segundo ataque cego. A onda 2B fechou
+> **duas** divergências e abriu **duas**; registrar isso é o ponto da lista, e o saldo é
+> honesto: ela produziu MEDIDA, não conserto.
 
 1. ~~**`npm run check:kb` não está no `npm run build`.**~~ **RESOLVIDO** — `scripts.build`
    agora roda `check:kb` antes do `tsc -b`. A base deixou de depender de quem lembrar.
@@ -774,10 +779,15 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     porque `load management` contém `load`).
     **CONSERTADO em 9/8** (`busca.mjs:508-545`: exige **todas** as palavras longas do
     termo, cada uma como palavra inteira; palavras curtas ficam de fora, então
-    `quantas séries por muscle` continua achando). **A divergência que fica aberta é que
+    `quantas séries por muscle` continua achando). ~~**A divergência que fica aberta é que
     nada trava o conserto:** reverter `every` para `some` passa verde em `check:kb`, em
     `busca.test.mjs` e nos 19 canários. Falta a quinta família de canário,
-    `ausente-injetado`.
+    `ausente-injetado`.~~ **RESOLVIDO em 10/8** — não pela família nova que este item
+    propunha, e sim no lugar onde o defeito mora: o campo `tambemPelaBuscaLivre` no
+    `ROTAS.json` faz os mesmos `proibidos` de T09/T10/T11 serem cobrados **também** contra
+    `recuperar()`, que é a porta que `--busca` usa. Reconferido nesta árvore:
+    `sed -i '' 's/longas.every/longas.some/' research/tools/busca.mjs` →
+    `check-rotas.mjs` **exit 1** nomeando V170-34; revertido, exit 0.
 32. **O aviso de alargamento de filtro pode ser apagado da tela sem que C19 reclame — o
     canário não testa o mecanismo pelo qual ele existe.** Reproduz (rodado e revertido):
     remover `...alargamento.flatMap((a) => a.amostra.map((c) => c.id)),` de `idsMostrados`
@@ -818,3 +828,40 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     O conserto ficou só no `DOR-E-TREINO.md` §8, sem ponteiro no arquivo errado.
     **Corrija com nota datada ao lado, não por cima:** é um relatório de medição, e apagar
     a frase apaga o rastro de que ela foi citada assim.
+36. **A camada de recuperação não acha o que a base tem, e o defeito dominante é de
+    ROTEAMENTO — 7 de 18.** Medido em 10/8 pelos canários `presente-escondido` P01–P18 de
+    `research/kb/CANARIOS.json`, com as perguntas escritas na **voz do atleta**: **0 de 18**
+    devolvem todos os ids que respondem, **3 de 18** devolvem algum, e em **7 de 18**
+    (P02, P06, P09, P10, P14, P15, P16) **nenhum tópico roteado contém um id esperado** —
+    ordenar melhor não alcança uma claim que não está no conjunto aberto. O pior é o
+    **P16**: `levantar peso já conta como exercício pro coração` roteia para
+    `peso-corporal` com 0,73 (piso 0,65) porque o `peso` de *levantar peso* foi lido como
+    peso corporal, `cardio` (230+ claims, V013-04/05/06 respondem exatamente isso) nunca
+    abre, e a tela sai cheia e plausível — o lixo que a família `nao-mapeia` existe para
+    proibir. **Não é falta de conteúdo**, e a divergência é entre o que o `RECUPERACAO.md`
+    §13 dava a entender e o que a camada faz com uma pergunta que não contém a palavra da
+    resposta. Reproduz:
+    `node research/tools/check-evidence.mjs --pergunta "levantar peso já conta como exercício pro coração"`.
+    Os canários estão escritos e vermelhos; o conserto é o item 0 da `ONDA-2C.md`.
+37. **O vocabulário do SINTOMA não alcança a gaveta `dor`, e a tela não avisa.**
+    `fisgada` não existe em claim nenhuma da base, e a gaveta `dor` só abre quando a
+    palavra literal *dor* está na pergunta. Medido:
+    `--pergunta "fisgada de 3/10 no peitoral na terceira série de supino pausado, continuo?"`
+    devolve 40 claims de peito/supino e **nenhuma** de V079-34, V001-06, V138-19, V086-21
+    ou V027-23; `--busca` com a mesma frase idem. Trocando `fisgada` por `dor`, V079-34
+    volta a sair com `+cond` e `!conflita`. **O perigo não é responder errado, é responder
+    com ar de completa**: um agente lendo essa tela não vê sinal nenhum de que existe um
+    limiar de 2–3/10 e ressalva do outro lado — para um atleta com o peitoral rompido há
+    quatro meses. O `RECUPERACAO.md` §9.3 chamava isto de *"de outro dono"*; não é.
+38. ~~**Duas mutações do roteador continuam passando verdes.**~~ **RESOLVIDO no mesmo
+    passe, e não por trava escrita contra elas:** `FRACAO_DO_MELHOR 0.4 → 0.05` e o peso
+    da rota **linear** em vez de ao quadrado passaram a dar exit 1 em
+    `check-canarios.mjs`, porque afrouxar o roteamento move a medida dos 18 canários
+    novos (P02 passa a abrir `dor`, P05 ganha `ombros`) e o registro acusa. **Das seis
+    mutações conhecidas, nenhuma passa mais verde** — o que não é o mesmo que não haver
+    uma sétima. Fica na lista porque a LIÇÃO continua aberta. Eram quatro no §16 do
+    `RECUPERACAO.md` e a lista errava metade: `TETO_ROTEADO 40 → 400` e `PESO_AFIM 0.6 → 0`
+    dão **vermelho** em `roteador.test.mjs`, e havia duas que ela não listava —
+    `DETALHE_ROTEADO 8 → 0` e `PESO_NOME_COMPOSTO 1.2 → 0`, ambas **fechadas em 10/8**
+    (`viaPaginaAoLado` no T05 e o caso T15 do `ROTAS.json`). **A lição vale mais que o
+    item:** uma lista de buracos conhecidos escrita por quem fez o conserto não é medida.
