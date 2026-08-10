@@ -1,0 +1,136 @@
+{
+  "topicos": [
+    {
+      "topico": "programacao",
+      "glosa": "Responde qual estrutura de treino seguir - como um programa nomeado (531, Cube, Bull Mastiff, Candito, GZCLP, StrongLifts, Genesis) é montado, dias por semana, ondas e blocos, e comparações entre programas.",
+      "entrada": ["programa", "planilha de treino", "treino pronto", "montar treino", "que programa seguir", "qual treino fazer", "template de treino", "rotina de treino", "ciclo de treino", "mesociclo", "531", "wendler", "cube method", "candito", "gzclp", "stronglifts", "juggernaut", "westside", "conjugado", "bull mastiff", "base strength", "app de treino", "genesis evolve", "quantos dias treinar por semana", "split de treino", "estrutura do treino", "trocar de programa", "seguir a risca", "onda de treino", "periodização em blocos", "macrociclo", "sistema de treino", "metodologia de treino"],
+      "exemplosDePergunta": [
+        "qual programa eu sigo pra ganhar total, 531 ou candito?",
+        "como funciona a estrutura do cube method, quantos dias por semana?",
+        "vale a pena trocar de programa no meio do ciclo?"
+      ],
+      "naoConfundirCom": [
+        {"topico": "deload", "termoAmbiguo": "semana de descarga dentro do programa", "comoDistinguir": "se a pergunta é sobre a estrutura geral do programa (dias, blocos, ondas), é programacao; se é especificamente sobre quando/como reduzir carga numa semana, é deload"},
+        {"topico": "recuperacao", "termoAmbiguo": "dia de descanso", "comoDistinguir": "programacao trata da posição do dia de descanso na grade semanal; recuperacao trata do estado fisiológico e da necessidade de descansar"},
+        {"topico": "series-reps", "termoAmbiguo": "quantas séries fazer hoje", "comoDistinguir": "prescrição pontual de séries/reps de um exercício é outra gaveta; programacao é sobre a arquitetura do ciclo inteiro"}
+      ]
+    },
+    {
+      "topico": "recuperacao",
+      "glosa": "Responde como o corpo se recupera entre sessões de treino - fadiga acumulada, sinais de overtraining, sono, recovery ativo, e o mecanismo estímulo-recuperação-adaptação.",
+      "entrada": ["recuperar", "descansar", "não recuperei", "corpo não aguenta", "overtraining", "passei do ponto", "destreinado", "sono ruim", "dormir mal", "estresse acumulado", "cansaço acumulado", "recovery", "recuperação ativa", "regenerar", "canseira", "moído", "acabado", "exausto", "bateria descarregada", "travado de cansaço", "platô por cansaço", "fadiga do sistema nervoso", "sistema nervoso central", "cns sobrecarregado", "queimado", "burnout de treino", "não estou rendendo"],
+      "exemplosDePergunta": [
+        "como sei se estou recuperando bem entre os treinos de perna?",
+        "dormir pouco atrapalha quanto minha recuperação de treino?",
+        "estou acordando mais cansado do que dormi, isso é overtraining?"
+      ],
+      "naoConfundirCom": [
+        {"topico": "dor", "termoAmbiguo": "cansaço/moído", "comoDistinguir": "recuperacao é sobre fadiga sistêmica geral; dor é sobre dor localizada ou sinal de lesão em uma região específica"},
+        {"topico": "descanso-entre-series", "termoAmbiguo": "quanto tempo descansar", "comoDistinguir": "recuperacao trata do intervalo entre SESSÕES de treino (dias); descanso-entre-series trata do intervalo entre SÉRIES dentro do mesmo treino"},
+        {"topico": "deload", "termoAmbiguo": "preciso de uma pausa", "comoDistinguir": "recuperacao é o processo fisiológico contínuo; deload é a ferramenta prescrita e agendada de redução de carga"}
+      ]
+    },
+    {
+      "topico": "peso-corporal",
+      "glosa": "Responde sobre o peso corporal do atleta - categoria de peso IPF, regras de pesagem em competição, bulk/cut, composição corporal e variação de peso ao longo do tempo.",
+      "entrada": ["categoria de peso", "peso corporal", "bater peso", "pesagem", "weigh-in", "cutar peso", "corte de peso", "bulk", "bulking", "cutting", "ganhar peso", "perder peso", "emagrecer", "engordar", "subir de categoria", "descer de categoria", "peso pra competir", "quanto eu peso", "balança", "fazer o peso", "composição corporal", "percentual de gordura", "bf%", "definição corporal", "massa magra", "peso alvo", "peso ideal", "peso de disputa", "classe de peso"],
+      "exemplosDePergunta": [
+        "vale a pena subir pra categoria de 93kg ou fico nos 83kg?",
+        "quanto tempo antes da competição eu paro de cutar peso?",
+        "engordei 3kg em 2 meses de bulk, isso é rápido demais?"
+      ],
+      "naoConfundirCom": [
+        {"topico": "carga-de-treino", "termoAmbiguo": "peso (sozinho, sem 'corporal')", "comoDistinguir": "'levantar peso', 'aumentar o peso na barra' é carga de treino em kg na barra; só é peso-corporal quando se refere ao peso do próprio atleta"},
+        {"topico": "nutricao", "termoAmbiguo": "dieta/bulk/cut", "comoDistinguir": "peso-corporal é o número e a categoria resultantes; nutricao é o método alimentar (macros, cardápio) usado para chegar lá"},
+        {"topico": "idade", "termoAmbiguo": "categoria", "comoDistinguir": "peso-corporal é categoria de PESO (kg); categoria de idade (master, júnior) é outra gaveta"}
+      ]
+    },
+    {
+      "topico": "deload",
+      "glosa": "Responde quando e como fazer uma semana de descarga - deload planejado vs reativo, frequência do deload, diferença entre deload e taper, sinais de que é hora de descarregar.",
+      "entrada": ["descarga", "semana de descarga", "semana leve", "aliviar a carga", "reduzir carga de propósito", "dar uma trégua", "parar uma semana", "diminuir o treino", "semana de recuperação programada", "baixar a intensidade de propósito", "semana off", "folga programada no treino", "quando fazer deload", "de quanto em quanto tempo descarregar", "delo", "dlo", "d-load", "descarregar o treino"],
+      "exemplosDePergunta": [
+        "de quantas em quantas semanas eu deveria dar um deload?",
+        "como sei que chegou a hora de fazer uma semana de descarga?",
+        "qual a diferença entre deload e taper pra competição?"
+      ],
+      "naoConfundirCom": [
+        {"topico": "taper", "termoAmbiguo": "semana leve antes da prova", "comoDistinguir": "deload é periódico dentro do ciclo normal de treino; taper é a redução específica na reta final antes de uma competição"},
+        {"topico": "recuperacao", "termoAmbiguo": "preciso descansar", "comoDistinguir": "deload é a ferramenta agendada/prescrita de redução de carga; recuperacao é o estado fisiológico contínuo que ela serve para proteger"},
+        {"topico": "lesao", "termoAmbiguo": "parar de treinar de vez", "comoDistinguir": "deload reduz volume/intensidade mas mantém o treino andando; parar totalmente por causa de dor/machucado é lesao, não deload"}
+      ]
+    },
+    {
+      "topico": "pegada",
+      "glosa": "Responde sobre como e onde posicionar as mãos na barra - largura de pegada, pegada com/sem polegar, pegada mista, uso de straps, regras de pegada da IPF.",
+      "entrada": ["pegada", "grip", "como segurar a barra", "onde colocar a mão na barra", "pegada aberta", "pegada fechada", "close grip", "wide grip", "pegada larga", "pegada estreita", "pegada mista", "mix grip", "hook grip", "pegada de gancho", "sem polegar", "thumbless", "straps", "alça de pulso", "mão escorregando da barra", "barra escorrega", "força de pegada", "grip strength", "antebraço cansa antes das costas", "mão dói segurando a barra", "calo estourou", "pegada invertida"],
+      "exemplosDePergunta": [
+        "devo usar pegada mista ou hook grip no terra?",
+        "minha mão escorrega da barra no terra antes de eu cansar as costas, o que fazer?",
+        "pegada sem polegar no agacho é seguro?"
+      ],
+      "naoConfundirCom": [
+        {"topico": "selecao-exercicio", "termoAmbiguo": "treinar força de pegada", "comoDistinguir": "se a pergunta é sobre a POSIÇÃO da mão na barra durante o levantamento, é pegada; se é sobre um exercício acessório para desenvolver a preensão como qualidade física, é selecao-exercicio"},
+        {"topico": "cinto", "termoAmbiguo": "straps/equipamento de apoio", "comoDistinguir": "straps são equipamento de mão e ficam em pegada; cinto é equipamento de tronco e é gaveta separada, mesmo os dois sendo 'apoios' de treino"},
+        {"topico": "mobilidade", "termoAmbiguo": "polegar por cima da barra", "comoDistinguir": "a técnica da pegada em si (onde a mão fica) é pegada; a causa física por trás de não conseguir uma pegada específica (falta de amplitude de ombro/punho) é mobilidade"}
+      ]
+    },
+    {
+      "topico": "mobilidade",
+      "glosa": "Responde sobre amplitude de movimento e liberação articular/muscular - tornozelo, quadril, ombro, alongamento, automassagem, e causas de limitação de profundidade ou postura.",
+      "entrada": ["mobilidade", "flexibilidade", "alongamento", "alongar", "estou travado", "não desço direito no agacho", "amplitude de movimento", "rom", "quadril travado", "tornozelo duro", "ombro travado", "não consigo agachar fundo", "falta de mobilidade", "soltar o corpo", "liberar a musculatura", "rolo de espuma", "foam roller", "automassagem", "esticar", "aquecimento dinâmico", "abrir o quadril", "encurtamento muscular", "tensão muscular crônica", "flexão de tornozelo", "dorsiflexão"],
+      "exemplosDePergunta": [
+        "por que eu não consigo descer fundo no agacho mesmo tentando?",
+        "que alongamento fazer pra soltar o quadril antes do terra sumô?",
+        "tornozelo duro atrapalha o agachamento, o que eu faço?"
+      ],
+      "naoConfundirCom": [
+        {"topico": "dor", "termoAmbiguo": "travou/está travado", "comoDistinguir": "'travou' com sensação aguda, pontual, associada a uma série específica é dor/lesão; limitação crônica e estrutural de amplitude de movimento é mobilidade"},
+        {"topico": "aquecimento", "termoAmbiguo": "soltar o corpo antes de treinar", "comoDistinguir": "mobilidade é sobre ganhar/manter amplitude articular no longo prazo; aquecimento é sobre preparar o corpo para a sessão do dia"},
+        {"topico": "tecnica", "termoAmbiguo": "não desço fundo no agacho", "comoDistinguir": "se a causa é limitação física real de quadril/tornozelo, é mobilidade; se é erro de execução (postura, cadência, foco), é tecnica"}
+      ]
+    },
+    {
+      "topico": "cinto",
+      "glosa": "Responde sobre uso do cinto de levantamento - quando usar, como ajustar, regras de dimensão da IPF, e efeito na respiração/brace.",
+      "entrada": ["cinto", "belt", "usar cinto", "cinto de couro", "cinto de powerlifting", "apertar o cinto", "cinto travado", "cinto sbd", "cinto de velcro", "cinto prong", "cinto lever", "respirar contra o cinto", "brace contra o cinto", "cinto muito apertado", "cinto muito frouxo", "onde usar o cinto", "cinto no quadril", "posição do cinto", "amaciar o cinto"],
+      "exemplosDePergunta": [
+        "em que altura da cintura devo usar o cinto no agacho?",
+        "cinto muito apertado pode atrapalhar minha respiração no supino... espera, no agacho?",
+        "vale a pena treinar sem cinto pra fortalecer o core?"
+      ],
+      "naoConfundirCom": [
+        {"topico": "faixa", "termoAmbiguo": "equipamento de apoio elástico", "comoDistinguir": "cinto é peça rígida de tronco/cintura; faixa (wrap) é elástica e fica no joelho ou punho"},
+        {"topico": "core", "termoAmbiguo": "brace/respiração", "comoDistinguir": "se a pergunta é sobre a técnica de respiração e ativação abdominal em si, sem mencionar o objeto físico, é core; cinto entra quando o item físico é o foco (ajuste, posição, regra)"}
+      ]
+    },
+    {
+      "topico": "barra-baixa",
+      "glosa": "Responde sobre a variação de agachamento com a barra apoiada mais baixa nas costas (low bar) - posicionamento, comparação com barra alta, e quem deve usar cada uma.",
+      "entrada": ["barra baixa", "low bar", "agacho estilo powerlifting", "barra nas costas embaixo", "apoio da barra mais baixo", "posição da barra no agacho", "squat low bar", "barra no deltoide posterior", "onde apoiar a barra nas costas", "inclinar o tronco no agacho", "agacho mais inclinado pra frente"],
+      "exemplosDePergunta": [
+        "devo agachar barra baixa ou barra alta pra powerlifting?",
+        "como sei se a barra tá na posição certa nas costas pro low bar?",
+        "trocar de barra baixa pra barra alta muda muito a técnica?"
+      ],
+      "naoConfundirCom": [
+        {"topico": "setup", "termoAmbiguo": "posicionamento no agacho", "comoDistinguir": "se a pergunta é especificamente sobre a ALTURA da barra nas costas, é barra-baixa; posicionamento geral de pés, mãos e quadril sem mencionar altura da barra é setup"},
+        {"topico": "profundidade", "termoAmbiguo": "descer mais fundo", "comoDistinguir": "barra-baixa é sobre onde a barra fica apoiada nas costas; profundidade é sobre até onde o quadril desce no agachamento"}
+      ]
+    },
+    {
+      "topico": "faixa",
+      "glosa": "Responde sobre faixas elásticas de joelho ou punho - regras de dimensão da IPF, efeito de mola no sticking point, e diferença entre wrap elástico e suporte passivo.",
+      "entrada": ["faixa de joelho", "knee wrap", "wrap", "faixa elástica", "faixa de punho", "wrist wrap", "enrolar o joelho", "bandagem no joelho", "joelheira", "knee sleeve", "efeito mola da faixa", "rebote da faixa", "faixa apertada no joelho", "enfaixar o joelho", "wraps de joelho", "faixa de compressão", "munhequeira"],
+      "exemplosDePergunta": [
+        "faixa de joelho ajuda a levantar mais peso no agacho equipado?",
+        "qual o comprimento máximo permitido pra faixa de punho na IPF?",
+        "posso usar faixa de joelho junto com joelheira na competição?"
+      ],
+      "naoConfundirCom": [
+        {"topico": "equipamento", "termoAmbiguo": "joelheira/knee sleeve", "comoDistinguir": "joelheira de neoprene (sem efeito de mola, usada em raw) e faixa de wrap (com efeito elástico, só em equipado) às vezes se misturam na fala do atleta; se a pergunta é sobre suporte passivo sem rebote, considerar que pode ser outra gaveta de equipamento geral, mas a base atual trata as duas junto aqui"},
+        {"topico": "cinto", "termoAmbiguo": "equipamento de apoio no corpo", "comoDistinguir": "faixa é para joelho ou punho; cinto é para o tronco/cintura"}
+      ]
+    }
+  ]
+}

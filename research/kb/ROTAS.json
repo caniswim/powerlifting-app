@@ -55,7 +55,7 @@
     "Os casos que a camada NÃO resolve estão escritos em RECUPERACAO.md §7, com o",
     "número medido ao lado, e não aqui."
   ],
-  "gerado": "2026-08-10",
+  "gerado": "2026-08-11",
   "tetoDeTela": 40,
   "baseNoMomento": {
     "claims": 6912,
@@ -75,10 +75,17 @@
       "duas populações se cruzarem, não existe piso que separe e o roteamento",
       "precisa de sinal novo — não de um número diferente.",
       "",
-      "Medido em 10/08/2026: menor de dentro 0,72 (`quantas calorias para ganhar",
-      "massa?`), maior de fora 0,61 (`quem ganhou o Oscar de melhor filme?` — a",
-      "palavra `ganhou` é desta base). Piso em 0,65, entre os dois. A margem é",
-      "estreita de um lado só, e está escrita para não ser confundida com folga.",
+      "Medido em 10/08/2026, com o roteador LÉXICO: menor de dentro 0,72 (`quantas",
+      "calorias para ganhar massa?`), maior de fora 0,61 (`quem ganhou o Oscar de",
+      "melhor filme?` — a palavra `ganhou` é desta base). Piso em 0,65, entre os dois,",
+      "com a margem estreita de um lado só.",
+      "",
+      "Re-medido em 11/08/2026, depois de o roteamento passar a usar o vocabulário de",
+      "entrada (GLOSSARIO-TOPICOS.json): menor de dentro 0,92, maior de fora 0,51. O",
+      "piso continua em 0,65 e a margem deixou de ser estreita de um lado: são 0,14",
+      "abaixo e 0,27 acima. Não é folga para relaxar o piso — é o efeito de o sinal",
+      "ter mudado de espaço, e está escrito para que a próxima medição saiba com o",
+      "que comparar.",
       "",
       "Estas listas NÃO são derivadas da ferramenta: foram escritas antes de o",
       "piso ter valor, e o valor saiu delas."
@@ -129,26 +136,46 @@
       "familia": "mapeia",
       "pergunta": "posso supinar seis vezes por semana?",
       "porque": "O caso Q05 da MEDICAO-02, na voz do atleta. A resposta medida digitou `six times`, achou 4 claims todas PESSOAL e concluiu que a base só tinha log pessoal. As duas claims GERAL+prescricao (V170-34, V175-53) moram sob `six days a week`, com param freq_supino=6. É a pergunta mais perigosa que este atleta pode fazer, porque ele tem histórico de ruptura de peitoral e a resposta da base é `seis dias por semana`.",
-      "topicos": ["frequencia", "supino"],
-      "sustenta": ["V170-34", "V175-53"],
+      "topicos": [
+        "frequencia",
+        "supino"
+      ],
+      "sustenta": [
+        "V170-34",
+        "V175-53"
+      ],
       "tetoDeTela": 40
     },
     {
       "id": "T02",
       "familia": "mapeia",
       "pergunta": "quanto tempo deve durar um ciclo de treino?",
-      "porque": "O caso Q16. A resposta medida nunca tentou `training cycle`, que tem 86 claims, e declarou lacuna. V125-07 (16 semanas, param duracao_ciclo) era declarada INALCANÇÁVEL pelo RECUPERACAO.md §8.1 a partir de consulta em inglês, porque `ciclo` e `cycle` não compartilham raiz nenhuma. O roteamento por tópico atravessa isso sem dicionário: as duas palavras são distintivas de `periodizacao` porque a claim é pt-BR e o verbatim é inglês.",
-      "topicos": ["periodizacao"],
-      "sustenta": ["V070-20", "V125-07", "V108-08"],
-      "tetoDeTela": 40
+      "porque": "O caso Q16. A resposta medida nunca tentou `training cycle`, que tem 86 claims, e declarou lacuna. V125-07 (16 semanas, param duracao_ciclo) era declarada INALCANÇÁVEL pelo RECUPERACAO.md §8.1 a partir de consulta em inglês, porque `ciclo` e `cycle` não compartilham raiz nenhuma. O roteamento por tópico atravessa isso sem dicionário: as duas palavras são distintivas de `periodizacao` porque a claim é pt-BR e o verbatim é inglês. `programacao` entrou em topicos em 11/08: a pergunta é das duas gavetas, e é o casamento da frase INTEIRA (`quantas semanas tem o ciclo`) que a abre — com PESO_FRASE em 0 ela some da lista. `idade` está em topicosProibidos pelo motivo oposto: ela NÃO tem nada a ver com duração de ciclo, e só aparece quando a janela do casamento espalhado do glossário é afrouxada (medido: com JANELA_ESPARSA em 99, `idade` entra com 0,70 porque `tempo` e `treino` estão a onze palavras de distância dentro de um termo daquele tópico).",
+      "topicos": [
+        "periodizacao",
+        "programacao"
+      ],
+      "sustenta": [
+        "V070-20",
+        "V125-07",
+        "V108-08"
+      ],
+      "tetoDeTela": 40,
+      "topicosProibidos": [
+        "idade"
+      ]
     },
     {
       "id": "T03",
       "familia": "mapeia",
       "pergunta": "quantas séries por músculo por semana?",
       "porque": "O caso Q19. A resposta medida parou doze ids antes de V010-13, no mesmo vídeo que já estava citando. A ONDA-2B §10 registrou este caso como `destravado, frágil`: saía no índice compacto, não no topo.",
-      "topicos": ["series-reps"],
-      "sustenta": ["V010-13"],
+      "topicos": [
+        "series-reps"
+      ],
+      "sustenta": [
+        "V010-13"
+      ],
       "tetoDeTela": 40
     },
     {
@@ -156,8 +183,14 @@
       "familia": "mapeia",
       "pergunta": "quanto baixar o peso quando o RPE vem acima do alvo?",
       "porque": "O caso Q11, na formulação REALISTA — a que a ONDA-2B §10 mediu devolvendo zero, e que existe justamente porque nenhum agente digita `2 a 3%` sem já saber a resposta. Quem acha aqui não é o roteamento por assunto: é o canal do NOME DO PARAM. `peso_por_rpe_min` nomeia duas peças da pergunta, e a claim é a resposta mesmo dizendo `subir` onde a pergunta diz `baixar`. V033-05 (10/08) nao chega por canal nenhum: `pct_por_rpe` nomeia uma peca so, e a prosa dela fala de 800 lb e 25 lb, nao de RPE. Ela chega pela PAGINA AO LADO — e a claim imediatamente adjacente a V033-04, no mesmo video, e e ela que traduz os 3 % em quilos. Apagar vizinhosNoMesmoSrc de responder() derruba este canario e nomeia o mecanismo.",
-      "topicos": ["rpe"],
-      "sustenta": ["V033-03", "V033-04", "V033-05"],
+      "topicos": [
+        "rpe"
+      ],
+      "sustenta": [
+        "V033-03",
+        "V033-04",
+        "V033-05"
+      ],
       "tetoDeTela": 40
     },
     {
@@ -165,9 +198,18 @@
       "familia": "mapeia",
       "pergunta": "quanto descansar entre as séries?",
       "porque": "O C20 do CANARIOS-CANDIDATOS.json, que a camada de 09/08 não resolvia: `--busca` devolvia só G015-11, relato-de-programa do GZCLP, que é a gaveta que a base manda nunca tratar como prescrição. Duas das três claims certas NÃO estão etiquetadas em `descanso-entre-series` — V038-07 é `recuperacao, agacho, terra` e V074-10 é `programacao, agacho` —, então este caso cobra as duas metades da camada: rotear para a gaveta certa E alcançar o que a etiqueta esqueceu de pôr nela.",
-      "topicos": ["descanso-entre-series"],
-      "sustenta": ["V038-07", "V074-10", "V074-23"],
-      "viaPaginaAoLado": ["V003-18", "V074-24"],
+      "topicos": [
+        "descanso-entre-series"
+      ],
+      "sustenta": [
+        "V038-07",
+        "V074-10",
+        "V074-23"
+      ],
+      "viaPaginaAoLado": [
+        "V003-18",
+        "V074-24"
+      ],
       "tetoDeTela": 40,
       "nota": "viaPaginaAoLado cobra o CANAL, não só a presença. V003-18 (`5 minutos em agachamento e terra e 3 minutos no supino`) e V074-24 (`ao encurtar o descanso, não se deve apressar a si mesmo` — a condição de V074-23) não estão etiquetados em descanso-entre-series e não são alcançados por texto: eles chegam à tela como a claim IMEDIATAMENTE ao lado do que o roteamento já mostrou. Com DETALHE_ROTEADO em 0 o canal morre inteiro e os dois somem; sem este campo, o caso continuava verde e a mutação passava (ataque de 10/08/2026)."
     },
@@ -176,8 +218,12 @@
       "familia": "mapeia",
       "pergunta": "qual profundidade o agacho precisa ter para valer na competição?",
       "porque": "O caso Q14, que o RECUPERACAO.md §8.4 recusou virar canário porque a camada de texto punha G029-28 em 22º e os outros dois fora do teto. O diagnóstico honesto de lá era `tópico errado`, não vocabulário — a resposta procurou vocabulário de câmera e a base fala de profundidade. É exatamente o defeito que o roteamento por tópico ataca.",
-      "topicos": ["profundidade"],
-      "sustenta": ["G029-28"],
+      "topicos": [
+        "profundidade"
+      ],
+      "sustenta": [
+        "G029-28"
+      ],
       "tetoDeTela": 40
     },
     {
@@ -185,8 +231,14 @@
       "familia": "mapeia",
       "pergunta": "vale mais treinar terra sumo ou convencional?",
       "porque": "Caso escolhido FORA da lista de falhas medidas, para medir alcance e não conserto pontual. Duas gavetas irmãs que a busca por texto confunde o tempo todo, e a resposta precisa das duas.",
-      "topicos": ["sumo", "convencional"],
-      "sustenta": ["V088-16", "V107-06"],
+      "topicos": [
+        "sumo",
+        "convencional"
+      ],
+      "sustenta": [
+        "V088-16",
+        "V107-06"
+      ],
       "tetoDeTela": 40
     },
     {
@@ -194,7 +246,9 @@
       "familia": "mapeia",
       "pergunta": "como melhorar meu agacho?",
       "porque": "O caso do TÓPICO GRANDE DEMAIS, e um defeito que quase entrou: esta pergunta NÃO mapeava. O corpus quase não escreve `agacho` — diz `agachamento` (364) e `squat` (455), e `agacho` aparece em 249 das 990 claims do tópico. A etiqueta do tópico não é a palavra que o canal usa, e é por isso que o nome da gaveta pesa por si. `agacho` tem 990 claims e o atleta vê 40: a saída tem de dizer isso e oferecer o cruzamento.",
-      "topicos": ["agacho"],
+      "topicos": [
+        "agacho"
+      ],
       "tetoDeTela": 40
     },
     {
@@ -202,8 +256,14 @@
       "familia": "sem-injecao",
       "pergunta": "quantas horas de sono por semana?",
       "porque": "A medição de precisão de 09/08, virada trava. Com a expansão antiga, esta pergunta devolvia ZERO das 40 claims sobre sono (a base tem 62 para /sono/) e punha V170-34 e V170-33 — supinar seis dias por semana — em 1º e 2º. O conserto foi feito no mesmo dia e nada o travava: reverter o `every` para `some` passava verde em check:kb, busca.test.mjs e nos 19 canários.",
-      "topicos": ["sono"],
-      "proibidos": ["V170-34", "V170-33", "V175-53"],
+      "topicos": [
+        "sono"
+      ],
+      "proibidos": [
+        "V170-34",
+        "V170-33",
+        "V175-53"
+      ],
       "tambemPelaBuscaLivre": true,
       "tetoDeTela": 40
     },
@@ -212,8 +272,13 @@
       "familia": "sem-injecao",
       "pergunta": "quando fazer deload na semana?",
       "porque": "O segundo caso da mesma medição, e o mais sutil: `## lesao` disparava a partir de `deload`, porque a expressão `load management` contém `load`. Uma pergunta de planejamento semanal trazia o vocabulário de lesão junto, e com ele o supino de alta frequência.",
-      "topicos": ["deload"],
-      "proibidos": ["V170-34", "V170-33"],
+      "topicos": [
+        "deload"
+      ],
+      "proibidos": [
+        "V170-34",
+        "V170-33"
+      ],
       "tambemPelaBuscaLivre": true,
       "tetoDeTela": 40
     },
@@ -222,8 +287,14 @@
       "familia": "sem-injecao",
       "pergunta": "quantas calorias por dia na semana de corte de peso?",
       "porque": "O terceiro e o quarto casos da medição de precisão (calorias e corte de peso) numa pergunta só, porque na voz do atleta eles são a mesma pergunta. Toda pergunta de planejamento semanal contém `semana`, e era `semana` que abria a porta.",
-      "topicos": ["cutting"],
-      "proibidos": ["V170-34", "V170-33", "V175-53"],
+      "topicos": [
+        "cutting"
+      ],
+      "proibidos": [
+        "V170-34",
+        "V170-33",
+        "V175-53"
+      ],
       "tambemPelaBuscaLivre": true,
       "tetoDeTela": 40
     },
@@ -247,8 +318,13 @@
       "pergunta": "que dimensões de cinto o regulamento permite?",
       "porque": "O C01 do CANARIOS.json, pela porta nova. O regulamento IPF 2026 está na base como tier O com as duas dimensões tipadas (F001-83, F001-84). A pergunta não compartilha palavra nenhuma com as claims — elas dizem `largura` e `espessura`, ela diz `dimensões` — e o que resolve é a gaveta: `cinto` tem 54 claims e cabe inteira numa tela. Este caso força o tópico, que é o que a própria saída manda fazer quando a gaveta é pequena.",
       "forcaTopico": "cinto",
-      "topicos": ["cinto"],
-      "sustenta": ["F001-83", "F001-84"],
+      "topicos": [
+        "cinto"
+      ],
+      "sustenta": [
+        "F001-83",
+        "F001-84"
+      ],
       "tetoDeTela": 60,
       "nota": "tetoDeTela 60 e não 40: a gaveta tem 54 claims declaradas e o caso é sobre ver a GAVETA INTEIRA, não sobre ranquear dentro dela. O número é do canário, e está escrito aqui em vez de ser herdado da ferramenta de propósito."
     },
@@ -257,10 +333,83 @@
       "familia": "mapeia",
       "pergunta": "quanto vale a carga de treino da semana?",
       "porque": "O NOME COMPOSTO da gaveta pesando por si, que era o segundo modo de falha nº 4 achado pelo ataque de 10/08/2026: `PESO_NOME_COMPOSTO 1.2 → 0` deixava o check:kb inteiro verde porque nenhum caso dependia dele. Este depende, e foi medido nos dois estados: com o peso, `carga-de-treino` sai em 1º com 1,20; com o peso em 0, o tópico DESAPARECE da lista e a pergunta vai para [frequencia, taper, periodizacao, deload] — que é exatamente o P14 do CANARIOS.json, a gaveta criada em 09/08 para isto e que o roteamento não estava abrindo. `carga` e `treino` soltas são palavras de toda a base; o que distingue a gaveta é o nome inteiro.",
-      "topicos": ["carga-de-treino"],
-      "sustenta": ["G005-34"],
+      "topicos": [
+        "carga-de-treino"
+      ],
+      "sustenta": [
+        "G005-34"
+      ],
       "tetoDeTela": 40,
       "nota": "só G005-34 em sustenta, e G008-34 fora de propósito: G008-34 responde a mesma pergunta (`uma série dura é 1 a 2 repetições em reserva`) e NÃO chega à tela hoje, por não estar etiquetada em carga-de-treino. Pôr um id que não sai transformaria este canário em vermelho de nascença; ele está registrado como falha aberta no P14 do CANARIOS.json, que é o lugar de canário que falha."
+    },
+    {
+      "id": "T16",
+      "familia": "mapeia",
+      "pergunta": "fisgada de 3/10 no peitoral na terceira série de supino pausado, continuo?",
+      "porque": "O CASO MAIS CARO DESTA BASE, e o primeiro dos dois que fecharam o diagnóstico de 10/08. Atleta com histórico de ruptura de peitoral descrevendo um aviso durante a reexposição do supino. O roteador léxico mandava para `peito` e `supino`, devolvia 40 claims e nenhuma das que carregam o limiar de dor — porque a palavra `fisgada` NÃO EXISTE em claim nenhuma das 6.912, e um sinal derivado do corpus é cego para a palavra que o corpus não tem. A ferramenta avisava `1 NÃO existe em claim nenhuma: fisgada` e roteava errado assim mesmo. `fisgada` é termo de entrada de `dor` e de `lesao` no glossário, e é por ele que a gaveta abre.",
+      "topicos": [
+        "dor"
+      ],
+      "sustenta": [
+        "V079-34",
+        "V027-23"
+      ],
+      "tetoDeTela": 40,
+      "nota": "só `dor` em topicos, e só dois ids em sustenta, porque canário vermelho de nascença não entra. `lesao` continua NÃO sendo roteado por esta pergunta (fica em 4º, fora das vagas que `peito` e `supino` ocupam), e três das cinco claims de limiar — V001-06, V138-19, V086-21 — continuam fora da tela mesmo com a gaveta certa aberta. As duas coisas estão registradas como falha aberta no RECUPERACAO.md: a segunda é o SOTERRAMENTO, que é ordenação e ficou fora do escopo desta onda de propósito."
+    },
+    {
+      "id": "T17",
+      "familia": "mapeia",
+      "pergunta": "levantar peso já conta como exercício pro coração",
+      "porque": "O segundo caso do diagnóstico de 10/08, e o P16 do CANARIOS.json pela porta que o compilador mede. O roteador léxico mandava para `peso-corporal` com score 0,73 porque `peso` aparece em 141 das 238 claims daquela gaveta — a palavra `peso` de *levantar peso* foi lida como peso CORPORAL. `cardio`, com 230 claims e com V013-04/05/06 respondendo exatamente isto, nunca abria, e a tela saía cheia, plausível e errada. O conserto é a raridade ter mudado de espaço: no glossário `peso` é reivindicado por 15 das 74 gavetas (idf 0,37) e `coração` por 3 (idf 0,74).",
+      "topicos": [
+        "cardio"
+      ],
+      "sustenta": [
+        "V013-04",
+        "V013-05"
+      ],
+      "proibidos": [
+        "V170-34",
+        "V170-33"
+      ],
+      "tetoDeTela": 40
+    },
+    {
+      "id": "T18",
+      "familia": "mapeia",
+      "pergunta": "vale a pena trocar pra pegada fechada no supino?",
+      "porque": "O DESEMPATE DO GLOSSÁRIO, cobrado por comportamento. `pegada fechada` é a única das 114 colisões dos oito lotes em que um par de reivindicantes NUNCA co-etiqueta claim nenhuma na base: `bracos` e `setup` = 0. A regra declarada em GLOSSARIO-TOPICOS.json dá o termo a `pegada` e `supino`, e o check-glossario.mjs prova que a regra é coerente com a base — mas coerência não é comportamento. Sem este caso, apagar a linha que aplica o `vence` em glossario.mjs (`if (quem && !quem.has(t.topico)) continue;`) deixava check:kb inteiro verde: medido em 11/08, `bracos` passa a ser roteado com 1,06, ocupando vaga de tela numa pergunta que é de largura de pegada.",
+      "topicos": [
+        "pegada",
+        "supino"
+      ],
+      "topicosProibidos": [
+        "bracos"
+      ],
+      "sustenta": [
+        "V127-08",
+        "G023-12"
+      ],
+      "tetoDeTela": 40,
+      "nota": "V127-08 é o mecanismo (`no supino pegada fechada a carga cai por perda de vantagem mecânica`, GERAL) e G023-12 é o log pessoal que dá a ordem de grandeza. Os dois estão etiquetados em `supino, pegada` — e nenhum em `bracos`, que é o ponto."
+    },
+    {
+      "id": "T19",
+      "familia": "mapeia",
+      "pergunta": "qual a ordem dos exercícios na sessão?",
+      "porque": "O BÔNUS DE `naoConfundirCom`, cobrado pelo lado que solta. O bônus existe para levantar a gaveta vizinha que o dono da gaveta roteada mandou olhar — é o que faz `dor` abrir na pergunta da fisgada no peitoral. Mas ele é o único canal que pode INVENTAR presença, e a mutação para cima (PESO_CONFUSAO 0,4 → 2) sobrevivia a tudo: medido em 11/08, esta pergunta ganha `frequencia` com 1,00 ao lado de `ordem-exercicio`, e três das doze linhas da tela trocam. Frequência semanal não tem nada a ver com a ordem dos exercícios dentro de uma sessão, e é a gaveta que o bônus inflado abre.",
+      "topicos": [
+        "ordem-exercicio"
+      ],
+      "topicosProibidos": [
+        "frequencia"
+      ],
+      "sustenta": [
+        "V067-02",
+        "V076-23"
+      ],
+      "tetoDeTela": 40
     }
   ]
 }

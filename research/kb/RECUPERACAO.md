@@ -1,18 +1,42 @@
 # RECUPERAÇÃO — a base escondia o que tinha, e o conserto está na ferramenta
 
-> **VEREDITO — 10/08/2026, medido pelos canários `presente-escondido` P01–P18 de
+> **VEREDITO — 11/08/2026, medido pelos canários `presente-escondido` P01–P18 de
 > `research/kb/CANARIOS.json`, contra 6.912 claims, teto de tela 40.**
 >
-> **NÃO. A camada de recuperação não acha o que a base tem: 0 de 18 perguntas
-> escritas na voz do atleta devolvem todos os ids que respondem, 3 de 18 devolvem
-> algum, e em 7 de 18 nenhuma gaveta aberta contém a resposta.** O número sai
-> impresso a cada `node research/tools/check-canarios.mjs`; verde ali quer dizer
-> que a medida não mudou, não que a camada acha.
+> **O ROTEAMENTO FOI CONSERTADO; A RECUPERAÇÃO AINDA NÃO ENTREGA.**
+>
+> | o que se mede | 10/08 | 11/08 |
+> |---|---|---|
+> | abrem a gaveta em que a resposta está etiquetada | 5 de 18 | **11 de 18** |
+> | **não** abrem gaveta nenhuma que contenha a resposta | 7 de 18 | **1 de 18** |
+> | devolvem **algum** id esperado dentro do teto de tela | 3 de 18 | **8 de 18** |
+> | devolvem **todos** os ids esperados | 0 de 18 | **0 de 18** |
+>
+> A última linha não se mexeu, e não se mexeu de propósito: esta onda atacou
+> **uma** das duas doenças. `7 → 1` é o ROTEAMENTO, que era o alvo. `0 de 18` é o
+> SOTERRAMENTO — a gaveta certa abre e a claim sai em 945º de 1.038 —, que é
+> ordenação DENTRO do tópico e ficou fora do escopo para que as duas medições não
+> se misturassem. **Nenhum dos 18 ficou pior:** nenhum perdeu id que já saía,
+> nenhum fechou gaveta que já abria.
+>
+> Os quatro números saem impressos a cada `node research/tools/check-canarios.mjs`;
+> verde ali quer dizer que a medida não mudou, não que a camada acha.
+>
+> **O que mudou de mecanismo:** o roteamento deixou de casar a pergunta contra o
+> CORPUS e passa a casá-la contra um **vocabulário de entrada na voz do atleta**
+> — `research/kb/GLOSSARIO-TOPICOS.json`, 74 gavetas, 1.988 termos, consolidado
+> dos oito lotes de `research/kb/entrada/`. Ver **PARTE III (§19)**.
 
 **Data: 09/08/2026.** Este arquivo é o conserto do modo de falha que a
 `MEDICAO-02.md` mediu, e ele existe porque o conserto que aquele relatório
 propôs — *"protocolo de busca em dois passes"* — não bastava.
 
+> **ADENDO DE 11/08/2026 — a PARTE III (§19) descreve o roteamento como ele é
+> hoje.** Os §10–§18 descrevem a porta nova como ela nasceu, com o roteamento
+> LÉXICO derivado do corpus. Esse casamento léxico foi substituído pelo glossário
+> de entrada em 11/08; a arquitetura (tópico → conjunto → ordenação, os canais
+> declarados, os tetos de tela) continua exatamente a mesma.
+>
 > **ADENDO DE 10/08/2026 — leia antes dos §1–§9.** A camada descrita abaixo
 > (`busca.mjs`, `--busca`) **reprovou no ataque cego de 09/08** e ganhou uma
 > segunda porta, que hoje é a principal: **`--pergunta`, que resolve
@@ -1125,3 +1149,366 @@ custa. O `§9.3` chamava isto de *"de outro dono"*; não é: é o item 1 da
 - **Verificação:** `npm run check:kb` exit 0 · `npm run check:gate` exit 0 ·
   `npm run build` exit 0 · `eslint` limpo nos arquivos tocados. As três mutações
   do §18.3 foram aplicadas, medidas, e revertidas com `md5` conferido.
+
+---
+
+# PARTE III — O ROTEAMENTO PASSOU A LER A VOZ DO ATLETA
+
+**Data: 11/08/2026.** A PARTE II montou a arquitetura certa — pergunta → tópico
+→ conjunto → ordenação, com alvo fechado e conferível por compilador — e a
+encheu com o sinal errado. Esta parte troca o sinal. **Nada da arquitetura
+mudou.**
+
+## 19. O defeito era léxico, e era estrutural
+
+O diagnóstico de 10/08 separou as duas doenças da camada, e esta onda atacou
+**só a primeira**:
+
+- **7 de 18 eram ROTEAMENTO:** o roteador nunca abria uma gaveta que contivesse
+  a resposta.
+- **~4 de 18 são SOTERRAMENTO:** a gaveta certa abre e a resposta sai em 945º de
+  1.038. **Fora do escopo desta onda, de propósito.**
+
+E o índice está CERTO — não é problema de etiqueta. As claims de dor estão em
+`dor`, as de coração estão em `cardio`. Era o roteador que não abria.
+
+### 19.1 Por que o casamento léxico não tinha como funcionar
+
+O roteador de 10/08 tirava o sinal do **corpus**: para cada tópico, que raízes
+aparecem muito nele e pouco fora. É uma boa medida de *"como esta gaveta fala"*
+e é a medida errada para *"o que este atleta digitou"*. Os dois casos que
+fecharam o diagnóstico são os dois lados do mesmo erro:
+
+| caso | o que acontecia | por quê |
+|---|---|---|
+| `fisgada de 3/10 no peitoral na terceira série de supino pausado, continuo?` | roteava para `peito` e `supino`, 40 claims, **nenhuma** das cinco que carregam o limiar de dor | **`fisgada` não existe em claim nenhuma das 6.912.** A ferramenta AVISAVA isso (`⚠ 1 NÃO existe em claim nenhuma: fisgada`) e roteava errado assim mesmo. Sinal derivado do corpus é cego para a palavra que o corpus não tem — e a palavra que o corpus não tem é justamente a que o atleta usa quando está com medo. |
+| `levantar peso já conta como exercício pro coração` | roteava para `peso-corporal` com 0,73; `cardio` (230 claims, V013-04/05/06 respondem isso) nunca abria | `peso` aparece em **141 das 238** claims de `peso-corporal`. O corpus não tem como saber que o `peso` de *levantar peso* é outro peso. **Ambiguidade silenciosa.** |
+
+### 19.2 O artefato — `research/kb/GLOSSARIO-TOPICOS.json`
+
+Oito agentes leram as 74 gavetas e escreveram `research/kb/entrada/lote-1.json` a
+`lote-8.json`. `research/tools/build-glossario.mjs` consolida os oito num
+artefato só e o `--check` dele roda dentro do `npm run check:kb`, então o
+consolidado não pode divergir dos lotes em silêncio.
+
+**Cobertura conferida:** 74 de 74 tópicos, um por tópico, todos dentro do
+vocabulário fechado do `PROTOCOLO-EXTRACAO.md`. **1.988 termos** de entrada.
+Nenhum lote faltou.
+
+**Os defeitos que os lotes trouxeram, e o que foi feito com cada um** — a tabela
+`CORRECOES` do gerador, seis linhas, cada uma com o motivo escrito:
+
+| onde | o quê | por quê |
+|---|---|---|
+| `lesao.naoConfundirCom` | `dor-e-treino` → `dor` | `dor-e-treino` não existe no vocabulário fechado; é o nome de um DOCUMENTO. |
+| `pico.naoConfundirCom` | `recorde` → `competicao` | `recorde` não existe no vocabulário fechado. A própria `comoDistinguir` do lote diz "estratégia de tentativas no dia do meet". |
+| `sumo.entrada` | `sumô` e `terra sumo` removidos | chave repetida depois de normalizar. |
+| `dor.entrada` | `caibra` removido | chave repetida (`cãibra`). |
+| `cardio.entrada` | **`coração` acrescentado** | **é o único acréscimo, e o que mais precisa de desconto de quem for medir.** `coração` é a palavra do atleta para `cardio`, está no lote 3 (`condicionamento`: *correr pra saúde do coração*) e no lote 4 (`saude`: *saúde do coração*), e falta no lote 1, que escreveu `frequência cardíaca`, `batimento` e `fôlego` e pulou o órgão. Os três tópicos etiquetam as MESMAS claims (V013-04 é `cardio, condicionamento, saude`), então é inconsistência entre autores. Declarado para poder ser descontado. |
+
+**O que ficou de fora:** `exemplosDePergunta`. Nenhuma das duas portas precisa
+deles, e um dos exemplos do lote 1 é, palavra por palavra, a pergunta do canário
+P16. Artefato que carrega a pergunta do canário dentro é a trava que se testa a
+si mesma pelo caminho mais barato.
+
+### 19.3 O DESEMPATE — ambiguidade declarada é dado
+
+**114 dos 1.988 termos são reivindicados por mais de um tópico.** Cada um sai com
+uma regra: quem reivindica, quem `vence`, e o `porque`. A regra é aplicada na
+montagem do índice — tópico que perde um termo não recebe nem o termo nem as
+palavras dele —, então trocar um `vence` muda o roteamento.
+
+E a regra não é um encolher de ombros: `coEtiquetadas` conta, **contra a base de
+verdade**, quantas claims etiquetam cada par de vencedores ao mesmo tempo, e o
+`check-glossario.mjs` **recusa** um `vence` cujo par nunca apareça junto numa
+claim. Foi essa conta que achou a única colisão de verdade dos oito lotes:
+`pegada fechada` é reivindicado por `bracos`, `pegada`, `setup` e `supino`, e
+**`bracos` × `setup` = 0 claims**. Nesta base *close grip* é largura de pegada no
+supino; o termo fica com `pegada` e `supino`, e quem procura tríceps digita
+tríceps. As outras 113 são `ambos`, com o par mais fraco medido ao lado.
+
+### 19.4 As DUAS PORTAS, e as duas leem o mesmo artefato
+
+**Porta A — `--topicos`. É a que vale em produção.** Quem consome esta base é um
+agente de conversa, ou seja, um modelo: ele não precisa de heurística, precisa
+VER as 74 gavetas com a glosa e o tamanho, e escolher. São 74 linhas, cabe num
+prompt.
+
+```
+$ node research/tools/check-evidence.mjs --topicos
+  AS 74 GAVETAS DESTA BASE — escolha uma e abra
+  6912 claims · glosas de research/kb/GLOSSARIO-TOPICOS.json
+  ...
+  cardio                  230  Responde sobre exercício aeróbico/condicionamento: quanto cardio fazer, qual modalidade, e o impacto do cardio na recuperação e nos levantamentos.
+  carga-de-treino          13  responde o conceito de stress index (Tuchscherer): como quantificar e comparar o quanto um treino ou programa pesou...
+  ...
+  a gaveta inteira ....: node research/tools/check-evidence.mjs --topic <nome> --limit 0
+```
+
+`--topicos --verbose` acrescenta os termos de entrada e os vizinhos declarados de
+cada gaveta.
+
+**Porta B — `--pergunta`. É a que o `check:kb` mede**, porque não há chave de API
+neste repositório e um teste que precisa de modelo não roda no compilador.
+
+### 19.5 O mecanismo da Porta B — a raridade mudou de espaço
+
+O roteador antigo pesava um termo por raridade **no corpus**. O novo pesa por
+raridade **no glossário**: em quantas das 74 gavetas aquela palavra aparece. São
+dois números diferentes, e o segundo é o que a pergunta pede:
+
+```
+coracao   → 3 gavetas de 74   → idf 0,745
+fisgada   → 3 gavetas         → idf 0,745
+peso      → 15 gavetas        → idf 0,371
+treino    → 38 gavetas        → idf 0,155
+```
+
+**É aqui que o bug do `peso` morre.** Ele continua valendo alguma coisa — zerá-lo
+seria a trava estreita do modo de falha nº 2 —, mas deixou de decidir sozinho.
+
+Os canais, em ordem de força, e cada um sai impresso com o termo que o
+justificou:
+
+1. **glossário (frase inteira)** — `categoria de peso` casado por completo. Quem
+   escreveu a frase já desambiguou.
+2. **glossário (frase espalhada)** — as DUAS palavras do termo dentro de uma
+   janela de cinco. É o que faz *de quantas em quantas semanas eu preciso pegar
+   leve* achar `semana leve` e abrir `deload`.
+3. **glossário (termo)** — a palavra É um termo de entrada, pesada pelo idf.
+4. **nome do tópico** — inalterado desde 10/08.
+5. **`VOCABULARIO.md`** — confirmação, inalterado.
+6. **corpus, amortecido** — meio peso, multiplicado palavra a palavra pelo idf do
+   glossário. **O corpus só fala sobre palavra que o glossário conhece.**
+7. **`naoConfundirCom`** — o único canal em que uma gaveta fala de OUTRA: se `A`
+   foi roteada e `A` declara que se confunde com `B`, e `B` casou alguma coisa
+   sozinha, `B` sobe. Limitado pelo próprio score de `B`, para levantar candidato
+   em vez de criar um.
+
+A calibração do piso, re-medida com as mesmas duas populações escritas antes de o
+piso ter valor: **menor de dentro 0,92, maior de fora 0,47**, piso em 0,65. Em
+10/08 era 0,72 × 0,61.
+
+## 20. A PROVA — os dois casos do diagnóstico, com o comando e a saída
+
+### 20.1 A fisgada no peitoral
+
+```
+$ node research/tools/check-evidence.mjs --pergunta "fisgada de 3/10 no peitoral na terceira série de supino pausado, continuo?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PERGUNTA → TÓPICO → CLAIMS
+  "fisgada de 3/10 no peitoral na terceira série de supino pausado, continuo?"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  palavras de assunto: fisgada peitoral terceira serie supino pausado continuo
+  ⚠  1 NÃO existe(m) em claim nenhuma: fisgada
+
+  ROTEOU PARA 3 de 74 tópicos do vocabulário FECHADO:
+
+     peito  ·  score 2.26  ·  31 claims etiquetadas
+        a gaveta INTEIRA: node research/tools/check-evidence.mjs --topic peito --limit 0   (cabe numa leitura)
+         0.90  peito                        nome do tópico
+         0.79  peitoral                     em 12 das 31 claims do tópico, 19 na base
+         0.70  fisgada no peitoral          glossário (frase espalhada)
+         0.22  supino                       em 20 das 31 claims do tópico, 557 na base
+
+     supino  ·  score 1.71  ·  694 claims etiquetadas  ← GRANDE
+        a gaveta INTEIRA: node research/tools/check-evidence.mjs --topic supino --limit 0
+         0.90  supino                       nome do tópico
+         0.70  supino com pausa             glossário (frase espalhada)
+         0.25  supino                       em 429 das 694 claims do tópico, 557 na base
+         0.05  peitoral → peito             em 39 das 694 claims do tópico, 62 na base
+
+     dor  ·  score 1.64  ·  119 claims etiquetadas
+        a gaveta INTEIRA: node research/tools/check-evidence.mjs --topic dor --limit 0   (cabe numa leitura)
+         0.80  peito e supino declara(m): não confundir com dor naoConfundirCom
+         0.74  fisgada                      glossário (termo)
+         0.42  continuo treinando com dor   glossário (dentro de frase)
+         0.03  peitoral                     em 3 das 119 claims do tópico, 19 na base
+```
+
+**`dor` abre.** Ela não abria. E o que a abre é `fisgada` — a palavra que a
+própria ferramenta declara não existir em claim nenhuma, na linha de cima da
+mesma tela. `V079-34` e `V027-23`, duas das cinco claims que carregam o limiar de
+dor, chegam à tela; `V001-06`, `V138-19` e `V086-21` continuam fora. **Isso é o
+soterramento, e está registrado como falha aberta no §21.**
+
+Note também de onde vem o `0.80` de `dor`: `peito` e `supino`, as duas gavetas
+que a pergunta abriu, DECLARAM no glossário que se confundem com `dor` —
+`peito` escreve com todas as letras que *"QUALQUER sintoma no peitoral vai para
+dor, mesmo mencionando a palavra peito"*. O aviso saiu de quem escreveu a gaveta,
+não de um peso escolhido a dedo.
+
+### 20.2 Levantar peso conta como exercício pro coração
+
+```
+$ node research/tools/check-evidence.mjs --pergunta "levantar peso já conta como exercício pro coração"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PERGUNTA → TÓPICO → CLAIMS
+  "levantar peso já conta como exercício pro coração"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  palavras de assunto: levantar peso conta exercicio pro coracao
+
+  ROTEOU PARA 5 de 74 tópicos do vocabulário FECHADO:
+
+     selecao-exercicio  ·  score 0.80  ·  468 claims etiquetadas  ← GRANDE
+        a gaveta INTEIRA: node research/tools/check-evidence.mjs --topic selecao-exercicio --limit 0
+         0.40  ordem-exercicio declara(m): não confundir com selecao-exercicio naoConfundirCom
+         0.26  qual variação pro ponto fraco glossário (dentro de frase)
+         0.24  qual exercício fazer         glossário (dentro de frase)
+         0.07  exercicio                    em 71 das 468 claims do tópico, 153 na base
+
+     cardio  ·  score 0.74  ·  230 claims etiquetadas  ← GRANDE
+        a gaveta INTEIRA: node research/tools/check-evidence.mjs --topic cardio --limit 0
+         0.74  coração                      glossário (termo)
+         0.24  fazer exercício aeróbico     glossário (dentro de frase)
+         0.01  levantar → levantamento      em 9 das 230 claims do tópico, 163 na base
+
+     series-reps  ·  score 0.70  ·  367 claims etiquetadas  ← GRANDE
+        a gaveta INTEIRA: node research/tools/check-evidence.mjs --topic series-reps --limit 0
+         0.50  contagem de reps             glossário (dentro de frase)
+         0.37  quantas vezes levantar       glossário (dentro de frase)
+         0.00  peso                         em 29 das 367 claims do tópico, 500 na base
+         0.00  exercicio                    em 9 das 367 claims do tópico, 153 na base
+
+     peso-corporal  ·  score 0.49  ·  238 claims etiquetadas  ← GRANDE
+        a gaveta INTEIRA: node research/tools/check-evidence.mjs --topic peso-corporal --limit 0
+         0.25  cardio e saude declara(m): não confundir com peso-corporal naoConfundirCom
+         0.22  peso                         em 141 das 238 claims do tópico, 500 na base
+         0.19  categoria de peso            glossário (dentro de frase)
+         0.00  levantar → levantador        em 5 das 238 claims do tópico, 120 na base
+
+     condicionamento  ·  score 0.46  ·  123 claims etiquetadas  ← GRANDE
+        a gaveta INTEIRA: node research/tools/check-evidence.mjs --topic condicionamento --limit 0
+         0.37  correr pra saúde do coração  glossário (dentro de frase)
+         0.23  saude declara(m): não confundir com condicionamento naoConfundirCom
+         0.01  levantar → levantamento      em 5 das 123 claims do tópico, 163 na base
+```
+
+**`cardio` abre em 2º com 0,74, e `peso-corporal` caiu para 4º com 0,49** — de
+1º com 0,73. O `porQue` mostra a troca inteira: `coração` vale 0,74 (3 gavetas de
+74) e `peso` vale 0,22 depois do amortecimento (15 gavetas de 74), contra 1,21
+antes. `V013-04` e `V013-05` chegam à tela; o P16 saiu de zero ids para dois.
+
+`selecao-exercicio` em 1º é ruído honesto e está declarado: ele vem de dois
+termos de entrada casados por palavra solta mais um aviso de `ordem-exercicio`.
+A gaveta certa abriu, que é o que esta onda foi consertar; qual delas sai em 1º é
+ordenação.
+
+## 21. O QUE ESTA ONDA **NÃO** RESOLVEU
+
+1. **O soterramento.** `0 de 18` canários devolvem TODOS os ids esperados, exatamente
+   como em 10/08. É a doença nº 2, é ordenação dentro do tópico, e mexer nela
+   junto tornaria impossível dizer o que consertou o quê.
+2. **O P10** (`com quanto por cento do meu melhor levantamento eu monto as
+   porcentagens do treino`) continua sem abrir gaveta nenhuma que contenha a
+   resposta — é o único dos sete que sobrou.
+3. **`lesao` não abre na pergunta da fisgada.** Ela fica em 4º, atrás de `peito`,
+   `supino` e `dor`, e as vagas acabam. Como as cinco claims de limiar estão
+   TAMBÉM em `dor`, o custo medido é zero hoje; a assimetria está registrada em
+   `T16.nota` no `ROTAS.json` para não ser confundida com sucesso.
+4. **A base continua sem uma única claim sobre quando uma lesão exige avaliação
+   presencial.** Isso é conteúdo, não recuperação, e continua sendo o agravante
+   mais caro deste corpus (`MEDICAO-02` §6.2).
+
+## 22. AS TRAVAS, E A PROVA POR MUTAÇÃO
+
+Duas travas novas no `npm run check:kb`:
+
+- **`node research/tools/build-glossario.mjs --check`** — reconstrói o
+  consolidado a partir dos oito lotes mais a tabela `CORRECOES` e falha se
+  divergir. Edição à mão no JSON aparece como divergência.
+- **`node research/tools/check-glossario.mjs`** — recusa tópico fora dos 74,
+  tópico dos 74 sem glosa, `naoConfundirCom` apontando para nome inexistente,
+  termo repetido dentro do mesmo tópico, **termo reivindicado por dois tópicos
+  sem regra de desempate**, regra de desempate MORTA (que não desempata mais
+  nada), e `vence` cujo par nunca co-etiqueta claim nenhuma.
+  Ele **não** cobra termo morto no corpus, e isso é deliberado: `fisgada` não
+  existe em claim nenhuma e é o termo mais importante do arquivo.
+
+E um campo novo no `ROTAS.json`: **`topicosProibidos`** — a gaveta que NÃO pode
+abrir. `topicos` só fica vermelho quando a camada aperta demais; `proibidos` só
+pega id de outro assunto. Faltava a coisa do meio, que é o defeito que o
+diagnóstico descreveu: **a gaveta errada abrindo**, sem id proibido nenhum e sem
+tópico faltando. Três mutações passavam verdes sem ele.
+
+### 22.1 A tabela de mutação — comando, e quem ficou vermelho
+
+Cada constante desta camada foi mutada e o `check:kb` rodado. Nenhuma sobreviveu.
+
+| mutação (em `roteador.mjs` / `glossario.mjs`) | quem ficou vermelho |
+|---|---|
+| `PESO_CORPUS 0.5 → 1.0` | `roteador.test` · `check-canarios` · **rotas T16, T17** |
+| `amortecimento = idfDoGlossario(...)` → `= 1` | `roteador.test` · `check-canarios` · **rotas calibração, T13, T16** |
+| `PESO_CONFUSAO 0.4 → 0` | `roteador.test` · `check-canarios` · **rotas T16** |
+| `PESO_CONFUSAO 0.4 → 2` | **rotas T19** |
+| `PISO_ROTA 0.65 → 2` | `roteador.test` · `check-canarios` · **rotas calibração + 9 casos** |
+| `FRACAO_DO_MELHOR 0.4 → 0.95` | `roteador.test` · `check-canarios` · **rotas T01, T03, T04, T07, T16** |
+| `MAX_TOPICOS 5 → 1` | `roteador.test` · `check-canarios` · **rotas T01, T03, T04, T07, T16** |
+| `PESO_NOME 0.9 → 0` | `roteador.test` · `check-canarios` · **rotas calibração, T01, T08** |
+| `PESO_NOME_COMPOSTO 1.2 → 0` | **rotas T15** |
+| `DETALHE_ROTEADO 8 → 0` | **rotas T05, T16** |
+| `TETO_ROTEADO 40 → 400` | `roteador.test` |
+| `PESO_FRASE 1.0 → 0` | `check-canarios` · **rotas T02, T18** |
+| `PESO_FRASE_ESPARSA 0.7 → 0` | `check-canarios` · **rotas T16** |
+| `PESO_TERMO_UNICO 1.0 → 0` | `roteador.test` · `check-canarios` · **rotas T16, T17** |
+| `PESO_PALAVRA_EM_FRASE 0.5 → 0` | `check-canarios` · **rotas calibração** |
+| `PALAVRAS_ESPARSA 2 → 1` | `check-canarios` · **rotas T16, T17** |
+| `PALAVRAS_ESPARSA 2 → 3` | `check-canarios` · **rotas T16** |
+| `JANELA_ESPARSA 5 → 99` | **rotas T02** |
+| `PREFIXO_GLOSSARIO 5 → 2` | `roteador.test` · `check-canarios` · **rotas calibração, T13, T16, T17** |
+| curto-circuito da palavra exata removido em `familiaNoGlossario` | `check-canarios` · **rotas T16, T18** |
+| **o `vence` do desempate ignorado** (`if (false) continue`) | `roteador.test` · **rotas T18** |
+
+**Três constantes NÃO tinham canário nomeado quando esta onda começou a medir, e
+as três foram tratadas em vez de deixadas passar:**
+
+- `PESO_CONFUSAO` **para cima** sobrevivia a tudo → nasceu **T19**
+  (`qual a ordem dos exercícios na sessão?`, `topicosProibidos: [frequencia]`).
+- **o desempate ignorado** sobrevivia a tudo → nasceu **T18**
+  (`vale a pena trocar pra pegada fechada no supino?`, `topicosProibidos: [bracos]`).
+- `JANELA_ESPARSA` para cima sobrevivia a tudo → **T02** ganhou
+  `topicosProibidos: [idade]`, e `topicos` ganhou `programacao`, que é o que mata
+  `PESO_FRASE → 0`.
+
+**E uma constante foi APAGADA por não ter como ser defendida.** `PISO_IDF_CORPUS
+= 0,2` existia para que a palavra desconhecida do glossário ainda pesasse um
+quinto no corpus, com a justificativa de que o corpus atravessa a fronteira de
+língua. A justificativa não sobreviveu à medição: com o piso, `o que a base diz
+sobre hypertrophy?` e `treinar até failure vale a pena?` continuavam sem mapear
+(a ponte não existia), o placar dos 18 canários era **idêntico**, a margem de
+calibração era **pior** (maior de fora 0,51 contra 0,47), e nenhum canário
+nomeado morria quando ele ia a zero. Constante que só o registro de medida
+defende é constante que ninguém pode mexer com segurança.
+
+**Uma exclusão continua sem canário, e está declarada com o número:** tirar
+`glossário (dentro de frase)` do conjunto `CANAIS_AUTORITATIVOS` — a decisão de
+que uma palavra arrancada de dentro de um termo maior não carrega uma pergunta
+sozinha. Ela era obrigatória quando o glossário era o único canal (as populações
+de calibração se CRUZAVAM: 0,40 de dentro contra 0,50 de fora). Hoje, com o
+corpus de volta como canal amortecido, ela compra **0,03** de margem (maior de
+fora 0,47 contra 0,50) e nenhum caso depende dela. Está escrito assim, com o
+número, em vez de continuar repetindo a justificativa de quando ela decidia.
+
+## 23. Procedência da PARTE III
+
+- **Arquivos novos:** `research/kb/GLOSSARIO-TOPICOS.json`,
+  `research/tools/glossario.mjs`, `research/tools/build-glossario.mjs`,
+  `research/tools/check-glossario.mjs`.
+- **Arquivos alterados:** `research/tools/roteador.mjs` (o canal do glossário, o
+  amortecimento do corpus, o bônus de `naoConfundirCom`, o glossário obrigatório),
+  `research/tools/check-evidence.mjs` (`--topicos`), `research/tools/check-rotas.mjs`
+  (`topicosProibidos`), `research/tools/check-canarios.mjs` e
+  `research/tools/roteador.test.mjs` (fiação do glossário, 60 casos),
+  `research/kb/ROTAS.json` (T16–T19 novos, T02 reforçado, calibração re-medida),
+  `research/kb/CANARIOS.json` (as 18 medidas da porta nova regravadas), `package.json`,
+  este arquivo.
+- **Nenhuma claim foi editada**, nenhuma fonte foi ingerida, nenhum tópico entrou
+  no vocabulário fechado, e a ORDENAÇÃO dentro do tópico não foi tocada.
+- **O vocabulário de entrada foi escrito por outros oito agentes**, em
+  `research/kb/entrada/`. O que este passe fez foi consolidar, conferir, declarar
+  as seis correções e ligar o resultado ao roteamento.
+- **Verificação:** `npm run check:kb` exit 0 · `npm run check:gate` exit 0 ·
+  `npm run build` exit 0. As 21 mutações da tabela do §22.1 foram aplicadas,
+  medidas e revertidas.

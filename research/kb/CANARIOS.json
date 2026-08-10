@@ -73,6 +73,27 @@
     "    7 de 18 não roteiam para gaveta nenhuma que contenha a resposta",
     "            (P02, P06, P09, P10, P14, P15, P16)",
     "",
+    "REGRAVADOS EM 11/08/2026, depois da onda que trocou o roteamento léxico pelo",
+    "vocabulário de entrada (research/kb/GLOSSARIO-TOPICOS.json). A medida nova,",
+    "recontada pelo próprio check-canarios.mjs contra as mesmas 18 perguntas e os",
+    "mesmos ids:",
+    "",
+    "    0 de 18 devolvem todos os ids esperados  (INALTERADO)",
+    "    8 de 18 devolvem algum id  (era 3)",
+    "    1 de 18 não roteia para gaveta nenhuma que contenha a resposta (era 7):",
+    "            só o P10 sobrou",
+    "   11 de 18 roteiam para o topicoDaResposta declarado (era 5)",
+    "",
+    "O QUE ESSA DIFERENÇA DIZ, E O QUE ELA NÃO DIZ. A onda de 11/08 atacou UMA das",
+    "duas doenças — o ROTEAMENTO — e o número que mede roteamento é o terceiro:",
+    "7 → 1. O primeiro número não se mexeu, e é o esperado: `0 de 18 devolvem",
+    "TODOS` é a doença nº 2, o SOTERRAMENTO, que é ordenação dentro da gaveta e",
+    "ficou de fora do escopo de propósito. Mexer nas duas ao mesmo tempo tornaria",
+    "impossível dizer o que consertou o quê.",
+    "",
+    "Nenhum dos 18 ficou pior do que estava: nenhum perdeu id que já saía, nenhum",
+    "fechou gaveta que já abria.",
+    "",
     "Canário que só entra depois de passar é canário decorativo: ele mede o",
     "conserto de quem o escreveu. Por isso o que se cobra aqui NÃO é passar — é que",
     "a medida continue a mesma. `recuperados`, `abriuOTopico` e",
@@ -85,11 +106,13 @@
     "possíveis: com a gaveta certa aberta o defeito é de ORDENAÇÃO (ordenar melhor",
     "resolve); com nenhuma gaveta aberta o defeito é de ROTEAMENTO, e nenhum",
     "ranqueamento alcança uma claim que não está no conjunto. Sete dos dezoito",
-    "estão no segundo caso, e o pior deles é o P16: `levantar peso já conta como",
-    "exercício pro coração` roteia para `peso-corporal` porque a palavra `peso` de",
-    "`levantar peso` foi lida como peso CORPORAL, `cardio` nunca abre, e a tela sai",
-    "cheia, plausível e errada — que é exatamente o lixo plausível que a família",
-    "nao-mapeia do ROTAS.json foi escrita para proibir e que nenhum canário pegava.",
+    "estavam no segundo caso em 10/08, e o pior deles era o P16: `levantar peso já",
+    "conta como exercício pro coração` roteava para `peso-corporal` porque a palavra",
+    "`peso` de `levantar peso` foi lida como peso CORPORAL, `cardio` nunca abria, e",
+    "a tela saía cheia, plausível e errada — que é exatamente o lixo plausível que a",
+    "família nao-mapeia do ROTAS.json foi escrita para proibir e que nenhum canário",
+    "pegava. Em 11/08 o P16 passou a rotear para `cardio` e a devolver V013-04 e",
+    "V013-05, e sobrou UM caso de roteamento: o P10.",
     "",
     "`tetoDeTela` do bloco é limite de POSIÇÃO sobre a tela concatenada (claims",
     "roteadas + canal de param + página ao lado, sem repetição). Baixá-lo para 5",
@@ -576,7 +599,7 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "dor",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": false,
         "gavetasComResposta": [
           "bracos",
@@ -610,9 +633,12 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "dor",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
-        "abriuOTopico": false,
-        "gavetasComResposta": [],
+        "medidoEm": "2026-08-11",
+        "abriuOTopico": true,
+        "gavetasComResposta": [
+          "autorregulacao",
+          "dor"
+        ],
         "recuperados": [],
         "veredito": "falha"
       }
@@ -639,7 +665,7 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "lesao",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": false,
         "gavetasComResposta": [
           "ombros",
@@ -672,7 +698,7 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "lesao",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": false,
         "gavetasComResposta": [
           "supino"
@@ -705,7 +731,7 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "selecao-exercicio",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": false,
         "gavetasComResposta": [
           "supino"
@@ -740,10 +766,15 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "faixa",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
-        "abriuOTopico": false,
-        "gavetasComResposta": [],
-        "recuperados": [],
+        "medidoEm": "2026-08-11",
+        "abriuOTopico": true,
+        "gavetasComResposta": [
+          "equipamento",
+          "faixa"
+        ],
+        "recuperados": [
+          "F001-96"
+        ],
         "veredito": "falha"
       }
     },
@@ -769,13 +800,16 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "sapato",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": true,
         "gavetasComResposta": [
           "agacho",
+          "equipamento",
           "sapato"
         ],
-        "recuperados": [],
+        "recuperados": [
+          "V104-29"
+        ],
         "veredito": "falha"
       }
     },
@@ -802,10 +836,11 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "strap",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
-        "abriuOTopico": false,
+        "medidoEm": "2026-08-11",
+        "abriuOTopico": true,
         "gavetasComResposta": [
           "pegada",
+          "strap",
           "terra"
         ],
         "recuperados": [
@@ -839,10 +874,15 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "estagnacao",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
-        "abriuOTopico": false,
-        "gavetasComResposta": [],
-        "recuperados": [],
+        "medidoEm": "2026-08-11",
+        "abriuOTopico": true,
+        "gavetasComResposta": [
+          "estagnacao",
+          "progressao"
+        ],
+        "recuperados": [
+          "G008-26"
+        ],
         "veredito": "falha"
       }
     },
@@ -870,7 +910,7 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "training-max",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": false,
         "gavetasComResposta": [],
         "recuperados": [],
@@ -904,13 +944,15 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "deload",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": true,
         "gavetasComResposta": [
           "deload",
           "periodizacao"
         ],
-        "recuperados": [],
+        "recuperados": [
+          "G004-11"
+        ],
         "veredito": "falha"
       }
     },
@@ -940,11 +982,10 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "proximidade-da-falha",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": true,
         "gavetasComResposta": [
-          "proximidade-da-falha",
-          "series-reps"
+          "proximidade-da-falha"
         ],
         "recuperados": [
           "G016-13"
@@ -974,12 +1015,11 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "supino",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": true,
         "gavetasComResposta": [
-          "ombros",
-          "peito",
-          "supino"
+          "supino",
+          "tecnica"
         ],
         "recuperados": [
           "V119-20",
@@ -1012,9 +1052,11 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "carga-de-treino",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": false,
-        "gavetasComResposta": [],
+        "gavetasComResposta": [
+          "volume"
+        ],
         "recuperados": [],
         "veredito": "falha"
       }
@@ -1039,9 +1081,11 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "natural-vs-enhanced",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": false,
-        "gavetasComResposta": [],
+        "gavetasComResposta": [
+          "teste-de-forca"
+        ],
         "recuperados": [],
         "veredito": "falha"
       }
@@ -1068,10 +1112,16 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "cardio",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
-        "abriuOTopico": false,
-        "gavetasComResposta": [],
-        "recuperados": [],
+        "medidoEm": "2026-08-11",
+        "abriuOTopico": true,
+        "gavetasComResposta": [
+          "cardio",
+          "condicionamento"
+        ],
+        "recuperados": [
+          "V013-04",
+          "V013-05"
+        ],
         "veredito": "falha"
       }
     },
@@ -1095,9 +1145,10 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "peso-corporal",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
+        "medidoEm": "2026-08-11",
         "abriuOTopico": true,
         "gavetasComResposta": [
+          "competicao",
           "peso-corporal"
         ],
         "recuperados": [],
@@ -1124,9 +1175,10 @@
         "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
         "topicoDaResposta": "progressao",
         "tetoDeTela": 40,
-        "medidoEm": "2026-08-10",
-        "abriuOTopico": false,
+        "medidoEm": "2026-08-11",
+        "abriuOTopico": true,
         "gavetasComResposta": [
+          "progressao",
           "supino"
         ],
         "recuperados": [],

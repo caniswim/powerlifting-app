@@ -1,0 +1,242 @@
+{
+  "topicos": [
+    {
+      "topico": "tecnica",
+      "glosa": "Responde como executar ou corrigir a forma do agacho, supino e terra: setup, trajetória da barra, cues, erros mecânicos específicos, ângulo de filmagem para avaliação.",
+      "entrada": [
+        "cotovelo abrindo", "cotovelo voando", "cotovelo atrás da barra", "perdi o groove", "saí da barra",
+        "travei no meio do caminho", "empencar", "cair pra frente", "torcer o pé", "bater a barra na canela",
+        "perder o prumo", "cavar demais", "jogar o quadril", "quebrar o pulso", "grudar o cotovelo",
+        "afundar o peito", "chibatada", "vela na barra", "sair torto", "pé de pato", "pisando errado",
+        "postura do agacho", "como filmar pra analisar", "ângulo de vídeo do form check", "meu vídeo de treino",
+        "corrigir a técnica", "onde olho durante o levantamento", "respiração durante a série", "brace",
+        "como faço o setup", "pegada certa", "largura da mão", "onde fica o punho", "cue externo",
+        "cue interno", "trajetória da barra", "sticking point", "arredondar as costas",
+        "joelho pra dentro"
+      ],
+      "naoConfundirCom": [
+        {"topico": "lesao", "termoAmbiguo": "trava/dor no ombro durante o supino", "comoDistinguir": "se a pergunta é sobre a mecânica do movimento (cue, cotovelo, trajetória) vai para tecnica; se é sobre dor, machucado ou 'posso continuar' vai para lesao"},
+        {"topico": "antropometria", "termoAmbiguo": "postura/alavanca diferente do normal", "comoDistinguir": "tecnica ensina o que fazer/corrigir; antropometria explica por que a técnica ideal muda conforme o formato do corpo (fêmur, braço, tronco)"},
+        {"topico": "meta-metodologia", "termoAmbiguo": "filmar o treino, ângulo de câmera", "comoDistinguir": "se a dúvida é só como enquadrar a câmera para ver a técnica vai para tecnica; se é sobre como avaliar se um programa/protocolo é bom, vai para meta-metodologia"},
+        {"topico": "aprendizado-motor", "termoAmbiguo": "treinar a forma, praticar o movimento", "comoDistinguir": "cue específico de execução (o que fazer com o cotovelo, o pé, o quadril) é tecnica; falar sobre como a habilidade se consolida com repetição/prática é aprendizado-motor"}
+      ],
+      "exemplosDePergunta": [
+        "meu cotovelo abre demais no supino, o que eu ajusto?",
+        "como devo filmar o agachamento pra ver se bati profundidade?",
+        "meu quadril sobe antes do peito no levantamento terra, é erro de técnica?"
+      ]
+    },
+    {
+      "topico": "meta-metodologia",
+      "glosa": "Responde sobre filosofia e avaliação de método de treino: se um programa é bom, se periodização X é diferente de Y, retornos decrescentes, raciocínio científico vs bro science, princípios vs templates fixos.",
+      "entrada": [
+        "é tudo a mesma coisa", "qual método é melhor", "vale a pena trocar de programa", "isso é bro science",
+        "isso é mito ou verdade", "qual a ciência por trás disso", "n de 1", "anedota não é evidência",
+        "hype de instagram", "fórmula mágica", "bala de prata", "empacotado diferente mas é a mesma coisa",
+        "vale a pena confiar no coach", "esse programa é bom?", "como julgo se um treino tá funcionando",
+        "esse app de treino com IA presta?", "periodização linear x ondulatória", "isso é ciência ou achismo",
+        "esse guru tá certo?", "retorno decrescente", "diminishing returns", "estudo confiável",
+        "mudar várias coisas ao mesmo tempo", "como sei se o que mudei funcionou", "framework de treino",
+        "vale a pena seguir à risca o template"
+      ],
+      "naoConfundirCom": [
+        {"topico": "selecao-exercicio", "termoAmbiguo": "qual exercício é melhor", "comoDistinguir": "escolha concreta entre exercício A e B vai para selecao-exercicio; discussão sobre 'existe exercício perfeito/bala de prata' como princípio vai para meta-metodologia"},
+        {"topico": "volume", "termoAmbiguo": "quanto volume fazer", "comoDistinguir": "prescrição numérica de séries/semana é volume; a lei geral de retornos decrescentes aplicada como conceito abstrato é meta-metodologia"},
+        {"topico": "natural-vs-enhanced", "termoAmbiguo": "efeito placebo, genética boa ou ruim", "comoDistinguir": "se o assunto é mindset/crença afetando desempenho em geral, é meta-metodologia; se é especificamente sobre esteroide/dopagem/teto natural, é natural-vs-enhanced"},
+        {"topico": "periodizacao", "termoAmbiguo": "bloco, fase, ondulação", "comoDistinguir": "a estrutura concreta de um bloco/fase específico é periodizacao; a discussão de que 'são todos o mesmo princípio empacotado diferente' é meta-metodologia"}
+      ],
+      "exemplosDePergunta": [
+        "periodização em blocos é realmente diferente de DUP ou é só nome?",
+        "esse programa que vi no instagram tem alguma base científica?",
+        "vale a pena eu mudar tudo no treino de uma vez se não tô progredindo?"
+      ]
+    },
+    {
+      "topico": "lesao",
+      "glosa": "Responde o que fazer diante de dor, fisgada ou lesão durante o treino: quando parar, quando continuar, como reduzir carga e como reabilitar de volta ao treino pesado.",
+      "entrada": [
+        "fisgada", "repuxou", "travou", "deu uma agulhada", "estalou", "pontada", "beliscão", "puxei um músculo",
+        "rasguei", "estirei", "torci", "inflamou", "inchou", "dor boa ou dor ruim", "crepitação", "estalando",
+        "vou parar ou continuo", "machuquei", "lesionei", "distendi", "travei as costas", "deu um click",
+        "rompi", "estourei", "senti uma coisa estranha", "não tá certo esse desconforto", "tendinite",
+        "bursite", "impacto no ombro", "algo trincou", "dói quando levanto o braço", "reabilitação",
+        "voltar a treinar depois de lesão", "fisioterapia", "gestão de carga", "quanto de dor é aceitável",
+        "cheguei no consultório e o médico falou pra descansar"
+      ],
+      "naoConfundirCom": [
+        {"topico": "dor-e-treino", "termoAmbiguo": "dor muscular no dia seguinte", "comoDistinguir": "dor de treino (DOMS, cansaço muscular normal que passa em 1-3 dias) é outro tópico; dor aguda, pontual, tipo fisgada/travamento que aparece durante ou logo após o movimento é lesao"},
+        {"topico": "recuperacao", "termoAmbiguo": "cansaço, corpo destruído", "comoDistinguir": "fadiga geral/sono/estresse acumulado é recuperacao; dor ou sensação estranha numa articulação/músculo específico é lesao"},
+        {"topico": "tecnica", "termoAmbiguo": "ombro trava no supino", "comoDistinguir": "se travar é uma questão de mecânica/cue do movimento (sem dor) é tecnica; se envolve dor, lesão prévia ou medo de reagravar é lesao"},
+        {"topico": "descanso-entre-series", "termoAmbiguo": "preciso descansar mais", "comoDistinguir": "tempo de pausa entre séries dentro do treino é descanso-entre-series; parar de treinar por causa de dor/lesão é lesao"}
+      ],
+      "exemplosDePergunta": [
+        "senti uma fisgada de 3/10 no peitoral no meio da série, continuo o treino?",
+        "meu ombro estala toda vez que desço a barra, é grave?",
+        "voltei a treinar depois da lesão, com que carga eu começo?"
+      ]
+    },
+    {
+      "topico": "teste-de-forca",
+      "glosa": "Responde quando e como testar seu máximo de verdade (1RM): de quanto em quanto tempo, protocolo de aquecimento e saltos de carga, mentalidade antes da tentativa máxima.",
+      "entrada": [
+        "quando posso maxar", "testar minha marca", "quero saber meu máximo", "bater recorde pessoal", "pr",
+        "quebrar o teto", "de quanto em quanto tempo testo o máximo", "single de teste", "quanto pular entre tentativas",
+        "quanto vou levantar no dia", "tô pronto pra maxar?", "hora de testar de novo", "reteste",
+        "máximo verdadeiro", "1rm de verdade", "quantas semanas até o próximo max out", "aquecimento pro teste",
+        "ritual antes de puxar pesado", "mentalidade antes da tentativa", "salto de carga", "quanto subir entre tentativas",
+        "vou tentar quebrar meu recorde hoje", "última vez que testei", "tá na hora de resetar o ciclo"
+      ],
+      "naoConfundirCom": [
+        {"topico": "proximidade-da-falha", "termoAmbiguo": "ir até o limite, RPE, RIR", "comoDistinguir": "se a pergunta é sobre séries do dia a dia e quanto empurrar cada uma delas, é proximidade-da-falha; se é sobre o evento pontual de testar um 1RM/single máxima, é teste-de-forca"},
+        {"topico": "competicao", "termoAmbiguo": "abertura, tentativas do meet", "comoDistinguir": "escolha de tentativas dentro de uma competição oficial é competicao; testar o máximo em treino, fora de plataforma, é teste-de-forca"},
+        {"topico": "intensidade", "termoAmbiguo": "ir pesado, percentual alto", "comoDistinguir": "prescrição de % do 1RM ao longo do programa é intensidade; o momento específico de descobrir/atualizar qual é o 1RM é teste-de-forca"}
+      ],
+      "exemplosDePergunta": [
+        "faz quanto tempo que não testo meu máximo, será que já posso maxar de novo?",
+        "como monto os saltos de carga pra chegar num PR sem me fatigar antes?",
+        "qual aquecimento eu faço no dia que vou tentar um recorde?"
+      ]
+    },
+    {
+      "topico": "proximidade-da-falha",
+      "glosa": "Responde o quão perto da falha treinar dentro de uma série: RPE, RIR, uso de AMRAP, quando deixar reserva e quando ir até o talo.",
+      "entrada": [
+        "quantas eu tinha na reserva", "até onde empurro a série", "deixar reserva ou ir até o talo",
+        "series até falhar", "quase travei", "dava pra fazer mais", "não dava mais nenhuma",
+        "chumbei na barra", "engasgou a barra", "não sobrou nada", "fui até o talo", "forcei até o limite",
+        "quanto eu deveria estar deixando na reserva", "amrap", "rir", "rpe", "esforço percebido",
+        "série de teto", "última série pra valer", "empurrar até quando", "reps de sobra",
+        "consigo mais uma ou não", "série suicida", "queimou antes da hora"
+      ],
+      "naoConfundirCom": [
+        {"topico": "intensidade", "termoAmbiguo": "quão pesado é o peso", "comoDistinguir": "percentual do 1RM prescrito é intensidade; a sensação subjetiva de quanto restava na série (esforço, reps em reserva) é proximidade-da-falha"},
+        {"topico": "teste-de-forca", "termoAmbiguo": "testar o máximo", "comoDistinguir": "descobrir o 1RM/marca real é teste-de-forca; regular o esforço das séries normais de treino é proximidade-da-falha"},
+        {"topico": "estagnacao", "termoAmbiguo": "travei o progresso", "comoDistinguir": "travar dentro de uma repetição/série é sobre esforço (proximidade-da-falha); parar de evoluir ao longo de semanas/meses é estagnacao"},
+        {"topico": "fadiga", "termoAmbiguo": "cansaço acumulado", "comoDistinguir": "cansaço de longo prazo que se acumula entre sessões é fadiga; a queimação e esforço dentro de uma série específica é proximidade-da-falha"}
+      ],
+      "exemplosDePergunta": [
+        "quanto de reserva eu deveria deixar nessa série de supino?",
+        "vale a pena fazer AMRAP toda semana no agacho?",
+        "fiz uma série que quase travei, isso é bom sinal ou exagerei?"
+      ]
+    },
+    {
+      "topico": "bulking",
+      "glosa": "Responde sobre ganhar peso de propósito: taxa de superávit calórico, quanto engorda no processo, e como isso ajuda a encher a categoria de peso.",
+      "entrada": [
+        "quero engordar", "ganhar peso de propósito", "superávit calórico", "bulk", "encher a categoria",
+        "comer mais pra ficar mais forte", "ganhar massa", "off season de calorias", "fase de volume calórico",
+        "engordar rápido ou devagar", "bulk sujo", "bulk limpo", "lean bulk", "quanto ganho por semana",
+        "quantas calorias a mais", "subir de categoria de peso", "vou parecer gordo", "gordurinha ajuda ou atrapalha",
+        "comendo mais pra crescer", "meta de ganho de peso mensal", "quero subir de faixa de peso"
+      ],
+      "naoConfundirCom": [
+        {"topico": "cutting", "termoAmbiguo": "definição, secar", "comoDistinguir": "bulking é sobre ganhar peso/superávit; cutting é o processo oposto de perder gordura/déficit — não confundir mesmo quando aparecem juntos num ciclo"},
+        {"topico": "hipertrofia", "termoAmbiguo": "ganhar músculo", "comoDistinguir": "bulking é a estratégia nutricional/de peso corporal (quantas calorias, que ritmo); hipertrofia é o estímulo de treino que faz o músculo crescer — a pergunta 'como faço meu músculo crescer treinando' é hipertrofia, 'quanto e como comer a mais' é bulking"},
+        {"topico": "peso-corporal", "termoAmbiguo": "acompanhar o peso na balança", "comoDistinguir": "monitorar/entender o peso corporal em geral é peso-corporal; a decisão estratégica de subir de peso de propósito visando categoria/desempenho é bulking"},
+        {"topico": "antropometria", "termoAmbiguo": "gordura ajuda na alavanca", "comoDistinguir": "se a pergunta é sobre a estratégia de ganho de peso em si (quanto, quão rápido) é bulking; se é sobre como o corpo mais pesado muda a mecânica do movimento é antropometria"}
+      ],
+      "exemplosDePergunta": [
+        "quanto devo comer a mais por dia pra fazer um bulk lento?",
+        "vale a pena engordar pra subir de categoria de peso?",
+        "qual a diferença entre bulk sujo e bulk limpo pra powerlifting?"
+      ]
+    },
+    {
+      "topico": "antropometria",
+      "glosa": "Responde como o formato do corpo — comprimento de fêmur e braço, espessura de tronco, alavancas — muda a técnica ideal e o que cada pessoa consegue levantar.",
+      "entrada": [
+        "braço comprido", "perna comprida", "sou baixinho", "sou muito alto", "meu corpo não ajuda",
+        "alavanca ruim", "biotipo", "estrutura óssea", "proporção de membros", "torso curto", "tronco longo",
+        "geometria do corpo", "meu corpo é diferente do dele", "físico desfavorável", "membros longos atrapalham",
+        "corpo de ectomorfo", "não tenho o corpo certo pro levantamento", "fêmur longo", "braço curto ajuda no supino",
+        "tronco grosso", "compleição física", "formato do corpo influencia a técnica"
+      ],
+      "naoConfundirCom": [
+        {"topico": "peso-corporal", "termoAmbiguo": "quanto eu peso", "comoDistinguir": "o número na balança e categoria de peso é peso-corporal; o formato/proporção do corpo (comprimento de membros, espessura de tronco) é antropometria"},
+        {"topico": "tecnica", "termoAmbiguo": "postura, stance", "comoDistinguir": "a instrução genérica de como fazer o movimento é tecnica; a explicação de por que a técnica ideal muda de pessoa pra pessoa por causa do corpo é antropometria"},
+        {"topico": "bulking", "termoAmbiguo": "engordar melhora a alavanca", "comoDistinguir": "a decisão/estratégia de ganhar peso é bulking; o efeito mecânico desse peso extra sobre a alavanca de cada levantamento é antropometria"},
+        {"topico": "genetica", "termoAmbiguo": "meu corpo não é favorável, genética ruim", "comoDistinguir": "potencial de crescimento/resposta ao treino é um assunto de genética geral; formato/proporção física específica que muda a mecânica do levantamento é antropometria"}
+      ],
+      "exemplosDePergunta": [
+        "tenho braço muito comprido, isso atrapalha meu supino?",
+        "por que uns caras conseguem ficar mais eretos no agacho e eu não?",
+        "meu corpo vai mudar de alavanca se eu engordar?"
+      ]
+    },
+    {
+      "topico": "natural-vs-enhanced",
+      "glosa": "Responde sobre uso de esteroides/PEDs, teste antidopagem da IPF e o que é fisiologicamente plausível ou não para um atleta natural.",
+      "entrada": [
+        "ele deve tomar bomba", "tá gasando", "usa anabolizante", "hormonado", "juice", "ciclo de esteroide",
+        "testado ou não testado", "vai pegar no exame", "furou o teste antidoping", "vou ser pego no doping",
+        "quanto dá pra levantar sendo natural", "teto natural", "efeito placebo do esteroide",
+        "sou natural mesmo", "suplemento ilegal", "hormônio sintético", "trt", "coleta de urina",
+        "exame de sangue no doping", "esse cara claramente usa", "padrão natural", "limite fisiológico sem droga"
+      ],
+      "naoConfundirCom": [
+        {"topico": "genetica", "termoAmbiguo": "genética boa ou ruim", "comoDistinguir": "potencial genético de crescimento em geral é discussão ampla; quando a pergunta é especificamente sobre uso de substância/teste antidoping/limite natural, é natural-vs-enhanced"},
+        {"topico": "teste-de-forca", "termoAmbiguo": "teste, exame", "comoDistinguir": "'teste' de 1RM em treino é teste-de-forca; 'teste' de dopagem/urina/sangue é natural-vs-enhanced — mesma palavra, contexto decide"},
+        {"topico": "bulking", "termoAmbiguo": "ganhar peso rápido parece esquisito", "comoDistinguir": "ganho de peso via dieta/superávit é bulking; suspeita de ganho de peso/força por substância é natural-vs-enhanced"},
+        {"topico": "idade", "termoAmbiguo": "puberdade, hormônio", "comoDistinguir": "testosterona natural de adolescente/puberdade como fator de recuperação é idade; uso deliberado de hormônio sintético é natural-vs-enhanced"}
+      ],
+      "exemplosDePergunta": [
+        "esse atleta que levanta muito mais que eu deve estar usando alguma coisa?",
+        "como funciona o teste antidoping da IPF, com que frequência acontece?",
+        "é possível levantar 600 dots sendo natural?"
+      ]
+    },
+    {
+      "topico": "ordem-exercicio",
+      "glosa": "Responde em que ordem fazer os exercícios dentro de uma mesma sessão: o que vem primeiro, onde entra o acessório, se a ordem muda o resultado.",
+      "entrada": [
+        "o que eu faço primeiro no treino", "supino antes ou depois do agacho", "com o que eu esquento primeiro",
+        "sequência do treino", "organizar o treino do dia", "prioridade do dia de treino",
+        "treinar peito e costas no mesmo dia, em que ordem", "primeiro movimento do dia",
+        "colocar o acessório antes ou depois do principal", "ordem dos exercícios importa?",
+        "deveria fazer o bíceps antes ou depois das costas", "última coisa do treino",
+        "movimento composto antes do isolado", "o que priorizar quando o tempo é curto",
+        "treino de corpo inteiro em que ordem", "esquento com o quê antes de agachar",
+        "faço perna antes ou depois de puxar", "supino de prioridade no início do treino",
+        "acessório de ombro antes ou depois do supino", "abdômen no começo ou no fim do treino",
+        "encolhimento em que dia entra", "rosca direta antes ou depois das costas",
+        "trocar a ordem quando um dia falta tempo", "primeiro exercício fresco",
+        "deixar o mais fraco pro final"
+      ],
+      "naoConfundirCom": [
+        {"topico": "frequencia", "termoAmbiguo": "quantos dias treinar", "comoDistinguir": "quantos dias por semana ou como distribuir os exercícios entre dias é frequencia; a sequência interna de uma mesma sessão é ordem-exercicio"},
+        {"topico": "selecao-exercicio", "termoAmbiguo": "qual exercício escolher", "comoDistinguir": "escolher QUAL exercício fazer é selecao-exercicio; decidir EM QUE ORDEM fazer os exercícios já escolhidos é ordem-exercicio"},
+        {"topico": "descanso-entre-series", "termoAmbiguo": "tempo entre um exercício e outro", "comoDistinguir": "duração da pausa entre séries/exercícios é descanso-entre-series; qual exercício vem antes de qual é ordem-exercicio"},
+        {"topico": "programacao", "termoAmbiguo": "estrutura do treino, template", "comoDistinguir": "o desenho geral do programa (dias, blocos, progressão) é programacao; a ordem específica dentro de uma sessão é ordem-exercicio"}
+      ],
+      "exemplosDePergunta": [
+        "devo fazer supino ou agacho primeiro se treino os dois no mesmo dia?",
+        "o acessório de tríceps entra antes ou depois do supino pesado?",
+        "faz diferença de resultado se eu inverter a ordem dos exercícios do treino?"
+      ]
+    },
+    {
+      "topico": "idade",
+      "glosa": "Responde sobre o efeito da idade, da puberdade ou do tempo total de treino acumulado na capacidade de recuperação e no ritmo de progresso.",
+      "entrada": [
+        "sou velho pra isso", "com que idade", "juventude recupera mais rápido", "veterano no treino",
+        "masters", "quanto tempo de treino eu tenho", "treino há quantos anos", "tempo de estrada",
+        "sou novato ou veterano", "idade atrapalha o progresso", "puberdade", "hormônio de adolescente",
+        "envelhecendo e perdendo força", "com a idade fico mais lento pra recuperar", "sou adolescente ainda",
+        "comecei tarde", "treinar depois dos 40", "quanto tempo de experiência preciso ter",
+        "recupero pior porque sou mais velho", "levantador júnior", "categoria de idade da ipf",
+        "sou jovem, dá pra treinar mais pesado"
+      ],
+      "naoConfundirCom": [
+        {"topico": "recuperacao", "termoAmbiguo": "recupero mal, demoro pra melhorar", "comoDistinguir": "mecanismos gerais de recuperação (sono, fadiga, deload) são recuperacao; quando a causa apontada é especificamente a idade/fase de vida/tempo de treino, é idade"},
+        {"topico": "natural-vs-enhanced", "termoAmbiguo": "puberdade, testosterona alta", "comoDistinguir": "testosterona elevada da puberdade como fator natural de idade é idade; uso deliberado de hormônio sintético é natural-vs-enhanced"},
+        {"topico": "progressao", "termoAmbiguo": "quanto tempo até progredir", "comoDistinguir": "ritmo esperado de ganho de força ao longo do tempo de treino em geral é progressao; a pergunta 'sendo mais velho eu progrido diferente' aponta para idade como fator"}
+      ],
+      "exemplosDePergunta": [
+        "tenho 45 anos, devo esperar recuperar mais devagar que um atleta de 20?",
+        "quanto tempo de treino alguém precisa ter pra ser considerado veterano?",
+        "na puberdade dá pra aguentar mais volume de treino por causa do hormônio?"
+      ]
+    }
+  ]
+}

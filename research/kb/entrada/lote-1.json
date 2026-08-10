@@ -1,0 +1,364 @@
+{
+  "topicos": [
+    {
+      "topico": "agacho",
+      "glosa": "Responde tudo sobre o agachamento como levantamento: profundidade, regras IPF, setup, pegada, comandos, erros que anulam, progressão e variações (barra alta/baixa, safety bar, belt squat, hack squat).",
+      "entrada": [
+        "agachamento", "agacho livre", "back squat", "squat", "quatro apoios",
+        "profundidade do agacho", "passar do paralelo", "cair no buraco", "buraco",
+        "quicar no fundo", "dar bounce", "lowbar", "highbar", "barra alta", "barra baixa",
+        "barra nas costas", "joelho passando a linha", "sentar no agacho",
+        "travar o joelho no agacho", "força de pernas", "agachar", "squat rack",
+        "suporte de agachamento", "unrack", "walkout do agacho", "deep squat",
+        "ATG", "ass to grass", "squat form check", "meu agacho travou",
+        "empacou no agacho", "hack squat", "belt squat", "safety squat bar",
+        "SSB", "goodmorning squat", "agacho com pausa", "tempo squat no agacho"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "selecao-exercicio",
+          "termoAmbiguo": "hack squat / belt squat / SSB",
+          "comoDistinguir": "Se a pergunta é sobre QUAL variação escolher ou trocar (substituição de exercício), vai para selecao-exercicio; se é sobre técnica/profundidade/regra do agacho livre em si, fica em agacho."
+        },
+        {
+          "topico": "comandos-ipf",
+          "termoAmbiguo": "cartão vermelho / luz vermelha no agacho",
+          "comoDistinguir": "Pergunta sobre o SINAL/comando do árbitro (quando ele grita, quando acende a luz) é comandos-ipf; pergunta sobre a REGRA em si (o que é profundidade, o que anula) fica em agacho."
+        },
+        {
+          "topico": "dor",
+          "termoAmbiguo": "joelho/quadríceps doendo depois do agacho",
+          "comoDistinguir": "Se a pergunta é sobre SINTOMA (dói, travou, fisgada, incomodou), vai para dor; se é sobre EXECUÇÃO do movimento (como agachar, profundidade, setup), fica em agacho."
+        }
+      ],
+      "exemplosDePergunta": [
+        "até onde eu tenho que descer no agacho pra valer na federação?",
+        "meu joelho passa na frente demais quando eu agacho, isso é errado?",
+        "vale a pena trocar agacho livre por hack squat essa semana?"
+      ]
+    },
+    {
+      "topico": "intensidade",
+      "glosa": "Responde sobre carga relativa ao máximo: percentual de 1RM, RPE, training max, quão pesado treinar e como ajustar a intensidade dentro do ciclo.",
+      "entrada": [
+        "rpe", "rir", "percentual do máximo", "% do 1rm", "quão pesado",
+        "quanto peso usar", "treino pesado", "treino leve", "submáximo",
+        "treinar a 80%", "perto da falha", "esforço percebido", "nota de esforço",
+        "dar um oito", "dar um nove", "treinar próximo do limite",
+        "subir a carga", "baixar a carga", "intensidade relativa", "training max",
+        "TM", "percentual do máximo de competição", "quão forte treinar",
+        "treino pesado demais", "carga muito leve", "hoje tá pesado",
+        "quanto % pra bater PR", "relative intensity", "carga relativa",
+        "escala de esforço", "quanto de RPE usar hoje", "% do máximo de treino"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "series-reps",
+          "termoAmbiguo": "quantas séries / quantas repetições",
+          "comoDistinguir": "Intensidade é sobre O QUANTO PESADO (peso, %1RM, RPE); quantidade de séries e repetições fica em series-reps."
+        },
+        {
+          "topico": "deload",
+          "termoAmbiguo": "semana leve / baixar tudo",
+          "comoDistinguir": "Pedido específico de reduzir carga por um período planejado de recuperação é deload; pergunta genérica sobre 'quão pesado treinar hoje' fica em intensidade."
+        },
+        {
+          "topico": "autorregulacao",
+          "termoAmbiguo": "RPE como termômetro do dia",
+          "comoDistinguir": "Se a pergunta é sobre COMO usar o RPE para decidir ajustar o treino no dia (autorregular), vai para autorregulacao; se é sobre o VALOR de intensidade alvo em si, fica em intensidade."
+        }
+      ],
+      "exemplosDePergunta": [
+        "hoje o treino pede RPE 8, isso é quantos kg pra mim?",
+        "posso treinar a 90% do máximo toda semana sem problema?",
+        "meu training max deveria ser igual ao meu recorde de treino?"
+      ]
+    },
+    {
+      "topico": "series-reps",
+      "glosa": "Responde sobre quantas repetições e séries fazer: faixas de repetição, straight sets vs back-off, AMRAP, número de séries por exercício.",
+      "entrada": [
+        "quantas repetições", "quantas séries", "faixa de repetição", "rep range",
+        "reps baixas", "reps altas", "série reta", "straight sets", "back off set",
+        "amrap", "série até a falha", "quantas séries fazer", "5x5", "3x8",
+        "quantas repetições por série", "número de séries", "quantas repetições no agacho",
+        "dose de repetição", "reps totais na semana", "contagem de reps",
+        "quantas vezes levantar", "tripla", "dupla", "single", "quantas séries hoje",
+        "set x rep", "esquema de séries", "reps por série no treino",
+        "quantas séries de aquecimento", "top set", "back-off"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "volume",
+          "termoAmbiguo": "volume de séries",
+          "comoDistinguir": "Perguntas sobre TOTAL semanal / carga cumulativa de treino são volume; perguntas sobre a estrutura de UMA sessão (quantas séries hoje, quantas reps por série) são series-reps."
+        },
+        {
+          "topico": "intensidade",
+          "termoAmbiguo": "quão pesado por série",
+          "comoDistinguir": "Se a pergunta é sobre CARGA relativa (peso, %1RM, RPE), é intensidade; se é sobre CONTAGEM (número de reps/séries), é series-reps."
+        },
+        {
+          "topico": "descanso-entre-series",
+          "termoAmbiguo": "pausa entre séries",
+          "comoDistinguir": "Tempo de descanso entre séries tem gaveta própria (descanso-entre-series); series-reps é só a estrutura de séries x repetições, não o intervalo entre elas."
+        }
+      ],
+      "exemplosDePergunta": [
+        "quantas séries de supino eu devo fazer hoje?",
+        "é melhor fazer 5x5 ou séries retas de 3 no agacho?",
+        "o que é um back off set e quando eu uso?"
+      ]
+    },
+    {
+      "topico": "cardio",
+      "glosa": "Responde sobre exercício aeróbico/condicionamento: quanto cardio fazer, qual modalidade, e o impacto do cardio na recuperação e nos levantamentos.",
+      "entrada": [
+        "cardio", "condicionamento", "aeróbico", "esteira", "bike", "elíptico",
+        "escada", "stairmaster", "caminhada inclinada", "zona 2", "zona dois",
+        "correr", "corrida", "hiit", "intervalado", "frequência cardíaca", "fc",
+        "batimento", "respiração", "fôlego", "cardio mata os ganhos",
+        "cardio atrapalha a força", "quanto cardio fazer", "cardio de baixo impacto",
+        "cardio pós treino", "cardio em jejum", "trilha", "hiking",
+        "spinning", "subir escada", "condicionamento físico",
+        "resistência cardiovascular", "vo2", "esteira inclinada", "bike ergométrica",
+        "fazer exercício aeróbico"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "peso-corporal",
+          "termoAmbiguo": "levantar peso conta como cardio / peso",
+          "comoDistinguir": "'Peso' sozinho costuma significar peso CORPORAL (escala, categoria); cardio é exercício aeróbico. Este é o defeito já documentado: 'levantar peso já conta como exercício pro coração' deve abrir cardio, não peso-corporal."
+        },
+        {
+          "topico": "capacidade-trabalho",
+          "termoAmbiguo": "capacidade de trabalho / work capacity",
+          "comoDistinguir": "Capacidade de trabalho fala do volume de treino de FORÇA que o corpo tolera; cardio é sobre a atividade aeróbica específica, mesmo que ela aumente a capacidade de trabalho."
+        },
+        {
+          "topico": "fadiga",
+          "termoAmbiguo": "cansaço / fadiga geral",
+          "comoDistinguir": "Se a pergunta é sobre fazer ou não exercício aeróbico, quanto e de que tipo, é cardio; se é sobre sintoma geral de cansaço/recuperação sem falar de aeróbico, é fadiga ou recuperacao."
+        }
+      ],
+      "exemplosDePergunta": [
+        "cardio atrapalha meus ganhos de força no powerlifting?",
+        "posso fazer esteira todo dia sem prejudicar o agacho?",
+        "levantar peso já conta como exercício pro coração ou eu preciso de cardio separado?"
+      ]
+    },
+    {
+      "topico": "sumo",
+      "glosa": "Responde sobre o levantamento terra estilo sumô: stance aberta, setup, técnica, mobilidade de quadril e comparação com o convencional.",
+      "entrada": [
+        "sumo", "terra sumô", "terra sumo", "stance aberta", "pernas abertas no terra",
+        "deadlift sumo", "abrir a stance", "pés apontados pra fora",
+        "rotação externa do quadril", "sumô", "largar mais a base",
+        "puxada com pernas abertas", "stiff leg sumo", "terra estilo sumô",
+        "qual stance usar no terra", "sumo vs convencional", "sumo deadlift",
+        "sumô largo", "sumô estreito", "groove do sumo", "mobilidade pra sumô",
+        "adutor no sumo", "spread the floor", "terra com pernas afastadas"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "terra",
+          "termoAmbiguo": "terra (genérico)",
+          "comoDistinguir": "Pergunta geral sobre o levantamento terra, qualquer estilo, vai para terra; pergunta especificamente sobre a stance aberta/estilo sumô vai para sumo."
+        },
+        {
+          "topico": "convencional",
+          "termoAmbiguo": "convencional",
+          "comoDistinguir": "Se o atleta pergunta pela variante convencional (stance fechada), é outro tópico; sumo é só a variante de stance larga do terra."
+        },
+        {
+          "topico": "posterior",
+          "termoAmbiguo": "quadril/adutor apertado",
+          "comoDistinguir": "Dor ou mobilidade de quadril/adutor em geral pode ser dor ou posterior; sumo é só quando a pergunta liga isso especificamente à técnica/stance do terra sumô."
+        }
+      ],
+      "exemplosDePergunta": [
+        "devo puxar terra sumô ou convencional?",
+        "como abro mais a stance no terra sumô sem perder força?",
+        "meu quadril trava quando tento sumô, o que eu ajusto no setup?"
+      ]
+    },
+    {
+      "topico": "ombros",
+      "glosa": "Responde sobre desenvolvimento/press acima da cabeça e sobre saúde e dor do ombro relacionada ao treino.",
+      "entrada": [
+        "ombro", "ombros", "desenvolvimento", "overhead press", "press militar",
+        "press acima da cabeça", "dor no ombro", "ombro doendo", "ombro travado",
+        "deltoide", "elevação lateral", "remada alta", "impacto no ombro",
+        "treino de ombro", "mobilidade de ombro", "rotação de ombro",
+        "manguito rotador", "press com halteres", "arnold press",
+        "ombro estalando", "ombro fraco", "machucar o ombro no supino",
+        "dor no deltoide", "ombro dolorido depois do supino"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "peito",
+          "termoAmbiguo": "supino / peito",
+          "comoDistinguir": "Dor ou treino do peitoral vai para peito; se a queixa é especificamente na articulação/deltoide do ombro, vai para ombros, mesmo surgindo durante o supino."
+        },
+        {
+          "topico": "dor",
+          "termoAmbiguo": "dor no ombro",
+          "comoDistinguir": "Se a pergunta é 'posso treinar com essa dor' (protocolo geral de dor/gate), vai para dor; se é sobre o QUE FAZER no treino de ombro/desenvolvimento em si, fica em ombros."
+        },
+        {
+          "topico": "lesao",
+          "termoAmbiguo": "lesão de ombro",
+          "comoDistinguir": "Histórico/gravidade da lesão em si é lesao; exercício e programação de ombro no dia a dia é ombros."
+        }
+      ],
+      "exemplosDePergunta": [
+        "por que meu ombro dói quando eu faço desenvolvimento militar?",
+        "vale trocar overhead press por press com halteres pra poupar o ombro?",
+        "quanto volume de ombro eu devo fazer por semana?"
+      ]
+    },
+    {
+      "topico": "posterior",
+      "glosa": "Responde sobre posterior de coxa e cadeia posterior: ativação no agacho e no terra, isolamento, e lesão de posterior de coxa.",
+      "entrada": [
+        "posterior de coxa", "posteriores", "isquiotibiais", "hamstring",
+        "hamstrings", "cadeia posterior", "coxa posterior",
+        "puxador de perna curvado", "leg curl", "stiff", "romeno", "rdl",
+        "mesa flexora", "treino de posterior", "posterior dolorido",
+        "estirei o posterior", "puxei o posterior", "cadeia posterior fraca",
+        "hams", "posterior fraco", "trabalhar isquiotibial",
+        "lesão de posterior de coxa"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "agacho",
+          "termoAmbiguo": "perna / pernas (genérico)",
+          "comoDistinguir": "'Perna' sozinho costuma significar o exercício composto (agacho ou terra); posterior é especificamente o grupo muscular de trás da coxa."
+        },
+        {
+          "topico": "lesao",
+          "termoAmbiguo": "puxei o posterior / lesão no posterior",
+          "comoDistinguir": "Se a pergunta é sobre a gravidade/reabilitação da lesão em si, é lesao; se é sobre treinar, ativar ou isolar o músculo, é posterior."
+        },
+        {
+          "topico": "pernas",
+          "termoAmbiguo": "glúteo / quadríceps junto com posterior",
+          "comoDistinguir": "Pergunta genérica sobre 'pernas' no geral (quadríceps + posterior + panturrilha) vai para pernas; se é isolado no posterior de coxa, fica em posterior."
+        }
+      ],
+      "exemplosDePergunta": [
+        "o agacho trabalha o posterior de coxa ou só quadríceps?",
+        "que exercício eu faço pra isolar o posterior de coxa?",
+        "puxei o posterior treinando terra, o que eu faço agora?"
+      ]
+    },
+    {
+      "topico": "comandos-ipf",
+      "glosa": "Responde sobre os comandos e sinais do árbitro em competição IPF: quando começa e termina o movimento, luzes e cartões de julgamento.",
+      "entrada": [
+        "comando do árbitro", "sinal do juiz", "grito squat", "comando start",
+        "comando press", "comando rack", "comando down", "luz branca",
+        "luz vermelha", "cartão vermelho", "cartão azul", "cartão amarelo",
+        "esperar o comando", "começar antes do comando", "terminar antes do sinal",
+        "juiz gritando", "árbitro central", "quando o juiz apita",
+        "o que o juiz fala", "sinal pra descer", "sinal pra subir", "walkout",
+        "recolocar a barra", "replace", "5 segundos pra começar",
+        "protocolo de plataforma", "quando o árbitro dá luz"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "regras-ipf",
+          "termoAmbiguo": "regra / regulamento",
+          "comoDistinguir": "comandos-ipf é só o SINAL/comando físico do árbitro (quando ele fala, a luz, o cartão); regras-ipf cobre o conteúdo da regra em si (o que é válido, equipamento permitido etc.)."
+        },
+        {
+          "topico": "profundidade",
+          "termoAmbiguo": "cartão vermelho por profundidade",
+          "comoDistinguir": "Se a dúvida é 'o que é profundidade legal', vai para profundidade; se é 'o que o cartão vermelho significa ou quando aparece', vai para comandos-ipf."
+        },
+        {
+          "topico": "mentalidade",
+          "termoAmbiguo": "nervoso na competição / travei no comando",
+          "comoDistinguir": "Ansiedade ou preparo mental para competir é mentalidade; a mecânica do sinal em si (quando o juiz fala, luz, cartão) é comandos-ipf."
+        }
+      ],
+      "exemplosDePergunta": [
+        "quando exatamente o árbitro dá o sinal pra eu começar o agacho?",
+        "o que significa cada cor de cartão depois da luz vermelha?",
+        "eu preciso esperar comando pra começar o terra também?"
+      ]
+    },
+    {
+      "topico": "peito",
+      "glosa": "Responde sobre o peitoral: ativação e treino de peito no supino, trabalho acessório de peitoral, e questões de dor/lesão localizadas no peitoral.",
+      "entrada": [
+        "peito", "peitoral", "peitorais", "chest", "dor no peito",
+        "dor no peitoral", "fisgada no peito", "fisgada no peitoral",
+        "rasguei o peito", "puxei o peitoral", "repuxou o peito",
+        "treino de peito", "supino pra peito", "ativar o peitoral",
+        "isolamento de peito", "cross over", "voador", "fly", "chest press",
+        "flexão", "treino de peitoral maior", "peitoral menor",
+        "peito superior", "peito inferior", "peito travou", "estalo no peito"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "dor",
+          "termoAmbiguo": "fisgada no peito / dor no peitoral / repuxou o peito",
+          "comoDistinguir": "QUALQUER sintoma (dor, fisgada, aperto, agulhada) no peitoral vai para dor, mesmo mencionando a palavra 'peito'; peito é sobre exercício/ativação muscular, não sobre sintoma. Crítico dado o histórico de lesão de peitoral do atleta: a pergunta 'fisgada de 3/10 no peitoral, continuo?' tem que abrir dor, não peito."
+        },
+        {
+          "topico": "supino",
+          "termoAmbiguo": "supino (genérico)",
+          "comoDistinguir": "Perguntas sobre técnica/execução do supino como levantamento vão para supino; peito é sobre o músculo peitoral especificamente (ativação, isolamento, dor localizada)."
+        },
+        {
+          "topico": "ombros",
+          "termoAmbiguo": "ombro / deltoide",
+          "comoDistinguir": "Se a queixa ou o exercício é no deltoide/articulação do ombro, é ombros; peito é o peitoral."
+        }
+      ],
+      "exemplosDePergunta": [
+        "que exercício acessório ativa mais o peitoral superior?",
+        "o peitoral já fica maximamente ativado com que percentual do supino?",
+        "vale fazer crossover pra isolar peito depois do supino?"
+      ]
+    },
+    {
+      "topico": "powerbuilding",
+      "glosa": "Responde sobre programação híbrida de força e hipertrofia (powerbuilding): estrutura que mistura levantamentos principais pesados com acessórios de estética/braços.",
+      "entrada": [
+        "powerbuilding", "power building", "treino híbrido força e hipertrofia",
+        "ganhar músculo e força juntos", "phul", "treino de estética e força",
+        "bombar e ficar forte", "treino pra ficar grande e forte",
+        "hipertrofia e powerlifting juntos", "programa misto",
+        "quero ficar grande e forte ao mesmo tempo",
+        "treino de bodybuilding pra powerlifter", "acessórios estéticos no programa",
+        "treino de braço além do powerlifting", "físico e força juntos",
+        "quero hipertrofia e pr", "big and strong", "estética e força",
+        "programa de força com volume de bodybuilding"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "hipertrofia",
+          "termoAmbiguo": "hipertrofia (genérico)",
+          "comoDistinguir": "Hipertrofia pura (crescer músculo) é gaveta própria; powerbuilding é especificamente o HÍBRIDO com foco simultâneo em força de competição e estética."
+        },
+        {
+          "topico": "acessorios",
+          "termoAmbiguo": "acessórios",
+          "comoDistinguir": "Pergunta sobre um exercício acessório específico é acessorios; pergunta sobre a FILOSOFIA ou estrutura do programa (força + estética juntos) é powerbuilding."
+        },
+        {
+          "topico": "programacao",
+          "termoAmbiguo": "programação (genérico)",
+          "comoDistinguir": "Estrutura genérica de programa é programacao; se o atleta nomeia explicitamente querer 'ficar grande E forte' ou cita powerbuilding/PHUL, é este tópico."
+        }
+      ],
+      "exemplosDePergunta": [
+        "dá pra montar um programa de powerbuilding em cima do meu ciclo de força?",
+        "o que diferencia powerbuilding de um programa de hipertrofia comum?",
+        "como o PHUL equilibra treino pesado com acessório de braço?"
+      ]
+    }
+  ]
+}

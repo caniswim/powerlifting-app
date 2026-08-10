@@ -39,21 +39,29 @@
  * claims de agacho.
  *
  * ─────────────────────────────────────────────────────────────────────────────
- * DE ONDE VEM O SINAL — três canais, nenhum inventado
+ * DE ONDE VEM O SINAL — quatro canais, nenhum inventado
  *
- * 1. **O corpus.** Para cada tópico, quais raízes aparecem MUITO nele e pouco
- *    fora. É a mesma ideia do `vocabularioDoTopico` de `busca.mjs`, virada do
- *    avesso: lá se pergunta "que palavras descrevem este tópico", aqui "que
- *    tópico esta palavra denuncia". Cobre os **74**, sem ninguém escrever nada.
- *    E resolve de graça o buraco que o `RECUPERACAO.md` §8.1 declarou
- *    inalcançável: `ciclo` e `cycle` não compartilham raiz nenhuma, mas as duas
- *    são fortemente distintivas de `periodizacao` — porque a claim é pt-BR e o
- *    `verbatim` é inglês, e as duas línguas moram no mesmo tópico.
- * 2. **O nome do tópico**, que é dado da lista fechada: `descanso-entre-series`
+ * 1. **O GLOSSÁRIO DE ENTRADA** (`research/kb/GLOSSARIO-TOPICOS.json`), e desde
+ *    11/08/2026 ele é o canal principal. 74 gavetas, cada uma com glosa e 20–40
+ *    termos **na voz do atleta**, escritos por oito agentes que leram as
+ *    gavetas. É o canal que sabe o que é `fisgada` — palavra que **não existe em
+ *    claim nenhuma** das 6.912 e que é exatamente o que se digita quando o
+ *    peitoral dá um aviso. Ver `glossario.mjs` para o mecanismo e para o idf.
+ * 2. **O corpus**, agora em segundo plano e AMORTECIDO pelo glossário. Para cada
+ *    tópico, quais raízes aparecem MUITO nele e pouco fora. Continua valendo por
+ *    dois motivos: ele cobre palavra que o glossário não previu, e ele atravessa
+ *    a fronteira de língua que o `RECUPERACAO.md` §8.1 declarou inalcançável —
+ *    `ciclo` e `cycle` não compartilham raiz nenhuma e as duas são distintivas
+ *    de `periodizacao`, porque a claim é pt-BR e o `verbatim` é inglês. O que
+ *    mudou é que ele deixou de DECIDIR sozinho: ver `PESO_CORPUS`.
+ * 3. **O nome do tópico**, que é dado da lista fechada: `descanso-entre-series`
  *    casa a pergunta que diz "descanso entre séries".
- * 3. **O `VOCABULARIO.md`**, quando o tópico tem seção (10 dos 74). Aqui ele
+ * 4. **O `VOCABULARIO.md`**, quando o tópico tem seção (10 dos 74). Aqui ele
  *    entra como CONFIRMAÇÃO de um tópico, não como injeção de termos na
  *    consulta — que era exatamente o mecanismo que destruiu a precisão.
+ *
+ * E um quinto que não pontua sozinho: o **`naoConfundirCom`** do glossário, que
+ * é o único canal em que uma gaveta fala sobre OUTRA. Ver `PESO_CONFUSAO`.
  *
  * ─────────────────────────────────────────────────────────────────────────────
  * OS DOIS CASOS QUE MORDEM, E O QUE SE FAZ COM CADA UM
@@ -75,6 +83,7 @@ import {
   palavras, raiz, normalizar, indexar, subIndice, buscarRelaxada,
   prosaDaClaim, VAZIAS, vizinhosNoMesmoSrc,
 } from './busca.mjs';
+import { casarGlossario, idfDoGlossario } from './glossario.mjs';
 
 // ── constantes, todas declaradas como julgamento ─────────────────────────────
 
@@ -96,6 +105,110 @@ export const PISO_ROTA = 0.65;
  * roteamento que devolve tudo não roteou nada.
  */
 export const FRACAO_DO_MELHOR = 0.4;
+
+/**
+ * ── O PESO DO CORPUS DEPOIS DE 11/08/2026, e por que ele não é mais 1 ────────
+ *
+ * O canal do corpus mede *"que palavras esta gaveta usa"*. É uma boa medida, e é
+ * a medida errada para *"o que este atleta digitou"*. Os dois casos que fecharam
+ * o diagnóstico de 10/08 são os dois lados do mesmo erro:
+ *
+ *   · `fisgada` não existe em claim nenhuma, então o corpus não tinha o que
+ *     dizer sobre a pergunta mais cara desta base;
+ *   · `peso` aparece em 141 das 238 claims de `peso-corporal`, então o corpus
+ *     dizia com força que *levantar peso* é peso CORPORAL — e `cardio`, com 230
+ *     claims que respondem a pergunta, nunca abria.
+ *
+ * O conserto não é apagar o corpus: ele é quem sabe QUAIS claims de um tópico
+ * usam a palavra, e é ele que separa uma gaveta de 990 de uma de 13 quando as
+ * duas reivindicam o mesmo termo de entrada. O conserto é ele parar de decidir
+ * sozinho. Meio peso, e AMORTECIDO palavra a palavra pelo idf DO GLOSSÁRIO:
+ * `peso`, que 15 das 74 gavetas reivindicam, entra valendo 0,37 do que valia;
+ * `agachamento`, que é de uma gaveta só, entra quase inteiro; e a palavra que
+ * NENHUMA gaveta reivindica entra valendo zero.
+ *
+ * Medido nos dois estados, com as duas populações de calibração do `ROTAS.json`:
+ * com 1,0 o `peso-corporal` continua em 1º na pergunta do coração; com 0,5 ele
+ * some da lista e `cardio` sai em 1º.
+ *
+ * ── E O ZERO DO FIM FOI UMA DECISÃO MEDIDA ──────────────────────────────────
+ *
+ * A primeira versão desta camada tinha um piso (`PISO_IDF_CORPUS = 0,2`) para a
+ * palavra que o glossário não conhece, com a justificativa de que o corpus
+ * atravessa a fronteira de língua: `cycle` e `ciclo` não compartilham raiz
+ * nenhuma e as duas são de `periodizacao`. **A justificativa não sobreviveu à
+ * medição.** Com o piso, `o que a base diz sobre hypertrophy?` e `treinar até
+ * failure vale a pena?` continuavam sem mapear para gaveta nenhuma — a ponte não
+ * existia —, o placar dos 18 canários da porta nova era exatamente o mesmo (8
+ * com algum id, 1 sem gaveta, 11 abrindo o tópico da resposta), a margem de
+ * calibração era PIOR (maior de fora 0,51 contra 0,47), e nenhum canário
+ * NOMEADO morria quando o piso ia a zero — só o registro de medida acusava.
+ * Constante que só o registro defende é constante que ninguém pode mexer com
+ * segurança: saiu, e a regra ficou uma frase. **O corpus só fala sobre palavra
+ * que o glossário conhece.**
+ */
+export const PESO_CORPUS = 0.5;
+
+/**
+ * ── O `naoConfundirCom`, e é o único canal em que uma gaveta fala de OUTRA ───
+ *
+ * Cada tópico do glossário declara com quem ele se confunde e como distinguir.
+ * O texto do `comoDistinguir` é para o modelo (Porta A); o que a Porta B
+ * consegue usar de forma determinística é o PAR: se a gaveta A foi roteada e A
+ * declara que se confunde com B, e B também casou alguma coisa da pergunta,
+ * então B recebe este bônus.
+ *
+ * O caso é o do peitoral, e ele está escrito no lote 1 com todas as letras:
+ * `peito` declara que *"QUALQUER sintoma no peitoral vai para dor, mesmo
+ * mencionando a palavra peito"*. Medido: `fisgada de 3/10 no peitoral na
+ * terceira série de supino pausado, continuo?` põe `peito` em 2,60 e `dor` em
+ * 0,79 — abaixo da fração do melhor. Com o bônus, `dor` sobe e a gaveta que
+ * carrega o limiar de 2/10 abre.
+ *
+ * Duas condições, e as duas importam: quem dá o aviso precisa ter sido ROTEADO
+ * (senão 74 tópicos espirram bônus uns nos outros), e quem recebe precisa ter
+ * casado alguma coisa sozinho (o aviso levanta um candidato, não inventa um).
+ */
+export const PESO_CONFUSAO = 0.4;
+
+/**
+ * ── QUEM TEM DIREITO A CARREGAR A PERGUNTA SOZINHO ──────────────────────────
+ *
+ * O piso do score é o MAIOR peso individual, e só destes canais. A ideia é a
+ * mesma de 10/08 — "você nomeou esta gaveta" não pode ser diluído por a pergunta
+ * ter outras palavras —, e a lista cresceu junto com os canais:
+ *
+ *   · `nome do tópico` e `VOCABULARIO.md` — quem digitou o nome da gaveta;
+ *   · `glossário (frase inteira)` — quem escreveu `categoria de peso` inteiro já
+ *     desambiguou sozinho;
+ *   · `glossário (frase espalhada)` — as DUAS palavras do termo, dentro de uma
+ *     janela de cinco. É o canal que o P11 exige: sem o piso, `deload` fica em
+ *     0,63 para *de quantas em quantas semanas eu preciso pegar leve* e a
+ *     pergunta não mapeia para gaveta nenhuma;
+ *   · `glossário (termo)` — a palavra É um termo de entrada do tópico.
+ *
+ * E fora dela ficam os dois canais fracos: `corpus` (coincidência de palavra não
+ * é assunto) e **`glossário (dentro de frase)`** — uma palavra rara arrancada de
+ * dentro de um termo maior, como `capital` dentro de um termo de `bracos`.
+ *
+ * ── O QUE ESSA EXCLUSÃO VALE HOJE, MEDIDO E SEM ADJETIVO ────────────────────
+ *
+ * Ela nasceu obrigatória: na primeira versão desta camada, quando o glossário
+ * era o ÚNICO canal, `capital` dava 0,50 sozinha e as duas populações de
+ * calibração se cruzavam (menor de dentro 0,40 contra maior de fora 0,50) — não
+ * existia piso que separasse. Depois que o corpus voltou como canal amortecido,
+ * a conta mudou: com o canal fraco DENTRO do piso, o maior score da população de
+ * fora vai de 0,47 para 0,50, contra um piso de 0,65 e um menor-de-dentro de
+ * 0,92. Ou seja: **hoje a exclusão compra 0,03 de margem e nenhum canário
+ * nomeado depende dela.** Está escrito assim, com o número, em vez de continuar
+ * repetindo a justificativa de quando ela era decisiva — documento e código
+ * divergirem em silêncio é o modo de falha nº 3 desta casa, e a versão morta de
+ * uma justificativa é uma divergência como qualquer outra.
+ */
+export const CANAIS_AUTORITATIVOS = new Set([
+  'nome do tópico', 'VOCABULARIO.md', 'glossário (frase inteira)',
+  'glossário (frase espalhada)', 'glossário (termo)',
+]);
 
 /** Quantos tópicos, no máximo, uma pergunta resolve. Cinco e não três porque a
  *  etiqueta é multivalorada: *"quantas séries por músculo por semana"* toca
@@ -380,13 +493,34 @@ const partesDoNome = (t) => t.split('-').filter((x) => x.length > 2).map(raiz);
  * *supinar seis dias por semana* no topo de uma pergunta sobre sono.
  */
 export function rotear(perfis, pergunta, {
-  topicos, vocabulario = [], piso = PISO_ROTA, max = MAX_TOPICOS, fracao = FRACAO_DO_MELHOR,
+  topicos, glossario = null, vocabulario = [], piso = PISO_ROTA, max = MAX_TOPICOS,
+  fracao = FRACAO_DO_MELHOR,
 } = {}) {
+  /**
+   * O GLOSSÁRIO É OBRIGATÓRIO, e o erro é duro de propósito.
+   *
+   * Ele é o canal principal desde 11/08/2026. Se ele fosse opcional com default
+   * vazio, apagar a linha que o carrega em qualquer chamador faria a camada
+   * voltar em silêncio ao roteador léxico de 10/08 — que é o defeito que esta
+   * onda existe para consertar — e o `check:kb` continuaria verde nos casos que
+   * o corpus ainda resolve sozinho. Falha barulhenta, não degradação muda.
+   */
+  if (!glossario || !glossario.porPalavra) {
+    throw new Error(
+      'rotear() sem glossário: o vocabulário de entrada (research/kb/GLOSSARIO-TOPICOS.json) é o '
+        + 'canal principal do roteamento, não um enfeite. Carregue-o com carregarGlossario/indexarGlossario.',
+    );
+  }
   const W = termosDaPergunta(pergunta);
   const q = normalizar(pergunta);
 
   const conhecidos = [...W].filter((t) => (perfis.dfGlobal.get(t) ?? 0) > 0);
   const desconhecidos = [...W].filter((t) => (perfis.dfGlobal.get(t) ?? 0) === 0);
+
+  // O glossário casa a pergunta inteira de uma vez — ele é indexado por termo, e
+  // varrer 74 tópicos × 1.988 termos por palavra seria a mesma conta feita 74
+  // vezes.
+  const doGlossario = casarGlossario(glossario, pergunta, W);
 
   const linhas = [];
   for (const topico of topicos) {
@@ -394,12 +528,33 @@ export function rotear(perfis, pergunta, {
     if (!p) continue;
     const porQue = [];
     let score = 0;
+
+    // ── 1. O GLOSSÁRIO DE ENTRADA, o canal principal ─────────────────────────
+    const g = doGlossario.get(topico);
+    const cobertas = new Set();
+    if (g) {
+      score += g.peso;
+      for (const x of g.porQue) porQue.push(x);
+      for (const w of g.cobriu) cobertas.add(w);
+    }
+
+    // ── 2. O CORPUS, amortecido pelo idf do glossário ────────────────────────
+    //
+    // `pesoDaPalavra` é a mesma função de 10/08 e continua medindo a mesma
+    // coisa. O que mudou é o que se faz com o número: ele é multiplicado por
+    // `PESO_CORPUS` e pelo idf da palavra NO GLOSSÁRIO, que é quanto aquela
+    // palavra discrimina no espaço em que a pergunta é escrita.
     for (const t of W) {
       const m = pesoDaPalavra(perfis, topico, t);
       if (m.peso <= 0) continue;
-      score += m.peso;
+      const amortecimento = idfDoGlossario(glossario, t);
+      const peso = PESO_CORPUS * m.peso * amortecimento;
+      if (peso <= 0) continue;
+      score += peso;
       porQue.push({
-        termo: t, comoNaBase: m.termo, peso: m.peso, dentro: m.dentro, deQuantas: p.n, naBase: m.naBase, canal: 'corpus',
+        palavraDaPergunta: t,
+        termo: t, comoNaBase: m.termo, peso, bruto: m.peso, amortecimento,
+        dentro: m.dentro, deQuantas: p.n, naBase: m.naBase, canal: 'corpus',
       });
     }
 
@@ -444,8 +599,9 @@ export function rotear(perfis, pergunta, {
      * pelo mesmo motivo: cobertura zerar um tópico seria trava estreita, e o
      * termo raro que casa sozinho às vezes É a resposta.
      */
-    const cobriu = porQue.filter((x) => x.canal === 'corpus').length;
-    const cobertura = conhecidos.length ? cobriu / conhecidos.length : 0;
+    for (const x of porQue) if (x.palavraDaPergunta) cobertas.add(x.palavraDaPergunta);
+    const cobriu = cobertas.size;
+    const cobertura = conhecidos.length ? Math.min(1, cobriu / conhecidos.length) : 0;
     /**
      * O piso é só o dos canais AUTORITATIVOS — o nome do tópico e o
      * `VOCABULARIO.md`. Um deles casar significa "você nomeou esta gaveta", e
@@ -459,7 +615,7 @@ export function rotear(perfis, pergunta, {
      * Coincidência de uma palavra não é assunto; nome de gaveta é.
      */
     const maiorSozinho = porQue
-      .filter((x) => x.canal !== 'corpus')
+      .filter((x) => CANAIS_AUTORITATIVOS.has(x.canal))
       .reduce((a, x) => Math.max(a, x.peso), 0);
     /**
      * ── E A COBERTURA NÃO PODE AFUNDAR UM SINAL FORTE ────────────────────────
@@ -485,7 +641,63 @@ export function rotear(perfis, pergunta, {
     }
   }
 
-  linhas.sort((a, b) => b.score - a.score || a.topico.localeCompare(b.topico));
+  const ordenar = () => linhas.sort((a, b) => b.score - a.score || a.topico.localeCompare(b.topico));
+  ordenar();
+
+  /**
+   * ── O AVISO DA GAVETA VIZINHA ────────────────────────────────────────────
+   *
+   * Segundo passe, e ele só existe porque o glossário traz um dado que nenhum
+   * outro canal tem: cada tópico declara com QUEM ele se confunde. `peito` diz,
+   * no lote 1, que *"QUALQUER sintoma no peitoral vai para dor"*. Quando `peito`
+   * é roteado e `dor` também casou alguma coisa da pergunta, `dor` sobe.
+   *
+   * As duas condições são o que impede isto de virar espirro: quem avisa tem de
+   * ter sido ROTEADO (não basta ter casado uma palavra), e quem recebe tem de
+   * ter casado alguma coisa sozinho — o aviso levanta um candidato que já
+   * existe, nunca inventa um. Dois avisos sobre a mesma gaveta somam, porque são
+   * dois donos diferentes dizendo a mesma coisa.
+   */
+  {
+    const provisorio = linhas[0]?.score ?? 0;
+    if (provisorio >= piso) {
+      const roteados = new Set(linhas.filter((l) => l.score >= provisorio * fracao).slice(0, max).map((l) => l.topico));
+      const porNome = new Map(linhas.map((l) => [l.topico, l]));
+      const avisos = new Map();
+      for (const a of roteados) {
+        for (const b of glossario.confusao?.get(a) ?? []) {
+          if (roteados.has(b) || !porNome.has(b)) continue;
+          if (!avisos.has(b)) avisos.set(b, []);
+          avisos.get(b).push(a);
+        }
+      }
+      for (const [b, quem] of avisos) {
+        const alvo = porNome.get(b);
+        /**
+         * O TETO DO BÔNUS É O PRÓPRIO SCORE, e ele é a diferença entre um aviso
+         * e um empurrão. Medido no P08 (*minha mão está descascando no terra,
+         * uso alguma coisa pra segurar a barra*): sem teto, `lesao` — que casou
+         * 0,38 de uma frase solta — recebia dois avisos, ia a 1,05 e ocupava a
+         * vaga de `strap`, que é a gaveta da resposta. O aviso pode no máximo
+         * DOBRAR quem já tinha evidência própria; ele nunca cria um candidato do
+         * nada, e por isso um tópico que casou 0,05 continua valendo 0,10.
+         *
+         * Medido nas três variantes contra os 18 canários da porta nova: sem
+         * teto, 8 canários devolvem algum id e o P08 perde o dele; com o teto
+         * frouxo (`max(PESO_CONFUSAO, score)`), 7; com este, 8 e NENHUM canário
+         * fica pior do que estava antes desta onda.
+         */
+        const bonus = Math.min(PESO_CONFUSAO * quem.length, alvo.score);
+        alvo.score += bonus;
+        alvo.porQue.push({
+          termo: `${quem.join(' e ')} declara(m): não confundir com ${b}`, peso: bonus, canal: 'naoConfundirCom',
+        });
+        alvo.porQue.sort((x, y) => y.peso - x.peso);
+      }
+      ordenar();
+    }
+  }
+
   const melhor = linhas[0]?.score ?? 0;
   /**
    * O PISO DECIDE SE A PERGUNTA MAPEIA; A FRAÇÃO DECIDE QUANTOS TÓPICOS.
@@ -706,12 +918,12 @@ export function porNomeDeParam(claims, idx, perfis, pergunta, { teto = TETO_PARA
  * roteados sobe**, e cruzar dois tópicos é conjunto, não mais uma palavra.
  */
 export function responder(claims, pergunta, {
-  topicos, vocabulario = [], idx = null, perfis = null,
+  topicos, glossario = null, vocabulario = [], idx = null, perfis = null,
   piso = PISO_ROTA, max = MAX_TOPICOS, teto = TETO_ROTEADO, porTopico = null, forcar = [],
 } = {}) {
   const indice = idx ?? indexar(claims);
   const perfil = perfis ?? perfilarTopicos(claims);
-  const bruto = rotear(perfil, pergunta, { topicos, vocabulario, piso, max });
+  const bruto = rotear(perfil, pergunta, { topicos, glossario, vocabulario, piso, max });
   /**
    * `forcar` é o `--topic` do usuário mandando no roteamento. Existe porque o
    * estreitamento que a saída sugere ("cruze com `profundidade`") precisa de um

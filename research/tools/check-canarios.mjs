@@ -86,7 +86,8 @@ import { recuperar, indexar, carregarVocabulario, prosaDaClaim } from './busca.m
 // Só FUNÇÕES. Nenhuma constante de `roteador.mjs` entra aqui: os números que
 // este arquivo cobra são dados do CANARIOS.json, e a razão está no bloco de
 // `tetoDeTela` mais abaixo.
-import { responder, perfilarTopicos } from './roteador.mjs';
+import { responder, perfilarTopicos, termosDaPergunta } from './roteador.mjs';
+import { carregarGlossario, indexarGlossario } from './glossario.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const arg = (f) => {
@@ -283,11 +284,12 @@ const idsVistos = new Set();
 // 6.912 claims por canário, e um checker lento é um checker que sai do `check:kb`.
 const INDICE = indexar(claims);
 const VOCAB = carregarVocabulario(ROOT).entradas;
+const GLOSSARIO = indexarGlossario(carregarGlossario(ROOT), termosDaPergunta);
 // O perfil de tópicos é caro e só a porta nova precisa dele. Montado uma vez, e
 // só se algum canário for medido por ela.
 const PRECISA_ROTEAR = (doc.canarios ?? []).some((c) => c.perguntaDoAtleta);
 const PERFIS = PRECISA_ROTEAR ? perfilarTopicos(claims) : null;
-const placarDaPorta = { total: 0, passa: 0, algumId: 0, semGaveta: 0 };
+const placarDaPorta = { total: 0, passa: 0, algumId: 0, semGaveta: 0, abriuOTopico: 0 };
 
 /**
  * O QUE O ATLETA VÊ, EM ORDEM. `responder` devolve três canais — as claims
@@ -563,7 +565,7 @@ for (const can of doc.canarios ?? []) {
         }
 
         const r = responder(claims, can.pergunta, {
-          topicos: TOPICS, vocabulario: VOCAB, idx: INDICE, perfis: PERFIS, teto,
+          topicos: TOPICS, glossario: GLOSSARIO, vocabulario: VOCAB, idx: INDICE, perfis: PERFIS, teto,
         });
         const rotas = r.rotas.map((x) => x.topico);
         const tela = telaDe(r).slice(0, teto).map((x) => x.id);
@@ -579,6 +581,7 @@ for (const can of doc.canarios ?? []) {
         if (veredito === 'passa') placarDaPorta.passa += 1;
         if (recuperados.length > 0) placarDaPorta.algumId += 1;
         if (gavetas.length === 0) placarDaPorta.semGaveta += 1;
+        if (abriuOTopico) placarDaPorta.abriuOTopico += 1;
 
         const mesmo = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
         const divergencias = [];
@@ -711,7 +714,9 @@ if (placarDaPorta.total > 0) {
     + `    ${placarDaPorta.passa} de ${placarDaPorta.total} devolvem TODOS os ids esperados dentro do teto de tela\n`
     + `    ${placarDaPorta.algumId} de ${placarDaPorta.total} devolvem ALGUM id esperado\n`
     + `    ${placarDaPorta.semGaveta} de ${placarDaPorta.total} não roteiam para gaveta NENHUMA que contenha a resposta`
-    + ' — nesses, o defeito é de roteamento e ordenar melhor não conserta',
+    + ' — nesses, o defeito é de roteamento e ordenar melhor não conserta\n'
+    + `    ${placarDaPorta.abriuOTopico} de ${placarDaPorta.total} roteiam para o tópico em que a resposta está `
+    + 'etiquetada (`topicoDaResposta`)',
   );
 }
 

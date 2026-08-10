@@ -1,0 +1,283 @@
+{
+  "topicos": [
+    {
+      "topico": "volume",
+      "glosa": "responde quanto treinar: número de séries/repetições por semana ou sessão, quando cortar ou empilhar mais volume, MEV/MRV, deload por corte de volume",
+      "entrada": [
+        "quantas series eu faco", "series por semana", "quanto volume", "volume de treino",
+        "junk volume", "series de lixo", "series de qualidade", "muito treino", "pouco treino",
+        "treino de mais", "overtraining", "cortar series", "aumentar series", "diminuir treino",
+        "carga total semanal", "quantidade de treino", "encher o treino", "bombar musculo",
+        "quanto e demais", "quanto e suficiente", "estimulo minimo", "mev", "mrv", "landmark de volume",
+        "semana de descarga", "deload", "reduzir carga da semana", "numero de series por musculo",
+        "sets por semana", "treino volumoso", "acumular volume", "sobrecarga de series",
+        "quantas series de acessorio", "quantas series de peito", "quantas series de perna"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "capacidade-trabalho",
+          "termoAmbiguo": "mrv, volume máximo recuperável",
+          "comoDistinguir": "volume é a prescrição em si (quantas séries fazer); capacidade-trabalho é o teto/habilidade de aguentar e recuperar dessa prescrição, geralmente ligado a condicionamento e não a um número de séries"
+        },
+        {
+          "topico": "series-reps",
+          "termoAmbiguo": "quantas séries e repetições",
+          "comoDistinguir": "volume trata do total semanal/por sessão (quantidade agregada); series-reps trata do esquema dentro de UM exercício (ex: 3x8, 5x5)"
+        },
+        {
+          "topico": "intensidade",
+          "termoAmbiguo": "quanto peso, quão pesado",
+          "comoDistinguir": "volume é sobre quantidade de trabalho; intensidade é sobre carga relativa (%1RM), coisas distintas mesmo quando aparecem juntas na mesma claim"
+        },
+        {
+          "topico": "frequencia",
+          "termoAmbiguo": "quantas vezes por semana",
+          "comoDistinguir": "frequência é sobre distribuir sessões ao longo da semana; volume é sobre a soma de séries, independente de quantos dias"
+        }
+      ]
+    },
+    {
+      "topico": "mentalidade",
+      "glosa": "responde sobre a cabeça do atleta: motivação, ansiedade de treino/prova, ego, burnout, disciplina, confiança, como lidar com dia ruim ou hype",
+      "entrada": [
+        "trava mental", "bloqueio mental", "nao confio na carga", "medo de peso pesado",
+        "nervoso pra puxar", "ansiedade antes da prova", "desanimado", "sem vontade de treinar",
+        "preguica de treinar", "burnout", "saturado mentalmente", "cabeca nao ajuda", "foco no treino",
+        "concentracao", "disciplina", "constancia", "consistencia", "vontade de desistir",
+        "ego levantando", "linha do ego", "medo de falhar", "medo da barra", "hype antes do levantamento",
+        "adrenalina", "gritar antes do levantamento", "visualizacao", "paciencia no treino",
+        "pressao psicologica", "confianca na barra", "trauma de treino", "medo depois de me machucar",
+        "cansaco mental", "desmotivado", "chateado com o treino", "frustrado com progresso",
+        "sindrome do impostor no treino", "comparacao com outros atletas"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "recuperacao",
+          "termoAmbiguo": "esgotado, exausto, sem energia",
+          "comoDistinguir": "mentalidade é sobre o estado psicológico/emocional; recuperacao é sobre o corpo (sono, fadiga física, nutrição) mesmo quando o atleta usa a mesma palavra 'exausto'"
+        },
+        {
+          "topico": "lesao",
+          "termoAmbiguo": "medo depois de me machucar",
+          "comoDistinguir": "se a pergunta busca o processo médico/físico de retorno, é lesao; se busca como lidar com o medo/ego ao retomar carga, é mentalidade"
+        },
+        {
+          "topico": "rpe",
+          "termoAmbiguo": "achei pesado, quase falhei",
+          "comoDistinguir": "quando a pergunta pede um número/escala para calibrar carga, é rpe; quando pede como lidar emocionalmente com a sensação de dificuldade, é mentalidade"
+        },
+        {
+          "topico": "competicao",
+          "termoAmbiguo": "nervoso antes da prova",
+          "comoDistinguir": "competicao cobre logística/regras/dia de prova; mentalidade cobre o estado emocional em si, incluindo fora do contexto de competição"
+        }
+      ]
+    },
+    {
+      "topico": "setup",
+      "glosa": "responde como se posicionar e criar tensão antes e durante o levantamento: pegada, stance, altura do suporte, brace, retração escapular, unrack",
+      "entrada": [
+        "como montar no banco", "arco no supino", "unrack", "destravar a barra", "retracao de escapula",
+        "posicao das maos na barra", "pegada larga", "pegada fechada", "abertura dos pes",
+        "afundar o peito", "onde colocar os pes", "leg drive", "descer o quadril no terra",
+        "posicao inicial do terra", "puxar a folga da barra", "meio do pe", "tripe do pe",
+        "onde a barra encosta nas costas", "altura do suporte", "rack height", "brace",
+        "respiracao antes da serie", "criar tensao no corpo", "setup do terra", "stance",
+        "abrir a pegada", "fechar a pegada", "cavar o arco", "colocar a barra nas costas",
+        "posicionar a barra no supino", "onde apoiar o peso do agacho", "largura do pe no agacho",
+        "quicar as escapulas no banco", "encaixar o ombro"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "tecnica",
+          "termoAmbiguo": "forma, execução do movimento",
+          "comoDistinguir": "setup é a posição estática antes/no início do levantamento (parado); tecnica é o que acontece durante a execução do movimento em si (a barra se movendo)"
+        },
+        {
+          "topico": "equipamento",
+          "termoAmbiguo": "cinto, faixa de pulso, joelheira",
+          "comoDistinguir": "setup é sobre a posição do corpo; equipamento é sobre o item de suporte usado, mesmo que ambos apareçam juntos numa mesma claim"
+        },
+        {
+          "topico": "barra-baixa",
+          "termoAmbiguo": "onde apoiar a barra nas costas",
+          "comoDistinguir": "se a pergunta busca a técnica geral de posicionar a barra (qualquer altura), é setup; se pergunta especificamente sobre a variação barra baixa como escolha de estilo, é barra-baixa"
+        }
+      ]
+    },
+    {
+      "topico": "rpe",
+      "glosa": "responde como usar a escala de esforço percebido (RPE/RIR) para escolher carga, calibrar séries e autorregular o treino por sensação",
+      "entrada": [
+        "rpe", "rir", "repeticoes na reserva", "quao perto da falha", "escala de esforco",
+        "quanto sobrou na serie", "nota do treino", "sensacao de carga", "pesou muito essa serie",
+        "achei facil essa carga", "achei pesado hoje", "quase falhei", "deixei reserva",
+        "esforco percebido", "autorregulacao por sensacao", "treinar por sensacao",
+        "reserva de repeticoes", "rate of perceived exertion", "nota de esforco",
+        "quanto faltou pra falhar", "carga por rpe", "como calibrar rpe", "rpe alto",
+        "rpe baixo", "chutar rpe", "amrap pra calibrar", "serie ate quase falhar"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "intensidade",
+          "termoAmbiguo": "quão pesado, carga alta",
+          "comoDistinguir": "intensidade é o percentual objetivo do 1RM planejado; rpe é a percepção subjetiva de esforço na hora, mesmo com carga fixa"
+        },
+        {
+          "topico": "volume",
+          "termoAmbiguo": "quando parar a série",
+          "comoDistinguir": "rpe decide quando parar UMA série pela sensação; volume decide quantas séries fazer no total"
+        },
+        {
+          "topico": "capacidade-trabalho",
+          "termoAmbiguo": "estou aguentando o treino",
+          "comoDistinguir": "rpe é o julgamento série a série; capacidade-trabalho é o teto de tolerância acumulada ao longo de semanas/blocos"
+        }
+      ]
+    },
+    {
+      "topico": "pernas",
+      "glosa": "responde sobre pernas na força: quadríceps, posteriores de coxa, glúteos e panturrilha — quem trabalha o quê no agacho/terra e como treinar perna como acessório",
+      "entrada": [
+        "quadriceps", "coxa", "perna fraca", "posterior de coxa", "hamstring", "panturrilha",
+        "cadeira extensora", "leg press", "perna grande", "hipertrofia de perna",
+        "trabalhar quadriceps", "trabalhar posterior", "extensao de joelho", "extensao de quadril",
+        "adutor", "gluteo", "cadeia posterior", "quadriceps dominante", "quad dominante",
+        "mesa flexora", "cadeira flexora", "afinador de perna", "perna atrasada",
+        "hack squat", "agachamento pra perna", "gluteo fraco", "biceps femoral"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "sumo",
+          "termoAmbiguo": "puxar com pernas mais abertas para trabalhar quadríceps",
+          "comoDistinguir": "sumo é a escolha do estilo de terra; pernas é sobre quais músculos são recrutados em qualquer exercício, independente da escolha de estilo"
+        },
+        {
+          "topico": "barra-alta",
+          "termoAmbiguo": "agacho que mais pega quadríceps",
+          "comoDistinguir": "barra-alta é a variação de agacho específica; pernas cobre a discussão do músculo em qualquer exercício, incluindo barra baixa, leg press e cadeira extensora"
+        },
+        {
+          "topico": "peso-corporal",
+          "termoAmbiguo": "peso na perna",
+          "comoDistinguir": "peso-corporal se refere à massa corporal do atleta; pernas se refere ao membro/grupo muscular, mesmo quando a claim menciona peso de carga sobre a perna"
+        }
+      ]
+    },
+    {
+      "topico": "barra-alta",
+      "glosa": "responde sobre o agachamento barra alta (high bar) especificamente: técnica, quando usar como acessório do powerlifter, diferenças mecânicas do barra baixa",
+      "entrada": [
+        "high bar", "agacho olimpico", "agachamento estilo halterofilismo", "barra alta",
+        "squat de tronco ereto", "agacho mais ereto", "tempo squat barra alta",
+        "agacho para hipertrofia de quadriceps", "variacao de agacho pra quad",
+        "pausa squat barra alta", "agachamento com barra mais alta nas costas",
+        "high bar squat", "agacho vertical", "squat com tronco reto"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "barra-baixa",
+          "termoAmbiguo": "agacho mais inclinado, low bar",
+          "comoDistinguir": "são estilos opostos: barra-alta é posição alta/tronco ereto, barra-baixa é posição baixa/tronco inclinado; a pergunta define qual dos dois quer saber"
+        },
+        {
+          "topico": "selecao-exercicio",
+          "termoAmbiguo": "agacho estilo halterofilismo, front squat",
+          "comoDistinguir": "front squat é um exercício diferente (barra na frente); só é barra-alta quando a barra está nas costas em posição alta — se o atleta descrever a barra na frente, é outra variação, fora deste tópico"
+        },
+        {
+          "topico": "hipertrofia",
+          "termoAmbiguo": "agacho pra crescer perna",
+          "comoDistinguir": "hipertrofia cobre o princípio geral de construção muscular; barra-alta é a resposta quando o atleta já pergunta especificamente sobre essa variação de agacho como ferramenta"
+        }
+      ]
+    },
+    {
+      "topico": "capacidade-trabalho",
+      "glosa": "responde sobre a capacidade de aguentar e recuperar de volume de treino ao longo do tempo: teto de tolerância, condicionamento, MRV, blocos dedicados a construir essa base",
+      "entrada": [
+        "capacidade de trabalho", "work capacity", "aguentar volume", "quanto aguento treinar",
+        "condicionamento fisico", "gpp", "preparo fisico geral", "folego pra treinar",
+        "canso rapido no treino", "bloco de capacidade de trabalho", "volume maximo recuperavel",
+        "mrv", "teto de recuperacao", "aumentar tolerancia ao treino", "construir base de treino",
+        "trabalhar resistencia pra treinar mais", "aguentar mais series", "cardio pra treino de forca",
+        "nao aguento o treino todo", "sessao muito cansativa", "capacidade de aguentar carga",
+        "base aerobica pro treino", "treino ficando pesado demais pro meu corpo"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "volume",
+          "termoAmbiguo": "mrv, quanto volume aguento",
+          "comoDistinguir": "capacidade-trabalho é o teto/capacidade em si (o balde); volume é a prescrição concreta de séries que você decide fazer dentro desse teto (a água)"
+        },
+        {
+          "topico": "recuperacao",
+          "termoAmbiguo": "não recupero do treino, sono, nutrição",
+          "comoDistinguir": "recuperacao cobre os mecanismos pontuais de recuperar entre sessões (sono, dieta, descanso); capacidade-trabalho é a habilidade treinável e cumulativa de tolerar carga ao longo de semanas/blocos"
+        },
+        {
+          "topico": "cardio",
+          "termoAmbiguo": "fazer cardio, condicionamento cardiovascular",
+          "comoDistinguir": "cardio é o método/prescrição específica (correr, bike); capacidade-trabalho é o resultado/conceito mais amplo que o cardio ajuda a construir"
+        }
+      ]
+    },
+    {
+      "topico": "convencional",
+      "glosa": "responde sobre o terra convencional (stance fechado) especificamente: técnica, comparação com sumô, quando e quanto treinar essa variação",
+      "entrada": [
+        "terra convencional", "deadlift convencional", "puxada convencional", "stance fechado no terra",
+        "terra pe junto", "conventional deadlift", "terra tradicional", "puxador convencional",
+        "quem puxa convencional", "terra estilo classico", "levantamento terra fechado",
+        "deadlift estilo convencional", "terra pernas juntas"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "sumo",
+          "termoAmbiguo": "terra, deadlift, qual estilo puxar",
+          "comoDistinguir": "são estilos opostos de terra; a pergunta sobre convencional busca especificamente o stance fechado, e sobre sumo busca o stance aberto"
+        },
+        {
+          "topico": "setup",
+          "termoAmbiguo": "posição inicial do terra",
+          "comoDistinguir": "setup cobre a posição de partida em qualquer estilo de terra; convencional só entra quando a pergunta já especifica ou compara o estilo convencional"
+        },
+        {
+          "topico": "costas",
+          "termoAmbiguo": "terra que mais carrega as costas",
+          "comoDistinguir": "costas é sobre o grupo muscular/região; convencional é a resposta quando o atleta já nomeou o estilo do exercício e quer saber sobre ele especificamente"
+        }
+      ]
+    },
+    {
+      "topico": "sapato",
+      "glosa": "responde sobre calçado no treino e na competição: regra IPF de sapato, salto vs flat, sapatilha de terra, o que é permitido usar",
+      "entrada": [
+        "tenis pra treinar", "sapatilha de terra", "sapato de peso", "sapato de agachamento",
+        "salto no agacho", "flat shoes", "chuteira serve", "tenis de corrida serve pra treinar",
+        "pode treinar descalco", "descalco no terra", "meia no terra", "deadlift slippers",
+        "sola do sapato", "sapato colado no chao", "cadarco amarrado", "vans pra treinar",
+        "converse pra treinar", "bota de levantamento", "tenis liso", "sapato com salto",
+        "weightlifting shoes", "tenis alto", "cano alto tenis", "sapato permitido na prova",
+        "regra de calcado", "pode competir de meia"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "equipamento",
+          "termoAmbiguo": "o que posso usar na prova",
+          "comoDistinguir": "equipamento cobre cinto, joelheira, faixa de pulso, singlet e outros itens; sapato é só sobre o calçado, mesmo aparecendo junto em regras gerais de equipamento"
+        },
+        {
+          "topico": "mobilidade",
+          "termoAmbiguo": "não desço direito, tornozelo travado",
+          "comoDistinguir": "mobilidade cobre a limitação física de amplitude articular; sapato é a solução/ferramenta específica (salto) usada para compensar isso, e é o tópico certo quando a pergunta já é sobre qual calçado usar"
+        },
+        {
+          "topico": "regras-ipf",
+          "termoAmbiguo": "o que é permitido na prova",
+          "comoDistinguir": "regras-ipf é o regulamento amplo (comandos, singlet, equipamento em geral); sapato é a fatia específica sobre calçado dentro desse regulamento"
+        }
+      ]
+    }
+  ]
+}

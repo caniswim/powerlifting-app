@@ -1,0 +1,469 @@
+{
+  "topicos": [
+    {
+      "topico": "progressao",
+      "glosa": "responde como e quando aumentar carga ou repetições treino a treino: regra de incremento, microcarga, double progression, ajuste do training max.",
+      "entrada": [
+        "quanto subo de peso",
+        "quando aumento a carga",
+        "salto de peso",
+        "microcarga",
+        "adicionar peso",
+        "subir 2,5kg",
+        "quando dou o próximo passo",
+        "progressão dupla",
+        "double progression",
+        "quando bater pr toda semana",
+        "regra de 5lb",
+        "step de carga",
+        "quanto aumentar por semana",
+        "linear progression",
+        "quando trocar de fase de peso",
+        "add weight",
+        "chega no teto e agora",
+        "esquema de subir carga",
+        "add reps antes de add peso",
+        "número mágico pra subir",
+        "quilos por semana",
+        "libras por semana",
+        "aumento gradual",
+        "training max sobe quanto",
+        "reajustar training max",
+        "curva de progresso",
+        "quantas semanas até subir",
+        "quando é hora de aumentar",
+        "incremento de carga",
+        "quanto de pr por mês é normal"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "estagnacao",
+          "termoAmbiguo": "travei / não sai do lugar",
+          "comoDistinguir": "progressao é a regra normal de subir carga; se a pergunta já diz que a regra parou de funcionar (travou, empacou, platô), vai para estagnacao."
+        },
+        {
+          "topico": "periodizacao",
+          "termoAmbiguo": "ciclo / fase / bloco",
+          "comoDistinguir": "periodizacao é a arquitetura de semanas e fases ao longo do macrociclo; progressao é o incremento de peso/reps dentro de uma fase específica."
+        },
+        {
+          "topico": "carga-de-treino",
+          "termoAmbiguo": "quanto pesou o treino essa semana",
+          "comoDistinguir": "carga-de-treino mede o stress index (unidades de estresse do programa); progressao é sobre subir o peso na barra, não sobre medir o quanto o treino pesou."
+        }
+      ],
+      "exemplosDePergunta": [
+        "quanto eu subo de peso no supino toda semana?",
+        "uso o esquema de somar 2,5kg ou é melhor fazer double progression?",
+        "meu training max deveria subir quanto depois desse ciclo?"
+      ]
+    },
+    {
+      "topico": "selecao-exercicio",
+      "glosa": "responde qual exercício ou variação escolher: trocar um movimento, variação de pegada/stance, ou qual acessório serve para uma fraqueza específica.",
+      "entrada": [
+        "qual exercício fazer",
+        "trocar de exercício",
+        "variação de supino",
+        "pegada larga ou fechada",
+        "sumô ou convencional",
+        "qual acessório",
+        "exercício substituto",
+        "trocar agachamento por",
+        "safety bar",
+        "romeno ou stiff leg",
+        "qual variação pro ponto fraco",
+        "exercício genérico",
+        "trocar movimento",
+        "bosu",
+        "single leg",
+        "qual pega é melhor pra mim",
+        "movimento de assistência",
+        "qual variação de terra",
+        "front squat ou back squat",
+        "o que substitui",
+        "pra que serve esse exercício",
+        "montar minha lista de exercícios",
+        "quais exercícios entram no treino",
+        "opção de exercício",
+        "leg press substitui agacho",
+        "posso trocar por outro movimento"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "tecnica",
+          "termoAmbiguo": "como fazer / postura / forma certa",
+          "comoDistinguir": "selecao-exercicio responde QUAL exercício fazer; tecnica responde COMO executar esse exercício (postura, ativação, erro de forma)."
+        },
+        {
+          "topico": "acessorios",
+          "termoAmbiguo": "acessório genérico",
+          "comoDistinguir": "acessorios cobre quantidade/série/volume de acessório em geral; selecao-exercicio cobre qual exercício específico escolher para um objetivo ou fraqueza."
+        },
+        {
+          "topico": "bracos",
+          "termoAmbiguo": "bíceps / tríceps / rosca",
+          "comoDistinguir": "pergunta específica sobre braço (bíceps ou tríceps) vai para bracos, mesmo que pareça uma escolha de exercício."
+        }
+      ],
+      "exemplosDePergunta": [
+        "supino fechado ou pegada normal pra mim que tenho histórico de lesão de peitoral?",
+        "qual variação de terra é melhor pros meus braços, romeno ou stiff leg?",
+        "posso trocar agachamento livre por safety bar squat?"
+      ]
+    },
+    {
+      "topico": "periodizacao",
+      "glosa": "responde como estruturar blocos e fases de treino ao longo de semanas ou meses: base, pico, macrociclo, mesociclo, ordem das fases.",
+      "entrada": [
+        "montar o macrociclo",
+        "fase de base",
+        "fase de pico",
+        "bloco de hipertrofia",
+        "quantas semanas tem o ciclo",
+        "peaking",
+        "quando fazer o peak",
+        "estrutura do programa a longo prazo",
+        "block periodization",
+        "periodização ondulatória",
+        "linear ou undulating",
+        "quanto tempo dura cada fase",
+        "mesociclo",
+        "plano de 12 semanas",
+        "como dividir o ano de treino",
+        "sequência de blocos",
+        "fase de acumulação",
+        "fase de realização",
+        "quando trocar de fase",
+        "programa pra competição em X semanas",
+        "montar meu ciclo de treino",
+        "quantos meses até a competição preparar"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "progressao",
+          "termoAmbiguo": "quando subo de peso",
+          "comoDistinguir": "periodizacao é a arquitetura de fases e semanas; progressao é a regra de incremento de carga dentro de uma fase."
+        },
+        {
+          "topico": "deload",
+          "termoAmbiguo": "semana de descanso / deload",
+          "comoDistinguir": "uma pergunta isolada sobre a semana de deload em si tem gaveta própria (deload); periodizacao é usada quando a pergunta é sobre a estrutura do ciclo inteiro."
+        },
+        {
+          "topico": "taper",
+          "termoAmbiguo": "últimas semanas antes da competição",
+          "comoDistinguir": "taper cobre especificamente o afunilamento nas últimas semanas antes do meet; periodizacao cobre a estrutura ampla do ciclo inteiro, incluindo meses antes disso."
+        }
+      ],
+      "exemplosDePergunta": [
+        "como monto um macrociclo de 16 semanas até a competição?",
+        "quando entra a fase de pico no meu programa?",
+        "periodização linear ou ondulatória é melhor pra mim?"
+      ]
+    },
+    {
+      "topico": "nutricao",
+      "glosa": "responde dieta geral fora de um objetivo de perda ou ganho de peso: proteína, calorias, macros, hidratação, timing de refeição, suplementação.",
+      "entrada": [
+        "quanto de proteína comer",
+        "quantas calorias",
+        "dieta pra powerlifting",
+        "macros",
+        "o que comer antes do treino",
+        "suplemento",
+        "creatina",
+        "quanto de carboidrato",
+        "dieta flexível",
+        "iifym",
+        "hidratação",
+        "quantas refeições por dia",
+        "jejum intermitente",
+        "gordura na dieta",
+        "fibra na dieta",
+        "comer limpo",
+        "meal prep",
+        "quanto proteína por quilo",
+        "shake proteico",
+        "o que comer no pré-treino",
+        "o que comer no pós-treino",
+        "quanto de água beber",
+        "vitamina",
+        "micronutriente"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "cutting",
+          "termoAmbiguo": "cortar / emagrecer / perder peso / déficit",
+          "comoDistinguir": "se a pergunta busca especificamente reduzir peso ou gordura, vai para cutting; nutricao é dieta de manutenção/performance sem alvo de perda."
+        },
+        {
+          "topico": "bulking",
+          "termoAmbiguo": "ganhar peso / bulk / superávit",
+          "comoDistinguir": "nutricao cobre princípios que valem sempre (proteína, hidratação, macros); bulking é especificamente sobre ganho de peso e superávit calórico."
+        },
+        {
+          "topico": "sono",
+          "termoAmbiguo": "dormir / recuperação fora do treino",
+          "comoDistinguir": "mesmo aparecendo junto de dieta em várias claims, pergunta puramente sobre sono vai para o tópico sono, não nutricao."
+        }
+      ],
+      "exemplosDePergunta": [
+        "quanto de proteína eu preciso comer por dia?",
+        "faz diferença tomar creatina?",
+        "quantas refeições por dia é o ideal?"
+      ]
+    },
+    {
+      "topico": "cutting",
+      "glosa": "responde como perder peso ou gordura mantendo força: tamanho do déficit calórico, velocidade do corte, como não perder músculo no processo.",
+      "entrada": [
+        "cortar peso",
+        "emagrecer mantendo força",
+        "déficit calórico",
+        "cutting agressivo",
+        "quanto posso cortar por semana",
+        "corte rápido ou lento",
+        "definição",
+        "secar",
+        "perder gordura sem perder músculo",
+        "quantos kg perder por semana",
+        "dieta de corte",
+        "cut",
+        "shred",
+        "ficar mais seco",
+        "reduzir % de gordura",
+        "baixar de categoria de peso",
+        "quanto tempo dura o corte",
+        "quilos por semana no cutting",
+        "manter proteína alta no corte",
+        "fome no cutting",
+        "diet break",
+        "bater categoria de peso",
+        "cortar pra 93kg"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "peso-corporal",
+          "termoAmbiguo": "peso corporal / categoria",
+          "comoDistinguir": "se a pergunta é sobre PERDER peso de forma proposital, é cutting; se é só sobre o peso corporal em si (flutuação, pesagem, categoria sem foco de perda), é peso-corporal."
+        },
+        {
+          "topico": "bulking",
+          "termoAmbiguo": "bulk / ganhar massa junto no mesmo ciclo",
+          "comoDistinguir": "cutting é perder, bulking é ganhar; não confundir mesmo quando a pergunta menciona os dois dentro do mesmo ciclo de bulk-cut."
+        },
+        {
+          "topico": "nutricao",
+          "termoAmbiguo": "dieta genérica sem foco de perda",
+          "comoDistinguir": "nutricao é o \"como comer bem\" de manutenção; cutting é o objetivo específico de reduzir peso/gordura."
+        }
+      ],
+      "exemplosDePergunta": [
+        "quanto posso cortar de peso por semana sem perder força?",
+        "corte agressivo ou lento é melhor pra mim?",
+        "como evito perder músculo enquanto corto pra categoria?"
+      ]
+    },
+    {
+      "topico": "core",
+      "glosa": "responde travar o tronco na hora do levantamento: bracing, pressão intra-abdominal, respiração no setup, força de extensores espinhais — não é treino estético de abdômen.",
+      "entrada": [
+        "brace",
+        "travar o core",
+        "prender o ar",
+        "respiração antes do agacho",
+        "pressão intra-abdominal",
+        "valsalva",
+        "encher a barriga de ar",
+        "força de tronco",
+        "estabilidade de tronco",
+        "coluna cedendo",
+        "arredondar as costas",
+        "perder a postura na descida",
+        "curvar pra frente no agacho",
+        "extensores da coluna",
+        "espessura de tronco",
+        "como fazer bracing",
+        "respirar 360 graus",
+        "prender a respiração no levantamento",
+        "abdômen contra o cinto",
+        "estabilizar a lombar",
+        "trava de tronco",
+        "encher o diafragma"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "cinto",
+          "termoAmbiguo": "cinto / apertar o cinto",
+          "comoDistinguir": "pergunta sobre o EQUIPAMENTO cinto (ajuste, aperto, uso) vai para cinto; pergunta sobre a técnica de travar/respirar (com ou sem cinto) é core."
+        },
+        {
+          "topico": "dor",
+          "termoAmbiguo": "dor nas costas / lombar dói",
+          "comoDistinguir": "se a pergunta é sobre um SINTOMA (dor, lesão), vai para dor ou lesao; se é sobre a técnica de estabilização do tronco sem dor envolvida, é core."
+        },
+        {
+          "topico": "hipertrofia",
+          "termoAmbiguo": "abdômen / tanquinho / treinar abdômen",
+          "comoDistinguir": "core aqui é bracing mecânico para levantar mais seguro; treinar abdômen por estética/hipertrofia cai em hipertrofia ou acessorios."
+        }
+      ],
+      "exemplosDePergunta": [
+        "como faço o brace certo antes de agachar?",
+        "devo prender a respiração no levantamento?",
+        "minhas costas arredondam no fundo do agacho, é falta de core?"
+      ]
+    },
+    {
+      "topico": "bracos",
+      "glosa": "responde treino de braço: bíceps, tríceps, antebraço — acessório, volume, variação de exercício e papel deles no supino.",
+      "entrada": [
+        "treino de bíceps",
+        "treino de tríceps",
+        "rosca",
+        "rosca direta",
+        "tríceps na polia",
+        "extensão de tríceps",
+        "supino fechado",
+        "pegada fechada",
+        "antebraço",
+        "braquial",
+        "pump de braço",
+        "hipertrofia de braço",
+        "braço fraco",
+        "lockout de tríceps",
+        "curl",
+        "tricep pushdown",
+        "trabalho de antebraço",
+        "braço grande",
+        "isolamento de braço",
+        "quanto treinar bíceps",
+        "aumentar braço",
+        "rosca martelo",
+        "tríceps francês"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "lesao",
+          "termoAmbiguo": "cotovelo dói / tendinite de cotovelo",
+          "comoDistinguir": "sintoma de dor/lesão no braço vai para dor ou lesao mesmo citando bíceps/tríceps; bracos é sobre programar o treino do músculo, não sobre lesão."
+        },
+        {
+          "topico": "supino",
+          "termoAmbiguo": "tríceps ajuda o lockout / força de tríceps no supino",
+          "comoDistinguir": "se o foco é a mecânica do levantamento de competição (supino), pode ficar em supino; se o foco é o treino/isolamento do braço em si, é bracos."
+        },
+        {
+          "topico": "acessorios",
+          "termoAmbiguo": "acessório genérico",
+          "comoDistinguir": "pergunta específica sobre bíceps ou tríceps vai para bracos mesmo sendo tecnicamente um tipo de acessório; acessorios cobre outros grupos musculares também."
+        }
+      ],
+      "exemplosDePergunta": [
+        "quantas séries de bíceps por semana pra crescer o braço?",
+        "tríceps ajuda no lockout do supino?",
+        "vale a pena fazer rosca depois do treino de peito?"
+      ]
+    },
+    {
+      "topico": "estagnacao",
+      "glosa": "responde o que fazer quando o levantamento travou ou platôu: reduzir carga, trocar protocolo, quando é hora de mudar de programa.",
+      "entrada": [
+        "travei",
+        "estagnado",
+        "bati no teto",
+        "platô",
+        "não sai do lugar",
+        "empacou",
+        "parei de progredir",
+        "não bate pr há meses",
+        "regride",
+        "recuo de carga",
+        "resetar o peso",
+        "voltar 10%",
+        "quando trocar de programa",
+        "quando desistir do programa",
+        "levantamento não sobe mais",
+        "estou emperrado",
+        "peguei um plateau",
+        "estagnação de força",
+        "não consigo passar desse peso",
+        "força parou",
+        "sumiu o progresso"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "progressao",
+          "termoAmbiguo": "quanto aumento de peso normalmente",
+          "comoDistinguir": "progressao é a regra normal de subir carga; estagnacao é a resposta específica quando essa regra já parou de funcionar."
+        },
+        {
+          "topico": "fadiga",
+          "termoAmbiguo": "cansado / sem energia / overtraining",
+          "comoDistinguir": "se a causa apontada é cansaço/recuperação ruim, cai em fadiga ou recuperacao; estagnacao é sobre o platô de desempenho e a ação corretiva na carga."
+        },
+        {
+          "topico": "selecao-exercicio",
+          "termoAmbiguo": "trocar de exercício por causa do platô",
+          "comoDistinguir": "se a pergunta pede QUAL exercício trocar, é selecao-exercicio; se pede a regra geral de quando/quanto reduzir carga após travar, é estagnacao."
+        }
+      ],
+      "exemplosDePergunta": [
+        "travei no supino há 3 semanas, o que eu faço?",
+        "bati num platô no agacho, reduzo a carga?",
+        "quando é hora de trocar de programa por estagnação?"
+      ]
+    },
+    {
+      "topico": "carga-de-treino",
+      "glosa": "responde o conceito de stress index (Tuchscherer): como quantificar e comparar o quanto um treino ou programa pesou, em unidades de estresse equivalentes a séries duras.",
+      "entrada": [
+        "stress index",
+        "índice de estresse",
+        "unidade de estresse",
+        "quanto pesou o treino",
+        "quantificar o volume duro",
+        "séries duras",
+        "hard sets",
+        "comparar carga entre exercícios diferentes",
+        "carga de treino alta demais",
+        "quanto estresse essa semana",
+        "medir intensidade do programa",
+        "tuchscherer",
+        "reactive training systems",
+        "rts",
+        "banda de estresse",
+        "quantas unidades de estresse",
+        "training stress",
+        "quanto o programa exige",
+        "carga acumulada da semana",
+        "peso do treino em número",
+        "escala de esforço do programa",
+        "medir o volume real do treino"
+      ],
+      "naoConfundirCom": [
+        {
+          "topico": "progressao",
+          "termoAmbiguo": "carga no sentido de peso na barra",
+          "comoDistinguir": "\"carga\" como peso levantado em kg/lb não é carga-de-treino; carga-de-treino é o conceito específico de stress index/unidades de estresse do Tuchscherer."
+        },
+        {
+          "topico": "volume",
+          "termoAmbiguo": "volume de treino genérico",
+          "comoDistinguir": "volume cobre séries x repetições de forma direta; carga-de-treino é a métrica combinada (stress index) que pondera volume e intensidade num único número."
+        },
+        {
+          "topico": "recuperacao",
+          "termoAmbiguo": "quanto treino aguento / overtraining",
+          "comoDistinguir": "pergunta sobre capacidade e recuperação pessoal vai para fadiga ou recuperacao; carga-de-treino é sobre a ferramenta de medição do programa, não sobre a reação do corpo."
+        }
+      ],
+      "exemplosDePergunta": [
+        "o que é esse tal de stress index?",
+        "como eu comparo o quanto pesou essa semana de treino contra a outra?",
+        "quantas unidades de estresse é considerado muito volume?"
+      ]
+    }
+  ]
+}

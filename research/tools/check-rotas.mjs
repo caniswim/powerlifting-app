@@ -74,7 +74,8 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { carregarTopicos, carregarClaims } from './kb.mjs';
 import { indexar, carregarVocabulario, recuperar } from './busca.mjs';
-import { responder, perfilarTopicos, rotasValidas } from './roteador.mjs';
+import { responder, perfilarTopicos, rotasValidas, termosDaPergunta } from './roteador.mjs';
+import { carregarGlossario, indexarGlossario } from './glossario.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const arg = (f) => {
@@ -124,6 +125,7 @@ if (!Number.isInteger(TETO_DO_ARQUIVO)) {
 
 const TOPICOS = carregarTopicos(ROOT);
 const VOCAB = carregarVocabulario(ROOT).entradas;
+const GLOSSARIO = indexarGlossario(carregarGlossario(ROOT), termosDaPergunta);
 // Índice e perfil montados UMA vez. `responder` os refaria por caso, e um
 // checker lento é um checker que sai do `check:kb`.
 const INDICE = indexar(claims);
@@ -137,7 +139,7 @@ const MOTIVOS = new Set(['fora-de-dominio', 'sem-assunto']);
  * motivo: já aconteceu aqui.
  */
 const CAMPOS = new Set([
-  'id', 'familia', 'pergunta', 'porque', 'topicos', 'sustenta', 'proibidos',
+  'id', 'familia', 'pergunta', 'porque', 'topicos', 'topicosProibidos', 'sustenta', 'proibidos',
   'motivo', 'tetoDeTela', 'forcaTopico', 'nota', 'tambemPelaBuscaLivre',
   'viaPaginaAoLado',
 ]);
@@ -186,7 +188,10 @@ for (const caso of doc.casos ?? []) {
   // desta camada existir: alvo fechado é alvo conferível. Tópico com typo num
   // canário nunca casa, fica em zero para sempre, e zero é indistinguível de
   // "a camada quebrou".
-  const foraDaLista = rotasValidas([...(caso.topicos ?? []), ...(caso.forcaTopico ? [caso.forcaTopico] : [])], TOPICOS);
+  const foraDaLista = rotasValidas(
+    [...(caso.topicos ?? []), ...(caso.topicosProibidos ?? []), ...(caso.forcaTopico ? [caso.forcaTopico] : [])],
+    TOPICOS,
+  );
   if (foraDaLista.length > 0) {
     erros.push(`${onde}: tópico(s) ${foraDaLista.join(', ')} fora do vocabulário fechado do PROTOCOLO-EXTRACAO.md`);
     linha.ok = false;
@@ -204,6 +209,7 @@ for (const caso of doc.casos ?? []) {
 
   const r = responder(claims, caso.pergunta, {
     topicos: TOPICOS,
+    glossario: GLOSSARIO,
     vocabulario: VOCAB,
     idx: INDICE,
     perfis: PERFIS,
@@ -258,6 +264,34 @@ for (const caso of doc.casos ?? []) {
       `${onde}: roteou para [${roteados.join(', ')}] e NÃO para [${faltandoTopico.join(', ')}].\n`
         + `        A pergunta "${caso.pergunta}" é sobre ${faltandoTopico.join(' e ')}, e a gaveta certa\n`
         + '        não foi aberta. Conserte research/tools/roteador.mjs — não compre fonte nova.',
+    );
+  }
+
+  /**
+   * ── A GAVETA QUE NÃO PODE ABRIR (11/08/2026) ──────────────────────────────
+   *
+   * `topicos` cobra que a gaveta certa abra; `proibidos` cobra que um id de
+   * outro assunto não apareça. Faltava a coisa do meio, e é ela que o
+   * diagnóstico de 10/08 descreveu: a GAVETA ERRADA abrindo. `levantar peso já
+   * conta como exercício pro coração` roteava para `peso-corporal` — nenhum id
+   * proibido, nenhum tópico faltando, e a tela inteira errada.
+   *
+   * É também o único campo que consegue matar um afrouxamento: `topicos` e
+   * `sustenta` só ficam vermelhos quando a camada aperta demais. Foi assim que
+   * três mutações passaram verdes no ataque de 11/08 (o desempate do glossário
+   * ignorado, a janela do casamento espalhado em 99, e o bônus de
+   * `naoConfundirCom` em 2): as três só ABREM gaveta a mais.
+   */
+  const abriuProibido = (caso.topicosProibidos ?? []).filter((t) => roteados.includes(t));
+  if (abriuProibido.length > 0) {
+    linha.ok = false;
+    erros.push(
+      `${onde}: ABRIU GAVETA QUE NÃO PODE ABRIR — "${caso.pergunta}" roteou para `
+        + `${abriuProibido.join(', ')}.\n`
+        + `        Roteou para [${roteados.join(', ')}]. Uma gaveta a mais não é grátis: ela disputa as\n`
+        + `        ${teto} vagas da tela com a gaveta que tem a resposta, e sai com a mesma cara de\n`
+        + '        certeza. É o defeito que `peso-corporal` cometeu no P16 — sem id proibido nenhum,\n'
+        + '        sem tópico faltando, e a tela inteira errada.',
     );
   }
 
@@ -358,6 +392,7 @@ for (const caso of doc.casos ?? []) {
       : null,
     (caso.sustenta ?? []).length ? `${(caso.sustenta ?? []).length - faltandoId.length}/${(caso.sustenta ?? []).length} ids` : null,
     (caso.proibidos ?? []).length ? `${(caso.proibidos ?? []).length} proibido(s) fora` : null,
+    (caso.topicosProibidos ?? []).length ? `${(caso.topicosProibidos ?? []).length} gaveta(s) fechada(s)` : null,
   ].filter(Boolean).join('  ');
   linhas.push(linha);
 }
@@ -374,7 +409,7 @@ const cal = doc.calibracao;
 if (cal) {
   const scoreDe = (p) => {
     const r = responder(claims, p, {
-      topicos: TOPICOS, vocabulario: VOCAB, idx: INDICE, perfis: PERFIS,
+      topicos: TOPICOS, glossario: GLOSSARIO, vocabulario: VOCAB, idx: INDICE, perfis: PERFIS,
     });
     return { mapeou: r.rotas.length > 0, melhor: r.candidatos[0]?.score ?? 0, topo: r.candidatos[0]?.topico ?? '—' };
   };

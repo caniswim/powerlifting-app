@@ -32,6 +32,10 @@ import { dirname, join } from 'node:path';
 import { carregarClaims, carregarTopicos } from './kb.mjs';
 import { indexar, carregarVocabulario } from './busca.mjs';
 import {
+  carregarGlossario, indexarGlossario, casarGlossario, idfDoGlossario,
+  gavetasDaPalavra, catalogoDeTopicos, familiaNoGlossario,
+} from './glossario.mjs';
+import {
   termosDaPergunta, perfilarTopicos, familiaDoTermo, pesoDoTermo, pesoDaPalavra,
   rotasValidas, responder, conjuntoDoTopico, nomeiaOParam, assinaturaDoTopico,
 } from './roteador.mjs';
@@ -160,6 +164,7 @@ ok(
 const { claims } = carregarClaims(join(ROOT, 'research/extract'));
 const TOPICOS = carregarTopicos(ROOT);
 const VOCAB = carregarVocabulario(ROOT).entradas;
+const GLOSSARIO = indexarGlossario(carregarGlossario(ROOT), termosDaPergunta);
 const INDICE = indexar(claims);
 const PERFIS = perfilarTopicos(claims);
 
@@ -185,8 +190,100 @@ ok(
 );
 
 const perguntar = (pergunta, extra = {}) => responder(claims, pergunta, {
-  topicos: TOPICOS, vocabulario: VOCAB, idx: INDICE, perfis: PERFIS, ...extra,
+  topicos: TOPICOS, glossario: GLOSSARIO, vocabulario: VOCAB, idx: INDICE, perfis: PERFIS, ...extra,
 });
+
+// ═════════════════════════════════════════════════════════════════════════════
+// O GLOSSÁRIO DE ENTRADA — as peças, sobre o artefato de verdade
+//
+// Nenhum número esperado aqui vem de `glossario.mjs`: o que se afirma são
+// RELAÇÕES ("esta palavra discrimina mais que aquela") e FATOS sobre a base
+// ("`fisgada` não existe em claim nenhuma"), que é a coisa que se quer
+// verdadeira. Um teste que importasse `PESO_FRASE` para conferir `PESO_FRASE`
+// seria o modo de falha nº 4 outra vez.
+// ═════════════════════════════════════════════════════════════════════════════
+{
+  const GDOC = carregarGlossario(ROOT);
+  ok('o glossário cobre as 74 gavetas do vocabulário fechado',
+    GDOC.topicos.length === TOPICOS.size && GDOC.topicos.every((t) => TOPICOS.has(t.topico)),
+    `${GDOC.topicos.length} tópicos no glossário contra ${TOPICOS.size} na lista fechada`);
+  ok('e toda gaveta tem glosa — a glosa É a Porta A',
+    GDOC.topicos.every((t) => String(t.glosa ?? '').trim().length > 0));
+
+  // A PREMISSA DA ONDA INTEIRA, e ela é sobre a BASE, não sobre a ferramenta:
+  // o termo mais importante do glossário não existe no corpus. Se um dia
+  // existir, o canal do corpus passa a alcançá-lo e este teste avisa.
+  const temFisgada = claims.some((c) => /fisgada/i.test(`${c.claim ?? ''} ${c.verbatim ?? ''}`));
+  ok('PREMISSA: `fisgada` não aparece em NENHUMA das claims — por isso o corpus era cego para ela',
+    !temFisgada,
+    'se passou a aparecer, o roteamento léxico voltou a alcançar o caso do peitoral e este teste precisa ser reescrito');
+
+  const W = termosDaPergunta('senti uma fisgada no peitoral, continuo?');
+  const casou = casarGlossario(GLOSSARIO, 'senti uma fisgada no peitoral, continuo?', W);
+  ok('o glossário casa `fisgada` em `dor` e em `lesao` — as duas gavetas do sintoma',
+    casou.has('dor') && casou.has('lesao'),
+    `casou: ${[...casou.keys()].join(', ')}`);
+
+  // A raridade mudou de espaço, e é aqui que o bug do `peso` morre. A afirmação
+  // é uma DESIGUALDADE medida, não um número copiado.
+  ok('idf do glossário: `coracao` discrimina mais que `peso`, e `peso` mais que `treino`',
+    idfDoGlossario(GLOSSARIO, 'coracao') > idfDoGlossario(GLOSSARIO, 'peso')
+      && idfDoGlossario(GLOSSARIO, 'peso') > idfDoGlossario(GLOSSARIO, 'treino'),
+    `coracao=${idfDoGlossario(GLOSSARIO, 'coracao').toFixed(2)} `
+      + `peso=${idfDoGlossario(GLOSSARIO, 'peso').toFixed(2)} `
+      + `treino=${idfDoGlossario(GLOSSARIO, 'treino').toFixed(2)} `
+      + `(gavetas: ${gavetasDaPalavra(GLOSSARIO, 'coracao')}, ${gavetasDaPalavra(GLOSSARIO, 'peso')}, `
+      + `${gavetasDaPalavra(GLOSSARIO, 'treino')})`);
+
+  // O DESEMPATE MANDA, e ele manda na montagem do índice.
+  const c2 = casarGlossario(GLOSSARIO, 'vale a pena trocar pra pegada fechada no supino?',
+    termosDaPergunta('vale a pena trocar pra pegada fechada no supino?'));
+  const porQueBracos = (c2.get('bracos')?.porQue ?? []).map((x) => x.termo);
+  ok('o desempate tira `pegada fechada` de `bracos` — o par bracos×setup não co-etiqueta claim nenhuma',
+    !porQueBracos.some((t) => /pegada fechada/i.test(String(t))),
+    `bracos casou por: ${porQueBracos.join(' · ') || '(nada)'}`);
+
+  // A família de prefixo do glossário é a MESMA regra do roteador, e ela vive
+  // sem tocar o corpus — porque o corpus não sabe o que é `fisgada`.
+  ok('familiaNoGlossario atravessa a conjugação (`supinando`→`supino`, `agachando`→`agacho`)',
+    familiaNoGlossario(GLOSSARIO, 'supinando').includes('supino')
+      && familiaNoGlossario(GLOSSARIO, 'agachando').includes('agacho'),
+    `supinando → ${familiaNoGlossario(GLOSSARIO, 'supinando').join(', ')} | `
+      + `agachando → ${familiaNoGlossario(GLOSSARIO, 'agachando').join(', ')}`);
+  ok('e NÃO junta `power` com `powerlifting` nem `powerbuilding`',
+    !familiaNoGlossario(GLOSSARIO, 'power').some((t) => /power(lifting|building)/.test(t)),
+    `power → ${familiaNoGlossario(GLOSSARIO, 'power').join(', ')}`);
+  ok('e a palavra que JÁ é termo do glossário fica sozinha, sem arrastar vizinho de prefixo',
+    familiaNoGlossario(GLOSSARIO, 'fisgada').join(',') === 'fisgada',
+    `fisgada → ${familiaNoGlossario(GLOSSARIO, 'fisgada').join(', ')} — `
+      + 'sem este curto-circuito, `descanso` arrastaria `descarga` e dois canários do ROTAS.json ficam vermelhos');
+
+  // A PORTA A, que é a que vale em produção.
+  const cat = catalogoDeTopicos(GDOC, claims);
+  ok('a Porta A entrega as 74 gavetas com glosa e com o TAMANHO contado na base',
+    cat.length === 74 && cat.every((x) => x.glosa && Number.isInteger(x.claims))
+      && cat.find((x) => x.topico === 'agacho').claims > 900
+      && cat.find((x) => x.topico === 'carga-de-treino').claims < 50,
+    'sem o tamanho, escolher uma gaveta de 990 e uma de 13 parece a mesma decisão');
+}
+
+// ── O GLOSSÁRIO É OBRIGATÓRIO, E A FALHA É BARULHENTA ───────────────────────
+//
+// Se ele fosse opcional, apagar a linha que o carrega em qualquer chamador
+// devolveria a camada em silêncio ao roteador léxico de 10/08 — e o check:kb
+// continuaria verde em tudo que o corpus ainda resolve sozinho.
+{
+  let explodiu = false;
+  try {
+    responder(claims, 'quanto descansar entre as séries?', {
+      topicos: TOPICOS, vocabulario: VOCAB, idx: INDICE, perfis: PERFIS,
+    });
+  } catch (e) {
+    explodiu = /glossário/i.test(e.message);
+  }
+  ok('responder() SEM glossário explode em vez de rotear pior em silêncio', explodiu,
+    'degradação muda é como uma camada volta ao estado anterior sem ninguém notar');
+}
 
 // ── a fiação do ROTEAMENTO ───────────────────────────────────────────────────
 {
@@ -335,6 +432,31 @@ const perguntar = (pergunta, extra = {}) => responder(claims, pergunta, {
       ?? r.params.lista.find((y) => y.c.id === x.deQuem)?.c.src)
       && Math.abs(Number(x.c.id.split('-')[1]) - Number(x.deQuem.split('-')[1])) <= 2),
     'um "vizinho" de outro vídeo, ou a 5 ids, não é abrir a página ao lado');
+}
+
+// ── a fiação DOS DOIS CASOS DO DIAGNÓSTICO DE 10/08 ─────────────────────────
+//
+// Estes dois passam por `responder()` inteiro e afirmam a coisa que o
+// diagnóstico disse ser falsa. Os canários equivalentes moram no ROTAS.json
+// (T16 e T17) e cobram os ids; aqui se cobra a GAVETA, que é o que a onda
+// atacou, e o `porQue` que a justifica.
+{
+  const r = perguntar('fisgada de 3/10 no peitoral na terceira série de supino pausado, continuo?');
+  const rotas = r.rotas.map((x) => x.topico);
+  ok('fiação: a fisgada no peitoral ABRE `dor` — a gaveta que o roteador léxico nunca abria',
+    rotas.includes('dor'),
+    `rotas: ${rotas.join(', ')} — a palavra "fisgada" não existe em claim nenhuma, e é o glossário que a conhece`);
+  const porQueDor = r.rotas.find((x) => x.topico === 'dor')?.porQue ?? [];
+  ok('fiação: e a saída DIZ que quem abriu foi o glossário, com o termo',
+    porQueDor.some((x) => /glossário/.test(String(x.canal)) && /fisgada/i.test(String(x.termo))),
+    `porQue de dor: ${porQueDor.map((x) => `${x.termo}[${x.canal}]`).join(' · ')}`);
+}
+{
+  const r = perguntar('levantar peso já conta como exercício pro coração');
+  const rotas = r.rotas.map((x) => x.topico);
+  ok('fiação: `levantar peso ... pro coração` abre `cardio`, e não é mais o `peso-corporal` em 1º',
+    rotas.includes('cardio') && rotas[0] !== 'peso-corporal',
+    `rotas: ${rotas.join(', ')} — em 10/08 saía peso-corporal em 1º com 0,73 e cardio não saía`);
 }
 
 // ── a assinatura derivada, que é como se audita o perfil ─────────────────────

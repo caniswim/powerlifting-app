@@ -1,0 +1,226 @@
+{
+  "topicos": [
+    {
+      "topico": "supino",
+      "glosa": "responde tecnica, setup, prescricao, progressao e variacoes especificas do supino (banco), da retirada da barra ao lockout",
+      "entrada": [
+        "supino", "banco", "bench", "reto", "logar peito", "tocar o peito", "encostar no peito",
+        "travou no peito", "empacou no meio", "sticking point do supino", "pegada", "pegada fechada",
+        "pegada aberta", "pegada larga", "arco no supino", "arquear", "leg drive", "apoio dos pes",
+        "escapula", "retrair a escapula", "cotovelo aberto", "cotovelo flare", "descer a barra",
+        "comando do juiz no supino", "press", "rack", "destravar a barra", "unrack", "spoto press",
+        "board press", "floor press", "supino pegada fechada", "supino inclinado", "close grip",
+        "macaquinho no supino", "supino com pausa", "pause bench", "toque e sobe", "quicar a barra",
+        "quicando no peito", "tocar e voltar", "tríceps travando", "ombro no supino", "deltoide anterior"
+      ],
+      "naoConfundirCom": [
+        {"topico": "dor", "termoAmbiguo": "fisgada no peito", "comoDistinguir": "sensacao dolorosa aguda ou tweak durante/apos o supino vai para dor; se a pergunta e sobre tecnica, carga ou progressao sem mencionar dor, fica em supino"},
+        {"topico": "aquecimento", "termoAmbiguo": "aquecimento antes do supino, escada de cargas", "comoDistinguir": "como montar a subida de cargas ate a serie de trabalho e aquecimento; a serie de trabalho em si, pegada e tecnica do movimento e supino"},
+        {"topico": "ombros", "termoAmbiguo": "dor ou treino de ombro isolado, desenvolvimento militar", "comoDistinguir": "se a pergunta e sobre o ombro como grupo muscular ou exercicio proprio (desenvolvimento, elevacao lateral) vai para ombros; se e sobre o ombro dentro do movimento do supino (posicao, retracao) fica em supino"},
+        {"topico": "equipamento", "termoAmbiguo": "camiseta obrigatoria, singlet no supino, blocos para os pes", "comoDistinguir": "regras de vestimenta e material aprovado sao equipamento; a execucao do movimento em si e supino"},
+        {"topico": "competicao", "termoAmbiguo": "comando do juiz, pausa no peito em prova", "comoDistinguir": "regra e ritual do dia de prova (comandos, disciplina de juiz) e competicao; como treinar a pausa tecnicamente fica em supino"}
+      ],
+      "exemplosDePergunta": [
+        "por que meu supino trava sempre no mesmo ponto do meio pro cima?",
+        "vale a pena trocar pra pegada mais fechada no supino?",
+        "o que é leg drive e como uso ele no supino?"
+      ]
+    },
+    {
+      "topico": "competicao",
+      "glosa": "responde logistica e estrategia de dia de prova: selecao de tentativas, peaking, taper, regras da federacao, handler, primeira competicao",
+      "entrada": [
+        "prova", "campeonato", "meet", "dia de prova", "primeira prova", "estreia", "estrear",
+        "abertura", "segunda tentativa", "terceira tentativa", "escolher tentativa", "attempt selection",
+        "recorde", "homologar", "federacao", "ipf", "regras da federacao", "livro de regras", "arbitragem",
+        "luz vermelha", "luz branca", "dar branca", "levar vermelha", "bater o peso", "pesagem", "weigh in",
+        "credenciamento", "flight", "handler", "coach de dia de jogo", "nervosismo antes de competir",
+        "ansiedade de prova", "frio na barriga", "total", "dots", "coeficiente", "taper", "afunilamento",
+        "pico de forca", "peaking", "picar", "cortar treino antes da prova", "semana de prova",
+        "quanto tempo antes de uma prova parar de treinar pesado"
+      ],
+      "naoConfundirCom": [
+        {"topico": "autorregulacao", "termoAmbiguo": "escolher tentativa pelo feeling, rpe do aquecimento no dia de prova", "comoDistinguir": "ajuste fino baseado em sensacao/rpe no momento e autorregulacao; a logistica e estrategia geral de tentativas (quanto pular, quando ser conservador) e competicao"},
+        {"topico": "equipamento", "termoAmbiguo": "singlet, cinto aprovado, inspecao de equipamento", "comoDistinguir": "especificacao e legalidade do item em si e equipamento; o uso desse item dentro da rotina do dia de prova (quando calçar, ordem de vestir) e competicao"},
+        {"topico": "training-max", "termoAmbiguo": "calcular a abertura a partir do maximo de treino", "comoDistinguir": "o numero usado como base percentual do ciclo e training-max; a escolha real da tentativa no dia (abertura, segunda, terceira) e competicao"},
+        {"topico": "sono", "termoAmbiguo": "dormir mal na noite antes da prova", "comoDistinguir": "a causa (sono ruim) fica em sono; a pergunta sobre logistica de prova (horario do flight, como se preparar no dia) fica em competicao"}
+      ],
+      "exemplosDePergunta": [
+        "nunca competi, como escolho minha abertura no agacho?",
+        "quanto tempo antes da prova eu devo começar o taper?",
+        "o que é um handler e eu preciso de um na minha primeira prova?"
+      ]
+    },
+    {
+      "topico": "autorregulacao",
+      "glosa": "responde como ajustar carga, series ou intensidade no dia com base em rpe, sensacao, prontidao ou estar doente/cansado",
+      "entrada": [
+        "rpe", "rir", "repeticoes na reserva", "quanto ainda tinha", "percepcao de esforco",
+        "quao pesado sentiu", "escutar o corpo", "treinar doente", "treinar gripado", "resfriado",
+        "cansaço acumulado", "bateria baixa", "dia ruim de treino", "nao bateu o esperado",
+        "velocidade da barra", "bar speed", "perda de velocidade", "score de prontidao", "readiness",
+        "ajustar carga no dia", "cortar serie", "reduzir carga na hora", "subir peso alem do plano",
+        "quando parar a serie", "estagnou", "estagnacao", "plato", "nao progrediu", "deload reativo",
+        "sinal de alerta", "overreaching", "passar do ponto", "treinar mesmo cansado",
+        "adaptar o treino ao dia", "feeling do dia", "como saber se e rpe 8 ou 9"
+      ],
+      "naoConfundirCom": [
+        {"topico": "sono", "termoAmbiguo": "dormi pouco, o que fazer no treino de hoje", "comoDistinguir": "o fato de dormir mal e sono; a decisao pratica de reduzir carga ou series por causa disso e autorregulacao"},
+        {"topico": "dor", "termoAmbiguo": "treinar com dor leve, ajustar carga por causa de dor", "comoDistinguir": "se o gatilho do ajuste e dor/lesao especifica, prioriza dor; se e cansaço geral, rpe ou prontidao sem foco em dor, fica em autorregulacao"},
+        {"topico": "training-max", "termoAmbiguo": "reduzir o percentual do treino porque a semana esta ruim", "comoDistinguir": "ajuste pontual no dia com base em como esta se sentindo e autorregulacao; recalculo formal do numero base do ciclo (subir/baixar tm apos amrap) e training-max"},
+        {"topico": "descanso-entre-series", "termoAmbiguo": "descansar mais entre series porque esta cansado", "comoDistinguir": "a duracao do intervalo em si e descanso-entre-series; a decisao geral de baixar intensidade/volume por sensacao e autorregulacao"}
+      ],
+      "exemplosDePergunta": [
+        "acordei gripado, treino pesado hoje ou pulo o treino?",
+        "como sei se uma serie foi rpe 7 ou rpe 9?",
+        "toda semana bato menos peso que o planejado, o que eu ajusto?"
+      ]
+    },
+    {
+      "topico": "equipamento",
+      "glosa": "responde especificacao, regra ipf e uso pratico de cinto, joelheira, faixa, calcado, singlet e demais itens de powerlifting",
+      "entrada": [
+        "cinto", "cinto de couro", "cinto de velcro", "apertar o cinto", "furo do cinto",
+        "joelheira", "manguito de joelho", "knee sleeve", "faixa de joelho", "knee wrap",
+        "munhequeira", "faixa de punho", "wrist wrap", "strap", "alca de pulso", "tenis de agacho",
+        "sapatilha de levantamento", "chuteira de terra", "deadlift slipper", "sola dura",
+        "salto do tenis", "calçado de sola plana", "meia alta obrigatoria", "singlet", "macacao",
+        "camiseta por baixo do macacao", "giz", "magnesio", "talco", "resina", "cola na mao",
+        "fita nos polegares", "thumb tape", "anilha fracionaria", "microcarga", "microplacas",
+        "tipo de barra", "barra whip", "flexao da barra", "inspecao de equipamento", "gear check",
+        "lista aprovada ipf", "bone na plataforma", "roupa proibida em prova"
+      ],
+      "naoConfundirCom": [
+        {"topico": "supino", "termoAmbiguo": "camiseta obrigatoria no supino, apoio dos pes com bloco", "comoDistinguir": "a regra sobre o item (o que veste, quantos cm de bloco) e equipamento; a execucao tecnica do movimento e supino"},
+        {"topico": "competicao", "termoAmbiguo": "quando vestir o cinto e a joelheira no dia de prova", "comoDistinguir": "a especificacao/legalidade do item e equipamento; a sequencia e estrategia do dia de prova como um todo e competicao"},
+        {"topico": "aquecimento", "termoAmbiguo": "colocar o cinto e a joelheira aos poucos durante a subida de carga", "comoDistinguir": "quando e como incorporar o equipamento durante a escada de aquecimento pode ficar em aquecimento; a descricao do proprio item (medida, material, regra) fica em equipamento"},
+        {"topico": "descanso-entre-series", "termoAmbiguo": "faixa de repeticoes, faixa de carga", "comoDistinguir": "faixa aqui significa intervalo numerico de repeticoes ou percentuais, nao a faixa de joelho/punho; nao e sobre o item fisico e nao pertence a equipamento nem a descanso-entre-series"}
+      ],
+      "exemplosDePergunta": [
+        "posso usar joelheira e faixa de joelho juntas na prova?",
+        "que tenis usar pra agachar se eu tenho tornozelo duro?",
+        "qual a espessura maxima do cinto permitida pela ipf?"
+      ]
+    },
+    {
+      "topico": "dor",
+      "glosa": "responde o que fazer quando algo doi, incomoda, trava ou repuxa durante ou depois do treino, e como interpretar essa dor",
+      "entrada": [
+        "fisgada", "pontada", "repuxou", "repuxando", "travou", "deu uma agulhada", "agulhou",
+        "estalou", "estralou", "cracou", "ardencia", "ardendo", "queimando", "incomodo", "incomodou",
+        "dolorido", "doido de dor", "machucou", "machucado", "lesionei", "me lesionei",
+        "puxei um musculo", "estirei", "estiramento", "cãibra", "caibra", "camibra na hora",
+        "doms", "dor no dia seguinte", "dor tardia", "dor muscular pos treino", "continuo treinando com dor",
+        "treinar com dor", "dor de 3 em 10", "escala de dor", "medo de me machucar de novo",
+        "cinesiofobia", "trauma de lesao antiga", "tecido cicatrizado", "reexposicao gradual",
+        "voltar a treinar depois de lesao", "dor que nao passa", "dor cronica", "dor aguda"
+      ],
+      "naoConfundirCom": [
+        {"topico": "supino", "termoAmbiguo": "travou no peito, empacou no meio do movimento", "comoDistinguir": "travar por dor/sensacao anormal e dor; travar por falta de forca no sticking point tecnico e supino"},
+        {"topico": "autorregulacao", "termoAmbiguo": "cansaço, treinar mal, ajustar treino no dia", "comoDistinguir": "se o gatilho e uma sensacao especifica de dor/lesao no corpo, fica em dor; se e cansaço geral ou desempenho abaixo do esperado sem dor, fica em autorregulacao"},
+        {"topico": "aquecimento", "termoAmbiguo": "dolorido de mobilidade, quadriceps sensivel antes do treino", "comoDistinguir": "dor muscular residual de sessao anterior (doms) e dor; a rotina de aquecer e ativar antes do treino e aquecimento"},
+        {"topico": "equipamento", "termoAmbiguo": "cinto crava e dói na cintura", "comoDistinguir": "a causa mecanica do desconforto (ajuste do item) fica em equipamento; a sensacao de dor em si e como reagir a ela fica em dor"}
+      ],
+      "exemplosDePergunta": [
+        "senti uma fisgada no peito no meio da serie, paro o treino ou continuo?",
+        "é normal ficar dolorido dois dias depois do treino de perna?",
+        "tive lesão de peitoral, como sei se a dor de hoje é reincidencia ou só desconforto normal?"
+      ]
+    },
+    {
+      "topico": "aquecimento",
+      "glosa": "responde como montar a subida de cargas ate a serie de trabalho: quantos degraus, saltos de peso, quanto tempo, mobilidade previa",
+      "entrada": [
+        "aquecer", "esquentar", "aquecimento", "serie de aquecimento", "warm up", "escada de aquecimento",
+        "subida de carga", "rampa de aquecimento", "quantos degraus de aquecimento", "salto entre series",
+        "de quanto em quanto subo o peso", "quanto tempo aquecendo", "aquecimento especifico",
+        "aquecimento geral", "ativacao antes do treino", "mobilidade antes do treino", "soltar o corpo",
+        "esquentar o musculo", "primer", "serie preparatoria", "overwarm single", "passada de aquecimento",
+        "quantas series antes da serie de trabalho", "barra vazia quantas reps", "pular degrau de aquecimento",
+        "aquecimento curto", "aquecimento longo", "demorar pra aquecer", "aquecer rapido demais",
+        "chegar frio na serie pesada", "esfriar entre series"
+      ],
+      "naoConfundirCom": [
+        {"topico": "descanso-entre-series", "termoAmbiguo": "quanto tempo descansar entre os aquecimentos", "comoDistinguir": "a quantidade e o tamanho dos saltos de carga no aquecimento fica em aquecimento; a duracao do intervalo de tempo entre uma serie e outra fica em descanso-entre-series"},
+        {"topico": "supino", "termoAmbiguo": "aquecimento especifico de supino antes da serie de trabalho", "comoDistinguir": "a escada de cargas ate chegar na serie de trabalho e aquecimento; a execucao e prescricao da propria serie de trabalho e supino"},
+        {"topico": "equipamento", "termoAmbiguo": "colocar cinto e joelheira no meio do aquecimento", "comoDistinguir": "quando incorporar o equipamento durante a subida pode ficar em aquecimento; a descricao do item em si fica em equipamento"},
+        {"topico": "autorregulacao", "termoAmbiguo": "aquecimento pesado demais fatigou antes da serie de trabalho", "comoDistinguir": "o desenho do proprio aquecimento (quantos degraus, saltos) fica em aquecimento; a decisao de reduzir algo no dia por sensacao de fadiga fica em autorregulacao"}
+      ],
+      "exemplosDePergunta": [
+        "quantas series de aquecimento eu preciso antes do meu top set de agacho?",
+        "de quanto em quanto devo pular o peso no aquecimento do supino?",
+        "vale a pena descansar entre uma série de aquecimento e outra?"
+      ]
+    },
+    {
+      "topico": "sono",
+      "glosa": "responde quantidade, qualidade e higiene do sono, e como cafeina e horario de dormir afetam recuperacao e desempenho",
+      "entrada": [
+        "dormir", "dormir mal", "dormir pouco", "sono ruim", "insonia", "nao consigo dormir",
+        "poucas horas de sono", "quantas horas dormir", "horario de dormir", "consistencia de sono",
+        "higiene do sono", "sleep hygiene", "cortina blackout", "quarto escuro", "tampao de ouvido",
+        "ruido branco", "ruido marrom", "quarto frio pra dormir", "cafeina antes de dormir",
+        "cafe da tarde atrapalha o sono", "pre treino tarde da noite atrapalha o sono",
+        "quanto tempo antes de dormir parar de tomar cafeina", "acordar cedo pra trabalhar",
+        "dormir cedo", "virar a noite", "plantao noturno", "trabalho noturno atrapalha o treino",
+        "jetlag", "sesta", "cochilo", "qualidade do sono", "sono profundo", "sono rem"
+      ],
+      "naoConfundirCom": [
+        {"topico": "autorregulacao", "termoAmbiguo": "dormi pouco, ajusto o treino de hoje?", "comoDistinguir": "o efeito do sono ruim e a higiene de sono ficam em sono; a decisao de mudar carga ou series no treino por causa disso fica em autorregulacao"},
+        {"topico": "descanso-entre-series", "termoAmbiguo": "descanso", "comoDistinguir": "descanso aqui refere-se a dia de descanso ou noite de sono, nao ao intervalo dentro da sessao; intervalo entre series fica em descanso-entre-series"},
+        {"topico": "competicao", "termoAmbiguo": "dormir mal na noite antes da prova", "comoDistinguir": "o impacto do sono em si fica em sono; a logistica e estrategia do dia de prova ficam em competicao"}
+      ],
+      "exemplosDePergunta": [
+        "cafe as 16h atrapalha meu sono se eu durmo as 23h?",
+        "durmo so 5 horas por noite, isso trava meu ganho de força?",
+        "vale a pena tirar cochilo depois do treino pra recuperar melhor?"
+      ]
+    },
+    {
+      "topico": "training-max",
+      "glosa": "responde o conceito de training max, como ele difere do 1rm real, e como sobe ou desce dentro de ciclos percentuais tipo wendler ou nsuns",
+      "entrada": [
+        "training max", "tm", "maximo de treino", "base de calculo do treino", "percentual do maximo",
+        "percentual do tm", "qual training max usar", "quanto usar de tm", "90 por cento do maximo",
+        "ajustar o training max", "subir o tm", "baixar o tm", "recalibrar o training max",
+        "amrap", "serie aberta", "teste mensal de forca", "quanto sobe o tm depois do amrap",
+        "wendler", "531", "cinco tres um", "nsuns", "cube method", "programa baseado em percentual",
+        "diferenca entre training max e maximo real", "por que nao uso meu 1rm de verdade no calculo",
+        "training max conservador", "chutar o training max", "estimar o training max"
+      ],
+      "naoConfundirCom": [
+        {"topico": "competicao", "termoAmbiguo": "calcular a abertura da prova a partir do treino", "comoDistinguir": "o numero base usado nos percentuais do ciclo de treino e training-max; a escolha real das tentativas no dia de prova e competicao"},
+        {"topico": "autorregulacao", "termoAmbiguo": "reduzir o treino de hoje porque a semana esta dificil", "comoDistinguir": "recalculo formal do numero base apos um teste/amrap e training-max; ajuste pontual no dia por sensacao/rpe e autorregulacao"},
+        {"topico": "supino", "termoAmbiguo": "quanto peso usar no supino de hoje", "comoDistinguir": "se a duvida e sobre o numero base percentual do ciclo, fica em training-max; se e sobre tecnica ou execucao do proprio supino, fica em supino"}
+      ],
+      "exemplosDePergunta": [
+        "qual a diferença entre training max e meu máximo de verdade?",
+        "fiz o amrap e bati 3 reps a mais que o alvo, quanto meu tm sobe?",
+        "devo usar 90% do meu máximo real como training max?"
+      ]
+    },
+    {
+      "topico": "descanso-entre-series",
+      "glosa": "responde quanto tempo descansar entre uma serie e outra dentro da mesma sessao, e o efeito disso no desempenho e na densidade do treino",
+      "entrada": [
+        "descanso entre series", "intervalo entre series", "quanto tempo descansar", "tempo de descanso",
+        "cronometrar o descanso", "cronometro entre series", "descanso curto", "descanso longo",
+        "rest pause", "descanso de 3 minutos", "descanso de 5 minutos", "descanso de 10 minutos",
+        "quanto descansar pra hipertrofia", "quanto descansar pra forca", "descansar pouco",
+        "descansar demais", "series back to back", "sem descanso entre series", "densidade de treino",
+        "cortar o descanso", "diminuir o intervalo", "aumentar o intervalo", "ficar esfriando entre series",
+        "recreio entre series", "caminhar entre series", "sentar entre series"
+      ],
+      "naoConfundirCom": [
+        {"topico": "sono", "termoAmbiguo": "descanso, dia de descanso", "comoDistinguir": "descanso-entre-series e sempre dentro da mesma sessao de treino; dia de folga ou sono a noite pertencem a sono ou a deload, nao a este topico"},
+        {"topico": "aquecimento", "termoAmbiguo": "descanso entre as series de aquecimento", "comoDistinguir": "o tempo de intervalo em si, mesmo entre aquecimentos, fica em descanso-entre-series; quantos degraus e qual salto de carga usar no aquecimento fica em aquecimento"},
+        {"topico": "autorregulacao", "termoAmbiguo": "descansar mais porque estou cansado hoje", "comoDistinguir": "a duracao numerica do intervalo fica em descanso-entre-series; a decisao geral de ajustar o treino por sensacao de fadiga fica em autorregulacao"}
+      ],
+      "exemplosDePergunta": [
+        "quanto tempo eu descanso entre as séries de agacho pesado?",
+        "descansar menos entre séries ajuda a perder gordura mais rápido?",
+        "vale a pena cronometrar o descanso ao invés de ir no feeling?"
+      ]
+    }
+  ]
+}

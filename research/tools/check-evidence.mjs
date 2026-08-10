@@ -53,8 +53,23 @@
  * nível: deixou de ser a porta e virou a ORDENAÇÃO dentro do tópico roteado. Ver
  * `research/tools/roteador.mjs` e `research/kb/RECUPERACAO.md` §4.
  *
+ * ─────────────────────────────────────────────────────────────────────────────
+ * O QUE MUDOU EM 11/08/2026 — `--topicos`, e ela é a porta PRINCIPAL
+ *
+ * `--pergunta` é determinística e é a porta que o `check:kb` consegue medir,
+ * porque não há chave de API neste repositório. Mas quem consome esta base em
+ * produção é um agente de conversa, ou seja, um MODELO — e um modelo não precisa
+ * de heurística nenhuma para escolher uma gaveta: ele precisa VER as 74 com a
+ * glosa e o tamanho, e escolher. `--topicos` é essa lista, enxuta o bastante
+ * para caber num prompt, com o comando pronto ao lado de cada gaveta.
+ *
+ * As duas portas leem o MESMO artefato (`research/kb/GLOSSARIO-TOPICOS.json`).
+ * Se fossem dois, divergiriam em silêncio — modo de falha nº 3 desta casa.
+ *
  * Uso:
  *   node research/tools/check-evidence.mjs V014-03 V052-11 …
+ *   node research/tools/check-evidence.mjs --topicos            # as 74 gavetas
+ *   node research/tools/check-evidence.mjs --topicos --verbose  # com termos de entrada
  *   node research/tools/check-evidence.mjs --pergunta "quanto descansar entre as séries?"
  *   node research/tools/check-evidence.mjs --pergunta "…" --topic agacho   # gaveta forçada
  *   node research/tools/check-evidence.mjs --grep "training max"
@@ -74,8 +89,9 @@ import {
   PISO_POBRE, TETO_VIZINHANCA, DETALHE_VIZINHANCA,
 } from './busca.mjs';
 import {
-  responder, perfilarTopicos, assinaturaDoTopico, DETALHE_ROTEADO,
+  responder, perfilarTopicos, assinaturaDoTopico, termosDaPergunta, DETALHE_ROTEADO,
 } from './roteador.mjs';
+import { carregarGlossario, indexarGlossario, catalogoDeTopicos } from './glossario.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const EXTRACT = join(ROOT, 'research/extract');
@@ -120,6 +136,14 @@ const grepTermo = arg('--grep') ?? buscaTermo;
 const PISO = buscaTermo && !arg('--grep') ? Infinity : Number(arg('--piso') ?? PISO_POBRE);
 const VIZINHOS = Number(arg('--vizinhos') ?? TETO_VIZINHANCA);
 const vocabPedido = arg('--vocab');
+
+/**
+ * `--topicos` é a PORTA A: as 74 gavetas com a glosa de uma linha e o tamanho.
+ * Não roteia nada — mostra o alvo e deixa quem lê escolher. É a porta que vale
+ * em produção, porque quem lê é um modelo.
+ */
+const listarTopicos = process.argv.includes('--topicos');
+const VERBOSE_TOPICOS = process.argv.includes('--verbose');
 
 /**
  * `--genero` filtra pela propriedade do VÍDEO, não da claim, resolvendo `src`
@@ -234,6 +258,8 @@ if (ids.length > 0) {
 }
 
 const VOCAB = carregarVocabulario(ROOT);
+const GLOSSARIO_DOC = carregarGlossario(ROOT);
+const GLOSSARIO = indexarGlossario(GLOSSARIO_DOC, termosDaPergunta);
 
 // ── `--vocab <topico>`: o índice escrito à mão, mais o que o corpus mostra ────
 //
@@ -285,6 +311,7 @@ function imprimirRoteamento(texto, { comoComplemento = false } = {}) {
   }
   const r = responder(claims, texto, {
     topicos: TOPICOS,
+    glossario: GLOSSARIO,
     vocabulario: VOCAB.entradas,
     forcar: topico ? [topico] : [],
   });
@@ -397,6 +424,40 @@ function imprimirRoteamento(texto, { comoComplemento = false } = {}) {
  * Misturar as duas telas por padrão era refazer o defeito de 09/08 com outro
  * nome: o agente lê a primeira metade e decide.
  */
+if (listarTopicos) {
+  const TOPICOS = carregarTopicos(ROOT);
+  const catalogo = catalogoDeTopicos(GLOSSARIO_DOC, claims);
+  const foraDaLista = catalogo.map((c) => c.topico).filter((t) => !TOPICOS.has(t));
+  if (foraDaLista.length > 0) {
+    console.error(`✗ o glossário lista tópico fora do vocabulário fechado: ${foraDaLista.join(', ')}`);
+    process.exit(2);
+  }
+  const faltando = [...TOPICOS].filter((t) => !catalogo.some((c) => c.topico === t));
+  if (faltando.length > 0) {
+    console.error(`✗ o glossário não cobre ${faltando.length} dos 74 tópicos: ${faltando.join(', ')}`);
+    process.exit(2);
+  }
+  console.log(`\n${linhaGrossa}`);
+  console.log('  AS 74 GAVETAS DESTA BASE — escolha uma e abra');
+  console.log(`  ${claims.length} claims · glosas de research/kb/GLOSSARIO-TOPICOS.json`);
+  console.log(linhaGrossa);
+  const largura = Math.max(...catalogo.map((c) => c.topico.length));
+  for (const c of catalogo) {
+    console.log(`  ${c.topico.padEnd(largura)}  ${String(c.claims).padStart(4)}  ${c.glosa}`);
+    if (VERBOSE_TOPICOS) {
+      const e = GLOSSARIO_DOC.topicos.find((x) => x.topico === c.topico);
+      console.log(`  ${' '.repeat(largura)}        entrada: ${e.entrada.join(' · ')}`);
+      if (c.naoConfundirCom.length) {
+        console.log(`  ${' '.repeat(largura)}        não confundir com: ${c.naoConfundirCom.join(', ')}`);
+      }
+    }
+  }
+  console.log(`\n  a gaveta inteira ....: node research/tools/check-evidence.mjs --topic <nome> --limit 0`);
+  console.log('  ordenada por pergunta: node research/tools/check-evidence.mjs --pergunta "…" --topic <nome>');
+  console.log('  o porquê de cada nome: node research/tools/check-evidence.mjs --topicos --verbose\n');
+  process.exit(0);
+}
+
 if (perguntaTermo) {
   imprimirRoteamento(perguntaTermo);
   if (!grepTermo && !modo && !scope && !tier && !genero) process.exit(0);
@@ -617,9 +678,9 @@ if (filtrando) {
  */
 if (buscaTermo && !arg('--grep')) imprimirRoteamento(buscaTermo, { comoComplemento: true });
 
-if (ids.length === 0 && !filtrando && !perguntaTermo) {
-  console.error('nada a fazer: passe ids (V014-03), uma pergunta (--pergunta), uma busca'
-    + ' (--grep/--busca) ou um filtro (--topic/--modo/--scope/--tier/--genero),'
+if (ids.length === 0 && !filtrando && !perguntaTermo && !listarTopicos) {
+  console.error('nada a fazer: passe ids (V014-03), uma pergunta (--pergunta), a lista de gavetas'
+    + ' (--topicos), uma busca (--grep/--busca) ou um filtro (--topic/--modo/--scope/--tier/--genero),'
     + ' ou --vocab <topico>');
   process.exit(2);
 }

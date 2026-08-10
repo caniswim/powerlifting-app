@@ -1,0 +1,207 @@
+{
+  "topicos": [
+    {
+      "topico": "terra",
+      "glosa": "responde tudo sobre o levantamento terra em si: variação (sumo/convencional/rdl/romeno/déficit/block pull), regra de execução IPF, pegada, setup, frequência e programação específica de puxada",
+      "entrada": [
+        "puxada", "puxar", "terra", "deadlift", "levantamento terra", "tirar do chão",
+        "arrancar do chão", "sumo", "convencional", "stiff-legged deadlift", "romeno", "rdl",
+        "block pull", "deficit deadlift", "hex bar", "trap bar", "snatch grip",
+        "hinge de quadril", "dobradiça de quadril", "quadril pra trás", "travar o joelho",
+        "ombro atrás da barra", "pegada mista", "pegada gancho", "lockout do terra",
+        "saída do chão", "sticking point do terra", "terra estagnado", "terra fraco",
+        "costas arredondada puxando", "lombar cedendo no terra", "rack pull",
+        "puxar de frequência alta", "meia-cana obrigatória", "anular o terra"
+      ],
+      "naoConfundirCom": [
+        {"topico": "strap", "termoAmbiguo": "usar strap na puxada", "comoDistinguir": "se a pergunta é sobre a ferramenta em si (quando usar, como afeta pegada/rom) vai para strap; se é sobre a execução do levantamento (setup, variação, frequência) fica em terra"},
+        {"topico": "rom", "termoAmbiguo": "amplitude no terra / cortar rom", "comoDistinguir": "se o foco é o efeito da amplitude reduzida (hipertrofia, força, alavanca) é rom; se é sobre qual variação de terra escolher por causa da amplitude, é terra"},
+        {"topico": "saude", "termoAmbiguo": "dor lombar puxando terra", "comoDistinguir": "queixa de dor/sintoma vai para dor ou saude; pergunta sobre técnica de setup pra não sobrecarregar a lombar fica em terra"},
+        {"topico": "fadiga", "termoAmbiguo": "terra cansa muito", "comoDistinguir": "se a pergunta é sobre por que o terra é fatigante e como isso afeta o programa geral, é fadiga; se é sobre como executar/programar o próprio terra, é terra"}
+      ],
+      "exemplosDePergunta": [
+        "sumo ou convencional é melhor pra mim que tenho braço curto?",
+        "posso puxar terra 2x por semana sem quebrar a lombar?",
+        "o que anula uma tentativa de terra na IPF?"
+      ]
+    },
+    {
+      "topico": "fadiga",
+      "glosa": "responde por que e como o treino acumula cansaço/estresse sistêmico, e como isso deveria mudar volume, intensidade e frequência para não passar do ponto",
+      "entrada": [
+        "cansaço acumulado", "cansado", "exausto", "estafa", "moído", "destruído", "acabado",
+        "sem força nenhuma pra treinar", "bateria vazia", "sistema nervoso frito", "cns frito",
+        "overtraining", "passar do ponto", "estourado", "saturado de treino", "quebrado de treino",
+        "acumular fadiga", "mascarar a fadiga", "canseira", "capengando de cansado",
+        "morto de cansaço", "treino te derruba", "não recupera entre sessões", "estresse do treino",
+        "carga acumulada demais", "sinal de estar overtreinando", "overreaching"
+      ],
+      "naoConfundirCom": [
+        {"topico": "condicionamento", "termoAmbiguo": "sem gás / sem fôlego", "comoDistinguir": "falta de fôlego cardiorrespiratório durante o exercício é condicionamento; sensação geral de esgotamento entre sessões de treino é fadiga"},
+        {"topico": "saude", "termoAmbiguo": "cansaço, mal-estar", "comoDistinguir": "cansaço ligado a doença/gripe/exame de sangue é saude; cansaço ligado ao acúmulo do próprio treino é fadiga"},
+        {"topico": "taper", "termoAmbiguo": "liberar fadiga antes da prova", "comoDistinguir": "se a pergunta é sobre o mecanismo geral de acumular/dissipar fadiga é fadiga; se é especificamente sobre a janela final antes da competição é taper"},
+        {"topico": "hipertrofia", "termoAmbiguo": "treino de bomba deixa muito cansado", "comoDistinguir": "se o foco é o estímulo de crescimento é hipertrofia; se o foco é o custo de recuperação daquele estímulo é fadiga"}
+      ],
+      "exemplosDePergunta": [
+        "como sei que estou acumulando fadiga demais e preciso segurar o pé?",
+        "por que o terra cansa tanto mais que o supino no dia seguinte?",
+        "dá pra treinar pesado toda semana sem nunca dar uma segurada?"
+      ]
+    },
+    {
+      "topico": "hipertrofia",
+      "glosa": "responde como programar para crescer músculo especificamente: volume de isolamento/acessório, proximidade da falha, faixa de repetições, quando priorizar massa sobre força pura",
+      "entrada": [
+        "hipertrofia", "ganhar massa muscular", "crescer músculo", "engrossar", "bomba", "pump",
+        "congestão muscular", "queimação no músculo", "treino de isolamento", "acessório pra crescer",
+        "malhar pra estética", "fisiculturismo dentro do powerlifting", "treino tipo bodybuilder",
+        "volume pra hipertrofia", "repetição alta pra crescer", "série até a falha pra crescer",
+        "ficar maior", "massa magra", "definição muscular", "hipertrofiar", "treino de músculo",
+        "engordar músculo (não gordura)"
+      ],
+      "naoConfundirCom": [
+        {"topico": "bulking", "termoAmbiguo": "bulk, superávit calórico pra crescer", "comoDistinguir": "se a pergunta é sobre comer mais/ganhar peso é bulking (nutrição); se é sobre como treinar pra estimular crescimento é hipertrofia"},
+        {"topico": "peso-corporal", "termoAmbiguo": "engordar, ganhar peso", "comoDistinguir": "peso na balança de forma geral é peso-corporal; massa muscular especificamente é hipertrofia"},
+        {"topico": "rom", "termoAmbiguo": "amplitude completa ajuda a crescer", "comoDistinguir": "se pergunta pelo mecanismo da amplitude em si é rom; se pergunta como montar o treino de crescimento é hipertrofia"},
+        {"topico": "fadiga", "termoAmbiguo": "treino de hipertrofia cansa muito", "comoDistinguir": "custo de recuperação do estímulo é fadiga; desenho do estímulo de crescimento é hipertrofia"}
+      ],
+      "exemplosDePergunta": [
+        "quantas séries de isolamento por músculo faz sentido numa semana?",
+        "vale a pena treinar até a falha nos acessórios pra crescer mais rápido?",
+        "supino estagnou, será que preciso de mais massa antes de mais força?"
+      ]
+    },
+    {
+      "topico": "aprendizado-motor",
+      "glosa": "responde como a técnica e a habilidade de execução se desenvolvem com a prática: adaptação neural de iniciante, calibração de RPE/sensação de esforço, manutenção da habilidade quando o volume cai",
+      "entrada": [
+        "pegar o jeito do movimento", "travar o padrão de movimento", "coordenação motora",
+        "memória muscular", "automatizar o movimento", "ficar bom tecnicamente", "refinar a técnica",
+        "ganho de iniciante", "adaptação neural", "ganho neurológico", "aprender a sentir o peso",
+        "calibrar o RPE", "aprender como é a falha", "afiar a técnica", "manter a habilidade",
+        "perder o jeito", "ficar enferrujado tecnicamente", "destreinar a técnica",
+        "quanto tempo pra pegar o movimento", "prática de repetição pra fixar padrão",
+        "técnica ruim no início é normal?", "toques leves pra não perder o jeito"
+      ],
+      "naoConfundirCom": [
+        {"topico": "taper", "termoAmbiguo": "manter toques leves antes da prova", "comoDistinguir": "se a pergunta é sobre por que manter alguma exposição ao movimento durante a redução de carga pré-prova é taper; se é sobre o mecanismo de reter/perder a habilidade motora em si é aprendizado-motor"},
+        {"topico": "rom", "termoAmbiguo": "amplitude correta / técnica de descida", "comoDistinguir": "regra ou efeito físico da amplitude é rom; processo de aprender a executar aquele padrão é aprendizado-motor"},
+        {"topico": "fadiga", "termoAmbiguo": "cansado erra a técnica", "comoDistinguir": "se a pergunta é sobre a fadiga em si é fadiga; se é sobre como a técnica se degrada e se reaprende, é aprendizado-motor"}
+      ],
+      "exemplosDePergunta": [
+        "sou iniciante, é normal minha técnica ainda estar horrível?",
+        "quanto tempo leva pra eu conseguir sentir de verdade o que é RPE 8?",
+        "se eu reduzir muito o volume vou perder o jeito do movimento?"
+      ]
+    },
+    {
+      "topico": "condicionamento",
+      "glosa": "responde sobre cardio e capacidade aeróbia/anaeróbia fora do levantamento: quanto fazer, que tipo, e como isso interage com recuperação e capacidade de trabalho do powerlifter",
+      "entrada": [
+        "cardio", "condicionamento físico", "preparo físico", "fôlego", "gás", "aeróbio",
+        "capacidade aeróbica", "vo2 max", "zona 2", "esteira", "corrida", "bike ergométrica",
+        "elíptico", "hiit", "cardio de baixa intensidade", "cardio de alta intensidade",
+        "resistência cardiovascular", "ficar ofegante", "perder o fôlego rápido",
+        "condicionamento metabólico", "metcon", "circuito de treino", "capacidade de trabalho",
+        "correr pra saúde do coração", "subir escada sem cansar", "andar rápido"
+      ],
+      "naoConfundirCom": [
+        {"topico": "hipertrofia", "termoAmbiguo": "peso corporal já conta como exercício pro coração", "comoDistinguir": "levantar peso puro raramente conta como estímulo cardiovascular suficiente; se a pergunta pergunta sobre exercício de força para o coração, ainda é condicionamento (a resposta é sobre limite do treino de força), não hipertrofia nem peso-corporal"},
+        {"topico": "saude", "termoAmbiguo": "cardio pra saúde do coração", "comoDistinguir": "se pergunta pelo risco de doença/mortalidade/marcador de exame é saude; se pergunta por desempenho/fôlego/VO2 é condicionamento"},
+        {"topico": "fadiga", "termoAmbiguo": "sem gás nenhum pra treinar", "comoDistinguir": "falta de fôlego durante esforço cardiorrespiratório é condicionamento; esgotamento acumulado entre sessões de treino de força é fadiga"}
+      ],
+      "exemplosDePergunta": [
+        "levantar peso pesado já serve como exercício aeróbico?",
+        "quanto cardio por semana dá pra fazer sem atrapalhar o agacho e o terra?",
+        "estou sem fôlego nenhum subindo escada, isso é falta de condicionamento?"
+      ]
+    },
+    {
+      "topico": "taper",
+      "glosa": "responde sobre a janela final de redução de carga antes de uma competição: quanto e quando cortar volume/intensidade, quantos toques manter, o risco de destreinar",
+      "entrada": [
+        "taper", "polimento", "afinar pra competição", "semana de prova", "semana de teste",
+        "peaking", "pico de força", "chegar fresco na prova", "descarregar antes do meet",
+        "reduzir carga antes da competição", "últimas semanas antes do campeonato",
+        "cortar volume no final do ciclo", "abrir mão de volume pra chegar leve",
+        "destreinar antes da prova", "perder força na semana de teste",
+        "quantos dias de descanso antes da competição", "quando parar de treinar pesado antes do meet",
+        "manter toque leve antes da prova", "semana de descarga pra competição"
+      ],
+      "naoConfundirCom": [
+        {"topico": "fadiga", "termoAmbiguo": "descansar pra liberar fadiga", "comoDistinguir": "se é sobre o mecanismo geral de dissipar fadiga em qualquer ponto do ciclo é fadiga; se é especificamente a janela final antes de competir é taper"},
+        {"topico": "aprendizado-motor", "termoAmbiguo": "manter toques pra não perder o jeito antes da prova", "comoDistinguir": "se a pergunta é sobre quanto/quando cortar carga é taper; se é sobre por que perder a habilidade motora acontece, é aprendizado-motor"},
+        {"topico": "periodizacao", "termoAmbiguo": "deload no meio do ciclo", "comoDistinguir": "deload genérico no meio do bloco é periodizacao/deload; redução específica com alvo em data de competição é taper"}
+      ],
+      "exemplosDePergunta": [
+        "quantos dias antes da minha prova eu paro de treinar pesado?",
+        "vale ainda fazer séries leves na semana da competição ou é melhor descansar total?",
+        "cortei muito volume no final e sinto que destreinei, isso é normal?"
+      ]
+    },
+    {
+      "topico": "rom",
+      "glosa": "responde sobre amplitude de movimento: descer/subir completo vs parcial, efeito de cortar amplitude em força e hipertrofia, e como isso muda entre variações de exercício e alavancas do atleta",
+      "entrada": [
+        "amplitude de movimento", "rom", "amplitude completa", "meio movimento",
+        "repetição parcial", "parciais", "cortar amplitude", "encurtar o movimento",
+        "descida completa", "descer tudo no agacho", "abaixo do paralelo", "touch and go",
+        "quicar no fundo", "arco no supino corta amplitude", "travar o cotovelo", "lockout parcial",
+        "sticking point", "alavanca curta/longa", "exercício de amplitude curta",
+        "exercício de amplitude longa", "cheat rep", "amplitude reduzida por lesão"
+      ],
+      "naoConfundirCom": [
+        {"topico": "terra", "termoAmbiguo": "descer fundo no terra / amplitude do terra", "comoDistinguir": "se a pergunta é sobre o mecanismo/efeito da amplitude em si é rom; se é sobre qual variação de terra escolher pela biomecânica pessoal, é terra"},
+        {"topico": "strap", "termoAmbiguo": "strap corta amplitude", "comoDistinguir": "se o foco é o equipamento strap é strap; se o foco é o efeito da amplitude reduzida no treino, é rom"},
+        {"topico": "hipertrofia", "termoAmbiguo": "amplitude completa cresce mais músculo", "comoDistinguir": "se pergunta pelo mecanismo da amplitude sobre o crescimento é rom; se pergunta como montar o programa de hipertrofia de forma ampla é hipertrofia"}
+      ],
+      "exemplosDePergunta": [
+        "fazer supino com arco grande e cortar amplitude prejudica meu ganho de força?",
+        "vale a pena treinar parciais pra melhorar o sticking point?",
+        "descer o agachamento mais fundo do que preciso ajuda em algo?"
+      ]
+    },
+    {
+      "topico": "saude",
+      "glosa": "responde sobre saúde sistêmica do atleta fora do aparelho locomotor: marcadores de sangue, pressão, peso e mortalidade, treinar doente, e o trade-off de saúde ao competir pesado",
+      "entrada": [
+        "saúde geral", "colesterol", "triglicerídeos", "pressão arterial", "hipertensão",
+        "exame de sangue", "imc", "obesidade", "saúde do coração", "saúde cardiovascular",
+        "treinar doente", "treinar gripado", "treinar resfriado", "posso treinar com febre",
+        "longevidade", "bem-estar geral", "glicemia", "diabetes", "saúde metabólica",
+        "risco de mortalidade", "check-up médico do atleta", "efeito do peso na saúde"
+      ],
+      "naoConfundirCom": [
+        {"topico": "lesao", "termoAmbiguo": "machucado, dolorido", "comoDistinguir": "problema musculoesquelético/lesão articular ou muscular é lesao/dor; alteração em exame de sangue, pressão, doença sistêmica é saude"},
+        {"topico": "peso-corporal", "termoAmbiguo": "imc alto, estou pesado demais", "comoDistinguir": "peso na balança e categoria de peso é peso-corporal; consequência desse peso pra colesterol/pressão/mortalidade é saude"},
+        {"topico": "condicionamento", "termoAmbiguo": "cardio ajuda o coração", "comoDistinguir": "se pergunta por desempenho/fôlego é condicionamento; se pergunta por risco de doença cardiovascular/mortalidade é saude"}
+      ],
+      "exemplosDePergunta": [
+        "meus triglicerídeos vieram altos no exame, isso tem a ver com o bulking?",
+        "posso treinar hoje mesmo estando gripado, sem febre?",
+        "levantar peso pesado com sobrepeso alto é perigoso pra minha saúde?"
+      ]
+    },
+    {
+      "topico": "strap",
+      "glosa": "responde sobre o uso de straps (alça/tira de pulso) na puxada: quando usar, efeito na pegada e na amplitude, e como não virar dependente delas",
+      "entrada": [
+        "strap", "straps", "alça de pulso", "tira de pulso", "cinta de pulso", "correia de pulso",
+        "wrist strap", "usar strap no terra", "treinar com strap", "poupar a mão",
+        "calo rasgado", "mão rasgada de treinar", "calosidade estourada", "pele da mão ferida",
+        "dependência de strap", "treinar sem strap", "pegada fica fraca usando strap",
+        "hook grip vs strap", "quando vale usar strap", "strap estraga a pegada?"
+      ],
+      "naoConfundirCom": [
+        {"topico": "terra", "termoAmbiguo": "pegada no terra", "comoDistinguir": "se a pergunta é sobre o equipamento strap especificamente (usar, efeito, dependência) é strap; se é sobre pegada mista/gancho/técnica geral de puxar, é terra"},
+        {"topico": "saude", "termoAmbiguo": "cinta / calo rasgado na mão", "comoDistinguir": "cinturão de levantamento (belt) não é o mesmo que strap de pulso — se a pergunta é sobre cinturão, não é este tópico; se a pele da mão rasgou e a dúvida é sobre a lesão em si, pode ir pra dor/saude, mas se a dúvida é 'devo usar strap pra evitar isso' fica em strap"},
+        {"topico": "rom", "termoAmbiguo": "strap corta amplitude", "comoDistinguir": "se o foco é decidir usar ou não o strap é strap; se o foco é o efeito geral de amplitude reduzida no treino, é rom"}
+      ],
+      "exemplosDePergunta": [
+        "devo usar strap no terra ou isso vai estragar minha pegada?",
+        "minha mão está toda rasgada de calo, uso strap pra proteger?",
+        "com strap eu fico mais fraco no terra, isso é normal?"
+      ]
+    }
+  ]
+}

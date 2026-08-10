@@ -1,0 +1,247 @@
+{
+  "topicos": [
+    {
+      "topico": "erro-comum",
+      "glosa": "Responde o que invalida um levantamento (regra IPF explícita) OU qual é o erro clássico de execução, técnica ou programação que atletas e coaches cometem repetidamente.",
+      "entrada": [
+        "o que anula", "invalida o levantamento", "não vale a tentativa", "deu bug",
+        "fui desclassificado", "tomei luz vermelha", "levei red light", "cometi erro",
+        "onde erro mais", "erro clássico", "pegadinha da regra", "cagada no treino",
+        "roubei no movimento", "fiz errado sem saber", "vacilo comum", "furada",
+        "cilada da regra", "programa mal feito", "monstro de frankenstein de programa",
+        "juntei pedaço de programa", "isso é normal errar", "erro de novato",
+        "armadilha do template", "cai nessa", "erro que todo mundo comete",
+        "o que não pode fazer", "proibido na competição", "reprovaram meu agacho",
+        "reprovaram meu supino", "reprovaram meu terra", "atenção nesse detalhe",
+        "cuidado pra não", "não faça isso", "isso desclassifica", "movimento ilegal",
+        "gafe de execução", "besteira que cometi", "roubada no exercício",
+        "typo do treino"
+      ],
+      "naoConfundirCom": [
+        {"topico": "regras-ipf", "termoAmbiguo": "regra da federação", "comoDistinguir": "regras-ipf cobre o regulamento em geral (equipamento, doping, formato de prova); erro-comum é especificamente o que causa falha/anulação de uma tentativa ou o erro de execução/programação."},
+        {"topico": "profundidade", "termoAmbiguo": "não desceu o suficiente", "comoDistinguir": "quando a pergunta é só sobre a linha de profundidade do agacho, vai para profundidade; erro-comum é usado quando o foco é 'o que me desclassificou' de forma mais ampla, incluindo braço, pé, comando."},
+        {"topico": "lesao", "termoAmbiguo": "me machuquei fazendo assim", "comoDistinguir": "se a consequência citada é dor/lesão física, é lesao; se é falha de julgamento/anulação/estagnação de programa, é erro-comum."},
+        {"topico": "tecnica", "termoAmbiguo": "postura errada", "comoDistinguir": "tecnica descreve como executar certo; erro-comum descreve o desvio específico e recorrente que as pessoas cometem ao tentar executar."}
+      ],
+      "exemplosDePergunta": [
+        "o que reprova o agachamento na IPF, além de profundidade?",
+        "quais os erros mais comuns de quem monta o próprio programa juntando pedaços de outros?",
+        "por que às vezes levo luz vermelha no supino mesmo achando que toquei o peito?"
+      ]
+    },
+    {
+      "topico": "acessorios",
+      "glosa": "Responde quais exercícios secundários (isolamento, complementares aos 3 movimentos) usar, em que faixa de repetição, volume e propósito dentro do treino.",
+      "entrada": [
+        "exercício de acabamento", "trabalho de isolamento", "extra do treino",
+        "trabalhinho depois do treino principal", "bomba muscular", "pump no fim",
+        "exercício bônus", "complemento do treino", "reforço muscular",
+        "musculação depois do powerlifting", "acabar o treino com o que",
+        "hipertrofia acessória", "trabalho de fisiculturismo no meio do treino",
+        "extras da sessão", "exercício de apoio", "trabalho auxiliar",
+        "o que fazer depois do agacho", "o que fazer depois do supino",
+        "o que fazer depois do terra", "movimento de complemento",
+        "treino de detalhe", "reforçar ponto fraco com o que",
+        "exercício de assistência", "assistance work", "volume junk",
+        "trabalho lixo", "isolamento vale a pena", "quanto de acessório fazer",
+        "quantos exercícios extras", "cadeira extensora vale", "mesa flexora vale",
+        "tríceps pra supino", "bíceps pro terra", "trabalho pra fraqueza",
+        "exercício de suporte"
+      ],
+      "naoConfundirCom": [
+        {"topico": "selecao-exercicio", "termoAmbiguo": "qual exercício escolher", "comoDistinguir": "selecao-exercicio cobre a lógica geral de escolha, inclusive dos movimentos principais e variações de barra; acessorios é especificamente sobre o exercício secundário de isolamento/complemento pós-movimento principal."},
+        {"topico": "tier-list", "termoAmbiguo": "melhor exercício acessório", "comoDistinguir": "se a pergunta pede um ranking S/A/B/C/D nomeado, é tier-list; se pede prescrição de quantos/quando/por quê usar, é acessorios."},
+        {"topico": "hipertrofia", "termoAmbiguo": "treino de hipertrofia", "comoDistinguir": "hipertrofia é o objetivo/bloco de treino (faixas de reps, princípios); acessorios é o exercício em si usado dentro desse ou de outro bloco."},
+        {"topico": "pico", "termoAmbiguo": "cortar volume acessório perto da prova", "comoDistinguir": "se a pergunta é sobre reduzir/cortar acessório na reta final antes da competição, é pico; se é sobre o acessório em si no dia a dia, é acessorios."}
+      ],
+      "exemplosDePergunta": [
+        "quais acessórios fazer depois do supino pra fortalecer tríceps?",
+        "vale a pena fazer 4 ou 5 exercícios de isolamento no fim do treino de perna?",
+        "esse trabalho de rosca depois do treino é volume lixo ou serve pra alguma coisa?"
+      ]
+    },
+    {
+      "topico": "frequencia",
+      "glosa": "Responde quantas vezes por semana treinar cada levantamento ou grupo muscular, e como a frequência muda entre programas e fases.",
+      "entrada": [
+        "quantas vezes por semana treinar", "frequência de treino", "treinar todo dia",
+        "supino quantas vezes na semana", "agacho quantas vezes na semana",
+        "terra quantas vezes na semana", "quantos dias de treino",
+        "quantas sessões por semana", "treino dobrado no dia",
+        "full body quantas vezes", "posso treinar peito 2x por semana",
+        "treinar o mesmo grupo mais de uma vez", "espaçamento entre treinos do mesmo movimento",
+        "quantos dias treinar por semana", "programa de 3 dias ou 4 dias",
+        "6 dias de treino é demais", "alta frequência funciona",
+        "baixa frequência é melhor", "quantas vezes bater no mesmo levantamento",
+        "treinar todo santo dia", "de quanto em quanto tempo repetir o exercício",
+        "dias de descanso entre sessões do mesmo grupo"
+      ],
+      "naoConfundirCom": [
+        {"topico": "volume", "termoAmbiguo": "quantas séries por semana", "comoDistinguir": "volume conta séries/repetições totais; frequencia conta o número de sessões/exposições semanais a um levantamento, independentemente de quanto se faz em cada uma."},
+        {"topico": "descanso-entre-series", "termoAmbiguo": "quanto tempo descansar", "comoDistinguir": "descanso-entre-series é sobre o intervalo dentro da mesma sessão entre séries; frequencia é sobre o espaçamento entre sessões ao longo da semana."},
+        {"topico": "periodizacao", "termoAmbiguo": "estrutura da semana de treino", "comoDistinguir": "periodizacao trata da progressão ao longo de blocos/semanas; frequencia é apenas 'quantas vezes por semana', um parâmetro dentro dessa estrutura."},
+        {"topico": "recuperacao", "termoAmbiguo": "corpo não aguenta treinar tanto", "comoDistinguir": "se a pergunta é sobre capacidade de recuperar entre sessões, é recuperacao; se é sobre quantas sessões programar, é frequencia."}
+      ],
+      "exemplosDePergunta": [
+        "posso agachar 3 vezes por semana sendo natural?",
+        "por que alguns programas fazem terra só 1 vez por semana e outros 2?",
+        "treinar supino todo dia é exagero?"
+      ]
+    },
+    {
+      "topico": "pico",
+      "glosa": "Responde como estruturar as semanas finais antes de uma competição para chegar afiado (peaking/taper): o que cortar de volume, quando testar cargas altas, como não destreinar nem chegar cansado.",
+      "entrada": [
+        "peaking", "peak week", "pico de forma", "afiar para a competição",
+        "chegar afiado na prova", "reduzir carga antes da prova", "polir a forma",
+        "estar no ponto pro dia da prova", "chegar no auge", "semana de taper",
+        "corte de volume antes do meet", "como picar para competição",
+        "reta final antes do campeonato", "últimas semanas antes da prova",
+        "diminuir treino perto da competição", "afinar o treino",
+        "supercompensação antes da prova", "chegar fresco na competição",
+        "detreino antes da prova", "quando parar de treinar pesado antes do meet",
+        "última semana antes da competição", "descanso antes do campeonato",
+        "quanto tempo de taper", "picar forte demais cedo"
+      ],
+      "naoConfundirCom": [
+        {"topico": "frequencia", "termoAmbiguo": "quantas vezes treinar antes da prova", "comoDistinguir": "frequencia é sobre número de sessões semanais em geral; pico é especificamente sobre a estratégia das últimas semanas antes de competir."},
+        {"topico": "recorde", "termoAmbiguo": "quero bater PR na prova", "comoDistinguir": "se a pergunta é sobre a estratégia de tentativas/abridor no dia do meet, pode ser outro tópico de competição; pico é sobre a preparação de treino nas semanas anteriores, não o dia da prova em si."},
+        {"topico": "deload", "termoAmbiguo": "semana leve antes da competição", "comoDistinguir": "deload é uma semana de recuperação genérica em qualquer momento do ciclo; pico é especificamente o taper final direcionado a uma data de competição."},
+        {"topico": "estagnacao", "termoAmbiguo": "atingi o pico e não progrido mais", "comoDistinguir": "aqui 'pico' é usado como sinônimo de platô/teto de força, que é estagnacao, não a fase de peaking pré-competição."}
+      ],
+      "exemplosDePergunta": [
+        "quantas semanas antes da competição eu devo começar a cortar volume?",
+        "corro risco de destreinar se eu picar cedo demais?",
+        "como saber se estou picando na hora certa pro meet?"
+      ]
+    },
+    {
+      "topico": "costas",
+      "glosa": "Responde sobre treino, força e postura da musculatura das costas (dorsais, trapézio, lombar) como componente técnico e de hipertrofia dos três levantamentos — não sobre dor ou lesão nas costas.",
+      "entrada": [
+        "dorsal", "costas largas", "puxada", "remada", "trapézio", "lat pulldown",
+        "escápula", "travar a escápula", "asas", "costas grossas",
+        "trabalho de puxar", "força de puxada", "barra fixa pra powerlifting",
+        "encolhimento", "shrug", "arredondar as costas", "arqueamento nas costas",
+        "manter as costas retas", "postura no agacho", "costas cedendo no terra",
+        "costas fracas atrapalham", "lat pra estabilizar", "costas ajudam a segurar a barra",
+        "empacotar as costas", "ombro rolando pra frente", "chin up", "pull up",
+        "remada curvada", "costas na largada do terra"
+      ],
+      "naoConfundirCom": [
+        {"topico": "dor", "termoAmbiguo": "dor nas costas", "comoDistinguir": "se a queixa é sensação dolorosa/desconforto físico, é dor (ou lesao); costas é sobre técnica, treino e força muscular da região, sem queixa de dor."},
+        {"topico": "lesao", "termoAmbiguo": "machuquei a lombar", "comoDistinguir": "lesao trata de reabilitação e histórico de machucado; costas trata de como treinar/posicionar a musculatura das costas em condição saudável."},
+        {"topico": "tecnica", "termoAmbiguo": "postura correta no agacho", "comoDistinguir": "tecnica é o padrão de movimento como um todo; costas é o recorte específico do papel e posicionamento da região dorsal/lombar dentro dessa técnica."},
+        {"topico": "setup", "termoAmbiguo": "arquear antes de puxar o terra", "comoDistinguir": "setup cobre a montagem geral antes do levantamento (pés, pegada, respiração); costas é o recorte específico de tensão e posição da região dorsal dentro do setup."}
+      ],
+      "exemplosDePergunta": [
+        "preciso treinar costas separado pra ajudar no terra?",
+        "minhas costas arredondam no fundo do agacho, é problema de mobilidade ou de força?",
+        "barra fixa com peso vale a pena pro powerlifter?"
+      ]
+    },
+    {
+      "topico": "profundidade",
+      "glosa": "Responde sobre a linha e a técnica de descida do agachamento: até onde descer, o que conta como profundidade legal, e como melhorar o alcance no fundo do movimento.",
+      "entrada": [
+        "descer até onde no agacho", "passar do paralelo", "bater no paralelo",
+        "cavar o buraco", "ir fundo no agacho", "atacar o fundo",
+        "cadência no fundo do agacho", "profundidade legal", "squat depth",
+        "abaixo do paralelo", "rebote no fundo", "ass to grass", "agacho raso",
+        "agacho alto", "não desci o suficiente", "agachei alto demais",
+        "quanto preciso descer", "dobra do quadril abaixo do joelho",
+        "estou passando de profundidade ou não", "ATG", "hole do agacho",
+        "buraco do agacho", "esbarrar no próprio quadril ao descer",
+        "compressão no fundo", "squash no fundo", "stretch reflex no agacho"
+      ],
+      "naoConfundirCom": [
+        {"topico": "regras-ipf", "termoAmbiguo": "regra de profundidade", "comoDistinguir": "regras-ipf é o regulamento amplo (inclui equipamento, doping, formato); profundidade é o recorte específico sobre a linha de descida do agachamento e como julgá-la."},
+        {"topico": "erro-comum", "termoAmbiguo": "reprovaram por profundidade", "comoDistinguir": "se a pergunta é 'o que me desclassificou' de forma ampla, é erro-comum; se é especificamente sobre a linha/critério de descida, é profundidade."},
+        {"topico": "mobilidade", "termoAmbiguo": "não consigo descer por causa do quadril", "comoDistinguir": "mobilidade é sobre a limitação articular/flexibilidade que impede a descida; profundidade é sobre o critério e a técnica de quanto descer, dado o corpo que a pessoa tem."},
+        {"topico": "barra-alta", "termoAmbiguo": "barra alta desce mais fácil", "comoDistinguir": "barra-alta/barra-baixa é sobre a escolha da posição da barra; profundidade é sobre o resultado (quão fundo) dessa escolha, não a escolha em si."}
+      ],
+      "exemplosDePergunta": [
+        "meu agachamento está no paralelo, isso passa em competição IPF?",
+        "por que ir mais fundo no agacho deixaria mais fácil e não mais difícil?",
+        "como sei se estou batendo a profundidade certa sem juiz olhando?"
+      ]
+    },
+    {
+      "topico": "regras-ipf",
+      "glosa": "Responde sobre o regulamento oficial da IPF em geral: o que é permitido em equipamento, comandos, formato de prova, doping e conduta em competição, além das causas específicas de anulação por levantamento.",
+      "entrada": [
+        "regulamento da ipf", "livro de regras", "o que pode e não pode na competição",
+        "vale em competição", "legal na ipf", "regra da federação",
+        "equipamento aprovado", "singlet", "meia comprida pro terra",
+        "cueca de competição", "manipulação de cinto", "raspar o cinto",
+        "barra rígida de competição", "joelheira aprovada", "regra do teste antidoping",
+        "quantas vezes posso ser testado", "controle de dopagem", "whereabouts",
+        "classic worlds", "goodlift points", "recorde mundial precisa de quê",
+        "handler de competição", "árbitro da ipf", "regra de altura do supino",
+        "bench press up rule", "o que é permitido de trapaça", "cheat legal",
+        "regra do movimento descendente no terra", "regra da pegada no supino"
+      ],
+      "naoConfundirCom": [
+        {"topico": "erro-comum", "termoAmbiguo": "o que anula a tentativa", "comoDistinguir": "erro-comum foca no evento específico de anulação de uma tentativa (a falha em si); regras-ipf cobre o regulamento amplo, incluindo coisas que não são sobre uma tentativa (equipamento, doping, formato de evento)."},
+        {"topico": "profundidade", "termoAmbiguo": "regra de profundidade do agacho", "comoDistinguir": "se a pergunta é só sobre a linha de descida do agacho, vai para profundidade; se é sobre regras em geral (incluindo profundidade como um exemplo entre outros), fica em regras-ipf."},
+        {"topico": "equipamento", "termoAmbiguo": "cinto aprovado", "comoDistinguir": "equipamento trata do item em si (o que é, como escolher); regras-ipf trata da legalidade regulamentar desse item em competição."},
+        {"topico": "natural-vs-enhanced", "termoAmbiguo": "teste de doping", "comoDistinguir": "natural-vs-enhanced discute o tema do uso de substâncias em si; regras-ipf trata do procedimento regulamentar de testagem/whereabouts como regra da federação."}
+      ],
+      "exemplosDePergunta": [
+        "preciso de que tipo de roupa pra competir na IPF?",
+        "como funciona o teste antidoping da IPF, com que frequência sou testado?",
+        "posso manipular meu cinto pra ficar mais justo, isso é permitido?"
+      ]
+    },
+    {
+      "topico": "tier-list",
+      "glosa": "Responde a rankings explícitos de exercícios em categorias (S/A/B/C/D/F tier), com o critério de aplicabilidade usado para colocar cada variação numa faixa.",
+      "entrada": [
+        "ranking de exercícios", "tier list", "s tier", "a tier", "b tier", "c tier",
+        "d tier", "f tier", "melhor variação classificada", "qual exercício é melhor",
+        "vale a pena fazer esse exercício", "top exercícios pra powerlifting",
+        "lista dos melhores exercícios", "exercício lixo", "exercício supervalorizado",
+        "exercício subestimado", "underrated exercise", "overrated exercise",
+        "nota do exercício", "classificação de variações", "hierarquia de exercícios",
+        "qual é o pior exercício", "escala de exercícios"
+      ],
+      "naoConfundirCom": [
+        {"topico": "selecao-exercicio", "termoAmbiguo": "qual exercício escolher pra mim", "comoDistinguir": "selecao-exercicio é a lógica de escolha individualizada (pontos fracos, objetivo); tier-list é um ranking nomeado e categorizado (S/A/B/C/D) feito por um coach específico."},
+        {"topico": "acessorios", "termoAmbiguo": "melhor acessório pra supino", "comoDistinguir": "se a pergunta pede uma prescrição de uso (quando, quanto, por quê), é acessorios; se pede a posição do exercício numa escala de qualidade, é tier-list."},
+        {"topico": "meta-metodologia", "termoAmbiguo": "não existe exercício objetivamente melhor", "comoDistinguir": "meta-metodologia é a discussão sobre o próprio conceito de comparar métodos/exercícios; tier-list é o ranking concreto aplicado, mesmo quando o autor do ranking faz essa ressalva antes de rankear."}
+      ],
+      "exemplosDePergunta": [
+        "supino pegada fechada é considerado S tier por algum coach?",
+        "onde o terra sumô entra numa tier list pra quem puxa convencional?",
+        "box squat vale a pena ou é exercício fraco na opinião dos coaches?"
+      ]
+    },
+    {
+      "topico": "genetica",
+      "glosa": "Responde até que ponto potencial genético, resposta individual e limites físicos herdados explicam diferença de progresso, força ou estagnação entre atletas.",
+      "entrada": [
+        "potencial genético", "teto genético", "resposta individual ao treino",
+        "sou geneticamente limitado", "genética boa ou ruim pra powerlifting",
+        "fibra muscular predominante", "somatotipo", "isso é genética?",
+        "por que uns evoluem mais rápido que outros", "alavancas favorecem",
+        "biotipo bom pra agacho", "biotipo bom pra terra", "nasceu forte",
+        "sorte genética", "limite biológico", "diferença individual de fisiologia",
+        "cada corpo responde diferente", "genética do meu corpo",
+        "predisposição genética", "quanto da força é genético",
+        "atleta talentoso geneticamente", "assimetria natural do corpo",
+        "quanto tempo dura a progressão linear varia de pessoa pra pessoa"
+      ],
+      "naoConfundirCom": [
+        {"topico": "antropometria", "termoAmbiguo": "meu corpo é grande/pequeno pra isso", "comoDistinguir": "antropometria trata de medidas corporais concretas (comprimento de membro, altura de tronco) que afetam técnica; genetica é sobre potencial de força, resposta ao treino e teto biológico, algo mais amplo que só medidas."},
+        {"topico": "progressao", "termoAmbiguo": "por que parei de progredir tão rápido", "comoDistinguir": "progressao descreve o mecanismo e a prescrição de como avançar cargas; genetica é usada quando a pergunta atribui a causa da diferença de progresso ao indivíduo/herança, não ao programa em si."},
+        {"topico": "estagnacao", "termoAmbiguo": "bati no meu teto", "comoDistinguir": "estagnacao é sobre platô e como sair dele na prática; genetica é sobre se aquele teto é determinado biologicamente e o quanto isso é imutável."},
+        {"topico": "natural-vs-enhanced", "termoAmbiguo": "quanto dá pra crescer natural", "comoDistinguir": "natural-vs-enhanced é sobre o efeito de substâncias no potencial de força; genetica é sobre a variação natural entre indivíduos sem uso de substâncias."}
+      ],
+      "exemplosDePergunta": [
+        "minha genética é ruim pra powerlifting, isso significa que nunca vou ficar forte?",
+        "por que alguns levantadores conseguem progredir linearmente por meses e eu só por semanas?",
+        "quanto da diferença entre atletas é genética e quanto é treino?"
+      ]
+    }
+  ]
+}
