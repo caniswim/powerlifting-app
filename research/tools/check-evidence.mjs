@@ -347,22 +347,11 @@ function imprimirRoteamento(texto, { comoComplemento = false } = {}) {
     return r;
   }
 
-  console.log(`\n  ROTEOU PARA ${r.rotas.length} de ${TOPICOS.size} tópicos do vocabulário FECHADO:`);
+  console.log(`\n  ROTEOU PARA ${r.rotas.length} de ${TOPICOS.size} tópicos do vocabulário FECHADO,`);
+  console.log('  e CADA UM GANHA A PRÓPRIA SEÇÃO abaixo — nenhuma gaveta divide orçamento com outra.');
   for (const t of r.rotas) {
     const grande = t.claims > LIMITE_PADRAO ? '  ← GRANDE' : '';
-    console.log(`\n     ${t.topico}  ·  score ${t.score.toFixed(2)}  ·  ${t.claims} claims etiquetadas${grande}`);
-    // A ESCADA DE SAÍDA, sempre impressa: o roteamento entrega uma AMOSTRA
-    // ordenada, e a gaveta inteira é um comando. Quando ela cabe numa tela
-    // (`cinto` tem 54), ver tudo é estritamente melhor que ranquear.
-    console.log(`        a gaveta INTEIRA: node research/tools/check-evidence.mjs --topic ${t.topico} --limit 0`
-      + `${t.claims <= LIMITE_PADRAO ? '   (cabe numa leitura)' : ''}`);
-    for (const w of t.porQue.slice(0, 4)) {
-      const onde = w.canal === 'corpus'
-        ? `em ${w.dentro} das ${w.deQuantas} claims do tópico, ${w.naBase} na base`
-        : w.canal;
-      const veio = w.comoNaBase && w.comoNaBase !== w.termo ? `${w.termo} → ${w.comoNaBase}` : w.termo;
-      console.log(`        ${String(w.peso.toFixed(2)).padStart(5)}  ${veio.padEnd(28)} ${onde}`);
-    }
+    console.log(`     ${t.topico.padEnd(24)} score ${t.score.toFixed(2)}  ·  ${String(t.claims).padStart(4)} claims etiquetadas${grande}`);
   }
 
   /**
@@ -451,71 +440,106 @@ function imprimirRoteamento(texto, { comoComplemento = false } = {}) {
     }
   }
 
-  console.log(`\n  ${r.claims.length} claim(s), ordenadas pela sua pergunta DENTRO dos tópicos roteados`);
+  /**
+   * ── A TELA, E ELA É UMA SEÇÃO POR GAVETA ──────────────────────────────────
+   *
+   * Não há mais orçamento único a repartir entre as gavetas abertas. Cada uma
+   * entrega as SUAS melhores claims, com o ledger e a página ao lado DELA, num
+   * bloco rotulado — que é literalmente o que `--topic <gaveta>` já produzia,
+   * um de cada vez.
+   *
+   * **O que é impresso aqui é exatamente `r.tela`**, o mesmo objeto que
+   * `telaDaResposta()` devolve e que o `check-canarios.mjs` e o
+   * `check-rotas.mjs` contam. Até 12/08 havia duas contas — o `telaDe()`
+   * cortava em 40 e esta função imprimia 68 linhas — e a divergência produziu um
+   * erro de relatório. Agora há uma só, e ela mora em `roteador.mjs`.
+   *
+   * A claim que está em DUAS gavetas abertas aparece nas DUAS seções: é o preço
+   * da invariante de não-diluição, e sai como um ponteiro de uma linha para a
+   * seção onde ela já saiu inteira — o custo em bytes é a linha, não a claim.
+   */
+  console.log(`\n  ${r.tela.length} linha(s) em ${r.secoes.length} seção(ões), ordenadas pela sua pergunta DENTRO de cada gaveta`);
   console.log('  (raridade recontada dentro do tópico: `squat` não distingue nada entre 990).');
-  if (r.vagas && r.vagas.size > 0) {
-    console.log(`  AS VAGAS FORAM DIVIDIDAS POR GAVETA, não por ranking global: `
-      + `${[...r.vagas].map(([t, n]) => `${t} ${n}`).join(' · ')}`);
-    console.log('  (gaveta pequena que pontua é sinal FORTE: a fatia é score × log(base/tamanho)³).');
+  console.log(`  ORÇAMENTO: até ${r.orcamento.porSecao} claims por seção × até ${r.orcamento.secoes} seções.`);
+  console.log('  NENHUMA seção rouba vaga de outra — acrescentar gaveta só ACRESCENTA bloco.');
+  if (r.rotasCortadas.length > 0) {
+    console.log(`  ⚠  ${r.rotasCortadas.length} seção(ões) CORTADA(S) INTEIRA(S) pelo teto de seções: `
+      + `${r.rotasCortadas.map((t) => t.topico).join(', ')} — abra com --topic <nome>.`);
   }
   console.log('  NENHUM filtro de modo/scope/tier foi aplicado — filtro de segurança estreita');
-  console.log('  a saída, não a busca, e foi ele que escondeu V033-03/04/05 da Q11.\n');
-  r.claims.slice(0, DETALHE_ROTEADO).forEach((x, i) => {
-    const marca = x.topicos.map((t) => (r.porTopico.find((p) => p.topico === t)?.resultados
-      .find((y) => y.c.id === x.c.id)?.comoEntrou === 'afim' ? `${t}(afim)` : t)).join(' + ');
-    console.log(`  ${String(i + 1).padStart(2)}º  ${marca}`);
-    console.log(`      ${mostrar(x.c).trimEnd().split('\n').join('\n      ')}\n`);
-  });
-  if (r.claims.length > DETALHE_ROTEADO) {
-    console.log(`  ${DETALHE_ROTEADO + 1}º–${r.claims.length}º, em índice:`);
-    for (const x of r.claims.slice(DETALHE_ROTEADO)) console.log(compacto(x.c));
-    console.log('');
-  }
+  console.log('  a saída, não a busca, e foi ele que escondeu V033-03/04/05 da Q11.');
 
-  if (r.params.total > 0) {
-    console.log(`\n  O NOME DO DADO, NÃO A PROSA — ${r.params.total} claim(s) têm \`param\` cujo NOME contém`);
-    console.log('  duas ou mais palavras da sua pergunta. É o canal que achou V033-03 (peso por RPE)');
-    console.log(`  quando a prosa dela dizia "subir" e a pergunta dizia "baixar".${r.params.total > r.params.lista.length ? ` Mostrando ${r.params.lista.length}.` : ''}\n`);
-    for (const x of r.params.lista) {
-      console.log(`${compacto(x.c)}   ← nomeia: ${x.pecas.join(' + ')}`);
+  const jaSaiu = new Map();
+  r.secoes.forEach((s, iSecao) => {
+    const cab = s.tipo === 'param'
+      ? `SEÇÃO ${iSecao + 1}/${r.secoes.length} · O NOME DO DADO · ${s.total} claim(s) com \`param\` que nomeia 2+ palavras da pergunta`
+      : `SEÇÃO ${iSecao + 1}/${r.secoes.length} · GAVETA \`${s.topico}\`${s.forcado ? ' (forçada por --topic)' : ''}`
+        + `  ·  score ${s.score.toFixed(2)}  ·  ${s.principais.length} de ${s.daGaveta} claims etiquetadas`;
+    console.log(`\n${linhaGrossa}`);
+    console.log(`  ${cab}`);
+    if (s.tipo === 'gaveta') {
+      for (const w of (s.porQue ?? []).slice(0, 3)) {
+        const onde = w.canal === 'corpus'
+          ? `em ${w.dentro} das ${w.deQuantas} claims do tópico, ${w.naBase} na base`
+          : w.canal;
+        const veio = w.comoNaBase && w.comoNaBase !== w.termo ? `${w.termo} → ${w.comoNaBase}` : w.termo;
+        console.log(`     abriu por ${String(w.peso.toFixed(2)).padStart(5)}  ${veio.padEnd(26)} ${onde}`);
+      }
+      console.log(`     a gaveta INTEIRA: node research/tools/check-evidence.mjs --topic ${s.topico} --limit 0`
+        + `${s.daGaveta <= LIMITE_PADRAO ? '   (cabe numa leitura)' : ''}`
+        + `${s.cortou > 0 ? `   ·  ${s.cortou} desta seção ficaram fora do corte de ${r.orcamento.porSecao}` : ''}`);
+    } else {
+      console.log('     Este canal lê o dado TIPADO e não a prosa, e por isso não passa por gaveta');
+      console.log('     nenhuma: foi ele que achou V033-03 (peso por RPE) quando a prosa dizia "subir"');
+      console.log('     e a pergunta dizia "baixar".');
     }
-    console.log('');
-  }
+    console.log(linhaGrossa);
 
-  /**
-   * A PÁGINA AO LADO. É a regra 3 do protocolo do `RECUPERACAO.md`, e ela sai
-   * IMPRESSA porque `idsMostrados` é o contrato do canário: calcular sem
-   * imprimir faria o canário passar por causa de linhas que não estão na tela.
-   */
-  /**
-   * O LEDGER SAI EM SEÇÃO PRÓPRIA, antes da página ao lado.
-   *
-   * As duas famílias trazem *o que completa o que já saiu*, e a diferença
-   * importa para quem lê: o vizinho é uma vizinhança de ARQUIVO (a claim
-   * seguinte no mesmo vídeo, que costuma completar) e a ligação é uma
-   * declaração TIPADA da própria claim — ela diz, no campo `conditions`, de que
-   * a prescrição depende, e no `conflicts`, quem a contradiz. Imprimir as duas
-   * juntas apagaria a distinção entre "provavelmente completa" e "a base diz que
-   * condiciona".
-   */
-  const ligacoes = r.vizinhos.filter((v) => v.canal === 'ligacao');
-  const aoLado = r.vizinhos.filter((v) => v.canal !== 'ligacao');
-  if (ligacoes.length > 0) {
-    console.log(`\n  O QUE A PRESCRIÇÃO DECLARA — ${ligacoes.length} claim(s) que as prescrições acima`);
-    console.log('  apontam por `conditions` e `conflicts`. Não casam palavra nenhuma da sua pergunta:');
-    console.log('  elas chegam porque a claim que já está na tela DIZ que depende delas. Prescrição');
-    console.log('  sem a condição que a desarma é a forma perigosa de acertar.\n');
-    for (const v of ligacoes) console.log(`${compacto(v.c)}   ← ${v.vinculo} ${v.deQuem}`);
-    console.log('');
-  }
-  if (aoLado.length > 0) {
-    console.log(`\n  A PÁGINA AO LADO — ${aoLado.length} claim(s) adjacentes, no MESMO vídeo, ao que`);
-    console.log('  já saiu acima. O extrator emitiu as claims na ordem em que o assunto foi dito,');
-    console.log('  então a de ao lado costuma ser a que completa a resposta: a condição que');
-    console.log('  desarma a prescrição, ou o número que a frase anterior prometeu.\n');
-    for (const v of aoLado) console.log(`${compacto(v.c)}   ← ao lado de ${v.deQuem}`);
-    console.log('');
-  }
+    s.principais.forEach((x, i) => {
+      const antes = jaSaiu.get(x.c.id);
+      const etiqueta = s.tipo === 'param'
+        ? `nomeia: ${(x.pecas ?? []).join(' + ')}`
+        : (x.comoEntrou === 'afim' ? `${s.topico}(afim)` : s.topico);
+      if (antes) {
+        console.log(`  ${String(i + 1).padStart(2)}º  ${x.c.id}  ← já saiu inteira na seção \`${antes}\` (a claim é das duas gavetas)`);
+        return;
+      }
+      jaSaiu.set(x.c.id, s.chave);
+      if (i < DETALHE_ROTEADO) {
+        console.log(`  ${String(i + 1).padStart(2)}º  ${etiqueta}`);
+        console.log(`      ${mostrar(x.c).trimEnd().split('\n').join('\n      ')}\n`);
+      } else {
+        console.log(`${compacto(x.c)}`);
+      }
+    });
+
+    /**
+     * O LEDGER DA SEÇÃO, e ele é o único canal que não casa palavra nenhuma: a
+     * claim chega porque a prescrição que está NESTA seção declara, no campo
+     * `conditions`, que depende dela. Prescrição sem a condição que a desarma é
+     * a forma perigosa de acertar.
+     */
+    if (s.ligacoes.length > 0) {
+      console.log(`\n     O QUE A PRESCRIÇÃO DESTA SEÇÃO DECLARA — ${s.ligacoes.length} claim(s) por \`conditions\`/\`conflicts\`:`);
+      for (const v of s.ligacoes) {
+        jaSaiu.set(v.c.id, s.chave);
+        console.log(`${compacto(v.c)}   ← ${v.vinculo} ${v.deQuem}`);
+      }
+    }
+    /**
+     * A PÁGINA AO LADO DESTA SEÇÃO. O extrator emitiu as claims na ordem em que
+     * o assunto foi dito, então a de ao lado costuma ser a que completa: a
+     * condição que desarma a prescrição, ou o número que a frase prometeu.
+     */
+    if (s.lado.length > 0) {
+      console.log(`\n     A PÁGINA AO LADO — ${s.lado.length} claim(s) adjacentes, no MESMO vídeo:`);
+      for (const v of s.lado) {
+        jaSaiu.set(v.c.id, s.chave);
+        console.log(`${compacto(v.c)}   ← ao lado de ${v.deQuem}`);
+      }
+    }
+  });
+  console.log('');
 
   const grandes = r.rotas.filter((t) => t.claims > LIMITE_PADRAO);
   if (grandes.length > 0 && r.estreitar.length > 0) {

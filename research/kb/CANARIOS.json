@@ -691,15 +691,21 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "dor",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "bracos",
      "supino"
     ],
-    "recuperados": [],
-    "veredito": "falha"
+    "recuperados": [
+     "V095-23",
+     "V095-24"
+    ],
+    "veredito": "passa"
    }
   },
   {
@@ -726,14 +732,19 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "dor",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "autorregulacao",
      "dor"
     ],
-    "recuperados": [],
+    "recuperados": [
+     "V001-05"
+    ],
     "veredito": "falha"
    }
   },
@@ -759,8 +770,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "lesao",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "ombros",
@@ -793,8 +807,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "lesao",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "supino"
@@ -827,8 +844,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "selecao-exercicio",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "supino"
@@ -863,8 +883,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "faixa",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "equipamento",
@@ -899,8 +922,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "sapato",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "agacho",
@@ -938,8 +964,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "strap",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "pegada",
@@ -947,9 +976,12 @@
      "terra"
     ],
     "recuperados": [
+     "V042-02",
+     "V042-04",
+     "G040-24",
      "G049-08"
     ],
-    "veredito": "falha"
+    "veredito": "passa"
    }
   },
   {
@@ -977,8 +1009,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "estagnacao",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "estagnacao",
@@ -1016,8 +1051,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "training-max",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [],
     "recuperados": [],
@@ -1051,14 +1089,19 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "deload",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "deload",
      "periodizacao"
     ],
-    "recuperados": [],
+    "recuperados": [
+     "G004-11"
+    ],
     "veredito": "falha"
    }
   },
@@ -1088,8 +1131,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "proximidade-da-falha",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "proximidade-da-falha"
@@ -1122,8 +1168,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "supino",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "supino",
@@ -1159,8 +1208,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "carga-de-treino",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "volume"
@@ -1189,8 +1241,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "natural-vs-enhanced",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "teste-de-forca"
@@ -1221,8 +1276,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "cardio",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "cardio",
@@ -1230,9 +1288,10 @@
     ],
     "recuperados": [
      "V013-04",
-     "V013-05"
+     "V013-05",
+     "V013-06"
     ],
-    "veredito": "falha"
+    "veredito": "passa"
    }
   },
   {
@@ -1255,15 +1314,20 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "peso-corporal",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "competicao",
      "peso-corporal"
     ],
-    "recuperados": [],
-    "veredito": "falha"
+    "recuperados": [
+     "F001-114"
+    ],
+    "veredito": "passa"
    }
   },
   {
@@ -1286,8 +1350,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "progressao",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-11",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "progressao",
@@ -1316,8 +1383,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "dor",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "lesao"
@@ -1345,8 +1415,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "lesao",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [],
     "recuperados": [],
@@ -1372,8 +1445,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "dor",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "dor",
@@ -1402,8 +1478,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "supino",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "supino"
@@ -1431,8 +1510,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "descanso-entre-series",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [],
     "recuperados": [],
@@ -1458,8 +1540,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "sapato",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "terra"
@@ -1485,14 +1570,19 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "faixa",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "equipamento"
     ],
-    "recuperados": [],
-    "veredito": "falha"
+    "recuperados": [
+     "F001-94"
+    ],
+    "veredito": "passa"
    }
   },
   {
@@ -1514,8 +1604,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "estagnacao",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "erro-comum"
@@ -1541,8 +1634,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "condicionamento",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "condicionamento"
@@ -1570,8 +1666,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "genetica",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "progressao"
@@ -1599,8 +1698,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "ordem-exercicio",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "ordem-exercicio",
@@ -1631,8 +1733,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "sapato",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "agacho"
@@ -1666,8 +1771,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "peito",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "supino"
@@ -1695,8 +1803,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "regras-ipf",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "agacho"
@@ -1729,14 +1840,19 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "sono",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "nutricao",
      "recuperacao"
     ],
-    "recuperados": [],
+    "recuperados": [
+     "V015-07"
+    ],
     "veredito": "falha"
    }
   },
@@ -1764,14 +1880,19 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "ordem-exercicio",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "agacho",
      "tecnica"
     ],
-    "recuperados": [],
+    "recuperados": [
+     "G038-21"
+    ],
     "veredito": "falha"
    }
   },
@@ -1800,8 +1921,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "convencional",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "convencional",
@@ -1830,8 +1954,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "comandos-ipf",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "comandos-ipf"
@@ -1865,8 +1992,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "descanso-entre-series",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "aquecimento"
@@ -1896,8 +2026,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "barra-baixa",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "agacho",
@@ -1933,8 +2066,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "dor",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "dor"
@@ -1964,14 +2100,19 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "dor",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": true,
     "gavetasComResposta": [
      "dor",
      "mentalidade"
     ],
-    "recuperados": [],
+    "recuperados": [
+     "V001-23"
+    ],
     "veredito": "falha"
    }
   },
@@ -1996,8 +2137,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "saude",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [],
     "recuperados": [],
@@ -2025,8 +2169,11 @@
    "perguntaDoAtleta": {
     "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
     "topicoDaResposta": "tier-list",
-    "tetoDeTela": 40,
-    "medidoEm": "2026-08-12",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
     "abriuOTopico": false,
     "gavetasComResposta": [
      "selecao-exercicio",

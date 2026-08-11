@@ -86,7 +86,11 @@ import { recuperar, indexar, carregarVocabulario, prosaDaClaim } from './busca.m
 // Só FUNÇÕES. Nenhuma constante de `roteador.mjs` entra aqui: os números que
 // este arquivo cobra são dados do CANARIOS.json, e a razão está no bloco de
 // `tetoDeTela` mais abaixo.
-import { responder, perfilarTopicos, termosDaPergunta } from './roteador.mjs';
+// Só FUNÇÕES. Nenhuma constante de `roteador.mjs` é importada aqui — o
+// orçamento de tela vem do JSON do canário.
+import {
+  responder, perfilarTopicos, termosDaPergunta, telaDaResposta,
+} from './roteador.mjs';
 import { carregarGlossario, indexarGlossario } from './glossario.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -166,8 +170,9 @@ const CAMPOS_CANARIO = new Set([
  * tópico), medida com a pergunta do canário escrita na voz do atleta. Nenhum
  * destes números vem de `roteador.mjs`.
  */
+const CAMPOS_PERGUNTA_MORTOS = new Set(['tetoDeTela']);
 const CAMPOS_PERGUNTA = new Set([
-  'descricao', 'topicoDaResposta', 'tetoDeTela', 'medidoEm',
+  'descricao', 'topicoDaResposta', 'tela', 'medidoEm',
   'abriuOTopico', 'gavetasComResposta', 'recuperados', 'veredito',
 ]);
 const VEREDITOS = new Set(['passa', 'falha']);
@@ -321,26 +326,22 @@ const contarNo = (nome, campo) => {
 };
 
 /**
- * O QUE O ATLETA VÊ, EM ORDEM. `responder` devolve três canais — as claims
- * roteadas, o canal de nome-de-param e a página ao lado — e a tela é a
- * concatenação deles, sem repetição. A posição é contada AQUI, sobre essa
- * ordem, para que `tetoDeTela` seja um limite de POSIÇÃO e não um botão interno
- * da ferramenta: com `tetoDeTela` em 5 o canário perde o que sai em 6º, e isso
- * é o que prova que o campo está ligado.
+ * ── O QUE O ATLETA VÊ, EM UMA DEFINIÇÃO SÓ ───────────────────────────────────
+ *
+ * Havia aqui uma quarta cópia de `telaDe()` — as outras três estavam no
+ * `medir-alocacao.mjs`, no `medir-vagas.mjs` e no `alocacao.test.mjs`, e a
+ * CLI tinha uma quinta conta, implícita, que imprimia 68 linhas onde estas
+ * cortavam em 40. A divergência produziu um erro de relatório em 11/08/2026 e
+ * está registrada no RECUPERACAO.md: **"chegou à tela" queria dizer coisas
+ * diferentes em dois parágrafos do mesmo documento.**
+ *
+ * Agora a projeção é uma só e mora em `roteador.mjs` (`telaDaResposta`), e a
+ * CLI imprime exatamente ela. O que este arquivo continua NÃO importando de lá
+ * são os NÚMEROS: o orçamento (`tela.porSecao` × `tela.secoes`) é dado do
+ * canário, e inflar `TETO_DA_SECAO` na ferramenta não muda uma linha do que
+ * este arquivo cobra. É a regra de 10/08, e ela sobreviveu à mudança de forma.
  */
-function telaDe(r) {
-  const ordem = [];
-  const visto = new Set();
-  const push = (c, canal) => {
-    if (visto.has(c.id)) return;
-    visto.add(c.id);
-    ordem.push({ id: c.id, canal });
-  };
-  for (const x of r.claims) push(x.c, 'rota');
-  for (const x of r.params.lista) push(x.c, 'param');
-  for (const v of r.vizinhos) push(v.c, v.canal ?? 'viz');
-  return ordem;
-}
+const telaDe = (r) => telaDaResposta(r);
 
 for (const can of doc.canarios ?? []) {
   const onde = `canário ${can.id ?? '(sem id)'}`;
@@ -558,6 +559,14 @@ for (const can of doc.canarios ?? []) {
     const pa = can.perguntaDoAtleta;
     if (pa) {
       for (const k of Object.keys(pa)) {
+        if (CAMPOS_PERGUNTA_MORTOS.has(k)) {
+          erros.push(
+            `${onde} perguntaDoAtleta: campo "${k}" MORREU em 13/08/2026, junto com a tela plana. `
+              + 'Troque por "tela": { "porSecao": N, "secoes": M }. Deixá-lo passar como campo '
+              + 'desconhecido faria o canário ser medido pelo orçamento padrão da ferramenta.',
+          );
+          continue;
+        }
         if (!CAMPOS_PERGUNTA.has(k)) {
           erros.push(`${onde} perguntaDoAtleta: campo "${k}" não existe (conhecidos: ${[...CAMPOS_PERGUNTA].join(', ')})`);
         }
@@ -570,13 +579,27 @@ for (const can of doc.canarios ?? []) {
             + 'esconde a distância entre os dois, que é a única coisa que o conjunto cego mede.',
         );
       }
-      const teto = pa.tetoDeTela;
-      if (!Number.isInteger(teto)) {
+      /**
+       * ── O ORÇAMENTO SÃO DOIS NÚMEROS DESDE 13/08/2026 ─────────────────────
+       *
+       * A resposta deixou de ser uma tela plana de N vagas: é uma SEÇÃO POR
+       * GAVETA aberta, e o custo é `porSecao × secoes`. Os dois continuam sendo
+       * DADO do canário pela mesma razão de sempre — se viessem de
+       * `roteador.mjs`, inflar a constante lá deixaria este arquivo verde
+       * medindo outra coisa, que é como `TETO_VIZINHANCA 40 → 400` sobreviveu.
+       *
+       * O antigo `tetoDeTela` é ERRO e não default silencioso: um canário que
+       * ficasse com o campo velho seria medido pelo orçamento padrão da
+       * ferramenta sem que ninguém percebesse.
+       */
+      const tela = pa.tela;
+      if (!tela || !Number.isInteger(tela.porSecao) || !Number.isInteger(tela.secoes)) {
         linha.ok = false;
         erros.push(
-          `${onde} perguntaDoAtleta: "tetoDeTela" ausente ou não inteiro. O limite de POSIÇÃO é dado `
-            + 'do canário, nunca constante da ferramenta de busca — foi assim que a trava se testou '
-            + 'a si mesma em 09/08.',
+          `${onde} perguntaDoAtleta: falta "tela": { "porSecao": N, "secoes": M }. O orçamento da `
+            + 'tela é dado do canário, nunca constante da ferramenta de busca — foi assim que a '
+            + 'trava se testou a si mesma em 09/08. (o antigo "tetoDeTela" morreu junto com a '
+            + 'tela plana — ver roteador.mjs, bloco "A TELA: UMA SEÇÃO POR GAVETA")',
         );
       } else if (!TOPICS.has(pa.topicoDaResposta)) {
         linha.ok = false;
@@ -602,12 +625,18 @@ for (const can of doc.canarios ?? []) {
         }
 
         const r = responder(claims, can.pergunta, {
-          topicos: TOPICS, glossario: GLOSSARIO, vocabulario: VOCAB, idx: INDICE, perfis: PERFIS, teto,
+          topicos: TOPICS, glossario: GLOSSARIO, vocabulario: VOCAB, idx: INDICE, perfis: PERFIS, tela,
         });
         const rotas = r.rotas.map((x) => x.topico);
-        const tela = telaDe(r).slice(0, teto).map((x) => x.id);
+        /**
+         * SEM `.slice()` AQUI, e a ausência é a mudança de contrato. A tela
+         * inteira É o que o orçamento produziu — cortar de novo por posição
+         * seria um teto GLOBAL que come as seções de baixo em silêncio, que é o
+         * soma-zero voltando pela porta dos fundos.
+         */
+        const naTela = telaDe(r).map((x) => x.id);
 
-        const recuperados = ids.filter((i) => tela.includes(i));
+        const recuperados = ids.filter((i) => naTela.includes(i));
         const abriuOTopico = rotas.includes(pa.topicoDaResposta);
         const gavetas = rotas
           .filter((t) => ids.some((i) => (porId.get(i)?.topic ?? []).includes(t)))

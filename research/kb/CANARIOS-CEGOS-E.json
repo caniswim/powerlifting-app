@@ -1,0 +1,202 @@
+{
+ "canarios": [
+  {
+   "id": "E01",
+   "pergunta": "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha",
+   "idsEsperados": [
+    "V089-24",
+    "V089-25"
+   ],
+   "topicosCertos": [
+    "dor",
+    "lesao"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs V089-24 V089-25  -> 2 de 2 existem. Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha\"  -> abre 5 gavetas (peito 9 vagas · supino 3 · dor 3 · descanso-entre-series 8 · competicao 3) e NENHUM dos dois ids sai. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha\" --topic dor  -> V089-24 E V089-25 saem dentro das 40.",
+   "porqueEhEscondido": "A base chama isso de tendinite e responde no vocabulario clinico (V089-24: nao descansar completamente, porque piora; V089-25: variacoes de velocidade lenta, tempo e pausas, porque a tensao no tendao depende do peso E da velocidade). O atleta nao tem esse nome: ele diz incomodo no peito e descansar totalmente. Sem --topic a gaveta `dor` ABRE e mesmo assim recebe so 3 das 40 vagas, porque `peito` (31 claims, gaveta pequena que pontua alto) fica com 9 e `descanso-entre-series` com 8 — duas gavetas que nao tem a resposta comem 17 vagas. Para este atleta, com peitoral rompido, a resposta errada e a mais intuitiva: parar de vez.",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 5
+  },
+  {
+   "id": "E02",
+   "pergunta": "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar",
+   "idsEsperados": [
+    "V167-17",
+    "V167-18"
+   ],
+   "topicosCertos": [
+    "dor",
+    "supino",
+    "ombros"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs V167-17 V167-18  -> 2 de 2 existem. Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar\"  -> abre 3 gavetas (supino 3 vagas · ombros 12 · rom 7) e NENHUM dos dois sai. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar\" --topic dor  -> V167-17 (1o) e V167-18 saem.",
+   "porqueEhEscondido": "A palavra da base e `flare`, que o atleta nao usa; ele descreve o gesto (abrir mais o cotovelo). As duas claims moram nas TRES gavetas que a pergunta mais parece pedir — supino, ombros e dor — e mesmo assim `supino` (694) leva so 3 vagas e `dor` nem abre. E a resposta e de duas metades que precisam sair juntas: V167-17 admite que a dor acontece, V167-18 diz que ela nao e inerente ao movimento. Sair so a primeira metade manda o atleta abandonar uma forma que so precisava de aclimatacao — e para quem tem historico de peitoral, mudar trajetoria por medo e caro.",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 3
+  },
+  {
+   "id": "E03",
+   "pergunta": "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita",
+   "idsEsperados": [
+    "F001-37",
+    "F001-47"
+   ],
+   "topicosCertos": [
+    "cinto",
+    "supino",
+    "erro-comum"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs F001-37 F001-47  -> 2 de 2 existem (IPF-TR2026 §4.2.8 e §4.2.1.6). Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita\"  -> abre 5 gavetas (supino 3 vagas · barra-baixa 9 · setup 3 · comandos-ipf 6 · equipamento 3), `cinto` NAO abre, nenhum id sai. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita\" --topic cinto  -> F001-37 e F001-47 saem em 1o e 2o.",
+   "porqueEhEscondido": "Resposta ESTREITA de sim/nao com duas claims de regulamento, e ela mora numa gaveta MINUSCULA (`cinto`, 54 claims) que disputa com uma enorme (`supino`, 694). A pergunta e visivelmente de supino, entao o roteador abre supino, setup, comandos-ipf, equipamento e ate barra-baixa — cinco gavetas plausiveis, nenhuma com a regra — e a unica que tem a resposta nunca entra na disputa. O atleta diz `fivela`, palavra que nao esta na lista de entrada de nenhuma das 74 gavetas; a base diz `cinto`. A resposta certa e dura: barra tocando o cinto anula a tentativa.",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 5
+  },
+  {
+   "id": "E04",
+   "pergunta": "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos",
+   "idsEsperados": [
+    "F001-14",
+    "F001-28"
+   ],
+   "topicosCertos": [
+    "pegada",
+    "agacho",
+    "supino"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs F001-14 F001-28  -> 2 de 2 existem (§4.1.1 e §4.2.2). Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos\"  -> abre 5 gavetas (supino 5 vagas · dor 5 · pegada 5 · regras-ipf 8 · lesao 3); `pegada` ABRE e mesmo assim nao entrega nenhum dos dois. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos\" --topic pegada  -> F001-14 e F001-28 saem os dois.",
+   "porqueEhEscondido": "E o caso puro de diluicao: a gaveta certa ABRE e perde. Cinco gavetas repartem as 40 vagas e `pegada` fica com 5 — nao cabem as duas linhas de regulamento. Pior, a resposta e um PAR que se contradiz de proposito: no agacho o polegar NAO precisa envolver a barra (F001-14), no supino ele TEM de envolver (F001-28). Entregar so uma das duas produz a resposta errada para o outro movimento, e a pergunta pede explicitamente os tres. O atleta diz `dedao`, que nao esta na lista de entrada de nenhuma gaveta; a base diz `polegar` e `thumbless`.",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 5
+  },
+  {
+   "id": "E05",
+   "pergunta": "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo",
+   "idsEsperados": [
+    "F001-79"
+   ],
+   "topicosCertos": [
+    "equipamento",
+    "terra"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs F001-79  -> existe (§3.5.d). Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo\"  -> abre 3 gavetas (pernas 14 vagas · terra 3 · sumo 14), `equipamento` NAO abre, o id nao sai. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo\" --topic equipamento  -> F001-79 sai em 1o.",
+   "porqueEhEscondido": "Resposta ESTREITA de uma claim so: meia de cano ate a canela e OBRIGATORIA no terra. A pergunta cai no buraco descrito no briefing: `perna` abre `pernas` (125) e `sumo` (145), duas gavetas de MUSCULO e de TECNICA, que juntas comem 28 das 40 vagas, enquanto a gaveta de REGRA nem entra. O contra-teste do vocabulario: `regras-ipf` tem literalmente `meia comprida pro terra` na lista de entrada, e esta pergunta nao usa nenhuma dessas palavras — ela diz `vestir da metade da perna pra baixo`, que nao esta em entrada nenhuma. E o item que desclassifica na inspecao de equipamento se o atleta descobrir no dia.",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 3
+  },
+  {
+   "id": "E06",
+   "pergunta": "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda",
+   "idsEsperados": [
+    "V174-12",
+    "V174-16"
+   ],
+   "topicosCertos": [
+    "strap",
+    "terra",
+    "equipamento"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs V174-12 V174-16  -> 2 de 2 existem. Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda\"  -> abre 3 gavetas (equipamento 15 vagas · volume 4 · series-reps 4); `equipamento` abre com 15 vagas e NAO entrega nenhum dos dois. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda\" --topic strap  -> V174-12 e V174-16 saem os dois.",
+   "porqueEhEscondido": "Gaveta MINUSCULA (`strap`, 15 claims) contra enormes (`volume` 750, `equipamento` 199), e a minuscula nem e cogitada. A resposta e um numero que muda a estrategia de abridora deste atleta: o gap de cerca de 100 lb entre terra de academia e de competicao vem de tres coisas — barra, anilhas e straps (V174-12) — e com strap a barra fica pendurada fora da mao, cortando ainda mais amplitude (V174-16). Nenhuma palavra da pergunta e da lista de entrada de `strap` (`straps`, `alca de pulso`, `poupar a mao`): o atleta descreve o SINTOMA (o numero nao se repete), nao a causa, porque a causa e justamente o que ele nao sabe.",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 3
+  },
+  {
+   "id": "E07",
+   "pergunta": "durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao",
+   "idsEsperados": [
+    "V015-10",
+    "V015-12"
+   ],
+   "topicosCertos": [
+    "sono",
+    "recuperacao"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs V015-10 V015-12  -> 2 de 2 existem. Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao\"  -> abre 5 gavetas (recuperacao 4 vagas · dor 8 · periodizacao 3 · meta-metodologia 3 · deload 4); `sono` NAO abre e nenhum id sai. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao\" --topic sono  -> V015-10 e V015-12 saem.",
+   "porqueEhEscondido": "Uma pergunta literalmente sobre sono nao abre a gaveta `sono` (57). A lista de entrada dela tem `dormir`, `horario de dormir`, `consistencia de sono` — e a pergunta diz `durmo` e `cada dia numa hora diferente`, que nao estao em entrada nenhuma. E exatamente o defeito da onda 2C repetido em outro tema: a vitrine depende da palavra literal. As 40 vagas vao para cinco gavetas de treino (recuperacao, dor, periodizacao, meta-metodologia, deload) e a resposta contraintuitiva se perde: a consistencia do horario pode importar MAIS que a duracao (V015-12), e horario consistente e o item numero um da higiene de sono (V015-10). Sem isso a resposta vira `durma mais`, que e o conselho errado para quem ja dorme sete horas.",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 5
+  },
+  {
+   "id": "E08",
+   "pergunta": "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso",
+   "idsEsperados": [
+    "G031-37",
+    "G031-38",
+    "G029-17"
+   ],
+   "topicosCertos": [
+    "antropometria",
+    "profundidade",
+    "agacho"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs G031-37 G031-38 G029-17  -> 3 de 3 existem. Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso\"  -> abre 5 gavetas (agacho 3 vagas · core 5 · frequencia 8 · ordem-exercicio 8 · cinto 5); `antropometria` e `profundidade` NAO abrem, nenhum id sai. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso\" --topic antropometria  -> os TRES saem (G031-38, G031-37, G029-17).",
+   "porqueEhEscondido": "`antropometria` (78) e `profundidade` (87) sao pequenas e perdem para `agacho` (990) — que abre e leva 3 vagas — e para tres gavetas que nao tem nada a ver (frequencia, ordem-exercicio, cinto) que juntas levam 21. A resposta muda a decisao inteira: o femur encosta no acetabulo (G031-37), a falta de profundidade vem de esbarrar em si mesmo (G029-17) e para esse levantador algum arredondamento da lombar e INEVITAVEL, porque e o que permite contornar a articulacao (G031-38). A resposta padrao — mobilidade, mais alongamento, corrigir a forma — e a errada e faz o atleta perseguir uma correcao que o osso dele nao permite. `amasso contra mim mesmo` e `do meu osso` nao estao na lista de entrada de nenhuma gaveta.",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 5
+  },
+  {
+   "id": "E09",
+   "pergunta": "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida",
+   "idsEsperados": [
+    "G008-27",
+    "G008-29",
+    "G008-43"
+   ],
+   "topicosCertos": [
+    "carga-de-treino",
+    "volume",
+    "meta-metodologia"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs G008-27 G008-29 G008-43  -> 3 de 3 existem. Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida\"  -> abre 5 gavetas (series-reps 4 vagas · volume 3 · progressao 3 · capacidade-trabalho 10 · frequencia 3); `carga-de-treino` NAO abre, nenhum id sai. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida\" --topic carga-de-treino  -> os TRES saem (G008-29, G008-43, G008-27) em 1o, 2o e 3o.",
+   "porqueEhEscondido": "A gaveta certa e a segunda MENOR desta base com resposta util (`carga-de-treino`, 13 claims) e ela disputa com `volume` (750) e `progressao` (741) — 1 para 57. As palavras da pergunta (`series`, `carga`, `semana`) sao exatamente as que pertencem as gavetas gigantes, entao a diluicao aqui e estrutural, nao acidental. A lista de entrada de `carga-de-treino` tem `stress index`, `quanto pesou o treino`, `comparar carga entre exercicios diferentes` — a pergunta nao usa nenhuma delas de proposito. A resposta e o nome de uma ferramenta que o atleta nao sabe que existe: o stress index do Tuchscherer, que serve justamente para comparar series de estresse diferentes entre si (G008-29) e explica por que certas progressoes funcionam, por manterem banda estreita (G008-43).",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 5
+  },
+  {
+   "id": "E10",
+   "pergunta": "posso passar esparadrapo no dedao pra segurar melhor a barra no terra",
+   "idsEsperados": [
+    "F001-100"
+   ],
+   "topicosCertos": [
+    "equipamento",
+    "pegada"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs F001-100  -> existe (§3.11). Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"posso passar esparadrapo no dedao pra segurar melhor a barra no terra\"  -> abre 4 gavetas (terra 3 vagas · setup 8 · costas 8 · pegada 7); `pegada` ABRE com 7 vagas e mesmo assim nao entrega o id; `equipamento` nao abre. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"posso passar esparadrapo no dedao pra segurar melhor a barra no terra\" --topic equipamento  -> F001-100 sai em 1o (e --topic pegada tambem o devolve).",
+   "porqueEhEscondido": "Resposta ESTREITA de uma claim so, e a resposta e um `sim, mas` que o atleta nao adivinha: duas camadas de fita medica em volta dos polegares sao permitidas, E a fita nao pode ser usada como ajuda para segurar a barra — que e literalmente o motivo declarado na pergunta. Uma gaveta com a resposta (`pegada`) abre e perde por diluicao contra `terra` (748), `setup` (356) e `costas` (119). `esparadrapo` nao esta na lista de entrada de nenhuma das 74 gavetas; a base diz `fita medica` e `tape`.",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 4
+  },
+  {
+   "id": "E11",
+   "pergunta": "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa",
+   "idsEsperados": [
+    "F001-30"
+   ],
+   "topicosCertos": [
+    "setup",
+    "supino"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs F001-30  -> existe (§4.2.2). Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa\"  -> abre 5 gavetas (supino 3 vagas · dor 8 · recuperacao 3 · competicao 3 · proximidade-da-falha 5); `setup` NAO abre e o id nao sai. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa\" --topic setup  -> F001-30 sai dentro das 40.",
+   "porqueEhEscondido": "Resposta ESTREITA de sim/nao com uma claim so, e ela e o contrario do que o atleta teme: movimento de pe E permitido no supino, desde que o pe continue plano na plataforma. Duas gavetas com a resposta existem (`setup` 356, `supino` 694) e a que a contem em posicao alta nao abre; em vez dela abrem `dor` (8 vagas), `recuperacao` e `proximidade-da-falha`, porque `forte`, `empurro` e `queima` sao lidos como esforco e ardencia, nao como regra de plataforma. `queima a tentativa` nao esta em entrada nenhuma — o regulamento diz `anula`, `nulo`, `luz vermelha`. Errar aqui faz o atleta amarrar o pe e perder leg drive por medo de uma regra que nao existe.",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 5
+  },
+  {
+   "id": "E12",
+   "pergunta": "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca",
+   "idsEsperados": [
+    "V127-15",
+    "V127-13"
+   ],
+   "topicosCertos": [
+    "lesao",
+    "dor",
+    "selecao-exercicio"
+   ],
+   "comoVoceProvou": "node research/tools/check-evidence.mjs V127-15 V127-13  -> 2 de 2 existem. Roteamento cego: node research/tools/check-evidence.mjs --pergunta \"meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca\"  -> abre 5 gavetas (ombros 10 vagas · recuperacao 3 · supino 3 · programacao 3 · dor 5); nenhum dos dois sai. Gaveta forcada: node research/tools/check-evidence.mjs --pergunta \"meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca\" --topic lesao  -> V127-15 e V127-13 saem os dois dentro das 40.",
+   "porqueEhEscondido": "A resposta so serve inteira, e as duas metades moram em gavetas diferentes: V127-15 (lesao/dor/volume) diz que SIM, quem se detona num movimento pode fazer a maior parte ou ate TODO o trabalho com variacoes auto-limitantes; V127-13 (selecao-exercicio/supino/volume) e a condicao que impede o estrago, porque variacao sem leg drive praticado deixa o leg drive deficiente no supino principal. Cinco gavetas plausiveis repartem a tela, `ombros` (110) leva 10 vagas sem ter a resposta e `lesao` (362) nem abre. Para este atleta — reexposicao gradual do supino apos peitoral rompido — devolver so o `pode` sem a condicao e o erro que custa a competicao.",
+   "jaPassaHoje": false,
+   "gavetasQueDisputam": 5
+  }
+ ]
+}

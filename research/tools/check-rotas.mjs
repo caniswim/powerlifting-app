@@ -18,7 +18,7 @@
  *
  * 1. **Nenhuma trava lê a constante que ela verifica.** O `TETO_VIZINHANCA` era
  *    importado de `busca.mjs` pelo canário que o media: trocar 40 por 400 fazia
- *    o `check:kb` inteiro passar verde. Aqui o teto é `tetoDeTela`, **campo do
+ *    o `check:kb` inteiro passar verde. Aqui o orçamento é `tela`, **campo do
  *    `ROTAS.json`**, e este arquivo **não importa nenhuma constante de
  *    `roteador.mjs`** — só as funções. Mudar `TETO_ROTEADO` na ferramenta não
  *    muda o que este arquivo cobra.
@@ -33,7 +33,7 @@
  * AS TRÊS FAMÍLIAS
  *
  *   mapeia      — a pergunta resolve para tópicos NOMEADOS, e os ids que a
- *                 respondem saem dentro de `tetoDeTela`. Cobra recall.
+ *                 respondem saem dentro de `tela`. Cobra recall.
  *   nao-mapeia  — a pergunta NÃO é desta base, e o roteamento tem de dizer isso
  *                 com o `motivo` certo. Dizer "não sei" é resposta; devolver
  *                 lixo plausível não é. Cobra a recusa.
@@ -101,24 +101,48 @@ if (claims.length === 0) {
 /**
  * ── O TETO DO TOPO É COBRADO AQUI, E POR ISSO DEIXOU DE SER LETRA MORTA ──────
  *
- * O `_leia` deste arquivo apresenta `tetoDeTela` como a cura do modo de falha
+ * O `_leia` deste arquivo apresenta o orçamento de tela como a cura do modo de falha
  * nº 4 — o número mora no JSON e não em `roteador.mjs`. O ataque de 10/08/2026
  * mostrou que o campo do TOPO era decorativo: todos os 12 casos que precisam de
- * teto carregam o seu, `caso.tetoDeTela ?? doc.tetoDeTela` nunca caía no de
+ * teto carregam o seu, `caso.tela ?? doc.tela` nunca caía no de
  * cima, e renomear a linha de cima para `"MORTO"` deixava este checker em
  * exit 0. Pior, a chamada de `responder` escrevia `teto: teto ?? 40` — o mesmo
  * 40 hardcoded dentro da ferramenta que o arquivo diz não poder tê-lo.
  *
  * Agora o teto do topo é lido ANTES de qualquer caso e a ausência dele é erro
  * de carga. Repro que passou a falhar:
- *   sed -i '' 's/^  "tetoDeTela": 40,/  "MORTO": 40,/' research/kb/ROTAS.json
+ *   sed -i '' 's/^ "tela": {/ "MORTO": {/' research/kb/ROTAS.json
  *   node research/tools/check-rotas.mjs   → exit 2
  */
-const TETO_DO_ARQUIVO = doc.tetoDeTela;
-if (!Number.isInteger(TETO_DO_ARQUIVO)) {
+/**
+ * ── E DESDE 13/08/2026 O ORÇAMENTO SÃO DOIS NÚMEROS, NÃO UM ─────────────────
+ *
+ * A resposta deixou de ser uma tela plana de N vagas: é uma SEÇÃO POR GAVETA
+ * aberta. Então o orçamento é `porSecao` × `secoes`, e os dois são dado do
+ * JSON pelo mesmo motivo de sempre — inflar `TETO_DA_SECAO` em
+ * `roteador.mjs` não pode mudar uma linha do que este arquivo cobra.
+ *
+ * `porSecaoForcada` só é lido nos casos com `forcaTopico`: a gaveta que um
+ * humano pediu tem teto próprio, e ele também é dado do canário.
+ */
+const telaValida = (t) => t && Number.isInteger(t.porSecao) && Number.isInteger(t.secoes);
+/**
+ * A PORTA VELHA (`--busca`, `recuperar()`) continua sendo uma tela PLANA, e o
+ * teto dela é outro dado: as duas portas respondem a perguntas diferentes e
+ * nenhuma das duas pode herdar o número da outra em silêncio.
+ */
+const TELA_DA_BUSCA_LIVRE = doc.telaDaBuscaLivre;
+if (!Number.isInteger(TELA_DA_BUSCA_LIVRE)) {
+  console.error(`\u2717 ${ARQUIVO}: falta "telaDaBuscaLivre" no topo (o teto da porta --busca).`);
+  process.exit(2);
+}
+if (!telaValida(doc.tela)) {
   console.error(
-    `✗ ${ARQUIVO}: falta "tetoDeTela" no topo. Este número é DADO do canário, nunca constante da `
-      + 'ferramenta que ele mede. Os casos podem sobrescrevê-lo; nenhum default vem daqui.',
+    `✗ ${ARQUIVO}: falta "tela": { "porSecao": N, "secoes": M } no topo. Estes números são DADO do `
+      + 'canário, nunca constante da ferramenta que ele mede. Os casos podem sobrescrevê-los; '
+      + 'nenhum default vem daqui.\n'
+      + '  (o antigo "tetoDeTela" morreu com a tela plana — ver roteador.mjs, bloco '
+      + '"A TELA: UMA SEÇÃO POR GAVETA")',
   );
   process.exit(2);
 }
@@ -140,7 +164,7 @@ const MOTIVOS = new Set(['fora-de-dominio', 'sem-assunto']);
  */
 const CAMPOS = new Set([
   'id', 'familia', 'pergunta', 'porque', 'topicos', 'topicosProibidos', 'sustenta', 'proibidos',
-  'motivo', 'tetoDeTela', 'forcaTopico', 'nota', 'tambemPelaBuscaLivre',
+  'motivo', 'tela', 'forcaTopico', 'nota', 'tambemPelaBuscaLivre',
   'viaPaginaAoLado',
 ]);
 
@@ -171,16 +195,26 @@ for (const caso of doc.casos ?? []) {
    * silencioso vindo da ferramenta. Um default aqui seria a mesma trava que se
    * testa a si mesma, com uma linha a menos.
    */
-  const teto = caso.tetoDeTela ?? TETO_DO_ARQUIVO;
-  if (caso.familia !== 'nao-mapeia' && !Number.isInteger(teto)) {
+  const tela = caso.tela ?? doc.tela;
+  if (caso.familia !== 'nao-mapeia' && !telaValida(tela)) {
     erros.push(
-      `${onde}: sem "tetoDeTela" (nem no caso nem no topo do arquivo). Este número é DADO do `
+      `${onde}: sem "tela" (nem no caso nem no topo do arquivo). Estes números são DADO do `
         + 'canário, nunca constante da ferramenta que ele mede — foi assim que TETO_VIZINHANCA '
         + 'passou de 40 para 400 com o check:kb verde.',
     );
     linhas.push({ ...linha, ok: false });
     continue;
   }
+  if (caso.forcaTopico && caso.tela && !Number.isInteger(caso.tela.porSecaoForcada)) {
+    erros.push(
+      `${onde}: usa "forcaTopico" e declara "tela" sem "porSecaoForcada". A seção que um humano `
+        + 'pede por --topic tem teto próprio, e ele é dado do canário — sem isto o número vem de '
+        + 'TETO_DA_SECAO_FORCADA em roteador.mjs, que é a trava lendo a constante que verifica.',
+    );
+    linhas.push({ ...linha, ok: false });
+    continue;
+  }
+  const orcamento = `${tela.porSecao} por seção × ${tela.secoes} seção(ões)`;
 
   // ── os tópicos esperados existem na lista FECHADA? ────────────────────────
   //
@@ -213,7 +247,7 @@ for (const caso of doc.casos ?? []) {
     vocabulario: VOCAB,
     idx: INDICE,
     perfis: PERFIS,
-    teto,
+    tela,
     forcar: caso.forcaTopico ? [caso.forcaTopico] : [],
   });
   const roteados = r.rotas.map((x) => x.topico);
@@ -289,7 +323,7 @@ for (const caso of doc.casos ?? []) {
       `${onde}: ABRIU GAVETA QUE NÃO PODE ABRIR — "${caso.pergunta}" roteou para `
         + `${abriuProibido.join(', ')}.\n`
         + `        Roteou para [${roteados.join(', ')}]. Uma gaveta a mais não é grátis: ela disputa as\n`
-        + `        ${teto} vagas da tela com a gaveta que tem a resposta, e sai com a mesma cara de\n`
+        + `        ${orcamento} da tela com a gaveta que tem a resposta, e sai com a mesma cara de\n`
         + '        certeza. É o defeito que `peso-corporal` cometeu no P16 — sem id proibido nenhum,\n'
         + '        sem tópico faltando, e a tela inteira errada.',
     );
@@ -300,7 +334,7 @@ for (const caso of doc.casos ?? []) {
     linha.ok = false;
     erros.push(
       `${onde}: A CAMADA DE ROTEAMENTO REGREDIU — "${caso.pergunta}" não devolve `
-        + `${faltandoId.join(', ')} dentro das ${teto} primeiras.\n`
+        + `${faltandoId.join(', ')} dentro da tela (${orcamento}).\n`
         + '        Os ids existem e o conteúdo deles foi conferido acima. É a recuperação que\n'
         + '        parou de achar, e NÃO uma lacuna da base.',
     );
@@ -368,7 +402,7 @@ for (const caso of doc.casos ?? []) {
       linha.ok = false;
     }
     const rl = recuperar(claims, {
-      grep: caso.pergunta, piso: Infinity, teto, idx: INDICE, vocabulario: VOCAB,
+      grep: caso.pergunta, piso: Infinity, teto: TELA_DA_BUSCA_LIVRE, idx: INDICE, vocabulario: VOCAB,
     });
     injetadosLivre = (caso.proibidos ?? []).filter((i) => rl.idsMostrados.has(i));
     if (injetadosLivre.length > 0) {

@@ -70,8 +70,13 @@ writeFileSync(join(dir, 'R900.jsonl'), BASE.filter((c) => c.src === 'R900').map(
  * Três claims no mesmo tópico e uma fora dele. A ordem em que o roteamento as
  * devolve para a pergunta `cardio atrapalha o ganho de força?` é estável e
  * MEDIDA: V901-03, V901-01, V901-02. É isso que torna possível provar que
- * `tetoDeTela` é limite de POSIÇÃO — com 1 entra só a primeira, com 2 entram
- * duas, com 3 entram as três — sem importar constante nenhuma da ferramenta.
+ * `tela.porSecao` é limite de POSIÇÃO DENTRO DA SEÇÃO — com 1 entra só a
+ * primeira, com 2 entram duas, com 3 entram as três — sem importar constante
+ * nenhuma da ferramenta.
+ *
+ * Os casos da porta nova passam `lado: 0` e `ligacoes: 0` de propósito: as
+ * quatro claims são do MESMO `src`, então a página ao lado traria as vizinhas e
+ * o que se quer medir aqui é o teto da seção, não o canal de complemento.
  */
 const BASE2 = [
   {
@@ -491,7 +496,7 @@ const CASOS = [
   // roteamento. Três coisas precisam de prova, e são as três que o ataque de
   // 10/08/2026 mostrou faltarem em alguma trava desta casa:
   //
-  //   1. `tetoDeTela` é limite de POSIÇÃO e vem do canário. Os três primeiros
+  //   1. `tela.porSecao` é limite de POSIÇÃO e vem do canário. Os três primeiros
   //      casos rodam o MESMO canário com 1, 2 e 3, e a lista de ids muda junto.
   //      Um checker que lesse o teto de `roteador.mjs` daria a mesma resposta
   //      nos três.
@@ -501,48 +506,48 @@ const CASOS = [
   //   3. O canário não pode declarar um tópico da resposta que não guarda a
   //      resposta: seria medir a abertura da gaveta errada, que é o P16.
   {
-    nome: 'porta nova: tetoDeTela 1 deixa entrar só a 1ª da tela',
+    nome: 'porta nova: tela.porSecao 1 deixa entrar só a 1ª da seção',
     base: dir2,
     aprova: true,
-    canarios: [daPorta({ tetoDeTela: 1, recuperados: ['V901-03'], veredito: 'falha' })],
+    canarios: [daPorta({ tela: { porSecao: 1, secoes: 5, lado: 0, ligacoes: 0 }, recuperados: ['V901-03'], veredito: 'falha' })],
   },
   {
-    nome: 'porta nova: tetoDeTela 2 deixa entrar duas — o teto é POSIÇÃO',
+    nome: 'porta nova: tela.porSecao 2 deixa entrar duas — o teto é POSIÇÃO',
     base: dir2,
     aprova: true,
-    canarios: [daPorta({ tetoDeTela: 2, recuperados: ['V901-01', 'V901-03'], veredito: 'falha' })],
+    canarios: [daPorta({ tela: { porSecao: 2, secoes: 5, lado: 0, ligacoes: 0 }, recuperados: ['V901-01', 'V901-03'], veredito: 'falha' })],
   },
   {
-    nome: 'porta nova: tetoDeTela 3 entrega as três e o veredito vira "passa"',
+    nome: 'porta nova: tela.porSecao 3 entrega as três e o veredito vira "passa"',
     base: dir2,
     aprova: true,
-    canarios: [daPorta({ tetoDeTela: 3, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' })],
+    canarios: [daPorta({ tela: { porSecao: 3, secoes: 5, lado: 0, ligacoes: 0 }, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' })],
   },
   {
     // O mesmo registro do caso anterior, com o teto em 1: se o número do JSON
     // não estivesse ligado, este caso continuaria verde.
     nome: 'porta nova: baixar o teto para 1 com o registro de 3 ACUSA',
     base: dir2,
-    canarios: [daPorta({ tetoDeTela: 1, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' })],
+    canarios: [daPorta({ tela: { porSecao: 1, secoes: 5, lado: 0, ligacoes: 0 }, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' })],
     esperado: /A MEDIDA DA PORTA NOVA MUDOU[\s\S]*agora \[V901-03\]/,
   },
   {
     nome: 'porta nova: MELHORAR também acusa — canário vermelho não fica verde em silêncio',
     base: dir2,
-    canarios: [daPorta({ tetoDeTela: 3, recuperados: [], veredito: 'falha' })],
+    canarios: [daPorta({ tela: { porSecao: 3, secoes: 5, lado: 0, ligacoes: 0 }, recuperados: [], veredito: 'falha' })],
     esperado: /veredito: registrado "falha", agora "passa"/,
   },
   {
-    nome: 'porta nova: sem tetoDeTela é recusado — o limite de posição é dado do canário',
+    nome: 'porta nova: sem "tela" é recusado — o orçamento é dado do canário',
     base: dir2,
     canarios: [daPorta({ recuperados: [], veredito: 'falha' })],
-    esperado: /limite de POSIÇÃO é dado do canário/,
+    esperado: /O orçamento da\s+tela é dado do canário/,
   },
   {
     nome: 'porta nova: topicoDaResposta que não etiqueta nenhum id de sustenta é recusado',
     base: dir2,
     canarios: [daPorta({
-      tetoDeTela: 3, topicoDaResposta: 'sono', abriuOTopico: false,
+      tela: { porSecao: 3, secoes: 5, lado: 0, ligacoes: 0 }, topicoDaResposta: 'sono', abriuOTopico: false,
       recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa',
     })],
     esperado: /o tópico da resposta é palpite/,
@@ -557,7 +562,7 @@ const CASOS = [
   {
     nome: 'porta nova: canário sem "conjunto" é recusado — placar somado esconde a distância',
     base: dir2,
-    canarios: [(() => { const c = daPorta({ tetoDeTela: 3, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' }); delete c.conjunto; return c; })()],
+    canarios: [(() => { const c = daPorta({ tela: { porSecao: 3, secoes: 5, lado: 0, ligacoes: 0 }, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' }); delete c.conjunto; return c; })()],
     esperado: /sem "conjunto"[\s\S]*esconde a distância/,
   },
   {
@@ -565,8 +570,8 @@ const CASOS = [
     base: dir2,
     aprova: true,
     canarios: [
-      daPorta({ tetoDeTela: 3, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' }, { id: 'T01', conjunto: 'publico' }),
-      daPorta({ tetoDeTela: 1, recuperados: ['V901-03'], veredito: 'falha' }, { id: 'T02', conjunto: 'cego' }),
+      daPorta({ tela: { porSecao: 3, secoes: 5, lado: 0, ligacoes: 0 }, recuperados: ['V901-01', 'V901-02', 'V901-03'], veredito: 'passa' }, { id: 'T01', conjunto: 'publico' }),
+      daPorta({ tela: { porSecao: 1, secoes: 5, lado: 0, ligacoes: 0 }, recuperados: ['V901-03'], veredito: 'falha' }, { id: 'T02', conjunto: 'cego' }),
     ],
     // um placar diz 1 de 1 e o outro diz 0 de 1; a média (1 de 2) nunca aparece sozinha
     esperado: /conjunto "publico"[\s\S]*1 de 1 devolvem TODOS[\s\S]*conjunto "cego"[\s\S]*0 de 1 devolvem TODOS/,

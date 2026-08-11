@@ -1,5 +1,116 @@
 # RECUPERAÇÃO — a base escondia o que tinha, e o conserto está na ferramenta
 
+> **VEREDITO — 13/08/2026. A tela plana virou UMA SEÇÃO POR GAVETA. 6.912
+> claims, orçamento de tela `18 claims por seção × 5 seções`.**
+>
+> ```
+>                                 algum id      todos os ids    ids
+> D01-D12 (era cego em 12/08)     2 → 5 de 12   0 → 0 de 12     3 →  6 de 33
+> B01-B12 (era cego em 12/08)     2 → 3 de 12   0 → 1 de 12     ? →  3 de 21
+> P01-P18 (público)               7 → 11 de 18  2 → 6 de 18     ? → 22 de 49
+> OS 42 JUNTOS                   11 → 19        2 → 7
+> ```
+>
+> **A INVARIANTE DE NÃO-DILUIÇÃO VALE, e ela é o que esta onda entregou.**
+> *Acrescentar uma gaveta ao conjunto roteado nunca remove um id que já aparecia
+> na seção de outra.* Não é um ajuste que costuma dar certo: `montarSecaoDeGaveta`
+> **não recebe as outras gavetas** — sem `vistos` compartilhado, sem cota global,
+> sem deduplicação entre seções —, então a tela é a soma direta das seções e somar
+> uma parcela não muda as outras. Cobrado por compilador em
+> `research/tools/secoes.test.mjs`, sobre **107 perguntas reais e 1.644
+> comparações de seção**, e o `check:kb` roda isso.
+>
+> **E o diagnóstico que motivou a onda estava ERRADO em um ponto, o que muda o
+> que se aprende dela.** O caso canônico publicado era:
+>
+> ```
+> --pergunta "<D05>" --topic convencional        -> 3 ids
+> --pergunta "<D05>" --topic convencional sumo terra  -> NADA
+> ```
+>
+> **Os dois comandos são o MESMO comando.** `--topic` lê UM valor
+> (`check-evidence.mjs`, `const arg`), e `sumo` e `terra` são descartados em
+> silêncio por não casarem o padrão de id. Rodados hoje, os dois devolvem as
+> mesmas três claims. **A "prova" de que abrir a gaveta certa mais uma vizinha é
+> pior do que abrir só a certa nunca existiu.** O que existia, e era real, é a
+> repartição soma-zero: sem `--topic`, D05 abria `pernas 8 · convencional 9 ·
+> sumo 3` das 22 vagas da rota e entregava 1 de 3.
+>
+> **O soterramento que sobrou é DENTRO da gaveta, não entre gavetas**, e isto é o
+> achado desta onda. Duas medições:
+>
+>   · **A afinidade era a diluição maior.** `conjuntoDoTopico` acrescenta até 60
+>     claims não etiquetadas ao conjunto de um tópico, e elas vêm das gavetas
+>     GRANDES: casam literalmente as palavras da pergunta e passam à frente das
+>     declaradas. Em D06, F001-11 é a **34ª declarada** de `comandos-ipf` e fica
+>     **fora das 40** quando as 60 afins disputam a mesma fila. Era essa a
+>     diferença entre `--topic <gaveta certa>` (que não recebe afins) e a mesma
+>     gaveta roteada. Consertado: a seção tem um bloco de declaradas e outro de
+>     afins, com cota própria.
+>   · **O que sobra é ordenação.** D05 continua falhando sem `--topic`, e a seção
+>     de `convencional` é **bit a bit a mesma** com uma ou com cinco gavetas
+>     abertas — a invariante vale e não basta. Os três ids estão em 17º, 25º e
+>     27º dentro da própria gaveta, e a seção entrega 18: chega um.
+>     **`node research/tools/secoes.test.mjs` cobra esse número como falha
+>     ABERTA**, para que ele não melhore nem piore em silêncio.
+>
+> **A FISGADA melhorou e a PARÁFRASE deixou de cair.** As cinco claims do limiar
+> de dor chegam sem `--topic`, e agora chegam **JUNTAS, todas na seção `dor`** —
+> V079-34 e V001-06 no corpo da seção (**5ª e 9ª de `dor`**), e V027-23, V086-21
+> e V138-19 no ledger DELA (28ª, 30ª e 31ª linhas da mesma seção), cada uma com o
+> `← condição de V079-34` que diz por que chegou. Antes eram as posições
+> 13/18/36/38/39 de uma lista plana, com margem de duas vagas. **A paráfrase sem jargão** (*"senti uma pontada
+> nível 3 de 10 no peito na 3ª série do supino com pausa, sigo o treino"*)
+> **entrega as CINCO**, com V079-34 em **1º de `dor`** — era 3 de 5.
+>
+> **A precisão do topo: depende da régua, e as duas estão publicadas.** Na
+> concatenação plana das seções a posição mediana da resposta certa é **28** —
+> pior que os 8 de 12/08, e é aritmética: a tela tem mais linhas. Na régua que a
+> forma nova induz — **posição DENTRO da seção rotulada**, que é como um agente
+> lê cinco blocos — a mediana é **6**. As duas saem lado a lado em
+> `node research/tools/medir-secoes.mjs`.
+>
+> **O custo, medido em bytes e não em adjetivos.** A saída da CLI para a pergunta
+> mais larga vai de ~14 kB para **31,0 kB**, e é ela que ESCOLHE o teto de seção:
+> a regra escrita é *o maior teto que cabe em 34 kB*, e 18 é o maior que cabe
+> (22 → 33,9; 24 → 35,2; 40 → 45,5). O teto de bytes é cobrado rodando a CLI de
+> verdade em `secoes.test.mjs`, e é **a única trava que mata o lado que AFROUXA**
+> de todas as constantes da tela — tela cheia não derruba canário de recall
+> nenhum, porque a resposta continua lá no meio do despejo.
+>
+> **`PISO_VAGAS` morreu, e com ele `vagasPorGaveta`, `alocarVagas`,
+> `surpresaDaGaveta`, `EXPOENTE_SURPRESA`, `COTA_AFIM`, `FRACAO_DA_ROTA` e
+> `VAGAS_DA_LIGACAO`.** Não havia mais orçamento a repartir. `LIGACOES_DA_SECAO` e
+> `LADO_DA_SECAO` nasceram nesta onda e **foram removidas no mesmo dia**, quando a
+> mutação mostrou que eram matematicamente inertes pelo lado que afrouxa; os tetos
+> dos dois canais passaram a ser DERIVADOS de `FOCO_DA_SECAO`.
+>
+> **UMA definição de tela, e ela é escrita.** Havia QUATRO cópias de `telaDe()`
+> (`check-canarios`, `medir-alocacao`, `medir-vagas`, `alocacao.test`) mais a
+> conta implícita da CLI, que imprimia 68 linhas onde as outras cortavam em 40.
+> Agora há `telaDaResposta()` em `roteador.mjs`: **a CLI imprime exatamente ela e
+> toda trava conta exatamente ela**, e `secoes.test.mjs` cobra que todo id de
+> `r.tela` apareça na saída do processo. Os NÚMEROS continuam vindo do JSON do
+> canário (`tela: { porSecao, secoes }`), então inflar `TETO_DA_SECAO` na
+> ferramenta não muda uma linha do que as travas cobram.
+>
+> **O byte NUL de `roteador.mjs` foi removido.** Era um NUL literal no separador
+> da chave do memo de `conjuntoDoTopico`, e é por causa dele que `grep` devolvia
+> ZERO linhas neste arquivo sem avisar nada — custou três rodadas a um agente.
+> Virou a sequência de escape `\u0000`, com o mesmo comportamento em execução, e
+> `secoes.test.mjs` recusa a volta dele. `grep` voltou a funcionar no arquivo.
+>
+> **O que NÃO melhorou, dito com o número na frente:** o conjunto que era cego em
+> 12/08 (D01–D12) foi de 2 para 5 em "algum id" e continua em **0 de 12** em
+> "todos os ids". O público foi de 2 para 6 completos. **Essa distância é a
+> assinatura de otimização para o visível e ela é honesta aqui só até certo
+> ponto**: as constantes foram varridas contra os 64 canários com id esperado, e
+> os B## e D## estão nesse conjunto desde que foram publicados. O único conjunto
+> que ainda diz a verdade sobre esta camada é o que esta onda não viu.
+
+<details>
+<summary>Veredito anterior — 12/08/2026 (noite), a alocação por gaveta e a auditoria cega dos D01–D12</summary>
+
 > **VEREDITO — 12/08/2026 (noite), medido contra o conjunto cego D01–D12, que
 > ninguém tinha visto. 6.912 claims, teto de tela 40.**
 >
@@ -65,6 +176,8 @@
 > **D01–D12 estão publicados a partir deste commit e, portanto, queimados**, como
 > os B01–B12 antes deles. A próxima onda precisa de conjunto cego novo, escrito
 > antes do conserto por quem não viu a ferramenta.
+
+</details>
 
 <details>
 <summary>Veredito anterior — 12/08/2026 (tarde), o relatório da alocação por gaveta, antes da auditoria cega</summary>
@@ -2307,3 +2420,235 @@ motivo que vale registrar: ela nasceu em `research/tools/scan/`, que é
 - `legado.mjs` · `topo.mjs` · `parafrase.mjs` · `piso.mjs` · `estreitas.mjs` ·
   `tres-saidas.mjs` · `publicos.mjs` · `duas-telas.mjs` · `precisao.mjs` ·
   `fisgada.mjs`.
+
+---
+
+## PARTE VIII — A TELA POR SEÇÃO (13/08/2026)
+
+## 27. O contrato de TELA, e ele passou a ser único
+
+Até 12/08 a palavra "tela" queria dizer cinco coisas diferentes no mesmo
+repositório:
+
+| onde | o que contava |
+| --- | --- |
+| `check-canarios.mjs::telaDe()` | rota + param + vizinhos, cortado em 40 |
+| `check-rotas.mjs` | idem, via `idsMostrados` |
+| `medir-alocacao.mjs::telaDe()` | uma quarta cópia da mesma função |
+| `medir-vagas.mjs::telaDe()` | uma quinta |
+| `check-evidence.mjs` (a CLI) | imprimia ~68 linhas, sem corte |
+
+A divergência produziu um erro de relatório em 11/08 — *"chegou à tela"* queria
+dizer coisas diferentes em dois parágrafos do mesmo documento. É o modo de falha
+nº 3 desta casa.
+
+**Agora existe UMA projeção, `telaDaResposta(r)` em `roteador.mjs`:**
+
+> **A TELA é a lista ordenada de `{ secao, tipo, canal, id, posicaoNaSecao }`
+> que `responder()` devolve em `r.tela`.** Uma seção por gaveta roteada, na
+> ordem do score da rota, mais a seção `param`. Dentro de cada seção: as claims
+> DECLARADAS, depois as AFINS, depois a página ao lado, depois o ledger — este
+> impresso antes daquela, e a razão está no código. **Não existe teto global de
+> ids.** O corte de seções corta a seção INTEIRA e a saída diz que cortou.
+
+- A CLI imprime exatamente `r.tela` e nada mais.
+- `check-canarios.mjs` e `check-rotas.mjs` chamam `telaDaResposta()` — a mesma
+  função, sem cópia e **sem `.slice()` no fim**: cortar de novo por posição
+  seria um teto global comendo as seções de baixo em silêncio.
+- `secoes.test.mjs` roda a CLI como processo e cobra que **todo id de `r.tela`
+  apareça na saída**. Calcular sem imprimir faria o canário passar por linha que
+  não está na tela.
+
+O que as travas continuam **não** importando de `roteador.mjs` são os NÚMEROS. O
+orçamento é dado do canário e mudou de nome junto com a forma:
+
+```json
+"tela": { "porSecao": 18, "secoes": 5 }
+"tela": { "porSecao": 18, "secoes": 5, "porSecaoForcada": 60 }   // casos com forcaTopico
+```
+
+O antigo `tetoDeTela` dentro de `perguntaDoAtleta` é **erro de carga**, não campo
+desconhecido ignorado — um canário que ficasse com o campo velho passaria a ser
+medido pelo orçamento padrão da ferramenta sem que ninguém percebesse.
+`tetoDeTela` continua vivo no topo do `CANARIOS.json` e em `buscaCega`, porque a
+porta velha (`--busca`, `recuperar()`) continua sendo uma tela plana; o
+`ROTAS.json` ganhou `telaDaBuscaLivre` pelo mesmo motivo.
+
+## 27.1 A invariante, e por que ela é do TIPO da função
+
+```
+Acrescentar uma gaveta ao conjunto roteado NUNCA remove um id que já aparecia
+na seção de outra gaveta.
+```
+
+A garantia não é calibração. `montarSecaoDeGaveta(claims, porId, rota, filas, …)`
+**não recebe as outras gavetas**: não há `vistos` compartilhado, não há cota
+global, não há deduplicação entre seções. Cada seção é uma função pura de
+`(base, pergunta, gaveta)`, e a tela é a soma direta delas.
+
+Três decisões de projeto que essa garantia obriga, e cada uma tem um preço:
+
+1. **A claim que está em duas gavetas abertas aparece nas DUAS seções.**
+   Deduplicar entre seções faria a seção B depender de a seção A ter aberto. A
+   CLI imprime a segunda ocorrência como um ponteiro de uma linha
+   (`← já saiu inteira na seção \`peito\``), então o custo em bytes é a linha e
+   não a claim — mas o id continua NA seção, que é o que a invariante conta.
+2. **O ledger e a página ao lado são POR SEÇÃO**, com foco no topo daquela
+   seção e `vistos` só do que aquela seção mostrou.
+3. **O roteamento não sabe do orçamento da tela.** `rotear()` recebe
+   `MAX_TOPICOS`, nunca `tela.secoes` — porque `max` entra no cálculo do bônus
+   de `naoConfundirCom`, e passar o orçamento faria mudar QUAIS gavetas abrem.
+   Sem essa separação, o teste da invariante estaria comparando dois roteamentos
+   diferentes achando que compara duas apresentações. Com ela vale, por
+   construção, `rotas(n) === rotas(n+1)[0..n]`.
+
+**O teste:** `research/tools/secoes.test.mjs`, dentro de `npm run check:kb`. Para
+cada uma das **107 perguntas** dos canários (`CANARIOS.json`, `ROTAS.json` e a
+calibração do piso), monta a resposta com `secoes = 1..6` e exige que cada seção
+de `n` esteja contida na mesma seção de `n+1`, id por id. São **1.644 comparações
+de seção** e zero violações. O teste também cobra que a amostra tenha substância
+— a maioria das perguntas abre mais de uma gaveta, senão não há diluição a medir.
+
+## 27.2 A segunda diluição, e ela é DENTRO da gaveta
+
+Este é o achado técnico da onda, e ele não estava no diagnóstico.
+
+`conjuntoDoTopico(claims, perfis, topico, { afins: TETO_AFINS })` acrescenta até
+**60 claims não etiquetadas** ao conjunto de um tópico. Elas vêm das gavetas
+GRANDES — casam literalmente as palavras da pergunta — e, numa fila única
+ordenada, passam à frente das declaradas.
+
+```
+D06  "se eu mexer o pe depois que o juiz mandar devolver a barra, queima a tentativa"
+     F001-11 é a 34ª DECLARADA de `comandos-ipf`
+     F001-11 fica FORA das 40 quando as 60 afins disputam a mesma fila
+```
+
+Era essa a diferença entre `--topic <a gaveta certa>` (que nunca recebeu afins) e
+a mesma gaveta roteada — a diferença que fazia parecer que a apresentação entre
+gavetas era todo o problema. Medido sobre os 42 canários da porta nova, contando
+a posição do id esperado dentro da gaveta certa:
+
+| | com afins na mesma fila | só declaradas |
+| --- | --- | --- |
+| completos com 12 por seção | 1 de 42 | 2 de 42 |
+| completos com 24 por seção | 4 de 42 | 6 de 42 |
+| completos com 40 por seção | 7 de 42 | 10 de 42 |
+
+**Conserto:** a seção tem dois blocos. `TETO_DA_SECAO` vagas para declaradas,
+`AFINS_DA_SECAO` para afins, e a afim herda a SOBRA quando a gaveta inteira cabe
+na seção (o caso T05: `descanso-entre-series` tem 12 declaradas, e V038-07 —
+*descansar 8 minutos*, cuja etiqueta esqueceu de pô-la no tópico — é a 7ª afim).
+A afinidade não pode ir a zero: ela é o motivo de o T05 existir.
+
+## 27.3 A varredura que escolheu os números
+
+`node research/tools/medir-secoes.mjs` — substitui `medir-alocacao.mjs` e
+`medir-vagas.mjs`, que mediam a repartição de um orçamento que deixou de existir.
+64 canários com id esperado (19 do `ROTAS.json`, 45 do `CANARIOS.json`):
+
+```
+porSecao  ids/155  completos/64  algum  posMed  posSec  telaMed  estreitaMed
+   4        44          12         27      11      3       58        49
+   8        55          18         33      16      4       74        62
+  12        67          20         37      20      5       88        73
+  14        71          23         38      23      6       95        81
+  18        74          23         40      28      6      110        94   <- hoje
+  24        76          25         40      34      6      130       117
+  40        88          31         44      49      7      194       171
+```
+
+**Não há joelho.** O recall sobe monotonicamente e o custo sobe junto, então a
+escolha é de ORÇAMENTO e a regra tem de estar escrita:
+
+> **`TETO_DA_SECAO` é o maior teto de seção que mantém a saída da CLI abaixo de
+> 34 kB na pergunta mais larga medida.**
+
+```
+TETO_DA_SECAO   18 → 31,0 kB    22 → 33,9 kB    24 → 35,2 kB    40 → 45,5 kB
+```
+
+O teto de bytes é cobrado em `secoes.test.mjs` **rodando a CLI de verdade**, e é
+a única trava que mata o lado que AFROUXA de todas as constantes da tela: tela
+cheia não derruba canário de recall nenhum, porque a resposta continua lá no
+meio do despejo. Foi assim que `DETALHE_ROTEADO 8→80` e `TETO_PARAM 12→120`
+sobreviveram verdes ao ataque de 11/08.
+
+`posSec` é a régua nova: a posição mediana do primeiro id esperado **dentro da
+seção rotulada**, que é como um agente lê cinco blocos. `posMed` é a posição na
+concatenação plana, publicada ao lado porque foi ela que a onda anterior usou e
+trocar a régua no meio da medição é a forma mais barata de um relatório mentir.
+
+## 27.4 As constantes, e a prova por mutação
+
+Constantes que MORRERAM com a tela plana, sem substituta: `PISO_VAGAS`,
+`EXPOENTE_SURPRESA`, `COTA_AFIM`, `FRACAO_DA_ROTA`, `VAGAS_DA_LIGACAO`, e as
+funções `vagasPorGaveta`, `alocarVagas`, `surpresaDaGaveta`. Não havia mais
+orçamento a repartir.
+
+Constantes NOVAS, e o vermelho de cada uma nos dois sentidos
+(`node research/tools/secoes.test.mjs && node research/tools/check-rotas.mjs &&
+node research/tools/roteador.test.mjs && node research/tools/check-canarios.mjs`,
+com a mutação aplicada em `roteador.mjs`):
+
+```
+MORTO   TETO_DA_SECAO         18 →   4   <- FISGADA: as CINCO claims do limiar de dor chegam à tela
+MORTO   TETO_DA_SECAO         18 →  22   <- nenhuma seção passa de 24 claims
+MORTO   AFINS_DA_SECAO         6 →   0   <- a claim AFIM continua chegando (V038-07)
+MORTO   AFINS_DA_SECAO         6 →  60   <- nenhuma seção passa de 24 claims
+MORTO   FOCO_DA_SECAO          4 →   1   <- FISGADA: as CINCO chegam à tela
+MORTO   FOCO_DA_SECAO          4 →  40   <- LEDGER: `dor` traz V086-21 e V138-19
+MORTO   TETO_DA_SECAO_FORCADA 60 →   5   <- --topic numa gaveta de 990 devolve ao menos 40
+MORTO   TETO_DA_SECAO_FORCADA 60 → 600   <- --topic numa gaveta de 990 devolve no máximo 60
+MORTO   DETALHE_ROTEADO        3 →   0   <- a CLI imprime o verbatim das primeiras de CADA seção
+MORTO   DETALHE_ROTEADO        3 →  30   <- CUSTO: a saída mais larga cabe num prompt (51,7 kB > 34)
+MORTO   POOL_DA_GAVETA        40 →   5   <- T05 [mapeia] 2/3 ids
+MORTO   POOL_DA_GAVETA        40 → 400   <- canário P03: A MEDIDA DA PORTA NOVA MUDOU
+MORTO   TETO_AFINS            60 →   0   <- a claim AFIM continua chegando (V038-07)
+```
+
+**Duas constantes nasceram e morreram no mesmo dia, e o motivo fica escrito.**
+`LIGACOES_DA_SECAO = 8` e `LADO_DA_SECAO = 8` sobreviveram à mutação
+`→ 80` porque eram **matematicamente inertes** pelo lado que afrouxa — a forma
+mais barata de uma constante mentir, e o mesmo defeito que esta casa já registrou
+em `VAGAS_DO_PARAM 12 → 120`:
+
+- o ledger serve em RODADAS, `LIGACOES_POR_FOCO` por foco sobre `FOCO_DA_SECAO`
+  focos, logo nunca passa de 4 × 4 = 16 — e medido sobre os 61 canários com o
+  teto em 80, o máximo real foi **7**;
+- a página ao lado serve UM vizinho por foco sobre 2 × `FOCO_DA_SECAO` focos,
+  logo nunca passa de 8, que era exatamente o valor da constante.
+
+As duas foram REMOVIDAS e os tetos passaram a ser derivados de `FOCO_DA_SECAO`,
+que morre nos dois sentidos.
+
+**Dívida de mutação que fica aberta, com o número:** `LIGACOES_POR_FOCO 4 → 40`
+sobrevive. Acima de **6** ele é inerte por aritmética — nenhuma claim desta base
+declara mais do que 6 ids somando `conditions` e `conflicts`, e `secoes.test.mjs`
+prova esse fato para que ele fique vermelho se mudar. Sobra a faixa **4 → 5 → 6**
+sem trava.
+
+## 27.5 O que esta onda NÃO resolveu
+
+1. **O soterramento DENTRO da gaveta.** D05 continua entregando 1 de 3 sem
+   `--topic`, e a seção de `convencional` é bit a bit a mesma com uma ou com
+   cinco gavetas abertas — **a invariante vale e não basta**. Os três ids estão
+   em 17º, 25º e 27º na ordenação da própria gaveta. O próximo alvo é
+   `ordenarNoTopico`, não a apresentação. `secoes.test.mjs` cobra o `1 de 3` como
+   falha ABERTA, para que não mude em silêncio.
+2. **O conjunto que era cego continua em 0 completos.** D01–D12: 2 → 5 em "algum
+   id", **0 → 0** em "todos os ids". Público: 2 → 6 completos. A distância é a
+   assinatura de otimização para o visível, e ela é parcialmente inevitável aqui
+   — as constantes foram varridas contra os 64 canários com id esperado, e os
+   B##/D## estão nesse conjunto desde que foram publicados.
+3. **O custo dobrou.** A saída da CLI vai de ~14 kB para ~31 kB na pergunta mais
+   larga. Para 2 ids a mais por consulta, é caro, e é a decisão que o próximo
+   veredito precisa reavaliar.
+4. **A precisão do topo pela régua velha piorou** (posição mediana na
+   concatenação plana: 8 → 28). Pela régua da forma nova (dentro da seção) é 6.
+   As duas estão publicadas porque a escolha da régua é o que decide se esta onda
+   "melhorou o topo", e essa escolha não pode ser feita depois de ver o número.
+5. **`--topic` continua aceitando um valor só.** `--topic a b c` descarta `b` e
+   `c` em silêncio, e foi isso que produziu a "prova" falsa do diagnóstico desta
+   onda. Não foi consertado porque mexer no roteamento não era desta onda; está
+   registrado aqui para que a próxima não repita o erro de leitura.

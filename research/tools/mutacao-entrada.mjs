@@ -348,7 +348,20 @@ async function atacar(base, rel, topico, passos, novaEntrada = LIXO) {
  * lida de onde se diz que ela é lida.
  */
 const CONSTANTES = [
-  ['research/tools/roteador.mjs', 'DETALHE_ROTEADO', '80'],
+  ['research/tools/roteador.mjs', 'DETALHE_ROTEADO', '30'],
+  ['research/tools/roteador.mjs', 'DETALHE_ROTEADO', '0'],
+  // As constantes da TELA POR SEÇÃO (13/08/2026). Cada uma nos DOIS sentidos —
+  // o lado que afrouxa é por onde escaparam todas as sobreviventes desta casa.
+  ['research/tools/roteador.mjs', 'TETO_DA_SECAO', '4'],
+  ['research/tools/roteador.mjs', 'TETO_DA_SECAO', '22'],
+  ['research/tools/roteador.mjs', 'AFINS_DA_SECAO', '0'],
+  ['research/tools/roteador.mjs', 'AFINS_DA_SECAO', '60'],
+  ['research/tools/roteador.mjs', 'FOCO_DA_SECAO', '1'],
+  ['research/tools/roteador.mjs', 'FOCO_DA_SECAO', '40'],
+  ['research/tools/roteador.mjs', 'TETO_DA_SECAO_FORCADA', '5'],
+  ['research/tools/roteador.mjs', 'TETO_DA_SECAO_FORCADA', '600'],
+  ['research/tools/roteador.mjs', 'POOL_DA_GAVETA', '5'],
+  ['research/tools/roteador.mjs', 'POOL_DA_GAVETA', '400'],
   ['research/tools/roteador.mjs', 'PESO_NOME_COMPOSTO', '12'],
   ['research/tools/roteador.mjs', 'TETO_PARAM', '120'],
   ['research/tools/glossario.mjs', 'DIFERENCA_MAXIMA_GLOSSARIO', '50'],

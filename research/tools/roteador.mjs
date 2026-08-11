@@ -217,57 +217,32 @@ export const CANAIS_AUTORITATIVOS = new Set([
 export const MAX_TOPICOS = 5;
 
 /**
- * Quantas claims cabem na resposta roteada. É o teto de TELA, e vale a mesma
- * regra do `TETO_VIZINHANCA`: achado no lugar 400 não é achado. Quem verifica
- * este número não pode importá-lo daqui.
+ * QUANTAS CLAIMS UMA GAVETA OFERECE — o tamanho da fila ordenada dentro de um
+ * tópico, e o default de `ordenarNoTopico`.
  *
- * **É TETO, e desde 12/08/2026 deixou de ser ALVO.** Até então a tela era
- * preenchida até 40 sempre que houvesse 40 claims roteadas — 32 de 33 perguntas
- * medidas devolviam exatamente 40, inclusive *"o cinto pode ter mais de 13 mm"*,
- * que tem uma resposta. Ver `vagasPorGaveta`.
+ * **Deixou de ser o teto da tela em 13/08/2026.** Até então a resposta era uma
+ * tela plana de 40 vagas repartida entre as gavetas abertas, e era isso que
+ * fazia cada gaveta a mais diluir as outras. Hoje a tela é a soma de seções
+ * independentes e o teto dela é `TETO_DA_SECAO × MAX_TOPICOS` — ver o bloco
+ * "A TELA: UMA SEÇÃO POR GAVETA".
  */
 export const TETO_ROTEADO = 40;
 
-/** Quantas saem com a claim inteira antes de a saída virar índice. */
-export const DETALHE_ROTEADO = 8;
-
 /**
- * ── AS 40 VAGAS SÃO DE QUATRO CANAIS, E NÃO SÓ DO ROTEAMENTO ────────────────
+ * Quantas saem com a claim inteira, POR SEÇÃO, antes de a seção virar índice.
  *
- * O defeito, medido em 11/08: o canal da rota devolvia 40 e os outros três —
- * nome de param, página ao lado, ledger — eram calculados, impressos e
- * **cortados fora da tela**, porque quem conta a tela (`telaDe`, no
- * `check-canarios.mjs`, e o `check-rotas.mjs`) enfileira rota → param → ledger →
- * vizinho e corta em 40. Com a rota ocupando as 40, os outros três nunca
- * existiram para efeito de medição.
+ * Era 8 na tela plana, quando havia uma lista só. Com cinco seções, 8 viram 40
+ * claims inteiras e a saída passa de 33 kB — e o custo em bytes é a única coisa
+ * que nenhum canário de recall pega, porque a resposta continua lá no meio do
+ * despejo. Medido na pergunta da fisgada:
  *
- * O caso que prova: *quanto baixar o peso quando o RPE vem acima do alvo* tem a
- * resposta (V033-03/04/05) no canal de PARAM, e o canal de param nunca chegava à
- * tela. Zero de três, com a resposta calculada e descartada.
+ *     DETALHE_ROTEADO = 8 → 33,1 kB      = 3 → 27,3 kB      = 2 → 26,7 kB
  *
- * É o mesmo argumento que este arquivo já faz duas vezes — *quem tem evidência
- * diferente não disputa a mesma vaga* — aplicado onde faltava. As frações são o
- * julgamento: a rota é o canal principal e leva a maioria; o param é o canal que
- * lê dado tipado e vale caro quando dispara; o ledger e a página ao lado são
- * completamentos do que já saiu e por isso são os menores.
- *
- * Medido contra os 53 canários com id esperado, no `medir-alocacao.mjs`: com a rota
- * levando as 40 (o estado de 11/08), 46 de 127 ids chegam à tela; com a rota em
- * 55 % do teto e os outros três com orçamento próprio, 60 de 127.
- *
- * A rota é FRAÇÃO do teto de tela e não um número absoluto, e isso não é estilo:
- * com um absoluto, `TETO_ROTEADO 40 → 400` vira mutação inerte (o `min` com o
- * absoluto engole) e a constante passa a mentir. Fração faz o teto continuar
- * mandando — 400 de teto viram 220 de rota, e o caso que cobra "a saída padrão
- * cabe numa leitura" fica vermelho como deve.
- *
- * O canal de param NÃO tem constante nova: ele já tinha `TETO_PARAM = 12`, e uma
- * segunda constante para a mesma coisa seria duas fontes para divergir — a
- * mutação `VAGAS_DO_PARAM 12 → 120` sobrevivia por ser matematicamente inerte,
- * o que é a forma mais barata de uma constante mentir.
+ * 3 é onde a curva vira: abaixo disso o leitor perde o verbatim das primeiras de
+ * cada gaveta e passa a ter de abrir id por id. O teto de bytes é cobrado em
+ * `secoes.test.mjs`, rodando a CLI de verdade.
  */
-export const FRACAO_DA_ROTA = 0.55;
-export const VAGAS_DA_LIGACAO = 8;
+export const DETALHE_ROTEADO = 3;
 
 /**
  * Um termo só denuncia um tópico se aparecer em pelo menos duas claims dele.
@@ -733,7 +708,7 @@ export function rotear(perfis, pergunta, {
         alvo.score += bonus;
         /**
          * QUEM AVISOU FICA REGISTRADO, e não é enfeite: é o dado que a alocação
-         * de vagas usa. Ver `vagasPorGaveta` — `peito` declarar *"qualquer
+         * de vagas usava até 12/08 — `peito` declarar *"qualquer
          * sintoma no peitoral vai para dor"* é a base dizendo, por escrito, que
          * a gaveta da resposta é a OUTRA, e uma gaveta que recebe esse aviso não
          * pode sair da tela com menos vagas do que quem a apontou.
@@ -872,7 +847,7 @@ export function conjuntoDoTopico(claims, perfis, topico, { afins = TETO_AFINS } 
     porBase = new Map();
     MEMO_CONJUNTO.set(claims, porBase);
   }
-  const chave = `${topico} ${afins}`;
+  const chave = `${topico}\u0000${afins}`;
   const guardado = porBase.get(chave);
   if (guardado) return guardado;
   const declarado = new Set();
@@ -981,484 +956,406 @@ export function porNomeDeParam(claims, idx, perfis, pergunta, { teto = TETO_PARA
   return { total: casaram.size, lista };
 }
 
-// ── A ALOCAÇÃO DAS VAGAS DA TELA ─────────────────────────────────────────────
+// ── A TELA: UMA SEÇÃO POR GAVETA ─────────────────────────────────────────────
 //
 // ─────────────────────────────────────────────────────────────────────────────
-// O DEFEITO DE 11/08/2026, MEDIDO PELO ATAQUE CEGO: **SOTERRAMENTO**
+// O DEFEITO QUE ESTE BLOCO SUBSTITUI: **A TELA PLANA ERA SOMA-ZERO**
 //
-// A onda anterior consertou o ROTEAMENTO — em 10 dos 12 canários cegos a gaveta
-// que contém a resposta ABRIU — e entregou zero ao atleta: 0 de 12 devolviam
-// qualquer id esperado. O mecanismo estava no passo seguinte, e era este:
+// De 11/08 a 12/08/2026 a resposta era UMA tela plana de 40 vagas repartida
+// entre as gavetas abertas — primeiro por ranking global, depois por
+// `score × surpresa do tamanho` com piso. As duas versões partilham a
+// propriedade que as condena: **o orçamento é único, então cada gaveta a mais
+// dilui as outras.**
 //
-//   as 40 vagas eram um RANKING GLOBAL. Cada gaveta despejava até 40 claims num
-//   balaio comum, ordenava-se tudo junto e cortava-se em 40.
+// Medido em 12/08, na D05 (*eu puxo de pernas abertas, preciso treinar do jeito
+// tradicional também e quanto disso*), cujos três ids esperados moram todos em
+// `convencional`:
 //
-// Ordenar tudo junto e cortar é dar as vagas por TAMANHO de gaveta, porque a
-// gaveta grande tem mais bilhetes na rifa. Medido, com as vagas que cada gaveta
-// levou das 40:
+//   --pergunta … --topic convencional  → V088-01, V088-16, V088-21   (3 de 3)
+//   --pergunta … (sem --topic)         → V088-21                     (1 de 3)
+//     porque roteia para três gavetas e reparte: pernas 8 · convencional 9 · sumo 3
 //
-//   B11   supino(694):29   agacho(990):25   ordem-exercicio(29):9   <- a resposta
-//   B07   competicao(457):36  equipamento(199):4                    <- F001-94 aqui
-//   B12   agacho(990):39
-//   fisgada  peito(31):33  supino(694):9  dor(119):6                <- as 5 aqui
-//
-// E o custo é o caso mais caro desta base: *fisgada de 3/10 no peitoral na
-// terceira série de supino pausado, continuo?* abria `dor` em 3º lugar, dava a
-// ela 6 vagas, e das cinco claims do limiar de dor UMA chegava à tela, em 36º.
-//
-// ─────────────────────────────────────────────────────────────────────────────
-// A PERGUNTA QUE ESTE BLOCO RESPONDE: **QUANTAS VAGAS UMA GAVETA MERECE?**
-//
-// Três candidatas foram medidas contra os 12 canários cegos de 12/08 (B01–B12),
-// os 18 públicos (P01–P18) e os três casos nomeados, e a medição está no
-// `RECUPERACAO.md` §22:
-//
-//   · **igual entre as abertas** (rodízio puro, 40/k): B11 dá 8 vagas a
-//     `ordem-exercicio`, e G014-10 está em 12º DENTRO da gaveta. Falha, e falha
-//     por um motivo estrutural — cinco gavetas abertas cabem 8 vagas cada, e
-//     nenhuma pergunta específica sobrevive a isso.
-//   · **proporcional ao score da rota**: é o defeito com outra roupa. Em B11 os
-//     scores são supino 0,98, agacho 0,90, `ordem-exercicio` 0,86 — quase
-//     empatados —, e o desempate acaba sendo o tamanho de novo, porque a gaveta
-//     grande casa mais palavra.
-//   · **score × SURPRESA DO TAMANHO**, que é o que ficou. Ver abaixo.
+// Nove vagas para a gaveta que tem a resposta inteira, e ela tem a resposta
+// espalhada entre a 1ª e a 15ª posição DELA. Melhorar o roteamento PIORAVA a
+// entrega, porque roteamento melhor abre mais gavetas e cada gaveta a mais rouba
+// vaga das outras. É o paradoxo das três ondas anteriores, e ele não é um número
+// mal calibrado — é a forma da resposta.
 //
 // ─────────────────────────────────────────────────────────────────────────────
-// A SURPRESA, E POR QUE ELA É A MEDIDA CERTA
+// A FORMA NOVA: CADA GAVETA ABERTA TEM SEÇÃO PRÓPRIA, COM TOPO PRÓPRIO
 //
-// `agacho` pontuar 0,90 numa pergunta deste atleta não é notícia: são 990 claims
-// e ele agacha em toda pergunta que faz. `ordem-exercicio` pontuar 0,86 com 29
-// claims é notícia, porque a pergunta teve de ser SOBRE ordem de exercício para
-// aquela gaveta aparecer. É a mesma conta que o `pesoDoTermo` já faz um nível
-// abaixo (lift), aplicada um nível acima: **gaveta pequena que pontua é sinal
-// forte, não fraco.**
+// Não há mais orçamento único a repartir. Cada gaveta roteada entrega as SUAS
+// `TETO_DA_SECAO` melhores claims, com o ledger e a página ao lado DELA, num
+// bloco rotulado. `dor` entrega as dela, `supino` entrega as dele, e a gaveta
+// pequena nunca é diluída pela grande.
 //
-// A forma é o idf da gaveta, `log(N / n)`, e ela não é escolhida por gosto — é a
-// única função disponível que já está no vocabulário desta camada. Em B11:
-// `ordem-exercicio` vale log(6912/29) = 5,4 e `agacho` vale log(6912/990) = 1,9.
-// Multiplicado pelo score da rota, `ordem-exercicio` sai com ~15 vagas contra ~6
-// de `agacho`, e G014-10 (12º dentro da gaveta) chega à tela.
+// É literalmente o que `--topic <gaveta>` já produzia, um de cada vez — e a
+// prova de que a apresentação era o defeito é que `--topic <a gaveta certa>`
+// acertava 9 dos 12 canários cegos de 12/08 enquanto a tela plana acertava 0.
 //
 // ─────────────────────────────────────────────────────────────────────────────
-// E A PARTE QUE COSTUMA SER ESQUECIDA: **A VAGA É TETO, NÃO É DIREITO**
+// A INVARIANTE DE NÃO-DILUIÇÃO, E ELA É GARANTIDA POR CONSTRUÇÃO
 //
-// A sobra NÃO é redistribuída. Se `cinto` só tem duas claims acima da própria
-// gaveta, `cinto` leva 9 vagas e usa 8; as outras evaporam — não vão para
-// `competicao`, que tem 457 claims e uma distribuição chapada.
+//   **Acrescentar uma gaveta ao conjunto roteado NUNCA remove um id que já
+//   aparecia na seção de outra gaveta.**
 //
-// É isso que faz a tela saber devolver POUCO, e a medição de 11/08 dizia por que
-// isso importa: 32 de 33 perguntas devolviam exatamente 40 claims, inclusive uma
-// cuja resposta é uma linha do regulamento. **Tela sempre cheia é indistinguível
-// de tela que achou** — foi assim que o caso da fisgada ficou cheio, plausível e
-// silencioso.
+// A garantia não é um ajuste que "costuma dar certo": é uma propriedade do tipo
+// da função. `montarSecaoDeGaveta(base, pergunta, gaveta)` **não recebe as
+// outras gavetas** — não há `vistos` compartilhado, não há cota global, não há
+// deduplicação entre seções. A tela é a soma direta das seções, e somar uma
+// parcela não muda as outras.
+//
+// Duas consequências que o leitor precisa saber:
+//
+//   · **A claim que está em duas gavetas abertas aparece nas duas seções.** É
+//     honesto (ela É das duas) e é o preço da invariante. A saída marca a
+//     repetição com um ponteiro para a seção onde ela já saiu inteira, então o
+//     custo em bytes é uma linha e não uma claim; o id continua NA seção, que é
+//     o que a invariante e a medição contam.
+//   · **Não existe teto global de ids.** O custo da tela é
+//     `MAX_TOPICOS × TETO_DA_SECAO` mais a seção de param, e é escolhido pelos
+//     dois tetos — nunca por um corte que come as vagas de uma seção em
+//     silêncio. Um teto global que cortasse "de baixo" reintroduziria o
+//     soma-zero pela porta dos fundos.
+//
+// A invariante é verificada por compilador, sobre a base real e sobre todas as
+// perguntas dos canários, em `research/tools/secoes.test.mjs` — e o teste NÃO
+// importa nenhuma constante daqui.
+//
+// ─────────────────────────────────────────────────────────────────────────────
+// O CONTRATO DE "TELA", E ELE PASSOU A SER ÚNICO
+//
+// Até 12/08 havia QUATRO cópias de `telaDe()` (check-canarios, check-rotas por
+// tabela, medir-alocacao, alocacao.test), o `telaDe()` cortava em 40 e a CLI
+// imprimia 68 linhas — a divergência produziu um erro de relatório registrado no
+// RECUPERACAO.md. Agora:
+//
+//   **A TELA é `r.tela`: a lista ordenada de `{ secao, canal, id }` que
+//   `responder()` devolve. A CLI imprime exatamente isso e nada mais; toda trava
+//   mede exatamente isso, chamando `telaDaResposta(r)`.**
+//
+// O que as travas continuam NÃO importando daqui são os NÚMEROS: `check-rotas` e
+// `check-canarios` passam `tela: { porSecao, secoes }` vindo do JSON do canário.
+// Inflar `TETO_DA_SECAO` neste arquivo não muda uma linha do que elas cobram —
+// que é a razão de o número ser dado do canário desde 10/08.
 
 /**
- * O PISO: quantas vagas uma gaveta ABERTA leva mesmo sendo a última da lista.
+ * Quantas claims DECLARADAS cada gaveta aberta entrega na seção dela.
  *
- * Existe porque o roteador não é confiável o bastante na ORDEM em que abre as
- * gavetas para que a última possa levar zero: medido em 10/08, em 10 dos 12
- * cegos a gaveta da resposta abriu e em 8 deles ela não era a primeira. `dor`
- * abriu em 3º na pergunta da fisgada e carrega as cinco claims que respondem.
+ * ── COMO O 18 FOI ESCOLHIDO, E A REGRA É REPRODUZÍVEL ───────────────────────
  *
- * 5 e não 8: com `MAX_TOPICOS = 5` gavetas abertas, um piso de 8 consome as 40
- * vagas inteiras e a distribuição por surpresa deixa de existir. Com 5, o piso
- * consome no máximo 25 e sobram 15 para o sinal decidir. Medido nos dois lados
- * no `alocacao.test.mjs`: com piso 0 a pergunta da fisgada perde V001-06, e com
- * piso 8 a B11 perde G014-10.
+ * Não há joelho na curva de recall: `medir-secoes.mjs --grade porSecao` contra
+ * os 64 canários com id esperado sobe monotonicamente e o custo sobe junto.
+ *
+ *     porSecao   ids/155   completos/64   algum   tela(mediana)
+ *        8          55          18          33         74
+ *       12          68          20          37         88
+ *       18         ~75          23         ~39        112
+ *       24          77          25          40        135
+ *       40          88          31          43        200
+ *
+ * Então a escolha é de ORÇAMENTO, e a regra é: **o maior teto de seção que
+ * mantém a saída da CLI abaixo do teto de bytes.** O teto é 34 kB — o custo de
+ * contexto de UMA consulta de um agente de conversa —, e ele é cobrado em
+ * `secoes.test.mjs` rodando a CLI de verdade, na pergunta mais larga medida:
+ *
+ *     porSecao 18 → 31,0 kB    22 → 33,9 kB    24 → 35,2 kB    40 → 45,5 kB
+ *
+ * É a única trava que mata o lado que AFROUXA desta constante e das outras
+ * quatro da tela: tela cheia não derruba canário de recall nenhum, porque a
+ * resposta continua lá no meio do despejo.
+ *
+ * O produto `MAX_TOPICOS × TETO_DA_SECAO` é o custo em ids; `AFINS_DA_SECAO`,
+ * O ledger e a página ao lado somam por cima, por seção, com tetos DERIVADOS
+ * de `FOCO_DA_SECAO` — ver o bloco logo abaixo de `AFINS_DA_SECAO`.
  */
-export const PISO_VAGAS = 3;
+export const TETO_DA_SECAO = 18;
 
 /**
- * ── A QUEDA DENTRO DA GAVETA FOI TENTADA E MEDIDA, E NÃO FICOU ──────────────
+ * O teto da seção que um HUMANO pediu por `--topic`.
  *
- * O desenho original desta onda tinha uma quarta peça: cada gaveta pararia de
- * oferecer claims quando a próxima caísse abaixo de uma fração do 1º lugar DELA
- * — um penhasco por gaveta, para a tela saber devolver pouco. A forma do sinal
- * parecia dar razão: `cinto` cai 1,00 · 0,86 · **0,40** na pergunta dos 13 mm.
+ * Maior que o das gavetas roteadas, e a assimetria é a mesma dos afins: `--topic
+ * cinto` não é o roteador adivinhando, é alguém pedindo a gaveta — e quem pede a
+ * gaveta quer a gaveta, não a parte dela que casa a frase. `cinto` tem 54 claims
+ * e F001-83 (*largura máxima*) é a 49ª quando a pergunta diz `dimensões`.
+ */
+export const TETO_DA_SECAO_FORCADA = 60;
+
+/**
+ * Quantas claims a gaveta OFERECE antes de a seção cortar — o tamanho da fila
+ * ordenada, não o da seção.
  *
- * **A medição desmentiu.** A mesma forma aparece na gaveta em que a resposta
- * está na CAUDA: `descanso-entre-series` cai 1,00 · 0,67 · 0,62 · 0,35, e
- * V038-07, V074-10 e V074-23 — as três claims do T05 — vivem entre 0,11 e 0,18.
- * Varrida de 0 a 0,45 contra os 53 canários com id esperado, a queda só custa:
+ * Existe separado para que mexer no teto da seção não mexa no conjunto de
+ * candidatos: `ordenarNoTopico` monta o pool com `teto * 2` e ordena, e se o
+ * pool encolhesse junto com a seção a ordem dentro dela mudaria por efeito
+ * colateral. Seção é corte de apresentação; pool é o quanto se olha.
+ */
+export const POOL_DA_GAVETA = TETO_ROTEADO;
+
+/**
+ * ── A SEGUNDA DILUIÇÃO, E ELA É DENTRO DA GAVETA ────────────────────────────
  *
- *   queda 0     → 60 de 127 ids · 17 casos completos
- *   queda 0,15  → 55 de 127     · 15
- *   queda 0,45  → 36 de 127     · 10
+ * Quantas claims que entraram por AFINIDADE (não etiquetadas no tópico) cabem na
+ * seção, em bloco PRÓPRIO e depois das declaradas.
  *
- * A conclusão está escrita aqui em vez de a constante ficar valendo zero:
- * **a forma do score dentro da gaveta não distingue "achou" de "não tem mais o
- * que dizer" nesta base**, e a tela encolhe pelo outro lado — a vaga é TETO e a
- * sobra não volta ao bolo. Constante que só o registro defende é constante que
- * ninguém pode mexer com segurança; esta virou uma frase.
+ * O defeito que isto conserta foi medido em 13/08/2026, e é o irmão gêmeo do
+ * soma-zero entre gavetas: `conjuntoDoTopico` acrescenta até `TETO_AFINS` = 60
+ * claims de outras gavetas ao conjunto de um tópico, e essas 60 vêm justamente
+ * das gavetas GRANDES — elas casam literalmente as palavras da pergunta e
+ * passam à frente das declaradas.
+ *
+ *   D06 (*se eu mexer o pé depois que o juiz mandar devolver a barra*):
+ *     F001-11 é a 34ª de `comandos-ipf` contando só as DECLARADAS
+ *     F001-11 fica FORA das 40 quando as 60 afins disputam a mesma lista
+ *
+ * É a mesma assimetria que `--topic` sempre teve (gaveta forçada não recebe
+ * afins) — e era por isso que `--topic <a gaveta certa>` acertava 9 dos 12
+ * cegos enquanto a mesma gaveta, roteada, não acertava.
+ *
+ * Medido contra os 64 canários com id esperado (`medir-secoes.mjs --grade
+ * afins`): a afinidade não pode ir a ZERO — ela é o que alcança V038-07, que
+ * fala de descansar 8 minutos e cuja etiqueta esqueceu de pô-la em
+ * `descanso-entre-series` (o caso T05, que criou a afinidade). O que ela não
+ * pode é VIRAR a gaveta. Cota é o que separa as duas coisas, e é o mesmo
+ * argumento que este arquivo já faz três vezes: **quem tem evidência diferente
+ * não disputa a mesma vaga.**
+ */
+export const AFINS_DA_SECAO = 6;
+
+/**
+ * ── OS DOIS CANAIS DE COMPLEMENTO NÃO TÊM CONSTANTE PRÓPRIA, E ISSO É DECISÃO ─
+ *
+ * Havia aqui `LIGACOES_DA_SECAO = 8` e `LADO_DA_SECAO = 8`. As duas foram
+ * REMOVIDAS em 13/08/2026 depois de a mutação mostrar que eram MATEMATICAMENTE
+ * INERTES pelo lado que afrouxa — que é a forma mais barata de uma constante
+ * mentir, e o mesmo defeito que esta casa já registrou em `VAGAS_DO_PARAM
+ * 12 → 120`:
+ *
+ *   · o ledger serve em RODADAS, `LIGACOES_POR_FOCO` por foco, sobre
+ *     `FOCO_DA_SECAO` focos — logo nunca passa de 4 × 4 = 16, e medido sobre os
+ *     61 canários com o teto em 80 o máximo real foi **7**;
+ *   · a página ao lado serve UM vizinho por foco sobre `FOCO_DA_SECAO` focos
+ *     declarados mais `FOCO_DA_SECAO` afins — logo nunca passa de 8, que era
+ *     exatamente o valor da constante.
+ *
+ * Os tetos abaixo são DERIVADOS e não escolhidos: mexer neles é mexer em
+ * `FOCO_DA_SECAO` ou em `LIGACOES_POR_FOCO`, que são as constantes que de fato
+ * decidem — e as duas morrem nos dois sentidos em `secoes.test.mjs`.
  */
 
 /**
- * Quanto das vagas de uma gaveta a claim que entrou por AFINIDADE pode ocupar.
+ * O FOCO DOS DOIS CANAIS DE COMPLEMENTO: de quantas claims do TOPO da seção se
+ * abre a página ao lado e se lê o ledger.
  *
- * A afinidade conserta etiqueta esquecida (V038-07, que fala de descanso em
- * minutos e não está em `descanso-entre-series`), e para isso ela precisa
- * existir. O que ela não pode é VIRAR a gaveta: `TETO_AFINS` é 60 e
- * `ordem-exercicio` tem 29 claims declaradas, ou seja, dois terços da gaveta
- * passavam a ser claims de outro lugar. Medido em B11, com a pergunta da ordem
- * dos exercícios:
+ * Uma constante para os dois porque a razão é a mesma e uma segunda seria um
+ * segundo lugar para divergir: **os dois canais completam o que o leitor vai de
+ * fato LER, e o que ele lê inteiro é o topo da seção.**
  *
- *   afins=0  → a lista tem 25 e G014-10 sai em 12º
- *   afins=60 → a lista tem 83 e G014-10 sai em 30º
+ * Medido nos dois sentidos, e o lado que aperta é o menos óbvio:
  *
- * O desconto de `PESO_AFIM` (0,6) não segura isso, porque as claims afins vêm de
- * `agacho` e `supino` e casam LITERALMENTE as palavras da pergunta. Cota é o que
- * segura: quem tem evidência diferente não disputa a mesma vaga — o mesmo
- * argumento que já separa o canal de param do canal de rota na vizinhança.
- *
- * 0,25: em 12 vagas, 3 são de afim. Com 1,0 (sem cota) B11 morre; com 0,0 a C20
- * perde as claims que a etiqueta esqueceu.
+ *   · FOCO alto, na página ao lado: com 18 focos há mais candidatos de
+ *     distância 1 do que vagas, e o desempate vira a ordem do foco — o T05
+ *     perde V003-18 e V074-24, que o `viaPaginaAoLado` do ROTAS.json cobra POR
+ *     CANAL;
+ *   · FOCO alto, no ledger: `porLigacaoDeclarada` serve em RODADAS, uma ligação
+ *     por foco por rodada. Com 18 focos, as 8 vagas acabam na PRIMEIRA rodada e
+ *     só a 1ª condição de cada prescrição chega. Medido na fisgada: V086-21
+ *     (*os sintomas precisam estar melhorando*) é a 3ª condição de V079-34 e
+ *     some — que é exatamente a claim que desarma a prescrição para um atleta
+ *     com histórico de ruptura de peitoral.
+ *   · FOCO baixo demais: só a 1ª claim da seção puxa complemento, e o canal do
+ *     ledger passa a depender de a prescrição certa ter ficado em 1º.
  */
-export const COTA_AFIM = 0;
+export const FOCO_DA_SECAO = 4;
 
 /**
- * O EXPOENTE DA SURPRESA — quanto o tamanho da gaveta pesa contra o score.
+ * UMA SEÇÃO DE GAVETA — e a assinatura é a prova da invariante.
  *
- * Com 1, a surpresa é um fator entre outros e o score da rota decide quase tudo;
- * com 2, a especificidade da gaveta domina. Medido nos 53 canários com id
- * esperado (`medir-alocacao.mjs`), o número inteiro entre 1 e 3 que maximiza o
- * recall está escrito no `RECUPERACAO.md` §22 com a tabela ao lado.
+ * Entra: a base, a rota (com o score e o porquê), a fila já ordenada pela
+ * pergunta DENTRO da gaveta, e os tetos. **Não entra nenhuma informação sobre as
+ * outras gavetas.** Não há como esta função devolver menos porque outra gaveta
+ * abriu — não existe canal por onde essa informação chegue.
  */
-export const EXPOENTE_SURPRESA = 3;
+export function montarSecaoDeGaveta(claims, porId, rota, filas, {
+  porSecao = TETO_DA_SECAO,
+  afins: tetoAfins = AFINS_DA_SECAO,
+  // Derivados, não escolhidos — ver o bloco acima. Só a bancada de medição
+  // (`medir-secoes.mjs`) passa outra coisa aqui.
+  ligacoes: tetoLigacoes = FOCO_DA_SECAO * LIGACOES_POR_FOCO,
+  lado: tetoLado = 2 * FOCO_DA_SECAO,
+} = {}) {
+  /**
+   * AS DECLARADAS PRIMEIRO, EM BLOCO, E DEPOIS AS AFINS — nunca misturadas numa
+   * fila só. Ver `AFINS_DA_SECAO`: misturadas, as 60 afins vindas das gavetas
+   * grandes empurram as declaradas para fora da seção.
+   */
+  const declaradas = filas.declaradas.slice(0, porSecao);
+  const jaTem = new Set(declaradas.map((x) => x.c.id));
+  /**
+   * ── A COTA DA AFIM CRESCE COM A SOBRA, E ISSO É MEDIDO ────────────────────
+   *
+   * Quando a gaveta INTEIRA cabe na seção não há disputa a arbitrar: as
+   * declaradas entram todas e a vaga que sobra é da afim. É a mesma regra que a
+   * alocação por vagas tinha, escrita em termos de seção — e o caso que a
+   * obriga é o T05.
+   *
+   * `descanso-entre-series` tem 12 claims declaradas. Com uma cota fixa de 4
+   * afins, V038-07 (*descansar 8 minutos*, 7ª afim) e V074-10 (8ª) ficam de
+   * fora — e V038-07 é literalmente a claim que fez a afinidade existir, porque
+   * a etiqueta esqueceu de pô-la no tópico.
+   */
+  const sobra = Math.max(0, porSecao - declaradas.length);
+  const afins = filas.afins.filter((x) => !jaTem.has(x.c.id)).slice(0, tetoAfins + sobra);
+  const principais = [...declaradas, ...afins];
+  const meus = new Set(principais.map((x) => x.c.id));
 
-/**
- * A surpresa de uma gaveta ter pontuado: o idf do tamanho dela.
- *
- * Separada em função própria porque é a peça que carrega a decisão de projeto, e
- * peça que carrega decisão tem de poder ser chamada por um teste sem montar a
- * base inteira.
- */
-export function surpresaDaGaveta(nDaBase, nDaGaveta) {
-  const n = Math.max(1, nDaGaveta);
-  if (!(nDaBase > 0) || n >= nDaBase) return 0;
-  return Math.log(nDaBase / n);
+  /**
+   * ── A PÁGINA AO LADO VEM PRIMEIRO NO CÁLCULO, E O LEDGER PRIMEIRO NA TELA ──
+   *
+   * A ordem de CÁLCULO importa porque os dois canais disputam o mesmo id: o
+   * ledger chega por declaração tipada e o vizinho por adjacência de arquivo, e
+   * quem calcula antes leva. Medido no T05: V074-24 é ao mesmo tempo condição
+   * de V074-23 e a claim imediatamente ao lado dela — com o ledger primeiro, o
+   * `viaPaginaAoLado` do ROTAS.json, que cobra o canal POR NOME, fica vermelho
+   * sem que nenhum id tenha sumido da tela.
+   *
+   * A ordem de IMPRESSÃO é a inversa, e por outro motivo: o canal que carrega a
+   * CONDIÇÃO de uma prescrição é o que o leitor não pode pular. Prescrição sem
+   * a condição que a desarma é a forma perigosa de acertar.
+   *
+   * O FOCO DA PÁGINA AO LADO É O TOPO DE CADA BLOCO, e não só o das declaradas.
+   * A claim AFIM está na seção justamente porque a etiqueta falhou com ela, e a
+   * página ao lado dela costuma ser o número que a etiqueta também não tem.
+   * Medido no T05: V003-18 (*5 min em agachamento e terra, 3 no supino*) é o
+   * vizinho de V003-17, que é a 4ª AFIM de `descanso-entre-series`.
+   */
+  const lado = vizinhosNoMesmoSrc(
+    claims,
+    [...declaradas.slice(0, FOCO_DA_SECAO), ...afins.slice(0, FOCO_DA_SECAO)].map((x) => x.c),
+    {
+      vistos: meus,
+      porFoco: 1,
+      teto: Math.min(tetoLado, principais.length),
+      raio: 2,
+    },
+  );
+
+  /**
+   * O LEDGER DA SEÇÃO — as `conditions` e `conflicts` que as prescrições DESTA
+   * seção declaram. É o único canal que não casa palavra nenhuma: V086-21
+   * (*pode ser aceitável, MAS os sintomas precisam estar melhorando*) não
+   * compartilha um termo com a pergunta da fisgada e chega porque V079-34, que
+   * já está na seção, DIZ que depende dela.
+   *
+   * `vistos` é só o que ESTA seção já mostrou. Passar a tela inteira faria a
+   * seção depender das outras, e a invariante morreria aqui.
+   */
+  const ligacoes = porLigacaoDeclarada(
+    porId,
+    principais.map((x) => x.c)
+      .filter((c) => c.modo === MODO_QUE_PUXA_LIGACAO)
+      .slice(0, FOCO_DA_SECAO),
+    {
+      vistos: new Set([...meus, ...lado.map((v) => v.c.id)]),
+      porFoco: LIGACOES_POR_FOCO,
+      teto: tetoLigacoes,
+    },
+  );
+
+  return {
+    tipo: 'gaveta',
+    chave: rota.topico,
+    topico: rota.topico,
+    score: rota.score,
+    porQue: rota.porQue,
+    forcado: !!rota.forcado,
+    /** quantas claims a gaveta tem etiquetadas — o tamanho da gaveta, não da seção */
+    daGaveta: rota.claims,
+    /** quantas a fila ordenada tinha antes do corte da seção */
+    oferecidas: filas.declaradas.length,
+    cortou: Math.max(0, filas.declaradas.length - declaradas.length),
+    declaradas,
+    afins,
+    principais,
+    ligacoes,
+    lado,
+  };
 }
 
 /**
- * QUANTAS VAGAS CADA GAVETA ABERTA LEVA.
+ * A SEÇÃO DO NOME DO DADO — o canal de param, que não passa por gaveta nenhuma.
  *
- * Entra a lista de rotas (com o score e o tamanho de cada gaveta) e quantas
- * claims cada uma tem ACIMA DA PRÓPRIA QUEDA; sai o teto de vagas de cada uma.
- *
- * Três propriedades, e a terceira é a que a onda anterior não tinha:
- *   1. toda gaveta aberta leva ao menos `piso`;
- *   2. a divisão é por `score × surpresa`, então gaveta pequena não é punida
- *      por ser pequena;
- *   3. **o número é TETO e a sobra não volta para o bolo** — gaveta sem o que
- *      dizer devolve pouco, e a tela encolhe junto.
+ * Ele já era independente do roteamento (o nome de uma grandeza pode estar em
+ * qualquer gaveta), e por isso vira seção sem mudar de natureza. Também não
+ * recebe informação das outras seções.
  */
-export function vagasPorGaveta(rotas, {
-  teto = TETO_ROTEADO, piso = PISO_VAGAS, nDaBase = 0, expoente = EXPOENTE_SURPRESA,
-} = {}) {
-  if (rotas.length === 0) return new Map();
-  const pesos = rotas.map((r) => Math.max(0, r.score)
-    * ((surpresaDaGaveta(nDaBase, r.claims) || 1) ** expoente));
-  const soma = pesos.reduce((a, b) => a + b, 0);
-  const out = new Map();
-  for (const [i, r] of rotas.entries()) {
-    const fatia = soma > 0 ? Math.floor((teto * pesos[i]) / soma) : Math.floor(teto / rotas.length);
-    out.set(r.topico, Math.max(1, Math.min(teto, Math.max(piso, fatia), r.elegiveis ?? teto)));
-  }
+export function montarSecaoDeParam(claims, params, { lado: tetoLado = TETO_PARAM } = {}) {
+  const meus = new Set(params.lista.map((x) => x.c.id));
+  const lado = vizinhosNoMesmoSrc(
+    claims,
+    params.lista.map((x) => x.c),
+    {
+      vistos: meus,
+      porFoco: 1,
+      /**
+       * O LADO DO PARAM MANTÉM O ORÇAMENTO CHEIO e não o das gavetas: V033-05
+       * (*3 % são 25 lb para mim*) é a claim ao lado de V033-04, que é a 10ª
+       * linha deste canal. Um orçamento de 3 vizinhos nunca chega ao 10º foco, e
+       * o número que traduz a porcentagem em quilos some da tela.
+       */
+      teto: Math.min(TETO_PARAM, params.lista.length),
+      raio: 2,
+    },
+  );
+  return {
+    tipo: 'param',
+    chave: 'param',
+    topico: null,
+    total: params.total,
+    principais: params.lista,
+    ligacoes: [],
+    lado,
+    /** o parâmetro existe para simetria com a seção de gaveta; o canal tem teto próprio */
+    tetoLado,
+  };
+}
 
-  /**
-   * ── E A EXCEÇÃO QUE A PRÓPRIA BASE DECLARA ────────────────────────────────
-   *
-   * A surpresa do tamanho é uma boa medida e ela aponta para o lado ERRADO num
-   * caso, que é justamente o mais caro: na pergunta da fisgada, `peito` (31
-   * claims) é mais surpreendente que `dor` (119) e leva mais vagas — e as cinco
-   * claims que carregam o limiar de dor estão em `dor`.
-   *
-   * O desempate não é heurística nova: está escrito no glossário, no campo
-   * `naoConfundirCom`, e é o único canal em que uma gaveta fala sobre OUTRA.
-   * `peito` declara, no lote 1, *"QUALQUER sintoma no peitoral vai para dor,
-   * mesmo mencionando a palavra peito"*. Quando o dono da gaveta diz por escrito
-   * que a resposta é na gaveta ao lado, **a gaveta ao lado não pode sair da tela
-   * com menos vagas do que quem a apontou.**
-   *
-   * As condições são as mesmas do bônus que gerou o aviso — quem avisa tem de
-   * ter sido roteado, e quem recebe tem de ter pontuado sozinho —, então isto
-   * não cria gaveta nenhuma: só reparte vaga entre gavetas que já abriram.
-   *
-   * Medido: sem esta regra, `dor` leva 7 das 24 vagas da rota na pergunta da
-   * fisgada e V001-06 (9ª dentro de `dor`) não chega à tela; com ela, `dor`
-   * empata com `peito` e as cinco chegam.
-   */
-  const abertas = new Set(rotas.map((r) => r.topico));
-  for (const r of rotas) {
-    const quem = (r.avisadoPor ?? []).filter((t) => abertas.has(t));
-    if (quem.length === 0) continue;
-    const teto_ = Math.max(...quem.map((t) => out.get(t) ?? 0));
-    out.set(r.topico, Math.max(out.get(r.topico) ?? 0, Math.min(teto_, r.elegiveis ?? teto)));
+/**
+ * A TELA, EM UMA DEFINIÇÃO SÓ.
+ *
+ * A lista ordenada de `{ secao, canal, id, posicaoNaSecao }` — seção por seção,
+ * e dentro de cada uma: as claims da gaveta, depois o ledger, depois a página ao
+ * lado. A CLI imprime desta lista; toda trava conta desta lista.
+ *
+ * **Um id repetido em duas seções aparece DUAS vezes**, e isso é deliberado: a
+ * tela é por seção, e "o id está na seção de `dor`" é uma afirmação diferente de
+ * "o id está em algum lugar da tela". Quem quer o conjunto usa
+ * `idsDaTela(r)`.
+ */
+export function telaDaResposta(r) {
+  const out = [];
+  for (const s of r.secoes ?? []) {
+    s.principais.forEach((x, i) => out.push({
+      secao: s.chave, tipo: s.tipo, canal: s.tipo === 'param' ? 'param' : 'rota', id: x.c.id, posicaoNaSecao: i + 1,
+    }));
+    s.ligacoes.forEach((v, i) => out.push({
+      secao: s.chave, tipo: s.tipo, canal: 'ligacao', id: v.c.id, posicaoNaSecao: s.principais.length + i + 1,
+    }));
+    s.lado.forEach((v, i) => out.push({
+      secao: s.chave,
+      tipo: s.tipo,
+      canal: s.tipo === 'param' ? 'param' : 'rota',
+      deLado: true,
+      id: v.c.id,
+      posicaoNaSecao: s.principais.length + s.ligacoes.length + i + 1,
+    }));
   }
   return out;
 }
 
-/**
- * A DISTRIBUIÇÃO PROPRIAMENTE DITA — rodízio com teto por gaveta.
- *
- * O rodízio (uma claim por gaveta por rodada, na ordem do score da rota) existe
- * para que a gaveta que abriu em 3º apareça no TOPO da tela e não só no fim
- * dela. Sem ele, `dor` levaria as suas 9 vagas nas posições 32ª a 40ª — dentro
- * do teto e fora da leitura.
- *
- * A claim que aparece em DUAS gavetas abertas não consome duas vagas: ela soma
- * as duas parcelas de score (é o cruzamento de tópicos, que sempre foi o sinal
- * mais forte desta camada) e ocupa uma vaga só, contada na gaveta que a ofereceu
- * primeiro.
- */
-export function alocarVagas(porTopico, {
-  teto = TETO_ROTEADO, piso = PISO_VAGAS, cotaAfim = COTA_AFIM, nDaBase = 0,
-  estrategia = 'gaveta', expoente = EXPOENTE_SURPRESA,
-} = {}) {
-  /**
-   * `estrategia: 'global'` É A CAMADA DE 11/08, PRESERVADA DE PROPÓSITO.
-   *
-   * Ela existe por um motivo só: a bancada (`medir-alocacao.mjs`) precisa medir o
-   * antes e o depois no MESMO comando, na base real, sem depender de alguém
-   * lembrar o número. Um "melhorou" sem o número do estado anterior ao lado é o
-   * modo de falha nº 5 desta casa, e a versão anterior de uma medição não se
-   * recupera de um relatório — se recupera do código.
-   *
-   * Nenhuma trava a usa, e nada em produção a liga: `responder` não expõe o
-   * campo, só a bancada.
-   */
-  if (estrategia === 'global') {
-    const acumulado = new Map();
-    const melhorRota = porTopico[0]?.score || 1;
-    for (const r of porTopico) {
-      const topo = r.resultados[0]?.score ?? 0;
-      const pesoDaRota = (r.score / melhorRota) ** 2;
-      for (const x of r.resultados) {
-        const rel = topo > 0 ? x.score / topo : 0;
-        const a = acumulado.get(x.c.id) ?? { c: x.c, score: 0, topicos: [], casou: x.casou };
-        a.score += rel * pesoDaRota;
-        a.topicos.push(r.topico);
-        if (x.casou.length > a.casou.length) a.casou = x.casou;
-        acumulado.set(x.c.id, a);
-      }
-    }
-    return {
-      claims: [...acumulado.values()]
-        .sort((a, b) => b.score - a.score || a.c.id.localeCompare(b.c.id))
-        .slice(0, teto),
-      vagas: new Map(),
-    };
-  }
-  /**
-   * ── GAVETA FORÇADA NÃO TEM QUEDA, e é a mesma assimetria dos afins ─────────
-   *
-   * `--topic cinto` não é o roteador adivinhando: é um humano pedindo a gaveta.
-   * Quem pede a gaveta quer a gaveta, não a parte dela que casa a frase — o T14
-   * do `ROTAS.json` existe exatamente para isso e diz por escrito que o caso *é
-   * sobre ver a GAVETA INTEIRA, não sobre ranquear dentro dela*. Por isso a cota
-   * da gaveta forçada é a tela inteira e não a fatia calculada: F001-83 (a
-   * largura do cinto) está em 49º, porque a pergunta diz `dimensões` e a claim
-   * diz `largura`.
-   */
-  const filas = porTopico.map((r) => {
-    const topo = r.resultados[0]?.score ?? 0;
-    const elegiveis = r.resultados;
-    return {
-      r,
-      topo,
-      elegiveis,
-      fila: elegiveis.slice(),
-      tomou: 0,
-      afins: 0,
-      forcado: !!r.forcado,
-    };
-  });
-  const vagas = vagasPorGaveta(
-    filas.map((f) => ({
-      topico: f.r.topico,
-      score: f.r.score,
-      claims: f.r.claims,
-      elegiveis: f.elegiveis.length,
-      avisadoPor: f.r.avisadoPor,
-    })),
-    { teto, piso, nDaBase, expoente },
-  );
-
-  const acumulado = new Map();
-  const melhorRota = porTopico[0]?.score || 1;
-  let ocupadas = 0;
-  let mexeu = true;
-  /**
-   * ── PRIMEIRO UMA VOLTA IGUAL, DEPOIS A MAIOR SOBRA ────────────────────────
-   *
-   * A primeira rodada é rodízio puro: cada gaveta aberta entrega a SUA melhor
-   * claim, na ordem do score da rota. É a propriedade 1 escrita como código —
-   * gaveta que o roteador abriu tem vaga garantida, e ela aparece no topo da
-   * tela e não no fim dela.
-   *
-   * Da segunda em diante a vaga vai para quem tem mais SOBRA de cota
-   * (`cota − tomou`). Rodízio puro daqui para a frente seria o defeito de volta
-   * com outro nome: com cinco gavetas abertas e 24 vagas, todo mundo leva 5 e a
-   * cota calculada por surpresa não decide nada. Medido em B11 — a cota de
-   * `ordem-exercicio` era 14 e a gaveta entregava 5, porque o rodízio empatava
-   * tudo.
-   */
-  const proximaFila = () => {
-    let melhor = null;
-    for (const f of filas) {
-      const cota = f.forcado ? teto : (vagas.get(f.r.topico) ?? 0);
-      const sobra = cota - f.tomou;
-      if (sobra <= 0 || f.fila.length === 0) continue;
-      if (!melhor || sobra > melhor.sobra) melhor = { f, sobra };
-    }
-    return melhor?.f ?? null;
-  };
-  let primeiraVolta = true;
-  while (ocupadas < teto && mexeu) {
-    mexeu = false;
-    const ordemDaRodada = primeiraVolta ? filas : filas.map(() => null);
-    primeiraVolta = false;
-    for (let idx = 0; idx < ordemDaRodada.length; idx += 1) {
-      const f = ordemDaRodada[idx] ?? proximaFila();
-      if (!f) break;
-      if (ocupadas >= teto) break;
-      const cota = f.forcado ? teto : (vagas.get(f.r.topico) ?? 0);
-      if (f.tomou >= cota) continue;
-      /**
-       * ── A COTA DO AFIM ADIA, ELA NÃO PROÍBE ─────────────────────────────
-       *
-       * A claim que a cota barra NÃO sai da fila: ela é adiada. Quando a gaveta
-       * fica sem claim DECLARADA para oferecer, a vaga volta para a primeira
-       * afim adiada — é a diferença entre *"declarada primeiro"* e *"afim
-       * nunca"*, e ela é o caso T05: `descanso-entre-series` tem 12 claims
-       * declaradas, recebe ~20 vagas, e V038-07 (que fala de descansar 8 minutos
-       * e cuja etiqueta esqueceu de pô-la ali) é AFIM. Proibir mataria o caso
-       * que criou a afinidade; adiar põe as 12 declaradas na frente dela e a
-       * mantém na tela.
-       *
-       * A fila é consumida por remoção e não por um ponteiro que avança: com
-       * ponteiro, escolher uma declarada que estava DEPOIS de uma afim adiada
-       * pulava a afim para sempre, e o "adiar" virava "proibir" em silêncio.
-       */
-      /**
-       * ── A COTA SÓ EXISTE QUANDO A GAVETA NÃO CABE ─────────────────────────
-       *
-       * Se a gaveta tem MENOS claims declaradas do que vagas, não há disputa a
-       * arbitrar: as declaradas cabem todas e a afim só ocupa o que sobrou. Nesse
-       * caso a cota não se aplica e a ordem natural é preservada — e ela importa,
-       * porque a ordem da tela é o foco do canal "página ao lado".
-       *
-       * Medido nos dois lados, e é por isso que a regra é condicional:
-       *
-       *   · `descanso-entre-series` tem 12 declaradas para ~24 vagas. Adiar as
-       *     afins empurra V003-17 para fora das 8 primeiras da tela, e com ela
-       *     some V003-18 (*5 minutos em agachamento e terra, 3 no supino*), que
-       *     é um dos dois ids que o `viaPaginaAoLado` do T05 cobra POR CANAL;
-       *   · `ordem-exercicio` tem 29 declaradas para ~15 vagas, e `TETO_AFINS`
-       *     empilha 60 claims de `agacho` e `supino` na frente delas. Sem adiar,
-       *     G014-10 sai em 30º dentro da própria gaveta.
-       *
-       * A condição separa os dois casos por um FATO e não por um ajuste: **a
-       * gaveta inteira cabe nas vagas dela, ou não cabe.** Se cabe, não há
-       * disputa a arbitrar — as declaradas entram todas e a afim só ocupa o que
-       * sobra, na ordem natural.
-       *
-       * O número comparado é o tamanho DECLARADO da gaveta (`r.claims`) e não
-       * quantas dela casaram a pergunta: com o segundo, `ordem-exercicio` (29
-       * claims, 17 casando, 17 vagas) dava empate e a regra se desligava
-       * justamente no caso que a motivou.
-       */
-      const tetoAfim = f.r.claims > cota ? Math.ceil(cotaAfim * cota) : cota;
-      let escolhido = -1;
-      let adiado = -1;
-      for (let k = 0; k < f.fila.length; k += 1) {
-        const x = f.fila[k];
-        if (acumulado.has(x.c.id)) {
-          // Já está na tela por outra gaveta: registra o cruzamento e some da
-          // fila desta, porque ela não ocupa vaga duas vezes.
-          const a = acumulado.get(x.c.id);
-          if (!a.topicos.includes(f.r.topico)) {
-            const rel = f.topo > 0 ? x.score / f.topo : 0;
-            a.score += rel;
-            a.topicos.push(f.r.topico);
-            if (x.casou.length > a.casou.length) a.casou = x.casou;
-          }
-          f.fila.splice(k, 1);
-          k -= 1;
-          continue;
-        }
-        if (x.comoEntrou === 'afim' && f.afins + 1 > tetoAfim) {
-          if (adiado < 0) adiado = k;
-          continue;
-        }
-        escolhido = k;
-        break;
-      }
-      if (escolhido < 0) escolhido = adiado;
-      if (escolhido < 0) {
-        f.fila.length = 0;
-        continue;
-      }
-      const x = f.fila[escolhido];
-      f.fila.splice(escolhido, 1);
-      const rel = f.topo > 0 ? x.score / f.topo : 0;
-      acumulado.set(x.c.id, {
-        c: x.c,
-        score: rel,
-        topicos: [f.r.topico],
-        casou: x.casou,
-        ordem: ocupadas,
-      });
-      f.tomou += 1;
-      if (x.comoEntrou === 'afim') f.afins += 1;
-      ocupadas += 1;
-      mexeu = true;
-    }
-  }
-
-  /**
-   * ── A ORDEM DA TELA É A ORDEM DO RODÍZIO, e não o score global ────────────
-   *
-   * Este é o segundo meio-conserto que a onda anterior teria feito. Dar 11 vagas
-   * a `dor` e depois ordenar a tela pelo score global devolve as 11 nas posições
-   * 29ª a 40ª: dentro do teto e fora da leitura. Medido na pergunta da fisgada,
-   * com as vagas já corrigidas e a ordem ainda global — V079-34 saía em 29º e
-   * V001-06 em 35º, e o canal do ledger, que se ancora nas primeiras da tela,
-   * nunca via nenhuma das duas.
-   *
-   * A ordem do rodízio é `1ª de cada gaveta, 2ª de cada gaveta, …`, com as
-   * gavetas na ordem do score da rota. O topo da tela passa a ser *o melhor de
-   * cada gaveta que o roteador abriu*, que é a coisa que o leitor precisa ver
-   * primeiro quando três gavetas diferentes reivindicam a pergunta.
-   *
-   * O `score` continua sendo calculado e continua saindo no objeto — ele é o que
-   * soma quando a claim está em duas gavetas roteadas —, mas ele deixou de
-   * DECIDIR quem aparece e em que ordem.
-   */
-  /**
-   * ── A ORDEM DA TELA ──────────────────────────────────────────────────────
-   *
-   * Quem ENTRA é decidido pelas vagas; a ORDEM é decidida pelo score RELATIVO
-   * dentro da gaveta, somado sobre as gavetas que ofereceram a claim.
-   *
-   * Duas coisas caem daí, e as duas foram medidas:
-   *
-   *   · o topo da tela vira *a melhor de cada gaveta aberta* — todas as
-   *     primeiras colocadas empatam em 1,00 e o desempate é a ordem do rodízio.
-   *     É a propriedade 1 aparecendo na leitura e não só no total: `dor` abriu
-   *     em 3º na pergunta da fisgada e a claim dela sai em 3º, não em 29º;
-   *   · **a claim que está em DUAS gavetas roteadas soma duas parcelas e sobe.**
-   *     É o sinal mais forte desta camada e ele quase se perdeu nesta onda: com
-   *     a ordem do rodízio puro, V170-34 (*supinar seis dias por semana*, que é
-   *     de `frequencia` E de `supino`) caía de 4º para 11º no caso Q05.
-   *
-   * O peso da rota AO QUADRADO saiu do score e virou o que sempre deveria ter
-   * sido: ele decide quantas VAGAS a gaveta leva (`vagasPorGaveta`), não a
-   * posição de cada claim. Usar o mesmo número para as duas coisas era o que
-   * fazia a gaveta secundária aparecer inteira no rodapé da tela.
-   */
-  const claims = [...acumulado.values()]
-    .sort((a, b) => b.score - a.score || a.ordem - b.ordem);
-  return { claims, vagas };
+/** O CONJUNTO de ids da tela — o contrato do canário desde 10/08. */
+export function idsDaTela(r) {
+  return new Set(telaDaResposta(r).map((x) => x.id));
 }
 
 /**
@@ -1549,35 +1446,59 @@ export function porLigacaoDeclarada(porId, foco, {
  * tem em `busca.mjs`: a CLI imprime deste objeto e a trava cobra deste objeto.
  * Se fossem duas implementações, a trava estaria medindo a si mesma.
  *
- * A fusão entre tópicos é por score RELATIVO (cada tópico normalizado pelo
- * próprio 1º lugar), porque scores de `agacho` e de `descanso-entre-series` não
- * são comparáveis — o `df` foi recontado em populações diferentes, de propósito.
- * O efeito colateral é o que se queria: **a claim que está nos DOIS tópicos
- * roteados sobe**, e cruzar dois tópicos é conjunto, não mais uma palavra.
+ * ── O QUE MUDOU EM 13/08/2026, E É A FORMA DA RESPOSTA ──────────────────────
+ *
+ * Não existe mais tela plana nem alocação de vagas. **`responder()` devolve
+ * `secoes`: uma por gaveta roteada, mais a do canal de param.** Cada seção é
+ * montada por `montarSecaoDeGaveta`, que não recebe informação sobre as outras —
+ * e é daí que sai a invariante de não-diluição. O bloco "A TELA: UMA SEÇÃO POR
+ * GAVETA", acima, tem o defeito medido e o argumento.
+ *
+ * Os campos `claims`, `params`, `vizinhos` e `idsMostrados` continuam existindo
+ * e continuam sendo o que sempre foram — mas agora são DERIVADOS de `secoes`,
+ * numa projeção só, e não calculados por um segundo caminho. Duas fontes para a
+ * mesma coisa é o modo de falha nº 3 desta casa, e ele já custou um erro de
+ * relatório neste arquivo.
  */
 export function responder(claims, pergunta, {
   topicos, glossario = null, vocabulario = [], idx = null, perfis = null,
-  piso = PISO_ROTA, max = MAX_TOPICOS, teto = TETO_ROTEADO, porTopico = null, forcar = [],
+  piso = PISO_ROTA, max = MAX_TOPICOS, porTopico = null, forcar = [],
   /**
-   * A CALIBRAÇÃO DA ALOCAÇÃO ENTRA POR AQUI, e só a bancada de medição
-   * (`research/tools/medir-vagas.mjs`) usa isto. Existe porque escolher os
-   * números por gosto é o que esta casa proíbe: os quatro foram varridos contra
-   * os 19 canários de `ROTAS.json` e os 34 de `CANARIOS.json`, e a varredura
-   * está no `RECUPERACAO.md` §22. Nenhuma trava passa este parâmetro — trava que
-   * escolhe a própria constante não mede nada.
+   * O ORÇAMENTO DA TELA ENTRA POR AQUI, e quem verifica é quem o passa.
+   *
+   * `porSecao` é o teto de claims por seção e `secoes` é o teto de seções. O
+   * `check-canarios.mjs` e o `check-rotas.mjs` passam os dois vindo do JSON do
+   * canário — é a regra de 10/08: **o limite que a trava cobra é dado do
+   * canário, nunca constante da ferramenta medida.** Inflar `TETO_DA_SECAO`
+   * aqui não muda uma linha do que elas cobram.
    */
-  vagas = {},
-  /** Idem, para o orçamento de cada canal da tela. Só a bancada passa isto. */
-  canais = {},
+  tela = {},
 } = {}) {
-  const orcamento = {
-    rota: Math.round(teto * FRACAO_DA_ROTA),
-    ligacao: VAGAS_DA_LIGACAO,
-    lado: DETALHE_ROTEADO,
-    ...canais,
-  };
+  const porSecao = Number.isInteger(tela.porSecao) ? tela.porSecao : TETO_DA_SECAO;
+  const maxSecoes = Number.isInteger(tela.secoes) ? tela.secoes : max;
+  const porSecaoForcada = Number.isInteger(tela.porSecaoForcada)
+    ? tela.porSecaoForcada : TETO_DA_SECAO_FORCADA;
+  const ligacoesDaSecao = Number.isInteger(tela.ligacoes)
+    ? tela.ligacoes : FOCO_DA_SECAO * LIGACOES_POR_FOCO;
+  const ladoDaSecao = Number.isInteger(tela.lado) ? tela.lado : 2 * FOCO_DA_SECAO;
+  const afinsDaSecao = Number.isInteger(tela.afins) ? tela.afins : AFINS_DA_SECAO;
   const indice = idx ?? indexar(claims);
   const perfil = perfis ?? perfilarTopicos(claims);
+  /**
+   * ── O ROTEAMENTO NÃO SABE DO ORÇAMENTO DA TELA, E ISSO É O QUE TORNA A
+   *    INVARIANTE TESTÁVEL ────────────────────────────────────────────────────
+   *
+   * `max` aqui é `MAX_TOPICOS`, a constante do ROTEAMENTO, e nunca
+   * `tela.secoes`. Passar o orçamento da tela para `rotear()` acopla os dois:
+   * o `max` entra no cálculo do bônus de `naoConfundirCom` (ver o bloco dos
+   * avisos em `rotear`), então mudar quantas seções cabem mudaria QUAIS gavetas
+   * abrem — e o teste da invariante estaria comparando dois roteamentos
+   * diferentes achando que compara duas apresentações.
+   *
+   * Com esta separação vale, por construção, `rotas(n) === rotas(n+1)[0..n]`, e
+   * o corte de seções é o que ele diz ser: um corte de APRESENTAÇÃO, que tira a
+   * seção inteira e avisa.
+   */
   const bruto = rotear(perfil, pergunta, { topicos, glossario, vocabulario, piso, max });
   /**
    * `forcar` é o `--topic` do usuário mandando no roteamento. Existe porque o
@@ -1605,228 +1526,119 @@ export function responder(claims, pergunta, {
     throw new Error(`roteamento produziu tópico fora do vocabulário fechado: ${invalidos.join(', ')}`);
   }
 
-  const tetoInterno = porTopico ?? teto;
+  /**
+   * ── O TETO DE SEÇÕES CORTA A SEÇÃO INTEIRA, E A SAÍDA DIZ QUE CORTOU ──────
+   *
+   * `rotear()` já respeita `max`, então este corte quase nunca dispara — ele
+   * existe para o caso de `forcar` trazer mais gavetas do que cabem, e para que
+   * o contrato tenha UM lugar onde o teto de seções é aplicado.
+   *
+   * E ele corta a seção INTEIRA, nunca as vagas dela: comer o orçamento de uma
+   * seção em silêncio é o soma-zero voltando pela porta dos fundos.
+   */
+  const rotasNaTela = rota.rotas.slice(0, maxSecoes);
+  const rotasCortadas = rota.rotas.slice(maxSecoes);
+
+  const porIdMapa = new Map(claims.map((c) => [c.id, c]));
   const porTopicoResultado = [];
-  for (const r of rota.rotas) {
+  const secoes = [];
+  for (const r of rotasNaTela) {
+    const daSecao = r.forcado ? porSecaoForcada : porSecao;
     /**
-     * TÓPICO FORÇADO NÃO GANHA AFINS, e a assimetria é a razão de a afinidade
-     * existir. Ela conserta a etiqueta quando o ROTEADOR está adivinhando a
-     * gaveta; quando um humano digita `--topic cinto`, ele não está adivinhando
-     * — está pedindo a gaveta, e a gaveta é o conjunto etiquetado.
+     * DUAS FILAS, ORDENADAS SEPARADAMENTE — declaradas e afins.
      *
-     * Medido: `cinto` tem 54 claims declaradas, e com 60 afins junto o par
-     * F001-83/F001-84 (as duas dimensões do regulamento IPF, tier O, tipadas)
-     * caía para 64º e 67º. Sem os afins, a gaveta inteira cabe na tela.
+     * Uma fila só era a diluição de DENTRO da gaveta: as até 60 claims afins
+     * entram no mesmo `subIndice`, casam as palavras da pergunta melhor que as
+     * declaradas (vêm das gavetas grandes) e ocupam o topo da seção. Ver
+     * `AFINS_DA_SECAO` para o caso D06 medido.
+     *
+     * TÓPICO FORÇADO NÃO GANHA AFIM NENHUMA, e a assimetria é a razão de a
+     * afinidade existir: ela conserta a etiqueta quando o ROTEADOR está
+     * adivinhando a gaveta; quem digita `--topic cinto` está pedindo a gaveta, e
+     * a gaveta é o conjunto etiquetado. Medido: `cinto` tem 54 claims
+     * declaradas, e com 60 afins junto o par F001-83/F001-84 (as duas dimensões
+     * do regulamento IPF, tier O, tipadas) caía para 64º e 67º.
+     *
+     * O POOL NUNCA PODE SER MENOR QUE A SEÇÃO — senão o corte de apresentação
+     * vira corte de conteúdo pelas costas. Medido no T14: `cinto` forçado pede
+     * 60 na seção e o pool de 40 devolvia 40, com F001-83 (*largura máxima*, a
+     * 49ª quando a pergunta diz `dimensões`) fora da tela e nenhum aviso.
      */
-    const conjunto = conjuntoDoTopico(claims, perfil, r.topico, { afins: r.forcado ? 0 : TETO_AFINS });
-    const lista = ordenarNoTopico(indice, conjunto, pergunta, { teto: tetoInterno });
-    porTopicoResultado.push({ ...r, resultados: lista, afins: conjunto.afim.size });
+    const pool = porTopico ?? Math.max(POOL_DA_GAVETA, daSecao);
+    const soDeclaradas = conjuntoDoTopico(claims, perfil, r.topico, { afins: 0 });
+    const filaDeclarada = ordenarNoTopico(indice, soDeclaradas, pergunta, { teto: pool });
+    let filaAfim = [];
+    let quantasAfins = 0;
+    if (!r.forcado && afinsDaSecao > 0) {
+      const comAfins = conjuntoDoTopico(claims, perfil, r.topico, { afins: TETO_AFINS });
+      quantasAfins = comAfins.afim.size;
+      filaAfim = ordenarNoTopico(indice, comAfins, pergunta, { teto: pool })
+        .filter((x) => x.comoEntrou === 'afim');
+    }
+    const s = montarSecaoDeGaveta(claims, porIdMapa, r, {
+      declaradas: filaDeclarada, afins: filaAfim,
+    }, {
+      porSecao: daSecao,
+      afins: r.forcado ? 0 : afinsDaSecao,
+      ligacoes: ligacoesDaSecao,
+      lado: ladoDaSecao,
+    });
+    const fila = s.principais;
+    secoes.push(s);
+    porTopicoResultado.push({
+      ...r, resultados: fila, afins: quantasAfins, naSecao: s.principais.length,
+    });
   }
 
   /**
-   * ── AQUI ESTAVA O SOTERRAMENTO ────────────────────────────────────────────
-   *
-   * Até 11/08/2026 este ponto do arquivo despejava as listas de todas as gavetas
-   * num acumulador só, ordenava pelo score global e cortava em `teto`. O peso da
-   * rota AO QUADRADO — que continua existindo, agora só como ORDEM da tela —
-   * não impedia nada: `agacho` tem 990 bilhetes na rifa e `ordem-exercicio` tem
-   * 29, e o corte por ranking global é a rifa.
-   *
-   * `alocarVagas` troca o ranking global por VAGA POR GAVETA, e é ele que
-   * responde às três propriedades: piso por gaveta aberta, divisão por
-   * `score × surpresa do tamanho`, e vaga como TETO — a sobra não volta ao bolo,
-   * e é por isso que a tela agora encolhe quando não há o que dizer.
+   * A SEÇÃO DO NOME DO DADO sai depois das gavetas e só quando tem o que dizer.
+   * Ela não passa pelo roteamento de propósito — o nome de uma grandeza não é um
+   * assunto, e `peso_por_rpe_min` é a resposta da Q11 estando em qualquer gaveta.
    */
-  /**
-   * A GAVETA FORÇADA LEVA A TELA INTEIRA. Quem digitou `--topic cinto` pediu a
-   * gaveta, e os outros três canais viram complemento de uma coisa que já foi
-   * escolhida — é a mesma assimetria dos afins.
-   */
-  const forcado = rota.rotas.some((r) => r.forcado);
-  const alocarCom = (vagasDaRota) => alocarVagas(porTopicoResultado, {
-    teto: vagasDaRota,
-    piso: PISO_VAGAS,
-    cotaAfim: COTA_AFIM,
-    nDaBase: claims.length,
-    ...vagas,
-  });
-  /**
-   * ── E A DIVISÃO SÓ VALE PARA A TELA PADRÃO ────────────────────────────────
-   *
-   * `FRACAO_DA_ROTA` reparte as 40 vagas da tela entre os quatro canais. Abaixo
-   * disso não há o que repartir: um canário que pede `tetoDeTela: 2` está
-   * perguntando *"quais são as duas primeiras"*, e a resposta é as duas
-   * primeiras do canal principal, não uma delas mais uma reserva vazia para um
-   * ledger que não cabe. Com o teto pequeno, a rota leva tudo.
-   */
-  const orcamentoDaRota = forcado || teto < TETO_ROTEADO
-    ? teto
-    : Math.min(teto, orcamento.rota);
+  const params = porNomeDeParam(claims, indice, perfil, pergunta, { teto: TETO_PARAM });
+  if (params.lista.length > 0) secoes.push(montarSecaoDeParam(claims, params, { lado: ladoDaSecao }));
 
   /**
-   * ── OS TRÊS CANAIS DE COMPLEMENTO, MONTADOS A PARTIR DO QUE A ROTA DEVOLVEU ─
+   * ── A PROJEÇÃO: `claims`, `vizinhos` e `idsMostrados` SAEM DAS SEÇÕES ──────
    *
-   * Fechados numa função porque eles são calculados DUAS vezes: ver o segundo
-   * passe logo abaixo.
+   * Uma travessia só, na ordem da tela. `claims` deduplica (a claim que está em
+   * duas seções é UMA claim, e `topicos` diz de quais seções ela veio); `tela`
+   * não deduplica, porque a posição dela DENTRO de cada seção é o que a
+   * invariante conta.
    */
-  const montarCanais = (claimsRoteadas) => {
-    const params = porNomeDeParam(claims, indice, perfil, pergunta, {
-      teto: TETO_PARAM,
-    });
+  const vistas = new Map();
+  for (const s of secoes) {
+    if (s.tipo !== 'gaveta') continue;
+    for (const x of s.principais) {
+      const a = vistas.get(x.c.id);
+      if (a) {
+        if (!a.topicos.includes(s.topico)) a.topicos.push(s.topico);
+        if (x.casou.length > a.casou.length) a.casou = x.casou;
+        continue;
+      }
+      vistas.set(x.c.id, {
+        c: x.c, score: x.score, casou: x.casou, comoEntrou: x.comoEntrou, topicos: [s.topico],
+      });
+    }
+  }
+  const claimsRoteadas = [...vistas.values()];
 
-    /**
-     * ── A PÁGINA AO LADO, e ela é a regra 3 do protocolo ─────────────────────
-     *
-     * *"Leia os vizinhos do id que você já achou."* O `RECUPERACAO.md` §3.4 mediu
-     * o caso: a Q19 parou doze ids antes de V010-13, no mesmo vídeo que já estava
-     * citando. A porta livre faz isso desde 09/08; a porta nova nasceu sem, e a
-     * medição de 10/08 mostrou o custo — `quanto baixar o peso quando o RPE vem
-     * acima do alvo` devolvia V033-03 e V033-04 pelo canal de param e **não**
-     * V033-05, que é a claim IMEDIATAMENTE ao lado e a que traduz os 3 % em 25 lb.
-     *
-     * Mesma função da porta livre (`vizinhosNoMesmoSrc`), e não uma segunda
-     * implementação: duas cópias divergiriam em silêncio.
-     *
-     * O foco é o que está NA TELA em detalhe — as primeiras claims roteadas e as
-     * do canal de param —, nunca a lista inteira: ±3 ids sobre 40 focos seriam
-     * 240 ids, e uma lista de 240 não é abrir a página ao lado, é despejo. O raio
-     * é 2 e não 3 porque aqui o foco já vem ordenado por relevância dentro de um
-     * tópico, e não de uma busca pobre.
-     */
-    const naTela = new Set([
-      ...claimsRoteadas.map((x) => x.c.id), ...params.lista.map((x) => x.c.id),
-    ]);
-    /**
-     * CADA CANAL TEM SUA COTA, e isso foi medido. Com uma fila só, os oito focos
-     * do roteamento consumiam as 16 vagas e o canal de param nunca chegava a
-     * abrir vizinho nenhum — V033-05 (*3 % são 25 lb para mim*) ficava de fora
-     * porque V033-04 é a 10ª linha do canal de param. É o mesmo defeito de "corte
-     * por ordem de fila" que a `busca.mjs` já denuncia em outro lugar; a correção
-     * é a mesma: quem tem evidência diferente não disputa a mesma vaga.
-     *
-     * O canal de param entra INTEIRO no foco porque ele sai inteiro na tela.
-     */
-    /**
-     * ── O ORÇAMENTO DO VIZINHO ACOMPANHA A TELA ──────────────────────────────
-     *
-     * `teto: DETALHE_ROTEADO` fixo era uma tela cheia entrando pela porta dos
-     * fundos: numa pergunta cuja resposta roteada tem TRÊS claims, oito vizinhos
-     * mais doze de param devolviam 23 linhas para uma pergunta de sim/não. O
-     * vizinho existe para completar o que saiu; ele não pode ser maior do que o
-     * que saiu.
-     */
-    /**
-     * ── O FOCO CONTINUA SENDO AS OITO PRIMEIRAS, E ISSO FOI RE-MEDIDO ────────
-     *
-     * Alargar o foco para a tela inteira foi tentado nesta onda, com o argumento
-     * de que `vizinhosNoMesmoSrc` disputa a vaga por DISTÂNCIA e portanto foco
-     * largo só acrescenta candidato melhor. **A medição desmentiu o argumento:**
-     * com 24 focos há mais candidatos de distância 1 do que vagas, e o desempate
-     * passa a ser a ordem do foco — o T05 perdia V003-18 e V074-24, que são
-     * exatamente os dois ids que o `viaPaginaAoLado` do ROTAS.json cobra por
-     * canal. Recall de 58 contra 57 e a página ao lado de 1 de 2 contra 2 de 2:
-     * não compensa.
-     *
-     * O alvo que motivou a tentativa (G016-10 na B11, que casa UMA palavra da
-     * pergunta e mora ao lado de G016-09) continua fora da tela, e está declarado
-     * como falha aberta no `RECUPERACAO.md` §22.
-     */
-    const vizRoteado = vizinhosNoMesmoSrc(
-      claims,
-      claimsRoteadas.slice(0, DETALHE_ROTEADO).map((x) => x.c),
-      {
-        vistos: naTela,
-        /**
-         * DOIS POR FOCO, e o 2 é consequência da tela ter encolhido. Com a rota
-         * ocupando 40 vagas, a claim de ANTES do foco quase sempre já estava na
-         * tela e o único vizinho novo era a de depois; com 24, as duas são novas e
-         * `porFoco: 1` escolhe uma por desempate de id — o T05 passava a devolver
-         * V003-16 no lugar de V003-18, que é o id que o `viaPaginaAoLado` cobra.
-         * O desempate certo era outro e foi para `busca.mjs`: entre a página
-         * anterior e a seguinte, a SEGUINTE é a que completa.
-         */
-        porFoco: 1,
-        teto: Math.min(orcamento.lado, claimsRoteadas.length),
-        raio: 2,
-      },
-    );
-    const vizParam = vizinhosNoMesmoSrc(
-      claims,
-      params.lista.map((x) => x.c),
-      {
-        vistos: new Set([...naTela, ...vizRoteado.map((v) => v.c.id)]),
-        porFoco: 1,
-        /**
-         * O LADO DO PARAM MANTÉM O ORÇAMENTO CHEIO (`TETO_PARAM`), e não o do
-         * canal de rota (`DETALHE_ROTEADO`). O motivo está medido no T04: V033-05 — *3 % são 25 lb
-         * para mim* — é a claim ao lado de V033-04, que é a 10ª linha do canal de
-         * param. Um orçamento de 8 vizinhos nunca chega ao 10º foco, e o número
-         * que traduz a porcentagem em quilos some da tela.
-         */
-        teto: Math.min(TETO_PARAM, params.lista.length),
-        raio: 2,
-      },
-    );
-    /**
-     * O LEDGER SAI DEPOIS DOS VIZINHOS e antes de mais nada: ele é o canal que
-     * não casa palavra nenhuma, e o `vistos` acumulado impede que ele repita o que
-     * as outras três portas já trouxeram. O foco é o TOPO da tela — as claims que
-     * o leitor vai de fato ler inteiras.
-     */
-    const ligacoes = porLigacaoDeclarada(
-      new Map(claims.map((c) => [c.id, c])),
-      claimsRoteadas.map((x) => x.c).filter((c) => c.modo === MODO_QUE_PUXA_LIGACAO),
-      {
-        vistos: new Set([
-          ...naTela, ...vizRoteado.map((v) => v.c.id), ...vizParam.map((v) => v.c.id),
-        ]),
-        porFoco: LIGACOES_POR_FOCO,
-        teto: Math.min(TETO_LIGACAO, orcamento.ligacao, Math.max(1, claimsRoteadas.length)),
-      },
-    );
-    /**
-     * CADA VIZINHO DIZ DE QUAL CANAL VEIO, e isso não é enfeite de saída.
-     *
-     * Sem a etiqueta, os dois canais são indistinguíveis do lado de fora, e um
-     * canário que exige "este id tem de sair" fica satisfeito por qualquer um dos
-     * dois. Foi assim que `DETALHE_ROTEADO 8 → 0` sobreviveu verde ao ataque de
-     * 10/08/2026: `vizRoteado` morria inteiro, o teste de V033-05 continuava
-     * passando porque V033-05 vem de `vizParam`, e nada acusava. Com o canal
-     * declarado, `viaPaginaAoLado` no ROTAS.json cobra o canal por nome.
-     */
-    /**
-     * ── O LEDGER VIAJA NA MESMA LISTA DOS VIZINHOS, e isso é decisão de contrato ─
-     *
-     * Ele PODIA sair num campo novo, e sair num campo novo teria sido o erro mais
-     * caro desta onda: quem conta a tela é o `telaDe()` do `check-canarios.mjs` e
-     * o `check-rotas.mjs`, e os dois enfileiram `claims`, `params.lista` e
-     * `vizinhos`. Um campo `ligacoes` que ninguém enfileira é conteúdo calculado,
-     * impresso e **invisível para toda medição** — que é exatamente o defeito que
-     * esta onda existe para consertar, cometido de novo com outro nome.
-     *
-     * As três portas já se distinguem por `canal`, e o `viaPaginaAoLado` do
-     * ROTAS.json já cobra `canal === 'rota'` por nome. `ligacao` entra como a
-     * terceira etiqueta, e continua cobrável separadamente.
-     */
-    /**
-     * E O LEDGER VEM PRIMEIRO DENTRO DA LISTA. A ordem aqui decide quem sobrevive
-     * ao corte de 40 quando os quatro canais somam mais do que isso, e o canal que
-     * carrega a CONDIÇÃO DE UMA PRESCRIÇÃO é o último que pode ser cortado. Os
-     * outros dois completam; este desarma.
-     */
-    const vizinhos = [
-      ...ligacoes.map((v) => ({ ...v, canal: 'ligacao' })),
-      ...vizParam.map((v) => ({ ...v, canal: 'param' })),
-      ...vizRoteado.map((v) => ({ ...v, canal: 'rota' })),
-    ];
-    return { params, vizinhos };
-  };
-
-  const alocado = alocarCom(orcamentoDaRota);
-  const canaisDaTela = montarCanais(alocado.claims);
-  const claimsRoteadas = alocado.claims;
-  const { params, vizinhos } = canaisDaTela;
-  for (const t of porTopicoResultado) t.vagas = alocado.vagas.get(t.topico) ?? 0;
+  const vizVistos = new Set();
+  const vizinhos = [];
+  for (const s of secoes) {
+    for (const v of s.ligacoes) {
+      if (vizVistos.has(v.c.id)) continue;
+      vizVistos.add(v.c.id);
+      vizinhos.push({ ...v, canal: 'ligacao', secao: s.chave });
+    }
+  }
+  for (const s of secoes) {
+    for (const v of s.lado) {
+      if (vizVistos.has(v.c.id)) continue;
+      vizVistos.add(v.c.id);
+      vizinhos.push({ ...v, canal: s.tipo === 'param' ? 'param' : 'rota', secao: s.chave });
+    }
+  }
 
   /**
    * O ESTREITAMENTO PARA O TÓPICO GRANDE DEMAIS. Entre as claims que a pergunta
@@ -1845,27 +1657,37 @@ export function responder(claims, pergunta, {
     .slice(0, 5)
     .map(([topico, n]) => ({ topico, n }));
 
-  return {
+  const resposta = {
     pergunta,
     ...rota,
+    rotas: rotasNaTela,
+    rotasCortadas,
+    secoes,
     porTopico: porTopicoResultado,
     claims: claimsRoteadas,
     params,
     vizinhos,
     ligacoes: vizinhos.filter((v) => v.canal === 'ligacao'),
-    vagas: alocado.vagas,
     estreitar,
-    // O contrato do canário: **o que o agente VÊ**. Tudo o que cabe na tela, e
-    // nada além — achado no lugar 400 não é achado.
-    idsMostrados: new Set([
-      ...claimsRoteadas.map((x) => x.c.id),
-      ...params.lista.map((x) => x.c.id),
-      ...vizinhos.map((v) => v.c.id),
-    ]),
-    teto,
+    tela: null,
+    idsMostrados: null,
+    orcamento: {
+      porSecao,
+      secoes: maxSecoes,
+      afins: afinsDaSecao,
+      ligacoes: ligacoesDaSecao,
+      lado: ladoDaSecao,
+    },
     indice,
     perfis: perfil,
   };
+  // O contrato do canário: **o que o agente VÊ**, numa definição só. `tela` é a
+  // lista com posição por seção; `idsMostrados` é o conjunto dela. Nada mais é
+  // "a tela" — foi a existência de quatro cópias desta projeção que produziu o
+  // erro de relatório de 11/08.
+  resposta.tela = telaDaResposta(resposta);
+  resposta.idsMostrados = new Set(resposta.tela.map((x) => x.id));
+  return resposta;
 }
 
 /**

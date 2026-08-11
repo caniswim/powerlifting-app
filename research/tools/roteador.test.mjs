@@ -363,12 +363,30 @@ const perguntar = (pergunta, extra = {}) => responder(claims, pergunta, {
 }
 
 // ── a fiação da ORDENAÇÃO DENTRO do tópico ───────────────────────────────────
+//
+// ── E O QUE MUDOU EM 13/08/2026, PORQUE ISTO ERA UM TESTE DE RANKING GLOBAL ──
+//
+// V170-34 (*supinar seis dias por semana*) é de `frequencia` E de `supino`, e na
+// tela plana ela subia por SOMAR as duas parcelas de score. Com uma seção por
+// gaveta não há score global a somar: ela sai em cada uma das duas seções, na
+// posição que a ordenação DAQUELA gaveta lhe dá.
+//
+// A coisa que se quer verdadeira continua sendo a mesma — *a claim que responde
+// a Q05 está no topo de onde o leitor vai procurar* —, e ela é cobrada assim: no
+// TOPO de pelo menos uma das duas seções, e presente nas duas. Os números são
+// literais.
 {
   const r = perguntar('posso supinar seis vezes por semana?');
-  const pos = r.claims.findIndex((x) => x.c.id === 'V170-34') + 1;
-  ok('fiação: V170-34 (freq_supino=6, GERAL+prescricao) sai entre as 10 primeiras',
-    pos > 0 && pos <= 10,
-    `posição ${pos || 'ausente'} — este é o caso Q05, e a resposta medida concluiu que a base só tinha log pessoal`);
+  const onde = r.tela.filter((x) => x.id === 'V170-34');
+  const melhor = Math.min(...onde.map((x) => x.posicaoNaSecao), 999);
+  ok('fiação: V170-34 (freq_supino=6, GERAL+prescricao) sai no TOPO da seção dela (≤ 5)',
+    melhor <= 5,
+    `saiu em ${onde.map((x) => `${x.secao}#${x.posicaoNaSecao}`).join(' ') || 'lugar nenhum'} `
+      + '— este é o caso Q05, e a resposta medida concluiu que a base só tinha log pessoal');
+  ok('fiação: e ela aparece nas DUAS gavetas que a reivindicam, uma vez em cada seção',
+    new Set(onde.map((x) => x.secao)).size >= 2,
+    `seções: ${onde.map((x) => x.secao).join(', ') || '(nenhuma)'} — a claim que está em duas `
+      + 'gavetas tem de sair nas duas, que é o que substituiu a soma de scores');
 }
 
 // ── a fiação do canal de PARAM ───────────────────────────────────────────────
@@ -439,11 +457,19 @@ const perguntar = (pergunta, extra = {}) => responder(claims, pergunta, {
 // deixava o `check:kb` inteiro verde.
 {
   const r = perguntar('como melhorar meu agacho?');
-  ok('a saída PADRÃO cabe numa leitura: no máximo 40 claims sem teto explícito',
-    r.claims.length <= 40,
-    `saíram ${r.claims.length} — despejar isso no contexto de um agente destrói a consulta seguinte`);
-  ok('e o padrão não é tão apertado que deixe de ser uma amostra (>= 20)',
-    r.claims.length >= 20, `saíram ${r.claims.length}`);
+  // ── E O NÚMERO MUDOU DE COISA EM 13/08/2026 ────────────────────────────────
+  //
+  // O teto deixou de ser 40 claims numa lista: é `TETO_DA_SECAO` por seção ×
+  // `MAX_TOPICOS` seções. 100 é literal e é o produto que a varredura do
+  // `medir-secoes.mjs` escolheu, com folga para o ledger e a página ao lado de
+  // cada seção. O custo em BYTES, que é o que de fato destrói o contexto do
+  // agente, é cobrado rodando a CLI em `secoes.test.mjs`.
+  ok('a saída PADRÃO cabe numa leitura: no máximo 100 linhas de tela sem teto explícito',
+    r.tela.length <= 100,
+    `saíram ${r.tela.length} — despejar isso no contexto de um agente destrói a consulta seguinte`);
+  ok('e o padrão não é tão apertado que deixe de ser uma amostra (>= 12 por seção aberta)',
+    r.secoes.length > 0 && r.tela.length >= 12 * r.secoes.length * 0.5,
+    `saíram ${r.tela.length} em ${r.secoes.length} seção(ões)`);
 }
 
 /**
@@ -531,8 +557,15 @@ const perguntar = (pergunta, extra = {}) => responder(claims, pergunta, {
   ok('fiação: o que entra pela página ao lado conta como MOSTRADO',
     r.idsMostrados.has('V033-05'),
     'calcular sem imprimir faria o canário passar por linha que não existe na tela');
+  /**
+   * O CANAL É COBRADO PELO NOME, e o filtro não é detalhe: `r.vizinhos` carrega
+   * TRÊS canais, e o do LEDGER não tem nada a ver com adjacência — ele traz o id
+   * que a claim DECLARA em `conditions`, que mora em outro vídeo por definição.
+   * Sem o filtro, este caso ficava vermelho por medir o canal errado.
+   */
+  const aoLado = r.vizinhos.filter((x) => x.canal !== 'ligacao');
   ok('a página ao lado é do MESMO vídeo e a no máximo 2 ids de distância',
-    r.vizinhos.every((x) => x.c.src === (r.claims.find((y) => y.c.id === x.deQuem)?.c.src
+    aoLado.length > 0 && aoLado.every((x) => x.c.src === (r.claims.find((y) => y.c.id === x.deQuem)?.c.src
       ?? r.params.lista.find((y) => y.c.id === x.deQuem)?.c.src)
       && Math.abs(Number(x.c.id.split('-')[1]) - Number(x.deQuem.split('-')[1])) <= 2),
     'um "vizinho" de outro vídeo, ou a 5 ids, não é abrir a página ao lado');

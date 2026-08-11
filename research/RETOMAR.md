@@ -1,125 +1,120 @@
-# Retomar — 12 de agosto de 2026 (noite), fechamento da onda 2D e da auditoria cega dela
+# Retomar — parado em 10 de agosto de 2026, fim do dia
 
-**Nada está pendente no meio.** Os três gates estão verdes, o trabalho da onda e o da
-auditoria que a reprovou estão absorvidos no repositório, e a fila está em
-`research/kb/ONDA-2C.md`. Este arquivo é curto de propósito: o que ele tem é o que **não**
-está escrito em outro lugar.
+A onda 2E foi **pausada de propósito**, logo depois de o construtor terminar e antes de o
+atacante começar. Nada quebrou; `check:kb`, `check:gate` e `build` estão verdes.
 
-## O comando
+## O comando de amanhã — um só
+
+```
+Workflow({ scriptPath: "research/workflows/onda2f-ataque.js" })
+```
+
+**Lançamento novo, NÃO `resumeFromRunId`.** O resume falhou hoje duas vezes atravessando
+fronteira de sessão: ele dá cache miss, recomeça da fase 1 e gera canários cegos DIFERENTES,
+o que jogaria fora a medição. Por isso os 12 canários E## estão **embutidos no script**
+(38 kB, sintaxe conferida) — amanhã não depende de cache, de journal, nem de mim lembrar de
+nada.
+
+Antes, se quiser confirmar que a noite não mexeu em nada:
 
 ```bash
 cd /Users/brunnovert/Documents/Dev/powerlifting-app
 npm run check:kb && npm run check:gate && npm run build
 ```
 
-`check:kb` imprime, ao passar, o placar da recuperação **por conjunto** — hoje são três.
-Verde ali quer dizer *"a medida não mudou"*, nunca *"a camada acha"*.
+## O que a onda 2E entregou (commitado)
 
-## O estado, em números que não podem ser somados
+A tela plana de 40 vagas virou **uma seção por gaveta**, cada uma com bloco de declaradas e
+bloco de afins. `montarSecaoDeGaveta` não recebe as outras gavetas, então a invariante de
+não-diluição vale por construção; `secoes.test.mjs` a cobra em 107 perguntas / 1.644
+comparações.
 
-```
-conjunto PÚBLICO  (P01–P18, que o construtor da onda 2B enxergava)
-    2 de 18 devolvem TODOS os ids  ·  7 de 18 devolvem ALGUM  ·  1 de 18 sem gaveta
+**Placar auto-reportado pelo construtor** — ele enxergava esses 42 canários, então isto é
+conjunto de treino, não veredito:
 
-conjunto CEGO     (B01–B12, escrito pelo ataque de 12/08 de manhã — QUEIMADO)
-    0 de 12 devolvem TODOS os ids  ·  2 de 12 devolvem ALGUM  ·  2 de 12 sem gaveta
+| conjunto | algum id | todos os ids |
+|---|---|---|
+| D01-D12 | 2 → 5 de 12 | 0 → 0 |
+| B01-B12 | 2 → 3 de 12 | 0 → 1 |
+| P01-P18 | 7 → 11 de 18 | 2 → 6 |
+| os 42 | 11 → 19 | 2 → 7 |
 
-conjunto CEGO     (D01–D12, escrito pela auditoria de 12/08 à noite — QUEIMADO)
-    0 de 12 devolvem TODOS os ids  ·  2 de 12 devolvem ALGUM  ·  1 de 12 sem gaveta
-                                      3 de 33 ids esperados chegam à tela  (9 %)
-```
+**A fisgada** — o caso mais caro desta base, atleta com histórico de peitoral: as CINCO claims
+do limiar de dor chegam sem `--topic`, juntas na seção `dor` (#5, #9, #28, #30, #31), e a
+paráfrase sem jargão vai a **5 de 5** (era 3). **Se isso regredir, é o achado mais importante
+do próximo relatório.**
 
-**O número que manda é o cego: 2 de 12, ZERO completos, 3 ids de 33.** O visível está
-**2,3 vezes** acima do cego. Somar os conjuntos imprime a média e apaga essa distância —
-por isso o `check-canarios.mjs` exige o campo `conjunto` e imprime os três separados, com o
-total só depois e nunca sozinho.
+**Preço:** a saída dobrou, ~14 kB → ~31 kB na pergunta mais larga.
 
-**O ganho da onda é real e é minúsculo.** Contra o estado de 11/08 rodado no mesmo comando
-(`node research/tools/auditoria/legado.mjs`), os mesmos doze cegos saíam de **0 de 12 e
-0 de 33 ids**. O atleta continua sem resposta em **10 das 12** perguntas dele.
+**Falha aberta que o próprio construtor declarou** (e isso é o comportamento certo): D05
+entrega 1 de 3, e a seção de `convencional` é bit a bit a mesma com 1 ou 5 gavetas — **a
+invariante vale e não basta.** O alvo seguinte é `ordenarNoTopico`.
 
-**E o defeito-alvo piorou: soterramento de 10 para 11 de 12.** A alocação por gaveta trocou
-*"a gaveta grande come tudo"* por *"as vagas se repartem entre gavetas erradas"*. A prova
-cabe em duas linhas e é contraintuitiva:
+## Duas correções que a onda 2E fez no diagnóstico anterior
 
-```
-D05  --topic convencional            -> os 3 ids
-     --topic convencional sumo terra -> ZERO
-```
+1. **A demonstração do soma-zero não existia.** `--topic` lê UM valor: `--topic convencional
+   sumo terra` e `--topic convencional` são o mesmo comando e devolvem as mesmas 3 claims. O
+   atacante da 2D montou um achado inteiro em cima de um artefato de parsing. O soma-zero era
+   real; a prova, não. **Modo de falha novo desta casa: a prova que não prova.**
+2. **A diluição maior era DENTRO da gaveta.** `conjuntoDoTopico` injetava até 60 claims afins
+   das gavetas grandes na mesma fila das declaradas — em D06 a resposta era a 34ª declarada e
+   sumia. Era essa a diferença entre `--topic <gaveta>` e a mesma gaveta roteada.
 
-## Onde ler o resto, nesta ordem
+## O que a onda 2F vai medir, e por que a segunda metade importa mais
 
-1. **`research/kb/RECUPERACAO.md`** — o veredito está no topo, com os três números. A
-   **PARTE VII (§26)** é a auditoria cega inteira: o que do relatório da onda 2D é verdade,
-   o que era mentira útil, e a linha que separa VAGA de ORDEM.
-2. **`research/kb/ONDA-2C.md`** — a fila. O **item 0** mudou de nome pela segunda vez: era
-   roteamento, virou cota de vagas por gaveta, e hoje é **§0.2-bis** (a alocação é soma
-   zero) mais **§0.2-ter** (ordenação dentro da gaveta). O **§0.3** responde com número a
-   pergunta da frota de modelo barato — **a resposta é NÃO, e o número é 28 contra 5**. A
-   **§0.5** é a fila do item 0 em ordem.
-3. **`research/RUNBOOK.md` §8** — as **39** divergências abertas. As dez novas desta rodada
-   são a **48** (alocação soma zero), a **49** (`PISO_VAGAS`), a **50** (ordenação dentro da
-   gaveta), a **52** (o `grep` mudo), a **53** (as varreduras não reproduzem), a **54** (o
-   canário do cinto), a **55** (a precisão do topo), a **56** (paráfrase), a **57** (os
-   buracos de "não sei") e a **58** (a cobertura de mutação do vocabulário). A **51**
-   entrou e foi fechada no mesmo passe.
-4. **`research/kb/ESTADO.md`** — o que está provado por compilador e o que continua sendo
-   julgamento.
+**Metade 1 — o ataque cego.** Os 12 E## contra as seções. Números da onda.
 
-## A bancada, e por que ela está onde está
+**Metade 2 — o caminho do agente, medido pela primeira vez em seis ondas.** Três agentes
+recebem só as 12 perguntas e a porta `--topicos` (as 74 gavetas com glosa), escolhem onde
+procurar sem ver os ids esperados, e um quarto pontua o que eles escolheram contra o gabarito.
 
-**`research/tools/auditoria/`** — os treze arquivos que produziram os números acima.
-`cegos.mjs` (as doze perguntas), `diagnostico.mjs` (gaveta a gaveta, forçada sozinha e em
-conjunto), **`vale-a-frota.mjs`** (o 28 contra 5, que decide a pergunta do atleta),
-`legado.mjs`, `topo.mjs`, `parafrase.mjs`, `piso.mjs`, `estreitas.mjs`, `tres-saidas.mjs`,
-`publicos.mjs`, `duas-telas.mjs`, `precisao.mjs`, `fisgada.mjs`.
+A razão: gastamos seis ondas consertando `--pergunta`, o roteador determinístico. Ele existe
+porque **um compilador não pode ter modelo dentro dele** — não há chave de API neste
+repositório. Mas quem consome esta base em produção **é um agente**, que lê as gavetas e
+escolhe. Deixou-se "o que é mensurável" virar "o que é o produto", e o caminho real nunca foi
+medido uma vez sequer. Se ele pontuar alto, o `--pergunta` vira conveniência e paramos de
+pagar por ele.
 
-Eles nasceram em `research/tools/scan/`, que está no **`.gitignore`**. O instrumento citado
-por um veredito publicado teria nascido perdido — que é exatamente o erro que o relatório
-auditado dizia ter evitado. **`scan/` continua ignorado e continua certo para rascunho
-descartável; artefato caro nasce em `research/` e é commitado no mesmo dia.**
+## Estado dos arquivos que só existiam na memória do workflow
 
-## A parte cega, e a regra que não pode ser reaprendida
+| arquivo | o que é |
+|---|---|
+| `research/kb/CANARIOS-CEGOS-E.json` | os 12 canários cegos E01–E12, extraídos do journal na pausa |
+| `research/kb/ONDA-2E-CONSTRUTOR.md` | o relato do construtor — o código estava no repo, o raciocínio não |
+| `research/tools/auditoria-onda2c/` | 44 arquivos resgatados de `/tmp/aud`, com `_LEIA.md` mapeando script → achado |
 
-**Conjunto de teste publicado vira conjunto de treino.** Agora com duas confirmações
-independentes: os P01–P18 foram escritos às cegas em 10/08 e estavam absorvidos em 12/08;
-os B01–B12 foram publicados de manhã; **os D01–D12 estão publicados a partir deste commit e
-estão igualmente queimados.**
-
-**A próxima onda de recuperação precisa de um conjunto cego NOVO**, escrito **antes** de
-qualquer conserto por quem não viu a ferramenta, nem o `CANARIOS.json`, **nem o
-`GLOSSARIO-TOPICOS.json`** — esta última exigência é nova e foi medida: a camada acha
-quando o atleta já sabe o vocabulário. Sob paráfrase sem jargão a fisgada cai de 5 de 5
-para **3 de 5**, enquanto D05 e D08 MELHORAM, porque a paráfrase usou a jargona da gaveta.
-
-Operacionalmente: se a onda for tocada por agentes, o agente que constrói **não** recebe o
-arquivo de canários no prompt, e o agente que ataca escreve as perguntas **antes** de ver
-qualquer diff.
+Os E## também estão embutidos no `onda2f-ataque.js`. **São duas cópias do mesmo canário, e
+isso é dívida deliberada de uma noite:** o fechamento da 2F tem instrução de absorvê-los no
+`CANARIOS.json` e **apagar o `CANARIOS-CEGOS-E.json`**, porque duas cópias divergem em
+silêncio — modo de falha nº 3.
 
 ## Contexto que não pode ser reaprendido
 
-- **Não ingerir mais corpus.** Medido quatro vezes, a última em 12/08 à noite: os 33 ids
-  esperados pelos doze cegos existem, estão nas gavetas certas, e **forçando a gaveta certa
-  sozinha 28 deles chegam**. O gargalo é seleção e ordenação, não conteúdo.
-- **Nenhuma trava pode ler a constante que ela verifica** (modo de falha nº 4). A variante
-  desta rodada estava dentro do arquivo escrito para provar que as constantes foram ganhas:
-  `alocacao.test.mjs` afirmava `magra >= 3`, que é `PISO_VAGAS >= 3` reescrito. Removida.
-  **E a variante seguinte, que também custou:** a asserção que escrevi para substituí-la não
-  ficou vermelha em nenhuma de seis mutações — **trava que não sabe morrer é decoração**, e
-  foi removida também. Antes de escrever uma trava, mute contra ela.
-- **Relatório de agente escolhe quais números publicar mesmo quando não mente em nenhum.**
-  Das dez divergências novas, **seis** eram números a um comando de distância que não foram
-  rodados. O construtor não fecha o próprio item.
-- **`grep` devolve zero em silêncio em `research/tools/roteador.mjs`** — o arquivo tem um
-  byte NUL deliberado e o `grep` o trata como binário. **Use `grep -a`.** Divergência 52.
+- **Não ingerir mais corpus.** Medido duas vezes: o gargalo não é conteúdo.
+- **O índice está certo.** As claims de dor estão em `dor`, as de coração em `cardio`.
+  `--topic <gaveta certa>` sozinho responde a maioria das perguntas cegas. O que falha é a
+  camada de recuperação, nunca a base.
+- **Conjunto de teste publicado vira conjunto de treino.** Já custou quatro ondas. Os 42
+  canários P##/B##/D## são públicos; os E## são o teste de amanhã e serão publicados depois.
+- **`grep -a` em `research/tools/roteador.mjs`** — havia um byte NUL que fazia o grep devolver
+  zero linhas em silêncio e custou três rodadas a um agente. O construtor da 2E removeu e
+  `secoes.test.mjs` recusa a volta dele; se voltar, é isto.
+- **Script de reprodução nasce em `research/tools/auditoria-<onda>/`, nunca em `/tmp`.**
 - **Nenhum número de qualidade da base** pode ser citado sem dizer com que instrumento foi
-  obtido, **de que conjunto**, e se os canários daquele instrumento passaram.
-- **`npm run lint` está vermelho e já estava** (17 erros em `src/pages/*.tsx`, React). Não é
-  um dos três gates, e o `eslint.config.js` não cobre `research/tools/` — divergência 42.
+  obtido e se os canários daquele instrumento passaram.
+
+## Depois da 2F
+
+`research/kb/ONDA-2C.md` tem a fila: triagem de banalidade (#34, com calibração de dois
+agentes na mesma amostra de 150 e corte em 85 % de concordância), fatos do atleta como tier U
+(#28), Whisper nos 53 `suspect` (#31), e por último ledger de contradições e sínteses (#25,
+#26) — porque reparo vem antes de síntese.
+
+E, só depois de tudo isso, a **revisão do programa de treino já gerado**, que é o que o atleta
+pediu para deixar por último.
 
 ## O que é dele, não meu
 
-Fora do caminho crítico, e ele resolve quando der: o telefonema à federação (o Brasileiro
-exige estadual no ano anterior, o que empurra um estadual para out/nov de 2026), a tarde de
-medição filmada que tira 215/160/240 de estimativa, e a linha de calibração de RPE — que
-fica fora do passe de tier `U` porque depende de ele treinar.
+Fora do caminho crítico: o telefonema à federação (o Brasileiro exige estadual no ano
+anterior, o que empurra um estadual para out/nov de 2026), a tarde de medição filmada que tira
+215/160/240 de estimativa, e a linha de calibração de RPE.

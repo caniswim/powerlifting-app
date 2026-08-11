@@ -1,0 +1,14 @@
+[
+{"id":"C01","q":"faz quase um ano que aquele ponto perto da axila reclama quando a barra encosta e nesse tempo a carga não andou nada, será que uma coisa segura a outra","esp":["V027-24","V027-25"],"top":["dor","supino","lesao","peito","progressao"]},
+{"id":"C02","q":"além do treino normal, valeria eu enfiar uns exercícios extras só pra fortalecer o peitoral e proteger ele","esp":["V001-19"],"top":["lesao","erro-comum","volume"]},
+{"id":"C03","q":"sinto o incômodo mas o exame não mostrou nada, pode ser coisa da minha cabeça","esp":["V001-20","V118-08"],"top":["dor","lesao","mentalidade"]},
+{"id":"C04","q":"nas últimas repetições do supino a sensação de onde vem a força muda de lugar, isso é normal","esp":["V049-17","V009-09"],"top":["supino","peito","fadiga","tecnica"]},
+{"id":"C05","q":"eu espero me sentir 100% antes de encarar a próxima e o treino vira duas horas, isso pode estar me atrapalhando","esp":["V038-17","V038-06"],"top":["descanso-entre-series","erro-comum","recuperacao","programacao"]},
+{"id":"C06","q":"meu pé desliza no chão quando abro a base pra puxar, posso passar alguma coisa embaixo pra grudar melhor","esp":["F001-103","V020-34"],"top":["sapato","equipamento","terra"]},
+{"id":"C07","q":"na competição dá pra usar duas coisas no joelho ao mesmo tempo, uma por cima da outra","esp":["F001-94"],"top":["faixa","equipamento"]},
+{"id":"C08","q":"o agacho e o terra continuam subindo, só o supino que parou de andar, eu mexo no programa inteiro ou só nesse","esp":["G020-26","G014-28"],"top":["estagnacao","progressao","autorregulacao","erro-comum"]},
+{"id":"C09","q":"subo dois lances de escada e chego ofegante, isso pode ter a ver com eu viver me machucando","esp":["V013-18"],"top":["lesao","condicionamento","saude"]},
+{"id":"C10","q":"meu parceiro de treino bate recorde toda semana faz meses e comigo isso durou pouco, é normal essa diferença","esp":["G019-03","G019-04"],"top":["genetica","progressao","autorregulacao"]},
+{"id":"C11","q":"quando cai agacho e supino na mesma sessão, tanto faz qual eu faço primeiro","esp":["G014-10","G016-10"],"top":["ordem-exercicio","programacao","recuperacao","supino"]},
+{"id":"C12","q":"no vídeo o meu pé parece desabar pro lado no fundo do agacho, isso é do pé mesmo","esp":["G031-17","G030-15"],"top":["sapato","equipamento","erro-comum","agacho","tecnica"]}
+]
