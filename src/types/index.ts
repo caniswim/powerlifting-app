@@ -484,7 +484,70 @@ export type PainRegion =
 
 export interface PainEntry {
   region: PainRegion;
-  intensity: number; // 1-10
+  /**
+   * Intensidade na escala do gate (`PROGRAMA.md §1.2`), que é **0–10**.
+   *
+   * A UI coleta a partir de 1 porque escolher uma região e dizer "0" não quer
+   * dizer nada: quem não tem dor não seleciona a região. O **0** existe e é
+   * gravado — mas pelo rollup, como pico de uma sessão de supino que colheu o
+   * log e não teve dor nenhuma (`buildGateReadings`), e é contra ele que o teto
+   * do `RETORNO` compara. Registro digitado e sessão limpa continuam sendo
+   * coisas diferentes; o que os distingue é a EXISTÊNCIA da entrada, não o
+   * número.
+   */
+  intensity: number; // 0-10 (a UI coleta 1-10; 0 é o pico de sessão sem dor)
+  /**
+   * Estiramento agudo — a fisgada que aconteceu AGORA, não a dor que já estava.
+   *
+   * O §1.2 declara `≥4/10 **ou estiramento agudo**` como o degrau que encerra a
+   * sessão, e até esta revisão a segunda metade da célula era letra morta: o
+   * gerador a lia, a constante a carregava e nenhuma linha de produção a
+   * consumia, porque não havia campo onde registrá-la. Um estiramento agudo que
+   * o atleta pontuasse como 3/10 disparava `congela`, não `encerra a sessão`.
+   *
+   * Opcional de propósito: registro gravado antes desta revisão não tem o campo,
+   * e ausência é `false` — nunca "não sei".
+   */
+  acute?: boolean;
+}
+
+/**
+ * Onde a dor apareceu, quando ela não apareceu num treino.
+ *
+ * O §1.2 governa três momentos e os TRÊS são dentro de sessão. Dor em repouso,
+ * dor ao acordar e dor depois de um esforço da vida comum não têm célula na
+ * tabela — e, até esta revisão, não tinham nem onde ser escritas: `PainEntry` só
+ * existia pendurado num `workoutId`, e semana sem treino saía do app dizendo que
+ * não houve dor nenhuma.
+ */
+export type RestPainContext = 'repouso' | 'ao_acordar' | 'apos_esforco_cotidiano';
+
+/**
+ * Registro de dor FORA de sessão.
+ *
+ * Indexado por DATA e pela semana do programa, não por treino — é exatamente a
+ * diferença que fazia o sintoma sumir. Ele **não** entra em `buildGateReadings`,
+ * não consome a janela de 3 sessões do §1.2 e não dispara degrau nenhum: a
+ * tabela fala de pico dentro de sessão de supino, e transformar um registro de
+ * repouso em evento da tabela seria inventar uma regra que o programa não
+ * escreve. O que ele faz é aparecer — no `WeekDoc`, na bandeira e no briefing —
+ * para que a conversa semanal decida com o dado na mão em vez de sem ele.
+ *
+ * `weekNumber` é carimbado na hora de salvar, a partir da posição do atleta no
+ * programa. A semana deste app é do PROGRAMA, não do calendário: sem sessão não
+ * há data de início nem de fim, e sem o carimbo não haveria como dizer a que
+ * semana um dia parado pertence.
+ */
+export interface RestPainLog {
+  id: string;
+  /** `YYYY-MM-DD` local. Um registro por dia e contexto. */
+  date: string;
+  programId: string;
+  weekNumber: number;
+  context: RestPainContext;
+  painEntries: PainEntry[];
+  notes?: string;
+  createdAt: string;
 }
 
 // Pre-Workout Survey

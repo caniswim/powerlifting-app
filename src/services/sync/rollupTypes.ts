@@ -4,6 +4,7 @@ import type {
   PainRegion,
   PercentRef,
   PlanAdherence,
+  RestPainContext,
   SquatDepth,
   StrengthPerception,
 } from '../../types';
@@ -18,8 +19,15 @@ import type { GateReading, GateWeekObservation } from '../../domain/painGate';
  *     versão 1 continua carregando e o gate degrada para o comportamento antigo
  *     (janela truncada na semana, retorno indisponível) em vez de quebrar.
  *     Nenhum campo foi removido e nenhuma migração destrutiva é necessária.
+ *
+ * 3 — `WeekDoc.restPain`: dor registrada FORA de sessão. Também opcional, também
+ *     sem migração — mas a versão sobe porque `gate.weeks[].fullyLoggedSessions`
+ *     nasce aqui e MUDA leitura: documento gravado na versão 2 não tem o campo,
+ *     e a ausência é lida como zero, o que BLOQUEIA o `RETORNO` em vez de
+ *     liberá-lo. É a direção segura, e é a única razão de não bastar acrescentar
+ *     campo em silêncio: reenviar as semanas antigas as reconstrói com o campo.
  */
-export const ROLLUP_SCHEMA_VERSION = 2;
+export const ROLLUP_SCHEMA_VERSION = 3;
 
 /** Levantamento de referência, com uma gaveta para tudo que não é SBD/OHP. */
 export type LiftKey = PercentRef | 'other';

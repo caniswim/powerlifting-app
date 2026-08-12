@@ -1,0 +1,1943 @@
+
+368 claim(s) para topic=recuperacao:
+
+G001-07  G001@02:18  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: capacidade-trabalho, recuperacao, periodizacao
+  O bloco de capacidade de trabalho serve para você prosperar nos blocos de força e recuperar semana a semana do trabalho pesado.
+  verbatim: "What it's going to do is it's going to allow you to really thrive in your strength blocks and recover week to week from the heavy work because you have really established the foundation to work from"
+
+G001-31  G001@06:52  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: recuperacao, fadiga, acessorios, proximidade-da-falha
+  Como o AMRAP tem demanda de recuperação alta, é preciso ser estratégico sobre quantas vezes usá-lo.
+  verbatim: "but again, because there's so much recovery demand, you want to be strategic about how often you use them"
+
+G001-39  G001@08:38  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: recuperacao, volume, fadiga
+  É preciso prestar atenção à recuperação: não dá para ir com tudo em toda série.
+  verbatim: "At the same time, you have to pay attention to recovery. You can't just go all out on every single set"
+
+G001-58  G001@12:42  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: fadiga, recuperacao, hipertrofia, proximidade-da-falha
+  A demanda de recuperação extra do bloco de força é compensada raspando fora os AMRAPs.
+  verbatim: "the way that we're going to offset those recovery demands is by scraping away the am wraps"
+
+G001-59  G001@12:57  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: fadiga, programacao, recuperacao
+  No bloco de força há intencionalmente sessões mais fáceis do que poderiam ter sido, em que você teria conseguido mostrar mais se tivesse forçado.
+  verbatim: "that means intentionally there are going to be sessions within your strength blocks that are easier than they could have been"
+
+G001-61  G001@13:27  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: acessorios, recuperacao, selecao-exercicio
+  O objetivo do acessório no bloco de força não é progredir, e sim garantir que você esteja recuperado para os dias dos levantamentos específicos.
+  verbatim: "the focus is to make sure you're recovered and ready for the days when you have your competition specific lifts"
+
+G002-31  G002@07:20  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: progressao, volume, recuperacao
+  A progressão é sustentável porque você precisa merecer o aumento de intensidade e o degrau de volume é de uma série por vez.
+  verbatim: "because you have to earn the intensity increases and because the stepping up is really just a set here or a set there you're going to be able to do this sustainably"
+
+G002-38  G002@08:51  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: intensidade, fadiga, recuperacao
+  O estresse aumenta exponencialmente quando você sai da faixa de 70 a 80% e passa a trabalhar em 90% ou mais.
+  params: faixa_baixa_min=70 % do 1RM [pct_1RM]  faixa_baixa_max=80 % do 1RM [pct_1RM]  faixa_alta=90 % do 1RM [pct_1RM]
+  verbatim: "you exponentially increase your stress when you start going away from working the 70 to8 80% range and you start moving towards that 90 plus range"
+
+G002-39  G002@08:51  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: recuperacao, intensidade, volume
+  Os custos de recuperação são diferentes conforme a intensidade, então não dá para comparar série com série.
+  verbatim: "the recovery costs are different you can't just compare set to set"
+
+G004-09  G004@02:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: deload, fadiga, recuperacao
+  A vantagem do deload planejado é que você provavelmente não vai trabalhar demais e é menos provável que fique overtreinado.
+  verbatim: "the advantages a planned D Lo is that you're not going to probably overwork in an organized training structure you're getting your time to rest to release that fatigue"
+
+G004-25  G004@05:19  tier:R scope:GERAL modo:relato-de-programa genero:aula explicit
+  tópicos: deload, taper, recuperacao
+  Quando você falha em toda a progressão, o deload do GZCLP é mais parecido com um taper: 2 a 3 dias de descanso daquele levantamento.
+  params: descanso_min=2 dias [dias]  descanso_max=3 dias [dias]
+  verbatim: "then you Delo by taking really what's a little bit more like a taper a 2 to three day rest period from that lift"
+
+G004-28  G004@05:49  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, recuperacao, fadiga
+  Um gatilho possível é um score de prontidão: um checklist diário em que você monitora a prontidão e observa tendências.
+  verbatim: "you're doing something daily where you've got a checklist and you're monitoring your Readiness and you're seeing Trends"
+
+G004-36  G004@07:20  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: deload, fadiga, recuperacao
+  O ponto de qualquer estratégia de deload é manter a fadiga num nível razoável para você não overtreinar.
+  verbatim: "the whole point is you're trying to keep your fatigue at a reasonable level so that you're not overtraining"
+
+G004-46  G004@09:38  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: fadiga, recuperacao, meta-metodologia
+  O processo por trás disso é a curva de estímulo, recuperação e adaptação.
+  verbatim: "this is often called like the uh the SR curve the stimulus recovery adaptation"
+
+G004-47  G004@09:53  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, progressao
+  Recuperando de forma adequada você se adapta ao estímulo de treino e fica um pouco mais forte.
+  verbatim: "as you recover properly you're adapting to whatever this training stimulus was and your body should get a little stronger"
+
+G004-49  G004@10:23  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, recuperacao, aprendizado-motor
+  Pelo repeated bout effect, a mesma sessão passa a doer menos e a dor tardia dura menos a cada exposição.
+  verbatim: "the next time you do it as part of the repeated bout effect it's not going to be as painful your Doms aren't going to last as long"
+
+G004-52  G004@11:08  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: fadiga, recuperacao, frequencia
+  Você não quer colocar outro dia de treino no ponto mais baixo e mais fatigado, porque isso te afunda ainda mais.
+  verbatim: "you wouldn't want to have another training day when you're at your lowest most fatigued Point that's going to dip you down further"
+
+G004-57  G004@12:40  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: deload, recuperacao
+  Se o descanso se estende, em algum momento você destreina e a aptidão volta a cair.
+  verbatim: "eventually as you rest as we all know you will detrain and come back down"
+
+G004-59  G004@12:55  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: deload, erro-comum, recuperacao
+  Você não quer deloadar por tempo demais, nem de forma agressiva demais, nem fazer absolutamente nada.
+  verbatim: "you don't want to de lo too long you don't want to de lo too aggressively you don't want to do absolutely nothing"
+
+G005-27  G005@08:37  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: terra, aprendizado-motor, recuperacao
+  No terra dessa semana há um pouco de volume de recuperação ativa, com repetições e intensidades muito baixas, só para manter a aquisição de habilidade.
+  verbatim: "very low rep ranges with very low intensities this is really just to keep your skill acquisition up"
+
+G005-30  G005@09:07  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: taper, recuperacao, competicao
+  Para a maioria dos intermediários, ficar da segunda até o meet do sábado seguinte sem outro agacho pesado é tempo demais, e provavelmente eles não precisam de tanta recuperação.
+  verbatim: "and for most intermediates to hit something like this on a Monday and then not have another heavy squat all the way till a meet on a Saturday the next week that's a long time you probably don't need that much recovery"
+
+G005-31  G005@09:22  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: taper, recuperacao, peso-corporal
+  Para quem agacha na casa de 700 lb, esse tanto de recuperação antes do meet pode de fato ser apropriado.
+  params: carga_de_referencia=700 lb [lb]
+  verbatim: "now if you're squatting like 6 or 700 lb sure that could definitely be appropriate"
+
+G005-33  G005@09:52  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: terra, agacho, taper, recuperacao
+  A recomendação dele é inverter os dias de agacho e de terra na quinta semana, porque o terra parece demorar mais para recuperar.
+  verbatim: "I would flip-flop those at the very first cuz deadlift does seem to take a little bit longer to cover from"
+  condições: G005-31
+
+G006-17  G006@04:48  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: periodizacao, recuperacao
+  É esse vaivém que permite um pouco mais de recuperação.
+  verbatim: "This is what allows for a little bit more recovery"
+
+G006-23  G006@05:49  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: taper, peso-corporal, recuperacao, competicao
+  Alguns atletas menores, que recuperam mais rápido, fazem um taper de apenas 3 dias, enquanto outros levam múltiplas semanas: isso é muito individual.
+  params: taper_curto=3 dias [dias]
+  verbatim: "There are some people that do just a three-day taper for smaller athletes that recover quicker. Some people are taking even multiple weeks as their taper. That's going to be really individual for you"
+
+G007-21  G007@06:50  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: acessorios, recuperacao, series-reps
+  O volume de acessórios opcionais sobe um pouco nessa semana, mas as repetições são altas, então o peso usado não taxa o sistema nervoso e quase funciona como recuperação ativa.
+  verbatim: "look at the Reps reps are fairly high so the overall weight you're going to use for these is not going to be taxing your CNS there's almost like some AC recovery going on here"
+
+G008-26  G008@06:35  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: progressao, recuperacao, estagnacao
+  Se você não está recuperando ou está estagnando, ter uma progressão para onde ir é o que mantém os ganhos.
+  verbatim: "there's a progression that you can move if you are not recovering if you're stalling out that's going to allow you to stay on the gains"
+
+G008-45  G008@10:26  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: progressao, recuperacao, volume
+  Oscilação selvagem de estresse gera uma resposta ruim ao treino, porque não há consistência suficiente para você se aclimatar.
+  verbatim: "that's going to create a bad training response because you don't have enough consistency to acclimate to things"
+
+G010-08  G010@02:33  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: programacao, recuperacao
+  A recomendação deste programa é colocar o dia de descanso entre o terceiro e o quarto dia de treino.
+  verbatim: "The recommendation is you take your rest day between your third and fourth lifting day"
+
+G010-49  G010@12:10  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: hipertrofia, fadiga, recuperacao
+  A restrição de fluxo sanguíneo é uma boa forma de reduzir o dano muscular mantendo a hipertrofia, mas não salva quem não está preparado para o programa.
+  verbatim: "there's that blood flow restriction, which is a great way to lower the muscle damage while still keeping as much hypertrophy as possible in the program, but that's not going to save you if you're not ready for this"
+
+G012-06  G012@01:08  tier:R scope:GERAL modo:anedota genero:review-de-programa explicit
+  tópicos: lesao, recuperacao, meta-metodologia
+  O Brandon Lilly saiu do Westside porque não concordava com os métodos e estava se machucando muito, e passou a treinar com o Chad Wesley Smith no Juggernaut.
+  verbatim: "now he was at West Side for a while but left he was not okay with the methods he was getting really beat up and he moved over and he started working out with Chad Wesley Smith at Juggernaut"
+
+G012-07  G012@01:08  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: recuperacao, meta-metodologia
+  Recuperação é uma peça central dos programas do Brandon Lilly.
+  verbatim: "a big piece for his programs is going to be recovery"
+
+G012-10  G012@02:23  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: deload, recuperacao, periodizacao
+  O dia explosivo é muito fácil de recuperar e funciona quase como um mini deload, porque o foco é trabalho de velocidade, que não taxa tanto.
+  verbatim: "an explosive day and that explosive day is going to be really easy to recover from it's almost like a mini deload because you're focusing on speed work that's not going to tax you as much"
+
+G012-14  G012@03:24  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: recuperacao, programacao, fadiga
+  No Cube Method você não vai pesado em terra e agacho, nem em supino e agacho, na mesma semana.
+  verbatim: "but you're also not going heavy on like deadlifts and squats or bench and squats on"
+
+G012-16  G012@03:54  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: recuperacao, intensidade, periodizacao
+  O desenho garante que nenhuma semana fique difícil demais, porque não se acumula muito trabalho de alta intensidade na mesma semana.
+  verbatim: "you're really making sure that your entire week no week is too difficult because you're not jamming a lot of high intensity work into the same week"
+
+G012-42  G012@09:56  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: frequencia, recuperacao, hipertrofia
+  No Cube Method treina-se 4 vezes por semana, e o dia de bodybuilding funciona quase como recuperação ativa.
+  params: frequencia_semanal=4 x/semana [x_semana]
+  verbatim: "because you are working out four times per week the bodybuilding day is a good almost active recovery"
+
+G013-06  G013@02:27  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: frequencia, recuperacao, fadiga
+  Por ser um programa de 6 dias por semana, não há como evitar treinos em dias consecutivos.
+  params: dias_treino_semana=6 dias/semana [x_semana]
+  verbatim: "given that it's a six day a week program you're going to be doing some workouts back to back no matter how you slice it"
+
+G014-30  G014@06:06  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: volume, recuperacao, capacidade-trabalho
+  O novato aguenta mais volume porque as cargas dele ainda são leves e não o destroem, ao contrário de quem agacha peso muito alto e precisa de semanas para recuperar.
+  verbatim: "the reason why is because you're just starting out your weights aren't that heavy in the first place so you're going to be able to uh do a little bit more volume because you're not destroying yourself with these super heavy weights"
+
+G015-10  G015@03:35  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: acessorios, recuperacao
+  Os movimentos de isolamento usam menos peso total e são mais fáceis de recuperar, funcionando como acessórios de bodybuilding.
+  verbatim: "weight when you're doing those movements they're easier to recover from um think of them as like your general bodybuilding accessories"
+
+G015-11  G015@03:35  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: programacao, recuperacao
+  A recomendação de descanso do GZCLP é de 3 a 5 minutos entre as séries do primeiro tier.
+  params: descanso_min=3 min [min]  descanso_max=5 min [min]
+  verbatim: "there is a rust recommendation for this program where you're going to take three to five minutes of rest in between tier"
+
+G015-12  G015@03:51  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: programacao, recuperacao
+  O descanso é de 2 a 3 minutos no segundo tier e de 60 a 90 segundos no terceiro, o que ele considera pouco descanso para as repetições exigidas.
+  params: descanso_t2_min=2 min [min]  descanso_t2_max=3 min [min]  descanso_t3_min=60 s [seg]  descanso_t3_max=90 s [seg]
+  verbatim: "one sets two to three minutes on tier two and 60 to 90 seconds on tier three that's really a short amount of rest"
+
+G015-33  G015@10:25  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: deload, recuperacao
+  Quando você falha os 10 singles, o GZCLP pede um deload em miniatura, de apenas 2 a 3 dias de descanso.
+  params: singles=10 séries [series]  descanso_min=2 dias [dias]  descanso_max=3 dias [dias]
+  verbatim: "at that point you need to take a miniature deload and I like that it's just two to three days of rest"
+
+G015-41  G015@13:12  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: fadiga, volume, erro-comum, recuperacao
+  Ficar afoito no segundo tier estraga a gestão de fadiga embutida no programa: o descanso deixa de ser suficiente e você começa a estragar o primeiro tier por empurrar demais o segundo.
+  verbatim: "don't get over eager if you do it's going to mess up the fatigue management that's inherent in this program the rest that you take is not going to be sufficient you're going to start messing up your tier"
+
+G016-10  G016@02:16  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: programacao, recuperacao, ordem-exercicio
+  Mantenha os movimentos de membro superior e de membro inferior separados entre si, se possível.
+  verbatim: "make sure you keep those upper body and lower body movements separated if you can"
+
+G017-05  G017@00:45  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: volume, recuperacao, periodizacao
+  No dia de volume você constrói base e rompe a homeostase, o que leva a uma supercompensação mais tarde na semana.
+  verbatim: "so the volume day you're trying to build a base you're trying to disrupt homeostasis that's going to lead you to have a super compensation hopefully later in the week"
+
+G017-12  G017@01:45  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: recuperacao, series-reps
+  No dia de volume é preciso descansar entre as séries.
+  verbatim: "you definitely want to take rest in between them"
+
+G017-14  G017@02:00  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: recuperacao, agacho, series-reps
+  No dia leve faz-se só 2 séries de agacho, porque o dia é sobre recuperação.
+  params: series=2 séries [series]
+  verbatim: "you're only going to do two sets of squats because this day is about recovery"
+
+G017-15  G017@02:16  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: recuperacao, periodizacao, pico
+  O dia leve existe para o corpo se recuperar das cargas pesadas e poder exibir força nova no dia de intensidade.
+  verbatim: "this is where you're allowing your body to recover from lifting those heavy weights so that hopefully you can display new Strength when you get to the final intensity day"
+
+G017-18  G017@02:31  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: recuperacao, fadiga
+  O dia leve não é para taxar: é descanso ativo e recuperação.
+  verbatim: "really this is not meant to tax you a ton it's meant to be like an active rest and Recovery"
+
+G017-19  G017@02:46  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: intensidade, recuperacao
+  No dia leve use algo em torno de 80%, talvez 85%, do que usou no dia de volume daquele levantamento.
+  params: pct_min=80 % [pct]  pct_max=85 % [pct]
+  verbatim: "now for this you're going to be wanting to use somewhere around 80 percent maybe 85 percent of what you used on your day one"
+
+G017-20  G017@03:16  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: intensidade, recuperacao
+  Isso deixa as cargas de barra do dia leve em torno de 60% do máximo de uma repetição, tornando o dia bem mais fácil.
+  params: pct_do_max=60 % [pct_1RM]
+  verbatim: "I think it's going to come around somewhere around 60 ish percent of your one rep max is what you're using for your barbell based list on the life day gonna be an easier day much easier day for you"
+
+G018-13  G018@02:32  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: agacho, intensidade, recuperacao
+  O agacho leve do treino B usa os três degraus mais baixos da rampa do treino A, repetindo o último para fechar 4 séries.
+  params: series_totais=4 séries [series]  degraus_usados=3 cargas [contagem]  carga_1=150 lb [lb]  carga_2=190 lb [lb]  carga_3=225 lb [lb]
+  verbatim: "you're going to use the bottom three lifts that you did for a workout so it would be your 150 your 190 and your 225 and you might say well that's only a three by"
+
+G018-14  G018@02:47  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: agacho, intensidade, recuperacao, frequencia
+  O agacho do dia leve fica 25% abaixo do máximo de 5 repetições, e é por isso que não se deve assustar com agachar 3 vezes por semana neste programa.
+  params: reducao=25 % [pct]  reps_de_referencia=5 reps [reps]  frequencia_agacho=3 x/semana [x_semana]
+  verbatim: "that's because you do the last one twice so you do two sets with this again that's a really light day because this is a warm-up set that's 25 percent less than your five rep max"
+
+G019-11  G019@03:18  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: frequencia, programacao, recuperacao
+  O programa é para ser rodado 3 vezes por semana, com pelo menos 1 dia de descanso entre as idas à academia.
+  params: frequencia=3 x/semana [x_semana]  descanso_minimo=1 dias [dias]
+  verbatim: "this program is meant to be run three times per week with a rest day in between at least one day in between the times you're going to the gym"
+  condições: G019-10, G019-55
+
+G019-31  G019@06:51  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, recuperacao, autorregulacao
+  Quando você não consegue nem 1 série de 5 com o peso, é hora de passar para um programa mais avançado ou revisar a recuperação fora da academia.
+  params: series=1 séries [series]  reps=5 reps [reps]
+  verbatim: "when you're not getting even one set of five with a weight it's either time to move on to a more advanced program or assess your recovery outside the gym"
+
+G019-43  G019@09:23  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa implied
+  tópicos: agacho, intensidade, recuperacao
+  Na terceira fase o agachamento de quarta-feira vira um dia leve, com algo entre 15 e 25 lb a menos que o dia pesado.
+  params: reducao_central=20 lb [lb]  reducao_min=15 lb [lb]  reducao_max=25 lb [lb]
+  verbatim: "the Wednesday workout is going to be lighter it's going to be minus 20 maybe minus 15 maybe 25 you gotta take a pic"
+
+G019-44  G019@09:23  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: recuperacao, agacho
+  O dia leve de agachamento existe para permitir um pouco mais de recuperação.
+  verbatim: "you're gonna make a lighter day for your light Squat and that's to allow a little bit more recovery"
+
+G019-45  G019@09:38  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: terra, frequencia, recuperacao, costas
+  Na terceira fase o terra passa a alternar com barra fixa e power clean, de modo que só se volta ao terra na quarta-feira seguinte.
+  verbatim: "on Monday you do deadlift you're going to alternate over here with chin-ups then the next day Friday you're gonna have power cleans then the next Monday you're going to have chin-ups"
+
+G019-47  G019@09:53  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: terra, recuperacao, frequencia
+  Esse rodízio aumenta o intervalo entre as sessões de terra e é isso que amplia a recuperação.
+  verbatim: "you're gonna have more time in between your deadlifts all that's going to allow you to increase your recovery"
+
+G020-29  G020@05:19  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: volume, recuperacao, deload
+  Baixar o volume é quase como estar em deload o tempo todo: recupera mais entre treinos e permite demonstrar a força que você tem, porque você não está tão cansado.
+  verbatim: "it's almost like you're doing a deload all the time that's going to allow you to recover more between your workouts and it's going to let you demonstrate some of the strength that you have because you're not as tired"
+
+G021-24  G021@07:09  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: progressao, recuperacao
+  Ele espera ganhos bem bons a cada semana enquanto reconquista terreno já conhecido.
+  verbatim: "expecting some pretty good gains each week as I reclaim old ground"
+
+G022-03  G022@00:45  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: sono, recuperacao
+  O sono dele está escasso porque a filha está nascendo os dentes e passa a noite acordada.
+  verbatim: "kids keeping me up all night daughter's teething right now so sleep is at a a premium these days"
+
+G022-04  G022@00:45  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: mentalidade, recuperacao, programacao
+  Sendo pai e dono de negócio, o treino nunca vai ser ótimo, e a saída é fazer o que dá para fazer.
+  verbatim: "just gonna get in what I can that's part of what being a dad business owner and all that is you know never going to be optimal but you just get done what you can"
+
+G022-33  G022@13:20  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: volume, recuperacao, programacao
+  Muitas vezes você não precisa de tanto quanto imagina: um pouquinho já ajuda a manter e a não perder.
+  verbatim: "honestly sometimes you don't need as much as you may think you do a little bit will help you maintain and not lose"
+
+G023-06  G023@01:25  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: recuperacao, progressao
+  Ele está voltando de um período curto sem treinar e por isso ficou satisfeito com a série.
+  verbatim: "I'm coming off of a little bit of a layoff from working out so happy with that"
+
+G026-19  G026@04:05  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: autorregulacao, fadiga, recuperacao
+  A cada ida à academia você responde algumas perguntas simples sobre estado mental e estado físico.
+  verbatim: "each day when you go to the gym you're gonna answer a few simple questions about how your mental state and how your physical state is"
+
+G026-22  G026@04:35  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: volume, recuperacao, capacidade-trabalho
+  A promessa é que o sistema deixe você conhecer o seu volume máximo recuperável, para treinar com o melhor resultado no menor tempo.
+  verbatim: "if you have ever wished you could know your maximum recoverable volume so you can train to get the best results in the fastest way possible now you can"
+
+G026-23  G026@04:35  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, volume, autorregulacao
+  Ele diz para não se preocupar com sub-recuperação nem com excesso de recuperação, porque o sistema calibra de bloco em bloco.
+  verbatim: "don't worry about under recovery or over recovery because it is gonna dial you in block to block"
+
+G032-08  G032@01:17  tier:R scope:GERAL modo:fato genero:competicao explicit
+  tópicos: competicao, regras-ipf, recuperacao
+  O ritmo daquele Mundial deixou muito pouco tempo entre agachamento e supino: cerca de 3 minutos de descanso antes de ter que começar os aquecimentos.
+  params: descanso_entre_movimentos=3 min [min]
+  verbatim: "there was very little time in between Squat and bench basically uh you had about 3 minutes to rest before you'd have to start your warm-ups"
+
+G032-10  G032@01:47  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: nutricao, recuperacao, competicao
+  Os treinadores lhe deram eletrólitos, ele estava bastante depletado, e o quadro começou a virar a partir dali.
+  verbatim: "they got me some emergency and got some uh electrolytes in me and uh apparently I was pretty depleted but things started to turn around after that point"
+
+G034-01  G034@00:01  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: saude, recuperacao, autorregulacao
+  Existem princípios básicos a seguir para decidir como treinar estando doente.
+  verbatim: "I get questions all the time, how am I supposed to train, uh, if I'm feeling sick or what what should I do? And so, there are some basic principles that you can follow"
+
+G034-02  G034@00:01  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: saude, recuperacao
+  Ele está gravando um pouco indisposto, com um resfriado leve, nada grave.
+  verbatim: "feeling a little under the weather, not anything crazy, uh, but just a little cold"
+
+G034-03  G034@00:16  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, intensidade, recuperacao
+  Estando doente, ir mais leve que o habitual e usar o RPE para guiar o treino.
+  verbatim: "one of which is go lighter than usual and use kind of RP to guide your training"
+  condições: G034-01, G034-10
+
+G034-09  G034@00:46  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: intensidade, rpe, autorregulacao, recuperacao
+  A carga acaba ficando em torno de 70% a 75% do que se usaria numa série de RPE 8.
+  params: pct_da_carga_de_rpe8_min=70 % da carga de RPE 8 [pct]  pct_da_carga_de_rpe8_max=75 % da carga de RPE 8 [pct]  rpe_de_referencia=8 RPE [RPE]
+  verbatim: "you're going to be using something like uh 70% or 75% of the loads that you would have been using if you were doing an RP8"
+  condições: G034-01, G034-10
+
+G034-10  G034@01:17  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: saude, recuperacao
+  Só treinar doente se não houver febre e nada que possa evoluir para algo perigoso.
+  verbatim: "if you don't have a fever, again, you got to make sure you don't have something that's actively uh you know, could turn into something dangerous"
+
+G034-11  G034@01:17  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: aquecimento, autorregulacao, recuperacao
+  Com resfriado, dor de garganta ou dor no corpo, entrar na academia, aquecer devagar e pegar o que estiver disponível naquele dia.
+  verbatim: "if you've got a cold, you got a sore throat, you got a body ache, you go in, you warm up slowly, and then you uh you just take what's there that day"
+  condições: G034-10, G034-12
+
+G034-13  G034@01:32  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: recuperacao, fadiga, erro-comum
+  Falhar um levantamento é a pior coisa que se pode fazer, porque também prejudica a recuperação.
+  verbatim: "That's the worst thing that you can do cuz that's going to impact your recovery poorly as well"
+
+G034-14  G034@01:32  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: intensidade, autorregulacao, recuperacao
+  Mesmo doente é possível subir até mais ou menos as cargas normais daquele treino.
+  verbatim: "But you can kind of work up to what your normal weights would have been"
+  condições: G034-10, G034-12
+
+G034-17  G034@02:02  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, recuperacao, saude
+  Se ele se sentir péssimo no dia, simplesmente cancela o treino.
+  verbatim: "if I feel awful, if I feel terrible, guess what? I'm just going to call it off"
+
+G034-20  G034@02:18  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: recuperacao, periodizacao, programacao, saude
+  Quem está no começo de um ciclo de treino pode tirar meia semana de folga, se precisar, para se recuperar de algo.
+  params: folga_possivel=0.5 semanas [semanas]
+  verbatim: "Especially if you're early in a training cycle, uh you could probably uh take off half a week if you needed to um to get over something"
+
+G036-13  G036@01:47  tier:R scope:PESSOAL modo:fato genero:log-de-treino explicit
+  tópicos: agacho, supino, recuperacao, programacao
+  Ele está aprendendo a administrar quanto e quão pesado agacha sem prejudicar o supino, e nem sempre as duas coisas se acomodam.
+  verbatim: "I'm trying to learn how to manage the amount of squatting that I'm doing and the weights that I'm squatting and uh still have my bench do well also and sometimes it's just hard for all that to work together"
+
+G036-21  G036@03:03  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: deload, recuperacao
+  Ele tinha feito um deload leve na semana anterior a essa.
+  verbatim: "I had been uh I Del loaded the week before this a little bit"
+
+G036-25  G036@03:48  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: agacho, progressao, recuperacao
+  Ele espera passar de 700 lb no agachamento na semana seguinte se a recuperação estiver em dia.
+  params: meta_agacho=700 lb [lb]
+  verbatim: "should be able to go over 700 next week uh if everything continues and recover is on point"
+
+G037-11  G037@01:33  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: terra, teste-de-forca, recuperacao
+  Ele fez um mini teste nesse dia já sabendo que a recuperação seria um problema.
+  verbatim: "so I ended up doing a mini test on this day with these new plates and I knew recovery was going to be an issue"
+
+G037-12  G037@01:49  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: recuperacao, fadiga, programacao
+  Ele tinha antecipado esse treino na semana e por isso teve menos recuperação do que o usual.
+  verbatim: "this work up uh workout up in the week and so uh had a little bit less recovery than usual"
+
+G037-30  G037@04:20  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: deload, fadiga, recuperacao
+  Ele diz que precisava de um deload e que pode até estender esse deload para a semana seguinte.
+  verbatim: "I needed a D Lo and it happened to fit in really well and even can continue this into next week"
+
+G037-31  G037@04:20  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: sumo, volume, recuperacao, terra
+  Ele vai ter de moderar quanto volume de sumô faz.
+  verbatim: "I'll just have to moderate how much Sumo volume I do"
+
+G037-35  G037@05:05  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: deload, recuperacao, autorregulacao
+  Na semana de deload os 425 lb subiram melhor do que qualquer peso que ele tinha movido na semana anterior.
+  params: carga=425 lb [lb]
+  verbatim: "425 moved better than any of the weights that I had moved in the previous week"
+
+G037-36  G037@05:05  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: ombros, mobilidade, recuperacao
+  Os ombros dele começaram a melhorar depois de mais trabalho de mobilização.
+  verbatim: "shoulders started to feel better did some more mobilization work"
+
+G037-37  G037@05:05  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: mobilidade, equipamento, recuperacao
+  Ele usa uma politriz de carro ou lixadeira pequena e barata como ferramenta de mobilidade, para levar fluxo sanguíneo à região.
+  verbatim: "ended up using a real small uh car buffer or a sander and that just helped to get blood flow to the area and it's really good Mobility tool um and yeah pretty cheap"
+
+G038-04  G038@00:15  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: fadiga, recuperacao, terra, volume
+  Aquela série de terra foi tão taxante que impactou a semana seguinte inteira.
+  verbatim: "but definitely taxing uh that set actually impacted the next week uh which I just finished up"
+
+G038-05  G038@00:30  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: terra, fadiga, autorregulacao, recuperacao
+  Ele vai pegar mais leve no terra na semana seguinte porque o terra acumula fadiga rápido para ele.
+  verbatim: "to have to take it a little easy on deadlifts probably next week uh just cuz that really accumulates fatigue quickly for me"
+
+G038-14  G038@01:46  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: ombros, dor, sono, recuperacao
+  Dor de ombro no começo da semana, plantões noturnos e as festas foram o que desorganizou a semana de treino dele.
+  verbatim: "some shoulder pain earlier in the week was one of the reasons why I got so off with the holidays and everything but had also had some uh graveyard shifts"
+
+G039-21  G039@04:02  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: sumo, lesao, recuperacao, terra
+  Manter os pés tão abertos no terra impõe uma carga de recuperação séria aos quadris dele.
+  verbatim: "one of the issues with it though is going to be hip Health uh holding my feet that wide in the deadlift is really going to put a recovery strain on my hips"
+
+G039-22  G039@04:02  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: sumo, volume, frequencia, recuperacao
+  Ele planeja fazer só 1 a 2 séries por semana com a stance larga e treinar o resto do volume com stance mais estreita para conseguir recuperar.
+  params: series_min_por_semana=1 séries [series]  series_max_por_semana=2 séries [series]
+  verbatim: "so I may only do uh one or two sets a week with that wide stance and then I'll train a little bit narrower for the rest of my uh volume just so that I can recover"
+  condições: G039-21
+
+G041-06  G041@01:31  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: agacho, supino, ombros, recuperacao, selecao-exercicio
+  Como estava fazendo só safety squat bar, sem barra baixa nem barra alta, os ombros dele ficaram bem menos castigados e sobrou recuperação de ombro para investir no supino.
+  verbatim: "I was doing all safety squat bar work no low bar no high bar and so I had a lot of extra shoulder recovery um that I could throw into bench"
+
+G042-02  G042@00:46  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: periodizacao, recuperacao, programacao
+  O plano anual prevê cerca de 4 semanas de folga e férias distribuídas ao longo do ano.
+  params: semanas_de_folga_no_ano=4 semanas [semanas]
+  verbatim: "you would have maybe uh some time off um and vacation time mixed in there for four weeks throughout the year"
+
+G045-12  G045@01:46  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: volume, pico, recuperacao
+  nos picos que ele fez o volume é muito baixo, e é isso que ele precisa fazer para as articulações e o tecido conjuntivo se recuperarem
+  verbatim: "you'll notice that from the Peaks that I've done that my volume is really low and that's cuz that's what I have to do for my uh joints and uh connective tissue"
+  conflita: V169-33
+
+G045-14  G045@02:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, fadiga, capacidade-trabalho
+  pode parecer contraintuitivo, mas em algum ponto o corpo simplesmente não consegue mais se recuperar
+  verbatim: "volume that I do and that may seem counterintuitive but at some point your body just can't recover"
+
+G045-15  G045@02:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, agacho, intensidade
+  recuperar de um single de 315 lb é mais fácil do que de um single de 650 lb mesmo que os dois sejam 95% do 1RM
+  params: carga_leve=315 lb [lb]  carga_pesada=650 lb [lb]  intensidade_relativa=95 % [pct_1RM]
+  verbatim: "and there's a difference um in squatting you know 650 lb for a single and squatting 315"
+
+G045-16  G045@02:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, intensidade, antropometria
+  a carga absoluta, e não só a intensidade relativa, é o que determina o custo de recuperação de um single
+  params: intensidade_relativa=95 % [pct_1RM]  carga_leve=315 lb [lb]  carga_pesada=650 lb [lb]
+  verbatim: "for a single even if those are both 95% of your one R Max it's just going to be easier to recover from a 315 single than a 650"
+
+G045-17  G045@02:32  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: peso-corporal, recuperacao, antropometria, agacho
+  se ele pesasse 300 lb aguentaria melhor esse volume, porque usaria o próprio corpo para absorver parte do peso na descida do agacho
+  params: peso_corporal_hipotetico=300 lb [lb]
+  verbatim: "um and if I you know if I weighed 300 lb or something like that I'd be able to handle this volume a little bit better because I would be"
+
+G045-19  G045@02:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: peso-corporal, recuperacao
+  mudanças de composição corporal afetam a recuperação mesmo quando o peso corporal total continua igual
+  verbatim: "um and so body composition position changes can affect your recovery as well even"
+
+G047-16  G047@02:47  tier:R scope:PESSOAL modo:anedota genero:competicao explicit
+  tópicos: mentalidade, recuperacao
+  com o nascimento da filha muitas prioridades dele mudaram e ele teve que se ajustar
+  verbatim: "with the birth of my daughter so many of my priorities have shifted so much of my time has changed and I've just really had to adjust"
+
+G048-07  G048@01:18  tier:R scope:PESSOAL modo:anedota genero:log-de-treino explicit
+  tópicos: programacao, recuperacao, erro-comum
+  ele quase juntou o dia de terra no mesmo dia e pulou o back off do agacho, para dar mais tempo de recuperação aos quadris
+  verbatim: "And I was almost going to put my deadlift day on today as well and just uh skip the back off work for squats, do the deadlifts early to give my hips extra time to recover"
+
+G048-20  G048@03:19  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: mobilidade, recuperacao, fadiga
+  depois desse tipo de massagem profunda o músculo tende a não funcionar tão bem no treino, especialmente se o treino for a menos de 48 horas
+  params: janela_de_prejuizo=48 horas [horas]
+  verbatim: "that sort of massage with your uh muscles, they tend to not work as well um with a workout, especially if it's less than 48 hours after you have that"
+  condições: G048-21
+
+G048-21  G048@03:19  tier:R scope:GERAL modo:opiniao genero:log-de-treino explicit
+  tópicos: mobilidade, recuperacao
+  isso não significa que não dá para fazer massagem profunda perto do treino, só que não é ótimo
+  verbatim: "That doesn't mean you can't do it, uh it just means it's not optimal"
+
+G048-31  G048@04:35  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: rpe, recuperacao, autorregulacao
+  nada disso sobrecarrega os sistemas de recuperação desde que o RPE seja planejado de acordo com a sua capacidade de recuperação
+  verbatim: "um all without overtaxing recovery systems as you plan your RPE"
+  condições: G048-29, G048-30
+
+G048-41  G048@06:53  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: agacho, recuperacao, frequencia
+  esse segundo dia de agacho é muito leve e funciona mais como dia de recuperação ativa
+  verbatim: "It's really, really light. It's more of an active recovery day um than anything"
+
+G048-42  G048@06:53  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: volume, intensidade, recuperacao
+  ele faz volume muito baixo e intensidade alta porque é muito pouco volume que ele consegue recuperar
+  verbatim: "that's cuz I'm having uh like very little volume that I can recover from. Um I'm just doing really low volume, but high intensity"
+  conflita: V169-33
+
+G048-54  G048@09:10  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: equipamento, recuperacao
+  treinar em casa dá a ele liberdade de descansar sem se sentir pressionado a liberar o equipamento
+  verbatim: "and I don't feel pressured to move to another machine or get out of the way or any of that sort of stuff"
+
+G048-55  G048@09:10  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: ordem-exercicio, fadiga, recuperacao
+  descansar entre os blocos do treino evita que todo o trabalho de agacho vire uma espécie de ressaca dentro do mesmo treino e prejudique o supino que vem depois
+  verbatim: "It allows me the freedom to rest a little bit so that all of that work that I just did with squats isn't going to give me kind of a uh worked"
+
+G049-02  G049@00:00  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: terra, deload, recuperacao
+  ele não foi pesado no terra nesta semana, usando-a como semana leve de recuperação antes de ir pesado na semana seguinte
+  verbatim: "didn't go as heavy this week on deadlifts just wanted to use this as a slight recovery week before I probably go heavy next week"
+
+G049-15  G049@01:31  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: supino, recuperacao, rpe
+  mesmo depois de ter passado do RPE no começo da semana, ele ainda conseguiu voltar e bater bons pesos no fim da semana
+  verbatim: "uh was still able to come back and hit some good weights here"
+  condições: G049-14
+
+G050-03  G050@01:36  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: dor, fadiga, recuperacao
+  cerca de 3 horas depois do treino ele se sente como se tivesse sido atropelado, mas isso passa em alguns dias
+  params: atraso_ate_a_dor=3 horas [horas]
+  verbatim: "About 3 hours from now, I feel like I uh got hit by a car, but it'll go away in a couple of days"
+
+G050-04  G050@01:36  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: volume, fadiga, recuperacao
+  como ele não faz um volume absurdo, não é difícil limpar a fadiga
+  verbatim: "Um, since I'm not doing a crazy amount of volume, it's not too hard to clear the fatigue"
+
+G050-05  G050@01:52  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: fadiga, intensidade, recuperacao
+  o sistema nervoso dele apanha, mas como é só um top single não é tão ruim
+  params: top_singles_por_sessao=1 single [contagem]
+  verbatim: "my CNS will take a beating, but again, it's only one top single. Um, so it's not that bad"
+
+G050-08  G050@02:08  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: sono, recuperacao
+  ele acordou cedo para chegar ao trabalho antes do horário e estava treinando com menos sono do que gostaria
+  verbatim: "uh to get to work. Had to get there a little early. Um so just running on less sleep than I would like"
+
+G050-13  G050@03:34  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, recuperacao
+  a vantagem do treino por RPE é que, se você se recuperar e estiver se sentindo bem, dá para voltar direto ao que estava fazendo
+  verbatim: "That's the cool thing about RP training is if you recover and you're feeling good, you can go back right into what you're doing"
+
+G051-04  G051@00:43  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: rpe, recuperacao, autorregulacao
+  ele cortou a série um pouco abaixo do RPE alvo justamente para facilitar a recuperação
+  verbatim: "I kind of cut it a little under RP just so I can uh facilitate recovery"
+
+G051-05  G051@00:43  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: volume, pico, recuperacao
+  no pico anterior ele fez volume muito baixo do começo ao fim, para lidar com a capacidade reduzida de recuperar da fadiga
+  verbatim: "in my last Peak I did super low volume throughout the peak to uh deal with my lowered uh ability to recover from fatigue at this time"
+
+G051-06  G051@00:58  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: recuperacao, fadiga, mentalidade
+  a capacidade de recuperação dele está reduzida por causa de estresse de fora da academia
+  verbatim: "and it's lowered because of just stress outside of the gym"
+
+G051-07  G051@00:58  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: recuperacao, fadiga
+  o estresse tem o hábito de se consolidar, e quem não gerencia o estresse da vida junto com o do treino começa a sub-recuperar
+  verbatim: "um stress has a way of consolidating"
+
+G051-08  G051@01:14  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: recuperacao, programacao
+  quem não gerencia o estresse da vida junto com o estresse do treino vai começar a se recuperar mal
+  verbatim: "and so if you don't manage life stress with workout stress you're going to start under recovering"
+
+G051-09  G051@01:29  tier:R scope:PESSOAL modo:anedota genero:log-de-treino explicit
+  tópicos: recuperacao, mentalidade
+  ele concilia o treino com um mestrado, emprego integral, ministério de meio período, coaching de meio período, produção de conteúdo e ser pai e marido
+  verbatim: "part-time min hisory part-time coaching uh and continuing to lift put out online content be a father and be a husband um how do you manage all that well it's tough"
+
+G051-11  G051@01:59  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: recuperacao, mentalidade
+  ele está sempre trabalhando e não tira muito tempo simplesmente parado
+  verbatim: "and so I just kind of always keep working I don't don't take a ton of time just down"
+  conflita: V015-27
+
+G051-12  G051@01:59  tier:R scope:PESSOAL modo:opiniao genero:log-de-treino explicit
+  tópicos: recuperacao, mentalidade
+  ele enxerga o próprio tempo de descanso como trabalho, porque é tempo de recuperação, e não acha isso ruim
+  verbatim: "um and even my downtime I see is work because it's recovery time um and that's not a bad thing"
+
+G051-14  G051@02:29  tier:R scope:PESSOAL modo:opiniao genero:log-de-treino explicit
+  tópicos: mentalidade, recuperacao
+  treinar é a pausa mental e o tempo de recuperação dele, porque enquanto levanta ele não pensa em outras coisas
+  verbatim: "but it's also enjoyable um working out that's my uh that's my like mental break"
+
+G051-23  G051@03:45  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: recuperacao, mentalidade
+  não fique atrasado com as tarefas: o que gera estresse nele é procrastinar quando havia oportunidade de resolver
+  verbatim: "but another thing is just don't get behind um the times when I start to get stressed out is when I procrastinate on on something"
+
+G051-24  G051@04:00  tier:R scope:PESSOAL modo:opiniao genero:log-de-treino explicit
+  tópicos: mentalidade, recuperacao
+  o problema não é não ter tempo livre, e sim ter tempo depois de recuperado e mentalmente recarregado e mesmo assim escolher não trabalhar naquilo
+  verbatim: "it's that I actually have time after I've arrested recovered mentally in charged and I have the ability to work on something and instead I choose not to um that's an issue"
+
+V001-04  R001@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, recuperacao
+  Repouso completo não é a melhor abordagem para lesão; é preciso continuar se movendo.
+  verbatim: "I think most people know that complete rest is not the best idea when it comes to injuries"
+  condições: V001-05
+
+V001-17  R001@03:35  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, recuperacao
+  Parte da melhora atribuída a exercícios é história natural: lesões tendem a melhorar com o tempo.
+  verbatim: "The other one is just natural history. Injuries tend to get better with time"
+
+V001-26  R001@07:24  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: dor, recuperacao
+  A maioria das dores, inclusive lombares, resolve completamente sozinha com o tempo.
+  verbatim: "most pains, even back pains, resolve completely on their own just with time"
+
+V003-17  R003@03:50  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: erro-comum, recuperacao
+  Powerlifters são famosos por descansar 15 minutos entre séries depois de uma dupla em RPE 6.
+  params: descanso_tipico=15 min [min]  rpe_exemplo=6 RPE [RPE]
+  verbatim: "Powerlifters are infamous for doing like an RP6 double and then resting 15 minutes between sets"
+
+V003-18  R003@04:05  tier:R scope:PESSOAL modo:fato genero:aula explicit
+  tópicos: recuperacao, programacao
+  Ele cronometra todos os descansos: 5 minutos em agachamento e terra e 3 minutos no supino.
+  params: descanso_agacho_terra=5 min [min]  descanso_supino=3 min [min]
+  verbatim: "I do 5 minutes on squats and deadlifts, 3 minutes on bench"
+
+V003-19  R003@04:05  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao
+  A maioria das pessoas consegue descansar ainda menos do que isso entre as séries.
+  verbatim: "I think most people can get away with even less"
+
+V003-20  R003@04:05  tier:R scope:PESSOAL modo:fato genero:aula explicit
+  tópicos: recuperacao, condicionamento
+  Entre as séries ele caminha pela academia lendo, o que o mantém mais concentrado.
+  verbatim: "what I actually do is I walk between sets just around the gym and I read while I do it"
+
+V003-22  R003@04:20  tier:R scope:PESSOAL modo:fato genero:aula explicit
+  tópicos: aquecimento, recuperacao, descanso-entre-series
+  Ficar sentado nos descansos longos o deixa esfriar entre as séries, e por isso ele prefere caminhar em ritmo moderado.
+  verbatim: "it can almost make me go a bit cold between sets"
+
+V004-15  R004@03:02  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: acessorios, recuperacao, hipertrofia
+  Há pesquisa sobre taxas de recuperação de trabalho de isolamento com uma série até a falha indicando que é recuperável.
+  params: series_ate_falha=1 séries [series]
+  verbatim: "There was some research about recovery rates from isolation work one set to failure and it seems to be recoverable"
+
+V004-35  R004@09:55  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cardio, agacho, recuperacao
+  Ao trocar o stair climber por caminhada inclinada, o agachamento dele voltou ao normal em uma semana.
+  verbatim: "And I changed it and within a week my squats felt back to normal"
+
+V005-15  R005@03:48  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, nutricao, recuperacao
+  Há uma diferença enorme no ritmo que ele consegue manter no cardio dependendo de quanta água ingeriu durante o treino.
+  verbatim: "There's a massive difference in the pace I can maintain based on how much water I get in during my workout"
+
+V005-16  R005@04:03  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: nutricao, recuperacao
+  Beber bastante líquido durante a sessão melhora sensivelmente a recuperação entre as séries e deixa a frequência cardíaca de repouso bem mais baixa.
+  verbatim: "I think you'll find it makes quite a difference in your just your recovery between sets. Your resting heart rate's way lower"
+
+V006-11  R006@01:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, recuperacao, volume
+  Uma base aeróbia melhor permite tolerar mais carga de trabalho e recuperar melhor.
+  verbatim: "I find lets you handle more workload and recover better"
+
+V006-14  R006@02:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, erro-comum, recuperacao
+  Muitos powerlifters acabam queimados porque o powerlifting é o único movimento que fazem e negligenciam a aptidão aeróbia.
+  verbatim: "a lot of powerlifters in general just kind of burn out because powerlifting is really the"
+
+V008-10  R008@02:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sono, nutricao, recuperacao
+  O básico de sono e nutrição você deveria estar cobrindo de qualquer forma.
+  verbatim: "Things like sleep, nutrition, you should be doing anyways"
+
+V010-08  R010@01:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, volume
+  Parar no início do declínio de desempenho não é um prejuízo grande e você chega recuperado na próxima sessão.
+  verbatim: "that's not a big performance hit, right? You're going to be recovered by next session just fine"
+
+V010-14  R010@02:33  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, acessorios, erro-comum
+  Você precisa estar recuperado antes da próxima sessão; não chegue no dia de agachamento com o quadríceps muito dolorido.
+  verbatim: "You don't want to come into your next squat session feeling your quads really sore"
+
+V010-15  R010@02:33  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, tecnica, aprendizado-motor
+  Chegar dolorido limita o estímulo que você consegue naquele treino e ainda prejudica o aprendizado motor.
+  verbatim: "cuz that's going to limit the stimulus you can get in"
+
+V013-01  R013@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: meta-metodologia, recuperacao, saude
+  do jeito que a maioria dos powerlifters pratica, o esporte acaba prejudicando a saúde geral ou pelo menos segurando o potencial deles
+  verbatim: "the way most powerlifters go about it is actually, you know, kind of harming their"
+
+V013-03  R013@00:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: mentalidade, recuperacao, saude
+  mesmo para quem aceita um prejuízo de saúde em nome do powerlifting, negligenciar completamente a saúde segura o desempenho como powerlifter
+  verbatim: "completely neglecting it is going to hold you back on a powerlifter. It's less optimal."
+
+V013-07  R013@01:01  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: hipertrofia, recuperacao
+  manter massa muscular na velhice, evitar sarcopenia e manter densidade óssea são benefícios válidos do treino resistido
+  verbatim: "There are things like maintaining muscle mass into old age, you know, avoiding sarcopenia"
+
+V013-15  R013@02:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: mentalidade, recuperacao, saude
+  a teoria dele é que a maioria dos powerlifters acaba abandonando o esporte por negligenciar a saúde
+  verbatim: "I have this theory that I 100% believe in, that the reason the reason most powerlifters end up burning out of the sport"
+
+V013-17  R013@02:48  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: cardio, recuperacao, saude
+  boa parte do burnout vem de gente negligenciando a saúde, em particular a aptidão aeróbia
+  verbatim: "A lot of burnout comes from people neglecting their health. They neglect aerobic fitness in particular"
+
+V013-21  R013@03:33  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: mentalidade, recuperacao, saude
+  quem quer destravar o potencial máximo como powerlifter precisa se preocupar com longevidade
+  verbatim: "You've got to make sure you worry about longevity, too."
+
+V013-28  R013@04:19  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: cardio, recuperacao, saude
+  não negligenciar os outros fatores de saúde vale ainda mais para quem não busca o nível mais alto do esporte
+  verbatim: "Don't neglect all these other factors if you're a powerlifter, especially so if you're not somebody"
+
+V015-01  R015@00:00  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: volume, recuperacao
+  ele atribui uma parte enorme do próprio progresso ao longo dos anos simplesmente à quantidade de workload que conseguia fazer
+  verbatim: "I attribute a huge amount of my progress over the years to just simply the amount of workload I could do."
+
+V015-02  R015@00:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, volume
+  a teoria dele é que a recuperação define quanto trabalho o indivíduo aguenta, e quem aguenta mais workload recebe mais estímulo e progride mais
+  verbatim: "if they can handle more workload they can get more stimulus in and they're going to make more progress"
+
+V015-07  R015@00:45  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, sono, nutricao
+  o básico de horas de sono e proteína representa 80% ou mais dos ganhos de recuperação
+  params: parcela_basico=80 % [pct]
+  verbatim: "these are the majority of your recovery gains, right? Like that's like 80%"
+
+V015-08  R015@01:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, erro-comum
+  o estresse de perseguir detalhes minúsculos de recuperação começa a superar o próprio benefício de recuperação
+  verbatim: "the stress of doing all these like little tiny things that are going to have a tiny benefit, the stress of it starts to outweigh the actual recovery benefits"
+
+V015-09  R015@01:30  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: sono, recuperacao
+  além da quantidade de sono, a qualidade do sono também importa
+  verbatim: "the first is sleep hygiene. We all know about getting a proper amount of sleep, but the quality of the sleep matters, too"
+
+V015-10  R015@01:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sono, recuperacao
+  o item número um da higiene de sono é ter horário consistente, deitando e acordando no mesmo horário idealmente todo dia
+  verbatim: "Number one is just a consistent sleep schedule. Go to bed at the same time, wake up at the same time,"
+
+V015-12  R015@01:45  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: sono, recuperacao
+  há pesquisa indicando que a consistência do horário de sono pode ser mais importante que a própria duração do sono
+  verbatim: "there's some research indicating this might be more important than the actual duration of sleep itself"
+
+V015-13  R015@02:00  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: sono, recuperacao
+  uma dose de cafeína pré-treino pode piorar a qualidade do sono 11 horas depois
+  params: janela_cafeina=11 horas [horas]
+  verbatim: "even like a pre-workout dose of caffeine can negatively affect your sleep quality 11 hours later"
+
+V015-14  R015@02:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sono, recuperacao
+  quem treina mais tarde no dia deve tomar menos cafeína ou tomá-la mais cedo, porque os efeitos positivos permanecem
+  verbatim: "if you're going to be training later in the day, what I find it can help to do is take less caffeine or"
+  condições: V015-16
+
+V015-15  R015@02:15  tier:R scope:GERAL modo:anedota genero:aula explicit
+  tópicos: sono, recuperacao
+  ele implementou essa antecipação da cafeína com clientes que trabalham de dia e treinam à noite
+  verbatim: "That's something I've implemented for a lot of my worker uh clients who are workers during the day"
+
+V015-16  R015@02:30  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: recuperacao, meta-metodologia
+  é difícil dar números exatos de cafeína porque cada pessoa metaboliza de um jeito e há tolerância acumulada
+  verbatim: "people metabolize caffeine differently, you can build up tolerance, etc"
+
+V015-17  R015@02:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sono, recuperacao
+  uma dose grande de cafeína, tipo pré-treino, deve ficar pelo menos 12 horas antes de dormir
+  params: antecedencia_dose_grande=12 horas [horas]
+  verbatim: "a big dose, like a pre-workout dose, go for at least 12 hours before bed"
+  condições: V015-16
+
+V015-18  R015@02:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sono, recuperacao
+  uma dose menor de cafeína deve ficar pelo menos oito horas antes de dormir
+  params: antecedencia_dose_pequena=8 horas [horas]
+  verbatim: "if you're going for like a smaller dose, at least eight hours before bed"
+  condições: V015-16
+
+V015-23  R015@03:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sono, recuperacao
+  manter o quarto frio é importante para o sono
+  verbatim: "temperature's a big thing, too. Keep your room cool."
+
+V015-25  R015@04:01  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: sono, recuperacao
+  a qualidade do sono importa tanto quanto ou mais que a duração
+  verbatim: "Matters just as much if not more than duration."
+
+V015-26  R015@04:01  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: recuperacao, fadiga
+  num estudo que ele cita, o grupo de estresse alto levou quatro dias para se recuperar de um treino enquanto o grupo de estresse baixo levou dois dias
+  params: recuperacao_estresse_alto=4 dias [dias]  recuperacao_estresse_baixo=2 dias [dias]
+  verbatim: "The high stress group took four days to recover. The low stress group took two days."
+
+V015-27  R015@04:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, mentalidade
+  a melhor forma que ele achou de lidar com estresse é ter tempo programado de fazer nada
+  verbatim: "the number one way I found to deal with stress is nothing. And what I mean by that is have programmed nothing time."
+  condições: V015-29
+
+V015-28  R015@04:31  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, mentalidade
+  ele coloca esse tempo de fazer nada na própria agenda, sem definir o que vai fazer nele
+  verbatim: "I program this in my schedule. I don't even have a certain thing I have to do."
+
+V015-29  R015@04:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: mentalidade, recuperacao
+  esse tempo tem que ser livre de culpa, porque muita gente se sente culpada de relaxar
+  verbatim: "It's guilt-free cuz a lot of people I find they feel guilty."
+
+V015-31  R015@05:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: mentalidade, recuperacao
+  os que mais desistem do esporte são os que não têm nada na vida além do levantamento
+  verbatim: "The ones I've seen just drop off the face of the earth? The ones who have nothing in their life but lifting."
+
+V015-34  R015@06:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, sono
+  as maiores variáveis de recuperação que ele identifica são melhorar a qualidade do sono e gerenciar o estresse
+  verbatim: "those are the real biggest recovery variables I find is improving your sleep quality"
+
+V018-20  R018@02:48  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: barra-alta, terra, recuperacao
+  na segunda ele tem o agacho secundário mais leve com o terra logo depois, e usar barra alta o deixa mais fresco para atacar o dia de terra com mais intensidade
+  verbatim: "So doing a high bar keeps me a bit fresher so I can hit that deadlift day right after a bit more intensely."
+
+V018-21  R018@03:03  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: barra-baixa, recuperacao, programacao
+  na quinta ele faz barra baixa e carrega mais os extensores de quadril, mas como só puxa de novo no sábado tem tempo extra de recuperação
+  verbatim: "Then on Thursday I'm doing the low bar. I'm working my hip extensors a bit more. But then Friday I'm not hitting deadlifts. Saturday I hit deadlifts. I got that extra rest time so I can recover more."
+
+V019-25  R019@07:22  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: cutting, nutricao, recuperacao
+  se proteína, sono e gestão de estresse estiverem em dia, não se perde músculo num cut agressivo
+  verbatim: "if you're nailing your protein, nailing your sleep, nailing your stress management"
+
+V020-15  R020@02:17  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, recuperacao
+  o supino dele está com sensação de all-time strong logo depois da competição, quando normalmente ele estaria mais fraco pela fadiga
+  verbatim: "my bench feels all-time strong right now, post meet"
+
+V020-21  R020@03:18  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: acessorios, recuperacao, frequencia, proximidade-da-falha
+  pela pesquisa que ele viu, dá para se recuperar de uma série até a falha em cerca de um dia
+  params: recuperacao_serie_falha=1 dias [dias]
+  verbatim: "it seems that you can recover from one set to failure in about a day"
+
+V020-25  R020@04:05  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, peito, supino
+  com esse acréscimo diário o peitoral e os ombros dele não ficam doloridos para o supino
+  verbatim: "my pecs don't aren't sore at all for bench press, neither are my shoulders"
+
+V020-39  R020@06:52  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cardio, recuperacao
+  ele fazia 40 minutos de cardio aos domingos e isso não parecia atrapalhar a sessão de segunda-feira
+  params: cardio_domingo=40 min [min]
+  verbatim: "I used to do 40 minutes of cardio on Sundays, and it didn't seem to negatively"
+
+V022-11  R022@01:17  tier:R scope:GERAL modo:fato genero:log-de-treino explicit
+  tópicos: deload, nutricao, sono, recuperacao
+  Quem tira o pé do acelerador também afrouxa fora da academia: dieta menos rígida e sono menos disciplinado.
+  verbatim: "people start to slack on their diet. maybe they're not strict with sleep. they're up on their phone"
+
+V022-12  R022@01:33  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: deload, recuperacao, fadiga
+  O efeito combinado é receber menos estímulo do que o volume de trabalho sugeriria e ao mesmo tempo recuperar pior.
+  verbatim: "not only are we not getting as much stimulus as we expected from the amount of work we were doing, we're also not recovering as well"
+
+V022-20  R022@03:06  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: recuperacao, mentalidade, competicao
+  Se a pausa mental for mesmo necessária, ela deve vir depois do meet ou do max out, nunca antes.
+  verbatim: "wait until after you're done. wait until after you hit your meat, after you've maxed out, hit your goals. okay, then you can take a bit of a break, not beforehand"
+
+V025-05  R025@00:16  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: agacho, fadiga, recuperacao
+  Ele estava doente e um pouco fatigado nesse dia, mas ainda movia bem o peso.
+  verbatim: "i was sick on the day, so i was a bit fatigued, but still moving great"
+
+V025-09  R025@00:46  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: fadiga, recuperacao
+  Esse episódio somado à doença o deixou acabado de fadiga desde então.
+  verbatim: "it really tanked me. plus, i was sick. so i was just tanked with fatigue since then"
+
+V027-03  R027@00:48  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao, recuperacao
+  Lesões em geral tendem a curar com o tempo.
+  verbatim: "injuries in general tend to heal with time"
+
+V027-04  R027@00:48  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, mobilidade, recuperacao
+  Manter a região se movendo levemente faz bem e promove a cura.
+  verbatim: "keeping things lightly moving is good for them, right? it promotes healing"
+
+V027-12  R027@02:49  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, recuperacao, ombros
+  Num estudo com pessoas com ruptura de manguito rotador, o melhor preditor de sucesso na reabilitação não foi o grau de incapacidade.
+  verbatim: "there's one study that looked at people with rotator cuff tears, and what was the best prediction about how successfully they rehabbed? it wasn't the degree of their disability"
+
+V027-13  R027@03:05  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, mentalidade, recuperacao
+  Nesse estudo o que previu a recuperação foi simplesmente o estado mental, além do tabagismo.
+  verbatim: "it was simply their mindset. and smoking. [music] smoking predicted too, so don't smoke"
+
+V027-16  R027@03:35  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, lesao, recuperacao
+  Mesmo depois de o tecido curar, as respostas protetoras de guarding continuam, e leva tempo para reconstruir a confiança no próprio corpo.
+  verbatim: "but then it heals up, but those protective like guarding measures are still there. it takes some time to just rebuild [music] that trust in your body again"
+
+V027-20  R027@04:05  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, recuperacao, erro-comum
+  Mover de menos ou repousar completamente é a pior escolha entre os extremos possíveis.
+  verbatim: "let's start with not moving enough, right? or even just completely resting, which is the worst thing"
+
+V027-21  R027@04:20  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, recuperacao
+  Parar de se mover destreina o tecido e faz diminuir as adaptações que o protegem.
+  verbatim: "when you stop moving, you start to [music] detrain the tissue. some of those adaptations that are protective start to diminish"
+
+V027-22  R027@04:36  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, dor, recuperacao
+  Na volta ao treino depois do repouso o tecido está mais fraco e mais sensível à dor.
+  verbatim: "when you try to come back, the tissue is weaker and more sensitive to pain"
+
+V027-32  R027@06:23  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, recuperacao, progressao
+  Os tecidos se aclimatam às cargas com o tempo, então o deload da lesão traz destreino e deixa o atleta mais suscetível a nova lesão.
+  verbatim: "your tissues get acclimated to those loads over time. [music] and when you deload from injury, you're going to have a bit of detraining and you're more susceptible to this re-injury"
+
+V028-08  R028@01:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, mobilidade, recuperacao
+  Ele andou entre as séries como de costume e a sensação foi melhorando quanto mais ele se movia.
+  verbatim: "then i went and walked between sets like i usually do. it felt better and better as i moved more"
+
+V029-31  R029@05:34  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: frequencia, hipertrofia, recuperacao
+  A janela anabólica depois do exercício pode ser curta, talvez 36 horas, o que abriria espaço para alguma atrofia se o músculo demorar mais que isso para ser treinado de novo.
+  params: janela_anabolica=36 horas [horas]
+  verbatim: "anabolic window, [music] for lack of a better term, after exercise could be pretty short, even just like 36 hours"
+
+V037-09  R037@00:45  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cardio, recuperacao
+  A frequência cardíaca de repouso dele também caiu cerca de 10 batimentos por minuto.
+  params: queda_fc_repouso=10 bpm [bpm]
+  verbatim: "My resting heart rate also went down to about 10 beats per minute"
+
+V037-10  R037@00:45  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cardio, fadiga, recuperacao
+  Ele se sente muito melhor fora da academia e menos fatigado, o que volta a ajudar dentro dela.
+  verbatim: "I just feel so much better outside the gym. I'm less fatigued"
+
+V037-11  R037@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, condicionamento, recuperacao, capacidade-trabalho
+  O cardio ajuda a construir capacidade de trabalho, possivelmente permitindo tolerar mais carga ou ao menos recuperar melhor da carga atual.
+  verbatim: "It can help build your work capacity, possibly letting you handle more workload or at least recover better from the current workload you're doing"
+
+V037-22  R037@02:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cardio, programacao, recuperacao
+  Ele programa o cardio no fim dos dias de membros inferiores em que não há outro dia de inferiores no dia seguinte, para maximizar o tempo de recuperação.
+  verbatim: "I tend to program it at the end of lower body days first where we don't have another lower body day the following day"
+
+V038-01  R038@00:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, programacao, descanso-entre-series
+  Colocar cronômetro em todos os descansos entre séries fez diferença enorme na qualidade das sessões dele.
+  verbatim: "One thing I've started doing that's made a massive difference on the quality of my sessions is putting a timer on all of my rests between sets"
+
+V038-02  R038@00:00  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: erro-comum, recuperacao
+  Powerlifters têm fama de fazer duas repetições de agacho, descansar 15 minutos e levar três horas para um treino que nem é de volume alto.
+  params: descanso_caricato=15 min [min]  reps_exemplo=2 reps [reps]  duracao_sessao_caricata=180 min [min]
+  verbatim: "doing two reps of squats and then resting like 15 minutes taking like 3 hours just to do a basic workout that's not even that high volume"
+
+V038-03  R038@00:14  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: recuperacao
+  Os estudos em geral favorecem descansos mais longos, mostrando benefício ou pelo menos nenhuma desvantagem.
+  verbatim: "studies generally favor longer rests showing benefits or at the very least no downsides of longer rests"
+
+V038-04  R038@00:14  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao
+  Faz sentido estar recuperado antes da próxima série para performar melhor e obter o melhor estímulo.
+  verbatim: "you want to be recovered before you start doing your next set so you can perform as best as you can and get the best stimulus"
+
+V038-05  R038@00:14  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao
+  Ele garante descansar o suficiente para ainda se sentir recuperado.
+  verbatim: "I am making sure I'm resting long enough to still feel recovered"
+
+V038-06  R038@00:30  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, programacao, descanso-entre-series
+  Há desvantagens de descansos longos que os estudos não capturam, e a mais óbvia é tempo limitado.
+  verbatim: "the first really obvious one is limited time. This isn't the case for me, but it is for many people I coach"
+
+V038-07  R038@00:30  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, agacho, terra
+  Numa série pesada de agacho ou terra pode haver benefício em descansar 8 minutos em vez de 5 minutos.
+  params: descanso_longo=8 min [min]  descanso_curto=5 min [min]
+  verbatim: "there could be a benefit of resting 8 minutes instead of 5 minutes"
+
+V038-10  R038@01:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, volume
+  Aceitar uma leve perda de recuperação vale a pena quando a alternativa é ficar muito limitado em carga de trabalho.
+  verbatim: "sometimes accepting slight in the recovery can be worth it if we're going to be really limited on workload otherwise"
+
+V038-11  R038@01:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao
+  Mesmo sem limitação de tempo, ele achou benefícios em cronometrar todos os descansos.
+  verbatim: "I'm somebody who's not limited on time and I still found benefits to putting a timer on all of my rests"
+
+V038-15  R038@01:46  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: aquecimento, recuperacao
+  Descansos mais curtos evitaram que os músculos dele esfriassem.
+  verbatim: "Shorter rests also prevented my muscles from going cold"
+
+V038-17  R038@02:01  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: erro-comum, recuperacao, descanso-entre-series
+  Ele vê gente descansando mais de 10 minutos o tempo todo e suspeita que muitos passam do ponto em que o descanso longo prejudica.
+  params: descanso_observado=10 min [min]
+  verbatim: "I bet many powerlifterss actually do cuz I see people rest for over 10 minutes all the time"
+
+V038-19  R038@02:01  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, cardio
+  Ele passou a caminhar entre as séries, primeiro para bater os passos do dia, e isso o deixou mais fresco para as séries.
+  verbatim: "something else that helped me with this was walking between sets. I always said M3 job, so I originally just did this as a way to get my basic steps in"
+
+V038-20  R038@02:17  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: recuperacao
+  Há pesquisa mostrando que recuperação ativa leve entre séries pode aumentar a performance.
+  verbatim: "there's some research again showing that light active recovery like this between sets can also increase performance"
+
+V038-23  R038@03:02  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, agacho, terra
+  Nas séries de trabalho de agacho e terra ele descansa 5 minutos.
+  params: descanso_agacho_terra=5 min [min]
+  verbatim: "For my squat and deadlift working sets, I take 5 minute rest between them"
+
+V038-24  R038@03:02  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, supino, acessorios
+  No supino e nos acessórios ele descansa três minutos.
+  params: descanso_supino_acessorios=3 min [min]
+  verbatim: "for bench and accessory lifts, I do three minutes"
+
+V038-25  R038@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, autorregulacao
+  O princípio é descansar só o necessário para se sentir recuperado e nada além disso.
+  verbatim: "the principle here should be you're doing just enough as you need to feel recovered and no longer"
+  condições: V038-26
+
+V038-26  R038@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, volume
+  Com agenda muito apertada, vale errar para o lado de estar levemente sub-recuperado nas séries para conseguir mais carga de trabalho total.
+  verbatim: "if you have a real tight schedule, you might air to the point of being slightly underreovered during your sets just to get more overall workload"
+  condições: V038-10
+
+V040-21  R040@02:46  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, recuperacao
+  Desse período ele saiu com problemas de lesão que demoraram para superar.
+  verbatim: "I had some injury issues that took me a while to overcome and rebuild back stronger from"
+
+V043-03  R043@00:15  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: nutricao, recuperacao, saude
+  Ele toma óleo de peixe para baixar os triglicerídeos, que estavam altos no exame.
+  verbatim: "and the fish oil helps to lower triglycerides and i mentioned in a recent video how those were high when tested"
+
+V043-28  R043@04:03  tier:R scope:PESSOAL modo:anedota genero:log-de-treino explicit
+  tópicos: nutricao, recuperacao
+  Ele sente benefício de recuperação com esses níveis mais altos de proteína, e sentia isso já quando ainda acreditava na meta-análise, o que o faz duvidar de placebo.
+  verbatim: "i personally can feel recovery benefit from these higher levels"
+
+V044-15  R044@02:32  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cardio, recuperacao
+  Ele faz 20 minutos de caminhada leve para trás todos os dias.
+  params: caminhada_tras=20 min/dia [min_dia]
+  verbatim: "i also do 20 minutes of light backwards walking daily"
+
+V045-06  R045@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cutting, recuperacao, sono
+  Para cortar agressivamente sem perder força basta gerenciar as outras variáveis de recuperação: proteína alta, sono bom e estresse controlado.
+  verbatim: "you just have to manage your other recovery variables high protein good sleep and manage stress"
+
+V045-19  R045@02:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: peso-corporal, volume, recuperacao
+  Maior disponibilidade energética parece facilitar tolerar um pouco mais de carga de treino.
+  verbatim: "it seems to make it easier to handle a bit more training load"
+
+V046-15  R046@01:45  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: programacao, recuperacao
+  O mesmo programa rodado sob estresse alto, sono ruim e dieta furada rende diferente de quando essas variáveis estão ajustadas.
+  verbatim: "you can run the exact same program at times you're under lost stress can't get good sleep or follow your diet"
+
+V046-16  R046@02:01  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: programacao, recuperacao
+  Essa diferença de contexto foi, na experiência dele, a diferença entre ganhos enormes e nenhum progresso ou até regressão.
+  verbatim: "and it's been the difference between huge gains and no progress or even regression"
+
+V048-06  R048@00:30  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: condicionamento, recuperacao
+  Trabalhar o condicionamento foi uma ajuda enorme no treino dele: recupera melhor.
+  verbatim: "i found working on my conditioning to be a huge help in my training i recover better"
+
+V050-08  R050@00:30  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: cardio, recuperacao, fadiga
+  O cardio o fez se sentir mais recuperado entre as sessões e menos esgotado no fim do ciclo, quando a fadiga acumula.
+  verbatim: "help me feel much more recovered between sessions and i didn't feel as burnt out towards the end of my training"
+
+V053-01  R053@00:15  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: programacao, meta-metodologia, recuperacao
+  O princípio que rege os programas dele é maximizar o estímulo dentro da capacidade de recuperação do atleta.
+  verbatim: "underlying principle is I'm trying to maximize the stimulus within your recovery abilities"
+
+V053-09  R053@00:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: frequencia, recuperacao
+  Ele considera bom empurrar a frequência até a maior taxa da qual o atleta consegue se recuperar.
+  verbatim: "I do think pushing your frequency to the highest rate that you can recover from is good"
+  condições: V053-08, V053-12
+
+V053-12  R053@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: frequencia, recuperacao, volume
+  Enquanto o atleta não exceder a recuperação a ponto de chegar sem recuperar na sessão seguinte, a frequência maior permite trabalho de melhor qualidade.
+  verbatim: "As long as you don't start exceeding your recovery variables to the point that you're not recovered between sessions, this should let you do higher quality work"
+
+V053-16  R053@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, recuperacao
+  O desenho da semana precisa considerar estressores de fora da academia, como trabalho ou escola, que afetam o treino mesmo quando são só mentais.
+  verbatim: "I'm also keeping in mind things outside of the gym, something that's often overlooked. If you've got work or school that can be stressing you, even if it's mentally, that can affect your lifting"
+
+V053-17  R053@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, recuperacao
+  Ele também considera outros esportes que o atleta pratica ao montar a semana.
+  verbatim: "I'm also looking for other sports you're playing"
+
+V053-23  R053@02:32  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: programacao, recuperacao
+  Entre treinos, ele agenda mais descanso antes do movimento que está priorizando.
+  verbatim: "Between workouts, I can also schedule it so I have more rest before the lift I'm trying to focus on"
+
+V054-15  R054@01:01  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: condicionamento, recuperacao, peso-corporal, capacidade-trabalho
+  Conforme ficou maior e mais forte, ele passou a perder capacidade de trabalho.
+  verbatim: "Something that had been a big issue with me as I got bigger and stronger is I started to lose work capacity"
+
+V054-16  R054@01:16  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: volume, recuperacao, lesao
+  Ele deixou de aguentar tanto volume, teve a recuperação prejudicada e enfrentou lesões por um período.
+  verbatim: "I couldn't handle as much volume and recovery was impaired. For a while, I struggled with injuries, too"
+
+V054-21  R054@01:46  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: recuperacao, acessorios, hipertrofia
+  Depois de subir o volume ele recupera melhor entre sessões e o estímulo extra de isolamento ajudou a repor peso corporal mantendo-se mais magro.
+  verbatim: "Not only do I recover better between sessions now, the extra stimulus for more isolation work was also a big key"
+
+V063-09  R063@00:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: nutricao, recuperacao
+  A segunda coisa a checar num platô são as variáveis fora da academia, começando por dieta, proteína e calorias.
+  verbatim: "The next issue to look at is your outside the gym variables. These are things like diet, namely protein and calories."
+
+V063-10  R063@00:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sono, recuperacao
+  É preciso garantir que está dormindo o suficiente.
+  verbatim: "Make sure you're getting enough sleep as well."
+
+V063-11  R063@00:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, fadiga
+  Também é preciso checar se há grandes fontes de estresse na vida.
+  verbatim: "and also check if you have major life stresses."
+
+V063-12  R063@00:46  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: recuperacao, fadiga
+  Ele cita um atleta que treinava terminando a defesa do doutorado como caso em que é esperado que o treino fique mais difícil.
+  verbatim: "I had a lifter I coached recently finishing his PhD defense. Not exactly a surprise if things feel a bit harder with that."
+
+V065-05  R065@00:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, condicionamento, peso-corporal
+  Com excesso de gordura e condicionamento ruim ele não conseguia recuperar bem nem aguentar muito workload.
+  verbatim: "It meant I wasn't able to recover that well or handle much workload."
+
+V065-15  R065@01:31  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: volume, intensidade, recuperacao
+  Ele acha a intensidade importante mas continua tentando empurrar o volume enquanto conseguir recuperar.
+  verbatim: "I'm still trying to push the volume I'm doing as well as long as I can recover."
+
+V065-21  R065@02:02  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: fadiga, recuperacao
+  Ele se sente bem menos fatigado neste ponto do ciclo do que estava no ciclo anterior.
+  verbatim: "I feel way less fatigued at this point as I did last cycle as well."
+
+V069-14  R069@01:30  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: nutricao, recuperacao
+  Há evidência de que depleção localizada de glicogênio no pós-treino pode prejudicar os ganhos.
+  verbatim: "there is some evidence that localized glycogen depletion post-training could impair gains."
+
+V072-14  R072@01:15  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: mentalidade, recuperacao
+  O outro fator para lidar com neuroticismo é minimizar os dias ruins.
+  verbatim: "The other factor is minimizing bad days."
+
+V072-15  R072@01:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, sono, nutricao
+  Mantendo sono, calorias e proteína em dia e seguindo o programa com bom esforço, treino realmente ruim vira raridade.
+  verbatim: "If you keep up your sleep, calories, protein, and stick to your program with good effort, it's going to be rare that you have an actual really bad workout."
+
+V072-17  R072@01:31  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: mentalidade, recuperacao
+  Abordagem orientada a processo é focar no que se controla, como o esforço e as variáveis de recuperação.
+  verbatim: "That's focusing on things you can control in the process, like your effort or those recovery variables."
+
+V074-21  R074@02:01  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, fadiga
+  Com o descanso cortado pela metade ele não se sentiu menos descansado, e sim mais focado na hora de levantar.
+  verbatim: "As a result, I didn't feel any less rested. If anything, I felt better and I felt more locked in and focused when I actually had to lift the weights after my rest."
+
+V075-10  R075@00:45  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cardio, condicionamento, recuperacao
+  Triplicando o cardio a força dele não caiu por efeito de interferência: subiu, e ele se sente melhor.
+  verbatim: "Has my strength gone down from the interference effect? No, not at all. My strength is up and if anything, I feel better now."
+
+V075-17  R075@01:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, recuperacao, volume
+  O cardio traz benefícios de recuperação aumentada e de capacidade de tolerar mais carga de trabalho.
+  verbatim: "Increased recovery and ability to handle more workload."
+
+V075-23  R075@02:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cardio, autorregulacao, recuperacao
+  Deve-se acompanhar a recuperação e ver se o cardio começa a impactar os levantamentos, caso em que se reduz um pouco.
+  verbatim: "while tracking recovery and seeing if it starts to impact your lifts, in which case you may want to dial back a bit"
+
+V078-08  R078@00:30  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: sono, recuperacao, cutting
+  Durante o cut ele dormiu pelo menos 7 e normalmente 8 horas por noite.
+  params: sono_min=7 horas [horas]  sono_tipico=8 horas [horas]
+  verbatim: "I got good sleep at least 7 and usually 8 hours per night"
+
+V078-10  R078@00:30  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, mentalidade
+  Ele também administrou o estresse com bom relaxamento dentro da agenda.
+  verbatim: "just managing stress with good relaxation in my schedule"
+
+V078-11  R078@00:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cutting, recuperacao
+  Cuidando de sono, proteína e estresse dá para manter a recuperação mesmo com o aspecto calórico comprometido.
+  verbatim: "Do this and you can maintain recovery while the calorie aspect is compromised."
+  condições: V078-06
+
+V078-25  R078@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cutting, fadiga, recuperacao
+  Deve-se fazer pausas de refeed conforme a fadiga se acumula, podendo comer na manutenção para não sentir que está regredindo.
+  verbatim: "take some refeed breaks if need be with fatigue building. You can even eat a maintenance to help you not feel like you're going backwards."
+
+V083-16  R083@02:05  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: recuperacao, fadiga, supino
+  Ele sente que nunca se recuperou de verdade depois daquele single de 195 kg no treino.
+  params: single_supino_treino=195 kg [1RM_treino]
+  verbatim: "i just felt i never really recovered after that 195 kilo single"
+
+V085-10  R085@01:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, taper, cardio
+  Sair para uma caminhada breve na véspera do dia de máximo ajuda a manter o corpo solto.
+  verbatim: "i find going for a brief walk or two on the day before you want to max out is good for keeping your body loose"
+
+V086-09  R086@00:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, nutricao
+  O que se faz fora da academia importa tanto quanto, ou mais, do que o que se faz dentro dela.
+  verbatim: "what you do outside the gym matters just as much if not more than what you do in the gym"
+
+V086-11  R086@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: sono, recuperacao
+  Sono consistente e de alta qualidade, com boa higiene do sono, faz a maior diferença na recuperação.
+  verbatim: "there's sleep as well consistent sleep high quality with the help of good sleep hygiene these will make the biggest differences in your recovery"
+
+V086-12  R086@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, mentalidade
+  Gestão de estresse é frequentemente ignorada e tem efeito enorme na recuperação.
+  verbatim: "another thing that's often overlooked for lifting is stress management this has a massive effect on your recovery"
+
+V086-13  R086@01:01  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: recuperacao, fadiga
+  Há pesquisa mostrando que indivíduos com estresse alto levaram o dobro do tempo para se recuperar de um treino de pernas.
+  verbatim: "there's research showing that high stress individuals took twice as long to recover after doing a leg workout"
+
+V086-16  R086@01:31  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: mentalidade, recuperacao
+  Ele já viu estresse mental atrapalhar resultados em pessoas que conhece, em clientes que treina e nele mesmo.
+  verbatim: "there's been people i know people i coach and even myself at times where mental stress is just hurting results"
+
+V090-21  R090@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sono, nutricao, recuperacao
+  Para aguentar esse volume é preciso ter as variáveis ajustadas: sono, dieta e estresse.
+  verbatim: "you also just make sure your variables are dialed in sleep diet stress"
+
+V092-07  R092@00:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: frequencia, hipertrofia, recuperacao
+  O sinal de crescimento no músculo dura cerca de 48 horas depois do treino.
+  params: duracao_sinal_crescimento=48 horas [horas]
+  verbatim: "the signal for growth in muscles lasts about 48 Hours postwork workout"
+
+V092-10  R092@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, frequencia, volume
+  A recuperação entre sessões é não linear, então dá para lidar com mais carga de trabalho total dividindo-a em mais dias.
+  verbatim: "plus recovery is nonlinear between sessions we can handle more workload overall splain it up into more days to take advantage of this recovery"
+
+V092-12  R092@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: frequencia, recuperacao
+  Reduzir a carga de cada sessão faz você chegar mais recuperado entre os treinos.
+  verbatim: "reducing load of each session means we will be better recovered between workouts as well"
+
+V093-09  R093@01:01  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: recuperacao, fadiga
+  Outro estudo mostra que estar sub-recuperado antes do treino também prejudica os resultados.
+  verbatim: "and this one found how being under recovered before workouts impairs results as well"
+
+V094-26  R094@03:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, recuperacao
+  O corpo se adapta ao estímulo imposto e isso gera efeito protetor, por isso gestão de carga é a chave.
+  verbatim: "Our body can adapt to the stimulus as we place upon it and thus provide protective effect. That's why load management is key"
+
+V095-04  R095@00:30  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: mentalidade, recuperacao
+  Num estudo, estresse alto dobra o tempo de recuperação entre sessões, de 2 para 4 dias.
+  params: recuperacao_estresse_baixo=2 dias [dias]  recuperacao_estresse_alto=4 dias [dias]
+  verbatim: "literally doubles the time to recover between sessions from two to four days in this study"
+
+V099-10  R099@00:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, recuperacao
+  A agenda prevê 1 dia de descanso depois dos dias 1 e 2 e 2 dias de descanso depois do dia 3.
+  params: descanso_apos_dias_1_e_2=1 dias [dias]  descanso_apos_dia_3=2 dias [dias]  dias_de_treino=3 dias [dias]
+  verbatim: "the program is designed for a rest day after Days 1 and two and then two rest days after day three"
+
+V099-12  R099@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, fadiga, programacao
+  Os 2 dias de descanso no fim da semana existem basicamente para recuperar a fadiga acumulada.
+  params: dias_de_descanso_final=2 dias [dias]
+  verbatim: "so anyways the two rest days at the end of the week is basically to catch up on fatigue"
+
+V099-13  R099@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, recuperacao, frequencia
+  Quem se recupera bem e lida bem com volume pode testar 2 dias de descanso depois do dia 1 e emendar o dia 3 com apenas 1 dia de descanso antes do dia 1 seguinte.
+  params: descanso_apos_dia_1=2 dias [dias]  descanso_apos_dia_3_alternativo=1 dias [dias]  dia_final_da_semana=3 dias [dias]
+  verbatim: "after day one and then have you do day three and go one rest day right into day one"
+  condições: V099-11
+
+V102-06  R102@00:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: deload, recuperacao
+  Se o deload for exagerado, a força de base também cai e há destreino, porque o estímulo fica baixo demais.
+  verbatim: "but if we overdo it our Baseline Fitness goes down as well we detrain a bit because the stimulus is so low"
+
+V104-20  R104@01:17  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: volume, recuperacao, cardio, capacidade-trabalho
+  Ele está adicionando um pouco mais de volume no geral porque sente ter mais capacidade de trabalho, possivelmente pelo cardio extra e pelo superávit calórico.
+  verbatim: "I'm basically adding a bit more volume overall too I find I have a lot more work capacity now than I did before could be the extra cardio paint off and also the caloric Surplus"
+
+V106-05  R106@00:15  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: cardio, taper, recuperacao
+  Ele faz ciclismo leve nessa fase, que não fatiga muito e serve principalmente para manter as pernas soltas.
+  verbatim: "then just some light cycling I find that's not really fatiguing much mainly just keeping my legs loose"
+
+V106-06  R106@00:15  tier:R scope:PESSOAL modo:opiniao genero:competicao explicit
+  tópicos: taper, recuperacao
+  No dia de descanso antes do teste ele faz algumas caminhadas leves, que considera melhores do que descanso total, porque fica mais solto e menos letárgico no dia.
+  verbatim: "on my rest day before the test I do a couple of light walks I find that's good versus straight rest feel a little bit more loose on the day and I find it makes me feel a bit less lethargic as well"
+
+V106-15  R106@01:16  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: recuperacao, teste-de-forca
+  O descanso extra por esperar o spotter acabou ajudando, e ele acertou os 440.
+  params: supino_pr=440 lb [1RM_treino]
+  verbatim: "I guess the extra rest helped and I ended up hitting the 440 it was pretty smooth"
+
+V106-29  R106@03:32  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: recuperacao
+  Depois do teste na quinta, ele fez um treino leve no sábado só para movimentar.
+  verbatim: "just had this light workout on Saturday after testing on Thursday get some light movement in"
+
+V106-30  R106@03:32  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: recuperacao, dor
+  Ele estava bem dolorido em glúteos e costas, mas se sente melhor depois do treino leve.
+  verbatim: "definitely felt really sore in my glutes and back again um still feel better post-workout now though which is nice"
+
+V108-02  R108@00:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: deload, fadiga, recuperacao
+  Ele ficou doente nessa semana e atribui isso a fadiga acumulando, de modo que o deload veio num bom momento.
+  verbatim: "I think just fatigue building up so D Lo came at a good point"
+
+V109-08  R109@01:17  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: condicionamento, recuperacao, capacidade-trabalho
+  Quem vem de outros esportes ou de outras modalidades de levantamento provavelmente terá boa capacidade de trabalho depois de superar a dor muscular inicial.
+  verbatim: "other sports or even other lifting Sports will optim Ely then they can probably have good work capacity after they've gotten over the initial delayed onset muscle soreness"
+
+V110-38  R110@04:48  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, nutricao, sono
+  Praticamente toda a recuperação se resume ao básico: proteína, calorias, dormir o suficiente e com higiene de sono decente.
+  verbatim: "virtually all of recovery comes down to the basics. Protein, calories, sleeping long enough and with decent sleep hygiene"
+
+V110-39  R110@04:48  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, meta-metodologia
+  O resto tende a ter retornos muito decrescentes e às vezes é só óleo de cobra apoiado em efeito placebo.
+  verbatim: "Most other things from here are going to provide greatly diminishing returns and sometimes are just snake oil relying on placebo effects"
+
+V110-40  R110@05:03  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao
+  A maioria dessas coisas não compensa o tempo e a energia de usar, porque o estresse envolvido pode até atrapalhar a recuperação.
+  verbatim: "be worth the time and energy of actually using them because of the stress and it can hurt your recovery"
+
+V110-41  R110@05:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, mentalidade
+  Gerencie o estresse antes do teste: faça coisas que relaxem você e corte estressores.
+  verbatim: "manage stress as well before your test. Do some things that relax you and cut off stressors"
+
+V113-24  R113@02:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: agacho, fadiga, recuperacao
+  O ponto negativo do tempo squat é fadiga e mais dano muscular, num tipo que não acrescenta crescimento, o que limita quanto trabalho a pessoa consegue tolerar.
+  verbatim: "the downside is fatigue and they can also cause more muscle damage not in a way that adds more growth this can lead to some people just not being able to handle much work with them"
+
+V114-30  R114@04:49  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, frequencia
+  A recuperação não é linear: recuperamos mais nos primeiros dias após o treino.
+  verbatim: "recovery is not linear. We recover more in the first days post workout."
+
+V116-28  R116@04:49  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: taper, recuperacao, pico
+  Quem é maior e mais forte demora mais para recuperar e precisa colocar o último lift pesado mais longe do teste; levantadores menores, mais fracos, mais novatos ou mais jovens podem deixar mais perto.
+  verbatim: "people who are bigger and stronger ER will take longer to recover and thus needed to do it further out vice versa with smaller and less strong more novice lifters or people who are younger and thus are better able to recover"
+
+V116-29  R116@05:04  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: recuperacao, taper
+  O supino é o lift que recupera mais rápido, o agachamento fica no meio e o terra leva tanto quanto o agachamento ou mais.
+  verbatim: "generally speaking bench recovers quickest squat the middle and then lift about as long as squat or longer"
+
+V116-30  R116@05:04  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: agacho, fadiga, recuperacao, antropometria
+  Um agachamento bem ereto de fêmur curto é menos fatigante do que um agachamento muito inclinado para a frente.
+  verbatim: "a really upright short femur squat will be less fatiguing than a really bend over squat"
+
+V116-31  R116@05:19  tier:R scope:GERAL modo:anedota genero:aula explicit
+  tópicos: supino, recuperacao, competicao
+  Um supino de arco enorme recupera muito rápido — ele cita um levantador que faz um treino de supino na manhã antes de competir à noite.
+  verbatim: "a huge Arch bench recovers super quick sha Nora will actually do a bench workout the morning before his evening competitions"
+
+V116-32  R116@05:19  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, recuperacao, sumo, convencional, rom
+  No terra a variabilidade de fadiga é a maior de todas: há enorme diferença entre um sumo ereto de amplitude curta e um convencional muito inclinado de amplitude longa.
+  verbatim: "on deadlift this can be the most fa variable there is a big difference between a real short range of motion upright Sumo deadlift and a real bent over conventional with a mile long range of motion"
+
+V116-33  R116@05:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: taper, autorregulacao, recuperacao
+  Você provavelmente já sabe pela própria experiência quanto tempo leva para recuperar de cada lift, e deve usar isso para decidir a que distância do teste fica o último pesado.
+  verbatim: "you probably have an idea already from your own experience how long it takes you to recover from each lift in your training and you can use this to judge how far out to do your last heavy lift in your own training"
+
+V117-22  R117@03:48  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: frequencia, recuperacao
+  Com frequência maior não só a qualidade do trabalho é maior como se aguenta mais trabalho no total, porque a recuperação entre sessões é não linear e recuperamos mais nos primeiros dias pós-treino.
+  verbatim: "Not only would the quality of work be higher you can handle more work overall if you use a higher frequency recovery between sessions is nonlinear we recover more in the first days post-workout"
+
+V117-23  R117@04:03  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: frequencia, recuperacao, agacho
+  Existe um limite superior de frequência: não faria sentido agachar 14 vezes por semana porque não se recupera a cada 12 horas.
+  params: frequencia_absurda=14 x/semana [x_semana]  intervalo=12 h [horas]
+  verbatim: "we probably won't be best squatting 14 times per week because we aren't going to recover every 12 hours that's what's going to limit you"
+
+V117-25  R117@04:18  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: frequencia, volume, recuperacao
+  O mecanismo alegado é que a frequência maior não empurra você para o lado ruim do U invertido: ela desloca quanto você consegue se recuperar, de modo que o ponto ótimo passa a estar num estímulo mais alto e os ganhos são maiores.
+  verbatim: "what we're doing instead is Shifting how much we can recover from so our optimal point on this inverted U is at a higher stimulus which means we're going to make more gains overall given we're getting more stimulus"
+
+V118-07  R118@01:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: ombros, dor, recuperacao
+  Ele sentiu alguma dor nos ombros no dia seguinte ao desenvolvimento, mas os dias de supino posteriores da semana foram normais, então concluiu que era apenas dor muscular tardia.
+  verbatim: "so I did feel a bit of soreness in my shoulders the next day after doing the HP it was a rest day but my later bench days in the week I was just fine so I think it was just some Doms"
+
+V118-26  R118@04:17  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: cardio, recuperacao
+  A contagem diária de passos dele fica em torno de 8000 na média da maioria dos dias.
+  params: passos_diarios=8000 passos [contagem]
+  verbatim: "what is my daily step count like so I get about 8,000 on average most days"
+
+V118-27  R118@04:33  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: cardio, recuperacao, agacho
+  No domingo, seu dia de mais trabalho, ele faz 10 minutos de bicicleta depois do expediente e sente o agachamento de segunda-feira bem melhor.
+  params: cardio=10 min [min]
+  verbatim: "I do 10 minutes of cycling that day after my work I find it makes me feel a lot better on my squats the following Mondays"
+
+V118-28  R118@04:33  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, nutricao, sono
+  A maior parte da recuperação é simplesmente ingerir proteína e calorias suficientes e dormir o bastante, e o item seguinte é gestão de estresse, que costuma ser ignorado.
+  verbatim: "the majority of recovery is going to just be getting enough protein calories and sleep next is Stress Management this is often overlooked"
+
+V118-29  R118@04:48  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: recuperacao, mentalidade
+  Um estudo encontrou que estresse alto se associou ao dobro do tempo de recuperação entre sessões.
+  params: fator_tempo_recuperacao=2 x [contagem]
+  verbatim: "there's a study link below that found that high stress was associated with double the recovery time between sessions"
+
+V118-30  R118@04:48  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, mentalidade
+  Faça algo relaxante e coloque isso deliberadamente na agenda, para não se sentir culpado por estar fazendo.
+  verbatim: "do something relaxing and make it a deliberate part of your schedule so you don't feel guilty about it either"
+
+V118-31  R118@05:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cardio, recuperacao
+  Outro item de recuperação é movimento leve, já que contagem de passos está associada à recuperação entre treinos.
+  verbatim: "another one is light movement mentioned before how step count is associated with recovery between workouts"
+
+V118-32  R118@05:03  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, meta-metodologia
+  Esses básicos cobrem provavelmente 90% ou mais do potencial de recuperação, e para o resto vale perguntar se o benefício compensa o estresse de fazer.
+  params: cobertura_basicos=90 pct [pct]
+  verbatim: "now all these things probably cover 90% if not more of your potential recovery the rest of these things you have to ask yourself if the benefit is really worth the stress of doing it"
+
+V118-33  R118@05:18  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, erro-comum
+  As modalidades de recuperação que ele vê por aí, mesmo tendo algum benefício teórico pequeno, exigem muito tempo, estresse e esforço, que por sua vez tiram da recuperação.
+  verbatim: "often times these recovery modalities I see even if there is some small theoretical benefit require a lot of time stress and effort which all take away from recovery"
+
+V120-23  R120@03:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, lesao, recuperacao
+  O cardio pode ser benéfico por menores taxas de lesão e, anedoticamente, por ajudar na recuperação, com um mecanismo teórico de gestão de carga.
+  verbatim: "I've talked about how cardio can be beneficial, lower injury rates, and anecdotally since it can help with recovery, some theoretical mechanism with load management there."
+
+V120-28  R120@04:18  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: cardio, recuperacao
+  Caminhar melhora a recuperação, e aumentar a contagem de passos entre sessões melhora a recuperação.
+  verbatim: "Walking has also been shown to enhance recovery, increase step counts between sessions, enhances recovery"
+
+V120-29  R120@04:33  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cardio, recuperacao, agacho
+  No domingo, seu dia sem treino e principal dia de trabalho sentado, ele faz 10 minutos de bicicleta e uma caminhada, e acha que o treino de agachamento de segunda fica bem melhor com esse movimento leve.
+  params: cardio_domingo=10 min [min]
+  verbatim: "I do 10 minutes of cycling and a walk on Sundays as well, which is my non-lifting day. This is my main work day for coaching and I'm sitting a lot. I found my Monday squat workout actually feels a lot better with this light movement."
+
+V120-30  R120@04:48  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cardio, recuperacao
+  Quem senta muito deve tentar fazer movimento leve nesses dias, porque provavelmente obterá resultados parecidos.
+  verbatim: "If you sit a lot, try doing some light movement on these days, and I think you'll find you'll get similar results."
+
+V120-32  R120@05:03  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: volume, recuperacao, autorregulacao
+  Ele ainda se sente bastante dolorido entre sessões e vai ver como recupera e progride antes de subir o volume de pernas.
+  verbatim: "could, but I still do feel quite sore between sessions. I'll see how I recover and progress and adjust as need be."
+
+V120-34  R120@05:18  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, volume, recuperacao
+  Se você se sente mal e performa mal, deve reduzir a carga de trabalho, porque provavelmente não está recuperando o suficiente e isso está prejudicando os ganhos.
+  verbatim: "If we feel bad and perform bad, we should reduce our workload. We probably aren't recovering enough, impairing our gains."
+
+V122-02  R122@00:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: competicao, fadiga, recuperacao
+  Ele está na terceira semana depois do último meet e tipicamente se sente bem mais fraco depois de uma competição.
+  params: semanas_pos_meet=3 semanas [semanas]
+  verbatim: "this week is my third week after my last meet and typically after meet I feel a good bit weaker"
+
+V122-04  R122@00:30  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, competicao
+  Ele leva algumas semanas depois de um meet para voltar a se sentir fluido nos movimentos.
+  verbatim: "usually takes me a few weeks to start feeling fluid again"
+
+V122-12  R122@01:31  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: volume, fadiga, recuperacao
+  No passado ele aguentava muito volume de agacho e terra, mas ficou mais forte e passou a acumular mais fadiga, particularmente nos glúteos.
+  verbatim: "in the past I could handle a lot of squad deadlift volume but that's I've gone stronger more fatigue as I mentioned particularly in the glutes"
+
+V125-03  R125@00:15  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, recuperacao, erro-comum
+  Quem dedica muito tempo a prevenir lesão provavelmente aproveitaria melhor essa energia em outra coisa, possivelmente até só descansando.
+  verbatim: "People devoting a ton of time to prevent injury are probably better spending this energy elsewhere. Possibly just doing nothing, relaxing."
+  condições: V125-05
+
+V125-13  R125@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, sono, autorregulacao
+  Quando o atleta falha um levantamento que deveria ter pego, o primeiro passo é procurar uma razão óbvia como sono ruim, dieta ou estresse, já que recuperação inconsistente gera desempenho inconsistente.
+  verbatim: "First off, look for an obvious reason, bad sleep, diet, stress, whatever. Inconsistent recovery can lead to inconsistent performance."
+
+V126-17  R126@02:33  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: fadiga, recuperacao, volume
+  O que ele chama de dívida de fadiga é quando o atleta não consegue mais recuperar entre sessões no volume normal e fica mais fraco pela fadiga acumulada e pela queda de qualidade do treino.
+  verbatim: "they get into what I call fatigue debt they aren't going to be able to recover between sessions at their normal volume load so they get weaker from the accumulated fatigue and decreased workout quality"
+
+V127-07  R127@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, fadiga, recuperacao
+  Nem toda variação que obriga a usar menos peso é auto-limitante: o trabalho excêntrico usa menos carga mas continua fatigando, discutivelmente mais, e é mais difícil de recuperar para quem não está aclimatado.
+  verbatim: "Ecentric work forces us to use less weight because of the difficulty of the Ecentric but Centrics are still fatiguing us arguably more entric and those that are not well acclimated to them are harder to recover from"
+
+V128-04  R128@00:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, volume, peso-corporal
+  Conforme ficou mais forte e maior ele passou a recuperar mais devagar e teve de cortar a quantidade de séries de agachamento e terra.
+  verbatim: "as I got stronger and bigger though I started recovering slower so I had to cut the amount of sets on squats and deadlift that I was doing"
+
+V128-12  R128@01:15  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: volume, recuperacao, tecnica, aprendizado-motor
+  A recomendação dele é fazer o máximo de volume de agachamento e terra que se consegue recuperar entre sessões, para maximizar a prática de técnica nos movimentos.
+  verbatim: "I'd say do as much Squad and deadlift volume as you can while still recovering between sessions that way you maximize the amount of skill practice you're getting on the lifts"
+
+V128-14  R128@01:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, recuperacao, hipertrofia
+  A partir daí adiciona-se trabalho de isolamento onde ainda há espaço para mais trabalho sem prejudicar a recuperação entre sessões.
+  verbatim: "from there you can add isolation work where you have room to add more work while still being able to recover between sessions"
+
+V130-16  R130@01:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: recuperacao, fadiga
+  Excêntricas podem ser mais difíceis de recuperar no começo, mas isso parece ser algo a que o atleta se aclimata.
+  verbatim: "Ecentric may be harder to recover from initially but this seems to be something that you can acclimate to"
+
+V134-06  R134@00:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: fadiga, recuperacao, series-reps
+  Faixas de repetições mais altas geram mais fadiga metabólica, não de um jeito que cause mais crescimento, apenas prejudicando a recuperação.
+  verbatim: "there's more metabolic fatigue at these increased rep ranges not in a way that causes more growth just impairs recovery"
+
+V134-16  R134@02:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: series-reps, lesao, recuperacao
+  Séries de repetições altas também servem para quem não tolera muito estímulo em geral ou é propenso a lesão.
+  verbatim: "these high rep sets are also useful for people who cannot handle a lot of stimulus in general or are injury-prone"
+
+V136-18  R136@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cardio, recuperacao, programacao
+  As pessoas tendem a fazer cardio nos dias de descanso, mas ele acha melhor fazer depois do treino de membros inferiores, no mesmo dia, para maximizar o tempo de recuperação até o próximo treino de perna.
+  verbatim: "people tend to do it on rest days but I find it's actually best to do it after your lower body workouts on the same day that way you maximize the recovery time before your next lower body lifting session"
+
+V138-03  R138@00:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, recuperacao
+  Continuar se movendo promove melhor cicatrização, e mesmo que não seja totalmente ótimo dá para progredir ou pelo menos manter o progresso.
+  params: otimalidade=100 % [pct]
+  verbatim: "keeping moving will promote better healing and even if it isn't 100% optimal you can still make progress"
+
+V138-20  R138@02:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, recuperacao
+  A pesquisa mostra que reabilitar com dor leve leva a tempos de reabilitação mais rápidos, então é para treinar com alguma dor leve e aprender a não catastrofizá-la.
+  verbatim: "research has shown that rehab with light pain does lead to quicker rehab times though so we do want to train through some light pain and learn not to catastrophize it"
+  condições: V138-18, V138-33, V027-23
+  conflita: V027-25
+
+V143-06  R143@00:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: volume, recuperacao
+  Um lifter maior precisa fazer menos porque há mais músculo e mais tecido para recuperar.
+  verbatim: "a bigger lifter is going to need to be doing less because there's more muscle there's more tissue that needs to actually recover"
+
+V145-03  R145@00:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: volume, recuperacao
+  O ideal é conseguir aguentar mais carga de treino no total sem perder a capacidade de recuperar, para obter mais estímulo.
+  verbatim: "ideally we want to be able to handle more train load overall while still being able to recover so we can get more stimulus"
+
+V145-09  R145@01:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: volume, recuperacao
+  Lifters mais velhos têm baldes menores e não aguentam tanto volume, e o contrário vale para os mais jovens.
+  verbatim: "there is simply age older lifters are going to have smaller buckets they can't do as much volume and then vice versa with younger lifters"
+
+V145-12  R145@01:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, condicionamento, recuperacao, capacidade-trabalho
+  Sem bom condicionamento cardiovascular a capacidade de trabalho sofre.
+  verbatim: "the other is with cardio so if you don't have a good level of cardiovascular fitness your work capacity is going to suffer"
+
+V145-13  R145@01:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, recuperacao
+  O cardio importa para a recuperação entre séries dentro do treino e também para a recuperação entre treinos.
+  verbatim: "it important for Recovery both between sets within a workout and also for Recovery between workouts"
+
+V145-27  R145@04:49  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: volume, agacho, recuperacao
+  Ele reconhece que existe volume de agachamento demais, a ponto de não recuperar entre as sessões, mesmo quando o objetivo é justamente melhorar o agachamento.
+  verbatim: "if I'm trying to get a better one rep max on my squad there is such a thing as too much squat volume where I'm not recovering properly"
+
+V146-03  R146@00:15  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: frequencia, recuperacao
+  O ideal é distribuir os dias de forma equilibrada ao longo da semana, principalmente os do mesmo grupo muscular, mas não conseguir isso não é o fim do mundo.
+  verbatim: "you're going to be able to have your days equally spread out throughout the week that way you can equally space out your workouts the ones from the same muscle group especially if you can't it's not the"
+
+V146-04  R146@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: frequencia, recuperacao
+  Ao escolher frequência, tanto geral quanto por movimento, deve-se ir com a maior frequência da qual ainda se consegue recuperar.
+  verbatim: "I think it's important that you go with the highest frequency that you can still recover from"
+  condições: V146-26
+
+V146-07  R146@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: volume, recuperacao
+  No mundo real, se a carga excede a capacidade de recuperação, mais volume deixa de dar melhores resultados — é a relação em U invertido.
+  verbatim: "talking about the real world it seems more that if we exceed our recovery abilities this isn't necessarily the case and this is where people introduce the inverted U relationship"
+
+V146-08  R146@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: volume, recuperacao
+  Acima da carga de treino ideal o progresso piora por falta de recuperação, e abaixo dela piora por falta de estímulo.
+  verbatim: "if we go above this ideal training load we're going to make less progress as we will be underrecovered and if we go below this ideal training load we're going to make less progress as we're going to be under trained"
+
+V146-11  R146@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: frequencia, recuperacao
+  Esperar uma semana inteira para treinar o mesmo músculo ou movimento desperdiça tempo, porque a recuperação já terá acontecido bem antes.
+  verbatim: "if we wait a whole week to work out again for the same muscle or movement we're probably gonna be recovered way before then so that's a lot of time we're missing out on that we could use on productive training"
+
+V146-15  R146@02:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: frequencia, recuperacao
+  A recuperação necessária entre séries parece ser logarítmica, o que impõe um limite superior à frequência.
+  verbatim: "it also seems that the recovery needed between sets is logarithmic so there does seem to be an upper limit to our frequency"
+
+V146-25  R146@03:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: frequencia, recuperacao, cardio
+  Quem é mais velho ou tem condicionamento cardiovascular pior demora mais a recuperar e precisa de frequência menor.
+  verbatim: "if somebody is older and or has lower cardiovascular fitness they tend to take longer to recover and need lower frequency as well"
+
+V146-26  R146@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: frequencia, recuperacao
+  Apesar de defender frequências mais altas, ele avisa que às vezes menos é mais e que não se deve exceder a capacidade de recuperação.
+  verbatim: "keep in mind while I am generally advocating for higher frequencies here sometimes less can be more we don't want to exceed our recovery capabilities"
+
+V146-29  R146@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: frequencia, recuperacao
+  A regra geral de frequência é usar a maior frequência da qual se consegue recuperar.
+  verbatim: "the general rule is we want the highest frequency we can recover from"
+  condições: V146-26
+
+V147-04  R147@00:15  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, sono, erro-comum
+  Sentir fadiga num dia não significa que é preciso revisar a recuperação e buscar muito mais sono ou comida.
+  verbatim: "just because you feel fatigued one day it doesn't mean you need to re-look at your recovery and get a ton more sleep or food"
+  condições: V147-13
+
+V148-13  R148@02:16  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: lesao, recuperacao, volume
+  Ele foi leve por algumas semanas para o ombro sarar e a 2 semanas do meet já estava basicamente curado, mas tinha ficado com volume e carga baixos.
+  params: semanas_antes_do_meet=2 semanas [semanas]
+  verbatim: "I had to go light for a few weeks to let it heal up and by two weeks out it had basically healed fully but the thing is I had been going light and lowering the volume"
+
+V149-04  R149@00:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: volume, recuperacao, progressao
+  Treinar com cargas de trabalho mais recuperáveis leva a treinos mais consistentes, e essa consistência ajuda no progresso.
+  verbatim: "Training with more recoverable workloads leads to more consistent workouts, and that consistency really helps in making progress."
+
+V149-05  R149@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, sono, nutricao
+  Combinando isso com sono, proteína, calorias e controle de estresse em dia, não se deve ver flutuações grandes de desempenho.
+  verbatim: "Combine that with staying on top of other factors of recovery, things like sleep, protein, calories, and managing stress, and you shouldn't see too many wild fluctuations in your performance."
+
+V149-06  R149@00:45  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: recuperacao, fadiga
+  Hoje as flutuações grandes de desempenho dele só aparecem quando ele adoece ou tem algum estressor importante.
+  verbatim: "These big fluctuations only seem to happen when I get sick, for example, or I have some major stressor."
+
+V149-22  R149@02:47  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: sono, recuperacao
+  Imprevistos como trânsito e acidentes estão totalmente fora do controle e impedem que se seja perfeito em cada detalhe.
+  verbatim: "It's completely outside of our control. We're not going to be able to be perfect every little detail no matter how hard we try."
+
+V149-24  R149@03:02  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: meta-metodologia, recuperacao
+  O processo não precisa ser perfeito: fazer algo que ajuda a chegar à meta é melhor do que não fazer nada.
+  verbatim: "while we are focused on the process here, the process doesn't need to be perfect. Doing something to help us reach our goal is better than nothing."
+
+V151-06  R151@00:30  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, cardio, capacidade-trabalho
+  A capacidade de trabalho dele despencou, e foi por isso que começou a fazer cardio.
+  verbatim: "my work capacity dropped a ton hence I started doing cardio to fix it"
+
+V151-13  R151@01:00  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: volume, recuperacao, capacidade-trabalho
+  Enquanto a capacidade de trabalho dele estava altíssima, o volume máximo recuperável funcionava bem.
+  verbatim: "when my work capacity was insanely High I could handle doing that maximum recoverable volume and it worked well"
+
+V151-17  R151@01:30  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: fadiga, recuperacao
+  Fora da academia ele vivia fatigado e dolorido, com o cérebro nublado depois das sessões e o humor afetado.
+  verbatim: "outside the gym I just fatiguing achy my brain would be foggy after sessions my mood was affected"
+
+V151-30  R151@02:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: volume, recuperacao
+  Reduzir um pouco e priorizar qualidade e recuperação em vez de quantidade e volume pode render muito.
+  verbatim: "dialing things back a bit and focusing on quality and Recovery over quantity and volume can do a lot for you"
+
+V152-22  R152@02:32  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: sono, recuperacao
+  As caminhadas noturnas antes de dormir melhoraram a qualidade do sono dele e servem para desacelerar.
+  verbatim: "the night walks before bed have helped my Sleep Quality it's a good way to just unwind"
+
+V154-10  R154@01:17  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: frequencia, recuperacao
+  Manter um dos dias leve é o que torna sustentável essa frequência mais alta em cada movimento.
+  verbatim: "keeping it light so it's pretty sustainable to do that higher frequency on each"
+
+V160-39  R160@07:50  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, progressao, recuperacao
+  Subindo gradualmente até sobrecarregar o tecido, com recuperação adequada e gestão de carga, a pessoa não se lesiona — e na verdade reduz a lesão com sobrecarga progressiva bem feita.
+  verbatim: "you work your way up gradually to a point you have overloaded tissue you work on proper recovery load management you will not get injured you will actually reduce injury when you properly progressively overload"
+
+V169-30  R169@06:51  tier:R scope:GERAL modo:mecanismo genero:perguntas explicit
+  tópicos: volume, recuperacao, progressao
+  Se você mantém o mesmo nível de volume conforme fica mais forte, vai saindo cada vez mais da zona ótima e sub-recuperando.
+  verbatim: "so if you keep the same volume level as you get stronger you're going to go closer and closer to outside that optimal zone you know you're going to be under recovering more and not getting the best results"
+
+V169-40  R169@12:10  tier:R scope:PESSOAL modo:narrativa genero:perguntas explicit
+  tópicos: nutricao, recuperacao
+  Ele toma suplemento de vitamina D todo dia e come uma dieta rica em vitamina D, e acha que o mundo em geral não consome o suficiente.
+  verbatim: "d i take a vitamin d supplement every day and i eat a diet high in vitamin d i think the world in general just does not get enough vitamin d"
+
+V171-14  R171@04:50  tier:R scope:GERAL modo:prescricao genero:perguntas explicit
+  tópicos: lesao, recuperacao, volume
+  A volta de lesão é reabilitação progressiva: adicionar volume e fazer o máximo de movimento o mais específico possível com pouca ou nenhuma dor.
+  verbatim: "Just work through it, progressive rehab, adding volume, doing as much movement as you can as specific as possible with minimal to little to no pain"
+  condições: V027-23
+
+V171-27  R171@07:37  tier:R scope:GERAL modo:prescricao genero:perguntas explicit
+  tópicos: sono, recuperacao
+  Higiene do sono é algo que ele passa para todos os atletas que treina e pratica ele mesmo.
+  verbatim: "Something I give all people I coach and what I practice myself is the emphasis on sleep hygiene"
+
+V171-29  R171@08:22  tier:R scope:PESSOAL modo:narrativa genero:perguntas explicit
+  tópicos: sono, recuperacao
+  Usa melatonina e magnésio, que o ajudam a ter sono profundo.
+  verbatim: "melatonin and magnesium helps me sleep um deep sleep, really good"
+
+V175-37  R175@11:29  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: recuperacao, capacidade-trabalho
+  Naquele período a recuperação dele estava impecável e ele não tinha estressores fora do treino.
+  verbatim: "my recovery is on point i don't have stressors"
+
+V175-39  R175@11:45  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: recuperacao, idade, capacidade-trabalho
+  Na puberdade a testosterona é naturalmente tão alta que dá para se recuperar de volume assim com facilidade.
+  verbatim: "keep in mind you're going through puberty at this point your testosterone levels are so big naturally you can recover from it easily"
+
+V175-45  R175@13:01  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, frequencia, recuperacao
+  Em 2 semanas de alta frequência a tendinite patelar passou de impedir metade das sessões a absolutamente nada.
+  params: tempo=2 semanas [semanas]
+  verbatim: "within two weeks my patellar tendonitis had gone to the point of half my sessions i can't finish to nothing absolutely nothing"
+
+V176-05  R176@01:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, sono, nutricao
+  Atribui a sessão ruim de agachamento à recuperação: dormiu mal, comeu mal no dia anterior e acordou cansado e dolorido.
+  verbatim: "i didn't get the best night's sleep didn't eat the best the day before woke up feeling tired and sore and you know it leads to bad sessions when you do that"
+
+  filtros que estão escondendo material:
+     --topic recuperacao: 368 COM ele, 6912 SEM ele — esconde 6544 claim(s)
+        F001-01(undefined/undefined) F001-02(undefined/undefined) F001-03(undefined/undefined) F001-04(undefined/undefined) F001-05(undefined/undefined) F001-06(undefined/undefined) F001-07(undefined/undefined) F001-08(undefined/undefined) …+6536
+

@@ -1,0 +1,638 @@
+
+119 claim(s) para topic=dor:
+
+G004-48  G004@10:08  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: capacidade-trabalho, progressao, dor
+  No exemplo dele, alguém sedentário que passa a fazer 100 agachamentos com peso corporal por dia não consegue nem andar no dia seguinte.
+  params: reps_diarias=100 reps [reps]
+  verbatim: "you start doing 100 body weight squats a day which sounds awful"
+
+G004-49  G004@10:23  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, recuperacao, aprendizado-motor
+  Pelo repeated bout effect, a mesma sessão passa a doer menos e a dor tardia dura menos a cada exposição.
+  verbatim: "the next time you do it as part of the repeated bout effect it's not going to be as painful your Doms aren't going to last as long"
+
+G008-38  G008@08:38  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: fadiga, dor, hipertrofia
+  A pergunta prática é se aquela série vai causar acúmulo de lactato e dor tardia, ou se vai machucar articulação e fritar o sistema nervoso central.
+  verbatim: "is this set going to cause a bunch of lactic acid buildup and give me Doms or is it just going to hurt my joints and Fry my CNS"
+
+G029-10  G029@03:06  tier:R scope:GERAL modo:mecanismo genero:form-check explicit
+  tópicos: terra, dor, costas, lesao
+  O arredondamento da parte média das costas no terra pode levar a dor nas costas.
+  verbatim: "it could lead to some back pain because you you have rounding really through your midback"
+
+G030-18  G030@05:12  tier:R scope:GERAL modo:prescricao genero:form-check explicit
+  tópicos: agacho, dor, setup
+  Quem começar a sentir dor forte no cotovelo deve checar se está mesmo apoiando o peso da barra nas costas.
+  verbatim: "if you start getting some crazy elbow pain one of the things you can make sure you're doing is you're really supporting the weight of the bar on your back and not holding a lot of the weight in your hands"
+
+G030-19  G030@05:27  tier:R scope:GERAL modo:mecanismo genero:form-check explicit
+  tópicos: agacho, dor, lesao
+  Segurar boa parte do peso da barra nas mãos, em vez de apoiá-lo nas costas, gera tensão nos cotovelos.
+  verbatim: "really supporting the weight of the bar on your back and not holding a lot of the weight in your hands which will put strain on your elbows"
+
+G034-21  G034@03:03  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: dor, core, fadiga
+  As costas dele estavam mais travadas que o normal e ficou difícil fazer o brace do jeito que ele queria.
+  verbatim: "my back feels a little tighter than usual. It's a little bit hard to uh brace all the way that the way I would like"
+
+G034-22  G034@03:03  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: dor, lesao, autorregulacao
+  Com a articulação sacroilíaca um pouco irritada, ele não teve quebra de forma e avaliou estar em 90 a 95%.
+  params: sensacao_min=90 % [pct]  sensacao_max=95 % [pct]
+  verbatim: "my SI joint is just a little aggravated, but uh I haven't had any form breakdown really. Um everything feels okay. I'd say, you know, 90 95%."
+
+G035-22  G035@03:34  tier:R scope:PESSOAL modo:anedota genero:log-de-treino explicit
+  tópicos: cinto, equipamento, dor
+  Ele chanfrou o canto interno do cinto SBD porque a sobreposição do cinto às vezes crava, dependendo de onde assenta.
+  verbatim: "I ended up uh beveling the belt uh the uh inside of the SBD belt on the corner since the belt overlaps it can dig in sometimes depending on where it's setting"
+
+G036-12  G036@01:47  tier:R scope:PESSOAL modo:fato genero:log-de-treino explicit
+  tópicos: ombros, dor, supino
+  Ele convive com um ombro dolorido que, para ele, vem junto de levantar pesado.
+  verbatim: "dealing with a little bit of achy shoulder type stuff that just comes along with LIF heavy"
+
+G038-14  G038@01:46  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: ombros, dor, sono, recuperacao
+  Dor de ombro no começo da semana, plantões noturnos e as festas foram o que desorganizou a semana de treino dele.
+  verbatim: "some shoulder pain earlier in the week was one of the reasons why I got so off with the holidays and everything but had also had some uh graveyard shifts"
+
+G040-09  G040@01:31  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: supino, selecao-exercicio, dor, lesao
+  Ele sobe os pés no banco no Spoto press não só para focar o tronco superior, mas para dar folga à articulação sacroilíaca quando ela está fatigada.
+  verbatim: "often times I'll bring my feet up on the bench uh not only to focus on upper body but also to give my SI joint a break if it's feeling a little fatigued"
+
+G040-10  G040@01:46  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, selecao-exercicio, dor
+  Ele já usa os pés no banco como medida preventiva, e não só quando a sacroilíaca dói.
+  verbatim: "and so I do that almost as a preemptive measure now with some of the Spoto pressing I do"
+
+G040-24  G040@04:19  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: strap, pegada, dor
+  Ele passou a usar mais strap porque a saúde das mãos dele estava sofrendo e ele queria evitar rasgar calos e perder treinos.
+  verbatim: "started using the strap a little more I noticed my hand health is really kind of suffering right now and so I'm trying to make sure that I don't tear any calluses that it would put me off uh decent training"
+
+G041-09  G041@01:46  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: terra, costas, dor, autorregulacao
+  Ele decidiu não fazer o dia normal de terra porque as costas estavam incomodando.
+  verbatim: "but my back had been bothering me a little bit and so I decided not to do my normal deadlift day"
+
+G043-07  G043@02:03  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: core, dor, fadiga
+  Depois desse treino ele teve uma cãibra na parede abdominal inteira.
+  verbatim: "it was a really a really difficult workout um had full abdominal wall cramp afterwards"
+
+G043-11  G043@02:33  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, lesao, series-reps, costas
+  Em trabalho de repetições altas, travar demais no topo e relaxar para tomar ar coloca tensão extra nas costas porque o atleta entra numa posição de lombar arqueada ao se levantar e descansa ali, o que pode causar dor na articulação sacroilíaca.
+  verbatim: "one of the things to look out for with higher rep work is uh SI joint pain if you overlock out your reps up at the top and then you relax as you take a breath that can really put extra strain on your back because you kind of get into that arched back position as you stand up and then kind of rest that can really cause SI joint pain"
+
+G043-13  G043@03:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: barra-alta, dor, costas, series-reps
+  Ele avisa que até o agachamento barra alta pode começar a machucar as costas desse jeito quando se faz muito trabalho de repetições.
+  verbatim: "so be aware of that if you're doing a lot of rep work with uh even high bar squats can start to hurt your back that way"
+
+G048-15  G048@02:19  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: mobilidade, dor, pernas
+  ele vinha fazendo trabalho de mobilidade nos quadríceps e por isso eles estavam mais doloridos
+  verbatim: "I've been doing a little bit of mobility work on my quads, so they're a little bit more sore"
+
+G048-22  G048@03:34  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: mobilidade, dor, pernas
+  ele fez o trabalho nos quadríceps na noite anterior ao treino de agacho e dava para sentir que estavam levemente doloridos, quase como um hematoma
+  verbatim: "night before the squat workout, so I can tell they're just a little sore, like minor, kind of almost like a bruised feeling"
+
+G050-03  G050@01:36  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: dor, fadiga, recuperacao
+  cerca de 3 horas depois do treino ele se sente como se tivesse sido atropelado, mas isso passa em alguns dias
+  params: atraso_ate_a_dor=3 horas [horas]
+  verbatim: "About 3 hours from now, I feel like I uh got hit by a car, but it'll go away in a couple of days"
+
+V001-05  R001@00:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, intensidade
+  A carga certa na reabilitação é o limiar em que dá para continuar treinando com desconforto leve sem piorar o tecido.
+  verbatim: "you need to find the threshold where you can keep it moving, experiencing some light discomfort is okay"
+  condições: V001-06
+
+V001-06  R001@01:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Usa como heurística um nível de dor em torno de 2 na escala de dez pontos como a carga de trabalho aproximadamente certa.
+  params: dor_alvo=2 dor_0a10 [escala_dor]
+  verbatim: "the rough heuristic I found is about a 2 out of 10 level of pain is usually good for most people"
+  condições: V001-07, V001-29, V027-23
+  conflita: V138-19
+
+V001-08  R001@01:30  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, erro-comum
+  Uma única sessão mais dolorosa não significa que o programa de reabilitação não esteja funcionando.
+  verbatim: "if you have one more painful session, that doesn't mean your rehab program isn't working"
+
+V001-20  R001@05:06  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: dor
+  É possível sentir dor sem nenhum dano tecidual.
+  verbatim: "In fact, we can have pain with absolutely no damage"
+
+V001-21  R001@05:06  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: dor
+  O modelo mais abrangente para explicar dor é o biopsicossocial, e não o modelo biomédico de dano tecidual.
+  verbatim: "The more encompassing model is called the biopsychosocial model"
+
+V001-22  R001@05:36  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, lesao
+  Num estudo com população finlandesa, 96% dos ombros assintomáticos tinham alguma anormalidade de imagem.
+  params: ombros_assintomaticos_com_anormalidade=96 % [pct]
+  verbatim: "And get this, 96% of asymptomatic shoulders had some abnormality"
+
+V001-23  R001@06:38  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, mentalidade
+  Narrativas de músculo fraco ou desequilíbrio criam nocebo, que está ligado a piores resultados de dor e mais incapacidade para o mesmo nível de dano.
+  verbatim: "this nocebo has been linked to worse results for pain and higher levels of disability for the same level of damage"
+
+V001-26  R001@07:24  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: dor, recuperacao
+  A maioria das dores, inclusive lombares, resolve completamente sozinha com o tempo.
+  verbatim: "most pains, even back pains, resolve completely on their own just with time"
+
+V001-29  R001@01:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Cada pessoa e cada lesão são diferentes, então a heurística de dor pode precisar de ajuste.
+  verbatim: "every person and every injury is different, so it might take some adjusting"
+
+V005-06  R005@01:15  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: cardio, lesao, dor
+  Correr mais de uma hora por semana gerava impacto demais nos joelhos dele.
+  params: volume_corrida=1 h/semana [horas_semana]
+  verbatim: "over an hour a week of running, it was just too much impact forces on my knees"
+
+V012-14  R012@01:16  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: supino, dor, programacao
+  o novo formato de supino dele está indo muito bem e sem dor
+  verbatim: "The new format I've got is going great. No pain."
+
+V017-19  R017@03:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, lesao, dor
+  a variação escolhida deve ser a que alivia a lesão; ele escolheu as pausas porque eram o que sentia melhor nas costas
+  verbatim: "the other thing is about variations that make it easier for you. You know, I chose pauses cuz those are what felt easier on my back."
+  condições: V017-22
+
+V017-20  R017@03:18  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, lesao, dor
+  os exemplos que ele dá são pegada fechada para ombro no supino, block pull no lugar do terra e barra alta no lugar da barra baixa
+  verbatim: "fine with close grip. Maybe block pulls won't hurt your back, but regular deadlifts do. Maybe high bar feels good on your back, but low bar doesn't"
+  condições: V017-19, V017-22
+
+V020-08  R020@01:32  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, lesao, dor
+  o supino é o levantamento em que ele vai pior no momento e ele já teve problemas de ombro nele
+  verbatim: "Bench is the one I'm doing the worst at right now."
+
+V020-12  R020@02:02  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, dor, intensidade
+  esse experimento não funcionou: a dor de ombro voltou pior do que em anos e o supino dele regrediu cerca de 20 lb
+  params: regressao=20 lb [lb]
+  verbatim: "Didn't work at all. Shoulder pain flared up, worse it's been in years, and my bench regressed about 20 lbs."
+
+V020-19  R020@03:03  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, selecao-exercicio, dor
+  ele cortou o supino pegada fechada e o Larson press porque não transferiam bem e a pegada fechada incomodava mais o ombro dele
+  verbatim: "I was also doing a close grip and Larson before, but I just found out they they weren't carrying over as well for me, and close grip seemed to be bothering my shoulders more"
+
+V021-12  R021@02:18  tier:R scope:PESSOAL modo:anedota genero:competicao explicit
+  tópicos: supino, intensidade, volume, dor
+  Depois do North American Championships ele testou mais intensidade e menos volume no supino, não deu certo e a dor no ombro voltou a inflamar.
+  verbatim: "i tried something a bit different with my bench. i went for a bit more intensity, bit less volume. it just didn't go well. my shoulder pain flared up"
+
+V027-01  R027@00:02  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, terra, dor
+  Menos de uma semana depois de lesionar as costas ele se sentia perfeitamente bem e puxou 760 lb sem dor.
+  params: terra_pos_lesao=760 lb [lb]
+  verbatim: "it's less than a week later and i feel perfectly fine. deadlifted 760 lbs pain-free"
+
+V027-07  R027@01:18  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: dor, lesao, meta-metodologia
+  A abordagem moderna da dor é o modelo biopsicossocial.
+  verbatim: "to pain is something called the biopsychosocial model"
+
+V027-08  R027@01:33  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade
+  O estado mental afeta de forma decisiva a resposta à dor.
+  verbatim: "your mindset absolutely affects how you respond to pain"
+
+V027-09  R027@01:49  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade, erro-comum
+  Comprar a ideia dos exercícios mágicos pode promover cinesiofobia, o medo de se movimentar.
+  verbatim: "you kind of can like promote what's called kinesiophobia, which is like fear of movement"
+
+V027-14  R027@03:05  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, lesao
+  Em outro estudo, achados adversos em exames de imagem das costas não se correlacionaram com dor lombar.
+  verbatim: "they looked at scans of people's backs for some adverse things, and they found it didn't really correlate with back pain"
+
+V027-15  R027@03:20  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, lesao
+  Dano tecidual tem papel na dor, mas não existe relação um-para-um entre dor e dano.
+  verbatim: "tissue damage can play a role here, right? but it's not like a one-to-one link between pain and damage"
+
+V027-16  R027@03:35  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, lesao, recuperacao
+  Mesmo depois de o tecido curar, as respostas protetoras de guarding continuam, e leva tempo para reconstruir a confiança no próprio corpo.
+  verbatim: "but then it heals up, but those protective like guarding measures are still there. it takes some time to just rebuild [music] that trust in your body again"
+
+V027-22  R027@04:36  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, dor, recuperacao
+  Na volta ao treino depois do repouso o tecido está mais fraco e mais sensível à dor.
+  verbatim: "when you try to come back, the tissue is weaker and more sensitive to pain"
+
+V027-23  R027@05:06  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, erro-comum, fadiga, dor
+  Ele observa que lesões menores acabam sendo movimentadas mais do que deveriam, justamente porque é fácil treinar através delas.
+  verbatim: "i actually find more minor injuries [music] end up being moved more than they should. and that's because it's easier to train through these minor injuries"
+
+V027-24  R027@05:06  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: dor, supino, lesao
+  Ele conviveu anos com problemas de tendão do peitoral no supino e só agora está superando.
+  verbatim: "i've dealt with years of pec tendon [music] issues on bench. i'm finally"
+
+V027-25  R027@05:21  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: dor, progressao, erro-comum, supino, peito
+  A dor moderada piorava a qualidade do treino dele, e o resultado foi patinar sem progresso enquanto a dor também não melhorava.
+  verbatim: "that pain did impact my training quality a bit. so i just kind of end up spinning my wheels and not making progress, and the pain doesn't get any better, either"
+  conflita: V079-34, V138-01, V138-20
+
+V027-26  R027@05:38  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, autorregulacao
+  A regra que ele usa hoje é mover o máximo possível desde que os sintomas de dor sigam em queda ao longo do tempo.
+  verbatim: "you want to move as much as you can while still seeing your pain symptoms [music] trending down over time"
+  condições: V027-28
+
+V027-27  R027@05:38  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: dor, autorregulacao
+  Um dia isolado de pico de dor é normal e não deve gerar pânico.
+  verbatim: "if you have the odd day here and there where your pain spikes, don't freak out. it's normal"
+
+V027-28  R027@05:53  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, deload, autorregulacao, estagnacao
+  Se os picos são frequentes, ou a dor estaciona ou piora, é preciso reduzir mais a carga.
+  verbatim: "if you're having those spikes a lot or you're really just plateauing in pain or even getting worse, you've got to reduce the load more"
+  condições: V027-27
+
+V028-03  R028@00:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, dor, agacho
+  Ao desencaixar a barra do back down ele sentiu dor nas costas e a perna ficou dormente.
+  verbatim: "when i went to unrackck it, i felt this pain in my back and my leg went numb"
+
+V028-04  R028@00:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, dor
+  As costas dele travaram imediatamente e ficaram tensas.
+  verbatim: "immediately, my back started seizing up and it was tight"
+
+V028-10  R028@01:16  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: lesao, autorregulacao, dor
+  O critério dele era recuar se a dor estivesse forte ou piorando com o movimento.
+  verbatim: "if the pain was bad or getting worse from movement, i would have backed it off"
+
+V028-26  R028@04:35  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, mentalidade
+  A síntese dele para lidar com dor no treino é manter a calma, porque a mentalidade afeta de fato a dor.
+  verbatim: "stay calm because your mindset absolutely affects pain"
+  condições: V028-10
+
+V029-26  R029@04:34  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, intensidade, dor, volume
+  No supino ele erra ainda mais leve porque intensidade alta inflama a lesão antiga de ombro, e compensa com mais volume.
+  verbatim: "on bench i find after the air even lighter because um it just flares up my shoulder injuries from before when i go more intense. hence i have more volume to compensate"
+
+V037-12  R037@01:16  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, dor, cardio
+  No treino dele e no dos alunos ele notou bem menos dores e lesões depois de aumentar o cardio.
+  verbatim: "I've noticed that anecdotally in my own training and the people I coach, way less little aches and pains and just major injuries as well"
+
+V042-17  R042@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: pegada, dor
+  É esse rolamento da barra na mão que destrói a pele das mãos.
+  verbatim: "plus that rolling is really what shreds your hands"
+
+V042-19  R042@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: pegada, dor
+  Boa parte dos problemas de pegada vem de ter as mãos muito machucadas.
+  verbatim: "a lot of grip issues can come from having hands are really beat up"
+
+V068-11  R068@00:45  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: barra-alta, ombros, dor
+  Para quem tem problemas de ombro ou cotovelo por causa do agachamento, a posição mais alta da barra tira estresse dessas articulações.
+  verbatim: "for people who have shoulder or elbow issues from back squats, the higher bar position also takes some stress off of these joints."
+
+V068-14  R068@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, dor
+  Lesões por overuse surgem de repetir o mesmo padrão de movimento sem parar, criando problemas como tendinite.
+  verbatim: "These arise from doing the same movement pattern over and over again, creating issues like tendonitis."
+
+V072-25  R072@02:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade, lesao
+  Crenças mentais sobre dor podem agravar o quadro e fazer sentir mais dor mesmo na ausência de qualquer dano.
+  verbatim: "Mental beliefs on pain can actually exacerbate the issues and make you feel more pain even in the absence of any damage."
+
+V072-26  R072@02:47  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, lesao, mentalidade
+  Em lesões de manguito rotador, a crença na própria capacidade de reabilitar previu melhores desfechos do que o grau de dano ou incapacidade.
+  verbatim: "belief in ability to rehab was linked with better rehab outcomes for rotator cuff tears versus the degree of damage or disability"
+
+V079-25  R079@03:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, mentalidade, tecnica
+  Não se deve ter medo de determinadas formas, porque a mente também tem papel na dor.
+  verbatim: "you still shouldn't be afraid of certain forms because your mind can play a role in pain as well"
+
+V079-26  R079@03:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade
+  A mentalidade da pessoa afeta muito a resposta de dor, assim como uma variedade de outros fatores não fisiológicos.
+  verbatim: "People's mindset greatly affects your pain response, as does a variety of other non-physiological factors."
+
+V079-27  R079@03:17  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: dor, lesao
+  Não precisa haver dano para sentir dor, e muitas vezes o dano não se correlaciona com a dor.
+  verbatim: "There doesn't need to be damage to feel pain. In fact, often times damage does not correlate with pain."
+
+V079-28  R079@03:17  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, costas, lesao
+  Pessoas com e sem degeneração discal têm a mesma probabilidade de ter dor nas costas.
+  verbatim: "people with or without disc degeneration are just as likely to have back pain"
+
+V079-29  R079@03:17  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, costas
+  Mesmo entre pessoas de 80 anos sem dor nas costas, 96% têm degeneração discal.
+  params: prevalencia_degeneracao=96 % [pct]  idade_amostra=80 anos [idade]
+  verbatim: "Even 96% of 80-year-olds without back pain have disc degeneration."
+
+V079-30  R079@03:32  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, mentalidade, lesao
+  Ter medo de determinadas formas está ligado a relesão.
+  verbatim: "Having fear of certain forms is linked to reinjury."
+
+V079-31  R079@03:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade, lesao
+  O medo gera uma apreensão que agrava a resposta de dor e leva a evitar movimentos que ajudariam na cura e na tolerância.
+  verbatim: "It leads to fearfulness that exacerbates the pain response as well as avoidance of movements that can aid in healing and tolerance"
+
+V079-32  R079@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, mobilidade
+  Deve-se continuar se movendo mesmo através de dor leve, o que leva a melhores desfechos de reabilitação.
+  verbatim: "keep moving even through minor pain which leads to better rehab outcomes"
+  condições: V079-33, V079-34, V079-39, V027-23
+
+V079-33  R079@03:47  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, erro-comum
+  Muita gente exagera na reabilitação e acaba arrastando a própria lesão.
+  verbatim: "Many people overdo it and drag out their injuries"
+
+V079-34  R079@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Anedoticamente, ele achou que um nível de dor de 2 a 3 numa escala de 10 é uma boa faixa para empurrar na reabilitação, ajustando ao que faz os sintomas melhorarem com o tempo.
+  params: dor_min=2 escala 0-10 [escala_dor]  dor_max=3 escala 0-10 [escala_dor]  escala_max=10 escala 0-10 [escala_dor]
+  verbatim: "Anecdotally, I have found that two to three out of 10 pain level is a good amount to push at though ultimately adjust to what you need for"
+  condições: V079-39, V027-23, V086-21
+  conflita: V027-25
+
+V079-35  R079@04:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio, dor
+  Na lesão, deve-se procurar o movimento mais específico possível que não doa e empurrar nele com a mesma intensidade.
+  verbatim: "I'd also try to find the most specific non-p painful movement you can push just as hard."
+
+V079-39  R079@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao
+  Mesmo assim, é preciso seguir cauteloso.
+  verbatim: "Be cautious still"
+
+V086-20  R086@02:47  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, dor
+  A maioria das pessoas não vai leve o suficiente, pelo tempo necessário, para reabilitar a lesão.
+  verbatim: "most people do not go as late as they need to to rehab the injury"
+
+V086-21  R086@02:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao
+  Treinar com dor leve pode ser aceitável ou até melhor, mas os sintomas precisam estar melhorando ao longo do tempo.
+  verbatim: "yes training through light pain can be okay or or even better link to research on that below but your symptoms should be trending better over time"
+  condições: V086-20, V086-22
+
+V089-24  R089@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor
+  Com tendinite não se deve descansar completamente, porque isso na verdade piora o quadro.
+  verbatim: "tendonitis is one of those things where you don't want to completely rest as that actually makes it worse"
+
+V089-25  R089@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, selecao-exercicio
+  O contorno útil para tendinite é usar variações de velocidade lenta, como trabalho de tempo e pausas, porque a tensão no tendão depende do peso e da velocidade em que ele é movido.
+  verbatim: "a useful workaround is doing slow velocity variations things like tempo work or pauses tendon strain is based off weight and speed we move it at"
+
+V089-26  R089@03:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: intensidade, lesao, dor
+  Nessas variações lentas normalmente dá para trabalhar em intensidades bem altas sem problema.
+  verbatim: "you can often work at pretty high intensities on these just fine"
+
+V089-27  R089@03:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, dor
+  O trabalho excêntrico pode ajudar a reabilitar tendinite.
+  verbatim: "plus ecentric may help with rehabbing tendonitis"
+
+V091-27  R091@04:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: agacho, dor, setup
+  Para evitar tensão no punho no agachamento, a barra tem que ficar apoiada nas costas e não nos braços, com alguma inclinação para frente no topo.
+  verbatim: "I find it mainly comes down to getting the bar supported by the back not the arm so much so make sure you have some forward lean at the top"
+
+V091-29  R091@04:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: agacho, pegada, dor
+  Começar com uma pegada mais aberta, que é mais fácil para o punho, e ir fechando devagar para dar tempo de aclimatação.
+  verbatim: "you can also start with a wider grip which should be easier on the wrist and just bring it in slowly give them time to acclimate"
+
+V095-23  R095@03:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, supino, bracos
+  Tendinite de peitoral é frequentemente confundida com dor no bíceps, porque o tendão do peitoral se insere perto do bíceps.
+  verbatim: "I also want to note that PEC tontis is often confused to be biceps pain that's because a PEC tendon will insert by the biceps"
+
+V095-24  R095@03:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, peito, supino
+  Ele estima que uns 90% dos quadros de dor no bíceps em powerlifters sejam na verdade isso, um pouco de overuse no tendão do peitoral.
+  params: proporcao_casos=90 % [pct]
+  verbatim: "I would say like 90% of more biceps pain issues for powerlifters are just this a bit of overuse interp tendon"
+
+V106-30  R106@03:32  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: recuperacao, dor
+  Ele estava bem dolorido em glúteos e costas, mas se sente melhor depois do treino leve.
+  verbatim: "definitely felt really sore in my glutes and back again um still feel better post-workout now though which is nice"
+
+V108-27  R108@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor
+  Quando lesionado, um dos exercícios a fazer é o próprio exercício doloroso, para reabilitar a tolerância a ele.
+  verbatim: "whenever you're injured I say you should do two exercises one is the painful exercise itself so you can rehab your tolerance to it"
+  condições: V108-32
+
+V108-28  R108@03:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade, lesao
+  Respostas psicológicas aumentam a dor, e o caminho para superar isso é a exposição ao movimento.
+  verbatim: "psychological responses increase pain and you want to overcome this by exposure to the movement"
+
+V108-29  R108@03:17  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, dor
+  Não dá para dizer que reabilitou uma lesão se você não trabalhou o exercício de volta até ele ficar tolerável.
+  verbatim: "can you really say you rehabed an injury if you haven't worked the exercise back to being tolerable"
+
+V109-07  R109@01:17  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: condicionamento, dor, capacidade-trabalho
+  Também é preciso considerar a capacidade de trabalho: qualquer um que comece a levantar terá alguma dor muscular tardia inicial.
+  verbatim: "we should consider work capacity there will be some initial delayed onset muscle soreness for anybody who starts lifting"
+
+V113-09  R113@00:45  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: barra-alta, setup, dor
+  O único ponto negativo real do barra alta é a posição da barra poder ser desconfortável para quem é novo e não tem massa de trapézio, mas a adaptação é rápida.
+  verbatim: "sometimes a high bar position can be a bit uncomfortable especially if you're new and don't have much trap Mass but you can acclimate to that pretty quickly"
+
+V118-07  R118@01:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: ombros, dor, recuperacao
+  Ele sentiu alguma dor nos ombros no dia seguinte ao desenvolvimento, mas os dias de supino posteriores da semana foram normais, então concluiu que era apenas dor muscular tardia.
+  verbatim: "so I did feel a bit of soreness in my shoulders the next day after doing the HP it was a rest day but my later bench days in the week I was just fine so I think it was just some Doms"
+
+V118-08  R118@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, mentalidade
+  Ao lidar com dor e lesão é bom manter a calma, porque dor pode ocorrer mesmo sem dano tecidual por fatores psicossociais.
+  verbatim: "it's good to stay calm like this pain can occur even without tissue damage due to psychosocial factors"
+  condições: V028-10
+
+V118-09  R118@01:31  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: dor, mentalidade
+  Dor não é só física, é também mental.
+  verbatim: "the point being pain isn't just physical it's also mental"
+
+V127-15  R127@02:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, volume
+  Quem se detona em um movimento, como ombro no supino ou lombar no terra, pode fazer a maior parte ou até todo o trabalho com variações auto-limitantes para garantir volume suficiente de prática.
+  verbatim: "if you're somebody who gets quite beat up on a lift your shoulder Butters you on bench back issues on deadlifts Etc you can do most or even all of your work with self-limiting variations"
+  condições: V127-13
+
+V130-11  R130@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, dor, selecao-exercicio
+  Excêntricas mais lentas podem ser úteis para reduzir o estresse tendíneo, o que é bom para quem está lidando com lesões.
+  verbatim: "slower Centrics can also be useful for lowering tendon stress which are good if you're dealing with injuries"
+
+V138-06  R138@00:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade
+  Dor é em parte mental e não só física: ter medo de certos movimentos contribui para níveis mais altos de dor.
+  verbatim: "pain is part mental not just physical having fear of certain movements can contribute to higher pain levels"
+
+V138-07  R138@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, lesao
+  Esse componente mental da dor pode ser independente do nível de dano tecidual, ou da existência de qualquer dano.
+  verbatim: "this can be independent of the level of tissue damage or the presence of tissue damage whatsoever"
+
+V138-18  R138@02:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, intensidade, dor, proximidade-da-falha
+  No exercício doloroso se reduz tanto o peso absoluto quanto a proximidade da falha até o ponto em que se sente alguma dor mas não se sente pior na sessão seguinte, o que ele chama de limiar de dor.
+  verbatim: "we want to reduce the loading in terms of both absolute weight and appr proximity to failure to the point where we feel some pain but we don't feel worse the next session"
+  condições: V138-33
+
+V138-19  R138@02:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Anedoticamente, numa escala de dor de 1 a 10, ele acha que o limiar costuma ficar em torno de 2 a 4.
+  params: escala_min=1 escala 0-10 [escala_dor]  escala_max=10 escala 0-10 [escala_dor]  limiar_min=2 escala 0-10 [escala_dor]  limiar_max=4 escala 0-10 [escala_dor]
+  verbatim: "on the pain scale of 1 to 10 I find the usual level to be around the 2 to four"
+  condições: V138-18, V138-33, V027-23
+  conflita: V001-06
+
+V138-20  R138@02:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, recuperacao
+  A pesquisa mostra que reabilitar com dor leve leva a tempos de reabilitação mais rápidos, então é para treinar com alguma dor leve e aprender a não catastrofizá-la.
+  verbatim: "research has shown that rehab with light pain does lead to quicker rehab times though so we do want to train through some light pain and learn not to catastrophize it"
+  condições: V138-18, V138-33, V027-23
+  conflita: V027-25
+
+V138-32  R138@04:48  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, mentalidade
+  O lado mental da dor importa tanto quanto ou mais do que o lado físico.
+  verbatim: "the mental set of pain matters just as much if not more than the physical side"
+
+V138-33  R138@02:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Cada pessoa e cada lesão são diferentes, e as tolerâncias à dor variam.
+  verbatim: "everybody and every injury is different and we have different pain tolerances"
+
+V140-27  R140@03:19  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade, lesao
+  Preocupar-se que certas técnicas causam lesão aumenta, por si só, o risco de dor e de lesão.
+  verbatim: "worrying about certain forms causing injury actually increases your risk of pain and injury independently"
+
+V150-16  R150@01:46  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, dor, mentalidade
+  Ter medo de certos padrões de movimento aumenta o risco de lesão e de dor.
+  verbatim: "it's been shown that being fearful of certain movement patterns again increases our risk of injuries and pain"
+
+V151-20  R151@01:45  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, dor
+  A lesão de glúteo causou sintomas tipo ciática: pé dormente, dor irradiando pela perna e dificuldade de andar normalmente.
+  verbatim: "this caused sciatica like symptoms you know like my foot was numb I had shooting pain down my legs I couldn't even walk normally"
+
+V156-07  R156@00:45  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: core, dor, lesao
+  O vínculo entre força de core e dor lombar é mais ou menos inexistente na literatura atual, crédito ao Dr. Aaron Kubal.
+  verbatim: "He basically looked into this link between core strength and lower back pain and it's more or less nonexistent in the literature nowadays."
+
+V156-08  R156@00:45  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: core, dor
+  Um estudo comparou pessoas com core fraco e core forte e ambos os grupos desenvolveram dor lombar na mesma taxa, ou seja, core forte não é protetivo.
+  verbatim: "looked at people with weak cores and strong cores. Both developed lower back pain at the same rate. Stronger cores are not protective against lower back pain."
+
+V156-09  R156@01:00  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: core, dor
+  Em pessoas com dor lombar, fortalecer o core não fez melhor que exercício geral e fez pior que educação sobre dor lombar.
+  verbatim: "Core strengthening is nothing special. It did no better than just general exercise. And it did worse than education about lower back pain."
+
+V157-22  R157@04:49  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: pegada, dor, agacho
+  Quem sente desconforto no punho ao agachar tende a se aliviar com essa pegada.
+  verbatim: "some people get wrist discomfort in squat this will help alleviate that"
+
+V167-17  R167@03:03  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: supino, dor, ombros
+  A ressalva é que algumas pessoas sentem dor no ombro ao fazer flare.
+  verbatim: "there is one caveat to this form some people when they flare will experience pain in their shoulders"
+
+V167-18  R167@03:18  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: supino, dor, ombros
+  Ele não acha que essa dor seja inerente ao movimento, e sim algo a que o corpo precisa de tempo para se acostumar.
+  verbatim: "now i don't think this is inherent in the movement at all i think it's just something you need to give time for your body to get used to"
+
+V168-03  R168@00:00  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: agacho, dor, lesao
+  O exercício não só o deixou mais eficiente como o ajudou a superar uma dor tão ruim que ele quase teve que parar de treinar.
+  verbatim: "it not only made me more efficient but it helped me overcome pain that it was so bad I almost had to quit lifting"
+
+V168-06  R168@00:47  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: agacho, dor, lesao
+  Essa posição de joelho causava dor e tendinite, que ele sofreu por 2 anos.
+  params: duracao_tendinite=2 anos [anos]
+  verbatim: "this knee position also caused me pain and tontis which I suffered from for 2 years"
+
+V169-07  R169@01:31  tier:R scope:PESSOAL modo:narrativa genero:perguntas explicit
+  tópicos: ombros, dor, selecao-exercicio
+  Ele parou de fazer desenvolvimento militar em pé porque começou a machucar as costas e ele sentia fadiga na articulação sacroilíaca.
+  verbatim: "i used to do them a lot but it just started hurting my back a bit and i did feel like fatigue in my si joint and i didn't think it was worth"
+
+V170-41  R170@09:02  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: pegada, ombros, dor
+  Para ele o pegada fechada agrava o ombro e a pegada larga não, porque no pegada fechada há mais extensão e flexão absoluta de ombro.
+  verbatim: "more absolute shoulder extension and flexion so the less extension flexion from wide grip seem to help me so that's why i like to do it"
+
+V171-15  R171@04:50  tier:R scope:PESSOAL modo:anedota genero:perguntas explicit
+  tópicos: lesao, dor
+  Passou 2 anos com tendinite patelar que às vezes ficava muito ruim.
+  params: duracao_tendinite=2 anos [anos]
+  verbatim: "I've also had 2 years where I had patellar tendinitis that could be really, really bad at times"
+
+V177-11  R177@02:27  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: lesao, dor
+  O protocolo de reabilitação que ele usa em si e nos atletas que treina é empurrar devagar o limiar de dor.
+  verbatim: "my standard rehab protocol for myself and old lifters that i coach what i do basically the theory is just slowly push the threshold of pain"
+  condições: V177-12
+
+  filtros que estão escondendo material:
+     --topic dor: 119 COM ele, 6912 SEM ele — esconde 6793 claim(s)
+        F001-01(undefined/undefined) F001-02(undefined/undefined) F001-03(undefined/undefined) F001-04(undefined/undefined) F001-05(undefined/undefined) F001-06(undefined/undefined) F001-07(undefined/undefined) F001-08(undefined/undefined) …+6785
+

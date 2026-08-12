@@ -101,6 +101,18 @@ export interface GateReading {
   date: string;
   weekNumber: number;
   peak: number;
+  /**
+   * Alguma entrada de peitoral da sessão foi marcada como **estiramento agudo**.
+   *
+   * É a outra metade da célula `≥4/10 **ou estiramento agudo**`. Ela é
+   * qualitativa: satisfaz o degrau sem depender do número, porque uma fisgada é
+   * um evento, não uma intensidade — o atleta que pontuasse o estiramento como
+   * 3/10 disparava `congela` em vez de encerrar a sessão.
+   *
+   * Opcional: leitura gravada antes desta revisão não tem o campo, e a ausência
+   * é `false`.
+   */
+  acute?: boolean;
 }
 
 /**
@@ -116,8 +128,28 @@ export interface GateWeekObservation {
   weekNumber: number;
   /** Sessões da semana que carregaram o peitoral. */
   benchSessions: number;
-  /** Dessas, quantas colheram o log de dor. */
+  /**
+   * Dessas, quantas colheram o log em ALGUM momento (pré **ou** pós).
+   *
+   * É a contagem larga, e ela existe para o lado que APERTA: uma leitura colhida
+   * em um só momento continua sendo dor observada e continua entrando na janela
+   * de eventos. Errar para o lado de olhar demais custa uma bandeira.
+   */
   loggedSessions: number;
+  /**
+   * Dessas, quantas colheram o log em TODOS os momentos que o app tem (pré
+   * **e** pós).
+   *
+   * É a contagem estreita, e é a única que o `RETORNO` aceita. O §1.2 manda
+   * colher três momentos; o app tem campo para dois, e até esta revisão aceitava
+   * **um** — uma semana medida com um terço do instrumento era declarada limpa e
+   * liberava a única linha da tabela que AUMENTA carga sobre o tecido lesionado.
+   *
+   * Opcional porque documento gravado antes desta revisão não traz o campo. A
+   * ausência é lida como **zero**, não como "estava tudo bem": documento velho
+   * bloqueia o retorno em vez de liberá-lo por omissão.
+   */
+  fullyLoggedSessions?: number;
   /** Maior pico colhido na semana; `null` quando não houve leitura nenhuma. */
   peak: number | null;
 }
@@ -177,6 +209,20 @@ export const gateLookbackWeeks: number = Math.max(
  * semana**. Sem isso, o mesmo par de eventos voltaria a ser anunciado em toda
  * semana seguinte enquanto a cauda o alcançasse.
  */
+/**
+ * Uma leitura satisfaz um degrau.
+ *
+ * São DOIS caminhos porque a tabela escreve dois: o numérico (`≥N/10`) e o
+ * qualitativo (`ou estiramento agudo`). O segundo não tem limiar — uma fisgada é
+ * evento, não intensidade — e por isso não pode ser traduzido em número. O `||`
+ * aqui é a célula do §1.2 lida ao pé da letra; só o degrau que DECLARA
+ * `estiramentoAgudo` na tabela ganha o segundo caminho.
+ */
+function satisfaz(degrau: (typeof PAIN_GATE.degraus)[number], r: GateReading): boolean {
+  if (r.peak >= degrau.limiar) return true;
+  return degrau.estiramentoAgudo === true && r.acute === true;
+}
+
 export function evaluatePainGate(
   readings: readonly GateReading[],
   anteriores: readonly GateReading[] = [],
@@ -195,14 +241,14 @@ export function evaluatePainGate(
     let eventos: { r: GateReading; atual: boolean }[] | null = null;
 
     if (degrau.janelaSessoes === null) {
-      const hits = serie.filter((s) => s.atual && s.r.peak >= degrau.limiar);
+      const hits = serie.filter((s) => s.atual && satisfaz(degrau, s.r));
       if (hits.length >= degrau.eventos) eventos = hits.slice(0, degrau.eventos);
     } else {
       // Janela deslizante sobre as sessões de supino colhidas, não sobre dias
       // nem sobre semanas.
       for (let i = 0; i + degrau.janelaSessoes <= serie.length; i += 1) {
         const janela = serie.slice(i, i + degrau.janelaSessoes)
-          .filter((s) => s.r.peak >= degrau.limiar);
+          .filter((s) => satisfaz(degrau, s.r));
         if (janela.length >= degrau.eventos && janela.some((s) => s.atual)) {
           eventos = janela;
           break;
@@ -211,7 +257,7 @@ export function evaluatePainGate(
       // Menos sessões colhidas que o tamanho da janela: a janela inteira ainda
       // cabe no futuro, então avalia o que existe em vez de ignorar o sinal.
       if (!eventos && serie.length < degrau.janelaSessoes) {
-        const hits = serie.filter((s) => s.r.peak >= degrau.limiar);
+        const hits = serie.filter((s) => satisfaz(degrau, s.r));
         if (hits.length >= degrau.eventos && hits.some((s) => s.atual)) eventos = hits;
       }
     }
@@ -273,9 +319,31 @@ export interface GateReturnVerdict {
  */
 function semanaLimpa(w: GateWeekObservation): boolean {
   return w.benchSessions > 0
-    && w.loggedSessions >= w.benchSessions
+    && momentosColhidos(w) >= w.benchSessions
     && w.peak !== null
     && w.peak <= PAIN_GATE.retorno.picoMaximo;
+}
+
+/**
+ * Sessões de supino da semana em que o log foi colhido por INTEIRO.
+ *
+ * Aqui mora a diferença entre "medi" e "olhei". `loggedSessions` conta a sessão
+ * que colheu pré **ou** pós; esta conta a que colheu **os dois** — e é esta que
+ * o `RETORNO` lê. A assimetria é deliberada e tem direção: os degraus de
+ * agravamento leem a contagem larga (um só momento já basta para apertar), e a
+ * única linha que afrouxa lê a estreita.
+ *
+ * O §1.2 exige TRÊS momentos e o app tem campo para DOIS — o terceiro (1ª série
+ * pausada com carga de trabalho) não existe em lugar nenhum, e isso continua
+ * declarado como aberto. O que esta função conserta é o degrau anterior do
+ * mesmo defeito: até aqui, UM momento em dois bastava para a semana ser
+ * declarada limpa.
+ *
+ * Documento antigo sem o campo conta zero — o retorno fica bloqueado e a
+ * bandeira diz por quê, em vez de a ausência do campo virar permissão.
+ */
+function momentosColhidos(w: GateWeekObservation): number {
+  return w.fullyLoggedSessions ?? 0;
 }
 
 /**
@@ -303,7 +371,7 @@ export function evaluateGateReturn(
 
   const semanasSemLog = ordered
     .slice(-exigidas)
-    .filter((w) => w.benchSessions > 0 && w.loggedSessions < w.benchSessions)
+    .filter((w) => w.benchSessions > 0 && momentosColhidos(w) < w.benchSessions)
     .map((w) => w.weekNumber);
 
   return {
@@ -329,7 +397,53 @@ export function describeGateReturn(v: GateReturnVerdict): string {
 
 /** Linha de bandeira para a semana que só não é limpa porque faltou log. */
 export function describeGateReturnGap(v: GateReturnVerdict): string {
-  return `RETORNO DO GATE ${PAIN_GATE.secao} bloqueado — sessão de supino sem log de dor `
+  return `RETORNO DO GATE ${PAIN_GATE.secao} bloqueado — sessão de supino com o log INCOMPLETO `
     + `na(s) semana(s) ${v.semanasSemLog.join(', ')}; o ${PAIN_GATE.secao} exige o log em toda `
-    + 'sessão com supino ou peitoral, e sem ele a semana não pode ser declarada limpa';
+    + 'sessão com supino ou peitoral, nos momentos que ele lista, e semana medida pela metade '
+    + 'não pode ser declarada limpa';
+}
+
+// ---------------------------------------------------------------------------
+// Dor FORA de sessão — o que a tabela não governa, e não vai passar a governar
+// ---------------------------------------------------------------------------
+
+/**
+ * O que a semana viu de dor de peitoral fora de treino.
+ *
+ * Existe porque o §1.2 é inteiro sobre pico DENTRO de sessão de supino, e o
+ * atleta pode ter dor num dia parado — inclusive numa semana inteira sem treino,
+ * em que `evaluatePainGate` devolve `null` na primeira linha por não haver
+ * leitura nenhuma. Antes desta revisão esse sintoma não tinha onde ser escrito e
+ * a semana saía do app dizendo que não houve dor.
+ */
+export interface RestPainObservation {
+  registros: number;
+  /** Maior intensidade registrada fora de sessão nesta semana. */
+  pico: number;
+  /** Alguma entrada foi marcada como estiramento agudo. */
+  agudo: boolean;
+}
+
+/**
+ * Linha de bandeira da dor fora de sessão.
+ *
+ * ANUNCIA E NÃO ATUA, e o texto diz isso em voz alta. A tabela do §1.2 não tem
+ * célula para dor em repouso: nenhum dos quatro degraus fala dela, e não existe
+ * limiar na base para ela. Fazer este registro disparar degrau seria inventar
+ * regra; fazê-lo sumir foi o defeito. A terceira saída é a que está aqui —
+ * escrever o fato onde quem decide vai ler.
+ */
+export function describeRestPain(v: RestPainObservation): string {
+  return `DOR FORA DE SESSÃO — ${v.registros} registro(s) de peitoral, pico ${v.pico}/10`
+    + (v.agudo ? ', com estiramento agudo marcado' : '')
+    + `. A tabela ${PAIN_GATE.secao} governa PICO DENTRO DE SESSÃO DE SUPINO e não tem célula `
+    + 'para dor em repouso: isto não dispara degrau, não consome a janela de sessões e não '
+    + 'entra no RETORNO. Está aqui porque é o dado, e a decisão é da conversa semanal.';
+}
+
+/** Aviso colado ao RETORNO quando a janela dele conviveu com dor fora de sessão. */
+export function describeReturnWithRestPain(v: RestPainObservation): string {
+  return `⚠️ o RETORNO ${PAIN_GATE.secao} acima foi avaliado SEM ler os ${v.registros} registro(s) `
+    + `de dor fora de sessão desta semana (pico ${v.pico}/10) — a tabela não os lê, e re-subir `
+    + 'degrau com o tecido lesionado sintomático em repouso é decisão que a tabela não cobre.';
 }

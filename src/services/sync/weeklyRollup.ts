@@ -377,9 +377,34 @@ function isChestSession(sess: SessionDoc): boolean {
   return (sess.volumeByMuscle[painGateMuscle] ?? 0) > 0;
 }
 
-/** A sessão colheu a pesquisa em algum dos momentos que o §1.2 pede. */
+/**
+ * A sessão colheu a pesquisa em ALGUM dos momentos que o §1.2 pede.
+ *
+ * É o `OU`, e ele fica de pé para o lado que aperta: uma sessão medida só no pré
+ * ainda é uma sessão medida, a leitura dela entra na janela de eventos e pode
+ * disparar degrau. Para o `RETORNO` — a única linha que afrouxa — vale o `E` de
+ * `fullyCollectedLog`.
+ */
 function collectedLog(sess: SessionDoc): boolean {
   return sess.pre != null || sess.post != null;
+}
+
+/**
+ * A sessão colheu a pesquisa em TODOS os momentos que o app tem.
+ *
+ * O §1.2 manda colher três (pré-sessão · 1ª série pausada com carga de trabalho
+ * · pós-sessão); o app tem campo para dois, e até esta revisão contentava-se com
+ * um. Uma semana inteira medida só pelo pré era declarada limpa e liberava o
+ * `RETORNO`, que é a única regra da tabela que AUMENTA carga sobre o tecido
+ * lesionado. Re-subir degrau por falta de medição é pior que não ter gate: dá a
+ * aparência de ter verificado.
+ *
+ * ⚠️ Isto ainda é DOIS de TRÊS. O momento que falta — a 1ª pausada com carga de
+ * trabalho — não existe em campo nenhum do app, e é o único dos três que mede o
+ * tecido sob carga. Continua declarado como aberto em `research/kb/GATE-DOR.md`.
+ */
+function fullyCollectedLog(sess: SessionDoc): boolean {
+  return sess.pre != null && sess.post != null;
 }
 
 /**
@@ -409,10 +434,14 @@ function buildGateReadings(sessions: SessionDoc[], weekNumber: number): GateRead
     const entries = [...(sess.pre?.pain ?? []), ...(sess.post?.newPain ?? [])]
       .filter((p) => painGateScope(p.region) === 'peitoral');
     if (entries.length === 0 && !(isChestSession(sess) && collectedLog(sess))) continue;
+    const acute = entries.some((p) => p.acute === true);
     out.push({
       date: dayOf(sess.date),
       weekNumber,
       peak: entries.length > 0 ? Math.max(...entries.map((p) => p.intensity)) : 0,
+      // `acute` só é gravado quando é verdade: leitura limpa não carrega
+      // `acute: false` para dentro do documento, e a ausência já é `false`.
+      ...(acute ? { acute: true } : {}),
     });
   }
   return out.sort((a, b) => a.date.localeCompare(b.date));
@@ -426,15 +455,18 @@ function buildGateWeek(
 ): GateWeekObservation {
   let benchSessions = 0;
   let loggedSessions = 0;
+  let fullyLoggedSessions = 0;
   for (const sess of sessions) {
     if (!isChestSession(sess)) continue;
     benchSessions += 1;
     if (collectedLog(sess)) loggedSessions += 1;
+    if (fullyCollectedLog(sess)) fullyLoggedSessions += 1;
   }
   return {
     weekNumber,
     benchSessions,
     loggedSessions,
+    fullyLoggedSessions,
     peak: readings.length > 0 ? Math.max(...readings.map((r) => r.peak)) : null,
   };
 }

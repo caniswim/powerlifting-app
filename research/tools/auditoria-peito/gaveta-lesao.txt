@@ -1,0 +1,1898 @@
+
+362 claim(s) para topic=lesao:
+
+G001-45  G001@09:40  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: volume, hipertrofia, lesao
+  Se você tolera, aumente um pouco o volume no bloco de hipertrofia; se não tolera, faça o que for sustentável para não parar de treinar nem se lesionar.
+  verbatim: "So if you can tolerate it in a hypertrophy block, yeah, pump the volume a little bit. But if you can't, do what you can that is sustainable so you don't have to take time away from training or get injured"
+
+G004-29  G004@05:49  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, lesao, deload
+  Se a prontidão despenca, é sinal de que o desempenho está sofrendo e de que você pode estar caminhando para uma lesão, e é hora de deloadar.
+  verbatim: "if you see that dip way down deep that's how you're going to know hey my performance is suffering I might be heading towards an injury maybe I should take a D Lo right now"
+
+G004-45  G004@09:23  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: deload, fadiga, lesao
+  A razão de baixar os dois é liberar fadiga o mais rápido possível para permitir supercompensação ou evitar lesão por excesso de treino.
+  verbatim: "because we're trying to release that fatigue as fast as possible to make sure that you can then have a super compensation"
+
+G004-64  G004@14:11  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: deload, lesao, fadiga
+  O papel do deload é apenas manter esse processo rodando: mitigar a chance de lesão, ressensibilizar ao treino, dar uma pausa mental e física e baixar a fadiga.
+  verbatim: "the role of a D Lo is simply to keep that process going to mitigate the chance of injury to resensitize you to training to give you a mental and physical break to lower fatigue"
+
+G008-21  G008@05:04  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: erro-comum, volume, lesao
+  Não entre num programa que tenta produzir resultados incríveis só jogando cada vez mais estresse em cima de você: isso é perigoso.
+  verbatim: "don't hop on some stupid program that tries to get amazing results by just throwing more and more and more stress at you that's a dangerous program to use"
+
+G012-06  G012@01:08  tier:R scope:GERAL modo:anedota genero:review-de-programa explicit
+  tópicos: lesao, recuperacao, meta-metodologia
+  O Brandon Lilly saiu do Westside porque não concordava com os métodos e estava se machucando muito, e passou a treinar com o Chad Wesley Smith no Juggernaut.
+  verbatim: "now he was at West Side for a while but left he was not okay with the methods he was getting really beat up and he moved over and he started working out with Chad Wesley Smith at Juggernaut"
+
+G012-43  G012@09:56  tier:R scope:PESSOAL modo:anedota genero:review-de-programa explicit
+  tópicos: lesao, ombros, selecao-exercicio
+  Por causa de problemas articulares ele não fazia desenvolvimento militar e trocava por supino inclinado com halteres, mantendo o plano vertical.
+  verbatim: "I have some joint issues so I didn't do military press I would do dumbbell incline press most"
+
+G012-45  G012@10:12  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: lesao, meta-metodologia, periodizacao
+  O que ele considera genial no Cube Method é a rotação que te impede de treinar pesado demais e busca te manter no esporte o máximo de tempo possível, livre de lesão — a legenda dobra a negação nessa frase.
+  verbatim: "but really The Genius of this program and what's great about it is this rotation that keeps you from not training too hard tries to extend and keep you in the sport"
+
+G014-13  G014@03:03  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: rpe, lesao, erro-comum, proximidade-da-falha
+  A recomendação geral dele é não ir até a falha completa, com a forma quebrada e perto de se machucar.
+  verbatim: "I'm going to give my general recommendation here of not to go to complete and utter failure where you're just dying your form is broken down you're Nearing injury"
+
+G016-12  G016@02:46  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: rpe, lesao, autorregulacao, proximidade-da-falha
+  Na série AMRAP você vai quase até a falha, mas sem quebra completa de forma e sem se machucar.
+  params: intensidade=85 % [pct_TM]
+  verbatim: "85 percent you go almost to failure you don't want to have complete form breakdown you don't want to injure yourself"
+
+G017-23  G017@03:46  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: tecnica, lesao, erro-comum
+  Uma leve quebra na última repetição da série de 5 é aceitável, mas um exercício com aparência terrível acaba em lesão.
+  params: reps=5 reps [reps]
+  verbatim: "maybe a little breakdown on the last rep of this set of five but you don't want to have a completely terrible looking exercise because if you do you're going to end up injuring yourself"
+
+G019-37  G019@07:52  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: lesao, tecnica, aprendizado-motor
+  Como o power clean é um movimento mais complexo e dá para se machucar nele, é preciso investir tempo aprendendo a forma de todos os movimentos.
+  verbatim: "you can snap yourself up and you can hurt yourself it's a more complex lift so you need to spend time learning the form of all of the lifts"
+
+G020-14  G020@02:02  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: mentalidade, erro-comum, lesao
+  O jeito mais certo de fazer alguém odiar treinar é ser destruído no primeiro treino, se machucar ou sentir que nunca vai progredir.
+  verbatim: "you want the best way to not love to lift it's to go in there and get crushed on your first workout or get injured or feel like you're never going to make any progress"
+
+G021-01  G021@00:00  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, posterior
+  Ele ficou um tempo longe dos movimentos de membro inferior por causa de uma lesão de posterior de coxa e por estar muito ocupado.
+  verbatim: "I've had a little bit of time away from lower body movements one because I had a hamstring injury but two because I've just been super busy the last month and a half to two months"
+
+G021-26  G021@08:59  tier:R scope:PESSOAL modo:anedota genero:log-de-treino explicit
+  tópicos: lesao, posterior, terra
+  Foi puxando terra que ele lesionou o posterior de coxa.
+  verbatim: "that's also what I did to injure my hamstrings I'm really feeling this out right now"
+
+G027-37  G027@10:15  tier:R scope:GERAL modo:mecanismo genero:form-check explicit
+  tópicos: setup, costas, lesao
+  A posição arredondada no início é uma posição comprometida da qual fica difícil se recuperar conforme o peso sobe.
+  verbatim: "this position is a compromised position and it's gonna be hard to recover from as the weight gets heavier"
+
+G029-10  G029@03:06  tier:R scope:GERAL modo:mecanismo genero:form-check explicit
+  tópicos: terra, dor, costas, lesao
+  O arredondamento da parte média das costas no terra pode levar a dor nas costas.
+  verbatim: "it could lead to some back pain because you you have rounding really through your midback"
+
+G030-19  G030@05:27  tier:R scope:GERAL modo:mecanismo genero:form-check explicit
+  tópicos: agacho, dor, lesao
+  Segurar boa parte do peso da barra nas mãos, em vez de apoiá-lo nas costas, gera tensão nos cotovelos.
+  verbatim: "really supporting the weight of the bar on your back and not holding a lot of the weight in your hands which will put strain on your elbows"
+
+G032-14  G032@02:33  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: ombros, lesao, supino
+  Ele teve problemas de ombro naquele ciclo de treino e precisou tirar um tempo de folga.
+  verbatim: "especially after some of the shoulder issues I've had in this training cycle and having to take time off"
+
+G034-18  G034@02:02  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: lesao, erro-comum, mentalidade
+  Treinar tão forte a ponto de se machucar é a coisa mais contraproducente possível.
+  verbatim: "I'm not going to work so hard that I'm actually going to injure myself because that's the most counterproductive thing I could possibly do"
+
+G034-22  G034@03:03  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: dor, lesao, autorregulacao
+  Com a articulação sacroilíaca um pouco irritada, ele não teve quebra de forma e avaliou estar em 90 a 95%.
+  params: sensacao_min=90 % [pct]  sensacao_max=95 % [pct]
+  verbatim: "my SI joint is just a little aggravated, but uh I haven't had any form breakdown really. Um everything feels okay. I'd say, you know, 90 95%."
+
+G036-38  G036@05:35  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: pico, teste-de-forca, competicao, lesao
+  Passar da própria abertura em treino coloca o atleta numa zona de risco e exige que ele se pergunte por que está fazendo isso.
+  verbatim: "at some point you start getting into just a risky spot you know if you're going above your opener and training you have to ask yourself why"
+  conflita: V004-22
+
+G036-41  G036@06:05  tier:R scope:GERAL modo:opiniao genero:log-de-treino explicit
+  tópicos: volume, selecao-exercicio, lesao
+  As séries de back off são mais seguras e envolvem bem mais volume, então ele acha que produzem um estímulo de treino melhor em geral.
+  verbatim: "these uh are safer and I think they actually they have a lot more volume involved so I think they produce a better training stimulus in general"
+
+G037-03  G037@00:01  tier:R scope:PESSOAL modo:anedota genero:log-de-treino explicit
+  tópicos: terra, lesao, sumo
+  Ele ficou cerca de 2 anos sem conseguir usar a stance aberta por causa de problemas nos quadris.
+  params: tempo_afastado_da_stance=2 anos [anos]
+  verbatim: "I haven't been able to use that in right about 2 years I'd say because I had some uh btis in my hips"
+
+G037-04  G037@00:16  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: lesao, mobilidade, aquecimento, terra
+  Ele atribui o problema de quadril principalmente a não mobilizar direito antes de puxar e a não fazer o trabalho necessário para manter os quadris saudáveis.
+  verbatim: "what it was coming down to is I wasn't mobilizing properly before deadlifting and I wasn't doing the work necessary and really couldn't do the work necessary to uh get my hips healthy"
+
+G037-05  G037@00:32  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: lesao, volume, intensidade, frequencia
+  Fazer volume demais, ir pesado demais e com frequência demais também contribuiu para os problemas de quadril dele.
+  verbatim: "as well as doing too much volume going too heavy too often a number of factors"
+
+G039-21  G039@04:02  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: sumo, lesao, recuperacao, terra
+  Manter os pés tão abertos no terra impõe uma carga de recuperação séria aos quadris dele.
+  verbatim: "one of the issues with it though is going to be hip Health uh holding my feet that wide in the deadlift is really going to put a recovery strain on my hips"
+
+G039-29  G039@06:04  tier:R scope:PESSOAL modo:anedota genero:log-de-treino explicit
+  tópicos: sumo, lesao, terra
+  Ele já puxou sumô mais aberto do que puxava agora e abandonou essa stance por problemas de quadril que o impediam de continuar.
+  verbatim: "I used to do the Sumo deadlift wider than I currently do now um closer to that stance that I was using there but I got away from it because I had uh hip issues that I had to deal with I just couldn't continue deadlifting that way"
+
+G039-30  G039@06:19  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: sumo, antropometria, tecnica, lesao
+  Fugir da stance larga por causa dos quadris significou treinar com uma forma subótima para as alavancas dele.
+  verbatim: "kind of a suboptimal form for my leverages but it is what it is and my hips are feeling better now but I'm not going to push it too hard"
+
+G040-03  G040@00:30  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, terra, lesao
+  Ele acabou usando cerca de 20 lb a menos do que tinha planejado porque pareceu certo e ele não quis forçar mais.
+  params: reducao_de_carga=20 lb [lb]
+  verbatim: "I ended up actually doing about 20 lbs less than what I was thinking for this day but it just felt right and I didn't want to push it harder"
+
+G040-08  G040@01:16  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: selecao-exercicio, lesao, progressao, erro-comum
+  É preciso construir devagar até uma variação nova: não dá para entrar e tentar maxar num exercício novo, e é assim que se distende um músculo.
+  verbatim: "but you have to build up to those things slowly you can't just jump in and try to Max on a new exercise that's how you pull a muscle or something like that"
+
+G040-09  G040@01:31  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: supino, selecao-exercicio, dor, lesao
+  Ele sobe os pés no banco no Spoto press não só para focar o tronco superior, mas para dar folga à articulação sacroilíaca quando ela está fatigada.
+  verbatim: "often times I'll bring my feet up on the bench uh not only to focus on upper body but also to give my SI joint a break if it's feeling a little fatigued"
+
+G040-10  G040@01:46  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, selecao-exercicio, dor
+  Ele já usa os pés no banco como medida preventiva, e não só quando a sacroilíaca dói.
+  verbatim: "and so I do that almost as a preemptive measure now with some of the Spoto pressing I do"
+
+G040-11  G040@02:02  tier:R scope:PESSOAL modo:anedota genero:log-de-treino explicit
+  tópicos: lesao, antropometria, setup, agacho
+  Ele quebrou e deslocou o tornozelo no ensino médio e a lesão nunca cicatrizou perfeitamente, então a posição de pés simétrica para ele é desigual.
+  verbatim: "I broke and dislocated my ankle in high school and it never quite healed completely right so now this is where even is for me"
+
+G042-14  G042@02:32  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: selecao-exercicio, lesao, fadiga, sumo
+  O constant tension sumo é um exercício muito taxante e pode ser usado em excesso, porque sem o chão para frear o peso a pressão no fundo recai sobre ossos, articulações e músculos do quadril.
+  verbatim: "these are a very taxing exercise, though. It can be overused. Uh there's a lot of pressure on the hips at the bottom because you're not using the ground to stop the weight. You're just using your bones, uh your joints, and your muscles to manage the weight"
+
+G043-11  G043@02:33  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, lesao, series-reps, costas
+  Em trabalho de repetições altas, travar demais no topo e relaxar para tomar ar coloca tensão extra nas costas porque o atleta entra numa posição de lombar arqueada ao se levantar e descansa ali, o que pode causar dor na articulação sacroilíaca.
+  verbatim: "one of the things to look out for with higher rep work is uh SI joint pain if you overlock out your reps up at the top and then you relax as you take a breath that can really put extra strain on your back because you kind of get into that arched back position as you stand up and then kind of rest that can really cause SI joint pain"
+
+G043-12  G043@02:48  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: core, tecnica, lesao, series-reps
+  É preciso manter o bracing durante o levantamento inteiro, inclusive na hora de tomar o próximo ar entre repetições.
+  verbatim: "if you don't maintain your bracing throughout the whole lift even when you're getting that next breath"
+  condições: G043-11
+
+G045-03  G045@00:45  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: sumo, lesao, volume
+  a dificuldade dele nessa fase é manter os quadris saudáveis enquanto aumenta o volume de sumô
+  verbatim: "the struggle there is going to be to keep my hips healthy even as I'm increasing that Sumo volume"
+
+G045-04  G045@00:45  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: barra-baixa, barra-alta, selecao-exercicio, lesao
+  ele espera que sair do low bar para agacho barra alta com pausa ou safety squat bar, com stance mais estreita, permita aos quadris aguentar o volume de sumô
+  verbatim: "but I think that some of the uh moves away from low bar should allow my hips to handle that as I'm using a little bit more narrow stance uh with either High bar paw squats or a safety squat bar work"
+
+G047-09  G047@01:31  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: supino, competicao, lesao
+  quando as costas começaram a sair do banco ele balançou a cabeça em não, para seguir adiante e salvar as costas para o terra
+  verbatim: "but started to come up off the bench shook my head no needed to move on and save my back"
+
+G047-10  G047@01:46  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: supino, lesao, competicao
+  mesmo assim as costas dele ficaram bem travadas depois de perder aquele supino
+  verbatim: "but even after that my back was pretty cramped up uh after missing that bench I had strained a lot"
+
+V001-01  R001@00:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, progressao
+  Passou mais de 3 anos sem bater um único PR, em grande parte por causa de lesões.
+  params: tempo_sem_pr=3 anos [anos]
+  verbatim: "I spent over 3 years not hitting a single PR in large part due to injuries"
+
+V001-02  R001@00:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, agacho, terra
+  No pior momento das lesões não conseguia agachar nem puxar terra com dois terços do próprio máximo.
+  params: fracao_do_maximo=66.7 % do 1RM (dois terços) [pct_1RM]
+  verbatim: "At my worst, I couldn't even squat and deadlift 2/3 of my max"
+
+V001-03  R001@00:15  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, meta-metodologia
+  Superar lesão se resume principalmente a gestão de carga e à capacidade de lidar com a dor.
+  verbatim: "what I found is it mainly comes down to two factors. One is load management and second is cope"
+
+V001-04  R001@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, recuperacao
+  Repouso completo não é a melhor abordagem para lesão; é preciso continuar se movendo.
+  verbatim: "I think most people know that complete rest is not the best idea when it comes to injuries"
+  condições: V001-05
+
+V001-05  R001@00:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, intensidade
+  A carga certa na reabilitação é o limiar em que dá para continuar treinando com desconforto leve sem piorar o tecido.
+  verbatim: "you need to find the threshold where you can keep it moving, experiencing some light discomfort is okay"
+  condições: V001-06
+
+V001-06  R001@01:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Usa como heurística um nível de dor em torno de 2 na escala de dez pontos como a carga de trabalho aproximadamente certa.
+  params: dor_alvo=2 dor_0a10 [escala_dor]
+  verbatim: "the rough heuristic I found is about a 2 out of 10 level of pain is usually good for most people"
+  condições: V001-07, V001-29, V027-23
+  conflita: V138-19
+
+V001-07  R001@01:15  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, progressao
+  O critério de progresso na reabilitação é sessão a sessão, adicionando carga sem aumento de dor.
+  verbatim: "you're looking to be making progress session to session, slowly adding more load without increases in pain"
+  condições: V001-08
+
+V001-08  R001@01:30  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, erro-comum
+  Uma única sessão mais dolorosa não significa que o programa de reabilitação não esteja funcionando.
+  verbatim: "if you have one more painful session, that doesn't mean your rehab program isn't working"
+
+V001-09  R001@01:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, volume
+  Além de reduzir o peso, provavelmente é preciso reduzir também o volume durante a lesão.
+  verbatim: "You should probably be doing less volume, too"
+
+V001-10  R001@01:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Modificar exercícios com pausas ou variações menos dolorosas é outra forma de gerir carga na lesão.
+  verbatim: "you could also look at modifying your exercises with things like adding pauses or maybe variations that are less painful"
+
+V001-11  R001@01:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, barra-baixa, barra-alta
+  Quem tem dor lombar que atrapalha o low bar pode achar o high bar confortável e usar isso para seguir treinando.
+  verbatim: "You could have back pain that makes it hard for you to do a low bar squat, but high bar feels fine"
+
+V001-12  R001@02:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, erro-comum
+  Se ao final você ainda não consegue executar certos padrões de movimento, a lesão não foi realmente reabilitada.
+  verbatim: "Did you really rehab the injury if you can't do these certain movement patterns"
+
+V001-13  R001@02:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: erro-comum, lesao
+  O outro erro grande é voltar rápido demais e reagravar a lesão, entrando num ciclo que arrasta o problema.
+  verbatim: "people just try to come back way too quickly and just re-aggravate their injury"
+
+V001-14  R001@02:31  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, erro-comum, mentalidade
+  Ele mesmo cometeu muito o erro de forçar a volta cedo demais e hoje se envergonha disso.
+  verbatim: "I did this a lot, admittedly, and I look back and I kind of cringe"
+
+V001-15  R001@03:04  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, mobilidade, erro-comum
+  Os exercícios corretivos de alongamento e fortalecimento vendidos como solução para dor são hipóteses sem evidência real por trás.
+  verbatim: "things that frankly, are just hypotheses with no real evidence behind them"
+
+V001-16  R001@03:19  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Quando um exercício de reabilitação parece funcionar, normalmente não é o exercício que tem algo de especial.
+  verbatim: "comes down to is it's usually not the exercise that's special"
+
+V001-17  R001@03:35  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, recuperacao
+  Parte da melhora atribuída a exercícios é história natural: lesões tendem a melhorar com o tempo.
+  verbatim: "The other one is just natural history. Injuries tend to get better with time"
+
+V001-18  R001@03:50  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, mentalidade
+  Parte da melhora é efeito placebo, o que não é necessariamente ruim porque placebo também é efeito.
+  verbatim: "And lastly is placebo effects, which honestly isn't necessarily a bad thing. Placebo effects are still effects"
+
+V001-19  R001@04:20  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, erro-comum, volume
+  Empilhar exercícios especiais extras para a região dolorida só adiciona carga e piora a gestão de carga.
+  verbatim: "Well, now you're just adding more load and you're hurting your load management"
+
+V001-22  R001@05:36  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, lesao
+  Num estudo com população finlandesa, 96% dos ombros assintomáticos tinham alguma anormalidade de imagem.
+  params: ombros_assintomaticos_com_anormalidade=96 % [pct]
+  verbatim: "And get this, 96% of asymptomatic shoulders had some abnormality"
+
+V001-24  R001@06:54  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: mentalidade, lesao
+  Em pacientes de reparo de ombro, o melhor preditor de recuperação de longo prazo foi a mentalidade, não o nível de dano nem de incapacidade.
+  verbatim: "It wasn't the level of damage. It was their mindset going into it"
+
+V001-25  R001@07:24  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: mentalidade, lesao
+  Encare-se como alguém adaptável e resiliente em vez de frágil.
+  verbatim: "Don't think of yourself as really fragile. Think of yourself as really adaptable"
+
+V001-27  R001@08:11  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, meta-metodologia
+  Descobrir a causa raiz exata da dor não muda a abordagem, que continua sendo ir mais leve e voltar progressivamente.
+  verbatim: "And even if you do figure out the root cause, does it really change the approach"
+
+V001-28  R001@08:41  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, mentalidade
+  Mentalidade resiliente, ir mais leve e voltar devagar cobrem 95% dos casos de reabilitação.
+  params: cobertura_da_abordagem=95 % [pct]
+  verbatim: "Keep a resilient mindset, go lighter and slowly work your way back up. That's going to cover 95% of your bases"
+  condições: V001-06
+
+V001-29  R001@01:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Cada pessoa e cada lesão são diferentes, então a heurística de dor pode precisar de ajuste.
+  verbatim: "every person and every injury is different, so it might take some adjusting"
+
+V004-07  R004@01:16  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: supino, lesao, intensidade
+  O supino dele é sensível à intensidade e intensidade alta inflama suas lesões.
+  verbatim: "my bench is a bit sensitive to intensity, it flares up my injuries"
+
+V004-19  R004@03:33  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: ombros, lesao, supino
+  Ele suspeita que parte dos problemas de lesão venha de deltoides anteriores proporcionalmente fracos, que cedem quando a carga fica pesada.
+  verbatim: "my anterior deltoids are a bit weak proportionally, so when the you know, loads get heavy, that's what's giving out on me"
+
+V005-06  R005@01:15  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: cardio, lesao, dor
+  Correr mais de uma hora por semana gerava impacto demais nos joelhos dele.
+  params: volume_corrida=1 h/semana [horas_semana]
+  verbatim: "over an hour a week of running, it was just too much impact forces on my knees"
+
+V005-07  R005@01:15  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cardio, lesao
+  Ele recomenda de forma geral variações de baixo impacto para o cardio.
+  verbatim: "That's why I generally recommend uh you know, low-impact variations for cardio"
+
+V006-12  R006@01:46  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, progressao
+  Boa parte da falta de progresso nos 6 anos anteriores foi ele se lesionar repetidamente.
+  params: periodo_sem_progresso=6 anos [anos]
+  verbatim: "A big lack of progress in those 6 years was just I kept getting injured over and over again"
+
+V006-13  R006@02:01  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: cardio, lesao
+  Aptidão aeróbia parece estar ligada ao risco de lesão em atletas.
+  verbatim: "aerobic fitness seems to be linked to injury risk in athletes"
+
+V009-04  R009@00:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: progressao, lesao, peso-corporal
+  Parte desse ganho veio de superar uma lesão e de subir de categoria de peso, mas a força relativa ao peso corporal também subiu muito.
+  verbatim: "part of that was overcoming an injury and moving up a weight class"
+
+V013-18  R013@03:03  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, condicionamento, saude
+  quem está fora de forma aerobicamente fica muito suscetível a lesão, se lesiona repetidamente e acaba desistindo
+  verbatim: "they're really susceptible to injury, and their health just declines in general, and then they, you know, they keep getting injured over and over again"
+
+V013-23  R013@03:48  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, progressao
+  as lesões são provavelmente a maior coisa que segura o progresso das pessoas
+  verbatim: "injuries are probably the biggest thing to hold back people's progress"
+
+V013-24  R013@03:48  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, progressao
+  a lesão cobra em dobro: além de reconstruir até o nível antigo, é tempo sem progredir
+  verbatim: "Not only do you have to rebuild back to your old levels, it's time spent not progressing, too."
+
+V017-01  R017@00:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, progressao
+  ele passou mais de 3 anos sem bater nenhum PR, principalmente por causa de lesões
+  params: duracao_plato=3 anos [anos]
+  verbatim: "the program I did to get over my more than 3-year period where I didn't hit any PRs, mainly due to injuries"
+
+V017-02  R017@00:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao
+  a lesão que ele tinha quando finalmente rodou esse programa era uma lesão grave nas costas
+  verbatim: "the one in specifically at the time when I finally got over it and ran this program was a back injury,"
+
+V017-04  R017@00:30  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, terra
+  no mesmo setup ele falhou um single de 515 lb, cerca de dois terços da força máxima dele ou menos
+  params: single_falhado=515 lb [1RM_treino]
+  verbatim: "On that same setup, I failed a 515 lb single."
+
+V017-10  R017@01:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: programacao, lesao
+  passada a pior fase da lesão ele acrescentou um back-off de um double do movimento normal, com o mesmo peso das séries com pausa da semana
+  verbatim: "I did add a back off set on the Thursday and Saturday. And I just do a double"
+
+V017-13  R017@01:47  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, progressao
+  ele saiu do fundo da lesão para o melhor nível da vida em 2 meses
+  params: tempo_recuperacao=2 meses [meses]
+  verbatim: "I had managed to in 2 months get to all time strong"
+
+V017-15  R017@02:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, intensidade
+  às vezes é preciso recuar de verdade na carga para sair de uma lesão
+  verbatim: "sometimes you just need to really dial back"
+
+V017-16  R017@02:02  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, intensidade
+  ele agachava e puxava na casa dos 700 lb e recomeçou o programa com 405 lb
+  params: nivel_anterior=700 lb [lb]  carga_inicial=405 lb [lb]
+  verbatim: "Like I was somebody who had squatted in the 700s, deadlifted in the 700s, and I was starting with 405."
+
+V017-17  R017@02:17  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, erro-comum, mentalidade
+  muita gente arrasta a lesão por muito mais tempo porque não quer checar o ego e voltar tanto na carga quanto deveria
+  verbatim: "a lot of people they just make their injuries drag out way too long because they don't want to, you know, check their ego and go back as far as they should"
+
+V017-18  R017@02:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: progressao, mentalidade, lesao
+  a progressão linear é ótima mentalmente para quem está lesionado, porque garante progresso toda semana quando se é obrigado a treinar muito leve
+  verbatim: "this linear progression approach I think is great mentally"
+
+V017-19  R017@03:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, lesao, dor
+  a variação escolhida deve ser a que alivia a lesão; ele escolheu as pausas porque eram o que sentia melhor nas costas
+  verbatim: "the other thing is about variations that make it easier for you. You know, I chose pauses cuz those are what felt easier on my back."
+  condições: V017-22
+
+V017-20  R017@03:18  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, lesao, dor
+  os exemplos que ele dá são pegada fechada para ombro no supino, block pull no lugar do terra e barra alta no lugar da barra baixa
+  verbatim: "fine with close grip. Maybe block pulls won't hurt your back, but regular deadlifts do. Maybe high bar feels good on your back, but low bar doesn't"
+  condições: V017-19, V017-22
+
+V017-21  R017@03:18  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, lesao
+  uma variação que deixa você empurrar melhor agrava menos a lesão
+  verbatim: "A variation that lets you push better will um not aggravate any injury as much."
+
+V017-22  R017@03:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  no dia principal ainda é preciso fazer o movimento de verdade, porque sem melhorar no próprio movimento não se está reabilitando a lesão
+  verbatim: "I do still think on the primary day you still want to do the actual movement. Because to me you're not really rehabbing the injury if you aren't getting better at the actual movement itself"
+
+V017-23  R017@04:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cardio, lesao
+  ele fazia bastante trilha naquela época e considera o cardio um dos fatores que mais ajudaram
+  verbatim: "one other thing that I think was really helpful for me at this time was cardio. I was doing a bunch of hiking at the time."
+
+V017-24  R017@04:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, condicionamento
+  a teoria dele é que muitos powerlifters sofrem com lesão porque têm aptidão aeróbia ruim
+  verbatim: "I really think a lot of powerlifters struggle with injury issues because they have bad aerobic fitness."
+
+V017-25  R017@04:15  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, condicionamento
+  a aptidão aeróbia foi ligada a risco de lesão em vários esportes, ocupações e no meio militar
+  verbatim: "This has been linked to injury risks across a lot of things, a lot of different sports, occupational hazards"
+
+V017-26  R017@04:30  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: meta-metodologia, lesao
+  não há muita pesquisa sobre isso em levantamento porque há pouca pesquisa em levantamento em geral, já que a área recebe pouco financiamento
+  verbatim: "There's not much research in lifting because frankly there's not a lot of lifting research. It doesn't get a lot of funding."
+
+V017-31  R017@05:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, acessorios, hipertrofia
+  durante a lesão se deve fazer trabalho de isolamento no que está saudável, coisa que ele mesmo não fez e diz que deveria ter feito
+  verbatim: "this is something I didn't do, but I should have done in hindsight, is do isolation work on the stuff that was fine"
+
+V017-32  R017@05:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: hipertrofia, lesao, periodizacao
+  o período de lesão vira basicamente um bloco de hipertrofia focado em todos os outros músculos
+  verbatim: "It basically becomes like a hypertrophy block, right? You're focused on hypertrophy of all these other muscles"
+
+V017-33  R017@06:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: hipertrofia, lesao, progressao
+  no curto prazo você fica mais fraco por causa da lesão, mas no longo prazo se equilibra porque os músculos maiores potencializam a força
+  verbatim: "In the short term you may be weaker cuz of the injury, but in the long term it basically evens out, right? Cuz you potentiated all the strength cuz you got bigger muscles"
+
+V019-27  R019@07:53  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, lesao
+  a teoria dele é que muitos powerlifters negligenciam o cardio, vão ficando menos condicionados, ficam mais suscetíveis a lesão e acabam queimando
+  verbatim: "they just sort of get less fit with time, and that leads them more susceptible to injury"
+
+V020-08  R020@01:32  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, lesao, dor
+  o supino é o levantamento em que ele vai pior no momento e ele já teve problemas de ombro nele
+  verbatim: "Bench is the one I'm doing the worst at right now."
+
+V027-01  R027@00:02  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, terra, dor
+  Menos de uma semana depois de lesionar as costas ele se sentia perfeitamente bem e puxou 760 lb sem dor.
+  params: terra_pos_lesao=760 lb [lb]
+  verbatim: "it's less than a week later and i feel perfectly fine. deadlifted 760 lbs pain-free"
+
+V027-02  R027@00:33  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, erro-comum
+  Como lesão assusta e atrapalha a vida, as pessoas ficam desesperadas por uma resposta e se agarram a qualquer coisa que dê esperança, o que as deixa fáceis de enganar.
+  verbatim: "people are really desperate for an answer and so they latch on to anything that gives them hope"
+
+V027-03  R027@00:48  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao, recuperacao
+  Lesões em geral tendem a curar com o tempo.
+  verbatim: "injuries in general tend to heal with time"
+
+V027-04  R027@00:48  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, mobilidade, recuperacao
+  Manter a região se movendo levemente faz bem e promove a cura.
+  verbatim: "keeping things lightly moving is good for them, right? it promotes healing"
+
+V027-05  R027@01:03  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, erro-comum, selecao-exercicio
+  O suposto exercício mágico que cura a dor costuma ser apenas movimento leve para o tecido, não algo especial.
+  verbatim: "is the exercise really magic or is it just the basic thing? it keeps it moving lightly"
+
+V027-06  R027@01:03  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, deload, intensidade
+  Adotar esses exercícios funciona como um deload na intensidade total do treino, já que não costumam ser feitos pesados, e isso dá tempo ao corpo para curar.
+  verbatim: "it's a deload in [music] total training intensity cuz these tend not to be things that you're doing really heavy"
+
+V027-07  R027@01:18  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: dor, lesao, meta-metodologia
+  A abordagem moderna da dor é o modelo biopsicossocial.
+  verbatim: "to pain is something called the biopsychosocial model"
+
+V027-10  R027@01:49  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, mentalidade
+  Por isso ele defende educação sobre lesão e manter-se o mais calmo e racional possível diante dela.
+  verbatim: "that's why i'm big on education when it comes to injuries, just understanding how your mindset [music] can affect things, and trying to stay just calm and rational as much as you can"
+
+V027-11  R027@02:19  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, mentalidade
+  A calma dele diante da lesão vem de mais de uma década levantando e de já ter passado por vários tweaks, a ponto de não se importar mais.
+  verbatim: "i've been lifting for over a decade now. you know, i've had these tweaks, and at this [music] point it's like, whatever"
+
+V027-12  R027@02:49  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, recuperacao, ombros
+  Num estudo com pessoas com ruptura de manguito rotador, o melhor preditor de sucesso na reabilitação não foi o grau de incapacidade.
+  verbatim: "there's one study that looked at people with rotator cuff tears, and what was the best prediction about how successfully they rehabbed? it wasn't the degree of their disability"
+
+V027-13  R027@03:05  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, mentalidade, recuperacao
+  Nesse estudo o que previu a recuperação foi simplesmente o estado mental, além do tabagismo.
+  verbatim: "it was simply their mindset. and smoking. [music] smoking predicted too, so don't smoke"
+
+V027-14  R027@03:05  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, lesao
+  Em outro estudo, achados adversos em exames de imagem das costas não se correlacionaram com dor lombar.
+  verbatim: "they looked at scans of people's backs for some adverse things, and they found it didn't really correlate with back pain"
+
+V027-15  R027@03:20  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, lesao
+  Dano tecidual tem papel na dor, mas não existe relação um-para-um entre dor e dano.
+  verbatim: "tissue damage can play a role here, right? but it's not like a one-to-one link between pain and damage"
+
+V027-16  R027@03:35  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, lesao, recuperacao
+  Mesmo depois de o tecido curar, as respostas protetoras de guarding continuam, e leva tempo para reconstruir a confiança no próprio corpo.
+  verbatim: "but then it heals up, but those protective like guarding measures are still there. it takes some time to just rebuild [music] that trust in your body again"
+
+V027-17  R027@03:50  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, volume, meta-metodologia
+  O outro pilar do manejo de lesão é a gestão de carga: achar a carga apropriada, sem fazer de menos nem de mais.
+  verbatim: "the other big thing here is just load management and finding the appropriate load. that means not doing too little and not doing too much"
+
+V027-18  R027@03:50  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, autorregulacao
+  Ele adotou uma abordagem bem agressiva na própria lesão de costas.
+  verbatim: "i took a really aggressive approach uh to my back injury"
+  condições: V027-19
+
+V027-19  R027@03:50  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, erro-comum
+  Ele desaconselha que outros copiem essa abordagem agressiva, porque ela se apoia em ele conhecer muito bem o próprio corpo.
+  verbatim: "but i generally advise against that"
+
+V027-20  R027@04:05  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, recuperacao, erro-comum
+  Mover de menos ou repousar completamente é a pior escolha entre os extremos possíveis.
+  verbatim: "let's start with not moving enough, right? or even just completely resting, which is the worst thing"
+
+V027-21  R027@04:20  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, recuperacao
+  Parar de se mover destreina o tecido e faz diminuir as adaptações que o protegem.
+  verbatim: "when you stop moving, you start to [music] detrain the tissue. some of those adaptations that are protective start to diminish"
+
+V027-22  R027@04:36  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, dor, recuperacao
+  Na volta ao treino depois do repouso o tecido está mais fraco e mais sensível à dor.
+  verbatim: "when you try to come back, the tissue is weaker and more sensitive to pain"
+
+V027-23  R027@05:06  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, erro-comum, fadiga, dor
+  Ele observa que lesões menores acabam sendo movimentadas mais do que deveriam, justamente porque é fácil treinar através delas.
+  verbatim: "i actually find more minor injuries [music] end up being moved more than they should. and that's because it's easier to train through these minor injuries"
+
+V027-24  R027@05:06  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: dor, supino, lesao
+  Ele conviveu anos com problemas de tendão do peitoral no supino e só agora está superando.
+  verbatim: "i've dealt with years of pec tendon [music] issues on bench. i'm finally"
+
+V027-26  R027@05:38  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, autorregulacao
+  A regra que ele usa hoje é mover o máximo possível desde que os sintomas de dor sigam em queda ao longo do tempo.
+  verbatim: "you want to move as much as you can while still seeing your pain symptoms [music] trending down over time"
+  condições: V027-28
+
+V027-29  R027@06:08  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, deload, meta-metodologia
+  É melhor para os ganhos no longo prazo aceitar uma perda de curto prazo indo mais leve.
+  verbatim: "it's best for your gains for the long run to accept possibly a short-term hit from just going [music] lighter"
+
+V027-30  R027@06:08  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, progressao, erro-comum
+  Depois de superada a lesão, não se deve correr de volta às cargas de trabalho antigas.
+  verbatim: "once you're over the injury, don't rush back to your old workloads right away"
+
+V027-31  R027@06:23  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, progressao, erro-comum
+  O erro que o manteve 3 anos sem progresso foi justamente tentar voltar correndo às cargas de treino antigas.
+  params: periodo_sem_progresso=3 anos [anos]
+  verbatim: "over 3 years i didn't make progress is i just kept trying to rush back to my old training loads"
+
+V027-32  R027@06:23  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, recuperacao, progressao
+  Os tecidos se aclimatam às cargas com o tempo, então o deload da lesão traz destreino e deixa o atleta mais suscetível a nova lesão.
+  verbatim: "your tissues get acclimated to those loads over time. [music] and when you deload from injury, you're going to have a bit of detraining and you're more susceptible to this re-injury"
+
+V027-33  R027@06:38  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, condicionamento, progressao, capacidade-trabalho
+  A reconstrução depois da lesão deve ser lenta e focada em capacidade de trabalho.
+  verbatim: "build back up slowly and focus on work capacity"
+
+V028-03  R028@00:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, dor, agacho
+  Ao desencaixar a barra do back down ele sentiu dor nas costas e a perna ficou dormente.
+  verbatim: "when i went to unrackck it, i felt this pain in my back and my leg went numb"
+
+V028-04  R028@00:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, dor
+  As costas dele travaram imediatamente e ficaram tensas.
+  verbatim: "immediately, my back started seizing up and it was tight"
+
+V028-05  R028@00:45  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, autorregulacao
+  Apesar da dor, ele decidiu desencaixar a barra e ver como o levantamento se comportaria.
+  verbatim: "i decided, let's unrack it and see how this goes"
+
+V028-06  R028@01:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: agacho, lesao, tecnica
+  Com o corpo em guarding ele desceu mais devagar e a subida foi muito fácil.
+  verbatim: "so i descended sort of slow. i lifted up. it was really easy"
+
+V028-07  R028@01:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: agacho, lesao
+  Essa pode ter sido a série de back off mais fácil do ciclo inteiro, mesmo sendo a mais pesada.
+  verbatim: "it might have been my easiest squat back off full cycle, even though it was the heaviest one, too"
+
+V028-08  R028@01:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, mobilidade, recuperacao
+  Ele andou entre as séries como de costume e a sensação foi melhorando quanto mais ele se movia.
+  verbatim: "then i went and walked between sets like i usually do. it felt better and better as i moved more"
+
+V028-09  R028@01:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, acessorios, cardio
+  Ele completou os demais back off sets, todos os acessórios e o cardio sem nenhuma modificação no treino.
+  verbatim: "did my other back offset, did all my accessories, did my cardio, no modifications at all"
+  condições: V028-10
+
+V028-10  R028@01:16  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: lesao, autorregulacao, dor
+  O critério dele era recuar se a dor estivesse forte ou piorando com o movimento.
+  verbatim: "if the pain was bad or getting worse from movement, i would have backed it off"
+
+V028-11  R028@01:31  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, mobilidade
+  Mesmo se tivesse recuado a carga, ele teria continuado tentando se mover.
+  verbatim: "still would have tried to move regardless"
+
+V028-19  R028@03:19  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: mentalidade, lesao
+  A frustração com lesões e reveses vem de apego a coisas fora do próprio controle, como números específicos ou resultados.
+  verbatim: "they're too attached to things with that are not within their control like specific numbers or outcomes"
+
+V028-26  R028@04:35  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, mentalidade
+  A síntese dele para lidar com dor no treino é manter a calma, porque a mentalidade afeta de fato a dor.
+  verbatim: "stay calm because your mindset absolutely affects pain"
+  condições: V028-10
+
+V028-27  R028@04:35  tier:R scope:GERAL modo:prescricao genero:aula implied
+  tópicos: lesao, progressao, deload
+  Depois disso a instrução é ir mais leve e reconstruir a carga de volta aos poucos.
+  verbatim: "and then just go later and work your way back up"
+  condições: V028-10
+
+V032-11  R032@00:45  tier:R scope:PESSOAL modo:anedota genero:log-de-treino explicit
+  tópicos: lesao, mentalidade
+  Ele já lidou com várias lesões graves e chegou a considerar seriamente que talvez nunca mais batesse um PR.
+  verbatim: "I had [music] dealt with several severe injuries. I had to seriously consider if I may never hit another PR again"
+
+V035-15  R035@01:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, intensidade
+  Ir pesado com frequência demais também pode aumentar o risco de lesão por má gestão de carga.
+  verbatim: "Going too heavy too often like this could also augment injury risk through poor load"
+
+V037-12  R037@01:16  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, dor, cardio
+  No treino dele e no dos alunos ele notou bem menos dores e lesões depois de aumentar o cardio.
+  verbatim: "I've noticed that anecdotally in my own training and the people I coach, way less little aches and pains and just major injuries as well"
+
+V037-13  R037@01:16  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, cardio
+  Em estudos com atletas parece haver correlação entre nível de aptidão aeróbia e taxa de lesão.
+  verbatim: "in studies and athletes, there seems to be a correlation between aerobic fitness levels and the rate of injury"
+
+V040-21  R040@02:46  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, recuperacao
+  Desse período ele saiu com problemas de lesão que demoraram para superar.
+  verbatim: "I had some injury issues that took me a while to overcome and rebuild back stronger from"
+
+V045-17  R045@01:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: peso-corporal, lesao
+  Ficar muito seco tem problemas: anedoticamente essas pessoas parecem se lesionar mais.
+  verbatim: "but i do think getting super lean does have some issues anecdotally people like that seem to get injured"
+
+V045-18  R045@02:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: peso-corporal, lesao
+  Ele acredita que a disponibilidade energética pode ter um papel nessas lesões de quem fica muito seco.
+  verbatim: "i do believe there could be something there with energy availability that may be playing a role"
+
+V048-08  R048@00:30  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: condicionamento, lesao
+  Com mais condicionamento ele se lesiona com menos frequência.
+  verbatim: "i don't get injured as often"
+
+V048-11  R048@00:45  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: supino, intensidade, lesao, ombros
+  O supino dele vinha sendo prejudicado pela intensidade: mesmo níveis moderados inflamavam lesões antigas de ombro.
+  verbatim: "previously my bench had been hurt by intensity even moderate levels it flared up my old shoulder injuries"
+
+V050-18  R050@02:01  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: progressao, lesao, aprendizado-motor
+  A progressão linear funcionou para ele quando estava reabilitando uma lesão, por causa da memória muscular.
+  verbatim: "and that worked when i was rehabbing an injury when i first started this whole general format of my training cycles"
+
+V054-16  R054@01:16  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: volume, recuperacao, lesao
+  Ele deixou de aguentar tanto volume, teve a recuperação prejudicada e enfrentou lesões por um período.
+  verbatim: "I couldn't handle as much volume and recovery was impaired. For a while, I struggled with injuries, too"
+
+V057-13  R057@01:00  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: peso-corporal, lesao, progressao
+  Parte do platô veio de lesões, mas também de ele ter ficado na categoria de 93 kg por não ter certeza de que encheria a de 105 kg antes de sair do júnior.
+  params: categoria_mantida=93 kg [kg]  categoria_seguinte=105 kg [kg]
+  verbatim: "part of that was injuries, but also I stayed in the 93 kilo class because I wasn't sure I could fill out the 105 kilo class before I was done as a junior lifter"
+
+V057-17  R057@01:30  tier:R scope:PESSOAL modo:fato genero:aula explicit
+  tópicos: supino, lesao, ombros
+  O supino dele não subiu proporcionalmente aos outros movimentos, e ele ainda tinha problemas de lesão no ombro.
+  verbatim: "My bench didn't go up as much proportionally. Still had some shoulder injury issues"
+
+V060-10  R060@01:16  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: progressao, lesao
+  No curto e médio prazo há flutuações na curva, como lesões ou períodos de estresse de vida.
+  verbatim: "in the shorter to medium term, there may be fluctuations. You may get injured, you have some big life stress or whatever"
+
+V062-01  R062@00:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, lesao
+  Cardio pode prevenir lesões em quem levanta.
+  verbatim: "cardio can prevent injuries"
+
+V068-13  R068@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: barra-alta, lesao
+  A segunda razão para incluir barra alta é evitar lesões por overuse.
+  verbatim: "the next reason for high bar is avoiding overuse injuries."
+
+V068-14  R068@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, dor
+  Lesões por overuse surgem de repetir o mesmo padrão de movimento sem parar, criando problemas como tendinite.
+  verbatim: "These arise from doing the same movement pattern over and over again, creating issues like tendonitis."
+
+V068-15  R068@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, selecao-exercicio, barra-alta
+  Variar levemente o padrão de movimento ajuda a prevenir lesões por overuse, por exemplo misturando barra alta com barra baixa.
+  verbatim: "Slightly varying the movement pattern can help prevent this, such as high bar mixed in with low bar."
+
+V070-19  R070@02:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: intensidade, fadiga, lesao
+  Alguma exposição a pesos pesados é importante, mas ir pesado demais com frequência demais queima você e pode arriscar lesão.
+  verbatim: "Some exposure to heavier weights is important, but going too heavy too often will just burn you out and possibly risk injury."
+
+V071-08  R071@00:46  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: tecnica, lesao
+  A ligação entre técnica e lesão é bem mais complexa do que a crença de que forma ruim leva a lesão.
+  verbatim: "many think bad form will lead to injury. But the truth is the link between form and injury is much more complex"
+
+V071-09  R071@00:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: tecnica, lesao
+  A questão tem mais a ver com como diferentes tecidos são carregados por diferentes formas.
+  verbatim: "It has more to do with how different tissues are loaded with different forms."
+
+V071-10  R071@00:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, tecnica
+  Com gestão de carga adequada, nenhuma forma é inerentemente perigosa.
+  verbatim: "With proper load management, no form is inherently dangerous."
+
+V072-20  R072@02:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, meta-metodologia
+  Outro fator que separa quem chega ao nível elite de quem para como intermediário permanente é se manter saudável.
+  verbatim: "another factor I see of lifters making it to an elite level before stopping as a lifetime intermediate is staying healthy"
+
+V072-21  R072@02:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, progressao
+  É difícil progredir quando o tempo que poderia ser de construção é gasto reabilitando e reconstruindo.
+  verbatim: "It's hard to make progress if you have spend time you could have used building instead just rehabbing and rebuilding."
+
+V072-22  R072@02:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, volume
+  A resposta curta para prevenir lesão é gestão de carga: simplesmente não fazer demais.
+  verbatim: "The short answer though, load management. Simply don't do too much."
+
+V072-23  R072@02:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, condicionamento, lesao
+  Ter um nível básico de condicionamento cardiovascular ajuda a prevenir lesões por overuse.
+  verbatim: "having a baseline cardiovascular fitness level as well as movement variation included in your program helping to prevent overuse injuries"
+
+V072-24  R072@02:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, lesao
+  Incluir variação de movimento no programa ajuda a prevenir lesões por overuse.
+  verbatim: "movement variation included in your program helping to prevent overuse injuries"
+
+V072-25  R072@02:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade, lesao
+  Crenças mentais sobre dor podem agravar o quadro e fazer sentir mais dor mesmo na ausência de qualquer dano.
+  verbatim: "Mental beliefs on pain can actually exacerbate the issues and make you feel more pain even in the absence of any damage."
+
+V072-26  R072@02:47  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, lesao, mentalidade
+  Em lesões de manguito rotador, a crença na própria capacidade de reabilitar previu melhores desfechos do que o grau de dano ou incapacidade.
+  verbatim: "belief in ability to rehab was linked with better rehab outcomes for rotator cuff tears versus the degree of damage or disability"
+
+V073-05  R073@00:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  A especialização precoce aumenta o risco de lesão por overuse.
+  verbatim: "It risks injury due to overuse."
+
+V073-18  R073@02:17  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, progressao
+  Os levantadores com melhor progresso de longo prazo tendem a ser os que se mantêm saudáveis e não precisam gastar tempo reabilitando e reconstruindo.
+  verbatim: "If you look at the lifters who have the best progress long term, they tend to be the ones who stay healthy."
+
+V073-19  R073@02:17  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  A falta de variação de movimento foi associada a taxas mais altas de lesão, em particular lesões por overuse.
+  verbatim: "lack of movement variation has been linked to higher rates of injury, particularly overuse injuries"
+
+V079-01  R079@00:15  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao, meta-metodologia
+  O powerlifting é de longe um dos esportes mais seguros em termos de taxa de lesão.
+  verbatim: "powerlifting is by far one of the safest sports in terms of injury rates"
+
+V079-02  R079@00:15  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao
+  A taxa de lesão do powerlifting é uma fração literal da de esportes de contato ou da corrida.
+  verbatim: "A literal fraction of contact sports or running."
+
+V079-03  R079@00:30  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, meta-metodologia
+  A baixa taxa de lesão do powerlifting aparece em múltiplos estudos, não em um só.
+  verbatim: "There have been multiple studies on this. This isn't just one study finding low results."
+
+V079-04  R079@00:30  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, competicao
+  Mesmo entre powerlifters de nível internacional a taxa de lesão é muito baixa.
+  verbatim: "Even among international level powerlifters, the injury rate is very low."
+
+V079-05  R079@00:30  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, meta-metodologia
+  Só existe um estudo de verdade que olhou variáveis de treino de powerlifters e a associação delas com lesão, com amostra de 1900.
+  params: n_amostra=1900 pessoas [n_amostra]
+  verbatim: "there's only been one real study that looked at variables of powerlifters and their association with injury. It had a sample size of 1900."
+
+V079-06  R079@00:46  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, volume, intensidade, frequencia
+  Nesse estudo, nenhuma variável de treino — frequência, intensidade ou volume — previu lesão.
+  verbatim: "no real training variables, frequency, intensity, or volume predicted injury"
+
+V079-07  R079@00:46  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao
+  O que previu lesão no estudo foi ter tido lesão prévia.
+  verbatim: "prior injuries did and I'll get to why that may be later"
+
+V079-08  R079@00:46  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, competicao
+  A frequência de competição também apareceu ligada a lesão.
+  verbatim: "we also see competition frequency being linked to injury as well"
+
+V079-09  R079@01:01  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, volume, meta-metodologia
+  O conjunto dos dados mostra a importância da gestão de carga, que tem suporte forte em vários esportes para risco de lesão.
+  verbatim: "the importance of load management, something that has strong support across numerous sports for injury risk"
+
+V079-10  R079@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, autorregulacao, volume
+  A hipótese dele é que intensidade, frequência e volume não preveem lesão isoladamente porque as pessoas são boas em autosselecionar uma carga de trabalho que aguentam.
+  verbatim: "my hypothesis is the reason intensity, frequency, or volume independently than predict injury is that people are pretty good at self- selecting a workload they can handle"
+
+V079-11  R079@01:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: competicao, lesao, volume
+  A frequência de competição foi ligada a mais risco de lesão porque é quando as pessoas empurram a carga de treino além do que aguentam.
+  verbatim: "frequency was linked to increase injury risk is because that's when people start to push their normal training load more than what they can handle"
+
+V079-12  R079@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: volume, lesao, autorregulacao
+  A carga de treino é o que importa: deve-se escutar o corpo e não fazer demais.
+  verbatim: "Training load is important. Listen to your body and don't do too much."
+
+V079-13  R079@01:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tecnica, erro-comum, lesao
+  Um extremo do debate sobre técnica acha que um colapso mínimo de joelho vai estourar o ligamento cruzado e que é preciso tirar carga e trabalhar forma.
+  verbatim: "my knee caved 1 millm. I'm going to blow up my ACL. I have to deal load to the bar and work on form."
+
+V079-14  R079@01:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tecnica, erro-comum, lesao
+  O outro extremo diz que dá para arredondar as costas o quanto quiser porque o corpo se adapta à carga.
+  verbatim: "You can round your back as much as you want. You'll be fine. Your body adapts to load."
+
+V079-15  R079@01:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tecnica, lesao
+  A verdade está no meio termo entre os extremos: formas diferentes carregam mais ou menos partes diferentes do corpo.
+  verbatim: "I think the truth is somewhere in the middle. Different forms will load different parts of the body more or less."
+
+V079-16  R079@01:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tecnica, lesao, volume
+  Por isso a questão da técnica acaba se reduzindo a gestão de carga.
+  verbatim: "And thus, it just comes down to load management."
+
+V079-19  R079@02:16  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, tecnica, terra
+  Se ele arredondasse as costas puxando só uma anilha de cada lado, ninguém esperaria que ele se machucasse.
+  verbatim: "If I rounded my back and pulled one plate, I don't think anybody would expect me to get hurt."
+
+V079-20  R079@02:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, tecnica
+  Uma avó sedentária levantando a mesma carga com as costas arredondadas provavelmente se machucaria.
+  verbatim: "if you ask your sedentary grandma who can barely get out of your chair to lift the same load with a rounded back, yeah, she's probably going to hurt herself"
+
+V079-21  R079@02:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, volume
+  O corpo se adapta à carga, mas existe um limite.
+  verbatim: "it shows how we know that our body can adapt to load. But there's a limit."
+
+V079-22  R079@02:31  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, terra, volume
+  Como exemplo extremo do próprio limite, ele diz que puxar 700 lb com as costas muito arredondadas por 50 singles provavelmente machucaria as costas dele.
+  params: carga_exemplo=700 lb [lb]  singles_exemplo=50 séries [series]
+  verbatim: "If I tried to deadlift 700 lb with an extremely rounded back for 50 singles, you'd think I'd hurt my back."
+
+V079-23  R079@02:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tecnica, lesao
+  A técnica influencia o risco de lesão em algum grau, mas é mais complexo do que dizer que uma forma é inerentemente perigosa.
+  verbatim: "So, this form influence injury risk. Yeah, to some degree. But it's more complex than simply this form is inherently dangerous"
+
+V079-24  R079@03:01  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tecnica, lesao, volume
+  No fim das contas, a técnica é uma forma de afetar a gestão de carga.
+  verbatim: "At the end of the day, I think it's a way of affecting load management."
+
+V079-27  R079@03:17  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: dor, lesao
+  Não precisa haver dano para sentir dor, e muitas vezes o dano não se correlaciona com a dor.
+  verbatim: "There doesn't need to be damage to feel pain. In fact, often times damage does not correlate with pain."
+
+V079-28  R079@03:17  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, costas, lesao
+  Pessoas com e sem degeneração discal têm a mesma probabilidade de ter dor nas costas.
+  verbatim: "people with or without disc degeneration are just as likely to have back pain"
+
+V079-30  R079@03:32  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: dor, mentalidade, lesao
+  Ter medo de determinadas formas está ligado a relesão.
+  verbatim: "Having fear of certain forms is linked to reinjury."
+
+V079-31  R079@03:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade, lesao
+  O medo gera uma apreensão que agrava a resposta de dor e leva a evitar movimentos que ajudariam na cura e na tolerância.
+  verbatim: "It leads to fearfulness that exacerbates the pain response as well as avoidance of movements that can aid in healing and tolerance"
+
+V079-32  R079@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, mobilidade
+  Deve-se continuar se movendo mesmo através de dor leve, o que leva a melhores desfechos de reabilitação.
+  verbatim: "keep moving even through minor pain which leads to better rehab outcomes"
+  condições: V079-33, V079-34, V079-39, V027-23
+
+V079-33  R079@03:47  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, erro-comum
+  Muita gente exagera na reabilitação e acaba arrastando a própria lesão.
+  verbatim: "Many people overdo it and drag out their injuries"
+
+V079-34  R079@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Anedoticamente, ele achou que um nível de dor de 2 a 3 numa escala de 10 é uma boa faixa para empurrar na reabilitação, ajustando ao que faz os sintomas melhorarem com o tempo.
+  params: dor_min=2 escala 0-10 [escala_dor]  dor_max=3 escala 0-10 [escala_dor]  escala_max=10 escala 0-10 [escala_dor]
+  verbatim: "Anecdotally, I have found that two to three out of 10 pain level is a good amount to push at though ultimately adjust to what you need for"
+  condições: V079-39, V027-23, V086-21
+  conflita: V027-25
+
+V079-35  R079@04:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio, dor
+  Na lesão, deve-se procurar o movimento mais específico possível que não doa e empurrar nele com a mesma intensidade.
+  verbatim: "I'd also try to find the most specific non-p painful movement you can push just as hard."
+
+V079-36  R079@04:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, mentalidade
+  Empurrar num movimento substituto sem dor ajuda a manter os ganhos e a motivação.
+  verbatim: "This helps to maintain your gains and motivation."
+
+V079-37  R079@04:02  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: agacho, barra-alta, barra-baixa, lesao
+  Como exemplo, se as costas doem demais no low bar, ainda dá para agachar high bar normalmente e a transferência é boa.
+  verbatim: "your back may hurt too much for low bar, but you can squat high bar just fine"
+
+V079-38  R079@04:17  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: agacho, barra-baixa, lesao
+  É possível até ficar mais forte no low bar depois de voltar do período treinando a variação sem dor.
+  verbatim: "You may even get stronger low bar once you come back to it."
+
+V079-39  R079@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao
+  Mesmo assim, é preciso seguir cauteloso.
+  verbatim: "Be cautious still"
+
+V086-19  R086@02:32  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao
+  A maior parte do tempo que ele desperdiçou sem progredir foi lidando com lesões.
+  verbatim: "most of my waste of time i.e time i wasn't making progress was when dealing with injuries"
+
+V086-20  R086@02:47  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, dor
+  A maioria das pessoas não vai leve o suficiente, pelo tempo necessário, para reabilitar a lesão.
+  verbatim: "most people do not go as late as they need to to rehab the injury"
+
+V086-21  R086@02:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao
+  Treinar com dor leve pode ser aceitável ou até melhor, mas os sintomas precisam estar melhorando ao longo do tempo.
+  verbatim: "yes training through light pain can be okay or or even better link to research on that below but your symptoms should be trending better over time"
+  condições: V086-20, V086-22
+
+V086-22  R086@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, mentalidade
+  Não deixe o ego impedir de ir leve o bastante para a lesão curar direito e acabar arrastando o problema por meses.
+  verbatim: "don't be the type of person whose ego is too big to go light enough to let it heal properly and just drags out the injury for months"
+
+V087-05  R087@00:30  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: fadiga, lesao, ombros
+  Os singles fatigavam o trabalho principal dele e ainda agravavam lesões de ombro.
+  verbatim: "they fatigued my main work and also exacerbated shoulder injuries"
+
+V087-10  R087@01:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: ombros, lesao
+  Ele não teve nenhum problema de ombro no ciclo, algo que costumava aparecer sempre que empurrava em território de PR.
+  verbatim: "i've had no shoulder issues at all something that has been pretty common for me over the past years whenever i push into the pr territory"
+
+V088-24  R088@03:02  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: sumo, lesao
+  A única razão real para um puxador convencional fazer sumô seria descarregar as costas, talvez por causa de lesão.
+  verbatim: "the only real reason i could see for people who pull conventional w to do sumo is to load their back l maybe due to injury"
+
+V088-25  R088@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, lesao, terra
+  Block pulls ou terra com trap bar também descarregam as costas e são um pouco mais específicos que o sumô nesse caso.
+  verbatim: "you may want to try block poles or trap bar deadlifts which will also load the back lust and be a bit more specific"
+
+V089-19  R089@02:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Muitas vezes dá para usar uma variação que transfere bem para o movimento principal enquanto se contorna uma lesão.
+  verbatim: "often times we can do some variation that will carry over well to our main lift while working around injuries"
+
+V089-20  R089@02:31  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, ombros, supino, selecao-exercicio
+  Ele teve um cliente fazendo supino inclinado baixo sem nenhuma dor, mesmo com os ombros doendo muito no supino de competição.
+  verbatim: "recently had a client doing some low incline bench which was completely pain-free even though his shoulders really hurt on regular competition bench press"
+
+V089-24  R089@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor
+  Com tendinite não se deve descansar completamente, porque isso na verdade piora o quadro.
+  verbatim: "tendonitis is one of those things where you don't want to completely rest as that actually makes it worse"
+
+V089-25  R089@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, selecao-exercicio
+  O contorno útil para tendinite é usar variações de velocidade lenta, como trabalho de tempo e pausas, porque a tensão no tendão depende do peso e da velocidade em que ele é movido.
+  verbatim: "a useful workaround is doing slow velocity variations things like tempo work or pauses tendon strain is based off weight and speed we move it at"
+
+V089-26  R089@03:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: intensidade, lesao, dor
+  Nessas variações lentas normalmente dá para trabalhar em intensidades bem altas sem problema.
+  verbatim: "you can often work at pretty high intensities on these just fine"
+
+V089-27  R089@03:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, dor
+  O trabalho excêntrico pode ajudar a reabilitar tendinite.
+  verbatim: "plus ecentric may help with rehabbing tendonitis"
+
+V092-18  R092@02:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, frequencia
+  Com agacho e terra 2 vezes por semana cada, 4 no total, lesão por overuse não é um problema tão frequente porque há variação entre os dois movimentos.
+  params: frequencia_por_movimento=2 x/semana [x_semana]  frequencia_total_inferiores=4 x/semana [x_semana]
+  verbatim: "compare to squats deadlifts two times per week on each four times total overuse isn't as frequent an issue because there's variation between the two movements"
+
+V092-21  R092@02:16  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Variação de movimento está ligada a taxas menores de lesão.
+  verbatim: "moveing variation is linked to lower rates of injury"
+
+V092-22  R092@02:32  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, frequencia
+  Um estudo com 1900 powerlifters competitivos não encontrou associação entre frequência e taxa de lesão.
+  params: n_powerlifters_estudo=1900 pessoas [n_amostra]
+  verbatim: "the study of 1900 competitive powerlifters found no association between frequency and injury rate"
+
+V094-22  R094@02:32  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao, meta-metodologia
+  O levantamento olímpico é mais explosivo por natureza que o powerlifting e a taxa de lesão é igual entre eles.
+  verbatim: "though weightlifting is more explosive by nature of how the lifts have to be performed, and the injury rate is the same"
+
+V094-23  R094@02:32  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao
+  As taxas de lesão de ambos os esportes são muito baixas comparadas às de outros esportes.
+  verbatim: "Both are very low compared to other sports regardless"
+
+V094-24  R094@02:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, tecnica
+  O estresse no tendão é maior com velocidades de movimento mais rápidas, mas é preciso aplicar os princípios de adaptação e gestão de carga em vez de assumir que menos força é sempre melhor.
+  verbatim: "while tendon stress is greater with faster movement speeds, we need to keep in mind the principles of adaptation and load management here, not just assume less force must be better"
+
+V094-25  R094@02:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, erro-comum
+  Levada ao extremo, a lógica de evitar força tornaria o sedentarismo ideal, quando na verdade ele aumenta a taxa de lesão.
+  verbatim: "being sedentary would be the best since it reduces as much force as possible, but it actually increases injury rate"
+
+V094-26  R094@03:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, recuperacao
+  O corpo se adapta ao estímulo imposto e isso gera efeito protetor, por isso gestão de carga é a chave.
+  verbatim: "Our body can adapt to the stimulus as we place upon it and thus provide protective effect. That's why load management is key"
+
+V094-27  R094@03:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, volume
+  Fazer de menos deixa você descondicionado e fazer demais também arrisca lesão, então o ponto é achar o meio-termo.
+  verbatim: "Do too little and we are unconditioned. Do too much and we risk injury as well, so it's all about finding the sweet spot"
+
+V096-15  R096@01:46  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao, erro-comum
+  Não há evidência de que a razão push/pull previna lesões; ela foi inventada por um cara que treinava jogadores de beisebol.
+  verbatim: "There's no evidence this actually prevents injuries. In fact, it was just made up by a guy who coached baseball players"
+
+V101-14  R101@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, ombros, selecao-exercicio
+  Boa parte dos problemas de ombro no powerlifting vem de ser hiperespecífico, sem variação de movimento — e variação já se mostrou importante para prevenir lesão.
+  verbatim: "a lot of powerlifting shoulder issues come from people being hypers specific with no movement variation which has been shown to be important for preventing injury"
+
+V102-36  R102@03:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, ombros, fadiga
+  Quem tem mais problemas de ombro e não aguenta muito volume faz melhor em poupar a fadiga para trabalho específico de supino e usar isolamento para o tríceps.
+  verbatim: "the downside is for people with more shoulder issues who can't handle a lot of volume it can be better to save the fatigue for bench specific work and do isolation work instead to hit the triceps"
+
+V103-05  R103@00:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, lesao, selecao-exercicio
+  A pegada fechada também dá uma variação em relação ao movimento exato de competição, o que previne overuse.
+  verbatim: "you can also get a bit of a variation from the exact movement to prevent overuse"
+
+V103-14  R103@01:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, lesao, ombros
+  Descer mais devagar diminui o estresse no tendão, o que permite gerenciar lesões de ombro.
+  verbatim: "you can manage shoulder injuries as it lowers tendon stress going slower under the descent"
+
+V103-35  R103@02:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, ombros, lesao
+  Um problema do spoto press é pesar nos ombros, por pausar numa posição que os carrega mais.
+  verbatim: "One issue is it can be a bit hard on the shoulders pausing in a position that loads them more"
+
+V104-13  R104@00:46  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, ombros, supino
+  As lesões de ombro dele parecem ser especialmente agravadas por singles no supino.
+  verbatim: "especially with my issues with shoulder injuries which seem to be especially exacerbated by singles on bench"
+
+V108-27  R108@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor
+  Quando lesionado, um dos exercícios a fazer é o próprio exercício doloroso, para reabilitar a tolerância a ele.
+  verbatim: "whenever you're injured I say you should do two exercises one is the painful exercise itself so you can rehab your tolerance to it"
+  condições: V108-32
+
+V108-28  R108@03:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade, lesao
+  Respostas psicológicas aumentam a dor, e o caminho para superar isso é a exposição ao movimento.
+  verbatim: "psychological responses increase pain and you want to overcome this by exposure to the movement"
+
+V108-29  R108@03:17  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, dor
+  Não dá para dizer que reabilitou uma lesão se você não trabalhou o exercício de volta até ele ficar tolerável.
+  verbatim: "can you really say you rehabed an injury if you haven't worked the exercise back to being tolerable"
+
+V108-30  R108@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  O outro exercício a fazer quando lesionado é o mais específico que você conseguir empurrar sem dor, para manter estímulo e evitar destreino.
+  verbatim: "the other exercise is just the most specific exercise you can push painfree that's something to keep up stimulus as best as possible while you're injured to prevent any DET training"
+
+V108-31  R108@03:33  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, barra-alta, barra-baixa
+  Exemplo: se o agachamento low bar machuca as costas mas o high bar não, dá para empurrar o high bar e seguir treinado, talvez até melhorando o low bar para quando voltar.
+  verbatim: "maybe low bar squats hurt your back but High bar is fine in that case you can push your high bar Squat and still keep yourself trained maybe even improve your low bar once you're back to it"
+
+V108-32  R108@03:33  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, progressao
+  E dá para começar o exercício doloroso leve, adicionando peso devagar para reabilitar a tolerância.
+  verbatim: "you can start off the low Bar Light slowly adding weight to rehab your tolerance"
+
+V109-23  R109@02:48  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao
+  Levantadores com mais experiência, mais força e lesões prévias são mais suscetíveis a se lesionar de novo.
+  verbatim: "lifters with more experience experence more strength plus prior injuries are more susceptible to injury"
+
+V109-24  R109@03:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Por isso variação de movimento para prevenir overuse e gestão da carga são importantes para o avançado.
+  verbatim: "so things like movement variation to prevent overuse and managing loading are important"
+
+V109-25  R109@03:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, intensidade, progressao
+  Empurrar forte para obter muito estímulo funciona no iniciante ou intermediário, mas no avançado só leva a lesão: ele precisa focar num fogo brando.
+  verbatim: "pushing hard to get a ton of stimulus can work to Spur progress as a beginner or intermediate but as an advanced lifter it will just lead to injury they have to focus on a slow burn here"
+
+V109-30  R109@03:33  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, progressao
+  Resumo: para o avançado é mais sobre se manter saudável e espremer o que ainda dá para tirar do treino.
+  verbatim: "an advanc lifter is really more about staying healthy and squeezing what else you can out of your training"
+
+V110-30  R110@03:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: convencional, competicao, lesao, rom, antropometria
+  Já um puxador convencional de braços curtos com histórico de problemas nas costas se beneficia de saltos maiores, pela amplitude extra e tecidos mais sensíveis.
+  verbatim: "a short arm conventional puller with a history of back issues. They're going to be more worried about managing fatigue from their extra range of motion and their tissues that are more sensitive. They'll benefit from bigger jumps"
+
+V113-14  R113@01:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: barra-baixa, selecao-exercicio, lesao
+  O único ponto positivo do barra baixa como variação é servir de variação geral de movimento para prevenir overuse.
+  verbatim: "the only real plus I would say is just as a general variation of movement to prevent overuse"
+
+V113-27  R113@02:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: agacho, lesao, ombros, equipamento
+  A safety squat bar ajuda quem tem problema de ombro ou cotovelo, porque não há pressão sobre os braços nessa variação.
+  verbatim: "it can help people who have shoulder or elow issues there's no pressure on the arms with this variation"
+
+V113-38  R113@04:02  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, agacho, lesao
+  Box squat vai para o tier D, com o único uso que ele reconhece para lifters raw sendo reabilitação de lesão em casos raros, onde pausas ou agachamento barra alta muitas vezes resolvem igual.
+  verbatim: "you can often use pauses or just High squats instead I'm going to go with d tier for this"
+  condições: V113-04
+
+V116-13  R116@02:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Variação de movimento previne overuse, o que importa para lesões crônicas de longo prazo.
+  verbatim: "injury wise movement variation can prevent overuse as well which is important for more long-term chronic injuries"
+
+V116-18  R116@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, lesao, acessorios
+  Na prática esse volume alto de supino exige variação de movimento para prevenir overuse: no inferior isso já vem de agacho e terra, no supino tem que vir de variações e mais trabalho de isolamento.
+  verbatim: "now practically speaking this may require some movement variation to prevent overuse on lower body we have that with squats and deadlifts but with bench this could just be some variations and also just more isolation work"
+
+V118-05  R118@01:00  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: ombros, lesao, supino
+  Anos de problemas intermitentes de ombro o levaram a priorizar o supino na gestão de carga, e como está sem sintomas há um tempo ele está reintroduzindo o desenvolvimento com cautela.
+  verbatim: "but I've had no shoulder issues for a while now so I'm trying to gently reintroduce op"
+
+V118-08  R118@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, mentalidade
+  Ao lidar com dor e lesão é bom manter a calma, porque dor pode ocorrer mesmo sem dano tecidual por fatores psicossociais.
+  verbatim: "it's good to stay calm like this pain can occur even without tissue damage due to psychosocial factors"
+  condições: V028-10
+
+V118-16  R118@02:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: pegada, lesao, supino
+  Alternar a largura de pegada é uma boa forma de prevenir lesões de overuse, por gerar padrões de movimento levemente diferentes.
+  verbatim: "this is a good way to prevent overuse injuries just slightly different movement patterns"
+
+V119-28  R119@03:48  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: ombros, progressao, lesao
+  Esse estilo de trajetória trabalha mais os ombros, então a progressão precisa ser gradual para dar tempo de aclimatar.
+  verbatim: "style can work the shoulders more so work on it gradually to let yourself acclimate"
+
+V120-23  R120@03:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: cardio, lesao, recuperacao
+  O cardio pode ser benéfico por menores taxas de lesão e, anedoticamente, por ajudar na recuperação, com um mecanismo teórico de gestão de carga.
+  verbatim: "I've talked about how cardio can be beneficial, lower injury rates, and anecdotally since it can help with recovery, some theoretical mechanism with load management there."
+
+V122-13  R122@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, volume, lesao
+  Ele prescreve trabalho de isolamento para quem não aguenta muito volume de agacho e terra: gente maior, com mais força absoluta, ou com lesões que limitam o movimento.
+  verbatim: "this is why I do typically for anybody who cannot handle lot sandela volume people who are bigger and or have more absolute strength or people who have injuries"
+
+V125-02  R125@00:15  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: mobilidade, lesao
+  A relação entre alongamento e mobilidade e risco de lesão é tênue na melhor das hipóteses.
+  verbatim: "The link between stretching and mobility and injury risk is tenuous at best."
+
+V125-03  R125@00:15  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, recuperacao, erro-comum
+  Quem dedica muito tempo a prevenir lesão provavelmente aproveitaria melhor essa energia em outra coisa, possivelmente até só descansando.
+  verbatim: "People devoting a ton of time to prevent injury are probably better spending this energy elsewhere. Possibly just doing nothing, relaxing."
+  condições: V125-05
+
+V125-04  R125@00:15  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao, volume
+  O gerenciamento de carga é um dos maiores fatores de lesão.
+  verbatim: "Load management is one of the biggest factors for injury."
+
+V127-15  R127@02:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, volume
+  Quem se detona em um movimento, como ombro no supino ou lombar no terra, pode fazer a maior parte ou até todo o trabalho com variações auto-limitantes para garantir volume suficiente de prática.
+  verbatim: "if you're somebody who gets quite beat up on a lift your shoulder Butters you on bench back issues on deadlifts Etc you can do most or even all of your work with self-limiting variations"
+  condições: V127-13
+
+V130-11  R130@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, dor, selecao-exercicio
+  Excêntricas mais lentas podem ser úteis para reduzir o estresse tendíneo, o que é bom para quem está lidando com lesões.
+  verbatim: "slower Centrics can also be useful for lowering tendon stress which are good if you're dealing with injuries"
+
+V134-16  R134@02:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: series-reps, lesao, recuperacao
+  Séries de repetições altas também servem para quem não tolera muito estímulo em geral ou é propenso a lesão.
+  verbatim: "these high rep sets are also useful for people who cannot handle a lot of stimulus in general or are injury-prone"
+
+V135-24  R135@02:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, volume
+  O desfecho pior desses programas extremos é acabar com lesões que incomodam por anos ou a vida inteira.
+  verbatim: "you end up with injuries that can bother you for years or even your whole life"
+
+V135-26  R135@02:47  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: progressao, fadiga, lesao
+  Apressar ganhos no curto prazo e acabar queimado ou lesionado dá resultados piores no longo prazo do que ganhos lentos e constantes.
+  verbatim: "trying to rush gains in the short term leaving yourself burned out and or injured is going to lead to worse results over the long run than just slow and steady gains"
+
+V136-02  R136@00:00  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: cardio, lesao, hipertrofia
+  Ao contrário da crença popular, cardio não mata os ganhos: pode levar a mais ganhos e reduzir o risco de lesão.
+  verbatim: "cardio is not going to kill your gains in fact it can lead to more gains and reduce your injury risk"
+
+V136-10  R136@01:16  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: cardio, lesao
+  Há também evidência de que cardio previne lesão, e ficar menos lesionado leva a melhor progresso de longo prazo.
+  verbatim: "there's also the evidence that cardio prevents injury and obviously not being injured as much will lead to better long-term progress"
+
+V138-01  R138@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, erro-comum
+  Tirar tempo de folga por causa de lesão é burrice.
+  verbatim: "taking time off from injuries is dumb"
+  condições: V138-18, V138-30, V027-23
+  conflita: V027-25
+
+V138-02  R138@00:00  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao
+  Ele mesmo já parou de treinar por causa de lesão no passado.
+  verbatim: "I mean I get why people do it I've done it before"
+
+V138-03  R138@00:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, recuperacao
+  Continuar se movendo promove melhor cicatrização, e mesmo que não seja totalmente ótimo dá para progredir ou pelo menos manter o progresso.
+  params: otimalidade=100 % [pct]
+  verbatim: "keeping moving will promote better healing and even if it isn't 100% optimal you can still make progress"
+
+V138-04  R138@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, programacao
+  A fórmula geral é pegar o exercício doloroso, dividir o volume entre ele e um segundo exercício menos doloroso, achar uma intensidade tolerável e progredir de volta ao normal.
+  verbatim: "we're going to take whatever exercise is painful split the volume between it and a second less painful exercise find tolerable intensity and then progressively overload our way back towards normal"
+  condições: V138-18, V138-30
+
+V138-05  R138@00:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  O exercício que causa dor continua sendo feito e é chamado de movimento primário.
+  verbatim: "whatever exercise causes us pain we're actually still going to do this"
+  condições: V138-18
+
+V138-07  R138@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, lesao
+  Esse componente mental da dor pode ser independente do nível de dano tecidual, ou da existência de qualquer dano.
+  verbatim: "this can be independent of the level of tissue damage or the presence of tissue damage whatsoever"
+
+V138-08  R138@01:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, mentalidade
+  Continuar fazendo o movimento primário e reconstruir a confiança nele é a chave da reabilitação.
+  verbatim: "so still doing our primary movement and rebuilding our confidence with it is key"
+  condições: V138-18, V027-23
+
+V138-09  R138@01:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  O movimento secundário é o exercício mais específico que dá para fazer com intensidade normal de treino e nenhuma ou quase nenhuma dor.
+  verbatim: "the secondary movement is the most specific Movement we can do with a normal training intensity with no or nearly no pain"
+
+V138-10  R138@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio, barra-alta
+  Se as costas doem no low bar mas o high bar não dói, o high bar é uma ótima opção de movimento secundário por ser muito específico.
+  verbatim: "let's say on low bar squats our back hurts but we can do high bar just fine that's a great option it's very specific"
+
+V138-11  R138@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio, pernas
+  Se o quadril dói demais para tolerar movimento de quadril, dá para usar cadeira extensora para ainda isolar e treinar os quadríceps.
+  verbatim: "we can try a lay extension to to still isolate our quads and get them worked"
+
+V138-12  R138@01:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Em casos extremos, como uma lesão grave de joelho, pode ser preciso algo de especificidade tão baixa quanto bike, só para acumular volume de movimento.
+  verbatim: "we may have to do something as low specificity as cyclan just to get some movement volume in"
+
+V138-13  R138@01:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, mentalidade
+  Mesmo nesse caso extremo o movimento principal continua, ainda que seja agachar com peso corporal até meia profundidade.
+  verbatim: "even if it's something like having a squat just body weight to half depth we have to start somewhere"
+  condições: V138-18
+
+V138-14  R138@01:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, mentalidade
+  Se tiver vergonha de fazer isso na academia, dá para fazer em casa, desde que faça o movimento para vencer o limiar mental.
+  verbatim: "you can even do it at home if you're too embarrassed to be doing this in the gym"
+
+V138-15  R138@01:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, volume
+  O volume é dividido igualmente entre o movimento primário doloroso e o secundário sem dor ou com dor mínima.
+  verbatim: "we're going to split our volume levels into two evenly split between the two movements"
+
+V138-16  R138@02:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, intensidade
+  No movimento secundário se continua treinando com intensidade normal, para manter o máximo de estímulo possível.
+  verbatim: "on the secondary movement we're going to continue to train with a normal training intensity we're going to maintain as much stimulus as possible"
+
+V138-17  R138@02:17  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, progressao
+  Ele mesmo e alunos que treinou saíram desse formato de reabilitação batendo PRs.
+  verbatim: "I myself and lifters I've coached have actually come out of this rehab format hitting PRS"
+
+V138-18  R138@02:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, intensidade, dor, proximidade-da-falha
+  No exercício doloroso se reduz tanto o peso absoluto quanto a proximidade da falha até o ponto em que se sente alguma dor mas não se sente pior na sessão seguinte, o que ele chama de limiar de dor.
+  verbatim: "we want to reduce the loading in terms of both absolute weight and appr proximity to failure to the point where we feel some pain but we don't feel worse the next session"
+  condições: V138-33
+
+V138-19  R138@02:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Anedoticamente, numa escala de dor de 1 a 10, ele acha que o limiar costuma ficar em torno de 2 a 4.
+  params: escala_min=1 escala 0-10 [escala_dor]  escala_max=10 escala 0-10 [escala_dor]  limiar_min=2 escala 0-10 [escala_dor]  limiar_max=4 escala 0-10 [escala_dor]
+  verbatim: "on the pain scale of 1 to 10 I find the usual level to be around the 2 to four"
+  condições: V138-18, V138-33, V027-23
+  conflita: V001-06
+
+V138-20  R138@02:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, recuperacao
+  A pesquisa mostra que reabilitar com dor leve leva a tempos de reabilitação mais rápidos, então é para treinar com alguma dor leve e aprender a não catastrofizá-la.
+  verbatim: "research has shown that rehab with light pain does lead to quicker rehab times though so we do want to train through some light pain and learn not to catastrophize it"
+  condições: V138-18, V138-33, V027-23
+  conflita: V027-25
+
+V138-21  R138@02:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: aquecimento, lesao
+  Aquecer gradualmente com saltos pequenos deixa fácil ficar abaixo do limiar de dor.
+  verbatim: "warm up gradually with small jumps and you should be able to stay under this pain threshold easily"
+  condições: V138-18
+
+V138-22  R138@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: progressao, lesao
+  Na maior parte das vezes deve ser possível adicionar peso a cada sessão sem cruzar o limiar de dor.
+  verbatim: "you should be able to add weight each session for the most part without crossing the pain threshold"
+  condições: V138-18
+
+V138-23  R138@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: frequencia, lesao
+  Durante a reabilitação a frequência de treino é mantida igual à de antes.
+  verbatim: "we're keeping our same frequency as before"
+
+V138-24  R138@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, intensidade, progressao
+  A cada dia se trabalha até um peso que se consiga fazer permanecendo abaixo do limiar de dor, e feito assim o retorno ao nível de força anterior acontece naturalmente.
+  verbatim: "we can rehab the intensity each day we work up to a weight we can do while staying under our pain threshold done correctly we will naturally get back to our old or near our old strength levels"
+  condições: V138-18, V138-30
+
+V138-25  R138@03:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, volume
+  Manter força exige bem menos estímulo do que construí-la, então não se deve ficar muito mais fraco durante a reabilitação.
+  verbatim: "it tends to take a lot less stimulus to maintain strength than it does to build it so we shouldn't get much if any weaker"
+
+V138-26  R138@03:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, intensidade, lesao, proximidade-da-falha
+  Se houver perda de força, usar proximidade da falha em vez de peso absoluto como medida de intensidade.
+  verbatim: "we can use proximity to failure rather than absolute weight as our intensity measure"
+
+V138-27  R138@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, volume, progressao
+  Mesmo já treinando com os pesos normais, ele recomenda levar de uma semana a algumas semanas para voltar ao volume normal no exercício que doía.
+  verbatim: "I would still recommend taking a week to a few weeks to shift back to normal volume levels on what exercise was painful"
+
+V138-28  R138@04:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, volume
+  O principal fator controlável quando o assunto é lesão é simplesmente a carga de trabalho.
+  verbatim: "the main controllable Factor when it comes to injury is simply just workload"
+
+V138-29  R138@04:02  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, deload
+  Ele teve uma das piores lesões da vida numa série de aquecimento logo depois de um deload, ou seja, às vezes é só azar.
+  verbatim: "sometimes we do just get unlucky I had one of my worst injuries on a warm-up set after a 2E de lo for example"
+
+V138-30  R138@04:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: volume, lesao, erro-comum
+  Seja honesto sobre se a carga de trabalho antiga, em intensidade e volume combinados, era demais, e volte antes para um nível mais conservador.
+  verbatim: "be honest with yourself on if your old workload in terms of intensity and volume combined was too much and if you should work back towards a more conservative level first"
+
+V138-31  R138@04:33  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, mentalidade
+  O progresso na reabilitação às vezes é não linear, assim como no treino normal, e não vale se frustrar com os recuos.
+  verbatim: "sometimes progress will be nonlinear with rehab just like with regular lifting don't get too frustrated with setbacks"
+
+V138-33  R138@02:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Cada pessoa e cada lesão são diferentes, e as tolerâncias à dor variam.
+  verbatim: "everybody and every injury is different and we have different pain tolerances"
+
+V139-02  R139@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: cinto, lesao
+  A alegação de que o cinto protege a coluna é a mais exagerada de todas.
+  verbatim: "the first claim is that lifting belts protect your spine this is the most over Claim about belts"
+
+V139-05  R139@00:31  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: cinto, lesao
+  Nenhum estudo que investigou cintos e lesões achou redução na taxa de lesão; os resultados só mostraram ausência de efeito.
+  verbatim: "no study investigating belts and injuries has found that they reduce the injury rate the only results have shown no effect"
+
+V139-07  R139@00:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: cinto, lesao
+  Não há evidência direta de que cintos protejam a coluna, apenas de que não fazem diferença, e não se deve dar o salto de supor que o mecanismo funciona.
+  verbatim: "there's no direct evidence belts will protect your spine only that they don't make a difference and we shouldn't make the leap into assuming this mechanism will work out"
+
+V140-23  R140@02:48  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, tecnica
+  Praticamente não existe evidência ligando determinadas técnicas a lesões.
+  verbatim: "there's virtually no evidence looking certain for forms injuries"
+
+V140-25  R140@03:04  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, tecnica, volume
+  Se o joelho ou o quadríceps começa a doer, não é que a técnica seja inerentemente perigosa: é que o tecido foi sobrecarregado, e a dosagem é o problema real.
+  verbatim: "it's not necessarily that a form was inherently dangerous it's just the fact that I overloaded my tissues the dosage is the real issue"
+
+V140-27  R140@03:19  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: dor, mentalidade, lesao
+  Preocupar-se que certas técnicas causam lesão aumenta, por si só, o risco de dor e de lesão.
+  verbatim: "worrying about certain forms causing injury actually increases your risk of pain and injury independently"
+
+V145-10  R145@01:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, volume
+  Estando lesionado o balde daquele músculo fica menor e não aguenta tanto volume.
+  verbatim: "if you're injured of course your bucket will be smaller"
+
+V148-12  R148@02:16  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: lesao, ombros, supino
+  Ele exagerou nessa estratégia, arrastou singles demais e o ombro ficou dolorido cerca de 6 semanas antes do meet.
+  params: semanas_antes_do_meet=6 semanas [semanas]
+  verbatim: "I think I kind of got carried away with that ended up grinding out too many singles and my shoulder just got a bit achy about six weeks out"
+
+V148-13  R148@02:16  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: lesao, recuperacao, volume
+  Ele foi leve por algumas semanas para o ombro sarar e a 2 semanas do meet já estava basicamente curado, mas tinha ficado com volume e carga baixos.
+  params: semanas_antes_do_meet=2 semanas [semanas]
+  verbatim: "I had to go light for a few weeks to let it heal up and by two weeks out it had basically healed fully but the thing is I had been going light and lowering the volume"
+
+V150-12  R150@01:16  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao, tecnica
+  Não existe evidência causal de que a forma cause lesões.
+  verbatim: "simply put we have no causative evidence of form actually causing injuries"
+
+V150-13  R150@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, tecnica
+  Boa parte da associação entre forma e lesão parece ir no sentido contrário: a lesão é que causa a forma usada, como mecanismo de proteção dos tecidos danificados.
+  verbatim: "a large portion of the form Injury Association seems to be the other way around injuries are causing the form we use as a protective mechanism to protect damaged tissues"
+
+V150-14  R150@01:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, tecnica
+  Ser restritivo com a forma pode aumentar o risco de lesão, porque repetir o mesmo padrão de movimento sobrecarrega tecidos específicos.
+  verbatim: "we've actually shown that being restricted with a form can increase injury risk this is because recreating the same movement pattern over and over again overuses specific tissues"
+
+V150-15  R150@01:46  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao, volume
+  O gerenciamento de carga parece ser o principal fator nas lesões.
+  verbatim: "load management seems to be the main factor in injuries"
+
+V150-16  R150@01:46  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, dor, mentalidade
+  Ter medo de certos padrões de movimento aumenta o risco de lesão e de dor.
+  verbatim: "it's been shown that being fearful of certain movement patterns again increases our risk of injuries and pain"
+
+V151-07  R151@00:30  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, volume
+  Ele entrou num ciclo de se lesionar repetidamente por insistir em fazer o volume antigo.
+  verbatim: "I was getting injured over and over again because I kept trying to do my old volume"
+
+V151-19  R151@01:30  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: volume, lesao
+  Depois do último Mundial ele tentou de novo a abordagem de volume muito alto e logo pegou uma lesão feia no glúteo.
+  verbatim: "after my most recent World Championships I again tried this really high volume approach and pretty quickly got a bad glute injury"
+
+V151-20  R151@01:45  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, dor
+  A lesão de glúteo causou sintomas tipo ciática: pé dormente, dor irradiando pela perna e dificuldade de andar normalmente.
+  verbatim: "this caused sciatica like symptoms you know like my foot was numb I had shooting pain down my legs I couldn't even walk normally"
+
+V152-15  R152@01:31  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, volume
+  Quando as academias reabriram, ele tentou voltar ao volume antigo e teve lesão severa nos dois joelhos.
+  verbatim: "when Jim's finally did reopen I tried doing my old volume and I ended up getting a severe injury in both my knees"
+
+V152-16  R152@01:47  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, volume
+  Ele ficou num ciclo de reabilitar a lesão, voltar ao volume antigo assim que recuperava a força e se lesionar de novo.
+  verbatim: "got caught in the cycle where I'd rehab through the injury go back to my old volume once I was back at my old strength I'd get injured again"
+
+V152-17  R152@01:47  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, volume, capacidade-trabalho
+  Pesquisa mostra que um dos maiores preditores de lesão é gestão de carga, quando se excede a própria capacidade de trabalho.
+  verbatim: "research shows that one of the biggest predictors of injury is load management if we're exceeding our work capacity"
+
+V152-18  R152@02:02  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, volume, capacidade-trabalho
+  Continuar tentando bater o volume antigo depois que a capacidade de trabalho despencou foi grande contribuinte para as lesões dele.
+  verbatim: "the fact that I was still trying to hit my old volume after my work capacity had plummeted was obviously a big contributing factor to my injury troubles"
+
+V152-25  R152@03:02  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: cardio, lesao
+  Níveis básicos de cardio podem ajudar levantadores a prevenir lesão e a aumentar os resultados do treino.
+  verbatim: "think Baseline levels of cardio can help lifters prevent injury and increase the results from training"
+
+V155-27  R155@04:51  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: terra, lesao
+  Se a pessoa ganha levantando com as costas arredondadas, ele diz para simplesmente fazer isso.
+  verbatim: "if you are somebody's going to be getting that benefit from keeping their back rounded i say just do it"
+  condições: V155-15, V155-28
+
+V155-28  R155@04:51  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, terra
+  Ele não considera costas arredondadas particularmente perigosas, desde que o corpo esteja adaptado a isso.
+  verbatim: "i don't think rounded backs are particularly dangerous as long as your body's adapted to it"
+
+V156-07  R156@00:45  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: core, dor, lesao
+  O vínculo entre força de core e dor lombar é mais ou menos inexistente na literatura atual, crédito ao Dr. Aaron Kubal.
+  verbatim: "He basically looked into this link between core strength and lower back pain and it's more or less nonexistent in the literature nowadays."
+
+V160-36  R160@07:35  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, meta-metodologia
+  Ele considera falha a objeção de que descer rápido aumenta risco de lesão por colocar mais força nos tendões: se a pessoa não quisesse mais força nos tecidos, não levantaria peso nenhum.
+  verbatim: "when this risk injury isn't putting more force on our tendons etc that's a really flawed view of looking at injuries in my opinion if you didn't want more forces don't lift weights at all"
+
+V160-37  R160@07:35  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao
+  Existe uma montanha de evidência de que levantar peso reduz risco de lesão, tanto na população geral quanto em atletas.
+  verbatim: "we obviously know how beneficial lifting can be for reducing injury risk just there's a mountain of evidence how it reduces injury risk in the general population in athletes"
+
+V160-38  R160@07:50  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, progressao
+  Os tecidos se adaptam ao estresse imposto e ficam mais fortes, e é isso que previne lesão.
+  verbatim: "our bodies and our tissues adapt the stresses placed upon them and they get stronger this is what prevents injury"
+
+V160-39  R160@07:50  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, progressao, recuperacao
+  Subindo gradualmente até sobrecarregar o tecido, com recuperação adequada e gestão de carga, a pessoa não se lesiona — e na verdade reduz a lesão com sobrecarga progressiva bem feita.
+  verbatim: "you work your way up gradually to a point you have overloaded tissue you work on proper recovery load management you will not get injured you will actually reduce injury when you properly progressively overload"
+
+V164-24  R164@06:41  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: supino, lesao, competicao
+  O supino dele não estava no melhor em força no dia por causa de uma reativação de lesão no ombro.
+  verbatim: "i had shoulder injury reactivation so my bench wasn't the best strength wise on the day"
+
+V164-29  R164@08:57  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: agacho, lesao
+  O treino de agacho para este meet não foi bom porque ele teve uma lesão séria no joelho cerca de um ano antes e chegou a duvidar se voltaria a agachar igual.
+  params: tempo_desde_lesao_joelho=1 ano [anos]
+  verbatim: "i had a really bad knee injury about a year ago and honestly for a while after that injury i was wondering if i'd ever be able to squat the same again"
+
+V164-30  R164@09:13  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: agacho, lesao, mentalidade
+  A lesão de joelho reativou cerca de dois meses antes do meet e ele lidou com isso mantendo a calma e focando no processo.
+  params: reativacao_antes_do_meet=2 meses [meses]
+  verbatim: "and then maybe two months out i reactivated it felt terrible"
+
+V164-32  R164@09:28  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: supino, lesao, equipamento
+  Pouco mais de um mês antes do meet ele reativou a lesão de ombro, e atribui isso a supinar em bancos muito finos de academia comercial que não dão bom suporte para o ombro.
+  params: reativacao_ombro_antes_do_meet=1 mês [meses]
+  verbatim: "on bench a bit over a month out i reactivated my shoulder injury i think it was because i was benching on these really skinny thin benches at the commercial gym"
+
+V164-33  R164@09:43  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: supino, lesao, volume
+  Por causa do ombro ele cortou muito o volume de supino e foi bem leve — chegou a fazer treinos que eram apenas 3 singles com 225 libras.
+  params: singles_por_treino=3 séries [series]  carga_single=225 lb [lb]
+  verbatim: "i was doing like singles with 225 pounds and that was all my workout was was like three singles at 225"
+
+V164-34  R164@09:58  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: supino, lesao, deload
+  Algumas semanas depois ele já supinava sem dor, mas tinha cortado tanto volume que destreinou e a força não estava lá.
+  verbatim: "i'd gone to the point where i could bench pain free but my volume had been cut so much i d trained so much that the strength just wasn't there"
+
+V166-24  R166@06:04  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: meta-metodologia, lesao, nutricao
+  Ele cita Chris Beardsley e Eric Helms e a Data Driven Strength na parte de pesquisa, Layne Norton para nutrição e Barbell Medicine e Adam Meakins para dor e reabilitação de lesão.
+  verbatim: "of coaches there Chris Beardsley and Eric Helms for more nutrition based stuff I really like leay Norton I'm sure everybody here knows who that is for more the pain injury rehab side of things my two sources are barbell medicine and Adam"
+
+V168-03  R168@00:00  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: agacho, dor, lesao
+  O exercício não só o deixou mais eficiente como o ajudou a superar uma dor tão ruim que ele quase teve que parar de treinar.
+  verbatim: "it not only made me more efficient but it helped me overcome pain that it was so bad I almost had to quit lifting"
+
+V168-06  R168@00:47  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: agacho, dor, lesao
+  Essa posição de joelho causava dor e tendinite, que ele sofreu por 2 anos.
+  params: duracao_tendinite=2 anos [anos]
+  verbatim: "this knee position also caused me pain and tontis which I suffered from for 2 years"
+
+V168-08  R168@00:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: acessorios, agacho, lesao
+  O acessório não só trabalha a forma para deixá-la mais eficiente e potente como a torna mais segura e ajuda a prevenir lesão.
+  verbatim: "so the accessory will not only work your form to make it more efficient and Powerful but also make it safer and help prevent injury"
+
+V170-01  R170@00:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, agacho, programacao
+  Ele teve uma lesão em que machucou os joelhos e isso mudou bastante a programação dele.
+  verbatim: "i had an injury in september or october forget exactly when where i hurt my knees and that changed my programming"
+
+V171-03  R171@01:31  tier:R scope:GERAL modo:opiniao genero:perguntas explicit
+  tópicos: meta-metodologia, lesao
+  Recomenda o material do Barbell Medicine, especialmente para lesões.
+  verbatim: "I really like Barbell Medicine stuff, especially for injuries"
+
+V171-13  R171@04:35  tier:R scope:PESSOAL modo:anedota genero:perguntas explicit
+  tópicos: lesao
+  Teve uma lesão grave em que os dois joelhos basicamente explodiram, provavelmente algo no tendão patelar.
+  verbatim: "both my knees just basically, I'd say, exploded. I don't know exactly what happened. I'm guessing something in the patellar tendon"
+
+V171-14  R171@04:50  tier:R scope:GERAL modo:prescricao genero:perguntas explicit
+  tópicos: lesao, recuperacao, volume
+  A volta de lesão é reabilitação progressiva: adicionar volume e fazer o máximo de movimento o mais específico possível com pouca ou nenhuma dor.
+  verbatim: "Just work through it, progressive rehab, adding volume, doing as much movement as you can as specific as possible with minimal to little to no pain"
+  condições: V027-23
+
+V171-15  R171@04:50  tier:R scope:PESSOAL modo:anedota genero:perguntas explicit
+  tópicos: lesao, dor
+  Passou 2 anos com tendinite patelar que às vezes ficava muito ruim.
+  params: duracao_tendinite=2 anos [anos]
+  verbatim: "I've also had 2 years where I had patellar tendinitis that could be really, really bad at times"
+
+V171-16  R171@05:05  tier:R scope:PESSOAL modo:anedota genero:perguntas explicit
+  tópicos: lesao, costas
+  Teve uma lesão grave de costas no primeiro ano de treino, a ponto de mal conseguir andar.
+  verbatim: "I had a really bad back injury my first year lifting, like it was so bad I could barely walk"
+
+V171-17  R171@05:20  tier:R scope:GERAL modo:opiniao genero:perguntas explicit
+  tópicos: mentalidade, lesao
+  Contra o medo de se relesionar, a mentalidade tem que ser ser antifrágil e aceitar que dá para lidar se acontecer.
+  verbatim: "I think that's the mindset you have to have is be antifragile"
+
+V174-04  R174@00:33  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: volume, lesao
+  Tem sido muito conservador com volume de back off desde que lesionou o joelho.
+  verbatim: "also introduce some back off volume been very uh conservative with that since i injured my knee"
+
+V175-06  R175@02:01  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, volume
+  Estava hesitante em adicionar volume por causa do joelho, mas o joelho já não sentia nada.
+  verbatim: "i've been hesitant to add volume because my knee but my knee at this point it doesn't feel anything at all"
+
+V175-43  R175@12:45  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, volume
+  Desenvolveu tendinite patelar nos dois joelhos, sem surpresa, pelo volume absurdo que fazia.
+  verbatim: "at this point i developed um patellar tendonitis in both my knees no surprise of stupid amount of volume i was doing"
+
+V175-45  R175@13:01  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, frequencia, recuperacao
+  Em 2 semanas de alta frequência a tendinite patelar passou de impedir metade das sessões a absolutamente nada.
+  params: tempo=2 semanas [semanas]
+  verbatim: "within two weeks my patellar tendonitis had gone to the point of half my sessions i can't finish to nothing absolutely nothing"
+
+V177-04  R177@00:56  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: terra, lesao
+  Não puxava mais de 585 lb no terra desde setembro.
+  params: carga=585 lb [lb]
+  verbatim: "i haven't deadlifted over 585 pounds since september"
+
+V177-05  R177@01:27  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, costas
+  Teve uma lesão leve de costas altas e tirou 2 semanas leves para deixar cicatrizar.
+  params: tempo_leve=2 semanas [semanas]
+  verbatim: "i had a minor upper back injury this isn't the main injury took two weeks light let it heal up"
+
+V177-06  R177@01:27  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, agacho
+  No primeiro dia pesado de volta, com apenas 495 lb, sentiu um estalo enorme nos dois joelhos já na primeira repetição da primeira série.
+  params: carga=495 lb [lb]
+  verbatim: "my first day back heavy which was only 495 pounds for me first rep of the first set"
+
+V177-07  R177@01:42  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: equipamento, erro-comum, lesao
+  Estava agachando no combo rack de competição, que não tem barra de segurança para agachamento, e sem ninguém para segurar.
+  verbatim: "i was squatting in the competition combo rack which if you don't know has no safeties for squats and also i didn't have any spotters"
+
+V177-09  R177@01:57  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: erro-comum, lesao
+  Depois de sentir o estalo ainda fez outra repetição, o que ele mesmo chama de burrice e não defende.
+  verbatim: "i'm not going to defend this but stupidly i did another rep"
+
+V177-10  R177@02:12  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, pernas
+  O sintoma era conseguir contrair o quadríceps ao máximo e o joelho quase não estender, como se nenhuma força passasse pelo tendão.
+  verbatim: "it felt like my knee is barely extending like it felt like no force is being transmitted through the like tendon into my shin"
+
+V177-11  R177@02:27  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: lesao, dor
+  O protocolo de reabilitação que ele usa em si e nos atletas que treina é empurrar devagar o limiar de dor.
+  verbatim: "my standard rehab protocol for myself and old lifters that i coach what i do basically the theory is just slowly push the threshold of pain"
+  condições: V177-12
+
+V177-12  R177@02:27  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: lesao, selecao-exercicio
+  Ache o movimento mais específico possível que dê para fazer sem dor ou com dor mínima e que não piore a dor.
+  verbatim: "find the most specific movement you can do with no pain or very minimal pain to the point"
+
+V177-13  R177@02:42  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: lesao, volume, progressao
+  A partir daí é empurrar o limiar aumentando volume, peso e especificidade.
+  verbatim: "just try and push that threshold push up volume push-up weight push-up specificity"
+  condições: V177-12
+
+V177-14  R177@02:42  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, agacho, selecao-exercicio
+  A reabilitação levou alguns meses e o exercício em que ele parou foi o agachamento com pausa, que funcionou muito bem.
+  verbatim: "it took me a couple months what i settled on was paw squats worked really well for me"
+
+V177-15  R177@02:57  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: lesao, tecnica
+  A força sobre o tendão é basicamente o peso vezes a velocidade do movimento, então desacelerar o movimento poupa o tendão.
+  verbatim: "tendons force on them is basically the weight times how fast you move it so by slowing it down like that it really helps the tendons out"
+
+V177-16  R177@02:57  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, progressao, series-reps
+  Fez progressão linear com 2 séries de 2 bem leves, começando por volta de 4 ou 5 na legenda, valor que não fecha.
+  params: series=2 séries [series]  reps=2 reps [reps]  carga_inicial_min=4 lb [lb]  carga_inicial_max=5 lb [lb]
+  verbatim: "i was just doing like a two by two super light working my way up started around four or five pounds"
+
+V177-17  R177@03:12  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, agacho, progressao
+  Depois que o joelho aguentou carga, reintroduziu top sets começando todos com pausa e só depois voltou ao agachamento normal.
+  verbatim: "eventually i reintroduced top sets starting all paused now i'm just doing regular squats"
+
+V185-09  R185@01:47  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, ombros
+  Vinha lidando com uma lesão de ombro havia mais ou menos um ano.
+  verbatim: "past year or so i've been dealing for a shoulder injury"
+
+V185-11  R185@02:17  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: lesao, ombros, intensidade
+  Empurrar intensidade demais agravava o ombro, então ele voltou subindo volume bem devagar.
+  verbatim: "when i was trying to push intensity a bit much it was definitely aggravating the shoulder"
+
+  filtros que estão escondendo material:
+     --topic lesao: 362 COM ele, 6912 SEM ele — esconde 6550 claim(s)
+        F001-01(undefined/undefined) F001-02(undefined/undefined) F001-03(undefined/undefined) F001-04(undefined/undefined) F001-05(undefined/undefined) F001-06(undefined/undefined) F001-07(undefined/undefined) F001-08(undefined/undefined) …+6542
+

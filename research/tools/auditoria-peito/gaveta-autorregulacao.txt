@@ -1,0 +1,1806 @@
+
+329 claim(s) para topic=autorregulacao:
+
+G001-30  G001@06:37  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: rpe, autorregulacao, aprendizado-motor, proximidade-da-falha
+  O AMRAP serve para você aprender como é a falha e calibrar se o RPE 8 que você acha que está fazendo é mesmo um RPE 8.
+  params: rpe_referencia=8 RPE [RPE]
+  verbatim: "this is to really help you understand what does failure feel like"
+
+G002-06  G002@01:31  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, progressao, proximidade-da-falha
+  Doug Young usava AMRAPs e o desempenho no AMRAP informava a progressão de peso semana a semana.
+  verbatim: "he loved to used am wraps and the performance of that am wrap to inform the weight progressions"
+
+G002-07  G002@01:46  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: autorregulacao, fadiga
+  Ele considera esse esquema uma boa forma de autorregulação para não moer o sistema nervoso central.
+  verbatim: "this is a really good way of Auto regulation to not grind your CNS into the ground"
+
+G002-08  G002@01:46  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: autorregulacao, intensidade, rpe, proximidade-da-falha
+  O mecanismo é que ter sucesso no AMRAP indica que a intensidade relativa das séries anteriores foi baixa.
+  verbatim: "because the am wrap if you're succeeding in it tells you that you had a lower relative intensity to the sets leading up to it"
+
+G002-18  G002@04:18  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, autorregulacao, training-max
+  Na progressão estilo Doug Young você soma 1% ao máximo que está usando para cada repetição acima da baseline do protocolo.
+  params: incremento_por_rep=1 % do máximo usado [pct]
+  verbatim: "you're going to add one 1% to your one rep max that you're using whether it's a training Max or whatever who cares you're going to add 1% for every rep above your Baseline"
+
+G002-21  G002@05:03  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, autorregulacao, proximidade-da-falha
+  Se você fizer 11 repetições no AMRAP, são 5 acima da baseline, então o máximo usado é multiplicado por 105% e vira 525 lb.
+  params: reps_amrap=11 reps [reps]  reps_acima_baseline=5 reps [reps]  multiplicador=105 % [pct]  novo_maximo=525 lb [lb]
+  verbatim: "that out um but on your am rep you get 11 reps well that's five reps over your Baseline so you would multiply the one rep max you're using by 105% to get 525"
+
+G002-23  G002@05:18  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, autorregulacao, proximidade-da-falha
+  Se você fizer menos de 11 repetições no AMRAP o máximo sobe menos, e se falhar a quarta série de 6 ele pode até cair.
+  params: reps_baseline_amrap=11 reps [reps]  reps_por_serie=6 reps [reps]
+  verbatim: "if you would gotten less than 11 reps you wouldn't increase your max as much and if you got less you might even drop it down a little bit if you failed your fourth set to get six"
+
+G002-45  G002@10:37  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: autorregulacao, fadiga
+  O Bull Mastiff tem autorregulação embutida mesmo sendo template, e isso ajuda a não overtreinar.
+  verbatim: "it has baked in Auto regulation even though it's a template it's baked into the program and that's going to help"
+
+G003-29  G003@05:19  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: rpe, selecao-exercicio, autorregulacao
+  Nas variações, na primeira semana ele manda mirar RPE 6 a 7 para se preparar para o sucesso.
+  params: rpe_min=6 RPE [RPE]  rpe_max=7 RPE [RPE]
+  verbatim: "try to shoot for you know RP 67 on the first week make sure that you're setting yourself up for Success"
+
+G003-41  G003@08:06  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: autorregulacao, mentalidade, meta-metodologia, carga-de-treino
+  A teoria dele é que os levantadores da era de ouro treinavam por sensação, prestavam atenção à recuperação e acabaram descobrindo sem querer o que hoje se quantifica como stress index.
+  verbatim: "by paying attention to their bodies and I think probably my theory is getting out of their own heads they went and trained by feel"
+
+G004-04  G004@01:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: deload, autorregulacao
+  Ele acha que disparar o deload de forma reativa é provavelmente a melhor maneira de fazê-lo.
+  verbatim: "I think triggering a d reactively is probably the best way to do it"
+
+G004-12  G004@02:47  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: deload, autorregulacao
+  O segundo tipo é o deload reativo, que é uma forma elegante de dizer que você toma um quando precisa.
+  verbatim: "the next type of D Lo that you might look into is a reactive D Lo and what a reactive de lo is fancy way of saying hey you take one when you need one"
+
+G004-27  G004@05:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: deload, autorregulacao
+  O deload reativo é situacional: você o toma quando precisa, idealmente com algo dentro do programa que dispare o gatilho.
+  verbatim: "A reactive D Lo is going to be situational you're going to take it when you need it hopefully within your program there's something that can trigger that"
+
+G004-28  G004@05:49  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, recuperacao, fadiga
+  Um gatilho possível é um score de prontidão: um checklist diário em que você monitora a prontidão e observa tendências.
+  verbatim: "you're doing something daily where you've got a checklist and you're monitoring your Readiness and you're seeing Trends"
+
+G004-29  G004@05:49  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, lesao, deload
+  Se a prontidão despenca, é sinal de que o desempenho está sofrendo e de que você pode estar caminhando para uma lesão, e é hora de deloadar.
+  verbatim: "if you see that dip way down deep that's how you're going to know hey my performance is suffering I might be heading towards an injury maybe I should take a D Lo right now"
+
+G004-30  G004@06:35  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: deload, autorregulacao, meta-metodologia
+  Disparar o deload reativamente é provavelmente a melhor forma, ainda que algumas pessoas gostem da estrutura do deload pré-planejado, e nenhum dos dois é certo ou errado.
+  verbatim: "when you're looking at reactives it's when you need it this is probably the best way to trigger a D Lo um rather than pre-planning it although some people like the structure and the pattern of pre-planned D loads it's not that one is right or wrong"
+
+G004-31  G004@06:35  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: deload, meta-metodologia, autorregulacao
+  A melhor forma de descobrir qual estratégia de deload funciona para você é experimentar treinar com cada uma delas.
+  verbatim: "you just need to figure out what works best for you and best way to do that is actually to kind of try some training with each of them"
+
+G005-14  G005@05:35  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, series-reps, progressao
+  No Candito o número de séries de back-off depende do resultado do teste de repetições: podem ser 10, 8, 5 ou nenhuma série de 3 com 10 lb a menos.
+  params: series_opcao_alta=10 séries [series]  series_opcao_media=8 séries [series]  series_opcao_baixa=5 séries [series]  reps=3 reps [reps]  reducao_carga=10 lb [lb]
+  verbatim: "depending on the number of reps that you get on that test you're either going to do 10 triples that's 10 sets yeah 10 sets of three or eight sets of three or five sets of three or no sets of three with 10 pounds less"
+
+G006-06  G006@01:16  tier:R scope:GERAL modo:relato-de-programa genero:aula explicit
+  tópicos: progressao, autorregulacao, mentalidade
+  Coan escolhia os pesos com muito cuidado, sem falhar no treino e deixando um pouco no tanque a cada semana.
+  verbatim: "He was very careful about what weights he would do, not missing in training, but making sure to build and leave a little bit in the tank each week as he progressed through"
+
+G006-28  G006@06:34  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: rpe, autorregulacao, meta-metodologia
+  Mike Tuchscherer é um pioneiro dentro do powerlifting e foi quem trouxe o RTS e o RPE para a frente do esporte.
+  verbatim: "Mike T uh is a pioneer within powerlifting brought RTS uh or RP to the the forefront of powerlifting"
+
+G007-12  G007@04:03  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: series-reps, autorregulacao
+  Quando o programa escreve max rep 10, significa não passar de 10 repetições.
+  params: teto_de_reps=10 reps [reps]
+  verbatim: "sometimes it'll be like Max rep 10 that means don't do more than 10"
+
+G008-22  G008@05:19  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: deload, autorregulacao, progressao, training-max, proximidade-da-falha, estagnacao
+  Outra coisa a considerar é como o programa lida com recuperação e com estagnação: se tem deloads, ou tentativas máximas e AMRAPs que ajustam o training max ao longo do ciclo.
+  verbatim: "another thing to consider is how is recovery or how is stalling handled in the program are there D loads are there Max attempts"
+
+G008-23  G008@05:34  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: autorregulacao, progressao, proximidade-da-falha
+  No programa do Layne Norton há AMRAPs específicos em várias semanas que impactam a semana seguinte, e o ajuste pode ser para cima ou para baixo.
+  verbatim: "it has a bunch of weeks with specific am wraps that are to impact the next week and that might go up or down"
+
+G008-24  G008@05:50  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: autorregulacao, progressao, fadiga, training-max, proximidade-da-falha
+  Muitos programas usam AMRAP só para aumentar o peso numa progressão linear, mas num bloco longo você pode precisar baixar o training max de tempos em tempos.
+  verbatim: "a lot of programs use am wraps only to increase your weight on a linear progression but with Lane Norton's ph3 it's a longer block of training where you may need to dip that training Max down every once in a while"
+
+G008-25  G008@06:05  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: progressao, series-reps, autorregulacao, estagnacao
+  Verifique se o programa muda o protocolo quando você estagna, como o GZCLP faz, alterando séries, repetições ou intensidade.
+  verbatim: "protocol changes when you stall out like in gzclp do you actually change the protocol you're using and move to something else"
+
+G009-10  G009@02:50  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: rpe, series-reps, autorregulacao
+  A recomendação dele é começar mirando uma série de cinco repetições em RPE nove e, conforme acumula séries, manter o peso e derrubar as repetições.
+  params: reps_iniciais=5 reps [reps]  rpe_alvo=9 RPE [RPE]
+  verbatim: "my recommendation to you is start trying to hit like a five at nine and as you do more sets if you need to drop reps as you're doing doing that keep the weight the same but drop the Reps back"
+
+G009-11  G009@02:50  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: series-reps, autorregulacao
+  Está tudo bem que as repetições caiam ao longo das séries, descendo de cinco para quatro e depois três, desde que você complete as séries.
+  params: reps_iniciais=5 reps [reps]  reps_intermediarias=4 reps [reps]  reps_finais=3 reps [reps]
+  verbatim: "there's a range of reps you can do it's okay to do a five a five four four three or whatever to get your sets in"
+
+G010-18  G010@04:19  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, progressao, training-max, proximidade-da-falha
+  Neste programa, se o AMRAP sai com menos repetições que o alvo, o training max cai 3% em todos os movimentos.
+  params: queda_tm=3 % [pct_TM]
+  verbatim: "if you get less reps than your target on your AM wrap, you're going to drop 3% across the board"
+
+G010-19  G010@04:34  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, progressao, training-max, proximidade-da-falha
+  Se o AMRAP bate exatamente o número de repetições alvo, o training max fica igual.
+  verbatim: "let's say it's a you're supposed to get a four plus and you only get four reps, then you keep your training max the same"
+
+G010-20  G010@04:34  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, progressao, training-max, proximidade-da-falha
+  De 2 a 3 repetições acima do alvo no AMRAP sobem o training max em 1,5%, em qualquer caso.
+  params: reps_acima_min=2 reps [reps]  reps_acima_max=3 reps [reps]  aumento_tm=1.5 % [pct_TM]
+  verbatim: "But if you get two to three reps more, then you're going to increase your training max by 1.5% no matter what"
+
+G010-21  G010@04:49  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, progressao, training-max, proximidade-da-falha
+  De 4 a 5 repetições acima do alvo sobem o training max em 3% nos dois primeiros tipos de semana e em 2,5% no terceiro tipo.
+  params: reps_acima_min=4 reps [reps]  reps_acima_max=5 reps [reps]  aumento_tm_t1_t2=3 % [pct_TM]  aumento_tm_t3=2.5 % [pct_TM]
+  verbatim: "if you have an AM wrap that's four or five more than the reps you're targeting, then you're going to increase if it's a T1 or T2, you're going to increase 3% on your training max. But if it's a T3 week, it's going to be 2.5"
+
+G010-22  G010@05:04  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, progressao, training-max, proximidade-da-falha
+  Com 6 ou mais repetições acima do alvo, o training max sobe 4% no primeiro tipo de semana e 4,5% no segundo, e não sobe nada no terceiro.
+  params: reps_acima=6 reps [reps]  aumento_tm_t1=4 % [pct_TM]  aumento_tm_t2=4.5 % [pct_TM]
+  verbatim: "if you do six or more reps on your AM wrap than you were uh your target where you're going to increase by 4% on a T1, 4.5 on a T2, or not at all on a T3"
+
+G010-23  G010@05:35  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: autorregulacao, progressao, periodizacao, training-max
+  Na semana 12 você não deveria mais estar batendo 6 repetições ou mais acima do alvo, porque o training max já deveria ter sido calibrado pelas progressões pequenas das semanas anteriores.
+  params: semana=12 semana [semanas]  reps_acima=6 reps [reps]
+  verbatim: "But you shouldn't be getting six or more on week 12. You should have dialed in your training max long ago using these constant little progressions"
+
+G010-24  G010@05:50  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, periodizacao, training-max, proximidade-da-falha
+  Há AMRAP nas semanas 2, 3, 4, 6, 7, 8, 10, 11 e 12, e o training max é reavaliado em cada uma delas.
+  params: semana_amrap_1=2 semana [semanas]  semana_amrap_2=3 semana [semanas]  semana_amrap_3=4 semana [semanas]  semana_amrap_4=6 semana [semanas]  semana_amrap_5=7 semana [semanas]  semana_amrap_6=8 semana [semanas]  semana_amrap_7=10 semana [semanas]  semana_amrap_8=11 semana [semanas]  semana_amrap_9=12 semana [semanas]
+  verbatim: "every week you have an AMR wrap, which is weeks 2, 3, and 4, 6, 7, and 8, 10, 11, and 12. You're going to be reassessing your training max using this matrix on every single one of those weeks"
+
+G010-25  G010@06:05  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, ordem-exercicio, proximidade-da-falha
+  Os AMRAPs ficam nos treinos do quarto e do quinto dia, de terra, supino e agacho.
+  verbatim: "the AM wraps are going to be on your day four and day five deadlift, bench, and squat workouts"
+
+G010-26  G010@06:20  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: autorregulacao, ordem-exercicio, programacao, training-max, proximidade-da-falha
+  O AMRAP é a última aparição daquele exercício na semana justamente porque é ele que define o training max da semana seguinte.
+  verbatim: "it's the last exercise or last time that exercise shows up in the week. That's because it's setting the training max for the next week"
+
+G010-27  G010@06:35  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: autorregulacao, meta-metodologia, proximidade-da-falha
+  Este programa tem bem mais autorregulação do que os outros programas que ele já revisou nesta série.
+  verbatim: "a lot more than some of the other programs that I've reviewed so far in this series, which are using AM Wraps, but maybe only chipping up a little bit here or there"
+
+G011-03  G011@01:03  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: deload, autorregulacao
+  O deload do nSuns não é agendado: é quando você precisar, algo em torno de cada 4 a 6 semanas.
+  params: intervalo_deload_min=4 semanas [semanas]  intervalo_deload_max=6 semanas [semanas]
+  verbatim: "the D Lo schedule for this is kind of when you need it every four to six weeks so it's a little bit different"
+
+G011-04  G011@01:18  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: programacao, series-reps, autorregulacao, proximidade-da-falha
+  No template do Wendler você sobe em cada levantamento principal até uma série AMRAP: 5 ou mais na primeira semana, 3 ou mais na segunda e 1 ou mais na terceira.
+  params: reps_semana_1=5 reps [reps]  reps_semana_2=3 reps [reps]  reps_semana_3=1 reps [reps]
+  verbatim: "you're working up on each of the main lifts squat bench deadlift and overhead press during the week to a set of five as an AM wrap so you're trying to see if you can hit five plus on week one then"
+
+G011-13  G011@02:49  tier:R scope:PESSOAL modo:anedota genero:review-de-programa explicit
+  tópicos: autorregulacao, tecnica, meta-metodologia
+  Quando o Sheiko o treinou, ele tinha de mandar todas as séries e todos os vídeos.
+  verbatim: "when I worked with Sho personally when he coached me I had to send him all"
+
+G011-14  G011@03:04  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: tecnica, autorregulacao, aprendizado-motor
+  Nas séries submáximas o Sheiko procurava velocidade máxima e proficiência técnica limpa.
+  verbatim: "when he was seeing the sub maximal sets he was looking for maximal Speed crisp technical proficiency"
+
+G011-15  G011@03:04  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, volume, intensidade, aprendizado-motor
+  Quando o atleta conseguia sustentar certo volume com técnica e velocidade adequadas a 70 ou 75%, o Sheiko começava a tirar volume e subir a escala de intensidade.
+  params: intensidade_min=70 % [pct_1RM]  intensidade_max=75 % [pct_1RM]
+  verbatim: "as you accomplished the point where you could do an amount of volume with proper skill and speed at a percentage say 70 or 75%"
+
+G011-16  G011@03:20  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: meta-metodologia, autorregulacao
+  O estilo de treinar do Sheiko não é algo que se escreva no verso de um guardanapo, ao contrário do template do Wendler.
+  verbatim: "his coach style it's very different than something you can like write on the back of a napkin like 531 is"
+
+G011-29  G011@08:38  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, progressao, training-max, proximidade-da-falha
+  No nSuns, um AMRAP com 0 a 1 repetição acima do alvo não acrescenta nada ao training max.
+  params: reps_acima_min=0 reps [reps]  reps_acima_max=1 reps [reps]
+  verbatim: "if you get zero to one more um so you're you know getting a single or a double you're not going to add any to your training"
+
+G011-30  G011@08:53  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa implied
+  tópicos: autorregulacao, progressao, training-max
+  Com 2 a 3 repetições acima do alvo, o training max sobe 5 libras — ele diz o número sem dizer a unidade, e usa libras no resto do vídeo.
+  params: reps_acima_min=2 reps [reps]  reps_acima_max=3 reps [reps]  incremento_tm=5 lb [lb]
+  verbatim: "if you get two to three more you add five three to five more 5 to 10"
+
+G011-31  G011@08:53  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa implied
+  tópicos: autorregulacao, progressao, training-max
+  Com 3 a 5 repetições acima do alvo, o incremento do training max é de 5 a 10 libras.
+  params: reps_acima_min=3 reps [reps]  reps_acima_max=5 reps [reps]  incremento_min=5 lb [lb]  incremento_max=10 lb [lb]
+  verbatim: "three to five more 5 to 10 I would say stick with the five with the upper body movements maybe the 10 with the lower body movements"
+
+G011-41  G011@10:56  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: autorregulacao, deload, fadiga
+  Se você consegue sentir no corpo quando precisa de um deload, provavelmente se dá bem no nSuns.
+  verbatim: "if you can sense that if you can feel within your body and know when you need to take a D Lo you'll probably be okay on this program"
+
+G011-42  G011@11:11  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: autorregulacao, meta-metodologia
+  As outras formas de conduzir esse programa exigem um treinador e alguma supervisão para saber quando retirar carga.
+  verbatim: "it requires a coach it requires some oversight to know when to pull out other things"
+
+G011-51  G011@13:28  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: autorregulacao, meta-metodologia, programacao
+  Quem quiser algo mais detalhado e mais individualizado precisa de outro programa, porque o nSuns não traz embutida a capacidade de manipular e ajustar.
+  verbatim: "you're going to have to find another program because this one just does not have the ability to manipulate and tweak it like you need to baked"
+
+G012-20  G012@04:54  tier:R scope:PESSOAL modo:anedota genero:review-de-programa explicit
+  tópicos: teste-de-forca, supino, autorregulacao
+  Com frequência ele testava o máximo na semana 9, em vez de fazer o dia pesado de supino — e diz que isso não é o que o Brandon Lilly manda fazer.
+  params: semana_do_teste=9 semana [semanas]
+  verbatim: "very frequently I would test on week nine instead of going heavy on bench I would just end up maxing here that's what I would do you don't have to do that that's not what Brandon Lily said to do"
+
+G012-44  G012@10:12  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: meta-metodologia, autorregulacao
+  Ele manda ajustar o programa para que funcione para você.
+  verbatim: "so adjust the program make it work for you"
+
+G013-03  G013@00:00  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, autorregulacao, proximidade-da-falha
+  No push pull legs o progresso é conduzido pela série AMRAP.
+  verbatim: "you're going to be making progress based on the amrap set"
+
+G013-17  G013@04:28  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, autorregulacao, proximidade-da-falha
+  Se o AMRAP sair 2 ou 3 repetições acima do alvo, aumenta-se o peso.
+  params: reps_acima_min=2 reps [reps]  reps_acima_max=3 reps [reps]
+  verbatim: "if you get more reps than the amrap by like two or three you should increase the weight"
+
+G013-31  G013@09:31  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, deload, autorregulacao, estagnacao
+  Se você estagnar em qualquer uma das progressões, volte a carga para 10% menos.
+  params: reducao=10 % [pct]
+  verbatim: "well if you stall out on any one of these progressions drop the weight that you're using back to 10 percent less"
+  condições: G013-32
+
+G014-04  G014@00:47  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: programacao, meta-metodologia, autorregulacao, proximidade-da-falha
+  O Greyskull LP segue algo parecido com o Starting Strength ou o StrongLifts, mas com peças de AMRAP puxadas do estilo do Wendler.
+  verbatim: "it follows something similar to that starting strength or even like strongless 5x5 style but it has some additional pieces pulled with am wraps from like 531 style"
+
+G014-12  G014@03:03  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: series-reps, autorregulacao, proximidade-da-falha
+  Na maior parte do tempo o Greyskull LP é 3 séries de 5, com a última sendo uma série AMRAP levada com afinco.
+  params: series=3 séries [series]  reps=5 reps [reps]
+  verbatim: "for the base program you're most of the time doing three sets of five now the last set of five is a plus set where you're going to rep out and go as hard as you can"
+  condições: G014-13
+
+G014-20  G014@04:34  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: series-reps, autorregulacao, proximidade-da-falha
+  Na série AMRAP você não para em 5: continua repetindo até quase a falha.
+  params: reps_alvo=5 reps [reps]
+  verbatim: "because you're not going to stop at five on the plus set that's why it's a plus that you're going to continue repping out until you get almost a failure"
+  condições: G014-13
+
+G014-27  G014@05:35  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, autorregulacao, estagnacao
+  Quando um levantamento estagna você não abandona o programa nem zera tudo: volta para 90% do peso em que estagnou e retoma a progressão.
+  params: reducao=90 % [pct]
+  verbatim: "when you stall whatever weight you stall on you then drop back to 90"
+  condições: G014-28
+
+G014-40  G014@08:07  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: meta-metodologia, autorregulacao, aprendizado-motor
+  O template é o template, mas em todos eles você vai fazer ajustes para as suas necessidades, e é aí que você começa a virar o seu próprio treinador.
+  verbatim: "the template is the template but with all of these the expectations you're going to make some adjustments some tweaks to meet your specific needs that's where you start to become your own coach"
+
+G015-17  G015@05:52  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, autorregulacao, estagnacao
+  Estagnar num tier de um levantamento não significa estagnar nos outros tiers do mesmo levantamento: cada progressão corre por conta própria.
+  verbatim: "so if you're stalling on your high rep tier 2 squats that doesn't mean that you're stalling on your tier one lower rep squats"
+
+G015-24  G015@07:53  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: series-reps, autorregulacao, proximidade-da-falha
+  O protocolo do primeiro tier é 5 séries de 3, com a última sendo AMRAP.
+  params: series=5 séries [series]  reps=3 reps [reps]
+  verbatim: "you're gonna do that for five sets of three plus now you're doing triples here so it's low weight you're doing five sets of three the plus set is an amrap"
+  condições: G015-25
+
+G015-25  G015@08:09  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: rpe, autorregulacao, series-reps, proximidade-da-falha
+  Ao contrário do template do Wendler e do Texas Method, que levam o AMRAP quase à falha, o GZCLP pede que se deixem 2 repetições no tanque e que não se vá até a falha.
+  params: rir=2 RIR [RIR]
+  verbatim: "reading the Texas Method where you're doing am wraps almost a failure this program specifically wants you to leave like two reps in the tank at the end of your amrap do not go all the way to failure"
+
+G015-26  G015@08:24  tier:R scope:GERAL modo:fato genero:review-de-programa explicit
+  tópicos: rpe, autorregulacao, proximidade-da-falha
+  Deixar 2 repetições no tanque no AMRAP é outra forma de dizer AMRAP em RPE 8: a última repetição custa e a barra desacelera, mas não é uma travada absoluta.
+  params: rir=2 RIR [RIR]  rpe=8 RPE [RPE]
+  verbatim: "reps in the tank it's another way of saying in amrap at rpe eight so you want to leave some some in the tank you want to be struggling a little bit with that last rep you're going to see some bar speeds slowing but it's not an absolute grind"
+
+G015-27  G015@08:39  tier:R scope:PESSOAL modo:anedota genero:review-de-programa explicit
+  tópicos: autorregulacao, progressao, meta-metodologia, proximidade-da-falha
+  Ele usou uma progressão por AMRAP submáximo para dirigir o progresso numa versão bem inicial do que veio a ser o EvolveAI.
+  verbatim: "and I really like that I used in a very early iteration of what eventually became evolve AI I used an a sub maximal amrap progression to drive progress"
+
+G015-28  G015@08:54  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: autorregulacao, progressao, meta-metodologia, proximidade-da-falha
+  A progressão por AMRAP submáximo não é novidade — o Doug Young já fazia isso décadas atrás — mas é altamente eficaz.
+  verbatim: "back in the like the 80s the 70s maybe even it's not new but it's highly effective so I really like that element"
+  conflita: V036-01
+
+G015-31  G015@09:55  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, series-reps, autorregulacao
+  Quando você falha em completar as 5 séries de 3, passa para o protocolo seguinte, que é 6 séries de 2.
+  params: series_anteriores=5 séries [series]  reps_anteriores=3 reps [reps]  series_novas=6 séries [series]  reps_novas=2 reps [reps]
+  verbatim: "now if you fail to get five sets of three you move on to the next protocol which is six sets of Two"
+
+G015-50  G015@17:15  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: periodizacao, autorregulacao, meta-metodologia
+  É o programa de progressão linear favorito dele, porque o que sai dele é uma periodização em blocos em que gatilhos de desempenho decidem onde o bloco termina.
+  verbatim: "say it probably my favorite linear progression program that I've seen because honestly what comes out of it is a block periodization where you are using triggers to figure out where to end your block that is so critically important"
+
+G016-12  G016@02:46  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: rpe, lesao, autorregulacao, proximidade-da-falha
+  Na série AMRAP você vai quase até a falha, mas sem quebra completa de forma e sem se machucar.
+  params: intensidade=85 % [pct_TM]
+  verbatim: "85 percent you go almost to failure you don't want to have complete form breakdown you don't want to injure yourself"
+
+G016-37  G016@09:37  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, autorregulacao, estagnacao
+  Se você estagnar, pegue 90% do peso em que estagnou e refaça o ciclo com ele.
+  params: reducao=90 % [pct]
+  verbatim: "what do you do if you stalk if you stall take 90 of whatever you stalled with and do it"
+
+G016-43  G016@10:52  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: autorregulacao, intensidade, progressao, proximidade-da-falha
+  As Joker sets são quando a série AMRAP saiu fácil demais e você sobe mais um pouco o peso, o que permite avançar mais rápido.
+  params: pct_serie_topo=85 % [pct_TM]  reps=5 reps [reps]
+  verbatim: "Joker sets are basically where you say hey my 85 percent five rep max or five rep amrap uh was actually really easy and you just increase the weight a little bit more and that lets you jump up faster"
+
+G016-44  G016@11:07  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: autorregulacao, progressao
+  Ele aconselha usar Joker sets no template do Wendler.
+  verbatim: "I would advise Joker"
+
+G019-04  G019@01:16  tier:R scope:GERAL modo:fato genero:review-de-programa explicit
+  tópicos: progressao, genetica, autorregulacao
+  Quanto tempo a progressão linear vai durar não é algo que dê para saber de antemão; é preciso sentir e descobrir o que funciona para a própria fisiologia.
+  verbatim: "to have to feel it out for you and figure out what works for your specific physiology it's not something you can know beforehand"
+
+G019-30  G019@06:36  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, autorregulacao
+  Falhar em somar peso e fechar só 2 séries de 5 mais uma série de 4 ainda permite continuar no programa.
+  params: series_completas=2 séries [series]  reps_alvo=5 reps [reps]  reps_ultima_serie=4 reps [reps]
+  verbatim: "you're failing your fives and you're getting you know like maybe two sets of five and a set of four yeah maybe you can still continue on"
+
+G019-31  G019@06:51  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, recuperacao, autorregulacao
+  Quando você não consegue nem 1 série de 5 com o peso, é hora de passar para um programa mais avançado ou revisar a recuperação fora da academia.
+  params: series=1 séries [series]  reps=5 reps [reps]
+  verbatim: "when you're not getting even one set of five with a weight it's either time to move on to a more advanced program or assess your recovery outside the gym"
+
+G020-22  G020@03:33  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: deload, progressao, autorregulacao, estagnacao
+  O critério de estagnação é você perder uma repetição em todas as séries de um movimento naquele dia.
+  verbatim: "what the deload is with this program is if you're missing one rep from all your sets"
+
+G020-26  G020@04:34  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, autorregulacao, estagnacao
+  Se apenas um movimento estagnou e o resto ainda sobe, segure aquele movimento e continue extraindo ganho dos outros.
+  verbatim: "if everything's moving forward except for maybe one maybe you just hold that one and you continue to eke out and milk out some of those gains for the other lifts"
+
+G021-07  G021@01:00  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: teste-de-forca, programacao, autorregulacao
+  Ele vai subir até uma tripla pesada e usar esse resultado como ponto de partida dos máximos do bloco.
+  verbatim: "I'm going to work up to a heavy triple that's going to let me know where my strength levels are and that's what I'm going to use is the starting point for the block for my Maxes"
+
+G021-20  G021@06:39  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: rpe, agacho, autorregulacao
+  Ele avaliou a tripla pesada em RPE 8,5 ou 9.
+  params: rpe_min=8.5 RPE [RPE]  rpe_max=9 RPE [RPE]
+  verbatim: "I'd probably put it actually around an eight and a half or a nine"
+
+G021-30  G021@10:17  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: rpe, sumo, autorregulacao
+  Ele classificou a tripla de terra em torno de RPE 6 ou 7.
+  params: rpe_min=6 RPE [RPE]  rpe_max=7 RPE [RPE]
+  verbatim: "I probably placed at it like a six or seven"
+
+G022-06  G022@04:34  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: supino, autorregulacao, intensidade
+  Ele estava programado para forçar essa série, porque na semana anterior tinha ficado abaixo do alvo com 365 lb.
+  params: carga_semana_anterior=365 lb [lb]
+  verbatim: "I'm supposed to push this set a little bit so I mean I did 365 last week in undershot so I'm gonna go for it"
+
+G022-07  G022@05:13  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: rpe, supino, autorregulacao
+  A top set saiu mais pesada do que ele queria: ele avaliou em RPE 9,5 ou 10, ainda dentro do aceitável.
+  params: rpe_min=9.5 RPE [RPE]  rpe_max=10 RPE [RPE]
+  verbatim: "a little heavier than I wanted that was more like uh nine and a half ten but within the realm"
+
+G022-08  G022@05:28  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, programacao
+  Ele lança o RPE no sistema e faz as séries de recuo a partir do que o sistema devolve.
+  verbatim: "so get my back off working just put that into the system and uh do my drop sets"
+
+G022-09  G022@05:44  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, aprendizado-motor
+  O levantador experiente consegue granularidade na avaliação: dizer que ia para 8, provavelmente foi 9 ou 9,5, perto de 10.
+  params: rpe_alvo=8 RPE [RPE]  rpe_estimado_min=9 RPE [RPE]  rpe_estimado_meio=9.5 RPE [RPE]  rpe_estimado_max=10 RPE [RPE]
+  verbatim: "it's interesting to see with an experienced lifter say yeah I was going for an eight probably nine nine and a half closer to ten and having that bit of granularity"
+
+G022-11  G022@06:14  tier:R scope:GERAL modo:opiniao genero:log-de-treino explicit
+  tópicos: rpe, aprendizado-motor, autorregulacao
+  Avaliar RPE é uma habilidade que leva muito tempo para ser adquirida.
+  verbatim: "it's yeah it's like a long long time to acquire the skill"
+
+G022-12  G022@06:29  tier:R scope:PESSOAL modo:opiniao genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, erro-comum
+  Mesmo depois de décadas treinando, ele só reconhece bem RPE 8, 9 e 10; entre 7 e 8 já começa a embolar e, se perguntado se foi 7 ou 6, ele não sabe dizer.
+  params: rpe_confiavel_min=8 RPE [RPE]  rpe_confiavel_meio=9 RPE [RPE]  rpe_confiavel_max=10 RPE [RPE]  rpe_indistinguivel_alto=7 RPE [RPE]  rpe_indistinguivel_baixo=6 RPE [RPE]
+  verbatim: "if you ask me if it was a seven or a six I don't I still don't know if I could totally tell you um I really know eights nines and tens I mean tens are easy obviously very slow nines usually can tell eights and sevens are already starting to blend"
+  conflita: V010-10
+
+G022-13  G022@06:29  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao
+  Sabendo que não é 9 e que não é 6, dá para chutar algo no meio e ficar bem.
+  params: rpe_limite_alto=9 RPE [RPE]  rpe_limite_baixo=6 RPE [RPE]
+  verbatim: "if you know it's not a nine and you know it's not a six then you can get somewhere in the middle and be okay"
+  condições: G022-12
+
+G023-05  G023@01:25  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: supino, rpe, autorregulacao
+  A top set foi 365 lb por 5 mirando RPE 8; ele acha que talvez tenha sido 7, mas vai registrar como 8 porque grinda bem no supino.
+  params: carga=365 lb [lb]  reps=5 reps [reps]  rpe_alvo=8 RPE [RPE]  rpe_alternativo=7 RPE [RPE]
+  verbatim: "365 for five I was targeting an rp8 I think I can grind out benches pretty good and so maybe a seven but I'll put it in as an eight"
+
+G023-10  G023@02:10  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, programacao
+  Ele lança a pontuação de prontidão no app antes da sessão.
+  verbatim: "I'm actually just putting in my Readiness score into the app right now"
+
+G026-18  G026@03:50  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: volume, autorregulacao, programacao
+  A funcionalidade que ele considera mais interessante é o volume não ser estático: ele é regulado pelo seu feedback.
+  verbatim: "it doesn't use static bowling instead the volume is regulated based on your feedback"
+
+G026-19  G026@04:05  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: autorregulacao, fadiga, recuperacao
+  A cada ida à academia você responde algumas perguntas simples sobre estado mental e estado físico.
+  verbatim: "each day when you go to the gym you're gonna answer a few simple questions about how your mental state and how your physical state is"
+
+G026-20  G026@04:05  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: fadiga, volume, autorregulacao, periodizacao
+  No fim de cada bloco o sistema compara a fadiga registrada com a fadiga esperada e autorregula o volume do bloco seguinte.
+  verbatim: "when you send your logs in at the end of each block the system will analyze your fatigue with what expected fatigue levels will be and then it will Auto regulate the volume for the next block"
+
+G026-21  G026@04:20  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: periodizacao, autorregulacao, programacao
+  O sistema não gera 5, 6 ou 7 blocos adiantados: ele espera o seu feedback e a análise do log antes de criar o bloco seguinte.
+  params: blocos_a=5 blocos [contagem]  blocos_b=6 blocos [contagem]  blocos_c=7 blocos [contagem]
+  verbatim: "it hasn't created five or six or seven blocks in advance it is actually waiting for your feedback and the ability to analyze your log before it's going to create that next training"
+
+G026-23  G026@04:35  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: recuperacao, volume, autorregulacao
+  Ele diz para não se preocupar com sub-recuperação nem com excesso de recuperação, porque o sistema calibra de bloco em bloco.
+  verbatim: "don't worry about under recovery or over recovery because it is gonna dial you in block to block"
+
+G027-13  G027@03:37  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: fadiga, teste-de-forca, autorregulacao
+  Ele teria aconselhado encerrar o dia depois da série anterior em vez de tentar a subida seguinte, porque a essa altura o levantador já estava cansado.
+  verbatim: "I would have advised you to call it a day yeah at this point you're tired"
+
+G028-30  G028@07:54  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: terra, rpe, autorregulacao
+  O levantador declarou aquele terra como máximo, mas pela velocidade da barra ainda havia repetições sobrando.
+  verbatim: "you mentioned that this was a Max but I mean this moves really well really well"
+
+G030-33  G030@10:06  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: rpe, intensidade, autorregulacao
+  Aquela série ficou abaixo de RPE 6, e sem nenhum problema de forma, o que indica que falta carga e não técnica.
+  params: rpe_estimado_maximo=6 RPE [RPE]
+  verbatim: "that was like a a sub rp6 sort of thing um I'm not seeing any form issues get some heavier lifting in"
+
+G032-15  G032@02:33  tier:R scope:PESSOAL modo:opiniao genero:competicao explicit
+  tópicos: supino, competicao, autorregulacao, pico
+  Desaceleração forte no sticking point é, para ele, sempre um alarme de que o próximo salto de tentativa tem que ser pequeno.
+  verbatim: "there's quite a bit of slowing um right through the sticking point which is right there and for me that always kind of sets off alarms that that next jump has to be pretty small"
+
+G034-01  G034@00:01  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: saude, recuperacao, autorregulacao
+  Existem princípios básicos a seguir para decidir como treinar estando doente.
+  verbatim: "I get questions all the time, how am I supposed to train, uh, if I'm feeling sick or what what should I do? And so, there are some basic principles that you can follow"
+
+G034-03  G034@00:16  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, intensidade, recuperacao
+  Estando doente, ir mais leve que o habitual e usar o RPE para guiar o treino.
+  verbatim: "one of which is go lighter than usual and use kind of RP to guide your training"
+  condições: G034-01, G034-10
+
+G034-04  G034@00:16  tier:R scope:PESSOAL modo:fato genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, meta-metodologia
+  Na consultoria que ele faz, ele sempre usa RPE, o que torna os ajustes fáceis.
+  verbatim: "in the coaching that I do, I always use RP, so it's pretty easy adjustments to make"
+
+G034-05  G034@00:16  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, intensidade
+  Estando doente, subtrair 2 ou 3 pontos do RPE em que se ia trabalhar.
+  params: reducao_de_rpe_min=2 RPE [RPE]  reducao_de_rpe_max=3 RPE [RPE]
+  verbatim: "basically you just take the RP you're gonna work at and you subtract two or three from it. So if you're going to do an eight, work with sixes."
+  condições: G034-01, G034-10
+
+G034-06  G034@00:31  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, intensidade
+  Quem ia treinar em RPE 8 passa a trabalhar em RPE 6.
+  params: rpe_planejado=8 RPE [RPE]  rpe_ajustado=6 RPE [RPE]
+  verbatim: "So if you're going to do an eight, work with sixes"
+  condições: G034-01, G034-10
+
+G034-07  G034@00:31  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: rpe, fadiga, autorregulacao
+  Estando doente, o RPE 6 do dia não é o mesmo RPE 6 de um dia bom.
+  params: rpe_de_referencia=6 RPE [RPE]
+  verbatim: "because you're sick, you're not going to be at your uh your like sixes that you would do on your best day ever"
+
+G034-08  G034@00:46  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: rpe, fadiga, autorregulacao
+  Na prática o esforço acaba caindo para o equivalente a um RPE 4 ou 5 do normal, o que está basicamente fora da escala de RPE.
+  params: rpe_efetivo_min=4 RPE [RPE]  rpe_efetivo_max=5 RPE [RPE]
+  verbatim: "you're probably going to end up at like a four or a five RP of what you would normally do, which is basically off the RP scale"
+
+G034-09  G034@00:46  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: intensidade, rpe, autorregulacao, recuperacao
+  A carga acaba ficando em torno de 70% a 75% do que se usaria numa série de RPE 8.
+  params: pct_da_carga_de_rpe8_min=70 % da carga de RPE 8 [pct]  pct_da_carga_de_rpe8_max=75 % da carga de RPE 8 [pct]  rpe_de_referencia=8 RPE [RPE]
+  verbatim: "you're going to be using something like uh 70% or 75% of the loads that you would have been using if you were doing an RP8"
+  condições: G034-01, G034-10
+
+G034-11  G034@01:17  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: aquecimento, autorregulacao, recuperacao
+  Com resfriado, dor de garganta ou dor no corpo, entrar na academia, aquecer devagar e pegar o que estiver disponível naquele dia.
+  verbatim: "if you've got a cold, you got a sore throat, you got a body ache, you go in, you warm up slowly, and then you uh you just take what's there that day"
+  condições: G034-10, G034-12
+
+G034-12  G034@01:32  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: erro-comum, teste-de-forca, autorregulacao
+  Não se deve forçar a ponto de falhar um levantamento.
+  verbatim: "You obviously don't want to push and miss a lift"
+
+G034-14  G034@01:32  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: intensidade, autorregulacao, recuperacao
+  Mesmo doente é possível subir até mais ou menos as cargas normais daquele treino.
+  verbatim: "But you can kind of work up to what your normal weights would have been"
+  condições: G034-10, G034-12
+
+G034-17  G034@02:02  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, recuperacao, saude
+  Se ele se sentir péssimo no dia, simplesmente cancela o treino.
+  verbatim: "if I feel awful, if I feel terrible, guess what? I'm just going to call it off"
+
+G034-22  G034@03:03  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: dor, lesao, autorregulacao
+  Com a articulação sacroilíaca um pouco irritada, ele não teve quebra de forma e avaliou estar em 90 a 95%.
+  params: sensacao_min=90 % [pct]  sensacao_max=95 % [pct]
+  verbatim: "my SI joint is just a little aggravated, but uh I haven't had any form breakdown really. Um everything feels okay. I'd say, you know, 90 95%."
+
+G034-26  G034@03:49  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, teste-de-forca
+  Ele avaliou que aquele definitivamente não seria um bom dia para tentar um máximo.
+  verbatim: "definitely wouldn't be a good day to uh to max"
+
+G035-20  G035@03:19  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: fadiga, agacho, autorregulacao
+  A repetição saiu suave, mas mais lenta do que ele gostaria e com leve frouxidão no fundo, com a fadiga já aparecendo.
+  verbatim: "it was a smooth rep but it was a little slower than I would have liked and uh slight looseness in the bottom there definitely feeling the fatigue at that point"
+
+G036-09  G036@01:17  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: agacho, autorregulacao, progressao
+  O single de 675 lb subiu na mesma velocidade da tripla de 660 lb feita 2 semanas antes.
+  params: single_atual=675 lb [lb]  tripla_anterior=660 lb [lb]  intervalo=2 semanas [semanas]
+  verbatim: "the same speed as 660 did the uh two weeks previous to this uh when I did a triple uh with 660 uh that rep of 675 moved at the same speed"
+
+G036-11  G036@01:32  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: supino, rpe, autorregulacao
+  A série de 440 lb por 3 no supino passou do RPE que ele queria.
+  params: carga_supino=440 lb [lb]  reps=3 reps [reps]
+  verbatim: "here 440 for three it exceeded the rpe that I wanted it to be at"
+
+G036-23  G036@03:33  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: agacho, progressao, autorregulacao
+  O agachamento de 695 lb subiu exatamente na mesma velocidade dos 675 lb da semana anterior.
+  params: carga_atual=695 lb [lb]  carga_semana_anterior=675 lb [lb]
+  verbatim: "this weight actually moved at exactly the same speed as 675 the week before"
+
+G036-27  G036@04:03  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: agacho, autorregulacao, progressao
+  Ele usa a queda de velocidade da barra como sinal de onde a progressão semanal vai travar, e no agachamento esse ponto ainda não chegou.
+  verbatim: "I'll have to see where that where the speed starts to taper off and where things start to get hard but they haven't quite gotten there yet on squats"
+
+G036-31  G036@04:33  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: supino, autorregulacao, series-reps
+  No supino ele desceu de tripla para single porque os 440 lb tinham sido difíceis, e acabou fazendo 460 lb.
+  params: tripla_dificil=440 lb [lb]  single=460 lb [lb]
+  verbatim: "I moved uh down from triple since that 440 was pretty hard ended up going 460 here"
+
+G037-23  G037@03:20  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: supino, autorregulacao, ombros
+  Ele derrubou bastante a carga do back off porque os ombros não estavam pegando uma boa posição e ele não estava tão tenso quanto gostaria.
+  verbatim: "I took a pretty big uh drop just cuz things weren't feeling great on this day um my shoulders really weren't getting a great position I wasn't as tight as I would have liked to have been"
+
+G037-33  G037@04:35  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao
+  Ele julgou ter acertado o RPE alvo porque a primeira repetição não teve nenhuma perda de velocidade de barra e a segunda teve só uma leve lentidão.
+  verbatim: "first rep was definitely no bar speed slowing whatsoever and just a slight uh little bit of slowing on that second rep so I think I hit it on the head there"
+
+G037-35  G037@05:05  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: deload, recuperacao, autorregulacao
+  Na semana de deload os 425 lb subiram melhor do que qualquer peso que ele tinha movido na semana anterior.
+  params: carga=425 lb [lb]
+  verbatim: "425 moved better than any of the weights that I had moved in the previous week"
+
+G038-05  G038@00:30  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: terra, fadiga, autorregulacao, recuperacao
+  Ele vai pegar mais leve no terra na semana seguinte porque o terra acumula fadiga rápido para ele.
+  verbatim: "to have to take it a little easy on deadlifts probably next week uh just cuz that really accumulates fatigue quickly for me"
+
+G038-07  G038@00:46  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, ordem-exercicio, fadiga
+  Ele esperou para ver como se sentia depois do dia de terra antes de decidir agachar.
+  verbatim: "I kind of waited to see how I felt with deadlift day uh before doing the squats"
+
+G038-19  G038@02:32  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: deload, fadiga, autorregulacao, pico
+  Ele vai começar a fase de singles com uma semana de singles leves porque está mais fatigado do que gostaria.
+  verbatim: "but I'll probably take a light singles week coming up as I've mentioned I'm just a little bit more fatigued than I would like"
+
+G038-23  G038@03:02  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: agacho, autorregulacao, tecnica
+  Comparando as duas semanas, as velocidades de barra ficaram quase idênticas, com uma descida um pouco mais conservadora nos 660 lb.
+  params: carga_agacho=660 lb [lb]
+  verbatim: "you'll notice that the uh the bar speeds are almost identical I was descending a little bit more conservatively with the 660"
+
+G039-03  G039@00:31  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: agacho, intensidade, autorregulacao
+  Conforme a carga absoluta sobe, ele simplesmente não consegue ser tão explosivo quanto seria com pesos menores.
+  verbatim: "it weights get heavier I just can't be quite as explosive as I would be otherwise just because of the absolute weight"
+
+G039-04  G039@00:46  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, aprendizado-motor
+  Para julgar o RPE, o que importa é quanta perda de velocidade de barra se vê de uma repetição para a outra, não a velocidade absoluta.
+  verbatim: "what's important to note for RP is how much bar speed slowing you see from rep to rep"
+
+G039-07  G039@01:16  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: agacho, rpe, autorregulacao
+  Nem na terceira repetição da tripla houve praticamente perda de velocidade de barra.
+  verbatim: "you'll notice that there's almost no bar speed slowing even on this third rep"
+
+G039-14  G039@02:47  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: terra, sumo, autorregulacao
+  As séries iniciais do dia foram ruins: a primeira repetição com 585 lb pareceu muito lenta e 605 lb saiu lento do chão.
+  params: carga_1=585 lb [lb]  carga_2=605 lb [lb]
+  verbatim: "this uh 585 that first rep felt very slow I felt off uh it just did not feel good and especially that 605 there it was just slow off the floor"
+
+G039-17  G039@03:17  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: sumo, rpe, autorregulacao, antropometria
+  Com a stance nova o RPE caiu cerca de 3 pontos em relação à série anterior, com o mesmo peso.
+  params: queda_de_rpe=3 RPE [RPE]
+  verbatim: "I did that triple and the RP was like three RP lower than the previous set"
+
+G039-20  G039@03:47  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: sumo, fadiga, autorregulacao
+  Ele acha que teria feito 10 repetições sem o reajuste dos pés e provavelmente mais se não estivesse fatigado.
+  params: reps_possiveis=10 reps [reps]
+  verbatim: "could have done 10 uh if I didn't have to readjust my footing mid uh midet and probably more if I hadn't been doing it in a fatigu state"
+
+G040-02  G040@00:15  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, volume, progressao
+  Dentro da faixa de séries ele pode piramidar a carga para cima ou para baixo conforme a necessidade do dia.
+  verbatim: "and I can pyramid up the weight or pyramid down the weight kind of is needed"
+
+G040-03  G040@00:30  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, terra, lesao
+  Ele acabou usando cerca de 20 lb a menos do que tinha planejado porque pareceu certo e ele não quis forçar mais.
+  params: reducao_de_carga=20 lb [lb]
+  verbatim: "I ended up actually doing about 20 lbs less than what I was thinking for this day but it just felt right and I didn't want to push it harder"
+
+G040-26  G040@04:49  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: strap, terra, autorregulacao
+  Ele fez a última série sem straps só para confirmar que tudo estava se movendo bem.
+  verbatim: "I finished up the last set without using the straps um just to make sure that you know everything was moving well"
+
+G041-04  G041@01:16  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: supino, erro-comum, autorregulacao
+  Ele acabou fazendo mais repetições do que provavelmente deveria nessa série.
+  verbatim: "ended up kind of doing a few more reps than I probably should have"
+
+G041-09  G041@01:46  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: terra, costas, dor, autorregulacao
+  Ele decidiu não fazer o dia normal de terra porque as costas estavam incomodando.
+  verbatim: "but my back had been bothering me a little bit and so I decided not to do my normal deadlift day"
+
+G041-11  G041@02:01  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: programacao, autorregulacao, frequencia
+  No lugar do dia de terra ele montou a semana com 2 dias de supino e um dia curto de safety squat bar.
+  params: dias_de_supino=2 dias/semana [x_semana]
+  verbatim: "decided instead to just have uh two bench days um and a really short safety squat bar day"
+
+G041-12  G041@02:17  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: supino, series-reps, autorregulacao
+  Ele fez 7 repetições com 395 lb quando queria 8, e parou porque sabia que forçar mais uma seria demais.
+  params: carga=395 lb [lb]  reps_feitas=7 reps [reps]  reps_desejadas=8 reps [reps]
+  verbatim: "I was semi-happy with this 395 honestly I wanted another rep um I think I end up with seven and I really wanted to get eight but I knew on the last rep here that it just would have been pushing way too hard to even try to eek out another rep"
+
+G041-13  G041@02:32  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: rpe, supino, autorregulacao
+  Ele classificou essa série de supino como RPE 9,5.
+  params: rpe=9.5 RPE [RPE]
+  verbatim: "I call that kind of N9 and a half"
+
+G041-20  G041@03:17  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: agacho, rpe, autorregulacao
+  Ele tinha 605 lb em mente antes de começar e acha que acertou o número para a tripla alvo.
+  params: carga_agacho=605 lb [lb]
+  verbatim: "I had 605 in my mind uh before I started this and it turned out to be the right number I think"
+
+G041-21  G041@03:32  tier:R scope:PESSOAL modo:opiniao genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, erro-comum, aprendizado-motor
+  Mesmo depois de anos treinando por RPE, ele acha muito difícil calibrar RPE 6, 6,5 e às vezes até 7.
+  params: rpe_dificil_min=6 RPE [RPE]  rpe_dificil_meio=6.5 RPE [RPE]  rpe_dificil_max=7 RPE [RPE]
+  verbatim: "it's very hard for me even after years of RP training to gauge an rp6 or 6 and A2 um or even sevens sometimes um it's just difficult"
+
+G041-24  G041@03:48  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, mentalidade
+  Apesar de a série ter parecido péssima para ele, ele acha que acertou o RPE que queria.
+  verbatim: "I mean it didn't look awful but to me it felt absolutely terrible um so there's a lot to clean up there but I still think I hit about the RP I wanted"
+
+G043-02  G043@01:18  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: series-reps, autorregulacao, agacho
+  Ele acabou fazendo uma série de 10 porque na repetição 8 a série ainda estava se sentindo muito boa.
+  params: reps_feitas=10 reps [reps]  rep_de_referencia=8 reps [reps]
+  verbatim: "and ended up doing it for a set of 10 because when I got the rep number eight um it just felt really good"
+
+G043-16  G043@04:50  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: intensidade, autorregulacao, meta-metodologia
+  Intensidade relativa é algo importante de rastrear e de entender, independentemente de você assinar o programa dele ou não.
+  verbatim: "relative intensity is something that's important to track and also understand"
+
+G043-26  G043@07:07  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: intensidade, rpe, autorregulacao
+  Nesse exemplo, uma intensidade relativa em torno de 90% corresponde a mais ou menos RPE 8.
+  params: intensidade_relativa=90 % [pct]  rpe=8 RPE [RPE]
+  verbatim: "which is going to probably be around an rp8 um and I think about 90% relative intensity is going to be on point with that"
+
+G043-27  G043@07:22  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: intensidade, autorregulacao, selecao-exercicio
+  Ele manda rastrear intensidade relativa nos treinos, especialmente quando se está fazendo variação em séries de repetições altas.
+  verbatim: "in any case track relative intensity in your workouts especially if you're doing stuff like I am it's a variation it's a high rep set"
+
+G043-28  G043@07:22  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: rpe, selecao-exercicio, autorregulacao
+  Ele gosta de RPE justamente porque não sabe qual é o máximo de uma repetição dele na safety squat bar.
+  verbatim: "I don't know what my one rep max is on a safety squat bar that's why I like RP"
+
+G045-20  G045@03:48  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: autorregulacao, programacao, rpe, proximidade-da-falha
+  ele se afastou dos AMRAPs e o programa novo não vai ter AMRAP
+  verbatim: "it won't have am wraps in it I've moved away from that a little bit and I'll have a video coming out explaining why"
+
+G045-21  G045@04:03  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: autorregulacao, volume, programacao
+  ele usa fatigue drops muito mais e acha que é uma boa forma de autorregular sem abrir mão do foco em volume
+  verbatim: "but I'm using fatigue drops a lot more um and I think that's a really good way to Auto regulate while still uh focusing on volume"
+
+G045-22  G045@04:03  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: autorregulacao, volume, erro-comum
+  a alternativa de dar um número fixo de séries e pedir que o atleta decida subjetivamente se corta ou acrescenta é difícil na prática
+  verbatim: "as opposed to just giving you a set amount of sets"
+
+G045-23  G045@04:18  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: autorregulacao, volume, aprendizado-motor
+  usar fatigue drops ensina ao atleta como ele responde a volume e como responde a drop sets
+  verbatim: "if you use fatigue uh drops it allows you to learn a little bit about how you you respond to volume and about how you respond to drop sets"
+
+G048-27  G048@04:20  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: supino, intensidade, autorregulacao
+  para os doubles de supino do dia ele mira entre 415 e 435 lb, podendo ficar em 405 lb, decidindo no feeling
+  params: faixa_min=415 lb [lb]  faixa_max=435 lb [lb]  piso=405 lb [lb]
+  verbatim: "415 to 435 range today. I'll feel it out. Might just go 405, I don't know"
+
+G048-29  G048@04:20  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao
+  a vantagem do treino por RPE é não haver números fixos que você obrigatoriamente tem que bater
+  verbatim: "That's cool thing about RPE training, you don't have"
+
+G048-30  G048@04:35  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, mentalidade
+  isso permite tanto ficar abaixo do previsto sem sentir que falhou quanto passar dos números esperados e ter um grande dia
+  verbatim: "to have set numbers you absolutely have to hit, which both allows you to undershoot and not feel like you failed or continue up past the numbers you were expecting and have a great day"
+
+G048-31  G048@04:35  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: rpe, recuperacao, autorregulacao
+  nada disso sobrecarrega os sistemas de recuperação desde que o RPE seja planejado de acordo com a sua capacidade de recuperação
+  verbatim: "um all without overtaxing recovery systems as you plan your RPE"
+  condições: G048-29, G048-30
+
+G050-10  G050@02:23  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: fadiga, autorregulacao, mentalidade
+  bocejar entre as séries é como ele sabe que não está animado nem pronto para o treino
+  verbatim: "A lot of yawning during my workout. That's when I know I'm I'm just not pumped up. I'm just not ready to go. If I'm yawning in between sets"
+
+G050-12  G050@03:19  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, supino, fadiga, costas
+  com a parte alta das costas fatigada, ele provavelmente vai ter que puxar para trás o single de supino do fim daquela semana
+  verbatim: "Upper back is fatigued. So, I'll probably have to uh pull back on the single that I'm going to do later on in the week for bench"
+  condições: G050-11
+
+G050-13  G050@03:34  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, recuperacao
+  a vantagem do treino por RPE é que, se você se recuperar e estiver se sentindo bem, dá para voltar direto ao que estava fazendo
+  verbatim: "That's the cool thing about RP training is if you recover and you're feeling good, you can go back right into what you're doing"
+
+G050-19  G050@04:05  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, erro-comum
+  em qualquer treino que você esteja fazendo, não perca nenhuma repetição: passar um pouco de um RPE é aceitável
+  verbatim: "especially in any training that you're doing, don't miss any reps, you can overshoot an RP by a little bit"
+  condições: G050-20
+
+G050-20  G050@04:05  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: rpe, tecnica, autorregulacao
+  o overshoot foi aceitável porque não foi um grinder no limite em que ele teve que quebrar a forma
+  verbatim: "That wasn't an allout crazy grinder where I had to break form or anything like that. So, as far as I'm concerned, it was a win"
+
+G050-23  G050@04:35  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, volume, fadiga
+  ele pode ter que ajustar esse trabalho acessório se estiver mais cansado das repetições anteriores
+  verbatim: "I may need to adjust that if I'm more tired from these reps"
+  condições: G050-21
+
+G051-04  G051@00:43  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: rpe, recuperacao, autorregulacao
+  ele cortou a série um pouco abaixo do RPE alvo justamente para facilitar a recuperação
+  verbatim: "I kind of cut it a little under RP just so I can uh facilitate recovery"
+
+G051-42  G051@08:34  tier:R scope:PESSOAL modo:opiniao genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao, mentalidade
+  com treino por RPE ele não tem ideia do que esperar e leva o dia como ele vem
+  verbatim: "um I I have no idea what to expect I just kind of take it as it is with RP training"
+
+V001-06  R001@01:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Usa como heurística um nível de dor em torno de 2 na escala de dez pontos como a carga de trabalho aproximadamente certa.
+  params: dor_alvo=2 dor_0a10 [escala_dor]
+  verbatim: "the rough heuristic I found is about a 2 out of 10 level of pain is usually good for most people"
+  condições: V001-07, V001-29, V027-23
+  conflita: V138-19
+
+V001-29  R001@01:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Cada pessoa e cada lesão são diferentes, então a heurística de dor pode precisar de ajuste.
+  verbatim: "every person and every injury is different, so it might take some adjusting"
+
+V002-15  R002@05:05  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: rpe, autorregulacao, meta-metodologia
+  Repetições em reserva são uma medida muito subjetiva, o que fragiliza estudos que dependem delas.
+  verbatim: "But here's the thing, that's a very subjective measure"
+
+V010-02  R010@00:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: volume, autorregulacao
+  É difícil dar um número exato de séries porque isso varia muito de indivíduo para indivíduo.
+  verbatim: "The reason it's so hard to give exact numbers, people, is just how much it can vary from individual to individual"
+
+V010-04  R010@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: volume, autorregulacao, rpe
+  A regra é cortar as séries quando o RPE começa a subir, o desempenho cai e a forma começa a se degradar.
+  verbatim: "once your RPE starts to climb, um you know, your performance is dropping and your your form is starting to break down a bit, that's the point where you should cut your sets"
+
+V010-05  R010@00:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: rpe, autorregulacao, volume
+  O critério numérico é: para um mesmo peso e as mesmas repetições, quando o RPE sobe 1 a 2 pontos, encerre o exercício.
+  params: subida_rpe_min=1 RPE [RPE]  subida_rpe_max=2 RPE [RPE]
+  verbatim: "when for a given weight and reps with that weight, the RPE starts to climb one to two, that's the point you should cut it"
+
+V020-45  R020@08:23  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cardio, autorregulacao
+  ele diz que vai reduzir o cardio se ficar insustentável, porque não é do tipo que insiste teimosamente
+  verbatim: "I'll dial it back if it becomes unsustainable."
+
+V024-03  R024@00:16  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, agacho
+  A regra dele para a sessão é não forçar e tomar a decisão inteligente se não estiver se sentindo bem, mas pegar mais peso se houver.
+  verbatim: "i'm not going to force it. i'll make the smart decision if i'm not feeling good. but if there's more there, i'll take it"
+
+V024-13  R024@01:47  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: fadiga, autorregulacao
+  Ele entrou na sessão de agacho sem se sentir bem, um pouco dolorido e fatigado.
+  verbatim: "do i feel the best? honestly, no. i'm a little sore right now. i'm a little fatigued"
+
+V027-18  R027@03:50  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, autorregulacao
+  Ele adotou uma abordagem bem agressiva na própria lesão de costas.
+  verbatim: "i took a really aggressive approach uh to my back injury"
+  condições: V027-19
+
+V027-26  R027@05:38  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, autorregulacao
+  A regra que ele usa hoje é mover o máximo possível desde que os sintomas de dor sigam em queda ao longo do tempo.
+  verbatim: "you want to move as much as you can while still seeing your pain symptoms [music] trending down over time"
+  condições: V027-28
+
+V027-27  R027@05:38  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: dor, autorregulacao
+  Um dia isolado de pico de dor é normal e não deve gerar pânico.
+  verbatim: "if you have the odd day here and there where your pain spikes, don't freak out. it's normal"
+
+V027-28  R027@05:53  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, deload, autorregulacao, estagnacao
+  Se os picos são frequentes, ou a dor estaciona ou piora, é preciso reduzir mais a carga.
+  verbatim: "if you're having those spikes a lot or you're really just plateauing in pain or even getting worse, you've got to reduce the load more"
+  condições: V027-27
+
+V028-05  R028@00:45  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: lesao, autorregulacao
+  Apesar da dor, ele decidiu desencaixar a barra e ver como o levantamento se comportaria.
+  verbatim: "i decided, let's unrack it and see how this goes"
+
+V028-10  R028@01:16  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: lesao, autorregulacao, dor
+  O critério dele era recuar se a dor estivesse forte ou piorando com o movimento.
+  verbatim: "if the pain was bad or getting worse from movement, i would have backed it off"
+
+V029-19  R029@02:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: intensidade, autorregulacao
+  Quem fica mais forte em termos absolutos sente um dado peso como mais taxante.
+  verbatim: "when people are getting stronger in an absolute sense, you know, it's more taxing for a given weight"
+
+V029-20  R029@03:02  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: intensidade, autorregulacao
+  Há diferença interindividual: algumas pessoas respondem melhor a intensidade alta e outras a intensidade baixa.
+  verbatim: "some people are better with higher intensity, lower intensity"
+
+V031-17  R031@02:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: tecnica, autorregulacao
+  Julgar se um cue ajuda deve se apoiar em feedback objetivo, como velocidade de barra e o quanto o levantamento realmente pesou, e não no que se vê ou sente.
+  verbatim: "try to take look or feel with a bit of a grain of salt and try to rely on more objective feedback like the speed of the bar or how hard the lift actually felt"
+
+V032-05  R032@00:15  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, teste-de-forca
+  Ele compara com o single de 650 lb do ciclo anterior e vê essencialmente a mesma velocidade de barra.
+  params: single_comparado=650 lb [1RM_treino]
+  verbatim: "we can compare this to my 650 lb single last cycle and see that they're at essentially the same speed"
+
+V033-15  R033@01:46  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: progressao, autorregulacao
+  Como ele também está ficando mais forte, pode nem perceber as coisas ficando mais difíceis ao longo do ciclo, mesmo somando peso o tempo todo.
+  verbatim: "consider the fact that I'm trying to get stronger, right? Ideally, I do get stronger. So, I may not even notice things getting harder over the training cycle"
+
+V033-17  R033@02:01  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: autorregulacao, progressao
+  Ele compara velocidades de barra e vê que, dez semanas depois e 50 lb a mais, a barra se move na mesma velocidade.
+  params: peso_somado=50 lb [lb]
+  verbatim: "even from like 10 weeks ago, I've added like 50 lbs and it's still moving the same speed"
+
+V035-20  R035@02:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: volume, autorregulacao
+  A ideia é orbitar a carga de trabalho ótima para o indivíduo, maximizando estímulo e progresso.
+  verbatim: "We're trying to hang around that more optimal workload for the individual so they can maximize stimulus and maximize progress"
+
+V036-09  R036@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, intensidade
+  O leitor deve ajustar esses números a si mesmo e ficar com o princípio geral de treinar mais submáximo.
+  verbatim: "you can adjust these numbers to yourself and just take the general principle of training more submaximally and reaping the benefits"
+
+V038-25  R038@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, autorregulacao
+  O princípio é descansar só o necessário para se sentir recuperado e nada além disso.
+  verbatim: "the principle here should be you're doing just enough as you need to feel recovered and no longer"
+  condições: V038-26
+
+V039-25  R039@04:17  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: peso-corporal, autorregulacao
+  Essa taxa de cerca de 2 lb por mês fica perto do limite inferior do que dá para detectar em meio ao ruído do peso diário.
+  params: taxa_ganho=2 lb/mês [lb]
+  verbatim: "this rate of gain of about 2 lbs per month is probably around the low end of what you're going to be able to detect through"
+
+V039-26  R039@04:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: peso-corporal, autorregulacao
+  A pesagem deve ser consistente: pelado, toda manhã, antes de comer ou beber e depois do banheiro.
+  verbatim: "You're going to want to make sure you're consistent with yourself naked every morning before eating or drinking anything"
+
+V039-27  R039@04:32  tier:R scope:PESSOAL modo:fato genero:aula explicit
+  tópicos: peso-corporal, autorregulacao
+  Ele olha a tendência de peso por pelo menos 2 semanas, ou um mês inteiro, antes de ajustar calorias.
+  params: janela_tendencia=2 semanas [semanas]
+  verbatim: "I like to look at the trend in weight for at least two weeks, if not a whole month before making adjustments to my calories"
+
+V040-23  R040@03:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, periodizacao
+  O intervalo deve ser ajustado ao indivíduo e a como ele está se sentindo.
+  verbatim: "adjust it to how you as an individual and how you are feeling"
+
+V045-08  R045@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, volume
+  É melhor reagir a como você realmente se sente do que cortar carga antecipadamente.
+  verbatim: "it's better to react to how you actually feel"
+
+V045-10  R045@00:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: mentalidade, autorregulacao
+  A maioria se beneficia de se pressionar mais do que acha possível para testar os limites reais; no pior caso basta recuar um pouco.
+  verbatim: "most people can benefit from pushing themselves more than they think is possible to test their actual limits"
+
+V046-25  R046@03:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: tecnica, autorregulacao
+  Em 80% das vezes ou mais, o cue pode se resumir a perguntar se aquilo parece bom e, se sim, continuar.
+  params: proporcao_cue_por_sensacao=80 pct [pct]
+  verbatim: "80% of the time or more queuing can just come down to does this feel good"
+  condições: V046-23
+
+V047-23  R047@03:01  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: acessorios, progressao, autorregulacao, proximidade-da-falha
+  Para garantir progressão nos acessórios, faça uma série até a falha para calibrar a proximidade da falha ou use uma faixa de repetições que você tenta subir ao longo do tempo.
+  verbatim: "either doing a set to failure to ensure proximity to failure is accurate or having a rep range that you try and work up over time"
+
+V051-09  R051@01:01  tier:R scope:PESSOAL modo:mecanismo genero:competicao explicit
+  tópicos: supino, autorregulacao
+  No supino dele a velocidade da barra despenca muito rápido conforme a carga sobe, então uma série fácil não indica muita margem.
+  verbatim: "Something else to keep in mind with my bench is my speed drops off super fast"
+
+V052-05  R052@00:30  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: mentalidade, autorregulacao
+  O nível ótimo de empolgação varia conforme o indivíduo e até conforme o movimento.
+  verbatim: "It's going to vary based on the individual and even the lift"
+
+V052-18  R052@01:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: competicao, autorregulacao, teste-de-forca
+  A escolha de tentativa deve partir de uma meta realista baseada em como o aquecimento está indo, sem apego emocional a números específicos.
+  verbatim: "we need to have a realistic goal for what you can hit based on how we feel warming up. Don't get too emotionally attached to certain numbers"
+
+V063-16  R063@01:46  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: autorregulacao, meta-metodologia
+  A heurística básica que ele usa para ajustar workload vem de Mike Tuchscherer.
+  verbatim: "here's the basic heristic I've mentioned before from Mike Turer."
+
+V063-17  R063@01:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, volume, fadiga
+  Se você está progredindo mal e se sente bem em termos de fadiga e dor muscular, adicione mais workload.
+  verbatim: "If you're progressing badly and you feel good in terms of fatigue and soreness, add more workload."
+
+V063-18  R063@01:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, volume, fadiga
+  Se você está progredindo mal e se sente mal, reduza o workload; essa é a alavanca mais simples de puxar.
+  verbatim: "If you're progressing bad and feel bad than reduce workload, this is the simplest lever to pull."
+
+V065-22  R065@02:02  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: autorregulacao, progressao, fadiga
+  Ele chegou ao ponto de conseguir sentir quando a sobrecarga progressiva está prestes a se tornar insustentável.
+  verbatim: "I've really gotten to the point where I can feel when my progressive overload is about to become unsustainable."
+
+V065-23  R065@02:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, fadiga, teste-de-forca
+  Aprender a ler a própria fadiga fora da academia avisa quando é hora de testar o máximo e resetar para pesos mais leves.
+  verbatim: "Lets you know when it's time to test your max and reset back to liquor weights."
+
+V070-12  R070@01:46  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: autorregulacao, intensidade
+  Ele acha que o estímulo adequado é uma faixa de dificuldade, e não uma dificuldade exata.
+  verbatim: "I do think the proper stimulus is a bit of a range rather than an exact difficulty."
+
+V070-23  R070@02:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: rpe, progressao, autorregulacao
+  A sobrecarga progressiva deve parar quando as séries de trabalho estiverem principalmente na faixa de RPE 7 beirando RPE 8.
+  params: rpe_parada_min=7 RPE [RPE]  rpe_parada_max=8 RPE [RPE]
+  verbatim: "I usually find you want to stop progressive overload once your working sets are mainly in the RP7 bordering on the RP8 range."
+  condições: V070-28
+
+V071-11  R071@01:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: tecnica, autorregulacao
+  O critério para saber se a técnica é boa é observar o que funciona ou não para você mesmo.
+  verbatim: "we can see what does or doesn't work for us"
+
+V071-15  R071@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: tecnica, autorregulacao
+  O teste prático de uma mudança de técnica é experimentar e ver se ela permite levantar mais.
+  verbatim: "just try something, see if it lets you lift more or not"
+  condições: V071-25
+
+V074-16  R074@01:46  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: programacao, autorregulacao
+  Ele passou a cronometrar todos os descansos em vez de ir no feeling.
+  verbatim: "what I did is time all of my rests"
+
+V074-23  R074@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, autorregulacao, descanso-entre-series
+  Ele sugere cortar o tempo de descanso até o ponto em que dá para fazer isso sem prejudicar o desempenho das séries por falta de recuperação.
+  verbatim: "I really suggest trying to cut down on your rest time, getting to that point you can find you can do it without impairing performance on sets from being underreovered"
+  condições: V074-24
+
+V075-23  R075@02:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cardio, autorregulacao, recuperacao
+  Deve-se acompanhar a recuperação e ver se o cardio começa a impactar os levantamentos, caso em que se reduz um pouco.
+  verbatim: "while tracking recovery and seeing if it starts to impact your lifts, in which case you may want to dial back a bit"
+
+V076-15  R076@01:15  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: rpe, autorregulacao, erro-comum
+  Esse esquema funcionaria se fosse feito em RPE 8 de verdade, mas muita gente não chega ao RPE 8 real.
+  params: rpe_prescrito=8 RPE [RPE]
+  verbatim: "Yeah, if done to true RP8, but many people aren't going to do true RP8."
+
+V076-16  R076@01:15  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: acessorios, rpe, autorregulacao
+  Ele é adepto de fazer pelo menos 1 série até a falha para calibrar onde a intensidade realmente está.
+  params: series_ate_falha=1 séries [series]
+  verbatim: "I'm a fan of doing at least one set to failure to see where your intensity is really at, and it forces actual effort on your accessories."
+
+V078-24  R078@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: peso-corporal, autorregulacao
+  O acompanhamento deve ser feito pela média móvel de alguns dias e por como ela muda com o tempo.
+  verbatim: "So focus on your moving average of a few days and how that's changing with time."
+
+V079-10  R079@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, autorregulacao, volume
+  A hipótese dele é que intensidade, frequência e volume não preveem lesão isoladamente porque as pessoas são boas em autosselecionar uma carga de trabalho que aguentam.
+  verbatim: "my hypothesis is the reason intensity, frequency, or volume independently than predict injury is that people are pretty good at self- selecting a workload they can handle"
+
+V079-12  R079@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: volume, lesao, autorregulacao
+  A carga de treino é o que importa: deve-se escutar o corpo e não fazer demais.
+  verbatim: "Training load is important. Listen to your body and don't do too much."
+
+V079-34  R079@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Anedoticamente, ele achou que um nível de dor de 2 a 3 numa escala de 10 é uma boa faixa para empurrar na reabilitação, ajustando ao que faz os sintomas melhorarem com o tempo.
+  params: dor_min=2 escala 0-10 [escala_dor]  dor_max=3 escala 0-10 [escala_dor]  escala_max=10 escala 0-10 [escala_dor]
+  verbatim: "Anecdotally, I have found that two to three out of 10 pain level is a good amount to push at though ultimately adjust to what you need for"
+  condições: V079-39, V027-23, V086-21
+  conflita: V027-25
+
+V080-21  R080@01:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cutting, autorregulacao
+  A forma de saber se o cut está rápido demais é acompanhar a performance.
+  verbatim: "So, how do you actually tell if you're cutting too fast? Well, track your performance."
+
+V080-23  R080@01:46  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cutting, acessorios, autorregulacao, antropometria
+  Como agacho, supino e terra sofrem influência das alavancas corporais, ele usa movimentos como extensão de tríceps, onde a alavanca pesa pouco, para julgar a força durante o cut.
+  verbatim: "But lifts like squat, bench, and deadlift can be influenced by body leverages. So, I actually use things like triceps extensions where body leverage doesn't play a big role."
+
+V080-24  R080@02:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: acessorios, autorregulacao, teste-de-forca, proximidade-da-falha
+  É mais fácil levar acessórios até perto ou até a falha, então eles dizem a força exata melhor do que tentar maxar o terra toda semana.
+  verbatim: "it's easier to do accessories closer to or at failure. So, easier to tell your exact strength versus trying to say max out your deadlifts every week to see how your progress is doing."
+
+V080-26  R080@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, autorregulacao
+  É melhor ser reativo do que proativo com a programação, reagindo a como você realmente se sente.
+  verbatim: "It's better to be reactive than proactive with programming. That is, react to how you actually feel."
+
+V080-31  R080@02:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: peso-corporal, autorregulacao
+  A tendência de peso deve ser acompanhada por 2 semanas antes de qualquer ajuste, porque muita gente superajusta por causa de mudança de curto prazo de conteúdo intestinal e água.
+  params: janela_tendencia=2 semanas [semanas]
+  verbatim: "track the trend over 2 weeks before adjusting"
+
+V081-12  R081@01:01  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, autorregulacao
+  A velocidade do single de 187,5 kg foi parecida com a de um single de 170 kg feito antes de ele acertar 200 kg.
+  params: single_referencia=187.5 kg [1RM_treino]  single_comparacao=170 kg [1RM_treino]  max_ciclo_anterior=200 kg [1RM_treino]
+  verbatim: "really strong after my 187.5 kilo single and the speed was way similar to a 170 kilo single i did before hitting 200 kilos"
+
+V082-16  R082@02:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: tecnica, autorregulacao
+  Qualquer mudança de forma que se tente deve parecer melhor bem rápido.
+  verbatim: "any form change we try should feel pretty quickly better"
+  condições: V082-17
+
+V082-17  R082@02:17  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tecnica, autorregulacao
+  Se depois de um tempo a mudança não parece mais forte e você tem certeza de estar executando direito, provavelmente ela nunca vai ser mais forte para você.
+  verbatim: "if something you're trying for a while isn't feeling stronger and you're sure you're doing it properly it probably isn't ever going to be stronger for you"
+
+V083-09  R083@01:20  tier:R scope:PESSOAL modo:anedota genero:competicao explicit
+  tópicos: autorregulacao, competicao, agacho
+  No passado ele já acertou uma segunda tentativa em velocidade parecida, deu um salto grande de peso e acertou, o que o levou a concluir que só não estava forte no dia.
+  verbatim: "i've hit a second at a similar speed and jumped 7 and a2 kils and hit it so i think i just wasn't the strongest on the day"
+
+V085-15  R085@01:31  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: agacho, autorregulacao
+  Ele acertou 350 kg de agachamento como top single, com velocidade essencialmente igual à do single anterior de 325 kg.
+  params: top_single_agacho=350 kg [1RM_treino]  single_anterior_agacho=325 kg [1RM_treino]
+  verbatim: "i hit a 350 kilo squat for my top single it moved well i compared it to my 325 kilo squat"
+
+V085-17  R085@01:46  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, autorregulacao
+  O supino dele foi 195 kg contra 175 kg do ciclo anterior; mais lento, mas com 20 kg a mais.
+  params: supino_ciclo_atual=195 kg [1RM_treino]  supino_ciclo_anterior=175 kg [1RM_treino]  diferenca=20 kg [kg]
+  verbatim: "my bench is 195 kilos versus 175 kilos last cycle it was slower but it's also 20 kilos more"
+
+V085-19  R085@02:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: terra, autorregulacao
+  O terra de 330 kg foi mais rápido que o de 325 kg do dia de máximo do ciclo anterior, com 5 kg a mais na barra.
+  params: terra_ciclo_anterior=325 kg [1RM_treino]  terra_ciclo_atual=330 kg [1RM_treino]  diferenca=5 kg [kg]
+  verbatim: "i compared it to my 325 kilo deadlift on my max out day last cycle and it was faster with 330 so 5 kilos more"
+
+V087-15  R087@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, meta-metodologia
+  Cada um pode ter que testar para descobrir de que tipo é nesse aspecto.
+  verbatim: "so you may have to try it out and see if you're either type of person in that regard"
+
+V090-10  R090@01:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: rpe, autorregulacao, intensidade
+  Na versão publicada os top singles ficam em RPE 8 ao longo de todo o programa, em vez de percentual.
+  params: rpe_top_single=8 RPE [RPE]
+  verbatim: "i also kept the top singles at rp8 instead throughout"
+  condições: V090-20, V090-21
+
+V090-11  R090@01:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: rpe, autorregulacao, progressao
+  Top sets baseados em RPE deixam o levantador ajustar melhor a progressão conforme ela realmente está indo.
+  verbatim: "having top sets based on rp lets you better adjust how your actual progression is going"
+
+V090-12  R090@01:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: rpe, autorregulacao, intensidade
+  Com top sets em percentual, num dia ruim o levantador pode chegar à falha e num dia bom deixa de empurrar para ver onde realmente está.
+  verbatim: "when your top sets are percentage based on a bad day you could actually reach failure but then also on good days you can push yourself a bit more to see where you're really at"
+
+V090-20  R090@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: fadiga, autorregulacao
+  Sempre dá para parar se a fadiga ficar excessiva; ouça o corpo, mas se empurre.
+  verbatim: "you can always stop if you get too fatigued and listen to your body but push yourself"
+
+V093-02  R093@00:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: fadiga, autorregulacao
+  Como a tendência já estava melhorando, ele decidiu não corrigir nada.
+  verbatim: "but I'm trending better so no need to overcorrect"
+
+V093-03  R093@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: erro-comum, autorregulacao
+  Um problema comum que ele vê é a pessoa supercorrigir assim que aparece qualquer questão.
+  verbatim: "it's a common issue I see when people have an issue they end up overcorrecting"
+
+V096-08  R096@01:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, rpe, autorregulacao, proximidade-da-falha
+  Ele gosta de fazer pelo menos algum trabalho até a falha, tentando de fato a repetição e falhando, para enxergar onde você realmente está nos acessórios.
+  verbatim: "So, why I like doing at least some work to failure, actually attempting that rep and failing it, so you can see where you're really at on your accessories"
+  condições: V096-07
+
+V098-19  R098@02:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, fadiga, series-reps, aprendizado-motor
+  A exceção são pessoas nos extremos, mais sensíveis à fadiga, que podem usar algumas séries extras mais leves para acumular prática de habilidade suficiente.
+  verbatim: "there are people on the extremes who are more sensitive to fatigue and thus they can use some extra later sets to get enough skill practice in"
+
+V099-21  R099@01:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: rpe, autorregulacao, teste-de-forca
+  Ele considera bom método maxar em RPE 6, 8 e 10, para você ver durante o treino o que é um RPE 6 e o que é um RPE 8.
+  params: rpe_1=6 RPE [RPE]  rpe_2=8 RPE [RPE]  rpe_3=10 RPE [RPE]
+  verbatim: "this because I think we're maxing out RP 6 8 and 10 is a good method to do so so we get to see what is an RP 6 and an rp8 during the training"
+
+V100-18  R100@02:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: rpe, autorregulacao
+  Para acertar mais nas repetições em reserva, o principal é experiência ao longo do tempo e não deixar a emoção interferir.
+  verbatim: "well one is just experience over time especially being able to not let emotions get in the way"
+
+V100-20  R100@02:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: rpe, autorregulacao, teste-de-forca, aprendizado-motor, proximidade-da-falha
+  Fazer um AMRAP ocasional é uma boa forma de aprender os próprios limites e sentir como é cada repetição em reserva, a partir da falha para baixo.
+  verbatim: "as for practical ways doing the occasional am wrap is a good way to learn your limits you get to see how every rep and Reserve feels all the way from failure downwards"
+  condições: V100-21
+
+V100-31  R100@03:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: rpe, autorregulacao, proximidade-da-falha
+  A vantagem de treinar até a falha é ser à prova de erro: você treina até falhar e não há adivinhação como acontece com repetições em reserva.
+  verbatim: "the thing about train the failure though is it idiot proofs things like you train until you fail around there's no guess work with reps in reserve"
+  condições: V100-28
+
+V105-22  R105@02:37  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: progressao, autorregulacao
+  É seguro dizer que ficar significativamente mais forte no trabalho de repetições significa ter ficado mais forte em cargas máximas, mesmo que a correlação seja menos direta quanto mais longe da falha.
+  verbatim: "While the correlation isn't as direct the further from failure we are, it's safe to say that if we get significantly stronger on a rep work, we got stronger at maximal weights"
+
+V106-12  R106@01:00  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: teste-de-forca, autorregulacao
+  Comparando suas singles com ciclos passados, parecia que, se tudo saísse perfeito, ele conseguiria 440 no dia.
+  params: max_estimado_supino=440 lb [1RM_treino]
+  verbatim: "I've been comparing my singles to past training cycles and it seemed that if everything went perfect I could do 440 on the day"
+
+V106-21  R106@02:17  tier:R scope:PESSOAL modo:narrativa genero:competicao explicit
+  tópicos: agacho, autorregulacao
+  Comparado com o agachamento equivalente do ciclo anterior, este saiu um pouco mais rápido, então talvez tivesse mais 10 kg no tanque.
+  params: margem_estimada=10 kg [kg]
+  verbatim: "and this was a bit faster the next clip the 3472 so maybe another 10 kilos in the tank"
+
+V108-06  R108@00:15  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: meta-metodologia, autorregulacao
+  Levantamento e força são muito individuais: pessoas diferentes respondem de formas diferentes.
+  verbatim: "lifting and strength especially are really individual based different people respond differently"
+
+V110-28  R110@03:02  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: autorregulacao, fadiga
+  Onde você cai dentro dessa faixa depende de quanto você se fatiga em cada levantamento.
+  verbatim: "Where we fall in that range will depend on how fatigued we find we get on each lift"
+
+V110-32  R110@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, teste-de-forca
+  Para estimar o que dá para fazer no dia, ele é adepto de rastrear os próprios dados e comparar a velocidade de diferentes pesos com ciclos passados.
+  verbatim: "this is why I'm big on tracking your own data. Compare speeds of different weights for sure past cycles"
+
+V110-33  R110@04:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: rpe, autorregulacao, teste-de-forca
+  Também dá para usar rep maxes ou o RPE de uma single pesada e ver que percentual você costuma bater depois, ao testar o máximo.
+  verbatim: "You can also do rep maxes or RPE of a heavy single and see what percentage you usually hit on these afterwards when testing your max"
+
+V110-34  R110@04:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, teste-de-forca
+  Dá para usar uma calculadora online, mas é melhor usar seus próprios dados históricos, se você os tiver.
+  verbatim: "You could use a calculator online, but it's better to use your own historical data if you have that"
+
+V110-36  R110@04:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: mentalidade, autorregulacao
+  Não se prenda demais a números específicos: esteja pronto para ajustar conforme se sentir no dia e não deixe o ego assumir.
+  verbatim: "it's important not to get too locked into certain numbers. Be ready to adjust how you feel on the day. Don't let"
+
+V112-21  R112@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, meta-metodologia
+  Filmar as séries é importante para ter uma visão objetiva e decidir se está só cansado ou se está forçando demais e deveria recuar.
+  verbatim: "it's a good example if why filming stuff it's important to get a more objective view"
+
+V114-01  R114@00:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: agacho, progressao, autorregulacao
+  Ele compara o single de agachamento de 675 lb desta semana com um single de 650 lb de um dia em que bateu 705 lb e com o agachamento de 630 lb de 4 semanas antes.
+  params: single_atual=675 lb [lb]  single_comparado=650 lb [lb]  max_daquele_dia=705 lb [lb]  single_4_semanas_antes=630 lb [lb]  intervalo=4 semanas [semanas]
+  verbatim: "I'm comparing my 675-lb squat single this week to my squat single of 650 lb from a day I hit 705 and my 630-lb squat from 4 weeks ago"
+
+V114-02  R114@00:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: autorregulacao, meta-metodologia
+  Ele começa cada clipe no ponto em que sai do buraco porque é o jeito mais fácil de comparar as tentativas lado a lado na edição.
+  verbatim: "If you're wondering why I start each clip with me just coming up out of the hole, it's just the easiest way to compare side by side when editing"
+
+V114-03  R114@00:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: autorregulacao, teste-de-forca
+  Ele usa essa comparação de vídeo para projetar o máximo: o agachamento de 675 lb foi o mais pesado e mesmo assim tão rápido quanto os anteriores.
+  params: single_atual=675 lb [lb]
+  verbatim: "Basically, I'm using this to project my max. You can see the 675-lb squat was the heaviest, but it was just as fast."
+
+V114-06  R114@00:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: progressao, autorregulacao
+  Para avaliar progresso fora do estado de pico, compare o desempenho com pontos equivalentes de ciclos de treino anteriores.
+  verbatim: "how do you compare your strength and how you're progressing when you're not at this absolute peak state? Well, compare it to similar points in past training cycles."
+
+V114-08  R114@01:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: progressao, autorregulacao
+  É bom acompanhar o máximo estimado ao longo do ciclo de treino.
+  verbatim: "It's also good to track your estimated max over the course of the training cycle."
+  condições: V114-11
+
+V114-10  R114@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, progressao
+  Se o programa muda de semana para semana ou o RPE varia, dá para comparar diretamente usando a calculadora de rep max.
+  verbatim: "if your program is changing week to week or RPE is changing a bit, you can directly compare using that rep max calculator"
+  condições: V114-11, V114-15
+
+V114-11  R114@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: progressao, autorregulacao
+  Flutuações são esperadas, mas a tendência ao longo do tempo tem que ser de alta.
+  verbatim: "Obviously, fluctuations are expected, but you should be trending up over time."
+
+V114-13  R114@01:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: teste-de-forca, autorregulacao
+  Como só se testa o máximo a cada alguns meses, não se quer passar todo esse tempo no escuro sem saber se está ficando mais forte.
+  verbatim: "if we're only testing once every few months, we don't want to spend that time in the complete dark wondering if we're actually getting stronger"
+
+V114-14  R114@01:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: meta-metodologia, autorregulacao
+  Todo mundo deveria montar as próprias equivalências de rep max com base nos próprios números.
+  verbatim: "I think everybody should work out their own rep max calculations based on their own numbers"
+  condições: V114-15
+
+V114-15  R114@01:47  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: erro-comum, autorregulacao
+  Calculadoras de rep max ficam cada vez menos precisas quanto mais longe do máximo, e variam muito entre indivíduos e até entre lifts diferentes do mesmo indivíduo.
+  verbatim: "Rep max calculators get less and less accurate the further you are from your max, and they're also highly variable between individuals and even an individual on different lifts."
+
+V116-01  R116@00:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: fadiga, autorregulacao
+  Ele se sentiu mais fatigado nesta semana em parte por atividades extras fora da academia e decidiu ser mais conservador, encaixando aquele exercício só quando se sentir recuperado o bastante.
+  verbatim: "I have felt a bit more fatigued this week I think in part because I've been doing some extra redacted activities outside the gym I'm going to stay more conservative with that and only work that exercise in when I feel recovered enough"
+
+V116-33  R116@05:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: taper, autorregulacao, recuperacao
+  Você provavelmente já sabe pela própria experiência quanto tempo leva para recuperar de cada lift, e deve usar isso para decidir a que distância do teste fica o último pesado.
+  verbatim: "you probably have an idea already from your own experience how long it takes you to recover from each lift in your training and you can use this to judge how far out to do your last heavy lift in your own training"
+
+V117-27  R117@05:04  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: frequencia, autorregulacao, fadiga
+  Se ao dividir as séries em mais dias você se sentir mais fatigado ou não notar diferença, é possível que já esteja no limite teórico superior de frequência.
+  verbatim: "if you find yourself actually more fatigued or no different you could be already at your theoretical upper limit of frequency"
+
+V120-32  R120@05:03  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: volume, recuperacao, autorregulacao
+  Ele ainda se sente bastante dolorido entre sessões e vai ver como recupera e progride antes de subir o volume de pernas.
+  verbatim: "could, but I still do feel quite sore between sessions. I'll see how I recover and progress and adjust as need be."
+
+V120-33  R120@05:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, volume
+  Ele usa o guia básico do Mike Tuchscherer, cujo objetivo é performar bem e sentir-se bem: se você se sente bem e performa mal, deve subir a carga de trabalho, porque está recuperado e aguenta mais estímulo.
+  verbatim: "This basic guide by Mike Tuchscherer I've mentioned before works well here. We want to perform good and feel good. If we feel good and perform bad, we should up the workload."
+
+V120-34  R120@05:18  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, volume, recuperacao
+  Se você se sente mal e performa mal, deve reduzir a carga de trabalho, porque provavelmente não está recuperando o suficiente e isso está prejudicando os ganhos.
+  verbatim: "If we feel bad and perform bad, we should reduce our workload. We probably aren't recovering enough, impairing our gains."
+
+V120-35  R120@05:18  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, fadiga
+  Se você se sente mal mas performa bem, o caminho é cautela, porque não se quer queimar.
+  verbatim: "And if we feel bad but perform good, we want to be cautious. We don't want to burn out."
+
+V120-36  R120@05:33  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: rpe, autorregulacao, intensidade
+  Entre RPE e programação por percentual é preciso equilíbrio entre ambos: algum nível de autorregulação porque as coisas mudam e não se quer a rigidez do percentual, mas sem sobrecorrigir, mantendo o percentual como âncora.
+  verbatim: "I think there needs to be some balance of both, some level of auto-regulation given things can change and we don't want to be too rigid like how percentage can be. But at the same time, don't want to overcorrect. So, having percentage to establish an anchor point is good as well."
+
+V120-37  R120@05:48  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: autorregulacao, meta-metodologia
+  Os estudos sobre autorregulação tendem a não mostrar benefício, embora isso possa ser culpa do protocolo usado.
+  verbatim: "Studies on auto regulation tend to show no benefit, though that could be the protocol not being the best."
+
+V120-39  R120@06:03  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: autorregulacao, fadiga, meta-metodologia
+  Ele admite honestamente não saber se, estando fatigado, se deve continuar empurrando o músculo ou dar ouvidos à fadiga do sistema nervoso central.
+  verbatim: "Or should we listen to the CNS being fatigued? Is there some important biological reason for that? I honestly don't know."
+
+V125-12  R125@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: progressao, autorregulacao
+  Para algumas pessoas progredir o trabalho de repetições transfere bem para o 1RM, e nesse caso é para continuar fazendo o que já funciona.
+  verbatim: "Some people can focus on progressing rep work and it will transfer over to their one rep max well. In which case, just keep doing what you're doing. Don't fix what isn't broken."
+
+V125-13  R125@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: recuperacao, sono, autorregulacao
+  Quando o atleta falha um levantamento que deveria ter pego, o primeiro passo é procurar uma razão óbvia como sono ruim, dieta ou estresse, já que recuperação inconsistente gera desempenho inconsistente.
+  verbatim: "First off, look for an obvious reason, bad sleep, diet, stress, whatever. Inconsistent recovery can lead to inconsistent performance."
+
+V125-14  R125@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, mentalidade
+  O segundo passo é distinguir se a falha foi pontual ou é tendência: dia ruim isolado não merece preocupação.
+  verbatim: "Next is to notice if it's a one-off thing or a trend. Sometimes you just have off days."
+
+V126-03  R126@00:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: intensidade, autorregulacao, meta-metodologia
+  A fórmula precisa ser ajustada para cada pessoa, porque umas são mais sensíveis à carga que outras e alguns movimentos são mais fatigantes que outros.
+  verbatim: "obviously adjust for each person some are more or less load sensitive some lifts are more fatiguing than others"
+
+V126-08  R126@01:18  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: rpe, erro-comum, autorregulacao
+  As pessoas costumam avaliar o RPE do trabalho de volume acima do real: muitos chamam de RPE 7 uma dupla com 80%, o que implicaria que aquilo é um máximo de 5 repetições.
+  params: rpe_declarado=7 RPE [RPE]  intensidade=80 % [pct_1RM]  rm_implicado=5 reps [reps]
+  verbatim: "like a lot of lifters with will do doubles of 80% in called rp7 which would mean that there's a five rep max for them"
+
+V126-10  R126@01:33  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: rpe, erro-comum, autorregulacao
+  Na prática o RPE acaba virando uma escala de dificuldade de 1 a 10 em vez de um sistema de repetições em reserva, mesmo para quem afirma usá-lo como reps em reserva.
+  params: escala_min=1 RPE [RPE]  escala_max=10 RPE [RPE]
+  verbatim: "so RP becomes more like a way of rating difficulty from 1 to 10 instead of a reps and Reserve System"
+
+V127-14  R127@02:01  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: volume, autorregulacao, selecao-exercicio, aprendizado-motor
+  Quem já aguenta muito volume em um movimento pode não precisar da prática extra que as variações auto-limitantes proporcionam.
+  verbatim: "are you the type of person who can handle a lot of volume on it well then you may not need the extra skill practice that increased volume from self-limiting variations provides"
+
+V128-13  R128@01:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: fadiga, autorregulacao
+  O passo seguinte é identificar se a limitação é fadiga sistêmica, uma região do corpo como as costas, ou um músculo específico.
+  verbatim: "from there see if you're limited by just systemic fatigue overall tiredness or a certain body part often times the back or like me a certain muscle"
+
+V129-01  R129@00:15  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: rpe, autorregulacao, meta-metodologia
+  O método original de RPE foi criado por Mike Tuchscherer como forma de medir repetições em reserva e permitir autorregular o treino.
+  verbatim: "the original method created by the goat Mike duur was a way of measuring reps and reserve and allowing us to Auto regulate our training"
+
+V129-02  R129@00:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: autorregulacao, rpe
+  A lógica da autorregulação é ir mais pesado nos dias em que se sente bem e mais leve nos dias em que se sente pior.
+  verbatim: "on days we feel good we can go heavier on days we feel worse we can go lighter"
+
+V129-05  R129@00:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: autorregulacao, erro-comum
+  Além da imprecisão, às vezes os próprios ajustes de carga são piores para o treino do que não ajustar.
+  verbatim: "on top of that sometimes adjustments are worse for our training"
+
+V129-10  R129@01:31  tier:R scope:PESSOAL modo:fato genero:aula explicit
+  tópicos: rpe, autorregulacao, teste-de-forca, proximidade-da-falha
+  A forma como ele calibra o RPE dos atletas é mandá-los fazer o máximo de repetições possível ou uma série até a falha.
+  verbatim: "this is exactly how I have people become more accurate with RP I have them try to do as many reps as possible or a set to failure"
+
+V129-13  R129@01:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: rpe, autorregulacao, proximidade-da-falha
+  Ele recomenda fazer pelo menos 1 série por mês até a falha para calibrar os RPEs.
+  params: series_calibracao=1 séries/mês [series]
+  verbatim: "I would say do at least one set per month the failure to calibrate your rpes"
+  condições: V129-11, V129-12
+
+V129-18  R129@02:47  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: rpe, intensidade, autorregulacao
+  Algumas pessoas se dão melhor treinando mais pesado e outras são exatamente o oposto e precisam de mais trabalho submáximo.
+  verbatim: "some people do better going harder like my client Christian and others are the exact opposite they need more so maximal work"
+
+V129-20  R129@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: rpe, autorregulacao, meta-metodologia
+  Achar a faixa de RPE certa é em boa parte tentativa e erro: testar faixas diferentes e ver o que funciona.
+  verbatim: "a big part of this will just be trial and error try different RP ranges and see what works for you"
+
+V129-21  R129@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, fadiga
+  Se o atleta desempenha bem sentindo-se bem está tudo certo, mas se desempenha bem sentindo-se mal é para ser cauteloso e checar se não está se sobrecarregando.
+  verbatim: "obviously we want to perform good if we're feeling good we're perfect if we're feeling bad though we want to be cautious see if we aren't overworking ourselves"
+
+V129-22  R129@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, volume
+  Se o desempenho está ruim mas o atleta se sente bem e recuperado, dá para aumentar a carga de trabalho.
+  verbatim: "if we perform bad but we feel good we feel recovered we can up our workload"
+  condições: V129-27
+
+V129-23  R129@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, fadiga, volume
+  Se o atleta se sente mal e desempenha mal, provavelmente está se sobrecarregando e deve reduzir a carga de trabalho.
+  verbatim: "if we feel bad and we're performing bad then we're probably overworking ourselves and we want to decrease the workload"
+  condições: V129-27
+
+V129-24  R129@03:17  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: rpe, autorregulacao
+  Afinar o RPE até o número perfeito é impossível porque ele está em fluxo constante, mas dá para ter uma boa ideia rápido seguindo esse guia.
+  verbatim: "fine tuning RP to the perfect number is impossible as it's going to be in a constant state of flux but you can get a good idea pretty quickly following this guideline"
+
+V129-25  R129@03:32  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: autorregulacao, meta-metodologia
+  Os estudos sobre autorregulação tendem a não mostrar benefício, o que ele credita em boa parte a programas mal desenhados pelos pesquisadores.
+  verbatim: "studies on audio regulation tend to show no benefit now obviously I think a large part of that is just researchers may not designed the best programs"
+
+V129-26  R129@03:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: autorregulacao, erro-comum, fadiga
+  Ajustar demais tem risco em ambos os sentidos: sentindo-se bem, ir pesado demais e fatigar a próxima sessão; sentindo-se mal, ir leve demais e ficar sem prática.
+  verbatim: "if we feel good we could go too heavy and fatig oursel for next session if we feel bad we could go to light and underwork ourselves and be out of practice by next session"
+
+V129-27  R129@04:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, intensidade
+  O compromisso é ajustar conforme o que se sente, mas sem supercorrigir, dando a si mesmo uma faixa controlada de alguns pontos percentuais ou uma faixa de peso.
+  verbatim: "adjust to how we feel but not over correct give yourself a controlled range a few percentage points or a weight range"
+
+V137-07  R137@00:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: mentalidade, autorregulacao
+  Não coloque toda a sua energia mental nos singles nem deixe seu humor ser ditado por como eles saíram.
+  verbatim: "don't put all your mental energy into your singles and let your mood be dictated by how we perform on them"
+
+V137-14  R137@01:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: rpe, intensidade, autorregulacao
+  A solução para o burnout mental e físico é manter os singles conservadores, em torno de RPE 6 a 8, ou 2 a 4 repetições na reserva.
+  params: rpe_min=6 RPE [RPE]  rpe_max=8 RPE [RPE]  rir_min=2 RIR [RIR]  rir_max=4 RIR [RIR]
+  verbatim: "keeping our singles conservative somewhere around an RP 6 to 8 or 2 to four reps in reserve"
+  condições: V137-16
+
+V137-16  R137@01:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, rpe
+  Cada lifter é um pouco diferente, então essas faixas precisam ser ajustadas individualmente.
+  verbatim: "each lifter is a bit different so you'll have to adjust these ranges to you"
+
+V138-19  R138@02:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Anedoticamente, numa escala de dor de 1 a 10, ele acha que o limiar costuma ficar em torno de 2 a 4.
+  params: escala_min=1 escala 0-10 [escala_dor]  escala_max=10 escala 0-10 [escala_dor]  limiar_min=2 escala 0-10 [escala_dor]  limiar_max=4 escala 0-10 [escala_dor]
+  verbatim: "on the pain scale of 1 to 10 I find the usual level to be around the 2 to four"
+  condições: V138-18, V138-33, V027-23
+  conflita: V001-06
+
+V138-26  R138@03:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, intensidade, lesao, proximidade-da-falha
+  Se houver perda de força, usar proximidade da falha em vez de peso absoluto como medida de intensidade.
+  verbatim: "we can use proximity to failure rather than absolute weight as our intensity measure"
+
+V138-33  R138@02:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, lesao, autorregulacao
+  Cada pessoa e cada lesão são diferentes, e as tolerâncias à dor variam.
+  verbatim: "everybody and every injury is different and we have different pain tolerances"
+
+V140-16  R140@02:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: tecnica, autorregulacao
+  O cue tem que funcionar para você, e não você funcionar para o cue; é questão de achar qual clica na sua cabeça.
+  verbatim: "we want to make a q work for us not us work for the que so we just need to find which one will'll click in our head"
+
+V140-21  R140@02:33  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: tecnica, autorregulacao
+  A regra simples para descobrir o que é boa técnica é fazer o que sente bem.
+  verbatim: "there's a really simple rule that works really well just simply do what feels good"
+  condições: V140-22
+
+V140-22  R140@02:48  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tecnica, autorregulacao
+  Seguir o que o córtex motor e o corpo querem fazer naturalmente vai ser a melhor opção em 95% das vezes.
+  params: acerto_intuicao=95 % [pct]
+  verbatim: "following what it wants to do and what your body wants to do naturally 95% of the time that's going to be the best option"
+
+V143-04  R143@00:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: progressao, autorregulacao
+  O fato de agachar a 75% ter funcionado antes não significa que vai funcionar no futuro, porque as necessidades mudam com o tempo.
+  params: intensidade_exemplo=75 % [pct_1RM]
+  verbatim: "just because squatting 75% worked for you before doesn't mean it will work for you in the future your needs are going to change with time"
+
+V143-13  R143@01:15  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: progressao, autorregulacao
+  Mesmo no médio ou curto prazo a sobrecarga progressiva pode levar na direção errada.
+  verbatim: "but even in the medium or short term Progressive overload can lead you in the wrong direction"
+
+V143-14  R143@01:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: fadiga, autorregulacao, cutting
+  Outros fatores afetam a fadiga: estresse externo, praticar outros esportes e cortar peso corporal.
+  verbatim: "think of all the other factors that affect your fatigue outside stress doing other sports cutting body weight"
+
+V143-17  R143@01:31  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: volume, autorregulacao
+  Diante desses fatores eles tiveram que derrubar a carga de trabalho do cliente para compensar.
+  verbatim: "with all that in mind we had to drop our workload understandably to compensate"
+
+V143-20  R143@02:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, programacao
+  A chave é ajustar o estímulo ao que é certo para você naquele momento.
+  verbatim: "the key is adjusting the stimulus to what is right for us"
+
+V145-29  R145@05:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, volume
+  Ele prefere ajustar o volume pelo infográfico de Mike Tuchscherer em vez de números fixos: sentir-se bem e progredir bem é o alvo.
+  verbatim: "a better way to adjust based on how we're doing is to use the simple infographic for Mike too sure that I mentioned in the last video if we feel good and we're progressing good that's perfect that's where we want to be"
+
+V145-30  R145@05:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, volume
+  Sentir-se bem mas progredir mal indica que provavelmente se está fazendo de menos.
+  verbatim: "if we feel good but we're progressing poorly we're probably under doing it a bit"
+  condições: V145-33
+
+V145-31  R145@05:49  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, fadiga
+  Sentir-se mal mas progredir bem indica exagero leve, e é preciso reduzir a carga de treino para torná-la sustentável.
+  verbatim: "if we feel bad but are progressing well we may be overdoing it a bit and need to reduce train load to keep it more sustainable"
+  condições: V145-33
+
+V145-32  R145@05:49  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, fadiga
+  Sentir-se mal e progredir mal indica que provavelmente se está exagerando.
+  verbatim: "and if we feel bad and are progressing badly we're probably overdoing it"
+  condições: V145-33
+
+V145-33  R145@05:49  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: autorregulacao, fadiga
+  O sentir-se bem ou mal nesse quadro se refere aos níveis de fadiga e de dor muscular.
+  verbatim: "the feel in this case refers to our fatigue and soreness levels"
+
+V146-30  R146@03:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, frequencia
+  Progredir bem mas se sentindo mal é sinal de estar exagerando e de que se deve recuar um pouco, segundo o infográfico de Mike Tuchscherer que ele usa.
+  verbatim: "if we feel good and are progressing good we're golden for progressing good but we feel bad we want to be careful we aren't overdoing it should probably dial back a bit"
+
+V146-31  R146@04:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: autorregulacao, frequencia
+  Progredir mal e se sentir recuperado indica que provavelmente se está fazendo de menos.
+  verbatim: "if we are progressing bad and feel recovered we're probably under doing it"
+
+V147-13  R147@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, autorregulacao
+  Se houver um período longo de treino ruim, aí sim vale dar um passo atrás e olhar o que pode estar errado.
+  verbatim: "if you do have a long period of bad training you're going to want to take a step back and look at things you may be doing wrong"
+
+V149-16  R149@02:01  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: autorregulacao, progressao
+  Não estar tão forte quanto se esperava por um período prolongado, aí sim, pode significar que algo está errado.
+  verbatim: "not being as strong as we expected to be over an extended period of time, yes, that can mean something's wrong"
+
+V151-16  R151@01:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: fadiga, autorregulacao
+  A oscilação era tal que segunda pesava, quarta ficava fácil e sexta pesava de novo.
+  verbatim: "we would feel heavy on Monday and then on Wednesday feel easy and then Friday it'd feel heavy again"
+
+V153-10  R153@01:16  tier:R scope:PESSOAL modo:opiniao genero:competicao explicit
+  tópicos: competicao, autorregulacao
+  Aquele agachamento pareceu melhor no vídeo do que a sensação de execução, e ele diz que é preciso decidir pela sensação.
+  verbatim: "it probably looked better than it felt, but um you got to rely on feel."
+
+V155-15  R155@02:04  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: terra, tecnica, autorregulacao
+  Cada um tem que descobrir o que funciona: encurtar braços de momento arredondando e comprometer um pouco o lockout, ou manter os braços de momento longos e ter um lockout suave.
+  verbatim: "are you better off making those moment arms shorter by rounding your spine and compromising your lockout strength a bit or are you better off keeping these mobile arms longer fighting through them and having a smooth lockout"
+
+V161-10  R161@01:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: terra, setup, autorregulacao
+  Para achar a largura de stance ideal basta experimentar e ver qual sente mais forte.
+  verbatim: "that's also an easy fix just experiment try it once see which one feels the strongest"
+  condições: V161-11
+
+V163-08  R163@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: sumo, setup, autorregulacao
+  Cada pessoa tem uma posição ótima de rotação externa e abdução, e a altura do quadril segue esse valor.
+  verbatim: "each person is going to have an optimal position for them. External rotation, abduction, and your hip height is going to follow that amount"
+
+V163-23  R163@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sumo, setup, autorregulacao
+  Em vez de baixar o quadril artificialmente, eleve-o até a altura em que a barra sai do chão naturalmente e experimente a quantidade de rotação externa e abdução.
+  verbatim: "rather than artificially trying to lower your hips, try to raise them to the height where the bar breaks the floor naturally and experiment with the amount of external rotation and abduction"
+  condições: V163-08, V163-11
+
+V165-17  R165@02:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, tecnica, autorregulacao, antropometria
+  Não há nada inerentemente mais eficiente numa posição em relação à outra — tudo se resume a alavancas individuais.
+  verbatim: "so there's nothing inherently more efficient with one position versus the other all it comes down to is individual leverages"
+
+V165-25  R165@04:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, tecnica, autorregulacao
+  A posição mais forte para pressionar tem que ser encontrada por tentativa e erro.
+  verbatim: "the strongest position for you is just going to have to be found through trial and error"
+
+V170-10  R170@02:11  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: rpe, intensidade, autorregulacao
+  Ele poderia ir mais pesado e chegar em RPE 8, mas esses singles ficam provavelmente um pouco abaixo de RPE 8.
+  params: rpe_teto=8 RPE [RPE]
+  verbatim: "i could go heavier and hit an rp8 these ones are probably a bit under rp8"
+
+V173-02  R173@00:47  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao
+  Terminou esse top set com 1 ou 2 repetições ainda no tanque.
+  params: rir_min=1 RIR [RIR]  rir_max=2 RIR [RIR]
+  verbatim: "i had another rep or two in the tank"
+
+V173-03  R173@01:02  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, fadiga
+  Como não estava se sentindo bem e os aquecimentos não subiam rápido, cogitou parar em 3 repetições no top set.
+  params: reps_plano_reduzido=3 reps [reps]
+  verbatim: "on the day i wasn't feeling the best my warm ups weren't moving super fast um i was even thinking like okay i'll just go for three if i'm not feeling that good"
+
+V173-04  R173@01:18  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, series-reps
+  Decidiu no meio da série, depois da terceira repetição, que dava para fazer 5 de forma conservadora.
+  params: reps_executadas=5 reps [reps]
+  verbatim: "after the third rap i was like you know what i'm pretty sure i can do five pretty conservatively"
+
+V175-48  R175@13:31  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: rpe, autorregulacao
+  Esse single semanal saía como RPE 6, às vezes 7, dependendo da fadiga.
+  params: rpe_min=6 RPE [RPE]  rpe_max=7 RPE [RPE]
+  verbatim: "so i guess you would say it's an rp6 maybe rp7 single usually depending on fatigue it's pretty easy"
+
+V185-08  R185@01:32  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: autorregulacao, progressao
+  Bateu e superou a progressão planejada toda semana, sempre dentro da faixa de RPE prevista.
+  verbatim: "the progression that i hit every week and exceeded it i was well within my rp range"
+
+  filtros que estão escondendo material:
+     --topic autorregulacao: 329 COM ele, 6912 SEM ele — esconde 6583 claim(s)
+        F001-01(undefined/undefined) F001-02(undefined/undefined) F001-03(undefined/undefined) F001-04(undefined/undefined) F001-05(undefined/undefined) F001-06(undefined/undefined) F001-07(undefined/undefined) F001-08(undefined/undefined) …+6575
+

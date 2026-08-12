@@ -1,0 +1,396 @@
+
+76 claim(s) para topic=rom:
+
+G012-40  G012@09:26  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: selecao-exercicio, acessorios, rom
+  A regra geral é passar mais tempo sob tensão com os compostos exatamente onde a barra para de subir, que é onde você é mais fraco.
+  verbatim: "the general rule of thumb is wherever your weakest wherever the bar stops moving try to spend more time under tension with your compound movements in that space"
+
+G023-15  G023@04:01  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: rom, hipertrofia, acessorios
+  No acessório ele busca amplitude completa, controlando o fundo e sem encurtar o alongamento do movimento.
+  verbatim: "trying to get really full range of motion try to control at the bottom and not short Change any of the stretch that I'm getting throughout these movements"
+
+G029-03  G029@01:04  tier:R scope:GERAL modo:mecanismo genero:form-check explicit
+  tópicos: supino, progressao, rom, aprendizado-motor
+  Quanto mais trabalho de repetição você faz, mais forte fica, porque repete as repetições com a amplitude correta.
+  verbatim: "the more repetition work you do the stronger you're going to get with this because you're going to be um repeating those repetitions with the correct range of motion"
+
+G039-36  G039@07:05  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: acessorios, rom, costas, tecnica
+  Na barra fixa ele foca em roubar o mínimo possível e estender por toda a amplitude, para desenvolver força de pull-up e não virar bom em kipping.
+  verbatim: "I'm really focusing on cheating as little as possible with pull-ups and really extending through full range of motion as well to develop the strength of the pull-up not just get good at uh Kip UPS or something like that"
+
+G040-16  G040@02:48  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: supino, selecao-exercicio, rom, competicao
+  O Spoto dele é feito logo abaixo do ponto onde ele erra o supino em competição, para acumular volume exatamente abaixo do sticking point.
+  verbatim: "this is to really just Hammer um right below where my sticking point is on bench I go just below where my I miss my benches in competition and I'm just going to get a lot of volume work in there"
+
+V011-15  R011@02:19  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, terra, rom, antropometria
+  quem tem alavancas melhores de terra e braços longos deve ir de stiff-legged deadlift, se aguentar manter o hinge estrito na amplitude toda
+  verbatim: "has better deadlift leverages, longer arms, typically go"
+  condições: V011-18
+
+V011-16  R011@02:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, terra, rom
+  quem é pior construído para o terra deve usar o terra romeno, cuja amplitude menor facilita manter o hinge
+  verbatim: "for somebody who's a bit worse built for deadlifts, I'll go for the Romanian deadlift. You don't have that full range of motion, easier to maintain that hinge"
+  condições: V011-18
+
+V020-20  R020@03:03  tier:R scope:PESSOAL modo:mecanismo genero:aula implied
+  tópicos: supino, ombros, pegada, rom
+  a hipótese dele para a pegada fechada irritar o ombro é a flexão de ombro mais profunda e a amplitude maior
+  verbatim: "I think it might be because you get deeper shoulder flexion."
+
+V042-03  R042@00:15  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: strap, pegada, tecnica, rom
+  Ao usar straps, ainda aperte a barra com força para não encurtar artificialmente a amplitude do movimento.
+  verbatim: "if you do use straps make sure you still grip the bar hard to prevent cutting range of motion artificially"
+
+V066-09  R066@01:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: erro-comum, tecnica, rom, antropometria
+  A obsessão em cortar amplitude de movimento e explorar alavancas prejudicou seriamente o treino de muitos atletas.
+  verbatim: "this obsession with cutting range of motion and exploiting leverage has seriously harmed a lot of lifters training."
+
+V066-11  R066@01:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: tecnica, erro-comum, rom
+  Focar apenas nas técnicas que cortam amplitude e facilitam os levantamentos pode prejudicar o desenvolvimento de longo prazo.
+  verbatim: "focusing only on these techniques that cut range of motion and make the lifts easier can harm your long-term development."
+
+V066-12  R066@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: hipertrofia, tecnica, rom
+  Restringir a amplitude de movimento prejudica a hipertrofia e também o desenvolvimento de força.
+  verbatim: "The obvious one is how restricting range of motion can harm hypertrophy, but also strength development as well."
+
+V066-15  R066@01:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tecnica, hipertrofia, rom
+  Os levantamentos de amplitude restrita deixam a desejar para hipertrofia.
+  verbatim: "these restricted range of motion lifts leave something to be desired for hypertrophy."
+
+V066-17  R066@01:46  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: supino, tecnica, rom
+  Um estudo comparou treino de supino com repetições parciais, semelhante ao que um arco enorme produz, com treino em amplitude completa.
+  verbatim: "This study compared partial rep bench training, like say what a huge arch would be like, to full range of motion training."
+
+V066-18  R066@02:01  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: supino, tecnica, rom
+  Nesse estudo o grupo de amplitude completa ficou mais forte que o grupo de amplitude parcial mesmo nas amplitudes parciais, apesar do treino ser menos específico.
+  verbatim: "The full range of motion group actually got stronger than the partial range of motion group at partial ranges of motion despite their training being less specific."
+
+V066-19  R066@02:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: erro-comum, hipertrofia, rom, antropometria
+  Atletas que focam só nesses levantamentos de amplitude curta que exploram alavancas estão prejudicando tanto a hipertrofia quanto o desenvolvimento de força.
+  verbatim: "lifters focusing only on these short ROM leverage exploiting lifts are hurting both their hypertrophy and strength development."
+
+V066-20  R066@02:32  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: competicao, regras-ipf, rom
+  Ele considera que o powerlifting tem, em parte, um problema de amplitude de movimento, mas não culpa os competidores que fazem o mesmo que os adversários.
+  verbatim: "does Palin have a range of motion problem? Sort of. I wouldn't blame competitors trying to beat other competitors doing the same thing."
+
+V084-17  R084@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, tecnica, rom
+  Quem não quer perder amplitude de movimento ainda se beneficia só do aspecto de tensão, sem aumentar o arco.
+  verbatim: "you can still benefit from just the tension aspect if you don't want to lose any range of motion"
+
+V091-23  R091@03:47  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, peso-corporal, rom
+  No supino ele passou a ter um pouco menos de amplitude conforme engrossou.
+  verbatim: "a bit less range of motion again as I've gotten thicker"
+
+V098-07  R098@00:30  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: tecnica, erro-comum, rom
+  Normalmente você tem uma amplitude de movimento maior justamente no movimento em que é pior.
+  verbatim: "you usually have a longer range of motion on the lift your wor"
+
+V098-08  R098@00:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, fadiga, rom
+  Ajuda usar variações de menor fadiga que limitam carga ou amplitude, como larsen press no supino ou block pull no terra.
+  verbatim: "so it can actually help to use less fatigue and variations that limit loading or range motion for example lar and press on bench or block PS on deadlifts"
+
+V100-13  R100@01:46  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: equipamento, supino, rom
+  No supino, sem munhequeira ele consegue dobrar o punho para trás e cortar mais amplitude.
+  verbatim: "and on bench I can clock my wrist backs to cut more range of motion"
+
+V100-16  R100@02:01  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: terra, selecao-exercicio, pegada, rom
+  Ele gosta de snatch grip deadlift e considera o exercício meio caminho entre um convencional normal e um stiff-legged completo, porque a pegada mais aberta obriga a se inclinar mais e ganha amplitude de quadril.
+  verbatim: "I do like them I basically consider them as halfway between a normal conventional and a full stiff-legged because the wider grip forces you to bend over a bit more so you gain some more hip range motion"
+
+V102-34  R102@03:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, ombros, supino, rom
+  Ele gosta de dips para trabalhar flexão de ombro em amplitude final, algo que o supino normal não treina.
+  verbatim: "I do like dips for working end range shoulder flexion a movement normal bench won't really train"
+  condições: V102-36
+
+V103-04  R103@00:15  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: supino, selecao-exercicio, rom
+  O supino pegada fechada dá um pouco mais de amplitude de movimento.
+  verbatim: "the close grip bench press. You get a bit longer range of motion with this lift"
+
+V103-08  R103@00:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, pegada, fadiga, rom
+  O supino pegada aberta tem menos amplitude, o que para algumas pessoas gera menos fadiga.
+  verbatim: "you actually get less range of motion here, which for some people can be less fatiguing"
+
+V103-24  R103@01:45  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, hipertrofia, selecao-exercicio, rom
+  O supino com halteres dá um pouco mais de amplitude, o que pode ajudar na hipertrofia.
+  verbatim: "I like this because you can get a bit more range of motion. Can be helpful for hypertrophy"
+
+V104-39  R104@04:32  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, tecnica, setup, rom
+  Ele não trava os cotovelos por completo no supino porque foca mais na retração escapular, o que corta amplitude e dificulta o lockout total.
+  verbatim: "so basically I focus harder on scapular retraction which is going to cut some range of motion but this also means it's going to be a bit harder to fully lock out the elbows"
+
+V104-40  R104@04:48  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, bracos, rom
+  O ponto fraco dele no supino é perto do peito, não perto do lockout, e o tríceps já é plenamente trabalhado fazendo a maior parte da amplitude.
+  verbatim: "I don't struggle near lockout my issues near the chest my triceps are already going to be worked fully they're doing most of the range motion"
+
+V107-27  R107@02:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: terra, hipertrofia, fadiga, rom
+  A amplitude extra do deficitário pode trazer benefício de hipertrofia, mas há formas menos fatigantes de obter isso.
+  verbatim: "while the extra range motion can have hypertrophy benefits I do think there's less fatigue and ways to go about it"
+
+V107-36  R107@03:02  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: posterior, selecao-exercicio, tecnica, rom
+  Ele escolhe entre um e outro pela amplitude em que a pessoa mantém uma boa dobradiça: quem consegue mais amplitude desce até o chão, os demais ficam no romeno.
+  verbatim: "I usually program one versus the other based on the range of motion somebody is able to maintain a good hinge through people who can hinge for longer can go all the way to the floor otherwise stick to Romanians"
+
+V110-29  R110@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, competicao, fadiga, rom
+  Um bencher de arco grande com amplitude bem curta pode usar a parte baixa da faixa de saltos, porque não se fatiga tanto por repetição e se beneficia de aclimatar mais ao peso pesado.
+  verbatim: "a big arch bencher with a real short range of motion, they can probably handle going on the low end of that range of percentages since they don't get as fatigued with a rep"
+
+V110-30  R110@03:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: convencional, competicao, lesao, rom, antropometria
+  Já um puxador convencional de braços curtos com histórico de problemas nas costas se beneficia de saltos maiores, pela amplitude extra e tecidos mais sensíveis.
+  verbatim: "a short arm conventional puller with a history of back issues. They're going to be more worried about managing fatigue from their extra range of motion and their tissues that are more sensitive. They'll benefit from bigger jumps"
+
+V114-16  R114@02:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: series-reps, tecnica, rom
+  Quanto maior a amplitude de movimento, menor o percentual do máximo que a pessoa consegue sustentar para repetições.
+  verbatim: "Generally speaking, the longer your range of motion, the less percentage of your max you can do for reps, the worse you are."
+
+V114-17  R114@02:02  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: terra, convencional, series-reps, rom
+  Ele teve um cliente que puxava 300 kg e literalmente não conseguia fazer repetições com 270 kg, 10% abaixo do máximo, um puxador convencional de 6 pés e 6 polegadas com amplitude enorme.
+  params: max_cliente=300 kg [1RM_treino]  carga_tentada=270 kg [kg]  diferenca=10 pct [pct_1RM]  altura_pes=6 pés [pes]  altura_polegadas=6 polegadas [polegadas]
+  verbatim: "I had one client who could pull 300 kilos, and he legit could not rep 270 kilos, 10% under his max. He was a 6'6 conventional puller with a ton of range of motion."
+
+V114-24  R114@03:33  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: meta-metodologia, tecnica, rom
+  Engajamento muscular é só parte da história: também é preciso considerar a amplitude pela qual o músculo passa e o braço de momento sobre aquele músculo ou articulação.
+  verbatim: "You also have to consider the range of motion the muscle's going through and the moment arm's force that muscle or the joint is trying to work on."
+
+V116-32  R116@05:19  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, recuperacao, sumo, convencional, rom
+  No terra a variabilidade de fadiga é a maior de todas: há enorme diferença entre um sumo ereto de amplitude curta e um convencional muito inclinado de amplitude longa.
+  verbatim: "on deadlift this can be the most fa variable there is a big difference between a real short range of motion upright Sumo deadlift and a real bent over conventional with a mile long range of motion"
+
+V119-09  R119@01:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, progressao, series-reps, rom, aprendizado-motor
+  O Spoto press ensina a manter tensão bem no fim da amplitude e deve começar com repetições mais altas e peso menor, evoluindo para repetições mais baixas com pesos mais desafiadores.
+  verbatim: "it teaches you to maintain tension right at the bottom range you can do higher reps with this to start lower weight and more reps of practice as you get better you can do lower reps and more challenging heavier weights"
+  condições: V119-10
+
+V119-20  R119@02:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, peito, ombros, rom
+  A metade inferior da amplitude é biomecanicamente a parte mais difícil do supino pelas demandas de flexão de ombro, e ter o sticking point ali não significa erro técnico: é para construir o supino em geral, especificamente peitoral e deltoides anteriores, os músculos mais ativos nesse ponto.
+  verbatim: "biomechanically this is the hardest part of the range of motion for shoulder flexion demands link to this below it's not necessarily you're doing something wrong if this is your sticking point just build up your bench in general specifically your chest and interior deltoids the most active muscles at this point"
+
+V119-29  R119@03:48  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, tecnica, rom
+  Para sticking point no lockout, no supino ou em qualquer lift, é bom focar em velocidade na primeira metade do movimento para que o momento carregue através do ponto travado.
+  verbatim: "it can be good to focus on speed in the first half of the lift basically help that momentum carry through a later range of motion sticking point"
+
+V121-21  R121@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, terra, tecnica, rom
+  Ele recomenda Romanian deadlift para quem não consegue manter um hinge estrito na amplitude completa do stiff-legged, tipicamente gente com menos habilidade de hinge ou braços mais curtos.
+  verbatim: "I recommend Romanians if you can't keep a strict hinge through a full stiff legged deadlift range of motion usually people who aren't as good at hinging or have shorter arms"
+
+V126-04  R126@00:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: convencional, supino, fadiga, rom
+  Um terra convencional muito inclinado é mais desgastante do que um supino com arco grande e amplitude curta.
+  verbatim: "a very bent over conventional will be more taxing than a 2-in super Arch bench press"
+
+V127-06  R127@00:46  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: selecao-exercicio, terra, rom
+  Em casos raros a variação auto-limitante acaba usando mais peso, como o block pull no terra e outras variações que limitam a amplitude.
+  verbatim: "sometimes in rare cases you will end up doing more weight for example a block pull on deadlifts or other variations that end up limiting the range of motion"
+
+V127-08  R127@01:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, pegada, selecao-exercicio, rom
+  No supino pegada fechada a carga cai por perda de vantagem mecânica, e os músculos trabalham igual ou até mais por causa da amplitude articular maior.
+  verbatim: "if you take a grip that is closer than your strongest grip we're just decreasing our mechanical advantage that's why we're lifting less weight our muscles are working just as hard arguably they're working harder because they have a longer joint range of motion with close grip"
+
+V132-24  R132@02:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: mobilidade, agacho, rom
+  Se a causa for falta de amplitude de tornozelo, ele recomenda agachamentos profundos com peso corporal, base estreita e joelho à frente.
+  verbatim: "it can be from a lack of ankle range Motion in which case I recommend doing some deep body weight squats nrow stance and KN forward to work the ankle range motion"
+
+V145-16  R145@02:33  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: volume, selecao-exercicio, rom
+  Amplitude de movimento maior trabalha mais o músculo e custa mais volume.
+  verbatim: "a longer range of motion is going to work the muscle harder you're taking more water out of your bucket"
+
+V146-24  R146@03:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: frequencia, fadiga, rom, antropometria
+  Quem tem amplitude de movimento maior, por membros longos ou por ser mais alto, tende a precisar de menos frequência porque cada trabalho é mais desgastante.
+  verbatim: "if you have a longer range of motion be it longer limbs for Lift or just being taller in general again you tend to need less frequency as a given amount of work will be more taxing for you"
+
+V157-11  R157@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: agacho, tecnica, rom
+  Encaixar os cotovelos por baixo faz a coluna torácica estender, sobretudo na parte mais baixa da amplitude.
+  verbatim: "when you tuck your elbows under especially when you get to this very bottom range of motion you're going to see your thoracic spine that's the spine that's adjacent to your rib cage it's going to extend"
+
+V158-01  R158@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: supino, erro-comum, rom
+  O arco no supino ganhou má fama por causa dos vídeos de gente supinando com 2 polegadas de amplitude e arco enorme, o que faz parecer que ele serve só para trapacear e cortar amplitude.
+  params: amplitude_caricatura=2 polegadas [polegadas]
+  verbatim: "somebody is benching with a two inch range of motion and a huge arch and due to these videos i think it's gone a bad rap as a way that's just meant to cheat the lift and cut range of motion as much as possible"
+
+V158-02  R158@00:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, competicao, rom
+  No contexto de competição de powerlifting essa crítica não está errada: a maior parte da função do arco é cortar amplitude para levantar mais peso.
+  verbatim: "when you're talking about powerlifting competitions you're not exactly wrong a large part of it the biggest part of it is just to cut range motion make it easier left the most weight for competition"
+
+V158-03  R158@00:15  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: supino, hipertrofia, rom
+  Mesmo para quem é atleta de força geral ou busca hipertrofia — casos em que normalmente se quer mais amplitude — existem benefícios no arco.
+  verbatim: "for somebody who's just a general strength athlete or looking to gain hypertrophy even though usually you want more range of motion for that there are benefits from an arch for people with these goals"
+
+V158-04  R158@00:30  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: supino, hipertrofia, rom
+  Mesmo cortando um pouco de amplitude com um arco pequeno, os benefícios superam de longe essa perda.
+  verbatim: "even though you may cut a small amount of range of motion from a small arch the benefits far away"
+
+V158-22  R158@04:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, tecnica, rom
+  Um arco assim não deveria cortar mais que 1 ou 2 polegadas de amplitude.
+  params: corte_min=1 polegada [polegadas]  corte_max=2 polegadas [polegadas]
+  verbatim: "shouldn't have to cut more than maybe an inch or two of range of motion"
+
+V159-42  R159@05:51  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: barra-alta, pernas, rom
+  Ele já disse em outro vídeo que barra alta não é mais quadríceps, mas isso assumia a mesma flexão de joelho nas duas variações; na prática a barra alta costuma permitir mais flexão de joelho, o que leva os quadríceps por uma amplitude maior.
+  verbatim: "but the thing with high bar is you can typically hit more knee flexion so that's going to bring the quads through a greater range of motion"
+
+V159-43  R159@05:51  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: barra-alta, hipertrofia, pernas, rom
+  A barra alta também deixa os quadríceps numa posição mais alongada no fundo, o que é benéfico para hipertrofia.
+  verbatim: "it's also going to put the quads in a more lengthened position at the bottom which is beneficial for hypertrophy"
+
+V160-13  R160@02:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: tecnica, rom
+  O músculo é mais forte em torno do meio da sua faixa de comprimento; como no fundo dos levantamentos ele está alongado, encurtá-lo um pouco em direção ao meio é vantajoso.
+  verbatim: "it's strongest somewhere around the middle of that length and usually at the bottom of our lips here our muscles would normally be in a lengthened position so we can get them a bit shorter closer to that middle it's advantageous"
+
+V162-04  R162@00:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: sumo, convencional, erro-comum, rom
+  A amplitude de movimento não é o que torna o terra sumo mais fácil que o convencional.
+  verbatim: "range of motion does not make soon with deadlifts easier than conventional"
+
+V162-08  R162@00:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, tecnica, selecao-exercicio, rom
+  A primeira razão para a amplitude não importar é que o engajamento muscular é muito mais importante.
+  verbatim: "my first reason why range of motion doesn't matter is muscle engagement is much more important"
+
+V162-09  R162@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, posterior, selecao-exercicio, rom
+  Convencional e stiff legged deadlift têm exatamente a mesma amplitude de barra, mas no stiff se usa só os extensores de quadril porque há flexão mínima de joelho.
+  verbatim: "think about a conventional deadlift versus stiff legged deadlift exact same stance width bar is going to start and end at the same place on the floor"
+
+V162-11  R162@01:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, tecnica, rom
+  Onde a carga é deslocada no corpo durante o levantamento importa mais do que a amplitude de movimento em si.
+  verbatim: "where we shift the body's loads during the lift matters more than actual range of motion"
+
+V162-14  R162@01:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: series-reps, terra, rom
+  A amplitude pode fazer diferença em séries de múltiplas repetições, mas não no 1RM, que é o que a maioria compara.
+  verbatim: "where it may make a difference is if we're talking multiple rep sets but again when we're just talking one rep max which is what most people are comparing it doesn't"
+
+V162-15  R162@02:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: sumo, terra, tecnica, rom
+  A amplitude da barra não é tão importante quanto a amplitude que ocorre nas articulações, e nas articulações se vê mais amplitude durante o sumo.
+  verbatim: "bar range motion isn't as important as the range of motion that occurs at our joints and we actually see more range of motion at our joints during sumo"
+
+V162-17  R162@02:48  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: sumo, convencional, rom
+  As diferenças de flexão de quadril entre sumo e convencional não foram estatisticamente significativas, mas no joelho se vê amplitude aumentada.
+  verbatim: "the differences we're not statistically significant in the samples at the knee joint we actually see increased range of motion"
+
+V165-24  R165@03:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: pegada, supino, hipertrofia, rom
+  A largura de pegada muda a amplitude em termos de ângulo articular, mas encurtar a amplitude alonga o braço de momento, e as perdas são compensadas pela tensão mecânica extra.
+  verbatim: "when you shorten the range of motion in terms of joint angle at the same time you're lengthening the moment arm so any"
+
+V167-08  R167@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, tecnica, erro-comum, rom
+  Não vale pressionar reto para cima e para baixo porque tocar mais embaixo corta amplitude o bastante para superar a redução do braço de momento, na maioria das pessoas.
+  verbatim: "the answer is touching lower down cuts the range of motion enough to outweigh the moment arm reductions for most people"
+
+V170-31  R170@06:44  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: barra-alta, profundidade, hipertrofia, rom
+  O motivo principal de escolher high bar no dia de reps altas é ser mais fácil pegar profundidade, e mais profundidade significa mais amplitude e mais hipertrofia.
+  verbatim: "main one is just it's easier to hit depth on high bar and more depth means more range of motion means more hypertrophy"
+
+V170-37  R170@08:01  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, selecao-exercicio, acessorios, rom
+  O primeiro dia de supino dele é Larson press, uma variação bem específica que dá amplitude extra para quem arqueia.
+  verbatim: "day one i've got larson press um real specific variation um you get the extra range of motion if you're a guy who arches like me"
+
+V170-38  R170@08:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, selecao-exercicio, ombros, rom
+  O segundo dia é Spoto press, que enfatiza a amplitude onde fica o sticking point dele, no meio do movimento.
+  verbatim: "second day i've got spoiler press really like that um for me i'm sort of a midway sticking point so it emphasizes that range of motion"
+
+V170-39  R170@08:32  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: supino, ombros, volume, rom
+  O Spoto press tem muita transferência e um pouco menos de amplitude absoluta no ombro, o que é mais fácil na articulação e serve para acumular volume dando uma folga aos ombros.
+  verbatim: "very specific tons of carryover and also bit less absolute range of motion the shoulders finds a bit easier on the shoulder joint good way to get volume"
+
+V170-53  R170@12:06  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: terra, acessorios, selecao-exercicio, rom
+  No segundo dia de terra ele faz deficit deadlifts, com que sempre teve muito sucesso pela amplitude extra.
+  verbatim: "so day two i'm doing deficit deadlifts um i've always had a lot of success doing these but extra range of motion"
+
+V172-06  R172@01:38  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: sumo, erro-comum, rom
+  O argumento mais comum contra o sumô é o de amplitude de movimento, e para ele esse argumento é irrelevante.
+  verbatim: "the most common argument you'll see that why it's cheating is the argument about range of motion and to me that's an irrelevant argument"
+
+V172-07  R172@01:53  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: sumo, meta-metodologia, rom
+  O fator limitante no powerlifting não é amplitude de movimento e sim pico de produção de força.
+  verbatim: "powerlifting isn't really about range of motion in terms of what's the limiting factor in the lift it's peak force output"
+
+V172-08  R172@02:23  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: sumo, convencional, terra, rom
+  A amplitude menor do sumô não muda o pico de força necessário: 700 lb exigem 700 lb de força, sumô ou convencional.
+  params: carga_exemplo=700 lb [lb]
+  verbatim: "700 pounds still needs 700 pounds of force output to be moved whether sumo or conventional"
+
+V172-10  R172@03:24  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: fadiga, sumo, rom
+  A amplitude maior pode ser mais custosa em termos de reservas de energia, mas isso não muda quanto você consegue levantar num máximo.
+  verbatim: "yes that may be true but still that's not changing your one rep max how much you can lift it's just how taxing it is energy wise"
+
+V174-14  R174@02:20  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: equipamento, terra, rom
+  Uma barra comercial com 700 lb dá muito whip e corta bastante da amplitude do terra.
+  params: carga_exemplo=700 lb [lb]
+  verbatim: "put 700 pounds on that and it's going to whip a ton it's cutting a ton off your range of motion"
+
+V174-16  R174@02:50  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: strap, terra, equipamento, rom
+  Com straps a barra fica praticamente pendurada fora da mão, cortando ainda mais amplitude.
+  verbatim: "with straps you can have the bar basically hanging outside of your hand you know that's cutting even more range of motion off"
+
+  filtros que estão escondendo material:
+     --topic rom: 76 COM ele, 6912 SEM ele — esconde 6836 claim(s)
+        F001-01(undefined/undefined) F001-02(undefined/undefined) F001-03(undefined/undefined) F001-04(undefined/undefined) F001-05(undefined/undefined) F001-06(undefined/undefined) F001-07(undefined/undefined) F001-08(undefined/undefined) …+6828
+

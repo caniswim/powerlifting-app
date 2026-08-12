@@ -1,0 +1,175 @@
+
+31 claim(s) para topic=peito:
+
+G003-08  G003@01:31  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: volume, peito, ombros
+  Ele acha o volume de membros superiores um pouco leve e colocaria mais.
+  verbatim: "maybe a little light on the upper body volume might put a little bit more in there"
+
+G009-21  G009@06:23  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: volume, peito, pernas
+  O PHUL tem mais volume de superiores do que de inferiores, o que é algo que ele sempre procura num programa.
+  verbatim: "there is more upper body volume than lower body volume which I always look look for in programs"
+
+G009-24  G009@06:53  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: volume, peito, programacao
+  O teste de prontidão para o programa é comparar o volume de empurrar, que arredondado dá 25 séries duras por semana, com o que você já faz: são cinco exercícios de empurrar com cinco séries duras cada.
+  params: volume_calculado=26 séries/semana [series]  volume_arredondado=25 séries/semana [series]
+  verbatim: "if you think about this uh like for push volume if we take it 26 let's call that 25 are you doing five pushing exercises with five hard sets right now"
+
+G010-16  G010@03:48  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: volume, peito, ombros
+  Além do supino há muitos outros movimentos de empurrar nos treinos de hipertrofia de membro superior, então o trabalho de superior não fica abaixo do de inferior.
+  verbatim: "but there's a lot of other pressing movements in those upper body hypertrophy uh workouts. So, don't think it's lower on your, you know, upper body work than your lower body"
+
+G019-14  G019@03:48  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: programacao, ombros, peito
+  A única diferença entre os treinos A e B é alternar supino e desenvolvimento, para cobrir os ombros além do peitoral.
+  verbatim: "you're bouncing between bench press and overhead press rounding out that pressing movement making sure you're hitting your shoulders as well as your pecs"
+
+G022-31  G022@12:50  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: acessorios, peito, programacao
+  Ele teve que cortar o acessório de supino inclinado com halteres e vai encaixar algo parecido mais tarde na semana, ou simplesmente fazer flexão em casa com os pés no sofá.
+  verbatim: "had to cut out some of my accessory work too incline dumbbell press I'll pick something up like that later in the week or I'll just hit some push-ups you know put my feet up on a couch do some push-ups in my house"
+
+G023-14  G023@04:01  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: acessorios, peito, progressao
+  Nesse acessório ele usou halteres de 70 e vai subir para 75 e depois 80.
+  params: carga_serie_1=70 lb [lb]  carga_serie_2=75 lb [lb]  carga_serie_3=80 lb [lb]
+  verbatim: "I did 70s there gonna go 75s and then 80s probably see how that feels"
+
+G023-16  G023@04:16  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: peito, hipertrofia, acessorios
+  O objetivo é ativar o peitoral superior para não ficar só com supino reto, cobrindo áreas diferentes com ângulos diferentes.
+  verbatim: "try to activate my upper upper chest to make sure I'm not you know getting too much flat bench without rounding out all my chest and hitting different areas from different angles"
+
+G036-14  G036@02:02  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: terra, supino, peito, fadiga
+  A tensão que ele sente no peitoral vinda do terra acaba impactando o supino dele.
+  verbatim: "even the uh the tightness I feel in my chest from uh deadlifting ends up impacting my benching as well"
+
+G042-07  G042@01:16  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: supino, peito, progressao
+  Ele bateu um PR de repetições no supino inclinado com 315 lb naquela semana.
+  params: carga=315 lb [lb]
+  verbatim: "I had some uh incline press on this week. I had a really good set with 315. Uh that was a PR uh repwise"
+
+V004-14  R004@02:47  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: peito, acessorios, hipertrofia
+  Durante o grosso do ciclo ele fez uma série diária de chest press até a falha.
+  params: series_diarias_chest_press=1 séries [series]
+  verbatim: "I was doing one set of chest press to failure"
+  condições: V004-16
+
+V004-17  R004@03:18  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: acessorios, ombros, peito, selecao-exercicio
+  Passou a alternar chest press e shoulder press em dias alternados, e a variação de movimento parece funcionar melhor.
+  verbatim: "So I'm alternating chest press and shoulder press every other day"
+
+V020-24  R020@03:49  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: acessorios, peito, bracos, proximidade-da-falha
+  ele passou a fazer uma série até a falha por dia para peito e tríceps, com supino em máquina e tríceps na polia unilateral
+  verbatim: "I've been doing machine chest press, really stable, and just single-arm triceps push-downs."
+  condições: V020-21, V020-25
+
+V020-25  R020@04:05  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: recuperacao, peito, supino
+  com esse acréscimo diário o peitoral e os ombros dele não ficam doloridos para o supino
+  verbatim: "my pecs don't aren't sore at all for bench press, neither are my shoulders"
+
+V027-25  R027@05:21  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: dor, progressao, erro-comum, supino, peito
+  A dor moderada piorava a qualidade do treino dele, e o resultado foi patinar sem progresso enquanto a dor também não melhorava.
+  verbatim: "that pain did impact my training quality a bit. so i just kind of end up spinning my wheels and not making progress, and the pain doesn't get any better, either"
+  conflita: V079-34, V138-01, V138-20
+
+V030-17  R030@02:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, bracos, peito
+  O mesmo efeito aparece na cabeça longa do tríceps no supino, que cruza o ombro e age estendendo-o, opondo-se à flexão que deltoides e peitorais buscam.
+  verbatim: "you can see a similar effect for the long head of the triceps on bench. the long head crosses the shoulder joint and so it can act to extend the shoulder, which is opposing the flexion that our delts and pecs are trying to achieve"
+
+V049-08  R049@00:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: hipertrofia, supino, peito
+  Exercícios compostos ficam limitados pelo elo mais fraco: o peito pode falhar no supino antes de o tríceps receber trabalho suficiente.
+  verbatim: "plus compounds will be limited by your weakest link your chest may give up on bench before your triceps get enough work"
+
+V049-17  R049@01:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, peito, fadiga
+  No supino o peito é ativado preferencialmente e fadiga primeiro, então a série vai ficando mais dominada por tríceps e deltoide.
+  verbatim: "our chest is preferentially activated first and fatigues first"
+
+V073-22  R073@02:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, selecao-exercicio, peito
+  Para o supino, vale incluir pressões em planos diferentes, como inclinado ou paralelas.
+  verbatim: "Some pressing different planes like incline or HP or dips, for example, for bench."
+  condições: V073-20
+
+V089-11  R089@01:31  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, peito, volume, acessorios
+  No supino ele aguenta muito volume, então não faz trabalho isolado de peitoral.
+  verbatim: "on my bench i can handle a ton of volume so i don't really do any pec work"
+
+V095-24  R095@03:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: dor, peito, supino
+  Ele estima que uns 90% dos quadros de dor no bíceps em powerlifters sejam na verdade isso, um pouco de overuse no tendão do peitoral.
+  params: proporcao_casos=90 % [pct]
+  verbatim: "I would say like 90% of more biceps pain issues for powerlifters are just this a bit of overuse interp tendon"
+
+V096-17  R096@02:16  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: supino, peito, hipertrofia
+  Os peitorais são ativados maximamente no supino já em torno de 70% do máximo, e tríceps e deltoides bem menos.
+  params: ativacao_maxima_peitoral=70 % do 1RM [pct_1RM]
+  verbatim: "low levels in bench around 70% of your max. The triceps and delts significantly less"
+
+V097-17  R097@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, setup, peito
+  Mesmo quem não quer arco não precisa empurrar o arco para cima, porque a leve angulação já coloca os peitorais numa posição mais forte.
+  verbatim: "you don't have to push your arch up at all. It just puts the pecs in a stronger position being slightly angled like this"
+
+V103-31  R103@02:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, peito, ombros
+  O supino declinado apenas usa menos os deltoides anteriores, o que não é grande benefício já que o peitoral já é ativado ao máximo no supino.
+  verbatim: "this just uses the anterior deltoids less, not as much of a benefit as the pecs are already getting maximally activated with bench work"
+
+V119-20  R119@02:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, peito, ombros, rom
+  A metade inferior da amplitude é biomecanicamente a parte mais difícil do supino pelas demandas de flexão de ombro, e ter o sticking point ali não significa erro técnico: é para construir o supino em geral, especificamente peitoral e deltoides anteriores, os músculos mais ativos nesse ponto.
+  verbatim: "biomechanically this is the hardest part of the range of motion for shoulder flexion demands link to this below it's not necessarily you're doing something wrong if this is your sticking point just build up your bench in general specifically your chest and interior deltoids the most active muscles at this point"
+
+V128-15  R128@01:45  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, peito, intensidade
+  No supino o peitoral é proporcionalmente muito ativado em intensidades submáximas, ficando basicamente maximamente ativado já com cerca de 70% do 1RM.
+  params: intensidade_ativacao_peitoral=70 % [pct_1RM]
+  verbatim: "the pecs get much more proportionately activated at submaximal int on the bench press they're basically maximally activated when we're only at about 70% of our one rep max"
+
+V142-25  R142@03:18  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: supino, peito, intensidade
+  A 70% do máximo de supino o peitoral já está maximamente ativado.
+  params: intensidade_ativacao_peito=70 % [pct_1RM]
+  verbatim: "at 70% of your bench press max, the pecs are already maximally activated"
+
+V142-26  R142@03:18  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, peito
+  O corpo recruta o peitoral primeiro porque ele é mais eficiente para o movimento do supino.
+  verbatim: "The body maximally recruits the pecs first since they're more efficient for the movement."
+
+V165-11  R165@01:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, pegada, bracos, peito
+  No supino, abrir a pegada transfere carga dos tríceps para os peitorais.
+  verbatim: "in the bench we're transferring load from the triceps to the pecs assuming we're going with a wider grip position"
+
+V165-23  R165@03:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, hipertrofia, peito, bracos
+  A posição articular melhor para você é a que mira os músculos que você quer trabalhar; a empilhada dá uma distribuição relativamente uniforme entre peitorais e tríceps.
+  verbatim: "so the joint position that is best for you is the one that targets the muscles you want to hit in particular this may be a stack joint position which is a relatively even"
+
+V167-20  R167@03:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, peito, tecnica
+  A primeira forma de implementar é usar o cue em todo pressionamento horizontal.
+  verbatim: "first off just cue it on all your horizontal pressing"
+  condições: V167-17, V167-19
+
+  filtros que estão escondendo material:
+     --topic peito: 31 COM ele, 6912 SEM ele — esconde 6881 claim(s)
+        F001-01(undefined/undefined) F001-02(undefined/undefined) F001-03(undefined/undefined) F001-04(undefined/undefined) F001-05(undefined/undefined) F001-06(undefined/undefined) F001-07(undefined/undefined) F001-08(undefined/undefined) …+6873
+

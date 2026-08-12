@@ -1,0 +1,2468 @@
+
+468 claim(s) para topic=selecao-exercicio:
+
+G001-09  G001@02:49  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: capacidade-trabalho, selecao-exercicio, periodizacao
+  Mesmo no bloco de capacidade de trabalho, o dia principal de força mantém o levantamento de competição.
+  verbatim: "the first thing is for your main strength day, you're still going to do the competition lift even in work capacity"
+
+G001-15  G001@04:06  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: capacidade-trabalho, selecao-exercicio, progressao
+  Se você parar de agachar por completo no bloco de capacidade de trabalho, o seu máximo não vai mais ser 325 lb quando voltar.
+  params: reps_trabalho_generico=20 reps [reps]  carga_perdida=325 lb [lb]
+  verbatim: "If you completely stop squatting and you move into a work capacity block and all you're doing is sled drags and sets of 20 and you're not even doing competition squat, when you come back to you to squat, your max is no longer going to be 325"
+
+G001-17  G001@04:21  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: capacidade-trabalho, selecao-exercicio, periodizacao
+  Deixar um único slot semiespecífico no bloco já mantém as qualidades desenvolvidas.
+  verbatim: "But if you just leave one slot that's semi-specific, you can maintain the qualities that you've developed all that time"
+
+G001-20  G001@04:51  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: capacidade-trabalho, selecao-exercicio, hipertrofia
+  O foco do bloco de capacidade de trabalho passa a ser repetições mais altas em exercícios ainda desafiadores e menos específicos.
+  verbatim: "The focus instead is going to be on increased higher reps with still challenging uh exercises. They're going to be less specific than they'll be in future blocks"
+
+G001-21  G001@04:51  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: selecao-exercicio, agacho, barra-alta
+  Os exercícios menos específicos do bloco podem ser agacho barra alta, safety squat bar, belt squat ou hack squat.
+  verbatim: "so you might be doing high bar squat or safety squat bar squat or belt squats or hack squats"
+
+G001-61  G001@13:27  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: acessorios, recuperacao, selecao-exercicio
+  O objetivo do acessório no bloco de força não é progredir, e sim garantir que você esteja recuperado para os dias dos levantamentos específicos.
+  verbatim: "the focus is to make sure you're recovered and ready for the days when you have your competition specific lifts"
+
+G002-02  G002@00:00  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: programacao, frequencia, selecao-exercicio
+  Na fase base o programa treina segunda, terça, quinta e sexta, com agacho, supino, terra e desenvolvimento.
+  verbatim: "Monday Tuesday Thursday Friday you got your squat bench deadlift overhead press on the base face"
+
+G002-13  G002@03:32  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: pico, selecao-exercicio
+  Na fase de pico há mais movimentos principais, porque os exercícios ficam mais específicos.
+  verbatim: "you're going to have more main movements in the peaking phase that's because you're getting more specific with your exercises"
+
+G002-14  G002@03:32  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: pico, selecao-exercicio, volume
+  Você precisa ficar mais específico e ter mais volume de barra no programa conforme se aproxima do pico.
+  verbatim: "you need to get more specific and you should have more barbell volume in your program as you get closer to Peak out"
+
+G002-16  G002@03:47  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: pico, selecao-exercicio, acessorios
+  Trocar volume de isolamento por mais movimentos de barra conforme o pico se aproxima é uma excelente ideia.
+  verbatim: "adding in more barbell movements and moving out some of that isolation volume is an excellent idea"
+
+G002-24  G002@05:48  tier:R scope:GERAL modo:fato genero:review-de-programa explicit
+  tópicos: acessorios, selecao-exercicio, meta-metodologia
+  Quando ele diz acessório, está falando de movimentos de uma articulação só.
+  verbatim: "when I say accessory what I'm talking about is the single"
+
+G002-27  G002@06:34  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: series-reps, intensidade, selecao-exercicio
+  A variação é feita em 3 séries de 12 a 60% do máximo da própria variação.
+  params: series=3 séries [series]  reps=12 reps [reps]  intensidade=60 % do 1RM da variação [pct_1RM]
+  verbatim: "for the variation you're doing 3x 12 at 60% of the variation one rep max"
+
+G002-47  G002@11:08  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: progressao, selecao-exercicio
+  Mas mantenha as progressões principais, sejam os exercícios alvo ou os de desenvolvimento das fases de base e pico.
+  verbatim: "keep the main progressions whether that's the targeted exercises or developmental exercises of the peak and the base phases"
+
+G003-03  G003@00:15  tier:R scope:PESSOAL modo:opiniao genero:review-de-programa explicit
+  tópicos: programacao, selecao-exercicio
+  Esse é exatamente o tipo de treino que ele gosta de fazer, parecido com a programação que ele montava quando rodava o Cube Kingpin.
+  verbatim: "this is exactly the type of training that I enjoy doing it's similar to the programming that I put in when I was doing the cube"
+
+G003-04  G003@00:30  tier:R scope:GERAL modo:fato genero:review-de-programa explicit
+  tópicos: frequencia, selecao-exercicio
+  A sobreposição com o que ele fazia está na frequência, no jeito de escolher exercícios e no foco em variações depois do movimento principal.
+  verbatim: "there's a lot of overlap between some of the frequency and the way that exercises are picked and the focus on variations after the main list"
+
+G003-06  G003@01:31  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: frequencia, programacao, selecao-exercicio
+  É um programa de 4 dias por semana, com um levantamento por dia.
+  params: frequencia=4 dias/semana [x_semana]
+  verbatim: "it's a four day per week program it's focusing on each lift per day"
+
+G003-09  G003@01:46  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: selecao-exercicio, supino
+  Cada dia tem o levantamento principal seguido de duas variações dele.
+  params: variacoes_por_dia=2 variações [contagem]
+  verbatim: "you're going to see that there's the main lift here and then there's two variations for bench"
+
+G003-10  G003@02:01  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: acessorios, selecao-exercicio
+  Depois das variações vem um acessório de barra.
+  verbatim: "then you're going to follow it up with a barbell accessory"
+
+G003-29  G003@05:19  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: rpe, selecao-exercicio, autorregulacao
+  Nas variações, na primeira semana ele manda mirar RPE 6 a 7 para se preparar para o sucesso.
+  params: rpe_min=6 RPE [RPE]  rpe_max=7 RPE [RPE]
+  verbatim: "try to shoot for you know RP 67 on the first week make sure that you're setting yourself up for Success"
+
+G003-30  G003@05:34  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, selecao-exercicio
+  Nas variações você não precisa aumentar o peso toda semana, mas seria bom se conseguisse.
+  verbatim: "you don't have to increase the weight every week but it'd be good if you could"
+
+G003-31  G003@05:50  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: selecao-exercicio, series-reps, intensidade
+  Nas semanas finais as variações chegam a 3 séries de 3 a 90% e 3 séries de 4 a 85%.
+  params: series=3 séries [series]  reps_pesado=3 reps [reps]  intensidade_pesada=90 % do 1RM [pct_1RM]  reps_medio=4 reps [reps]  intensidade_media=85 % do 1RM [pct_1RM]
+  verbatim: "these weeks 3x3 90 3x4 at 85 these are no joke"
+
+G003-32  G003@05:50  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: acessorios, selecao-exercicio, intensidade
+  Nesse programa os acessórios são movimentos pesados de sobrecarga, e as variações importam tanto quanto o movimento principal.
+  verbatim: "the accessory movements are heavy overloading movements so don't just think it's it's all about the main movement"
+
+G004-37  G004@07:36  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: progressao, selecao-exercicio, erro-comum
+  Outro risco é ficar preso na monotonia de sempre treinar do mesmo jeito: você se aclimata e para de progredir porque o treino é parecido demais.
+  verbatim: "you're not getting so stuck in the same type of training monotony that you acclimate to it and you're not making any progress because your training is too similar"
+
+G004-62  G004@13:41  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: deload, selecao-exercicio, periodizacao
+  É bom que a próxima fase de treino tenha um estímulo diferente do anterior, porque uma semana de deload não ressensibiliza o corpo por completo.
+  params: duracao_deload=1 semanas [semanas]
+  verbatim: "it'd be good if the next phase of training had a different training stimulus than what you got over from because one week of D loading isn't going to completely resensitize your body"
+
+G005-04  G005@02:17  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: agacho, terra, selecao-exercicio
+  Candito diz no PDF que agacho e terra bastam para taxar todo o inferior e que não precisa acrescentar exercícios.
+  verbatim: "Johnny says in his PDF basically he sticks with the squat and the Deads he finds that that's enough to tax all of his lower body he doesn't need to add additional exercises"
+
+G005-15  G005@06:06  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: terra, rpe, selecao-exercicio
+  Na variação de terra você precisa sentir o quanto ir pesado, numa faixa de RPE 7 a 8.
+  params: rpe_min=7 RPE [RPE]  rpe_max=8 RPE [RPE]
+  verbatim: "it could be like kind of that RP 7 to8 range for what you do there"
+
+G006-18  G006@04:48  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: periodizacao, selecao-exercicio
+  A programação em blocos permite focar por períodos definidos nas capacidades em que você é fraco.
+  verbatim: "you can really start to focus in for different periods of time on certain abilities that you're training or that you're working towards where you're weak"
+
+G008-05  G008@01:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, programacao
+  Um bom programa também precisa ter os exercícios apropriados nos momentos apropriados.
+  verbatim: "you also need to have appropriate exercises at the appropriate times"
+
+G008-06  G008@01:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, programacao, erro-comum
+  Se o bloco de treino tem 15 ou 18 semanas sem nenhuma mudança de exercício, um alarme deve soar.
+  params: duracao_exemplo_a=15 semanas [semanas]  duracao_exemplo_b=18 semanas [semanas]
+  verbatim: "if you look at your training block and all the exercises are the same and it's like 15 weeks 18 weeks and it's no change in exercises a little warning Bell should go off"
+
+G008-07  G008@01:47  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, progressao, erro-comum, estagnacao
+  Depois de um período prolongado com um único grupo de exercícios você começa a estagnar e perde a novidade, e isso não leva ao melhor resultado.
+  verbatim: "because after an extended period of time with a single exercise group you're probably going to start to get stale you're missing out on that novelty and it's not going to lead to the best results"
+
+G008-08  G008@02:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, programacao
+  Se o programa não dá conselho nem estrutura para trocar exercícios, isso é um problema.
+  verbatim: "if your program has no advice for that or if there's no structure for changing exercises kind of a problem"
+
+G008-14  G008@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, selecao-exercicio
+  Tem que haver uma razão para o número de exercícios de isolamento no fim do treino: por que 4 e não 2, ou 1.
+  params: exercicios_exemplo=4 exercícios [contagem]  alternativa_a=2 exercícios [contagem]  alternativa_b=1 exercícios [contagem]
+  verbatim: "do these four isolation exercises at the end of the at the end of the workout why why four why not two why not one there should be a reason for this"
+
+G009-06  G009@02:05  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: supino, costas, selecao-exercicio
+  No primeiro dia o trabalho principal de sobrecarga é supino e costas.
+  verbatim: "now you're going to be doing uh bench and back work that's going to be your main overloading work on day one"
+
+G009-12  G009@03:06  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: ombros, acessorios, selecao-exercicio
+  No PHUL o desenvolvimento entra como movimento acessório e não como um dos movimentos principais de sobrecarga pesada.
+  verbatim: "the overhead pressing movements here could be seated with dumbbells something like that it's really meant as an accessory movement not to be considered one of the main really heavy overloading movements"
+
+G009-14  G009@03:36  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: agacho, terra, selecao-exercicio
+  No segundo dia agacho e terra são os movimentos principais, seguindo a mesma lógica de sobrecarga do supino.
+  verbatim: "you've got your squat your dead those are your main movements largely following the same overloading that you had on bench"
+
+G009-16  G009@03:51  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: pernas, selecao-exercicio, intensidade
+  Ele às vezes classifica o leg press como movimento de sobrecarga porque dá para empurrá-lo com força, mas na faixa de repetições usada aqui ele conta como acessório.
+  verbatim: "that's why sometimes I'll include leg press as an overloading movement and categorize it that way because you really can push leg press hard"
+
+G009-17  G009@04:21  tier:R scope:PESSOAL modo:opiniao genero:review-de-programa explicit
+  tópicos: selecao-exercicio, meta-metodologia, intensidade
+  O critério dele para separar movimento de sobrecarga de movimento acessório são dois fatores: quantas articulações estão envolvidas e qual é a intensidade geral.
+  params: fatores=2 fatores [contagem]
+  verbatim: "when I make those decisions I look at two main factors how many joints are involved in the movement and what's the overall intensity"
+
+G009-18  G009@05:07  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: agacho, selecao-exercicio, hipertrofia
+  O agachamento frontal, mesmo em repetições altas, é um movimento muito taxante e complexo de barra, e por isso ele o classifica como sobrecarga.
+  verbatim: "starting with front squat um although it's higher reps it is a very taxing movement using the barbell complex barbell movement so I'm going to put that in an overloading category"
+
+G010-04  G010@01:16  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: hipertrofia, selecao-exercicio
+  O treino com restrição de fluxo sanguíneo é uma ferramenta válida, mas não é melhor do que treinar com pesos pesados.
+  verbatim: "it's a valuable tool in your tool chest. It's not better than training with heavy weights"
+
+G011-24  G011@06:37  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: terra, sumo, selecao-exercicio
+  No segundo dia do nSuns o terra sumo entra como movimento acessório, e não como movimento de competição.
+  verbatim: "day two we've got Squat and Sumo deadlift this is not your competition movement it's an it's meant as an accessory movement"
+
+G012-27  G012@06:25  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: selecao-exercicio, acessorios
+  Cada um precisa escolher por si quais grupos musculares são o seu ponto fraco e gastar tempo extra neles.
+  verbatim: "whatever body parts whatever muscle groups are your weak spot that's where you really are going to pick those and make sure"
+
+G012-28  G012@06:40  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: acessorios, selecao-exercicio, ordem-exercicio
+  Em todo dia de agacho, supino e terra devem ser acrescentados 2 movimentos compostos depois do levantamento principal.
+  params: compostos_por_dia=2 exercícios [contagem]
+  verbatim: "the squat bench and deadlift day you also should be adding two compound movements afterwards"
+  condições: G012-31, G012-38
+
+G012-29  G012@06:55  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: acessorios, selecao-exercicio, ordem-exercicio
+  Depois dos compostos devem vir 3 ou 4 movimentos de isolamento.
+  params: isolamentos_min=3 exercícios [contagem]  isolamentos_max=4 exercícios [contagem]
+  verbatim: "one joint then you should follow that up by three or four isolation movements"
+
+G012-30  G012@07:10  tier:R scope:PESSOAL modo:anedota genero:review-de-programa explicit
+  tópicos: supino, selecao-exercicio, acessorios
+  Como o ponto fraco dele era a trava do supino, ele usava supino pegada fechada e floor press como os dois compostos.
+  verbatim: "when I was doing this because lockout was my issue I did a lot of close grip bench and then floor press as my two compound movements"
+
+G012-34  G012@07:55  tier:R scope:PESSOAL modo:anedota genero:review-de-programa explicit
+  tópicos: acessorios, series-reps, selecao-exercicio
+  No dia de velocidade ele não fazia trabalho de velocidade adicional: invertia as 8 séries de 3 e fazia 3 séries de 8 nos compostos acessórios.
+  params: series_original=8 séries [series]  reps_original=3 reps [reps]
+  verbatim: "if you're supposed to do speed work for eight sets of three I would kind of flip that around and do it for three sets eight with my compound accessory movements"
+
+G012-37  G012@08:41  tier:R scope:PESSOAL modo:opiniao genero:review-de-programa explicit
+  tópicos: acessorios, progressao, selecao-exercicio, training-max
+  Na opinião dele o verdadeiro motor de progresso do Cube Method são os movimentos compostos acrescentados que atacam os pontos fracos, já que o trabalho principal, com training max de 95% do máximo, é muito fácil.
+  params: training_max=95 % [pct_1RM]
+  verbatim: "so a lot of this work is very easy and so the real driver of progress in the cube method in my opinion are those compound movements"
+
+G012-38  G012@08:56  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: selecao-exercicio, acessorios, erro-comum
+  Os compostos acessórios têm de ser muito próximos dos movimentos de competição, e não exercícios esquisitos como agachar numa perna em cima de bosu.
+  verbatim: "they should be very close to the competition lifts though it's not like you're doing some weird exercise you know some single leg bosu ball squat to help your squat"
+  condições: G012-40
+
+G012-39  G012@09:11  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: selecao-exercicio, agacho, barra-baixa
+  O exemplo que ele dá é um agachador barra baixa usar agacho com barra de segurança para trabalhar a inclinação do tronco ou uma fraqueza de quadríceps.
+  verbatim: "safety squat bar squat to work with my forward lean or something like that or a quad weakness"
+
+G012-40  G012@09:26  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: selecao-exercicio, acessorios, rom
+  A regra geral é passar mais tempo sob tensão com os compostos exatamente onde a barra para de subir, que é onde você é mais fraco.
+  verbatim: "the general rule of thumb is wherever your weakest wherever the bar stops moving try to spend more time under tension with your compound movements in that space"
+
+G012-43  G012@09:56  tier:R scope:PESSOAL modo:anedota genero:review-de-programa explicit
+  tópicos: lesao, ombros, selecao-exercicio
+  Por causa de problemas articulares ele não fazia desenvolvimento militar e trocava por supino inclinado com halteres, mantendo o plano vertical.
+  verbatim: "I have some joint issues so I didn't do military press I would do dumbbell incline press most"
+
+G015-01  G015@00:00  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: programacao, selecao-exercicio, progressao
+  A primeira coisa a entender no GZCLP é o sistema de tiers dos exercícios, e que todos os tiers progridem de forma independente.
+  verbatim: "first thing that you need to know about this program is the tiered system of the exercises your tier one your tier two your tier three lists all of them progress independently"
+
+G015-07  G015@02:19  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: selecao-exercicio, agacho, supino, terra
+  O primeiro tier do GZCLP são os quatro grandes movimentos compostos de barra: agacho, supino, terra e desenvolvimento.
+  params: movimentos_do_primeiro_tier=4 exercícios [contagem]
+  verbatim: "tier one means squat bench deadlift overhead press the big four"
+
+G015-08  G015@03:05  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: selecao-exercicio, volume, intensidade
+  O segundo tier são os mesmos quatro grandes movimentos, mas com intensidade mais baixa e repetições mais altas, para acumular mais volume — princípio de treino de que ele gosta muito.
+  params: movimentos_do_segundo_tier=4 exercícios [contagem]
+  verbatim: "big four exercises but you're going to use a lower intensity with higher reps and you're going to accomplish more volume I really like that as a training principle"
+
+G015-09  G015@03:05  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: selecao-exercicio, acessorios, hipertrofia
+  O terceiro tier são movimentos de isolamento, de uma articulação só.
+  verbatim: "now tier three is isolation movements these are the single joint movements"
+
+G015-16  G015@05:22  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: costas, acessorios, selecao-exercicio
+  A recomendação base para o terceiro tier são movimentos de puxar para os dorsais, alternando o plano vertical e o horizontal.
+  verbatim: "so the base recommendation for your tier threes is all about pulling movements for your lats either a vertical and horizontal plane and oscillating"
+
+G016-02  G016@00:45  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: selecao-exercicio, agacho, supino, terra
+  Os levantamentos do template do Wendler são agacho, supino, terra e desenvolvimento, os mesmos quatro grandes compostos de barra que aparecem na maioria desses programas.
+  params: movimentos_principais=4 exercícios [contagem]
+  verbatim: "let's start with the lifts you've got the squat bench deadlifting overhead press as you've seen with many of these programs that's the big four"
+
+G016-32  G016@08:21  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: selecao-exercicio, meta-metodologia, tier-list
+  Para ficar mais forte os levantamentos de barra são a nata: são o tier S para deixar você mais forte e maior.
+  verbatim: "if you're trying to get stronger the barbell lifts are the cream of the crop that is your s tier lift to make you stronger and bigger"
+
+G016-46  G016@11:52  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: volume, acessorios, selecao-exercicio
+  O ajuste que ele sugere é trocar as 5 séries de 10 nos levantamentos principais por algo mais razoável e conseguir mais volume de levantamento de barra, que é o que empurra os ganhos.
+  params: series=5 séries [series]  reps=10 reps [reps]
+  verbatim: "tweak the five sets of 10 on the main lifts to something a little bit more reasonable but get some more barbell lift volume because those are really going to push your ganks"
+
+G017-24  G017@04:31  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: selecao-exercicio, series-reps, terra
+  No lugar do terra do dia leve entra um movimento explosivo: power clean em 5 séries de 3 ou arranco de potência em 6 séries de 2.
+  params: series_clean=5 séries [series]  reps_clean=3 reps [reps]  series_snatch=6 séries [series]  reps_snatch=2 reps [reps]
+  verbatim: "you're either going to do power cleans for five sets of three or you're going to do power snatch for six sets of two"
+
+G018-31  G018@07:50  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: periodizacao, selecao-exercicio, progressao
+  Depois de estagnar nesses programas intermediários iniciais, o caminho é a periodização linear com blocos ordenados em sequência e uma integração mais complexa de sobrecarga e variações de exercício.
+  verbatim: "moving into just straight up like linear periodization where you have blocks that are ordered sequentially um that has a more complex integration of overload and exercise variations"
+  condições: G018-28
+
+G019-12  G019@03:33  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa implied
+  tópicos: programacao, selecao-exercicio
+  Na fase 1, o treino A é composto por agachamento, supino e terra.
+  params: fase=1 fase [ordinal]
+  verbatim: "workout a is going to consist of squat pension deadlift in phase one"
+
+G019-13  G019@03:33  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa implied
+  tópicos: programacao, selecao-exercicio, ombros
+  Na fase 1, o treino B é composto por agachamento, desenvolvimento acima da cabeça e terra.
+  params: fase=1 fase [ordinal]
+  verbatim: "workout B is going to consist of squat overhead press and deadly"
+
+G019-24  G019@05:34  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: programacao, terra, selecao-exercicio
+  Na segunda fase o terra passa a alternar com power clean: terra na segunda, power clean na quarta, terra na sexta.
+  verbatim: "you replace the double or the deadlifting every workout with Power Clean so if you're working out three times a week deadlift on Monday power cleans on Wednesday deadlift Friday"
+
+G019-32  G019@07:07  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: series-reps, selecao-exercicio
+  O power clean é feito em 5 triplas em vez de 3 séries de 5.
+  params: series_power_clean=5 séries [series]  reps_power_clean=3 reps [reps]  series_demais=3 séries [series]  reps_demais=5 reps [reps]
+  verbatim: "you're doing five triples instead of three sets of five"
+  condições: G019-37
+
+G019-33  G019@07:07  tier:R scope:GERAL modo:fato genero:review-de-programa explicit
+  tópicos: selecao-exercicio, tecnica
+  No power clean o foco é a explosividade, não a repetição em si.
+  verbatim: "they could you could do five reps but really the focus here is on explosiveness"
+
+G019-34  G019@07:22  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: selecao-exercicio, tecnica
+  Ele acha que fazer o clean do chão faz muito mais sentido do que fazer do hang.
+  verbatim: "if you want to do it from the hang and do a hand clean I I don't really care I think from the floor makes a lot more sense"
+
+G019-35  G019@07:37  tier:R scope:PESSOAL modo:anedota genero:review-de-programa explicit
+  tópicos: periodizacao, selecao-exercicio, aprendizado-motor
+  No ensino médio ele seguiu um programa mais próximo de periodização linear, com estruturas mais longas, que usava os principais movimentos com barra, incluindo o power clean.
+  verbatim: "I did that when I was in high school I actually followed not it was more of a linear periodization uh it was longer Frameworks but it utilized these main barbell movements including the power clean"
+
+G019-36  G019@07:52  tier:R scope:GERAL modo:mecanismo genero:review-de-programa explicit
+  tópicos: selecao-exercicio, fadiga, terra
+  O power clean é menos fatigante do que um terra puxado direto.
+  verbatim: "it's also less fatiguing than a straight up deadlift"
+
+G019-38  G019@08:07  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: erro-comum, selecao-exercicio, aprendizado-motor
+  A crítica dele ao programa é o power clean, porque é um novato tentando aprender e absorver coisas demais ao mesmo tempo.
+  verbatim: "if I have one critique of this program it is the power planes because it's a novice trying to learn and absorb so many things"
+
+G019-39  G019@08:22  tier:R scope:GERAL modo:prescricao genero:review-de-programa explicit
+  tópicos: selecao-exercicio
+  Dá para trocar o power clean por outro movimento, como um stiff leg deadlift.
+  verbatim: "you could do maybe something that's more like a stiff leg deadlift you could do something else"
+
+G019-62  G019@12:25  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: progressao, tecnica, selecao-exercicio
+  O power clean também deve ser microcarregado, porque é um movimento técnico em que a técnica vira o limitador.
+  verbatim: "you're going to want to micro load that because it's a technical lift you're really going to hit that ceiling where the technique of the power clean is going to become critically important"
+  condições: G019-37
+
+G020-04  G020@00:30  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: programacao, selecao-exercicio, agacho, supino, costas
+  No treino A são 5 séries de 5 de agachamento, o mesmo esquema no supino e o mesmo na remada com barra.
+  params: series=5 séries [series]  reps=5 reps [reps]
+  verbatim: "on workout a you're doing squat five by five as the name implies same with bench same with barbell rows"
+
+G020-05  G020@00:30  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: programacao, selecao-exercicio, agacho, ombros, terra
+  No treino B você continua agachando e ainda faz desenvolvimento acima da cabeça e terra.
+  verbatim: "on workout B you are still doing squats so you're progressing that lift every single time you're going into the gym but you've also got overhead press and deadlift"
+
+G020-24  G020@04:03  tier:R scope:GERAL modo:relato-de-programa genero:review-de-programa explicit
+  tópicos: deload, selecao-exercicio
+  O deload é só do movimento que falhou, não de todos os movimentos.
+  verbatim: "you don't do load all the lifts only the failing lift"
+
+G021-10  G021@01:15  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: mentalidade, programacao, selecao-exercicio
+  Retomar o treino com exercícios com os quais você está menos acostumado é um bom jeito de se reintroduzir, porque tira a pressão de bater certos números.
+  verbatim: "that's a good way to reintroduce yourself to training you're not going to feel so much pressure to hit certain numbers when you're doing exercises you're not as familiar with"
+
+G022-23  G022@09:44  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: selecao-exercicio, periodizacao, pegada, sumo, convencional, barra-alta, barra-baixa
+  Dependendo das fraquezas, dos movimentos de competição e do estilo do atleta — barra baixa ou barra alta, pegada larga ou fechada, sumo ou convencional — ele já sabia quais exercícios incluir em cada fase.
+  verbatim: "when I have somebody with these weaknesses and these competition lifts and these Styles whether it's low bar High bar wide grip close grip inch uh Sumo conventional whatever I knew that there were certain exercises that I was going to include at various phases to try to address weaknesses"
+
+G026-09  G026@02:03  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, programacao, erro-comum
+  Por melhor que seja o coach que escreveu um template estático, o template não endereça as suas fraquezas.
+  verbatim: "no matter how good the coaches that's made a static template that template is not going to address your weaknesses"
+
+G026-10  G026@02:18  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: agacho, erro-comum, selecao-exercicio
+  O exemplo dele é o template partir de que a maioria falha o agachamento perto do paralelo, quando você pode falhar na metade da subida.
+  verbatim: "let's say that coach is saying well most people miss their squat right about you know parallel but maybe you don't miss your squats around parallel maybe you miss them when you're halfway up"
+
+G026-11  G026@02:33  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, periodizacao, hipertrofia
+  O sistema muda a potenciação de fases de exercícios para atacar aquele ponto fraco, fortalecendo músculos e reforçando padrões de movimento ligados ao problema.
+  verbatim: "this system is going to change your exercise phase potentiation to deal with that weak point strengthening muscles and reinforcing movement patterns that address that issue"
+
+G027-08  G027@02:04  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: agacho, selecao-exercicio, tecnica
+  Para esse caso ele acha que o agachamento com pausa ajudaria mais do que qualquer outra coisa, exatamente para manter o ângulo de tronco correto na saída do buraco.
+  verbatim: "I think pause squats would be helpful more than anything else as you continue working and making sure that as you come out of a hole with a pause squat that you maintain the right torso angle"
+
+G028-06  G028@01:48  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: agacho, selecao-exercicio, tecnica
+  Agachamento com pausa é uma boa escolha de exercício para quem deixa o quadril subir mais rápido que a barra.
+  verbatim: "some Paw squats could be a good exercise choice to help with that where you force yourself not to let your hips rise faster than the bar"
+
+G028-25  G028@06:38  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: supino, selecao-exercicio, acessorios
+  Trabalho de supino pegada fechada com foco em manter os cotovelos fechados pode ser benéfico.
+  verbatim: "I think some close grip work where you really focus on keeping your elbows tucked could be beneficial"
+
+G028-32  G028@08:40  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: agacho, selecao-exercicio
+  Agachamento com tempo é especialmente indicado para quem desce rápido demais.
+  verbatim: "Tempo squats I think especially would be really good for you"
+
+G028-34  G028@09:26  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: agacho, selecao-exercicio, tecnica
+  Agachamento com tempo ou com pausa serve para fazer a descida e a subida terem exatamente o mesmo ângulo de tronco.
+  verbatim: "either Tempo squats or P squats where you make The Descent and Ascent of the lift look exactly the same as far as your torso angle"
+
+G029-26  G029@06:24  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: agacho, selecao-exercicio, barra-alta
+  Agachamento com pausa barra alta, ou com tempo barra alta, força a manutenção do ângulo de tronco ereto.
+  verbatim: "additionally something to work on could be paw squats uh High bar paw squats especially or high bar Tempo squats that force you to maintain that uh upright torso angle"
+
+G029-36  G029@09:41  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: agacho, selecao-exercicio, barra-alta
+  Agachamento com tempo barra alta sem descanso no topo, apenas uma respiração e já emendando a repetição seguinte, ensina a manter a coluna neutra e tensa.
+  verbatim: "doing some high bar Tempo squats with no rest at the top of the lift except for maybe a little breath in and then going right into the next uh rep"
+
+G030-06  G030@01:33  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: agacho, selecao-exercicio, tecnica
+  Agachamento com pausa, focando muito na forma e em não deixar o ângulo das costas mudar nada na saída do fundo.
+  verbatim: "exercises that can help would be pause squats where you focus extremely hard on form and not having that back uh angle change at all as you come out of the hole"
+
+G031-13  G031@05:36  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: agacho, selecao-exercicio, periodizacao, competicao
+  Agachamento com pausa entra mais cedo no ciclo, mais longe da competição, e a escolha depende da fase de treino.
+  verbatim: "it would depend what phase you're in in your training, but would be pause squats. And you would do pause squats, uh, earlier, kind of further away from a competition"
+
+G031-14  G031@05:36  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: agacho, selecao-exercicio, tecnica
+  No agachamento com pausa é preciso se forçar a manter o ângulo de tronco durante todo o levantamento.
+  verbatim: "you would be sure and force yourself when you're doing the pause squats to maintain your torso angle throughout the entirety of the lift"
+
+G031-19  G031@06:52  tier:R scope:GERAL modo:opiniao genero:form-check explicit
+  tópicos: barra-alta, selecao-exercicio, antropometria
+  Agachamento com tempo barra alta pode ou não funcionar, dependendo das alavancas e de a barra já estar posicionada bem alta.
+  verbatim: "depending on leverages and some other issues, uh they may or may not work well since you seem to have a fairly high bar position already"
+
+G031-24  G031@08:43  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: terra, selecao-exercicio, periodizacao
+  O terra com pausa entra no mesmo bloco em que entram os agachamentos com tempo barra alta e com pausa.
+  verbatim: "probably in one of those blocks where you would have like something like high bar tempos or pause squats, you would also have pause deadlifts"
+
+G031-25  G031@08:43  tier:R scope:GERAL modo:avaliacao-de-terceiro genero:form-check explicit
+  tópicos: terra, selecao-exercicio
+  No terra com pausa, pausar logo ao quebrar o chão, cerca de meia polegada acima, e segurar por alguns segundos.
+  params: altura_da_pausa=0.5 polegadas [polegadas]
+  verbatim: "you would pause the deadlift just about right as it breaks the floor, maybe half an inch off the floor. Pause and hold that for a few seconds"
+
+G031-26  G031@08:59  tier:R scope:GERAL modo:mecanismo genero:form-check explicit
+  tópicos: terra, selecao-exercicio, aprendizado-motor
+  O terra com pausa força o corpo a aprender a manter a tensão logo acima do chão.
+  verbatim: "that will force your body to learn how to stay tight off the floor"
+
+G031-27  G031@08:59  tier:R scope:GERAL modo:mecanismo genero:form-check explicit
+  tópicos: terra, selecao-exercicio, setup
+  Não é possível fazer terra com pausa com os ombros à frente da barra porque fica taxante demais, então o corpo migra sozinho para uma posição melhor.
+  verbatim: "you're not going to be able to do pause deadlifts if your shoulders are getting out over the front of the bar. It's going to be way too taxing. So, your body will start to change and default to a better position"
+
+G031-29  G031@10:44  tier:R scope:GERAL modo:prescricao genero:form-check explicit
+  tópicos: terra, sumo, convencional, selecao-exercicio
+  Terra com pausa a 1 polegada do chão é uma ótima opção para acertar a posição inicial, e serve igualmente para sumo e convencional.
+  params: altura_da_pausa=1 polegadas [polegadas]
+  verbatim: "pausing one inch off the floor, uh, deadlifts are a great option, uh, especially sumo or conventional, it doesn't matter. It'll help you dial in that start position"
+
+G036-41  G036@06:05  tier:R scope:GERAL modo:opiniao genero:log-de-treino explicit
+  tópicos: volume, selecao-exercicio, lesao
+  As séries de back off são mais seguras e envolvem bem mais volume, então ele acha que produzem um estímulo de treino melhor em geral.
+  verbatim: "these uh are safer and I think they actually they have a lot more volume involved so I think they produce a better training stimulus in general"
+
+G037-17  G037@02:34  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: agacho, selecao-exercicio, series-reps
+  No dia seguinte ele fez tempo squats com 425 lb nas séries de trabalho.
+  params: carga_tempo_squat=425 lb [lb]
+  verbatim: "got some Tempo squats on the next day you'll see here 425 uh for these sets"
+
+G037-19  G037@02:50  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: selecao-exercicio, competicao, periodizacao, acessorios
+  Quanto mais perto da competição, mais específicos ficam até os exercícios acessórios dele.
+  verbatim: "as I'm getting closer to competition I'm getting more specific even in my assistance exercises"
+
+G037-20  G037@02:50  tier:R scope:PESSOAL modo:fato genero:log-de-treino explicit
+  tópicos: agacho, barra-alta, barra-baixa, selecao-exercicio
+  Ele não classifica esse tempo squat como barra alta: é um tempo de posição intermediária.
+  verbatim: "I would not call this a high bar Tempo whatsoever uh it's more of a mid-range Tempo"
+
+G038-11  G038@01:16  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: agacho, selecao-exercicio, acessorios, intensidade
+  Ele credita a melhora no agachamento ao trabalho com safety squat bar na offseason, mesmo tendo sido com cargas bem submáximas.
+  verbatim: "the work with the safety squat bar in the offseason even though it was with pretty submaximal weights has really helped me out"
+
+G039-24  G039@04:48  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: agacho, barra-alta, selecao-exercicio
+  Ele fez tempo squats barra alta com 415 lb nesse dia.
+  params: carga=415 lb [lb]
+  verbatim: "so you'll see here some uh High bar Tempo squats this is with 415"
+
+G040-08  G040@01:16  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: selecao-exercicio, lesao, progressao, erro-comum
+  É preciso construir devagar até uma variação nova: não dá para entrar e tentar maxar num exercício novo, e é assim que se distende um músculo.
+  verbatim: "but you have to build up to those things slowly you can't just jump in and try to Max on a new exercise that's how you pull a muscle or something like that"
+
+G040-09  G040@01:31  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: supino, selecao-exercicio, dor, lesao
+  Ele sobe os pés no banco no Spoto press não só para focar o tronco superior, mas para dar folga à articulação sacroilíaca quando ela está fatigada.
+  verbatim: "often times I'll bring my feet up on the bench uh not only to focus on upper body but also to give my SI joint a break if it's feeling a little fatigued"
+
+G040-10  G040@01:46  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, selecao-exercicio, dor
+  Ele já usa os pés no banco como medida preventiva, e não só quando a sacroilíaca dói.
+  verbatim: "and so I do that almost as a preemptive measure now with some of the Spoto pressing I do"
+
+G040-16  G040@02:48  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: supino, selecao-exercicio, rom, competicao
+  O Spoto dele é feito logo abaixo do ponto onde ele erra o supino em competição, para acumular volume exatamente abaixo do sticking point.
+  verbatim: "this is to really just Hammer um right below where my sticking point is on bench I go just below where my I miss my benches in competition and I'm just going to get a lot of volume work in there"
+
+G040-25  G040@04:34  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: pegada, strap, selecao-exercicio
+  Quem nunca teve problema de pegada não precisa treinar pegada tanto assim.
+  verbatim: "I've never had a grip issue before and so if you've never had a grip issue um you don't really have to work grip quite as much"
+  conflita: V042-02, V042-07
+
+G040-34  G040@05:50  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: barra-alta, pernas, hipertrofia, selecao-exercicio
+  O estímulo correto do tempo squat barra alta é martelar quadríceps e quadris na descida controlando o peso.
+  verbatim: "the point of this is to really Hammer my quads and hips as I descend down and control the weight um that's the proper stimulus to get from high bar Tempo squats"
+
+G041-01  G041@00:15  tier:R scope:PESSOAL modo:fato genero:log-de-treino explicit
+  tópicos: supino, pegada, ombros, selecao-exercicio
+  O close grip dele agora é feito com pegada um pouco mais aberta do que a que usava antes, para ainda atingir os ombros, que são músculos principais do supino dele.
+  verbatim: "I used to bench with a uh a little bit closer grip than this when I was doing close grip work but I wanted to kind of still hit some of my main bench uh muscles um in my shoulders especially a little bit more so I'm using a slightly wider grip"
+
+G041-06  G041@01:31  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: agacho, supino, ombros, recuperacao, selecao-exercicio
+  Como estava fazendo só safety squat bar, sem barra baixa nem barra alta, os ombros dele ficaram bem menos castigados e sobrou recuperação de ombro para investir no supino.
+  verbatim: "I was doing all safety squat bar work no low bar no high bar and so I had a lot of extra shoulder recovery um that I could throw into bench"
+
+G041-26  G041@04:18  tier:R scope:PESSOAL modo:fato genero:log-de-treino explicit
+  tópicos: programacao, ordem-exercicio, selecao-exercicio
+  Ele tem cerca de 1,5 hora nesse dia, o que dá só para subir no agachamento e subir no supino.
+  params: tempo_de_sessao=1.5 horas [horas]
+  verbatim: "just due to time constraints I have about an hour and a half this day so that allows me to work up to squats and work up to bench and that's about it"
+
+G042-13  G042@02:32  tier:R scope:PESSOAL modo:fato genero:log-de-treino explicit
+  tópicos: sumo, selecao-exercicio, terra
+  Ele usa o que chama de constant tension sumo, em que o peso não chega a tocar o chão, para reforçar a boa posição de largada.
+  verbatim: "I'm trying to reinforce that position with what I'm calling constant tension sumo. It's where I don't actually touch the ground"
+
+G042-14  G042@02:32  tier:R scope:GERAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: selecao-exercicio, lesao, fadiga, sumo
+  O constant tension sumo é um exercício muito taxante e pode ser usado em excesso, porque sem o chão para frear o peso a pressão no fundo recai sobre ossos, articulações e músculos do quadril.
+  verbatim: "these are a very taxing exercise, though. It can be overused. Uh there's a lot of pressure on the hips at the bottom because you're not using the ground to stop the weight. You're just using your bones, uh your joints, and your muscles to manage the weight"
+
+G042-15  G042@03:03  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: selecao-exercicio, rpe, fadiga, erro-comum, proximidade-da-falha
+  Num exercício assim, especialmente em repetições altas, ele acha importante não se queimar até o fim: nada de AMRAP em RPE 10 nem séries em RPE 10 em geral.
+  params: rpe_a_evitar=10 RPE [RPE]
+  verbatim: "it's important, I think, not to burn out all the way, like RP10 AM wraps or RPT uh RP10 sets in general"
+  condições: G042-14
+
+G042-16  G042@03:03  tier:R scope:PESSOAL modo:opiniao genero:log-de-treino explicit
+  tópicos: series-reps, hipertrofia, selecao-exercicio
+  Ele prefere fazer uma boa quantidade de repetições com pesos mais leves e manter essas séries na faixa de 8 a 10, ou 8 a 12 repetições.
+  params: reps_min=8 reps [reps]  reps_max_faixa_curta=10 reps [reps]  reps_max_faixa_longa=12 reps [reps]
+  verbatim: "but instead just do a good amount of reps uh with weights that are lighter. I like to keep these really in the kind of the 8 to 10, 8 to 12 range"
+  condições: G042-15
+
+G043-01  G043@01:02  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: agacho, selecao-exercicio, series-reps
+  O plano do dia era subir até uma série de 8 com 385 lb de peso de barra na safety squat bar, cerca de 400 lb reais, mas ele acabou indo a 405 lb.
+  params: reps_planejadas=8 reps [reps]  peso_de_barra_planejado=385 lb [lb]  peso_real_estimado=400 lb [lb]  carga_usada=405 lb [lb]
+  verbatim: "today was really just planning to work up to a set of eight at uh 385 bar weight I suppose that comes out to oh right about 400 lb I think on the safety squat bar but ended up going for about uh for 405"
+
+G043-05  G043@01:48  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: agacho, progressao, selecao-exercicio
+  Ele começou a fazer séries de 10 com 275 lb na safety squat bar poucas semanas antes, e essas séries eram bem taxantes.
+  params: reps=10 reps [reps]  carga_inicial=275 lb [lb]
+  verbatim: "I started doing sets of 10 with 275 just a few weeks ago and those were really taxing"
+
+G043-27  G043@07:22  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: intensidade, autorregulacao, selecao-exercicio
+  Ele manda rastrear intensidade relativa nos treinos, especialmente quando se está fazendo variação em séries de repetições altas.
+  verbatim: "in any case track relative intensity in your workouts especially if you're doing stuff like I am it's a variation it's a high rep set"
+
+G043-28  G043@07:22  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: rpe, selecao-exercicio, autorregulacao
+  Ele gosta de RPE justamente porque não sabe qual é o máximo de uma repetição dele na safety squat bar.
+  verbatim: "I don't know what my one rep max is on a safety squat bar that's why I like RP"
+
+G043-31  G043@07:52  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, mentalidade, periodizacao
+  É bom fugir do treino monótono, em que se faz sempre as mesmas coisas e o estímulo fica velho, misturando um pouco.
+  verbatim: "but it is good to get away from kind of monotonous training where you're doing the same things over and over again and get stale if you mix it up"
+
+G043-32  G043@08:08  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: progressao, selecao-exercicio, agacho
+  Ele foi de 275 lb a 405 lb na safety squat bar em apenas 4 semanas.
+  params: carga_inicial=275 lb [lb]  carga_final=405 lb [lb]  tempo=4 semanas [semanas]
+  verbatim: "I've gone from 275 uh to 405 in a matter of uh just 4 weeks"
+
+G043-34  G043@08:23  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, selecao-exercicio, progressao
+  Para haver carryover é preciso melhorar muito nos movimentos assistidos: aumentar 5 lb no máximo de repetições da safety squat bar provavelmente não transfere para o barra baixa.
+  params: ganho_insuficiente=5 lb [lb]
+  verbatim: "but you do have to improve a lot on those assistance movements to get that sort of a carryover if you increase you know your safety squat bar rep max by 5 lbs I don't know if that's going to transfer directly over to your low bar"
+  condições: G043-35
+
+G043-35  G043@08:38  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: acessorios, progressao, selecao-exercicio
+  Se o aumento no máximo de repetições da safety squat bar for da ordem de 125 lb, aí sim pode haver transferência para o barra baixa.
+  params: ganho_suficiente=125 lb [lb]
+  verbatim: "increase it by you know what 125 lbs well there might be something there"
+
+G045-04  G045@00:45  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: barra-baixa, barra-alta, selecao-exercicio, lesao
+  ele espera que sair do low bar para agacho barra alta com pausa ou safety squat bar, com stance mais estreita, permita aos quadris aguentar o volume de sumô
+  verbatim: "but I think that some of the uh moves away from low bar should allow my hips to handle that as I'm using a little bit more narrow stance uh with either High bar paw squats or a safety squat bar work"
+
+G045-05  G045@01:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, selecao-exercicio, acessorios
+  nessa parte do ciclo ele faz muito supino pegada fechada e também algum inclinado
+  verbatim: "I'm also doing a lot of close grip bench and also"
+
+G045-07  G045@01:15  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, selecao-exercicio, fadiga
+  quem monta o próprio treino precisa saber quais exercícios fatigam quais áreas no próprio corpo
+  verbatim: "that's one of the things that you need to be aware of as you are uh programming and uh if you make your own training is is knowing what exercises"
+
+G045-08  G045@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, selecao-exercicio, fadiga
+  também é preciso saber quando existe um par de exercícios que você simplesmente não consegue bater pesado ao mesmo tempo
+  verbatim: "fatigue what areas for you personally and knowing if there are two exercises where you just can't hit them both hard at the same time"
+
+G051-32  G051@06:48  tier:R scope:GERAL modo:opiniao genero:log-de-treino explicit
+  tópicos: acessorios, hipertrofia, selecao-exercicio
+  quem vai competir em fisiculturismo faz coisas diferentes e pode acrescentar mais exercícios de isolamento do que faria só com os power lifts
+  verbatim: "there are things you do if you're going to compete in bodybuilding that are different and you can certainly add in some more isolation exercises than you would with the uh the power lifts"
+
+G051-34  G051@07:03  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: hipertrofia, selecao-exercicio, progressao
+  ele recomenda fortemente que novatos e intermediários fiquem fortes e construam músculo com os movimentos compostos
+  verbatim: "and especially as people who are novice or intermediate getting strong and building uh muscle with those compound movements is awesome and"
+
+V001-10  R001@01:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Modificar exercícios com pausas ou variações menos dolorosas é outra forma de gerir carga na lesão.
+  verbatim: "you could also look at modifying your exercises with things like adding pauses or maybe variations that are less painful"
+
+V001-16  R001@03:19  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Quando um exercício de reabilitação parece funcionar, normalmente não é o exercício que tem algo de especial.
+  verbatim: "comes down to is it's usually not the exercise that's special"
+
+V003-23  R003@05:06  tier:R scope:PESSOAL modo:fato genero:aula explicit
+  tópicos: acessorios, costas, selecao-exercicio
+  Para as costas ele usa exercícios diferentes para cada músculo: encolhimento vertical, encolhimento Kelso para trapézio médio e remada focada em dorsal.
+  verbatim: "I'll do some vertical shrugs, I'll do some Kelso shrugs for the mid traps, I'll do some lat focused rowing"
+
+V003-24  R003@05:22  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: acessorios, costas, selecao-exercicio
+  Com pouco tempo, algumas séries de uma mesma remada provavelmente trabalham todos esses músculos das costas.
+  verbatim: "what I could also do is just a couple sets of the same row"
+
+V003-25  R003@05:37  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: acessorios, selecao-exercicio
+  É melhor atingir cada músculo 90% do ideal do que deixar músculos de fora no dia por falta de tempo.
+  params: qualidade_estimulo=90 % [pct]
+  verbatim: "it's better to hit it like 90% of the way well rather than not hit some of the muscles on the day"
+
+V004-17  R004@03:18  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: acessorios, ombros, peito, selecao-exercicio
+  Passou a alternar chest press e shoulder press em dias alternados, e a variação de movimento parece funcionar melhor.
+  verbatim: "So I'm alternating chest press and shoulder press every other day"
+
+V004-27  R004@06:37  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: terra, selecao-exercicio, sumo, aprendizado-motor
+  Ele tirou o stiff-legged deadlift do programa porque não estava transferindo, e prefere fazer mais prática de sumô.
+  verbatim: "I just don't think it was carrying over well, so I'd better off just doing more sumo practice"
+
+V005-08  R005@01:15  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cardio, selecao-exercicio
+  Atualmente ele faz todo o cardio como caminhada inclinada, que é o que funciona para ele.
+  verbatim: "I'm currently doing all incline walking. That's what works for me"
+
+V011-14  R011@02:19  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, terra, antropometria
+  ele programa stiff-legged deadlift ou levantamento terra romeno e a escolha depende das alavancas do atleta
+  verbatim: "I typically program stiff-legged deadlifts or Romanian deadlifts. And which one I choose depends on your leverages."
+  condições: V011-18
+
+V011-15  R011@02:19  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, terra, rom, antropometria
+  quem tem alavancas melhores de terra e braços longos deve ir de stiff-legged deadlift, se aguentar manter o hinge estrito na amplitude toda
+  verbatim: "has better deadlift leverages, longer arms, typically go"
+  condições: V011-18
+
+V011-16  R011@02:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, terra, rom
+  quem é pior construído para o terra deve usar o terra romeno, cuja amplitude menor facilita manter o hinge
+  verbatim: "for somebody who's a bit worse built for deadlifts, I'll go for the Romanian deadlift. You don't have that full range of motion, easier to maintain that hinge"
+  condições: V011-18
+
+V011-17  R011@02:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: intensidade, selecao-exercicio, erro-comum
+  ele não programa o trabalho de hinge pesado como muita gente faz
+  verbatim: "I'm not programming it super heavy like a lot of people do"
+  condições: V011-18
+
+V011-18  R011@03:04  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: rpe, selecao-exercicio, terra, aprendizado-motor
+  ele considera RPE 4 a 5 o ponto ideal para o trabalho de hinge, porque o objetivo é praticar a habilidade
+  params: rpe_min=4 RPE [RPE]  rpe_max=5 RPE [RPE]
+  verbatim: "I find RP 4 to 5 that real sweet spot for that"
+
+V011-20  R011@03:04  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sumo, selecao-exercicio
+  puxadores de sumô devem sempre incluir uma variação de trabalho focado em hinge
+  verbatim: "for sumo pullers, I find"
+  condições: V011-18
+
+V011-21  R011@03:19  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sumo, frequencia, selecao-exercicio
+  todos os puxadores de sumô que ele treina fazem stiff-legged deadlift ou terra romeno uma vez por semana
+  params: frequencia_hinge_sumo=1 x/semana [x_semana]
+  verbatim: "basically all my sumo deadlifters are going to be doing uh stiff-legged deadlift or Romanian deadlift once per week"
+  condições: V011-18
+
+V011-22  R011@03:19  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: convencional, selecao-exercicio, aprendizado-motor
+  para puxadores convencionais depende: alguns mantêm bem a habilidade de hinge só com a puxada convencional
+  verbatim: "For conventional deadlifters, it depends. I find some people are able to maintain that skill really"
+
+V016-06  R016@00:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, fadiga
+  ele prefere variações acessórias menos fatigantes justamente para poder fazer mais delas
+  verbatim: "I like to air for variations that are less fatiguing, right? So, we can do more of it."
+
+V016-08  R016@01:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, selecao-exercicio
+  sem uma boa cadeira extensora, serve outro trabalho de isolamento
+  verbatim: "If you don't have a good leg extension, you could do some other isolation work"
+
+V016-09  R016@01:01  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, equipamento
+  entre máquinas não há hierarquia fixa: numa academia o leg press é melhor que o hack squat e em outra o contrário, dependendo do equipamento e do corpo
+  verbatim: "sometimes one leg press is better than another hack squat, but in another gym, the hack squat is better than the leg press"
+
+V016-23  R016@03:33  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, agacho
+  a melhor forma de treinar o equilíbrio no meio do pé é com tempo squats e agachos com pausa no fundo, porque a restrição de movimento pune quem está desequilibrado
+  verbatim: "to do that is with tempo squats and pause squats in the hole"
+
+V016-29  R016@04:36  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, agacho, profundidade
+  a variação preferida dele para treinar essa transição é o agacho com pausa acima do paralelo, pausando cerca de duas polegadas acima do paralelo
+  params: altura_pausa=2 polegadas [polegadas]
+  verbatim: "So, you squat down, come up and pause about 2 inches above parallel."
+  condições: V016-30, V016-31
+
+V016-31  R016@04:36  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: intensidade, selecao-exercicio
+  o agacho com pausa acima do paralelo é bem mais difícil que o agacho com pausa normal e exige menos carga que o habitual
+  verbatim: "They're way harder than normal pause squats, so use less load than you normally would."
+
+V017-19  R017@03:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, lesao, dor
+  a variação escolhida deve ser a que alivia a lesão; ele escolheu as pausas porque eram o que sentia melhor nas costas
+  verbatim: "the other thing is about variations that make it easier for you. You know, I chose pauses cuz those are what felt easier on my back."
+  condições: V017-22
+
+V017-20  R017@03:18  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, lesao, dor
+  os exemplos que ele dá são pegada fechada para ombro no supino, block pull no lugar do terra e barra alta no lugar da barra baixa
+  verbatim: "fine with close grip. Maybe block pulls won't hurt your back, but regular deadlifts do. Maybe high bar feels good on your back, but low bar doesn't"
+  condições: V017-19, V017-22
+
+V017-21  R017@03:18  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, lesao
+  uma variação que deixa você empurrar melhor agrava menos a lesão
+  verbatim: "A variation that lets you push better will um not aggravate any injury as much."
+
+V017-22  R017@03:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  no dia principal ainda é preciso fazer o movimento de verdade, porque sem melhorar no próprio movimento não se está reabilitando a lesão
+  verbatim: "I do still think on the primary day you still want to do the actual movement. Because to me you're not really rehabbing the injury if you aren't getting better at the actual movement itself"
+
+V018-01  R018@00:01  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: barra-alta, selecao-exercicio, agacho
+  ele considera o agacho barra alta o melhor acessório de agacho para powerlifters
+  verbatim: "what I think is the best squat accessory for powerlifters, the high bar squat"
+
+V020-18  R020@02:47  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, selecao-exercicio
+  ele passou a focar nas variações de supino que transferem melhor para ele, as que trabalham controle: tempo com pausa longa e spoto press
+  verbatim: "which is ones that work on control, you know, chest. So, long pause tempo and spoto press"
+
+V020-19  R020@03:03  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, selecao-exercicio, dor
+  ele cortou o supino pegada fechada e o Larson press porque não transferiam bem e a pegada fechada incomodava mais o ombro dele
+  verbatim: "I was also doing a close grip and Larson before, but I just found out they they weren't carrying over as well for me, and close grip seemed to be bothering my shoulders more"
+
+V020-27  R020@04:35  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: terra, selecao-exercicio, setup
+  tradicionalmente ele recomendaria terra com pausa para quem quer trabalhar a posição inicial
+  verbatim: "Traditionally, I'd say use pause deadlifts if you want to work start position."
+  condições: V020-28
+
+V020-37  R020@06:22  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sumo, selecao-exercicio, aprendizado-motor
+  ele gosta que puxadores de sumô façam algum convencional ou variação dele justamente para praticar o padrão de hinge
+  verbatim: "I like doing a bit of conventional or some variation of it for sumo pullers just to practice that hinging."
+
+V020-38  R020@06:22  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: selecao-exercicio, terra
+  ele trocou o snatch grip pelo stiff-leg deadlift porque queria ainda mais prática de hinge
+  verbatim: "I swapped it to stiff-leg deadlifts cuz I just"
+
+V022-17  R022@02:21  tier:R scope:GERAL modo:opiniao genero:log-de-treino explicit
+  tópicos: meta-metodologia, selecao-exercicio
+  A filosofia declarada é que, se algo que você faz não merece esforço total, não merece estar no programa.
+  verbatim: "if something you're doing isn't worth giving full [snorts] effort, it's not worth being in your program"
+
+V027-05  R027@01:03  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: lesao, erro-comum, selecao-exercicio
+  O suposto exercício mágico que cura a dor costuma ser apenas movimento leve para o tecido, não algo especial.
+  verbatim: "is the exercise really magic or is it just the basic thing? it keeps it moving lightly"
+
+V029-08  R029@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, selecao-exercicio
+  Colocar os singles depois das séries de trabalho preserva a qualidade daquilo que de fato constrói força.
+  verbatim: "you're keeping the quality higher on the stuff that's actually building strength"
+
+V029-40  R029@08:08  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cardio, selecao-exercicio
+  Ele manda escolher modalidades de baixo impacto, como bicicleta, escada e caminhada inclinada.
+  verbatim: "you want to choose low impact variations. so, you know, uh cycling, stairs, incline walking"
+
+V030-10  R030@01:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: volume, selecao-exercicio, meta-metodologia
+  Se um dia ou um exercício não merece concentração e esforço máximo, ele não deveria estar no programa, e vira junk volume.
+  verbatim: "if something like a day or a certain exercise you're doing isn't worth in your mind really locking into locking in for and giving that full effort, what's it doing in your program? is it really worth it or is it just junk volume at that point"
+
+V036-26  R036@02:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: hipertrofia, selecao-exercicio
+  Agacho, supino e terra ou variações próximas provavelmente não são os exercícios mais ótimos para hipertrofia de todo jeito.
+  verbatim: "squat bench and deadlift or close variations of it are probably not the most optimal for hypertrophy anyways"
+
+V036-32  R036@03:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, teste-de-forca
+  Bater pesos mais máximos no agacho, supino e terra revela melhor os pontos fracos, o que informa o treino.
+  verbatim: "when we hit more maximal weights on squat bench and deadlift, we can better tell what our weak points are, which can inform training"
+
+V037-15  R037@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cardio, selecao-exercicio
+  A modalidade de cardio deve ser de baixo impacto.
+  verbatim: "Pick a low impact variation"
+
+V037-16  R037@01:31  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: cardio, selecao-exercicio
+  Ele faz caminhada inclinada e escada.
+  verbatim: "I personally do incline walking and stair climber"
+
+V037-17  R037@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: cardio, selecao-exercicio
+  Bicicleta e remo também são ótimas opções de cardio de baixo impacto.
+  verbatim: "Cycling and rowing are great options as well"
+  condições: V037-15
+
+V042-05  R042@00:15  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: pegada, selecao-exercicio
+  Sustentações de barra são o único exercício de pegada de que você deve precisar.
+  verbatim: "grip [music] holds only exercise you should need"
+
+V046-18  R046@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: erro-comum, selecao-exercicio, sono
+  Não fique preocupado se um exercício de tríceps é 2% mais ótimo que o seu enquanto você dorme 5 horas por noite.
+  params: diferenca_exercicio=2 pct [pct]  sono_noite=5 horas [horas]
+  verbatim: "don't be worrying about whether this triceps exercise is 2% more optimal than your current one when you're sleeping 5 hours per night"
+
+V047-06  R047@00:45  tier:R scope:PESSOAL modo:opiniao genero:review-de-programa explicit
+  tópicos: agacho, selecao-exercicio
+  Um primeiro dia com agachamento de competição e agachamento com pausa é parecido com o que ele prescreve para a maioria das pessoas.
+  verbatim: "the first day is some competition squats and paw squats pretty similar to what i do for most people"
+
+V047-08  R047@01:00  tier:R scope:PESSOAL modo:opiniao genero:review-de-programa explicit
+  tópicos: selecao-exercicio, acessorios
+  Ele não é grande fã de trabalho de belt squat.
+  verbatim: "i'm not the biggest fan of bellis work"
+
+V047-13  R047@01:46  tier:R scope:GERAL modo:opiniao genero:review-de-programa explicit
+  tópicos: supino, selecao-exercicio
+  Ter trabalho de hipertrofia e variações, uma que treina controle e outra que evita uso excessivo, está correto no programa.
+  verbatim: "there's some hypertrophy work some variations one that works control another one that prevents overuse"
+
+V049-06  R049@00:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: hipertrofia, selecao-exercicio
+  Agachamento, supino e terra não são os melhores exercícios para construir músculo, nem para os próprios músculos que usam.
+  verbatim: "but spd aren't the best for building muscle even for spd"
+
+V049-09  R049@00:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: hipertrofia, selecao-exercicio
+  O recrutamento de unidades motoras diminui quanto mais massa muscular é usada no exercício.
+  verbatim: "motor unit recruitment decreases the more muscle mass used"
+
+V053-18  R053@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, erro-comum, selecao-exercicio
+  Não se deve colocar sempre o supino depois do agacho ou o terra depois do agacho só porque a ordem do meet é agacho, supino e terra.
+  verbatim: "We don't want to always do bench after our squats or deadlifts after our squats as it's common because powerlifting meets go squat, bench, and deadlift"
+
+V053-21  R053@02:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, selecao-exercicio
+  Para trazer um movimento específico para cima, a saída é sempre priorizá-lo na programação.
+  verbatim: "one other thing you can focus on when you're trying to bring up a certain lift or if you have one you just want to push the cycle for fun is always prioritizing it in your programming"
+
+V058-09  R058@00:45  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: mentalidade, selecao-exercicio
+  Movimentos entram em ciclos de retroalimentação: você gosta, se esforça e tem resultado melhor, ou não gosta, se esforça menos e tem resultado pior.
+  verbatim: "You get in feedback cycles. You like them, you try hard, you get better results. Or vice versa"
+
+V058-11  R058@01:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: terra, selecao-exercicio
+  Outra coisa que ajudou o terra dele foi parar de fazer pause deadlift.
+  verbatim: "the next thing that helped was quitting pause deadlifts"
+
+V058-12  R058@01:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, terra
+  Ele continua achando o pause deadlift um ótimo exercício para a maioria e o programa para quase todo mundo que treina.
+  verbatim: "I still think they're a great exercise for most people. I program it for most people I coach"
+
+V058-13  R058@01:00  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: terra, tecnica, selecao-exercicio
+  O problema do pause deadlift para ele era prejudicar a capacidade de fazer o wedge na barra, ficando passivo demais para não passar do sticking point.
+  verbatim: "The issue I had with them was it impaired my ability to wedge into the bar properly, though. That is, I would be too passive trying not to produce too much force"
+
+V058-14  R058@01:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: terra, selecao-exercicio
+  Ele tentou fazer as pausas na altura do joelho para contornar o problema, mas isso bagunçou o timing dele.
+  verbatim: "I started doing them more at knee height trying to get around it, but that really just messed up with my timing"
+
+V058-15  R058@01:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, erro-comum
+  Ninguém precisa seguir todo exercício popular, mesmo quando ele funciona para muita gente.
+  verbatim: "it goes to show why everybody doesn't need to follow every popular exercise, even if it works for a ton of people"
+
+V059-07  R059@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: terra, setup, selecao-exercicio
+  O outro jeito de achar a posição inicial é fazer uma excêntrica lenta com um peso desafiador, que leva o corpo naturalmente a uma posição eficiente.
+  verbatim: "You can similarly do a slow eccentric with a challenging weight. And again, your body will naturally end up in an efficient start position"
+  condições: V059-09
+
+V059-09  R059@00:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: terra, erro-comum, selecao-exercicio
+  Não se deve usar a excêntrica lenta além do estágio inicial de iniciante nem no trabalho de repetições, porque num máximo não existe excêntrica para se apoiar.
+  verbatim: "beware of doing it beyond that initial beginner stage or on your rep work because on a one rep max, you don't have an eccentric to rely on"
+
+V059-22  R059@02:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: costas, acessorios, selecao-exercicio
+  Esse segundo movimento pode ser encolhimento ou uma remada em que a escápula protrai e retrai.
+  verbatim: "You can do kel shrugs or just rowing movement where you're getting your scapula protract forwards then retract back"
+
+V063-15  R063@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, volume, intensidade, selecao-exercicio
+  A primeira variável a olhar ao mudar o programa é o workload geral, que é a combinação de volume, intensidade e seleção de exercício.
+  verbatim: "Always look at our overall workload, combination of volume, intensity, and exercise selection."
+  condições: V063-14
+
+V063-20  R063@02:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, selecao-exercicio
+  Se o supino sempre parece instável no peito, uma tentativa é incluir supino com pausa longa para trabalhar controle.
+  verbatim: "my bench always feels unstable on the chest. Maybe I should try out some long pause bench to work control."
+  condições: V063-22
+
+V064-06  R064@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, pernas, selecao-exercicio
+  Se o fator limitante for outra coisa que não o quadríceps, como a lombar, adicione trabalho de isolamento extra para o quadríceps até que ele esteja plenamente treinado.
+  verbatim: "Then if you're limited by something other than your quads, say your lower back, add an extra isolation work for the quads until they are fully trained."
+
+V064-11  R064@01:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: agacho, selecao-exercicio, tecnica
+  Agachamento com tempo e agachamento com pausa são bons para trabalhar o equilíbrio sobre o meio do pé.
+  verbatim: "Tempo squats and pause squats can be good for working this."
+
+V064-22  R064@02:16  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: agacho, selecao-exercicio, profundidade
+  Ele considera pausas acima do paralelo, descendo todo o caminho, pegando um bom bounce e pausando logo acima do paralelo, uma ótima forma de trabalhar isso.
+  verbatim: "I find pauses above parallel that is squatting all the way down, getting a good bounce, then pausing just above parallel are a great way to work this."
+
+V067-02  R067@00:00  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: programacao, selecao-exercicio, hipertrofia, ordem-exercicio
+  A ordem dos exercícios importa e pode afetar resultados de força e hipertrofia mesmo quando os músculos trabalhados são diferentes.
+  verbatim: "Exercise order matters. It can affect strength and hypertrophy outcomes even if you're working different muscles."
+
+V067-10  R067@01:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, selecao-exercicio
+  Se você tem um levantamento mais fraco ou quer melhorá-lo, coloque-o primeiro na maioria ou até em todas as sessões.
+  verbatim: "Put it at first in most or even all of your sessions if you want to focus it."
+  condições: V067-17, V067-18
+
+V068-01  R068@00:00  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: programacao, selecao-exercicio
+  Boa parte da programação moderna de powerlifting está focada em hiperespecificidade.
+  verbatim: "A lot of modern powerlifting programming has been focused on hyper specificity."
+
+V068-03  R068@00:15  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: barra-alta, agacho, selecao-exercicio
+  A maioria dos powerlifters se beneficiaria de ter agachamento barra alta no programa, mesmo quando o barra baixa é mais forte.
+  verbatim: "a lot of, if not most, powerlifters would benefit from high bar squats in their program, even when their low bar is stronger."
+
+V068-15  R068@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, selecao-exercicio, barra-alta
+  Variar levemente o padrão de movimento ajuda a prevenir lesões por overuse, por exemplo misturando barra alta com barra baixa.
+  verbatim: "Slightly varying the movement pattern can help prevent this, such as high bar mixed in with low bar."
+
+V068-16  R068@01:31  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: tecnica, selecao-exercicio, aprendizado-motor
+  Há evidência de que variar padrões de movimento promove melhor aprendizado motor, possivelmente por expor o córtex motor a outras estratégias de movimento.
+  verbatim: "there's evidence that varying movement patterns helps to promote better motor learning, potentially by exposing our motor cortex to other movement strategies."
+
+V071-22  R071@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, tecnica, agacho
+  Usar variações que trabalham o cue naturalmente ajuda, como agachamento com pausa para aprender controle no fundo.
+  verbatim: "having variations that naturally work a queue, like paw squats to learn control at the bottom of a squat"
+
+V072-24  R072@02:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, lesao
+  Incluir variação de movimento no programa ajuda a prevenir lesões por overuse.
+  verbatim: "movement variation included in your program helping to prevent overuse injuries"
+
+V073-01  R073@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, erro-comum
+  Um dos maiores problemas que ele vê em powerlifters é a ênfase excessiva em agacho, supino e terra.
+  verbatim: "One of the biggest issues I see of powerlifters is overemphasis on SBD."
+
+V073-02  R073@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, erro-comum
+  A ênfase excessiva em agacho, supino e terra pode ser muito ruim para levantadores iniciantes ou intermediários.
+  verbatim: "It can be very bad for beginner or intermediate lifters."
+
+V073-03  R073@00:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, meta-metodologia, aprendizado-motor
+  O problema corresponde ao conceito de especialização precoce: focar demais num conjunto específico de habilidades prejudica o desenvolvimento de longo prazo.
+  verbatim: "focusing too much on a specific set of skills in one sport harms long-term development"
+
+V073-04  R073@00:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: tecnica, selecao-exercicio, aprendizado-motor
+  A especialização precoce prejudica o aprendizado motor, ou seja, o quanto a forma se torna eficiente.
+  verbatim: "it impairs motor learning, essentially how efficient our form becomes"
+
+V073-05  R073@00:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  A especialização precoce aumenta o risco de lesão por overuse.
+  verbatim: "It risks injury due to overuse."
+
+V073-08  R073@00:45  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: tecnica, selecao-exercicio, aprendizado-motor
+  Foi demonstrado que ser rígido demais com o movimento e não deixar o corpo experimentar padrões diferentes por meio de variação prejudica o aprendizado motor.
+  verbatim: "being too stringent with movement and not allowing your body to try out different movement patterns through variation actually impairs motor learning"
+
+V073-10  R073@01:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: tecnica, selecao-exercicio, aprendizado-motor
+  O corpo transfere habilidade de outros padrões de movimento parecidos.
+  verbatim: "Your body can transfer over skills from other similar movement patterns."
+
+V073-11  R073@01:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, volume, aprendizado-motor
+  Passar por padrões de movimento ligeiramente diferentes permite acumular mais prática de habilidade sem sobrecarregar exatamente a mesma parte do corpo.
+  verbatim: "going through slightly different movement patterns can often let you get more skill practice in in general as you aren't overusing the exact"
+
+V073-14  R073@01:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: fadiga, selecao-exercicio, hipertrofia
+  Agacho, supino e terra podem ser fatigantes comparados a outros movimentos que dão mais retorno pelo custo.
+  verbatim: "squat bench, deadlift can be fatiguing versus other movements where you may get more bang for your buck"
+
+V073-19  R073@02:17  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  A falta de variação de movimento foi associada a taxas mais altas de lesão, em particular lesões por overuse.
+  verbatim: "lack of movement variation has been linked to higher rates of injury, particularly overuse injuries"
+
+V073-20  R073@02:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, programacao
+  Agacho, supino e terra ainda devem ser o grosso do trabalho no programa.
+  verbatim: "You can still do squat, bench, and deadlift. In fact, it should still be the bulk of your work"
+
+V073-21  R073@02:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, programacao
+  É preciso garantir uma boa mistura de outros padrões de movimento além dos movimentos de competição.
+  verbatim: "but make sure you're getting a good mix of some other movement patterns"
+  condições: V073-20
+
+V073-22  R073@02:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, selecao-exercicio, peito
+  Para o supino, vale incluir pressões em planos diferentes, como inclinado ou paralelas.
+  verbatim: "Some pressing different planes like incline or HP or dips, for example, for bench."
+  condições: V073-20
+
+V076-09  R076@00:45  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: frequencia, selecao-exercicio
+  Ele faz agacho, supino e terra quase diariamente há 10 anos.
+  params: tempo_praticando_sbd=10 anos [anos]
+  verbatim: "I've done it nearly daily for 10 years"
+
+V076-10  R076@00:45  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: hipertrofia, fadiga, selecao-exercicio
+  Ele não acha que agacho, supino e terra sejam os melhores movimentos para hipertrofia, simplesmente porque são mais fatigantes.
+  verbatim: "I don't think they are the best for hypertrophy simply because they're more fatiguing"
+
+V076-11  R076@01:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, erro-comum, fadiga
+  Muitos powerlifters estariam melhor se largassem o ego preso ao agacho, supino e terra e fossem para movimentos menos fatigantes.
+  verbatim: "a lot of powerlifterss would be better off if they dropped the ego they had attached to SPD and went for less fatiguing movements"
+
+V077-17  R077@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, selecao-exercicio, setup
+  O terra com pausa trabalha bem esse problema porque pune quem está com a posição errada em relação à barra.
+  verbatim: "You can also work this issue really well with pause deadlifts. Pause deadlifts will punish you if your position relative to the bar is off."
+
+V079-35  R079@04:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio, dor
+  Na lesão, deve-se procurar o movimento mais específico possível que não doa e empurrar nele com a mesma intensidade.
+  verbatim: "I'd also try to find the most specific non-p painful movement you can push just as hard."
+
+V081-16  R081@01:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: terra, selecao-exercicio
+  Ele tirou os pause deadlifts do programa.
+  verbatim: "the next change i made was ditching pause deadlifts"
+
+V081-17  R081@01:47  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: terra, selecao-exercicio, tecnica, aprendizado-motor
+  Ele acha que precisa de mais prática de skill do terra normal em vez da variação com pausa.
+  verbatim: "i think i just need more skill practice of regular deadlifts"
+
+V082-02  R082@00:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: erro-comum, selecao-exercicio
+  Tentar mudar o ponto mais fraco muitas vezes só deixa o levantador mais fraco.
+  verbatim: "often times changing it just makes you weaker"
+
+V082-04  R082@00:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: hipertrofia, volume, selecao-exercicio
+  Construir quadríceps no vácuo pode ajudar, mas tudo tem um custo de tempo e energia.
+  verbatim: "while building quads in a vacuum may help everything comes at a cost that time and energy"
+
+V082-20  R082@02:33  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: erro-comum, selecao-exercicio, programacao
+  Nem todo sticking point vale trabalho direcionado para corrigir, em vez de simplesmente ficar mais forte em geral.
+  verbatim: "not every sticking point is worth trying to do targeted work to fix versus just getting stronger in general"
+
+V088-01  R088@00:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: convencional, sumo, terra, selecao-exercicio
+  Todo mundo deveria puxar convencional, e mesmo quem compete em sumô deveria fazer algum treino convencional.
+  verbatim: "everybody should pull conventional i mean you can still pull sumo in competition or whatever if you're stronger but even if you pull sumo you should do some training conventional"
+  condições: V088-02, V088-16
+
+V088-02  R088@00:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: convencional, selecao-exercicio, acessorios
+  Esse trabalho convencional pode ser o levantamento convencional em si ou variações como stiff-legged e romeno.
+  verbatim: "that can be an actual conventional or variations like stiff-legged or romanian deadlifts"
+
+V088-14  R088@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, posterior, acessorios
+  Stiff-legged e romeno são boas formas de treinar o hinge, com flexão mínima de joelho, só o necessário para manter o equilíbrio.
+  verbatim: "stiff legged or romanian deadlift variations are a good way to work this minimal knee flexion here only as much as you need to stay balanced"
+  condições: V088-15
+
+V088-17  R088@01:47  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: selecao-exercicio, terra
+  Ele mesmo prefere usar variações completas em vez do convencional normal, para enfatizar extensão espinhal e hinge.
+  verbatim: "i usually do go with full variations versus regular conventional just because we can really emphasize these benefits spinal extension and hinging"
+
+V088-20  R088@02:17  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, posterior, volume
+  A maioria das pessoas provavelmente aguenta stiff-legged ou romeno sem problema, o que entrega ainda mais benefício de hinge e extensão espinhal.
+  verbatim: "most people can probably do stiff legs or rainan deadlifts just fine which will get even more hinging and spinal extension benefits"
+
+V088-21  R088@02:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: sumo, convencional, selecao-exercicio
+  O inverso não vale: quem puxa convencional não precisa treinar sumô.
+  verbatim: "you may ask what about the reverse should conventional pullers try sumo and my answer is no"
+  condições: V088-24
+
+V088-25  R088@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, lesao, terra
+  Block pulls ou terra com trap bar também descarregam as costas e são um pouco mais específicos que o sumô nesse caso.
+  verbatim: "you may want to try block poles or trap bar deadlifts which will also load the back lust and be a bit more specific"
+
+V089-01  R089@00:15  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, acessorios
+  Na escolha de acessórios é preciso ser seletivo, porque não dá para fazer tudo.
+  verbatim: "you want to be targeted with this you can't just do everything"
+
+V089-03  R089@00:30  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, tecnica
+  O critério principal dele para escolher variações é trabalhar a técnica.
+  verbatim: "the first criteria and the main one i use for choosing variations is to work form"
+
+V089-04  R089@00:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, agacho, terra, tecnica
+  Pause squats servem para trabalhar controle no fundo e pause deadlifts para a posição inicial.
+  verbatim: "pause squats to work on control at the bottom pause deadlifts for start position"
+
+V089-05  R089@00:30  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, tecnica
+  Variações são possivelmente a melhor forma de trabalhar a técnica.
+  verbatim: "form is obviously a huge part of powerlifting and variations arguably the best way to work form"
+
+V089-06  R089@00:45  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: agacho, tecnica, selecao-exercicio
+  Não existe forma melhor de pegar a sensação de equilíbrio no fundo do agachamento do que ter que pausar lá e se manter equilibrado.
+  verbatim: "no better way to get feel for balance at the bottom of your squat than having to actually pause there and stay balanced"
+
+V089-10  R089@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: hipertrofia, acessorios, selecao-exercicio, proximidade-da-falha
+  A hipertrofia deve ser buscada em movimentos menos fatigantes, mais estáveis e isolados, empurrados mais perto da falha.
+  verbatim: "then you can focus on hypertrophy with less fatiguing more stable and isolating movements push closer to failure"
+
+V089-16  R089@02:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: acessorios, fadiga, selecao-exercicio
+  O último critério, e o menos considerado, é gestão de carga.
+  verbatim: "my last criteria for picking accessories is one that often isn't considered it's load management"
+
+V089-17  R089@02:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: barra-alta, posterior, selecao-exercicio
+  Variações como barra alta usam menos cadeia posterior, e o leg press não tem leg drive nem estabilidade, então não dá para carregá-lo tão pesado.
+  verbatim: "variations like high bar to use less posterior ch or laron press where there's no leg drive and less stability so we can't load it as hard"
+
+V089-18  R089@02:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, fadiga, tecnica, aprendizado-motor
+  Essas variações menos taxantes permitem mais prática de skill sem tanta fadiga.
+  verbatim: "these are variations that are less taxing on our body so we can get more skill practice in without as much fatigue"
+
+V089-19  R089@02:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Muitas vezes dá para usar uma variação que transfere bem para o movimento principal enquanto se contorna uma lesão.
+  verbatim: "often times we can do some variation that will carry over well to our main lift while working around injuries"
+
+V089-20  R089@02:31  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: lesao, ombros, supino, selecao-exercicio
+  Ele teve um cliente fazendo supino inclinado baixo sem nenhuma dor, mesmo com os ombros doendo muito no supino de competição.
+  verbatim: "recently had a client doing some low incline bench which was completely pain-free even though his shoulders really hurt on regular competition bench press"
+
+V089-25  R089@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, dor, selecao-exercicio
+  O contorno útil para tendinite é usar variações de velocidade lenta, como trabalho de tempo e pausas, porque a tensão no tendão depende do peso e da velocidade em que ele é movido.
+  verbatim: "a useful workaround is doing slow velocity variations things like tempo work or pauses tendon strain is based off weight and speed we move it at"
+
+V091-17  R091@02:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: terra, selecao-exercicio, pegada
+  Passou a usar pegada snatch para conseguir mais dobradiça de quadril no trabalho focado em convencional.
+  verbatim: "I also tried to stat grip just to get more hinge"
+
+V092-19  R092@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, selecao-exercicio, frequencia
+  Dá para fazer o mesmo no supino usando padrões e movimentos diferentes: inclinado, trabalho acima da cabeça, larguras de pegada diferentes.
+  verbatim: "we can do the same with our bench do different movement patterns and exact movements incline work overhead work different grip widths Etc"
+
+V092-21  R092@02:16  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Variação de movimento está ligada a taxas menores de lesão.
+  verbatim: "moveing variation is linked to lower rates of injury"
+
+V092-28  R092@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, selecao-exercicio, intensidade
+  Dá para fazer o dia leve servir de ensaio para o pesado, por exemplo um single de supino com tempo como primer técnico para o single principal.
+  verbatim: "do something like a Tempo bench press single the primer technique for a main single"
+
+V093-08  R093@00:46  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: fadiga, selecao-exercicio, ordem-exercicio
+  Um estudo sobre ordem de exercícios encontrou piores resultados de força e de hipertrofia nos exercícios feitos depois, mesmo quando trabalham músculos diferentes.
+  verbatim: "this study looked at exercise order and found worse strength than hypertrophy results for later exercise es even if they"
+
+V093-19  R093@02:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: frequencia, selecao-exercicio, terra
+  Mesmo para o lifter sensível à carga, deixar o segundo dia leve ou usar uma variação mais fácil como block pull costuma resolver.
+  verbatim: "day a light one or an easier variation like block PS and they can handle it just fine"
+
+V093-26  R093@03:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: pegada, terra, selecao-exercicio
+  Como força é específica ao ângulo articular, treinar com a circunferência normal da barra dá melhor resultado para a pegada no terra do que fat grips.
+  verbatim: "better results for your deadlift grip working the actual normal bar circumference"
+
+V093-30  R093@04:02  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: supino, selecao-exercicio
+  Supino com pausa longa e spoto press são boas variações porque forçam o controle da barra logo acima do peito.
+  verbatim: "long pause bench is a good variation as a spotle press these both force you to control the bar right near your chest"
+
+V095-25  R095@03:32  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: acessorios, pernas, selecao-exercicio
+  Ele usa cadeira extensora para trabalhar quadríceps sem carregar outros músculos e sem carga axial, nos momentos em que está mais fatigado.
+  verbatim: "I use them because I want to work my quads without loading any other muscles or get more axial loading where I am more fatigued"
+
+V095-26  R095@03:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, pernas, fadiga
+  Leg press e hack squat carregam alguma cadeia posterior e também têm alguma carga axial.
+  verbatim: "things like leg press or hack squats can load some posterior chain and also have some axial loading as well"
+
+V095-27  R095@03:47  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: acessorios, pernas, selecao-exercicio
+  A desvantagem da cadeira extensora é trabalhar mais o reto femoral, que não é tão recrutado no agachamento, algo que ele, focado só em powerlifting, nem quer.
+  verbatim: "is it can work direct this from mors a bit more which isn't as recruited in squats for somebody who just cares about PL like me that may not be something I want"
+
+V096-09  R096@01:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, hipertrofia, acessorios
+  Na escolha de acessórios, boa estabilidade ajuda a recrutar mais unidades motoras e favorece a hipertrofia.
+  verbatim: "to help you recruit more motor units to better aid hypertrophy"
+
+V096-10  R096@01:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, fadiga, acessorios
+  Isolar o máximo possível o músculo alvo concentra a fadiga no que se quer trabalhar, o que importa quando o trabalho é perto da falha.
+  verbatim: "You can also focus on isolating the muscle you want to work there as well as you can. This focuses fatigue on what we want to work"
+
+V096-14  R096@01:30  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, programacao
+  Se um exercício não vale a pena tentar melhorar e bater PR nele, provavelmente não vale a energia de estar no programa.
+  verbatim: "If something isn't worth trying to get better at and PR on, it probably isn't worth the energy of putting in your program"
+
+V098-02  R098@00:15  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, selecao-exercicio
+  A primeira coisa a fazer para melhorar o movimento em que você é pior é colocá-lo primeiro na sessão de treino, porque estudos mostram melhores resultados de força e hipertrofia assim.
+  verbatim: "first thing I did was put the lift first in my training sessions studies show better results for strength and hypertrophy this way"
+
+V098-08  R098@00:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, fadiga, rom
+  Ajuda usar variações de menor fadiga que limitam carga ou amplitude, como larsen press no supino ou block pull no terra.
+  verbatim: "so it can actually help to use less fatigue and variations that limit loading or range motion for example lar and press on bench or block PS on deadlifts"
+
+V099-03  R099@00:15  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: series-reps, agacho, selecao-exercicio
+  O programa usa faixas de repetição diferentes para dar exposição a cada uma, além de pausas e tempos para trabalhar o controle na entrada e na saída do buraco.
+  verbatim: "different rep ranges so we get exposure to each pauses and tempos to work control into and out of the hole"
+
+V099-05  R099@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: agacho, selecao-exercicio, profundidade
+  Quem precisa trabalhar mais o bounce pode trocar as pausas do programa pela versão de pausa acima do paralelo.
+  verbatim: "if you're somebody who could use more work on the bounce on the squat you could swap the pauses for the above parallel version"
+
+V100-16  R100@02:01  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: terra, selecao-exercicio, pegada, rom
+  Ele gosta de snatch grip deadlift e considera o exercício meio caminho entre um convencional normal e um stiff-legged completo, porque a pegada mais aberta obriga a se inclinar mais e ganha amplitude de quadril.
+  verbatim: "I do like them I basically consider them as halfway between a normal conventional and a full stiff-legged because the wider grip forces you to bend over a bit more so you gain some more hip range motion"
+
+V100-17  R100@02:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, posterior, costas
+  O snatch grip deadlift é bom para trabalhar mais os extensores espinhais e de quadril, e talvez também o upper back, embora ele não tenha certeza se é só sensação.
+  verbatim: "work these spinal and Hipp ex sensors a bit more and I think it may work the upper back a bit more though I'm not sure if that's just sensation"
+
+V101-06  R101@00:30  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: selecao-exercicio, pernas
+  O adutor é trabalhado em qualquer movimento com foco em extensão de quadril.
+  verbatim: "it will be worked on any hip extension Focus movement"
+
+V101-07  R101@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, posterior
+  Stiff-legged e terra romeno são ótimas escolhas para trabalhar o adutor.
+  verbatim: "so stiff leggeds or Romanian deadlifts are a great choice"
+  condições: V101-04
+
+V101-14  R101@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, ombros, selecao-exercicio
+  Boa parte dos problemas de ombro no powerlifting vem de ser hiperespecífico, sem variação de movimento — e variação já se mostrou importante para prevenir lesão.
+  verbatim: "a lot of powerlifting shoulder issues come from people being hypers specific with no movement variation which has been shown to be important for preventing injury"
+
+V101-19  R101@02:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: bracos, selecao-exercicio
+  Dá para usar o movimento do braço durante o exercício para seletivamente não ativar a cabeça longa do tríceps.
+  verbatim: "we can use the movement of the arm during the movement to selectively not activate the long head"
+
+V101-20  R101@02:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: bracos, selecao-exercicio
+  Uma forma é fazer extensão de tríceps com um pouco de flexão do braço durante o movimento.
+  verbatim: "it can mean doing a triceps extension that involves a bit of upper arm flexion during the movement"
+
+V101-21  R101@02:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: bracos, selecao-exercicio, acessorios
+  Mergulho e JM press envolvem naturalmente algum movimento de ombro e servem ao mesmo propósito.
+  verbatim: "this could be tricep movements like dips or Jam press that naturally involve a bit of shoulder movement as well"
+
+V102-34  R102@03:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, ombros, supino, rom
+  Ele gosta de dips para trabalhar flexão de ombro em amplitude final, algo que o supino normal não treina.
+  verbatim: "I do like dips for working end range shoulder flexion a movement normal bench won't really train"
+  condições: V102-36
+
+V102-35  R102@03:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: bracos, hipertrofia, selecao-exercicio
+  A ativação das cabeças do tríceps depende muito da posição do braço, então imitar a posição do supino é bom.
+  verbatim: "tricep head activation is heavily dependent on arm position so mimicking bench position is good"
+
+V103-01  R103@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, tier-list, meta-metodologia
+  Não dá para dizer objetivamente que um exercício é melhor do que outro, e é por isso que ele detesta a maioria dos vídeos de tier list.
+  verbatim: "I don't think you can really objectively say one exercise is better than another, which is why I hate most tier list videos"
+
+V103-02  R103@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, mentalidade
+  Cada pessoa prefere exercícios diferentes e neles entrega mais esforço, o que neutraliza argumentos de qual seria o mais ótimo.
+  verbatim: "Each person has exercises they may prefer doing and thus give more effort to, countering any so-called more optimal arguments"
+
+V103-04  R103@00:15  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: supino, selecao-exercicio, rom
+  O supino pegada fechada dá um pouco mais de amplitude de movimento.
+  verbatim: "the close grip bench press. You get a bit longer range of motion with this lift"
+
+V103-05  R103@00:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, lesao, selecao-exercicio
+  A pegada fechada também dá uma variação em relação ao movimento exato de competição, o que previne overuse.
+  verbatim: "you can also get a bit of a variation from the exact movement to prevent overuse"
+
+V103-12  R103@00:45  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: supino, tecnica, selecao-exercicio
+  O supino com tempo é uma excêntrica lenta para trabalhar controle.
+  verbatim: "Next is the tempo bench press, a slow eccentric to help you work on control"
+
+V103-20  R103@01:15  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: supino, selecao-exercicio
+  Larson press e supino com pés para cima entram juntos porque têm a mesma ideia: menos leg drive e menos estabilização.
+  verbatim: "Next, we have Larson and feet up bench. I'm using these because it's a similar idea. Less"
+
+V103-22  R103@01:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, fadiga, selecao-exercicio
+  Essas variações limitam a carga por causa da menor estabilidade, o que ajuda na gestão de carga como variação mais leve.
+  verbatim: "It also helps limit loading from less stability. This can help from a load management perspective, a lighter variation to use"
+
+V103-24  R103@01:45  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, hipertrofia, selecao-exercicio, rom
+  O supino com halteres dá um pouco mais de amplitude, o que pode ajudar na hipertrofia.
+  verbatim: "I like this because you can get a bit more range of motion. Can be helpful for hypertrophy"
+
+V103-25  R103@01:45  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: supino, hipertrofia, selecao-exercicio, aprendizado-motor
+  Em geral dá para obter hipertrofia suficiente e ainda melhor prática técnica com trabalho mais específico do que o halter.
+  verbatim: "As oftentimes you can get enough hypertrophy plus better skill practice with more specific work"
+
+V103-27  R103@01:45  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: supino, ombros, selecao-exercicio
+  O supino inclinado trabalha um pouco mais os deltoides anteriores.
+  verbatim: "Next is incline bench press. This will work a bit more of the anterior deltoids"
+
+V104-19  R104@01:17  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: acessorios, costas, selecao-exercicio
+  A única troca de acessório foi remada cavalinho no lugar da remada baixa no cabo, por ser mais estável e permitir pegar mais o trapézio.
+  verbatim: "the only swap I made was tar Row in place of seated cable rows in terms of exercises it's more stable and I'm able to hit the traps more"
+
+V107-01  R107@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, tier-list, meta-metodologia
+  Não dá para dizer objetivamente que um exercício é melhor do que outro.
+  verbatim: "I don't think you can really objectively say that one exercise is better than another"
+
+V107-02  R107@00:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, mentalidade
+  Cada pessoa tem necessidades diferentes e prefere exercícios diferentes, entregando mais esforço neles, o que neutraliza argumentos de otimalidade.
+  verbatim: "each person is going to have different needs and each person has exercises they may prefer doing and thus give more effort to countering any so-called more optimal arguments"
+
+V107-06  R107@00:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: convencional, costas, selecao-exercicio
+  Para quem puxa sumo, o convencional pode ser útil para treinar os extensores espinhais.
+  verbatim: "so conventional can be useful to train the spinal extensors"
+
+V107-09  R107@00:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: sumo, pernas, selecao-exercicio
+  Para quem puxa convencional, o sumo trabalha mais as pernas, mas um powerlifter já treina pernas o bastante com agachamento.
+  verbatim: "Sumo is going to work your legs more versus conventional but I'm assuming you're a powerlifter you're already going to be training your legs enough with squats"
+
+V107-12  R107@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, pernas
+  O terra com trap bar, como o sumo, torna o movimento mais dominante de quadríceps, o que não é necessário porque você já vai treinar agachamento.
+  verbatim: "like with sumo these turn it into a more quad dominant movement and it's not really needed in either case as you're going to be working squats"
+
+V107-13  R107@01:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, costas
+  Trap bar pode ser mais leve para as costas, como o sumo, mas esse é um caso de uso raro e há opções melhores.
+  verbatim: "they can be lighter on the back just like Sumo but again that's a pretty rare use case and I think there's better options"
+
+V107-14  R107@01:16  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, selecao-exercicio
+  Ele nunca programou trap bar e a coloca em F tier.
+  verbatim: "I just don't see these very useful and I never really programmed them so I'm going to go with f tier"
+
+V107-17  R107@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, selecao-exercicio, fadiga
+  O terra com pausa no chão também limita um pouco a carga, o que ajuda porque o terra é um movimento fatigante.
+  verbatim: "they also limit loading a bit which can help as deadlifts are fatigue in movement"
+
+V107-25  R107@02:01  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: terra, selecao-exercicio
+  O terra deficitário funcionou muito bem para ele no passado e para alguns atletas que ele treina e que aguentam muita carga de trabalho.
+  verbatim: "these have worked really well for me in the past and with a few lifter I've coach who can handle lots of workload"
+
+V107-33  R107@02:47  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: posterior, selecao-exercicio
+  Ele trata terra romeno e stiff juntos porque os programa pelos mesmos motivos.
+  verbatim: "next are Romanian and stiff legga deadlifts I'm doing the them together because I programmed them for similar reasons"
+
+V107-36  R107@03:02  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: posterior, selecao-exercicio, tecnica, rom
+  Ele escolhe entre um e outro pela amplitude em que a pessoa mantém uma boa dobradiça: quem consegue mais amplitude desce até o chão, os demais ficam no romeno.
+  verbatim: "I usually program one versus the other based on the range of motion somebody is able to maintain a good hinge through people who can hinge for longer can go all the way to the floor otherwise stick to Romanians"
+
+V107-38  R107@03:17  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: volume, selecao-exercicio, aprendizado-motor
+  Quem não aguenta esse volume faz melhor em usar prática de skill mais específica no volume que consegue.
+  verbatim: "they'd be better off doing a more specific skill practice work for the volume they can handle"
+
+V107-41  R107@03:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, selecao-exercicio
+  A desvantagem da excêntrica lenta é que não dá para contar com a excêntrica num máximo de uma repetição, então ela só funciona como ferramenta inicial.
+  verbatim: "the downside is you can't rely on an eccentric in a one rep max so they only really work as an initial starting tool"
+
+V107-43  R107@03:47  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, meta-metodologia
+  Ele acha que diferenças individuais importam mais na escolha de exercícios e que não há movimentos objetivamente melhores ou piores.
+  verbatim: "as I think individual differences matter more on reading exercises and there's no objectively better or worse movements"
+
+V107-44  R107@01:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: terra, setup, selecao-exercicio
+  O terra com pausa no chão é uma ótima ferramenta para trabalhar a posição inicial.
+  verbatim: "so these are a great tool to work that"
+
+V108-30  R108@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  O outro exercício a fazer quando lesionado é o mais específico que você conseguir empurrar sem dor, para manter estímulo e evitar destreino.
+  verbatim: "the other exercise is just the most specific exercise you can push painfree that's something to keep up stimulus as best as possible while you're injured to prevent any DET training"
+
+V108-35  R108@04:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: pegada, selecao-exercicio
+  Para conseguir mais estímulo de pegada com menos rasgo nas mãos, faça holds: uma repetição, talvez como block pull, segurando a barra.
+  verbatim: "by doing some holds just do one rep maybe as a block pull and hold it for the best grip stimulus"
+
+V109-05  R109@01:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, programacao
+  Por isso o programa do iniciante deve ser focado nos movimentos específicos.
+  verbatim: "for this reason the bulgular program should be focused on specific movements"
+
+V109-06  R109@01:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, tecnica
+  O iniciante ainda não precisa de movimentos especializados para trabalhar partes específicas da técnica, porque precisa melhorar em tudo.
+  verbatim: "they don't really need specialized movements to work certain parts of form yet because they simply just need to get better at everything with their form"
+
+V109-11  R109@01:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, selecao-exercicio
+  O intermediário já tem competência básica de técnica, então deve ter uma boa quantidade de trabalho específico no programa.
+  verbatim: "they've got basic competency on form down so what they should have a good amount of specific work in their program"
+
+V109-12  R109@01:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, tecnica, supino
+  O intermediário já pode fazer variações mais direcionadas para trabalhar aspectos da técnica, como supino com tempo para quem tem dificuldade em controlar a descida.
+  verbatim: "they can also start doing more targeted variations to work certain aspects of form maybe they Su at controlling The Descent on bench little do some Tempo bench on top of that"
+
+V109-13  R109@01:47  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: selecao-exercicio, tecnica, aprendizado-motor
+  Há evidência em aprendizagem motora de que, além do estágio iniciante, ramificar para padrões de movimento levemente diferentes melhora o aprendizado motor.
+  verbatim: "there's evidence in motor learning that beyond the beginner stage branching out to some slightly different movement patterns actually enhances motor learning"
+
+V109-24  R109@03:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Por isso variação de movimento para prevenir overuse e gestão da carga são importantes para o avançado.
+  verbatim: "so things like movement variation to prevent overuse and managing loading are important"
+
+V111-21  R111@03:18  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: hipertrofia, selecao-exercicio, proximidade-da-falha
+  Num bloco de hipertrofia a recomendação dele é só fazer mais treino em estilo hipertrofia, mais perto da falha e focado em isolar músculos em vez de compostos grandes.
+  verbatim: "just do more hypertrophy style training closer to failure focusing on isolating muscles versus bigger compounds"
+  condições: V111-20
+
+V112-14  R112@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, rpe, acessorios
+  A regra geral dele no powerlifting é: quanto menos específico o exercício, mais perto da falha ele deve ser levado.
+  verbatim: "my general view for powerlifting is the less specific an exercise is the closer it should be pushed to failure"
+  condições: V112-15
+
+V113-01  R113@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, selecao-exercicio, meta-metodologia
+  Ele diz odiar a maioria dos vídeos de tier list porque cada pessoa tem necessidades diferentes.
+  verbatim: "I want to start this by saying I hate most tier list videos each person's going to have different needs"
+
+V113-02  R113@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, meta-metodologia
+  Ele não acha que dá para dizer objetivamente que um exercício é melhor do que outro.
+  verbatim: "I don't think you can really objectively say one exercise is better than another"
+
+V113-03  R113@00:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, mentalidade
+  A preferência do praticante conta: quem gosta de um exercício dá mais esforço nele, o que anula argumentos de que outro seria mais ótimo.
+  verbatim: "each person has exercise they may prefer doing and thus give more effort to countering any so-called more optimal arguments"
+
+V113-04  R113@00:15  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, selecao-exercicio, meta-metodologia
+  O critério declarado da tier list dele é duplo: o quanto ele usa o exercício na própria coachada e o quão amplamente aplicável às pessoas ele acha que o exercício é — não superioridade objetiva.
+  verbatim: "so my criteria here is going to be a bit different it's going to be how widely I use them in my coaching and how widely applicable to people I find these exercises are"
+
+V113-07  R113@00:30  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: barra-alta, barra-baixa, selecao-exercicio
+  O barra alta transfere bem para o barra baixa, especialmente se for treinado com os mesmos cues e a mesma abertura de pés.
+  verbatim: "they also tend to carry over pretty well the low bar squats especially if you're queuing them similarly and use the same stance"
+
+V113-10  R113@00:45  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, barra-alta, selecao-exercicio
+  Agachamento barra alta vai para o tier S da lista dele.
+  verbatim: "High bar squats are going in my S tier"
+  condições: V113-04, V113-05
+
+V113-14  R113@01:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: barra-baixa, selecao-exercicio, lesao
+  O único ponto positivo do barra baixa como variação é servir de variação geral de movimento para prevenir overuse.
+  verbatim: "the only real plus I would say is just as a general variation of movement to prevent overuse"
+
+V113-15  R113@01:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: barra-baixa, competicao, selecao-exercicio
+  O único uso que ele daria ao barra baixa nesse caso é fazer a ponte para alguém eventualmente migrar para barra baixa e levantar mais peso na competição.
+  verbatim: "I'd only really use them if I'm trying to bridge somebody into potentially switching to a low bar squats to lift more weight in competition"
+
+V113-17  R113@01:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: agacho, tecnica, selecao-exercicio
+  Ele adora o pause squat no buraco para trabalhar controle no fundo, porque muita gente perde o equilíbrio sobre o centro do pé ali.
+  verbatim: "love these for working control at the bottom a lot of people end up coming off balance over the center of their foot"
+
+V113-18  R113@01:31  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: agacho, fadiga, selecao-exercicio
+  O pause squat pode ser menos exigente para o corpo porque a carga menor imposta pela pausa significa menos carga axial, que para algumas pessoas é o fator limitante.
+  verbatim: "PA squats can also be a bit less taxi on the body the lower loading from the paws can mean less axial loading which for some people can be a limiting factor"
+
+V113-19  R113@01:31  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, agacho, selecao-exercicio
+  Pause squat no buraco vai para o tier A.
+  verbatim: "overall just a great variation I put them in a tier"
+  condições: V113-04
+
+V113-22  R113@01:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, agacho, selecao-exercicio
+  Pause squat acima do paralelo vai para o tier B, porque muitos levantadores novatos têm dificuldade com a altura da pausa e o controle e estariam melhor servidos por algo mais simples.
+  verbatim: "I also find a lot of more Novis lifter struggled with nail pods height and control with them they might be better off working on something simpler to start for that reason I'm going to put it in B tier"
+  condições: V113-04
+
+V113-23  R113@02:01  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: agacho, tecnica, selecao-exercicio, aprendizado-motor
+  Tempo squats são bons para trabalhar equilíbrio no meio do pé e controle da descida, e o movimento lento serve para praticar cues.
+  verbatim: "next variation is tempo squats these are good for working midfoot balance and descend control the slow movement can be useful to practice cues"
+
+V113-25  R113@02:16  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, agacho, selecao-exercicio, capacidade-trabalho
+  Tempo squat vai para o tier C: útil, mas em casos mais de nicho, sendo melhor reservado para quem tem boa capacidade de trabalho, já que alguns iniciantes têm dificuldade de executá-lo bem.
+  verbatim: "still a useful variation but in more Niche cases versus some of these other variations so I'm going to go with CT here"
+  condições: V113-04
+
+V113-28  R113@02:47  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, agacho, selecao-exercicio
+  Safety squat bar vai para o tier B, porque muda um pouco o centro de massa e fica menos específica ao agachamento normal.
+  verbatim: "the downside is it changes your center of mass a bit so it can be a bit less specific to your normal squat but still good extracise for that reason I'm going to put them in B tier"
+  condições: V113-04
+
+V113-30  R113@03:02  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: agacho, volume, selecao-exercicio
+  A limitação de carga do front squat é um problema para alguns e uma vantagem para outros: quem não aguenta muito volume pode usá-lo como variação menos extenuante que ainda treina o padrão do agachamento.
+  verbatim: "people who can't handle a lot of workload can use it as a less strenuous variation that still works as sad movement pattern"
+
+V113-31  R113@03:17  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, agacho, selecao-exercicio
+  Front squat vai para o tier C: útil para algumas pessoas, mas não tão amplamente aplicável.
+  verbatim: "I think front squats are useful for some people but not as widely applicable I'll put them in C tier"
+  condições: V113-04
+
+V113-32  R113@03:17  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: agacho, tecnica, selecao-exercicio
+  O pin squat pode ser útil para encontrar a posição correta de tronco na subida.
+  verbatim: "next variation is going to be the pin squat I think this can be useful for finding the right torso position position on the way up"
+
+V113-34  R113@03:32  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, mentalidade
+  Se você prefere fazer determinado exercício, isso por si só já é razão suficiente para fazê-lo.
+  verbatim: "if you prefer doing something that's enough reason to do it"
+
+V113-35  R113@03:47  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, agacho, selecao-exercicio
+  Pin squat vai para o tier D.
+  verbatim: "ultimately I'm going to go with d tier for this exercise"
+  condições: V113-04, V113-34
+
+V113-36  R113@03:47  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: agacho, selecao-exercicio, erro-comum
+  O box squat não é aplicável a muita gente porque o padrão de movimento não imita o agachamento raw e ele acha que não transfere bem.
+  verbatim: "I really don't think this is applicable to many people the movement pattern just doesn't really mimic a raw Squad at all and I find it doesn't transfer very well either"
+
+V113-37  R113@03:47  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: agacho, equipamento, selecao-exercicio
+  Ele vê o box squat como herança do levantamento com equipamento, e principalmente do multiply, não do single ply mais comum.
+  verbatim: "I think this is more just a carryover from geared lifting and even then it's mainly from multiply lifting not the more common single ply lifting"
+
+V113-39  R113@04:18  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: tier-list, selecao-exercicio
+  A lista cobre todas as variações de agachamento que ele já usou na própria programação, e ele reforça que a ordenação é por aplicabilidade ampla e não por superioridade objetiva.
+  verbatim: "all the squat variations I've ever used in my programming like I said more just going with how widely applicable I find them to be given I don't think certain exercises are really ever objectively better or wor worse"
+
+V115-16  R115@01:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, tecnica, series-reps
+  Tempo squats enfatizam o equilíbrio no meio do pé na descida, com descida lenta e velocidade constante, e são melhor feitos com repetições baixas para não virarem trabalho de resistência.
+  verbatim: "Tempo squats will emphasize midfoot balance on the descent, slow descent with constant speed. These are best done with low reps to not work on endurance."
+
+V115-17  R115@02:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, profundidade, tecnica
+  Pause squats no buraco trabalham o equilíbrio no meio do pé bem no fundo, e pausas acima do paralelo trabalham esse equilíbrio na saída do buraco.
+  verbatim: "Pause squats in the hole work midfoot balance at the very bottom and pause squats above parallel on the way up focus on midfoot balance out of the hole."
+
+V115-18  R115@02:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: series-reps, progressao, selecao-exercicio
+  As duas variações de pausa podem começar com repetições mais altas e cargas leves, fáceis de manter a forma da pausa, e progredir para repetições menores com cargas mais difíceis de sustentar.
+  params: variacoes_pausa=2 variacoes [contagem]
+  verbatim: "Both of these pause variations can start with higher reps to use lighter weights that are easier to maintain the good pause form on, but work towards lower reps of higher weights that are harder to maintain"
+
+V115-19  R115@02:17  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: agacho, programacao, selecao-exercicio
+  Ele sempre inclui pelo menos uma variação focada em controle em todos os programas de agachamento, tanto no dele quanto no dos alunos.
+  params: variacoes_controle_minimo=1 variacoes [contagem]
+  verbatim: "I always include at least one variation focused on control in all of my squat programs for myself and others."
+
+V116-02  R116@00:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, programacao
+  Objetivos com boa transferência entre si, como front squat e back squat, são fáceis de empurrar ao mesmo tempo porque há sobreposição e o que beneficia um ajuda o outro.
+  verbatim: "these could be goals with a good amount of carryover like front squats and back squats if you want to work both of these together it can be easier given some overlap between the two what benefits one tends to help the other a bit"
+
+V116-12  R116@02:16  tier:R scope:GERAL modo:relato-de-programa genero:aula explicit
+  tópicos: deload, selecao-exercicio, barra-alta
+  O Reactive Training Systems usa essa lógica em deloads ou pivot weeks: treinar algo diferente do usual por uma semana, como fazer barra alta se você normalmente agacha barra baixa.
+  verbatim: "this is a strategy that reactive Training Systems use for D loads pivot weeks basically train something different than usual for a week you usually squat low bar or maybe do high Bar for a D Lo or pivot week"
+
+V116-13  R116@02:32  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Variação de movimento previne overuse, o que importa para lesões crônicas de longo prazo.
+  verbatim: "injury wise movement variation can prevent overuse as well which is important for more long-term chronic injuries"
+
+V118-23  R118@04:02  tier:R scope:GERAL modo:estudo genero:aula explicit
+  tópicos: programacao, selecao-exercicio, meta-metodologia
+  Há pesquisa mostrando que os exercícios feitos primeiro na sessão obtêm melhores resultados de força, presumivelmente por causa dessa fadiga sistêmica acumulada.
+  verbatim: "there's also some research link below showing that exercises you do first in a session get better results for strength assumably due to this systemic fatigue"
+
+V119-01  R119@00:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, selecao-exercicio, supino
+  No powerlifting os acessórios devem ser escolhidos para atacar as suas fraquezas.
+  verbatim: "in powerlifting you want accessories that Target your weaknesses here's a guide for the bench press What accessories to do for each weakness"
+
+V119-08  R119@00:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, supino, selecao-exercicio
+  Outra variação de controle da descida que ele gosta é o Spoto press, com pausa cerca de uma polegada acima do peito, vindo de Eric Spoto, que já teve o supino mais pesado de todos os tempos.
+  params: altura_pausa=1 polegadas [polegadas]
+  verbatim: "another good descent control variation I like is spotle press pause about an inch off your chest this comes from Eric spotle who formally has the heaviest bench of all time"
+  condições: V119-10
+
+V119-16  R119@01:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, supino, selecao-exercicio
+  Para esses dois erros no toque ele indica o long pause bench, focando em manter os cotovelos estáticos durante a pausa e em manter o arco, empurrando as costelas em direção à barra.
+  params: erros_tratados=2 erros [contagem]
+  verbatim: "one good lift I like is the long pause bench focus on keeping your elbows more static during the pause and also focus on keeping your arch up during the pause in fact kind of shoving your ribs towards the bar"
+  condições: V119-18
+
+V119-23  R119@03:03  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, ombros, selecao-exercicio
+  Ele acha que a pressão inclinada mata dois coelhos numa cajadada: é um press que transfere mais diretamente do que o desenvolvimento, mas ainda assim enfatiza mais os deltoides.
+  params: objetivos_atendidos=2 objetivos [contagem]
+  verbatim: "I find incline pressing is a good way to kill these two birds with one stone it's a press that more directly carries over than the overhead press but still biasing our deltoids more"
+  condições: V119-22
+
+V119-26  R119@03:33  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, supino, selecao-exercicio
+  A ferramenta para treinar essa trajetória é o supino com duas pausas, pausando na metade da subida e focando em flarear o máximo possível antes da pausa.
+  params: pausas=2 pausas [contagem]
+  verbatim: "a good tool to work this is the two paw bench press I demonstrate here with a bit of exaggeration you pause halfway up focusing on flaring as much as possible before the pause"
+  condições: V119-28
+
+V119-32  R119@04:18  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, supino, selecao-exercicio
+  Ele também gosta do pin bench logo acima do peito, ideia que pegou de Josh Bryant, treinador de Julius Maddox e de muitos outros benchers de 600 lb.
+  params: nivel_supino_alunos=600 lb [lb]
+  verbatim: "similarly I like pin bench right off the chest I got this from Josh Bryant he coaches Julius madlocks and many other 600lb benur"
+
+V119-38  R119@05:04  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: bracos, acessorios, selecao-exercicio
+  Dá para usar isso a favor movendo o ombro durante os exercícios de tríceps, de modo a evitar ativar tanto a cabeça longa.
+  verbatim: "we can use this to our advantage if we want to while working triceps by moving our shoulder during the triceps exercises we can avoid activating the long head as much"
+
+V119-40  R119@05:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: bracos, selecao-exercicio, volume
+  O exercício exato de tríceps não importa muito porque as diferenças são mínimas; o critério dele é escolher aquele em que você aguenta mais volume, já que ombros e cotovelos de algumas pessoas sofrem mais com certos exercícios.
+  verbatim: "I don't think the exact triceps exercise we do matters too much the differences are going to be minor what I do find though is some people's shoulders or elbows get beaten up with certain ones more versus others so I just do the one you find you can handle the most volume on"
+
+V121-01  R121@00:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, selecao-exercicio
+  Os acessórios no powerlifting devem ser escolhidos para atacar as fraquezas específicas do atleta.
+  verbatim: "in powerlifting you want to have accessories that Target weaknesses"
+
+V121-05  R121@00:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, pernas, terra
+  Para quem não se importa com o agachamento, qualquer variação que mire os quadríceps serve para melhorar a saída do chão.
+  verbatim: "if you don't care about the squad necessarily I do any varation you like that targets the quads"
+
+V121-09  R121@01:01  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: terra, selecao-exercicio, fadiga
+  Nos block pulls ele prefere elevar a barra só uma ou duas polegadas para manter a variação mais específica.
+  params: altura_bloco_min=1 polegadas [polegadas]  altura_bloco_max=2 polegadas [polegadas]
+  verbatim: "block PS is a simple one I like to go for just one or two inches to keep it more specific"
+
+V121-15  R121@02:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: terra, erro-comum, selecao-exercicio
+  Quando a fraqueza no chão vem de falta de agressividade, deve-se evitar pausas logo acima do chão, porque elas obrigam a desacelerar e pioram o problema.
+  verbatim: "in some cases weakness off the floor can come from not being aggressive enough in which case avoid doing pauses right off the floor they will cause you to slow down in order to be able to pause"
+
+V121-20  R121@02:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: posterior, selecao-exercicio, terra, aprendizado-motor
+  Stiff-legged e Romanian deadlift são uma boa forma de fortalecer os extensores de quadril e ainda praticar o hinge.
+  verbatim: "stiff legged or Romanian deadlifts are a good way that also let us practice a hinge important for good deadlift form"
+  condições: V121-21
+
+V121-21  R121@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, terra, tecnica, rom
+  Ele recomenda Romanian deadlift para quem não consegue manter um hinge estrito na amplitude completa do stiff-legged, tipicamente gente com menos habilidade de hinge ou braços mais curtos.
+  verbatim: "I recommend Romanians if you can't keep a strict hinge through a full stiff legged deadlift range of motion usually people who aren't as good at hinging or have shorter arms"
+
+V122-07  R122@01:01  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: selecao-exercicio, fadiga, agacho
+  Nos dias secundários de agacho e terra ele passou a usar mais variações que limitam a carga para gerar menos fadiga no agachamento.
+  verbatim: "I'm using more loow limiting variations to get less fatigue on squats"
+
+V122-08  R122@01:01  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: barra-alta, selecao-exercicio, terra
+  Ele está fazendo agachamento barra alta junto com as pausas que já fazia no terra.
+  verbatim: "I'm doing High bar alongside the paws I was already doing on deadlift"
+
+V122-11  R122@01:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: selecao-exercicio, acessorios, pernas
+  Pela primeira vez em mais de 10 anos de powerlifting ele está usando máquinas para membros inferiores, com cadeira extensora nos dias de agacho e mesa flexora nos dias de terra.
+  params: anos_powerlifting=10 anos [anos]
+  verbatim: "how for the first time in over 10 years of powerlifting I'm using machines on the lower body like extensions on squat days hamstring curls on deadlift days"
+
+V122-17  R122@02:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: series-reps, acessorios, selecao-exercicio
+  A faixa de repetições que ele usa varia conforme o quanto o exercício é fácil de roubar: em remada e elevação lateral, onde é fácil usar impulso do corpo, ele usa repetições mais altas.
+  verbatim: "the rep range I use varies by how easy the exercise is to cheat so something like rows or lateral raises where it's easier to get your full body momentum helping I'm going to do higher reps"
+
+V122-34  R122@06:34  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, pernas, selecao-exercicio
+  O exercício mais subestimado é o trabalho de adutores, com opções como a máquina adutora e a prancha lateral de Copenhagen, músculo importante tanto no agacho quanto no terra.
+  verbatim: "things like the good girl machine or Copenhagen side planks are good to work this it's a very important muscle for both squats and deadlifts"
+
+V122-35  R122@06:34  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: agacho, costas, selecao-exercicio
+  O front squat ser limitado pela parte superior das costas é uma vantagem, porque fortalecer isso permite mais inclinação à frente sem colapsar o peito no agachamento.
+  verbatim: "front squats get a bad wrap for being limited by the upper back I do think that is a strength though working that can allow more forward lean without chest collapsing on squats"
+
+V123-10  R123@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, terra, tecnica, aprendizado-motor
+  Stiff-legged e Romanian deadlift são programados para praticar o hinge, evitando arredondar as costas ou dobrar os joelhos além do mínimo.
+  verbatim: "it's why commonly programs stiff-legged or Romanian deadlifts it's a good way to practice this bending at the hips you want to avoid rounding the back or bending the knees beyond the minimal amount here"
+
+V124-01  R124@00:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: acessorios, selecao-exercicio, agacho
+  Os acessórios do powerlifter devem mirar as fraquezas dele, e a escolha para o agachamento parte de qual é a fraqueza.
+  verbatim: "your accessories as a powerlifter should be targeting your weaknesses here's how to decide what to do for your squat based on what your weakness is"
+
+V124-07  R124@00:31  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, mobilidade, equipamento
+  Ele gosta do Hatfield squat porque permite usar a carga para ajudar na profundidade sem exigir estabilidade.
+  verbatim: "I also like Hatfield squats as they let you use the weight to assist with depth while not worrying about stability"
+
+V124-09  R124@00:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, profundidade, agacho
+  Para estabilidade no fundo do agachamento o acessório indicado é o agachamento com pausa, que deixa o atleta mais confortável naquela posição.
+  verbatim: "a good accessory to help in this case is just a humble paw squat simple PA in the hole get you more comfortable at that bottom position"
+  condições: V124-10
+
+V124-10  R124@01:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: agacho, selecao-exercicio, intensidade
+  Uma pausa de 1 segundo já basta no agachamento com pausa; mais que isso só limita a carga sem ajudar mais na estabilidade.
+  params: duracao_pausa=1 s [seg]
+  verbatim: "a 1se second pause should be enough any more is just limiting load and not really helping our stability anymore"
+  condições: V124-11
+
+V124-13  R124@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, agacho, tecnica
+  Se o atleta se sente descontrolado ou perde equilíbrio na descida, a melhor ferramenta é o agachamento com tempo.
+  verbatim: "if you feel uncontrolled or like you lose balance the best tool to use is the tempo squat"
+
+V124-14  R124@01:31  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: agacho, selecao-exercicio
+  Ele usa descida de 4 a 5 segundos no agachamento com tempo, porque mais que isso é exaustivo e exige carga tão baixa que perde especificidade.
+  params: tempo_descida_min=4 s [seg]  tempo_descida_max=5 s [seg]
+  verbatim: "I generally go for a 4 to 5sec descent any longer just gets too exhausting and requires such low weight it isn't very specific"
+
+V124-23  R124@02:47  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, agacho, profundidade
+  A variação que ele prefere para isso é o agachamento com pausa acima do paralelo, em que se desce, pega o bounce e pausa logo acima do paralelo, forçando manter posição forte depois do bounce.
+  verbatim: "the variation I like for these is above parallel paw quats I have a whole video on these all link below you squat down get the bounce and pause just above parallel which will force you to maintain a strong position post bounce"
+  condições: V124-24
+
+V124-26  R124@03:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, costas, barra-alta
+  Se a fraqueza é estender a parte superior das costas, front squat e agachamento barra alta colocam essa região em desvantagem pela posição da barra e funcionam bem como variação.
+  verbatim: "front squats and high bar squats both put our upper back at a disadvantage because of the bar position and work well"
+
+V124-27  R124@03:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: equipamento, selecao-exercicio, costas
+  A safety squat bar é boa variação para a parte superior das costas porque coloca a massa das anilhas um pouco à frente, trabalhando contra a extensão torácica.
+  verbatim: "if you have a safety squat bar it's a good variation as well this variation basically places the mass of the weights a bit forwards again working against the upper back"
+
+V124-30  R124@04:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, barra-alta, fadiga
+  Para quem tem pernas pequenas e não aguenta volume de agachamento, uma opção é usar variações que limitam a carga sobre outros músculos mantendo o estímulo nos quadríceps, como high bar, front squat e belt squat.
+  verbatim: "one is variations that limit loading of other muscles will still loading our quads well High BR squats front squats belt squats they all allow us to hit our quads causing a bit less systemic fatigue"
+
+V124-31  R124@04:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, agacho, tecnica, aprendizado-motor
+  Essas variações também servem porque quem não aguenta volume de agachamento pode não estar acumulando prática de técnica suficiente, e elas mantêm o padrão do agachamento.
+  verbatim: "this is also beneficial because people who cannot handle L Squad volume may not be gain enough skill practiceing so we're still working a squad pattern with these"
+
+V124-33  R124@04:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, equipamento
+  A escolha da máquina depende mais do aparelho específico do que do tipo, e o critério é usar aquela que se sente bem e na qual o atleta vai realmente forçar.
+  verbatim: "ultimately just focus on the machine that feels good and that you like and will push hard on"
+
+V127-01  R127@00:00  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, intensidade, volume
+  Treinar com menos peso pode render mais, e ele não se refere só a treino submáximo e sim ao uso de variações auto-limitantes.
+  verbatim: "counterintuitively training with less weight can be better and I don't just mean sub maximal training which has its perks I mean using self-limiting variations"
+
+V127-02  R127@00:00  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: selecao-exercicio, fadiga
+  Variação auto-limitante é uma variação dos movimentos principais que é menos desgastante para o corpo.
+  verbatim: "these are variations of the main lifts squat bench and deadlift that are less taxing on the body"
+
+V127-03  R127@00:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: barra-alta, barra-baixa, selecao-exercicio
+  O agachamento barra alta trabalha o padrão de agachamento e os quadríceps sem exigir tanto da cadeia posterior quanto o barra baixa.
+  verbatim: "High bar squats to work a squat pattern and your quads while not working as much posterior chain as the low bar squat"
+
+V127-06  R127@00:46  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: selecao-exercicio, terra, rom
+  Em casos raros a variação auto-limitante acaba usando mais peso, como o block pull no terra e outras variações que limitam a amplitude.
+  verbatim: "sometimes in rare cases you will end up doing more weight for example a block pull on deadlifts or other variations that end up limiting the range of motion"
+
+V127-07  R127@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, fadiga, recuperacao
+  Nem toda variação que obriga a usar menos peso é auto-limitante: o trabalho excêntrico usa menos carga mas continua fatigando, discutivelmente mais, e é mais difícil de recuperar para quem não está aclimatado.
+  verbatim: "Ecentric work forces us to use less weight because of the difficulty of the Ecentric but Centrics are still fatiguing us arguably more entric and those that are not well acclimated to them are harder to recover from"
+
+V127-08  R127@01:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: supino, pegada, selecao-exercicio, rom
+  No supino pegada fechada a carga cai por perda de vantagem mecânica, e os músculos trabalham igual ou até mais por causa da amplitude articular maior.
+  verbatim: "if you take a grip that is closer than your strongest grip we're just decreasing our mechanical advantage that's why we're lifting less weight our muscles are working just as hard arguably they're working harder because they have a longer joint range of motion with close grip"
+
+V127-09  R127@01:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, fadiga, meta-metodologia
+  O ponto de uma variação auto-limitante não é levantar menos peso, é o corpo não ser tão desgastado pelo trabalho.
+  verbatim: "the point isn't that we're lifting less weight it's that they body isn't being as taxed by the work"
+
+V127-13  R127@01:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, supino, volume, aprendizado-motor
+  Variações menos específicas exigem menos volume: numa variação de supino em que não se pratica o leg drive, não se deve depender demais dela para não deixar o leg drive deficiente no supino principal.
+  verbatim: "take for example a large suppress you won't get to practice the technical aspect of leg Drive in your bench therefore you don't want to rely on it too much to the point that your leg Drive lacks in your main bench work"
+
+V127-14  R127@02:01  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: volume, autorregulacao, selecao-exercicio, aprendizado-motor
+  Quem já aguenta muito volume em um movimento pode não precisar da prática extra que as variações auto-limitantes proporcionam.
+  verbatim: "are you the type of person who can handle a lot of volume on it well then you may not need the extra skill practice that increased volume from self-limiting variations provides"
+
+V127-16  R127@02:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: volume, selecao-exercicio
+  Variações auto-limitantes são a forma de absorver carga de trabalho extra quando o corpo não aguenta mais, e devem ser consideradas por quem está na faixa baixa de volume.
+  verbatim: "self-limiting variations are a good way to handle extra workload when your body can't handle more consider implementing them if you're on the lowend of volume"
+  condições: V127-13, V127-14
+
+V128-02  R128@00:00  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: acessorios, selecao-exercicio
+  Depois de mais de 10 anos de powerlifting ele começou a usar máquinas pela primeira vez.
+  params: anos_powerlifting=10 anos [anos]
+  verbatim: "once over 10 years of powerlifting I've just started doing machines for the first time now"
+
+V130-08  R130@00:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, tecnica
+  Contrações excêntricas não transferem tão bem para a força concêntrica, porque são fundamentalmente diferentes no nível das pontes cruzadas.
+  verbatim: "Ecentric contractions do not carry over as well the concentric strength the contractions themselves are fundamentally different at the levels of the crossbridge"
+
+V130-10  R130@00:45  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, tecnica
+  Ainda assim há momentos em que repetições mais lentas ajudam, como variações com pausa e com tempo, usadas para trabalhar a forma.
+  verbatim: "there are still times and places where slower reps can be beneficial think about variations like pauses and tempos to work on form"
+
+V130-11  R130@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: lesao, dor, selecao-exercicio
+  Excêntricas mais lentas podem ser úteis para reduzir o estresse tendíneo, o que é bom para quem está lidando com lesões.
+  verbatim: "slower Centrics can also be useful for lowering tendon stress which are good if you're dealing with injuries"
+
+V130-14  R130@01:16  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: hipertrofia, selecao-exercicio
+  Excêntricas não produzem mais hipertrofia que concêntricas, mas também não são necessariamente piores.
+  verbatim: "Ecentric also don't produce more hypertrophy than concentrics that being said they aren't necessarily worse either"
+
+V131-12  R131@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: volume, selecao-exercicio
+  O volume do programa é mais concentrado nos levantamentos principais do que em trabalho de máquina.
+  verbatim: "the volume is more focused on the main lifts versus machine work"
+  condições: V131-06
+
+V131-13  R131@01:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, tecnica, supino
+  As variações que miram técnica no programa focam em aspectos gerais, como supino com tempo para trabalhar controle da descida.
+  verbatim: "the variations I chose that Target form are focused on more General things for example Tempo bench press to work on descend control"
+  condições: V131-06
+
+V131-14  R131@01:46  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, supino
+  Ele contrasta isso com o high pin bench press, que serve especificamente a quem falha no lockout e portanto não é amplamente aplicável.
+  verbatim: "contrast that to say a high pin bench press to help somebody who fails at lockout specifically"
+
+V131-15  R131@02:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, intensidade
+  As demais variações do programa existem só para gerenciar a carga, algo que importa para todo mundo.
+  verbatim: "other variations are just meant to manage loading again something that's important for everybody"
+  condições: V131-06
+
+V132-07  R132@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, barra-alta, agacho
+  Dá para trabalhar isso com isolamento ou com variações como high bar e front squat, que desfavorecem os extensores de quadril e coluna e tornam o agachamento mais quad-dominante.
+  verbatim: "you can do this with isolation work or variations like high bar and front squats that will disadvantage the hip and spinal extensors making your squat more quad dominant"
+
+V132-26  R132@03:00  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, agacho, tecnica
+  Pause squats no buraco forçam a manter bom equilíbrio no médio-pé na posição baixa.
+  verbatim: "squats in the hole can force us to keep good midfoot balance in the hole"
+
+V132-27  R132@03:00  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, agacho, profundidade
+  Para treinar o controle do bounce ele prefere pause squats acima do paralelo: descer tudo, sair do buraco e pausar cerca de 2 a 3 polegadas acima do paralelo.
+  params: altura_pausa_min=2 polegadas [polegadas]  altura_pausa_max=3 polegadas [polegadas]
+  verbatim: "I like PA squats above parallel you go all the way down bounce out the hole and pause about two to three inches above parallel"
+
+V132-29  R132@03:15  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, agacho, tecnica
+  Tempo squats servem para focar no equilíbrio de médio-pé durante a descida.
+  verbatim: "Tempo squads can be good to let you focus on midfoot balance on The Descent"
+  condições: V132-31, V132-32
+
+V132-30  R132@03:15  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, agacho, tecnica
+  Ele observa que tempo squats fazem as pessoas arquearem naturalmente as costas na descida.
+  verbatim: "now Tempo squats I find also make people naturally arch their back"
+
+V132-31  R132@03:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, erro-comum, aprendizado-motor
+  Não fazer trabalho de tempo demais se o que você precisa praticar é um bom bounce.
+  verbatim: "don't do too much Tempo work if you have to work on practicing a good bounce"
+
+V138-05  R138@00:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  O exercício que causa dor continua sendo feito e é chamado de movimento primário.
+  verbatim: "whatever exercise causes us pain we're actually still going to do this"
+  condições: V138-18
+
+V138-09  R138@01:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  O movimento secundário é o exercício mais específico que dá para fazer com intensidade normal de treino e nenhuma ou quase nenhuma dor.
+  verbatim: "the secondary movement is the most specific Movement we can do with a normal training intensity with no or nearly no pain"
+
+V138-10  R138@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio, barra-alta
+  Se as costas doem no low bar mas o high bar não dói, o high bar é uma ótima opção de movimento secundário por ser muito específico.
+  verbatim: "let's say on low bar squats our back hurts but we can do high bar just fine that's a great option it's very specific"
+
+V138-11  R138@01:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio, pernas
+  Se o quadril dói demais para tolerar movimento de quadril, dá para usar cadeira extensora para ainda isolar e treinar os quadríceps.
+  verbatim: "we can try a lay extension to to still isolate our quads and get them worked"
+
+V138-12  R138@01:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: lesao, selecao-exercicio
+  Em casos extremos, como uma lesão grave de joelho, pode ser preciso algo de especificidade tão baixa quanto bike, só para acumular volume de movimento.
+  verbatim: "we may have to do something as low specificity as cyclan just to get some movement volume in"
+
+V140-08  R140@01:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, tecnica
+  Uma alternativa que evita a queda de desempenho causada por cues é usar variações do movimento que forçam o aspecto de técnica desejado.
+  verbatim: "another alternative here that lets you avoid the down side of Q's decreasing performance is to use movement variations to force you to work a certain aspect of form"
+
+V140-09  R140@01:01  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, agacho, tecnica
+  Se o cue de descer com mais controle no agachamento atrapalha a pessoa, basta prescrever um tempo squat, porque o movimento mais lento ensina naturalmente uma descida mais suave.
+  verbatim: "you could just have them do a Tempo squat the slower movement will naturally teach them to have a smoother descent"
+
+V140-26  R140@03:19  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: tecnica, selecao-exercicio, programacao
+  A técnica é só uma variável ao lado de seleção de exercício, volume, intensidade e frequência, todas manipuláveis para tirar ou colocar carga em certos tecidos.
+  verbatim: "form is just one variable alongside exercise selection volume intensity and frequency that we can manipulate to put load on or off certain tissues"
+
+V141-22  R141@02:16  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: mobilidade, selecao-exercicio
+  Para quem tem mesmo restrição de tornozelo, ele sugere agachamento com peso corporal segurando no rack, base estreita e foco em empurrar os joelhos para frente.
+  verbatim: "I suggest doing these body weight squats hold onto the rack for support so you can really sit your weight down use a narrow stance and focus on pushing your knees forwards"
+  condições: V141-19, V141-20
+
+V141-25  R141@02:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, agacho, mobilidade
+  Programar agachamento com pausa e agachamento com tempo controlado é uma forma natural de atacar esse problema de equilíbrio e tornozelo.
+  verbatim: "programming pause squats and Tempo squats are good ways to naturally address this"
+
+V141-26  R141@02:46  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, agacho, tecnica
+  No agachamento com pausa, manter a velocidade normal de descida para deixar o exercício o mais específico possível.
+  verbatim: "focus on keeping your normal descent speed with these paw squats this will make it as specific"
+
+V141-27  R141@03:02  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, agacho, profundidade
+  Na pausa acima do paralelo na subida, ser rigoroso e pausar apenas uma ou duas polegadas acima do paralelo.
+  params: altura_pausa_min=1 polegadas [polegadas]  altura_pausa_max=2 polegadas [polegadas]
+  verbatim: "be strict and pause just an inch or two above parallel"
+
+V141-28  R141@03:02  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, agacho, tecnica
+  A pausa acima do paralelo na subida ensina a não ficar longe demais nas pontas dos pés e depois deslocar rápido para trás.
+  verbatim: "it will teach you not to get too far on your toes and then shift back rapidly"
+
+V141-29  R141@03:17  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, agacho, tecnica
+  No agachamento com tempo, a lentidão permite focar na pressão do meio do pé e trabalhar os cues.
+  verbatim: "Tempo squats are good as well when you go slower with them you can really focus on midfoot pressure"
+
+V142-15  R142@02:17  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, selecao-exercicio
+  A base do programa continua sendo o big three e variações próximas, com princípios básicos de treino de força.
+  verbatim: "We can still have the basis of your program be the big three lifts, close variations with basic strength training principles."
+
+V142-18  R142@02:32  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: hipertrofia, selecao-exercicio, proximidade-da-falha
+  O que mais rende em hipertrofia é treinar perto ou até a falha, com exercícios estáveis que isolam o músculo alvo, idealmente em comprimentos musculares longos.
+  verbatim: "the biggest bang for your buck things, though, are training close to or at failure with stable exercises that isolate the muscle you're trying to work, ideally at long muscle lengths"
+
+V144-06  R144@00:30  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: terra, selecao-exercicio, aquecimento
+  O terra com pausa para aprender a puxar folga pode ser feito como aquecimento, pausando nos últimos aquecimentos, ou como movimento acessório próprio.
+  verbatim: "you can do this either as a warm-up exercise, your last few warm-ups start pausing, or as an accessory movement on its own"
+
+V144-16  R144@01:30  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, selecao-exercicio, setup
+  O terra com pausa logo acima do chão fica muito mais difícil se a barra estiver longe demais para frente ou para trás, então o lifter se autocorrige para uma posição inicial melhor.
+  verbatim: "The pause will be much harder if the bar is too far forwards or back, so you'll naturally self-correct into a better start position."
+
+V144-17  R144@01:45  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: terra, setup, selecao-exercicio
+  Dá para achar uma boa posição inicial de terra fazendo uma excêntrica lenta.
+  verbatim: "how you can find a really good start position just by doing a slow eccentric"
+  condições: V144-18, V144-19
+
+V145-16  R145@02:33  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: volume, selecao-exercicio, rom
+  Amplitude de movimento maior trabalha mais o músculo e custa mais volume.
+  verbatim: "a longer range of motion is going to work the muscle harder you're taking more water out of your bucket"
+
+V145-21  R145@03:03  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, fadiga
+  Exercícios compostos são mais desgastantes que isoladores porque trabalham muitos grupos musculares de uma vez.
+  verbatim: "compounds are going to be more taxing taking more water because they're working a lot of muscle groups versus something"
+
+V145-24  R145@03:33  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, selecao-exercicio
+  Para um powerlifter, o grosso do trabalho vai para agachamento, supino, terra e variações desses movimentos.
+  verbatim: "for a power lifter the bulk of our work is going to be spent on Squad bench deadlift and variations of these lifts"
+
+V145-25  R145@04:03  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, volume
+  Não se coloca todo o volume no big three por causa da lei dos retornos decrescentes: repetir o mesmo estímulo rende menos adaptação.
+  verbatim: "the first is the law of diminishing returns as you do the same stimulus over and over again you get less adaptation from it"
+
+V145-26  R145@04:18  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: selecao-exercicio, supino, bracos
+  Em vez de fazer todas as séries de supino com a pegada normal, dá para incluir pegada fechada, que carrega mais o tríceps e permite mais volume total.
+  verbatim: "instead of just doing all our bench press sets with our regular grip we can throw in some close grip work as well which is going to put more load on our triceps"
+
+V146-05  R146@00:46  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: programacao, selecao-exercicio, intensidade
+  No desenho de programa dele, seleção de exercício e intensidade têm pouca margem, sobrando o volume como única outra variável livre.
+  verbatim: "exercise selection and intensity I won't give as much leeway to in program design so the only other variable remaining will be volume"
+
+V146-27  R146@03:32  tier:R scope:GERAL modo:fato genero:aula explicit
+  tópicos: selecao-exercicio, fadiga, agacho
+  O agachamento nas costas é mais fatigante que o agachamento frontal, que por sua vez é mais fatigante que a cadeira extensora.
+  verbatim: "a back squat is going to be more fatiguing than the front squat which would still probably be more fatiguing than a leg extension"
+
+V155-21  R155@03:50  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: selecao-exercicio, terra, aprendizado-motor
+  Exercícios especiais às vezes são muito bons para gravar um padrão motor específico, e esse é um desses casos.
+  verbatim: "sometimes special exercises are really good at ingraining a certain motor pattern and this is one of those cases"
+
+V155-22  R155@03:50  tier:R scope:PESSOAL modo:anedota genero:aula explicit
+  tópicos: selecao-exercicio, terra
+  Ele atribui a ter virado alguém mais forte com a coluna estendida ao fato de ter começado a fazer muitos terras pausados.
+  verbatim: "this is the big reason i think i became one of those people who's stronger keeping their spine extended that's because i started doing tons of paused deadlifts"
+
+V155-23  R155@04:06  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: terra, selecao-exercicio
+  A pausa deve ser logo na saída do chão, o mais perto possível do chão, uma polegada ou menos, porque é aí que as costas tendem a arredondar.
+  params: altura_pausa=1 polegada [polegadas]
+  verbatim: "pause the lifts right off the floor as close as you can to the floor an inch or less"
+
+V155-24  R155@04:21  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: terra, selecao-exercicio
+  A pausa não precisa ser longa: 1 segundo ou meio segundo bastam, e mais tempo é opcional.
+  params: pausa_longa=1 seg [seg]  pausa_curta=0.5 seg [seg]
+  verbatim: "long i'd say a second half a second you can do longer if you want but i don't think you need to"
+
+V155-25  R155@04:21  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, selecao-exercicio
+  O terra pausado funciona porque é naturalmente difícil manter uma pausa com as costas arredondadas — o corpo não gosta de fazer isso.
+  verbatim: "because it's going to be naturally hard to maintain a pause when your back is rounded your body does not like to do it pause deadlifts are great for working this"
+
+V159-41  R159@05:35  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: barra-alta, pernas, selecao-exercicio
+  Para quem quer mesmo trabalhar quadríceps com eficiência, ele acha que barra alta é opção melhor, aceitando abrir mão de um pouco de ativação de extensores de quadril.
+  verbatim: "if you really want to work your quads efficiently i think hybrid would still be a better option if you are okay with giving away a bit of hip extensor activation"
+
+V162-05  R162@00:15  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: sumo, convencional, selecao-exercicio
+  Mesmo assim ele acha que a maioria das pessoas vai ser mais forte puxando sumo.
+  verbatim: "but i still think the majority of people are going to be stronger pulling sumo"
+
+V162-08  R162@00:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, tecnica, selecao-exercicio, rom
+  A primeira razão para a amplitude não importar é que o engajamento muscular é muito mais importante.
+  verbatim: "my first reason why range of motion doesn't matter is muscle engagement is much more important"
+
+V162-09  R162@01:01  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, posterior, selecao-exercicio, rom
+  Convencional e stiff legged deadlift têm exatamente a mesma amplitude de barra, mas no stiff se usa só os extensores de quadril porque há flexão mínima de joelho.
+  verbatim: "think about a conventional deadlift versus stiff legged deadlift exact same stance width bar is going to start and end at the same place on the floor"
+
+V162-10  R162@01:16  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: terra, pernas, selecao-exercicio
+  No stiff se move menos peso porque não dá para engajar os quadríceps tanto quanto no convencional.
+  verbatim: "knee flexion we can move less weight because we can engage the quads as more as we could a conventional"
+
+V163-07  R163@00:46  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: sumo, posterior, selecao-exercicio
+  A razão principal de as pessoas puxarem mais no sumo é serem mais eficientes em estender o quadril na posição rodada externamente e abduzida.
+  verbatim: "the main reason people pull more sumo is actually because most people are more efficient extending their hips when they're in this externally rotated and abducted position"
+
+V166-07  R166@01:31  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, selecao-exercicio
+  A primeira opção de ponto de partida é achar um programa pronto disponível online, feito por lifters conhecidos e já testado por outras pessoas.
+  verbatim: "the first of which would be to find a pre-made program available online there are tons of pre-made programs out there by well-known lifters that other people have tried and had great success with"
+
+V166-17  R166@03:48  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: programacao, frequencia, volume, selecao-exercicio
+  Frequência, volume total e seleção de exercício precisam ser adaptados a cada pessoa.
+  verbatim: "so things like frequency total volume exercise selection are really going to need to be tailored to each person"
+
+V166-29  R166@08:05  tier:R scope:GERAL modo:mecanismo genero:aula explicit
+  tópicos: selecao-exercicio, supino, bracos
+  O raciocínio válido para incluir supino pegada fechada é: meu lockout de supino é fraco, o pegada fechada trabalha os tríceps, que são importantes para o lockout, logo deve funcionar para mim.
+  verbatim: "you should do close grip bench press if you think well I have a weak bench press lock out close scrip bench press works the triceps which are important for lockout therefore it should work for me"
+
+V167-23  R167@03:49  tier:R scope:GERAL modo:prescricao genero:aula explicit
+  tópicos: supino, acessorios, selecao-exercicio
+  A segunda forma de aumentar o flare é o two pause bench press, exercício que ele usa para si mesmo e também nos atletas que treina.
+  verbatim: "a second way to increase the amount of flaring in your bench press is an exercise i use for myself as well as lifters i coach"
+
+V168-01  R168@00:00  tier:R scope:PESSOAL modo:opiniao genero:aula explicit
+  tópicos: agacho, acessorios, selecao-exercicio
+  O acessório de agachamento número um dele, tanto para construir o próprio agacho quanto para as dezenas de pessoas que ele treinou, é o above parallel pause squat.
+  verbatim: "my number one squat accessory for building my own Squat and dozens of people I've coached is the above parallel paw squat"
+
+V169-07  R169@01:31  tier:R scope:PESSOAL modo:narrativa genero:perguntas explicit
+  tópicos: ombros, dor, selecao-exercicio
+  Ele parou de fazer desenvolvimento militar em pé porque começou a machucar as costas e ele sentia fadiga na articulação sacroilíaca.
+  verbatim: "i used to do them a lot but it just started hurting my back a bit and i did feel like fatigue in my si joint and i didn't think it was worth"
+
+V169-08  R169@01:46  tier:R scope:PESSOAL modo:narrativa genero:perguntas explicit
+  tópicos: ombros, selecao-exercicio, acessorios
+  Ele trocou o desenvolvimento em pé por desenvolvimento sentado com halteres, que trabalha os mesmos músculos e serve para quem não precisa especificamente do OHP.
+  verbatim: "so i just swap up to seated dumbbell press instead work the same muscles and for somebody who doesn't need to specifically ohp works fine"
+
+V169-45  R169@14:13  tier:R scope:GERAL modo:prescricao genero:perguntas explicit
+  tópicos: agacho, posterior, selecao-exercicio, aprendizado-motor
+  Nesse caso, trabalhe esse padrão motor e os músculos que ele exige em excesso, que são os da cadeia posterior.
+  verbatim: "try and work that motor pattern and work the muscles that are going to be worked successfully excessively with that squat pattern which would be your posterior chain"
+  condições: V169-44
+
+V169-49  R169@15:29  tier:R scope:GERAL modo:opiniao genero:perguntas explicit
+  tópicos: core, acessorios, selecao-exercicio
+  Ele não acha treino de core realmente necessário para powerlifting, porque as variações específicas já dão trabalho de core suficiente.
+  verbatim: "i don't think it's really necessary for powerlifting i don't i think you get enough core work in your specific variations"
+
+V170-20  R170@04:28  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: agacho, acessorios, selecao-exercicio
+  A variação do primeiro dia de agacho é pause squat com pausa de um segundo no buraco.
+  params: duracao_da_pausa=1 s [seg]
+  verbatim: "are in the hole one second"
+
+V170-21  R170@04:28  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: agacho, acessorios, selecao-exercicio
+  Às vezes ele troca por above parallel pause squats: desce tudo e, na subida, pausa por um segundo cerca de duas polegadas acima do paralelo.
+  params: altura_da_pausa=2 polegadas [polegadas]  duracao_da_pausa=1 s [seg]
+  verbatim: "something i will also do sometimes is above parallel pause squats so i do is go all the way down then um about two inches above parallel on the concentric on the way up i'll pause for a second there"
+
+V170-26  R170@05:13  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: agacho, acessorios, selecao-exercicio
+  No segundo dia de agacho ele faz tempo squats, que como as pause squats reduzem o stretch reflex.
+  verbatim: "my second day i'm doing tempo squats um similar to paw squats in that they reduce the stretch reflex"
+
+V170-28  R170@05:44  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: agacho, meta-metodologia, selecao-exercicio
+  Ele também adotou tempo squats porque viu lifters que admira, em particular Connor Borkard, terem ótimos resultados com elas.
+  verbatim: "and i've also just seen lifters i look up to have great results of tempo squats the one in particular is connor borkard"
+
+V170-37  R170@08:01  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, selecao-exercicio, acessorios, rom
+  O primeiro dia de supino dele é Larson press, uma variação bem específica que dá amplitude extra para quem arqueia.
+  verbatim: "day one i've got larson press um real specific variation um you get the extra range of motion if you're a guy who arches like me"
+
+V170-38  R170@08:16  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, selecao-exercicio, ombros, rom
+  O segundo dia é Spoto press, que enfatiza a amplitude onde fica o sticking point dele, no meio do movimento.
+  verbatim: "second day i've got spoiler press really like that um for me i'm sort of a midway sticking point so it emphasizes that range of motion"
+
+V170-45  R170@09:50  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, acessorios, selecao-exercicio
+  Na segunda metade da semana a variação de supino dele é long pause bench press no peito, para construir explosividade saindo do peito.
+  verbatim: "my variations now are long pause bench press on the chest um again building explosiveness off the chest"
+
+V170-47  R170@10:50  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: supino, acessorios, selecao-exercicio
+  O tempo bench dele é uma excêntrica de 5 segundos controlada, com pausa no peito e depois subida.
+  params: duracao_excentrica=5 s [seg]
+  verbatim: "basically a five second concentric or sorry eccentric lowering nice and controlled and then pause on chest press up simple"
+
+V170-49  R170@11:21  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: terra, acessorios, selecao-exercicio
+  No primeiro dia de terra ele faz pause deadlift com a pausa perto dos joelhos.
+  verbatim: "what i do is i pause near my knees"
+
+V170-51  R170@11:36  tier:R scope:PESSOAL modo:mecanismo genero:aula explicit
+  tópicos: terra, acessorios, selecao-exercicio
+  Pausando na altura dos joelhos ele castiga exatamente onde o levantamento costuma desacelerar, em vez de pausar do chão como muita gente faz.
+  verbatim: "so by pausing at the knees i find i punish where i usually start to have um slowing down so it's really trying to emphasize where my issue is"
+
+V170-53  R170@12:06  tier:R scope:PESSOAL modo:narrativa genero:aula explicit
+  tópicos: terra, acessorios, selecao-exercicio, rom
+  No segundo dia de terra ele faz deficit deadlifts, com que sempre teve muito sucesso pela amplitude extra.
+  verbatim: "so day two i'm doing deficit deadlifts um i've always had a lot of success doing these but extra range of motion"
+
+V171-11  R171@03:49  tier:R scope:GERAL modo:opiniao genero:perguntas explicit
+  tópicos: costas, selecao-exercicio, acessorios
+  Não é preciso nada específico para lombar: agachamento e terra já trabalham a região.
+  verbatim: "I don't think you have to do anything specific. Squats and deadlifts, they're going to work that already"
+
+V171-19  R171@05:51  tier:R scope:GERAL modo:prescricao genero:perguntas explicit
+  tópicos: sumo, convencional, selecao-exercicio
+  Para escolher entre sumo e convencional, faça os dois por um tempo e o que parecer mais forte provavelmente é a melhor opção de longo prazo.
+  verbatim: "just do both for a bit and whichever one feels stronger is probably going to be better option long-term"
+  condições: V171-20
+
+V171-21  R171@06:37  tier:R scope:PESSOAL modo:opiniao genero:perguntas explicit
+  tópicos: selecao-exercicio, agacho
+  Entre variações, o agachamento com pausa é a favorita dele.
+  verbatim: "I'd say pause squat is my favorite"
+
+V171-22  R171@06:52  tier:R scope:PESSOAL modo:opiniao genero:perguntas explicit
+  tópicos: selecao-exercicio, terra
+  No terra, gosta de deficit deadlift e de snatch grip deadlift.
+  verbatim: "On deadlifts, I like deficit deadlifts and I like snatch grip deadlifts, too"
+
+V171-23  R171@06:52  tier:R scope:PESSOAL modo:opiniao genero:perguntas explicit
+  tópicos: selecao-exercicio, supino
+  No supino, gosta muito de feet up bench, com as pernas deitadas no banco.
+  verbatim: "On bench press, um I really like feet up bench a lot"
+
+V171-35  R171@12:14  tier:R scope:GERAL modo:prescricao genero:perguntas explicit
+  tópicos: selecao-exercicio, mentalidade
+  Não tenha medo de colocar exercícios divertidos no programa, mesmo que não sejam os mais ótimos.
+  verbatim: "Don't be afraid to program or put in some fun exercises, you know, even if it's not the most optimal"
+
+V172-05  R172@01:22  tier:R scope:GERAL modo:opiniao genero:aula explicit
+  tópicos: competicao, selecao-exercicio
+  Se você é melhor em algo, é burrice não usar isso na competição.
+  verbatim: "if you're better at something why would you not do in competition if you don't do it you're kind of stupid"
+
+V175-61  R175@18:21  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: terra, selecao-exercicio, series-reps
+  O terceiro dia é terra com pausa em 3 séries de 4 a 6 repetições.
+  params: series=3 séries [series]  reps_min=4 reps [reps]  reps_max=6 reps [reps]
+  verbatim: "third day is pause deadlifts i do three by four to six"
+
+V175-62  R175@18:21  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: terra, selecao-exercicio, series-reps
+  O quarto dia é deficit deadlift, também em 3 séries de 4 a 6 repetições.
+  params: series=3 séries [series]  reps_min=4 reps [reps]  reps_max=6 reps [reps]
+  verbatim: "my fourth day i do three by four to six again on deficit deadlifts"
+
+V177-12  R177@02:27  tier:R scope:GERAL modo:prescricao genero:log-de-treino explicit
+  tópicos: lesao, selecao-exercicio
+  Ache o movimento mais específico possível que dê para fazer sem dor ou com dor mínima e que não piore a dor.
+  verbatim: "find the most specific movement you can do with no pain or very minimal pain to the point"
+
+V177-14  R177@02:42  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: lesao, agacho, selecao-exercicio
+  A reabilitação levou alguns meses e o exercício em que ele parou foi o agachamento com pausa, que funcionou muito bem.
+  verbatim: "it took me a couple months what i settled on was paw squats worked really well for me"
+
+V185-06  R185@01:16  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: selecao-exercicio, agacho, mentalidade
+  Escolheu agachamento com pausa como top set porque estava sem confiança e o achou mais fácil de controlar que o agachamento de competição.
+  verbatim: "i chose paw squats because like i said i was lacking confidence and feeling shaky i felt paw squats were easier to control than a competition squat"
+
+V185-07  R185@01:16  tier:R scope:PESSOAL modo:mecanismo genero:log-de-treino explicit
+  tópicos: selecao-exercicio, intensidade
+  O agachamento com pausa também tem carga absoluta menor, então o corpo está mais acostumado e ele se presta melhor a ser empurrado.
+  verbatim: "also it's lower absolute load so body's more used to it better suited for pushing than a normal squat"
+
+V185-23  R185@06:20  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: selecao-exercicio
+  Não troca muito de variação, a não ser que uma esteja indo muito mal.
+  verbatim: "i don't switch up variations very much unless i feel like one is just going terribly"
+
+V185-24  R185@06:35  tier:R scope:PESSOAL modo:narrativa genero:log-de-treino explicit
+  tópicos: selecao-exercicio, progressao
+  A outra razão para trocar de variação é ter esgotado a progressão possível nela.
+  verbatim: "i've basically worked through um the progression as much as i can the variation's not gonna progress anymore and i need to move on to another one"
+
+  filtros que estão escondendo material:
+     --topic selecao-exercicio: 468 COM ele, 6912 SEM ele — esconde 6444 claim(s)
+        F001-01(undefined/undefined) F001-02(undefined/undefined) F001-03(undefined/undefined) F001-04(undefined/undefined) F001-05(undefined/undefined) F001-06(undefined/undefined) F001-07(undefined/undefined) F001-08(undefined/undefined) …+6436
+
