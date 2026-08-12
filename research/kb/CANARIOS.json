@@ -180,15 +180,18 @@
   "onda 2D consertou isso, e o soterramento SUBIU de 10 para 11 de 12: a alocação",
   "trocou \"a gaveta grande come tudo\" por \"as vagas se repartem entre gavetas",
   "erradas\". A prova está gravada no D05 e no D06, e ela é contraintuitiva —",
-  "FORÇAR MAIS DE UMA GAVETA DESTRÓI A RESPOSTA:",
+  "FORÇAR MAIS DE UMA GAVETA DESTRÓI A RESPOSTA — ESTA AFIRMAÇÃO É FALSA E FICA",
+  "ESCRITA RISCADA, porque a lição dela não fecha. O que estava aqui era:",
   "",
   "    D05  --topic convencional              -> os 3",
   "         --topic convencional sumo terra   -> ZERO",
-  "    D06  --topic comandos-ipf              -> F001-11",
-  "         --topic comandos-ipf agacho       -> ZERO",
   "",
-  "Abrir a gaveta certa MAIS uma vizinha é pior do que abrir só a certa. A",
-  "alocação é soma zero e nenhuma trava vê isso: é a divergência §8.45 do RUNBOOK.",
+  "Os DOIS comandos são o MESMO comando. `--topic` lê UM valor e descarta o resto",
+  "em silêncio (check-evidence.mjs, `const arg`), então `sumo` e `terra` nunca",
+  "chegaram a lugar nenhum. Conferido por sha1 da saída em 12/08/2026:",
+  "node research/tools/auditoria-onda2f/topic-parse.mjs. O soma-zero era real; a",
+  "PROVA, não. Modo de falha nº 5 desta casa, variante nova: a prova que não prova.",
+  "O defeito de parsing continua ABERTO — ver RUNBOOK §8.60.",
   "",
   "A LINHA QUE SEPARA VAGA DE ORDEM, e ela decide onde vai o dinheiro da próxima",
   "onda. Forçando sozinha a gaveta que contém a resposta,",
@@ -209,7 +212,42 @@
   "D01–D12 ESTÃO PUBLICADOS A PARTIR DESTE COMMIT e, portanto, queimados. A regra",
   "não mudou e já custou caro duas vezes: conjunto de teste publicado vira",
   "conjunto de treino, e a próxima onda de recuperação precisa de um conjunto cego",
-  "NOVO, escrito por quem não viu a ferramenta nem este arquivo, ANTES do conserto."
+  "NOVO, escrito por quem não viu a ferramenta nem este arquivo, ANTES do conserto.",
+  "",
+  "",
+  "A SÉTIMA ENTRADA — E01–E12, o CONJUNTO CEGO de 13/08/2026, e o que ele mede",
+  "que os anteriores não mediam. As doze perguntas foram escritas pelo workflow",
+  "da onda 2F contra a base, sem ver a ferramenta, e rodadas pela CLI de verdade",
+  "com o comando impresso antes de cada conclusão",
+  "(node research/tools/auditoria-onda2f/cegos.mjs). A medida, e ela entra AQUI",
+  "vermelha:",
+  "",
+  "     7 de 12 devolvem ALGUM id esperado",
+  "     3 de 12 devolvem TODOS os ids  (E04, E10, E12)",
+  "     0 de 12 falham por ROTEAMENTO — em 12 de 12 abre uma gaveta que CONTÉM",
+  "             a resposta",
+  "     2 de 12 abrem a gaveta em que a resposta MORA (`topicoDaResposta`)",
+  "",
+  "O SEGUNDO NÚMERO É O DIAGNÓSTICO INTEIRO. `semGaveta` é ZERO: não sobrou",
+  "roteamento a consertar neste conjunto. Os 9 fracassos são todos SOTERRAMENTO —",
+  "a gaveta abriu, a claim está etiquetada nela, e a ordenação dentro da gaveta a",
+  "deixou fora do corte de 18. F001-79 é a 78ª de `equipamento` quando forçada;",
+  "F001-30 é a 57ª de `supino` e a 35ª de `setup`. Cinco ondas foram gastas",
+  "afinando roteamento, que é a metade que já funciona.",
+  "",
+  "A DISTÂNCIA PÚBLICO-CEGO INVERTEU, e isso também é dado: 58 % ALGUM / 25 %",
+  "COMPLETO no cego contra 61 % / 33 % no público P01–P18 — perto demais para",
+  "sustentar 'otimizado para o visível', e o oposto do 2,3× de 12/08. A ressalva",
+  "que impede ler isso como ausência de overfit: o arquivo dos doze esteve no",
+  "repositório em texto puro (`CANARIOS-CEGOS-E.json`) enquanto a onda rodava, e",
+  "'escondido do construtor' não é verificável a posteriori. O arquivo foi",
+  "APAGADO ao ser absorvido aqui, porque duas cópias do mesmo canário divergem em",
+  "silêncio — modo de falha nº 3.",
+  "",
+  "E01–E12 ESTÃO PUBLICADOS A PARTIR DESTE COMMIT e, portanto, queimados. Sétima",
+  "vez que esta regra é escrita: conjunto de teste publicado vira conjunto de",
+  "treino. A próxima medição precisa de um conjunto cego NOVO, escrito antes do",
+  "conserto por quem não viu a ferramenta nem este arquivo."
  ],
  "tetoDeTela": 40,
  "gerado": "2026-08-09",
@@ -2181,6 +2219,412 @@
     ],
     "recuperados": [],
     "veredito": "falha"
+   }
+  },
+  {
+   "id": "E01",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha",
+   "porque": "A base chama isso de tendinite e responde no vocabulário clínico; o atleta diz `incômodo no peito` e `descansar totalmente`. A gaveta `dor` ABRE e mesmo assim entrega uma das duas: V089-24 sai, V089-25 fica fora do corte da seção. Para este atleta, com histórico de peitoral, a resposta errada é a mais intuitiva — parar de vez.",
+   "esperado": "não descansar completamente, porque com tendinite o descanso total piora o quadro; o contorno é variação de velocidade lenta — tempo e pausas — porque a tensão no tendão depende do peso E da velocidade em que ele é movido.",
+   "sustenta": [
+    "V089-24",
+    "V089-25"
+   ],
+   "frases": [
+    "you don't want to completely rest",
+    "slow velocity variations"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs V089-24 V089-25 -> 2 de 2 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "dor",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": true,
+    "gavetasComResposta": [
+     "dor"
+    ],
+    "recuperados": [
+     "V089-24"
+    ],
+    "veredito": "falha"
+   }
+  },
+  {
+   "id": "E02",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar",
+   "porque": "A palavra da base é `flare`, que o atleta não usa: ele descreve o gesto. As duas claims moram nas três gavetas que a pergunta parece pedir — supino, ombros e dor — e `supino` (694) e `ombros` ABREM e não entregam nenhuma das duas. É soterramento dentro da gaveta, não roteamento. A resposta é de duas metades que precisam sair juntas: V167-17 admite que a dor acontece, V167-18 diz que ela não é inerente ao movimento.",
+   "esperado": "a dor de ombro no flare acontece com algumas pessoas, e ele não a considera inerente ao movimento — é algo a que o corpo precisa de tempo para se acostumar.",
+   "sustenta": [
+    "V167-17",
+    "V167-18"
+   ],
+   "frases": [
+    "flare",
+    "inerente ao movimento"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs V167-17 V167-18 -> 2 de 2 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "dor",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": false,
+    "gavetasComResposta": [
+     "ombros",
+     "supino"
+    ],
+    "recuperados": [],
+    "veredito": "falha"
+   }
+  },
+  {
+   "id": "E03",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita",
+   "porque": "Resposta ESTREITA de sim/não com duas claims de regulamento, e ela mora numa gaveta minúscula (`cinto`, 54) que não abre; abre `supino` (694), que ETIQUETA as duas e as soterra. O atleta diz `fivela`, palavra que não está na lista de entrada de nenhuma das 74 gavetas.",
+   "esperado": "não aceita: a barra não pode tocar o cinto, e tocar o cinto é uma das causas listadas de anulação do supino.",
+   "sustenta": [
+    "F001-37",
+    "F001-47"
+   ],
+   "frases": [
+    "não pode tocar o cinto",
+    "tocar o cinto"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs F001-37 F001-47 -> 2 de 2 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "cinto",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": false,
+    "gavetasComResposta": [
+     "supino"
+    ],
+    "recuperados": [
+     "F001-37"
+    ],
+    "veredito": "falha"
+   }
+  },
+  {
+   "id": "E04",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos",
+   "porque": "A resposta é um PAR que se contradiz de propósito: no agacho o polegar NÃO precisa envolver a barra (F001-14), no supino ele TEM de envolver (F001-28). A pergunta pede explicitamente os três movimentos, e entregar só uma das duas produz a resposta errada para o outro. `dedão` não está na lista de entrada de nenhuma gaveta; a base diz `polegar` e `thumbless`.",
+   "esperado": "depende do movimento: no agacho o polegar não precisa envolver a barra; no supino a pegada tem de ser com o polegar envolvendo a barra.",
+   "sustenta": [
+    "F001-14",
+    "F001-28"
+   ],
+   "frases": [
+    "polegar não precisa envolver a barra",
+    "polegar envolvendo a barra"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs F001-14 F001-28 -> 2 de 2 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "pegada",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": true,
+    "gavetasComResposta": [
+     "pegada",
+     "supino"
+    ],
+    "recuperados": [
+     "F001-14",
+     "F001-28"
+    ],
+    "veredito": "passa"
+   }
+  },
+  {
+   "id": "E05",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo",
+   "porque": "Resposta ESTREITA de uma claim só, e `equipamento` não abre. `perna` abre `pernas` (125) e `sumo` (145), duas gavetas de MÚSCULO e de TÉCNICA; a gaveta de REGRA não entra. É o item que desclassifica na inspeção de equipamento se o atleta descobrir no dia.",
+   "esperado": "meia de cano até a canela é obrigatória no terra, para cobrir e proteger as canelas.",
+   "sustenta": [
+    "F001-79"
+   ],
+   "frases": [
+    "meia de cano até a canela"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs F001-79 -> 1 de 1 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "equipamento",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": false,
+    "gavetasComResposta": [
+     "terra"
+    ],
+    "recuperados": [],
+    "veredito": "falha"
+   }
+  },
+  {
+   "id": "E06",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda",
+   "porque": "Gaveta MINÚSCULA (`strap`, 15 claims) contra enormes; `equipamento` abre e não entrega nenhuma das duas. Nenhuma palavra da pergunta está na lista de entrada de `strap`: o atleta descreve o SINTOMA (o número não se repete), não a causa, porque a causa é justamente o que ele não sabe.",
+   "esperado": "o gap de cerca de 100 lb entre terra de academia e de competição vem de três coisas — a barra, as anilhas e as straps — e com strap a barra fica praticamente pendurada fora da mão, cortando ainda mais amplitude.",
+   "sustenta": [
+    "V174-12",
+    "V174-16"
+   ],
+   "numeros": [
+    100
+   ],
+   "frases": [
+    "a barra, as anilhas e as straps"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs V174-12 V174-16 -> 2 de 2 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "strap",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": false,
+    "gavetasComResposta": [
+     "equipamento"
+    ],
+    "recuperados": [],
+    "veredito": "falha"
+   }
+  },
+  {
+   "id": "E07",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao",
+   "porque": "Uma pergunta literalmente sobre sono não abre a gaveta `sono` (57): a lista de entrada dela tem `dormir`, `horário de dormir`, `consistência de sono`, e a pergunta diz `durmo` e `cada dia numa hora diferente`. `recuperacao` (368) abre e não entrega. Sem isso a resposta vira `durma mais`, que é o conselho errado para quem já dorme sete horas.",
+   "esperado": "conta: o item número um da higiene de sono é o horário consistente, e há pesquisa indicando que a consistência do horário pode ser mais importante que a própria duração do sono.",
+   "sustenta": [
+    "V015-10",
+    "V015-12"
+   ],
+   "frases": [
+    "horário consistente",
+    "mais importante que a própria duração"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs V015-10 V015-12 -> 2 de 2 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "sono",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": false,
+    "gavetasComResposta": [
+     "recuperacao"
+    ],
+    "recuperados": [],
+    "veredito": "falha"
+   }
+  },
+  {
+   "id": "E08",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso",
+   "porque": "`antropometria` (78) e `profundidade` (87) são pequenas e a rota abre `agacho` (990) mais três gavetas sem relação (frequencia, ordem-exercicio, cinto). A resposta muda a decisão inteira: a resposta padrão — mobilidade, mais alongamento, corrigir a forma — é a errada e faz o atleta perseguir uma correção que o osso dele não permite. `amasso contra mim mesmo` e `do meu osso` não estão na lista de entrada de nenhuma gaveta.",
+   "esperado": "é do osso: o fêmur encosta no acetábulo e gera o arredondamento e a sensação de amontoado no fundo; a falta de profundidade vem de esbarrar em si mesmo no quadril; e para esse levantador algum arredondamento da lombar é inevitável, porque é o que permite contornar a articulação e atingir a profundidade.",
+   "sustenta": [
+    "G031-37",
+    "G031-38",
+    "G029-17"
+   ],
+   "frases": [
+    "fêmur encosta no acetábulo",
+    "arredondamento da lombar é inevitável",
+    "esbarrar em si mesmo"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs G031-37 G031-38 G029-17 -> 3 de 3 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "antropometria",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": false,
+    "gavetasComResposta": [
+     "agacho"
+    ],
+    "recuperados": [
+     "G031-37",
+     "G031-38"
+    ],
+    "veredito": "falha"
+   }
+  },
+  {
+   "id": "E09",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida",
+   "porque": "A gaveta certa é a segunda MENOR desta base com resposta útil (`carga-de-treino`, 13 claims) e ela não abre; abrem `volume` (750) e `progressao` (741), 1 para 57. As palavras da pergunta (`séries`, `carga`, `semana`) são exatamente as que pertencem às gavetas gigantes, então a diluição aqui é estrutural. A resposta é o nome de uma ferramenta que o atleta não sabe que existe.",
+   "esperado": "existe: o stress index, criado por Mike Tuchscherer, que serve justamente para comparar entre si séries de estresse diferentes — e a razão de certas progressões serem brutalmente efetivas é que a gestão de volume e intensidade cria uma banda estreita de stress index.",
+   "sustenta": [
+    "G008-27",
+    "G008-29",
+    "G008-43"
+   ],
+   "frases": [
+    "stress index",
+    "banda estreita"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs G008-27 G008-29 G008-43 -> 3 de 3 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "carga-de-treino",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": false,
+    "gavetasComResposta": [
+     "volume"
+    ],
+    "recuperados": [
+     "G008-29"
+    ],
+    "veredito": "falha"
+   }
+  },
+  {
+   "id": "E10",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "posso passar esparadrapo no dedao pra segurar melhor a barra no terra",
+   "porque": "Resposta ESTREITA de uma claim só, e a resposta é um `sim, mas` que o atleta não adivinha: a fita é permitida E não pode ser usada como ajuda para segurar a barra, que é literalmente o motivo declarado na pergunta. `esparadrapo` não está na lista de entrada de nenhuma das 74 gavetas; a base diz `fita médica` e `tape`.",
+   "esperado": "a fita em si é permitida — duas camadas de fita médica em volta dos polegares — mas ela não pode ser usada como ajuda para segurar a barra, que é exatamente o uso pedido.",
+   "sustenta": [
+    "F001-100"
+   ],
+   "numeros": [
+    2
+   ],
+   "frases": [
+    "não pode ser usada como ajuda para segurar a barra"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs F001-100 -> 1 de 1 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "equipamento",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": false,
+    "gavetasComResposta": [
+     "pegada"
+    ],
+    "recuperados": [
+     "F001-100"
+    ],
+    "veredito": "passa"
+   }
+  },
+  {
+   "id": "E11",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa",
+   "porque": "Resposta ESTREITA de sim/não com uma claim só, e ela é o contrário do que o atleta teme. `supino` (694) ABRE, etiqueta a claim e a soterra: F001-30 é a 57ª de `supino` e a 35ª de `setup`. `queima a tentativa` não está em entrada nenhuma — o regulamento diz `anula`, `nulo`, `luz vermelha`. Errar aqui faz o atleta amarrar o pé e perder leg drive por medo de uma regra que não existe.",
+   "esperado": "não queima: movimento de pé é permitido durante o supino, desde que o pé continue plano na plataforma.",
+   "sustenta": [
+    "F001-30"
+   ],
+   "frases": [
+    "movimento de pé é permitido"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs F001-30 -> 1 de 1 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "setup",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": false,
+    "gavetasComResposta": [
+     "supino"
+    ],
+    "recuperados": [],
+    "veredito": "falha"
+   }
+  },
+  {
+   "id": "E12",
+   "familia": "presente-escondido",
+   "conjunto": "cego-2026-08-13 (E01-E12, escrito pelo workflow da onda 2F, absorvido a partir deste commit)",
+   "pergunta": "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca",
+   "porque": "A resposta só serve inteira, e as duas metades moram em gavetas diferentes: V127-15 (lesao/dor/volume) diz que SIM; V127-13 (selecao-exercicio/supino/volume) é a condição que impede o estrago. Para este atleta — reexposição gradual do supino após peitoral rompido — devolver só o `pode` sem a condição é o erro que custa a competição. Este é o único dos doze em que a rota entrega as duas metades.",
+   "esperado": "pode: quem se detona num movimento pode fazer a maior parte ou até todo o trabalho com variações auto-limitantes — com a condição de não depender demais de uma variação em que o leg drive não é praticado, para não deixar o leg drive deficiente no supino principal.",
+   "sustenta": [
+    "V127-15",
+    "V127-13"
+   ],
+   "frases": [
+    "variações auto-limitantes",
+    "leg drive"
+   ],
+   "historia": "Escrito às cegas pelo workflow da onda 2F em 13/08/2026, contra a base e não contra a ferramenta. node research/tools/check-evidence.mjs V127-15 V127-13 -> 2 de 2 existem. Pela porta nova, com o comando impresso antes da conclusão: node research/tools/auditoria-onda2f/cegos.mjs. Pelo caminho do agente (três modelos escolhendo a gaveta com o glossário): node research/tools/auditoria-onda2f/placar-agente.mjs.",
+   "perguntaDoAtleta": {
+    "descricao": "a pergunta acima, na voz do atleta, pela porta nova: node research/tools/check-evidence.mjs --pergunta \"<pergunta>\"",
+    "topicoDaResposta": "lesao",
+    "tela": {
+     "porSecao": 18,
+     "secoes": 5
+    },
+    "medidoEm": "2026-08-13",
+    "abriuOTopico": false,
+    "gavetasComResposta": [
+     "dor",
+     "supino"
+    ],
+    "recuperados": [
+     "V127-15",
+     "V127-13"
+    ],
+    "veredito": "passa"
    }
   }
  ]

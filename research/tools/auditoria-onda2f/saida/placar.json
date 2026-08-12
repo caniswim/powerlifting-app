@@ -1,0 +1,996 @@
+{
+  "resumo": [
+    {
+      "roteador": "roteador 1",
+      "gavetaCerta": 12,
+      "idsNaTela": 9,
+      "completos": 8
+    },
+    {
+      "roteador": "roteador 2",
+      "gavetaCerta": 12,
+      "idsNaTela": 9,
+      "completos": 8
+    },
+    {
+      "roteador": "roteador 3",
+      "gavetaCerta": 12,
+      "idsNaTela": 9,
+      "completos": 9
+    },
+    {
+      "roteador": "DETERMINISTICO",
+      "gavetaCerta": -1,
+      "idsNaTela": 7,
+      "completos": 3
+    }
+  ],
+  "unanimes": 8,
+  "unanimesConjunto": 6,
+  "placar": {
+    "roteador 1": {
+      "E01": {
+        "ts": [
+          "dor",
+          "recuperacao",
+          "lesao"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V089-24",
+          "V089-25"
+        ],
+        "achouFrouxo": [
+          "V089-24",
+          "V089-25"
+        ],
+        "completo": true,
+        "esperados": [
+          "V089-24",
+          "V089-25"
+        ],
+        "chars": 51980
+      },
+      "E02": {
+        "ts": [
+          "supino",
+          "ombros",
+          "tecnica"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V167-18"
+        ],
+        "achouFrouxo": [
+          "V167-18"
+        ],
+        "completo": false,
+        "esperados": [
+          "V167-17",
+          "V167-18"
+        ],
+        "chars": 40410
+      },
+      "E03": {
+        "ts": [
+          "supino",
+          "erro-comum",
+          "regras-ipf"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [],
+        "achouFrouxo": [],
+        "completo": false,
+        "esperados": [
+          "F001-37",
+          "F001-47"
+        ],
+        "chars": 41523
+      },
+      "E04": {
+        "ts": [
+          "pegada",
+          "regras-ipf",
+          "erro-comum"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "F001-14",
+          "F001-28"
+        ],
+        "achouFrouxo": [
+          "F001-14",
+          "F001-28"
+        ],
+        "completo": true,
+        "esperados": [
+          "F001-14",
+          "F001-28"
+        ],
+        "chars": 40158
+      },
+      "E05": {
+        "ts": [
+          "equipamento",
+          "sapato",
+          "terra"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [],
+        "achouFrouxo": [],
+        "completo": false,
+        "esperados": [
+          "F001-79"
+        ],
+        "chars": 35543
+      },
+      "E06": {
+        "ts": [
+          "teste-de-forca",
+          "equipamento",
+          "training-max"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [],
+        "achouFrouxo": [],
+        "completo": false,
+        "esperados": [
+          "V174-12",
+          "V174-16"
+        ],
+        "chars": 37993
+      },
+      "E07": {
+        "ts": [
+          "sono",
+          "recuperacao"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V015-10",
+          "V015-12"
+        ],
+        "achouFrouxo": [
+          "V015-10",
+          "V015-12"
+        ],
+        "completo": true,
+        "esperados": [
+          "V015-10",
+          "V015-12"
+        ],
+        "chars": 25869
+      },
+      "E08": {
+        "ts": [
+          "agacho",
+          "antropometria",
+          "profundidade",
+          "mobilidade"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "G031-37",
+          "G031-38",
+          "G029-17"
+        ],
+        "achouFrouxo": [
+          "G031-37",
+          "G031-38",
+          "G029-17"
+        ],
+        "completo": true,
+        "esperados": [
+          "G031-37",
+          "G031-38",
+          "G029-17"
+        ],
+        "chars": 67643
+      },
+      "E09": {
+        "ts": [
+          "carga-de-treino",
+          "volume",
+          "intensidade"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "G008-27",
+          "G008-29",
+          "G008-43"
+        ],
+        "achouFrouxo": [
+          "G008-27",
+          "G008-29",
+          "G008-43"
+        ],
+        "completo": true,
+        "esperados": [
+          "G008-27",
+          "G008-29",
+          "G008-43"
+        ],
+        "chars": 53556
+      },
+      "E10": {
+        "ts": [
+          "equipamento",
+          "regras-ipf",
+          "pegada"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "F001-100"
+        ],
+        "achouFrouxo": [
+          "F001-100"
+        ],
+        "completo": true,
+        "esperados": [
+          "F001-100"
+        ],
+        "chars": 40107
+      },
+      "E11": {
+        "ts": [
+          "supino",
+          "erro-comum",
+          "regras-ipf",
+          "setup"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "F001-30"
+        ],
+        "achouFrouxo": [
+          "F001-30"
+        ],
+        "completo": true,
+        "esperados": [
+          "F001-30"
+        ],
+        "chars": 67116
+      },
+      "E12": {
+        "ts": [
+          "ombros",
+          "dor",
+          "selecao-exercicio",
+          "supino"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V127-15",
+          "V127-13"
+        ],
+        "achouFrouxo": [
+          "V127-15",
+          "V127-13"
+        ],
+        "completo": true,
+        "esperados": [
+          "V127-15",
+          "V127-13"
+        ],
+        "chars": 65239
+      }
+    },
+    "roteador 2": {
+      "E01": {
+        "ts": [
+          "dor",
+          "peito",
+          "recuperacao",
+          "lesao"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V089-24",
+          "V089-25"
+        ],
+        "achouFrouxo": [
+          "V089-24",
+          "V089-25"
+        ],
+        "completo": true,
+        "esperados": [
+          "V089-24",
+          "V089-25"
+        ],
+        "chars": 64474
+      },
+      "E02": {
+        "ts": [
+          "ombros",
+          "supino",
+          "aprendizado-motor"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V167-18"
+        ],
+        "achouFrouxo": [
+          "V167-18"
+        ],
+        "completo": false,
+        "esperados": [
+          "V167-17",
+          "V167-18"
+        ],
+        "chars": 40828
+      },
+      "E03": {
+        "ts": [
+          "supino",
+          "regras-ipf",
+          "erro-comum"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [],
+        "achouFrouxo": [],
+        "completo": false,
+        "esperados": [
+          "F001-37",
+          "F001-47"
+        ],
+        "chars": 41523
+      },
+      "E04": {
+        "ts": [
+          "pegada",
+          "regras-ipf",
+          "erro-comum"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "F001-14",
+          "F001-28"
+        ],
+        "achouFrouxo": [
+          "F001-14",
+          "F001-28"
+        ],
+        "completo": true,
+        "esperados": [
+          "F001-14",
+          "F001-28"
+        ],
+        "chars": 40158
+      },
+      "E05": {
+        "ts": [
+          "equipamento",
+          "sapato",
+          "terra"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [],
+        "achouFrouxo": [],
+        "completo": false,
+        "esperados": [
+          "F001-79"
+        ],
+        "chars": 35543
+      },
+      "E06": {
+        "ts": [
+          "teste-de-forca",
+          "equipamento",
+          "competicao"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [],
+        "achouFrouxo": [],
+        "completo": false,
+        "esperados": [
+          "V174-12",
+          "V174-16"
+        ],
+        "chars": 41015
+      },
+      "E07": {
+        "ts": [
+          "sono",
+          "recuperacao"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V015-10",
+          "V015-12"
+        ],
+        "achouFrouxo": [
+          "V015-10",
+          "V015-12"
+        ],
+        "completo": true,
+        "esperados": [
+          "V015-10",
+          "V015-12"
+        ],
+        "chars": 25869
+      },
+      "E08": {
+        "ts": [
+          "agacho",
+          "profundidade",
+          "antropometria",
+          "mobilidade"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "G031-37",
+          "G031-38",
+          "G029-17"
+        ],
+        "achouFrouxo": [
+          "G031-37",
+          "G031-38",
+          "G029-17"
+        ],
+        "completo": true,
+        "esperados": [
+          "G031-37",
+          "G031-38",
+          "G029-17"
+        ],
+        "chars": 67643
+      },
+      "E09": {
+        "ts": [
+          "carga-de-treino",
+          "volume",
+          "intensidade"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "G008-27",
+          "G008-29",
+          "G008-43"
+        ],
+        "achouFrouxo": [
+          "G008-27",
+          "G008-29",
+          "G008-43"
+        ],
+        "completo": true,
+        "esperados": [
+          "G008-27",
+          "G008-29",
+          "G008-43"
+        ],
+        "chars": 53556
+      },
+      "E10": {
+        "ts": [
+          "equipamento",
+          "regras-ipf",
+          "pegada",
+          "terra"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "F001-100"
+        ],
+        "achouFrouxo": [
+          "F001-100"
+        ],
+        "completo": true,
+        "esperados": [
+          "F001-100"
+        ],
+        "chars": 55597
+      },
+      "E11": {
+        "ts": [
+          "erro-comum",
+          "regras-ipf",
+          "supino",
+          "setup"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "F001-30"
+        ],
+        "achouFrouxo": [
+          "F001-30"
+        ],
+        "completo": true,
+        "esperados": [
+          "F001-30"
+        ],
+        "chars": 67116
+      },
+      "E12": {
+        "ts": [
+          "ombros",
+          "dor",
+          "lesao",
+          "selecao-exercicio"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V127-15",
+          "V127-13"
+        ],
+        "achouFrouxo": [
+          "V127-15",
+          "V127-13"
+        ],
+        "completo": true,
+        "esperados": [
+          "V127-15",
+          "V127-13"
+        ],
+        "chars": 65327
+      }
+    },
+    "roteador 3": {
+      "E01": {
+        "ts": [
+          "dor",
+          "lesao",
+          "peito"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V089-24",
+          "V089-25"
+        ],
+        "achouFrouxo": [
+          "V089-24",
+          "V089-25"
+        ],
+        "completo": true,
+        "esperados": [
+          "V089-24",
+          "V089-25"
+        ],
+        "chars": 46695
+      },
+      "E02": {
+        "ts": [
+          "tecnica",
+          "ombros",
+          "dor"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V167-17",
+          "V167-18"
+        ],
+        "achouFrouxo": [
+          "V167-17",
+          "V167-18"
+        ],
+        "completo": true,
+        "esperados": [
+          "V167-17",
+          "V167-18"
+        ],
+        "chars": 40118
+      },
+      "E03": {
+        "ts": [
+          "regras-ipf",
+          "erro-comum",
+          "supino"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [],
+        "achouFrouxo": [],
+        "completo": false,
+        "esperados": [
+          "F001-37",
+          "F001-47"
+        ],
+        "chars": 41523
+      },
+      "E04": {
+        "ts": [
+          "pegada",
+          "regras-ipf",
+          "erro-comum"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "F001-14",
+          "F001-28"
+        ],
+        "achouFrouxo": [
+          "F001-14",
+          "F001-28"
+        ],
+        "completo": true,
+        "esperados": [
+          "F001-14",
+          "F001-28"
+        ],
+        "chars": 40158
+      },
+      "E05": {
+        "ts": [
+          "equipamento",
+          "regras-ipf",
+          "terra"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [],
+        "achouFrouxo": [],
+        "completo": false,
+        "esperados": [
+          "F001-79"
+        ],
+        "chars": 40192
+      },
+      "E06": {
+        "ts": [
+          "teste-de-forca",
+          "equipamento",
+          "competicao"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [],
+        "achouFrouxo": [],
+        "completo": false,
+        "esperados": [
+          "V174-12",
+          "V174-16"
+        ],
+        "chars": 41015
+      },
+      "E07": {
+        "ts": [
+          "sono",
+          "recuperacao"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V015-10",
+          "V015-12"
+        ],
+        "achouFrouxo": [
+          "V015-10",
+          "V015-12"
+        ],
+        "completo": true,
+        "esperados": [
+          "V015-10",
+          "V015-12"
+        ],
+        "chars": 25869
+      },
+      "E08": {
+        "ts": [
+          "agacho",
+          "antropometria",
+          "mobilidade",
+          "profundidade"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "G031-37",
+          "G031-38",
+          "G029-17"
+        ],
+        "achouFrouxo": [
+          "G031-37",
+          "G031-38",
+          "G029-17"
+        ],
+        "completo": true,
+        "esperados": [
+          "G031-37",
+          "G031-38",
+          "G029-17"
+        ],
+        "chars": 67643
+      },
+      "E09": {
+        "ts": [
+          "carga-de-treino",
+          "volume",
+          "intensidade"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "G008-27",
+          "G008-29",
+          "G008-43"
+        ],
+        "achouFrouxo": [
+          "G008-27",
+          "G008-29",
+          "G008-43"
+        ],
+        "completo": true,
+        "esperados": [
+          "G008-27",
+          "G008-29",
+          "G008-43"
+        ],
+        "chars": 53556
+      },
+      "E10": {
+        "ts": [
+          "equipamento",
+          "regras-ipf",
+          "pegada"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "F001-100"
+        ],
+        "achouFrouxo": [
+          "F001-100"
+        ],
+        "completo": true,
+        "esperados": [
+          "F001-100"
+        ],
+        "chars": 40107
+      },
+      "E11": {
+        "ts": [
+          "erro-comum",
+          "regras-ipf",
+          "supino",
+          "setup"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "F001-30"
+        ],
+        "achouFrouxo": [
+          "F001-30"
+        ],
+        "completo": true,
+        "esperados": [
+          "F001-30"
+        ],
+        "chars": 67116
+      },
+      "E12": {
+        "ts": [
+          "lesao",
+          "ombros",
+          "selecao-exercicio"
+        ],
+        "gavetaCerta": true,
+        "achouEstrito": [
+          "V127-15",
+          "V127-13"
+        ],
+        "achouFrouxo": [
+          "V127-15",
+          "V127-13"
+        ],
+        "completo": true,
+        "esperados": [
+          "V127-15",
+          "V127-13"
+        ],
+        "chars": 49253
+      }
+    }
+  },
+  "determinista": {
+    "E01": {
+      "esperados": [
+        "V089-24",
+        "V089-25"
+      ],
+      "achouEstrito": [
+        "V089-24"
+      ],
+      "achouFrouxo": [
+        "V089-24"
+      ],
+      "secoes": [
+        "peito",
+        "supino",
+        "dor",
+        "descanso-entre-series",
+        "competicao"
+      ],
+      "chars": 35931
+    },
+    "E02": {
+      "esperados": [
+        "V167-17",
+        "V167-18"
+      ],
+      "achouEstrito": [],
+      "achouFrouxo": [],
+      "secoes": [
+        "supino",
+        "ombros",
+        "rom"
+      ],
+      "chars": 18053
+    },
+    "E03": {
+      "esperados": [
+        "F001-37",
+        "F001-47"
+      ],
+      "achouEstrito": [
+        "F001-37"
+      ],
+      "achouFrouxo": [
+        "F001-37"
+      ],
+      "secoes": [
+        "supino",
+        "barra-baixa",
+        "setup",
+        "comandos-ipf",
+        "equipamento"
+      ],
+      "chars": 30640
+    },
+    "E04": {
+      "esperados": [
+        "F001-14",
+        "F001-28"
+      ],
+      "achouEstrito": [
+        "F001-14",
+        "F001-28"
+      ],
+      "achouFrouxo": [
+        "F001-14",
+        "F001-28"
+      ],
+      "secoes": [
+        "supino",
+        "dor",
+        "pegada",
+        "regras-ipf",
+        "lesao"
+      ],
+      "chars": 32699
+    },
+    "E05": {
+      "esperados": [
+        "F001-79"
+      ],
+      "achouEstrito": [],
+      "achouFrouxo": [],
+      "secoes": [
+        "pernas",
+        "terra",
+        "sumo"
+      ],
+      "chars": 20614
+    },
+    "E06": {
+      "esperados": [
+        "V174-12",
+        "V174-16"
+      ],
+      "achouEstrito": [],
+      "achouFrouxo": [],
+      "secoes": [
+        "equipamento",
+        "volume",
+        "series-reps"
+      ],
+      "chars": 18132
+    },
+    "E07": {
+      "esperados": [
+        "V015-10",
+        "V015-12"
+      ],
+      "achouEstrito": [],
+      "achouFrouxo": [],
+      "secoes": [
+        "recuperacao",
+        "dor",
+        "periodizacao",
+        "meta-metodologia",
+        "deload"
+      ],
+      "chars": 32567
+    },
+    "E08": {
+      "esperados": [
+        "G031-37",
+        "G031-38",
+        "G029-17"
+      ],
+      "achouEstrito": [
+        "G031-37",
+        "G031-38"
+      ],
+      "achouFrouxo": [
+        "G031-37",
+        "G031-38"
+      ],
+      "secoes": [
+        "agacho",
+        "core",
+        "frequencia",
+        "ordem-exercicio",
+        "cinto"
+      ],
+      "chars": 33548
+    },
+    "E09": {
+      "esperados": [
+        "G008-27",
+        "G008-29",
+        "G008-43"
+      ],
+      "achouEstrito": [
+        "G008-29"
+      ],
+      "achouFrouxo": [
+        "G008-29"
+      ],
+      "secoes": [
+        "series-reps",
+        "volume",
+        "progressao",
+        "capacidade-trabalho",
+        "frequencia"
+      ],
+      "chars": 35197
+    },
+    "E10": {
+      "esperados": [
+        "F001-100"
+      ],
+      "achouEstrito": [
+        "F001-100"
+      ],
+      "achouFrouxo": [
+        "F001-100"
+      ],
+      "secoes": [
+        "terra",
+        "setup",
+        "costas",
+        "pegada"
+      ],
+      "chars": 24889
+    },
+    "E11": {
+      "esperados": [
+        "F001-30"
+      ],
+      "achouEstrito": [],
+      "achouFrouxo": [],
+      "secoes": [
+        "supino",
+        "dor",
+        "recuperacao",
+        "competicao",
+        "proximidade-da-falha"
+      ],
+      "chars": 34311
+    },
+    "E12": {
+      "esperados": [
+        "V127-15",
+        "V127-13"
+      ],
+      "achouEstrito": [
+        "V127-15",
+        "V127-13"
+      ],
+      "achouFrouxo": [
+        "V127-15",
+        "V127-13"
+      ],
+      "secoes": [
+        "ombros",
+        "recuperacao",
+        "supino",
+        "programacao",
+        "dor"
+      ],
+      "chars": 35024
+    }
+  }
+}

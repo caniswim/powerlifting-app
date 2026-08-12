@@ -531,23 +531,30 @@ no fim.
 > consertada) · **17** (dívida: **74** claims de gênero) · **18** (dívida: `pratica-pessoal`) ·
 > **19** (dívida: **111** params de TAXA) · **20** · **21** · **22** · **23** · **24** ·
 > **26** · **27** · **28** · **29** · **30** · **32** · **33** · **34** · **35** ·
-> **39** (soterramento: **11 de 12 cegos** abrem a gaveta certa e não entregam — o número
-> PIOROU) · **40** (gaveta que não pontuou é invisível) · **41** (a cobertura de
+> **40** (gaveta que não pontuou é invisível) · **41** (a cobertura de
 > mutação declarada era falsa) · **42** (`npm run lint`
-> não cobre `research/tools/`) · **44** (duas definições de "tela": o gate mede 40, o CLI
-> imprime 68) · **45** (o painel de gavetas não abertas nomeia gaveta útil em 2 de 12) ·
+> não cobre `research/tools/`) · **45** (o painel de gavetas não abertas nomeia gaveta útil em 2 de 12) ·
 > **46** (precisão: a tela aprendeu a encolher, mediana 40 → 34, mas 2 de 10 estreitas
 > ainda devolvem 40) · **48** (a alocação é soma zero: abrir a gaveta certa MAIS uma
 > vizinha devolve menos que abrir só a certa) · **49** (`PISO_VAGAS`: a asserção
-> tautológica saiu; a ESCOLHA do valor fica aberta) · **50** (**soterramento DENTRO da
-> gaveta certa: 5 de 33 ids** — a doença seguinte, e ela é ORDENAÇÃO) · **52** (`grep`
-> devolve zero em silêncio no `roteador.mjs`) · **53** (as varreduras que ESCOLHERAM as
+> tautológica saiu; a ESCOLHA do valor fica aberta) · **50** (**ORDENAÇÃO DENTRO da gaveta: 29 de 54
+> canários reprovam com a gaveta certa forçada no teto de 18 — a PRIMEIRA da fila**) · **53** (as varreduras que ESCOLHERAM as
 > constantes não reproduzem) · **54** (o canário do cinto continua reprovado; o relatório
 > exibiu outra frase) · **55** (a precisão do TOPO piorou: mediana da resposta certa 6 → 8) ·
 > **56** (a fisgada perde 2 das 5 sob paráfrase) · **57** (buracos de roteamento com "não
 > sei" silencioso sobre fato que a base tem literal) · **58** (a cobertura de mutação do
-> vocabulário: o número que vale é `troca` **71/74**, não `lixo` 74/74).
-> São **39**. O plano de execução delas está em **`research/kb/ONDA-2C.md`**
+> vocabulário: o número que vale é `troca` **71/74**, não `lixo` 74/74) ·
+> **59** (a invariante de não-diluição é uma TAUTOLOGIA: 38 violações em 1.832 quando se
+> varia o `max` de verdade) · **60** (`--topic a b c` lê UM valor, e `--topic` DESCARTA a
+> rota inteira enquanto o banner promete o contrário) · **61** (o teto de 34 kB é
+> calibrado na pergunta errada: o máximo medido é **40,0 kB**) · **62** (o escape
+> `--topic <gaveta certa>` regrediu de 12/12 para **10/12** e nada o mede) · **63**
+> (`TETO_LIGACAO` 8→80 sobrevive à mutação e NÃO estava na dívida declarada) · **64** (o
+> gate mede um caminho que o produto deixou de usar) · **65** (`regras-ipf` é
+> gaveta-chamariz: **8 de 143** claims do regulamento a carregam).
+> São **43**. O plano de execução das SETE primeiras — as que decidem esta linha de
+> trabalho — está em **`research/kb/RECUPERACAO.md` §28.1**, que é a fila de hoje; o
+> restante continua em **`research/kb/ONDA-2C.md`**
 > (o `ONDA-2B.md` é a fila anterior; o `ONDA-2.md` é a de antes dela, e os critérios de
 > aceite deste último estão desatualizados — ver §8.33).
 >
@@ -590,6 +597,29 @@ no fim.
 > próprio item, e o relatório do construtor escolhe quais números publicar mesmo quando
 > não mente em nenhum. Das dez novas, **seis** (49, 53, 54, 55, 56, 58) são números que
 > estavam a um comando de distância e não foram rodados.
+>
+> **Fechamento de 13/8/2026, depois da onda 2E (tela por seção) e do QUINTO ataque cego
+> E01–E12:** entraram **sete** — **59**, **60**, **61**, **62**, **63**, **64** e **65**,
+> todas abertas. Fecharam **duas**: a **44** (há UMA definição de tela, `telaDaResposta()`,
+> e a auditoria conferiu nos dois sentidos — 0 ids da tela ausentes da saída e 0 ids
+> impressos fora da tela, em 17 perguntas) e a **52** (o byte NUL saiu do `roteador.mjs` e
+> o `grep` voltou a funcionar). A **39** e a **50** ganharam número novo e continuam
+> abertas. **Saldo: fecharam duas e abriram sete.**
+>
+> **A INVERSÃO QUE ESTE FECHAMENTO REGISTRA, e é o que muda a fila.** Pela primeira vez o
+> número cego NÃO é o pior: **7 de 12 e 3 de 12** contra 11 de 18 e 6 de 18 no público —
+> 58 %/25 % contra 61 %/33 %, quando em 12/08 a distância era de 2,3×. E pela primeira vez
+> **zero** dos fracassos cegos é roteamento. As divergências **36**, **37**, **39** e
+> **48** descreviam roteamento e alocação, e as três primeiras metades foram consertadas;
+> o que sobrou é a **50**, ORDENAÇÃO DENTRO DA GAVETA, remedida aqui em **29 de 54**
+> canários. **A fila deixou de ser "consertar o roteador" e passou a ser "travar a
+> ordenação e tirar a escolha da gaveta do repositório"** — ver `RECUPERACAO.md` §28.
+>
+> **E a regra que esta lista compra pela QUARTA vez:** o relatório da onda 2E reproduz
+> dígito a dígito — foi o primeiro que reproduziu — e ainda assim **cinco** das sete novas
+> (59, 61, 62, 63, 65) são números que estavam a um comando de distância e não foram
+> rodados. Honestidade no dígito publicado não é o mesmo que publicar o dígito que
+> incomoda.
 
 1. ~~**`npm run check:kb` não está no `npm run build`.**~~ **RESOLVIDO** — `scripts.build`
    agora roda `check:kb` antes do `tsc -b`. A base deixou de depender de quem lembrar.
@@ -941,8 +971,8 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     (`viaPaginaAoLado` no T05 e o caso T15 do `ROTAS.json`). **A lição vale mais que o
     item:** uma lista de buracos conhecidos escrita por quem fez o conserto não é medida.
     **E ela se repetiu, exatamente igual, em 11/8** — ver a 41.
-39. **O SOTERRAMENTO, e o MECANISMO dele, medido em 12/8/2026: a tela não tem cota por
-    gaveta.** É a segunda metade da 36 e não se mexeu entre 10/8 e 12/8. **`0 de 18`
+39. ~~**O SOTERRAMENTO, e o MECANISMO dele, medido em 12/8/2026: a tela não tem cota por
+    gaveta.**~~ **FECHADA em 13/8/2026 — ver o parágrafo final deste item.** É a segunda metade da 36 e não se mexeu entre 10/8 e 12/8. **`0 de 18`
     canários públicos e `0 de 12` cegos devolvem os ids esperados**, e o terceiro ataque
     cego mostrou que em **10 dos 12** a gaveta que contém a resposta ABRIU e a resposta
     não chegou à tela — só B02 e B05 são roteamento. Forçando a gaveta com `--topic`,
@@ -968,7 +998,16 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     conserto suficiente**: trocou *"a gaveta grande come tudo"* por *"as vagas se repartem
     entre gavetas erradas"*, que é a §8.48. A parte desta divergência que a onda 2D de
     fato fechou é o mecanismo de tamanho (`agacho(990)` não leva mais 39 vagas); a parte
-    que continua aberta é a que o atleta sente. **Aberta.**
+    que continua aberta é a que o atleta sente.
+    **REMEDIDA EM 13/8/2026, contra o conjunto cego NOVO E01–E12, e a metade que era desta
+    divergência FECHOU: soterramento de 11 de 12 para 9 de 12, e a metade de ROTEAMENTO
+    foi a ZERO.** Em **12 de 12** a rota abre uma gaveta que CONTÉM a resposta etiquetada
+    (`semGaveta` = 0 no `check-canarios.mjs`). A tela por seção da onda 2E matou a
+    repartição soma-zero: `montarSecaoDeGaveta` não recebe as outras gavetas, então
+    `agacho(990)` não come vaga de `sapato(18)` porque não há vaga comum a comer. **O que
+    esta divergência descrevia — a tela sem cota por gaveta — deixou de existir.** O que
+    restou não é dela: é a §8.50, ordenação DENTRO da gaveta. **FECHADA, e o trabalho
+    migrou para a 50.**
 40. **Gaveta que a pergunta não toca por canal nenhum é invisível às duas portas.**
     `autorregulacao` etiqueta V001-06 e V138-19 e não aparece na pergunta da fisgada nem
     no aviso novo de gavetas não abertas, porque não pontuou sozinha — e o aviso usa, de
@@ -1040,7 +1079,8 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     E a trava **recusa lixo, não recusa uma lista de termos reais porém ERRADOS** para
     aquela gaveta: trocar a entrada de `sono` pela de `fadiga` passa aqui. Quem cobra
     acerto de roteamento continua sendo `check-rotas.mjs` e os canários.
-44. **Duas definições de "tela" na mesma camada** (modo de falha nº 3). `CANARIOS.json`
+44. ~~**Duas definições de "tela" na mesma camada** (modo de falha nº 3).~~ **RESOLVIDA em
+    13/8/2026 — ver o fim deste item.** `CANARIOS.json`
     declara `tetoDeTela: 40` e o `check-canarios.mjs` mede `telaDe(r).slice(0, 40)`; o
     `check-evidence.mjs` imprime **68 claims distintas** (40 roteadas + canal de param +
     página ao lado). Reproduz:
@@ -1051,6 +1091,15 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     chegavam à tela quando chega **uma** (V079-34 em 36º de 40; V027-23 na posição 56).
     Corrigido no `RECUPERACAO.md` §20.1, com o texto original riscado. A próxima medição
     pode mudar em silêncio enquanto as duas réguas existirem sem uma dizer o nome da outra.
+    **RESOLVIDA em 13/8/2026, e conferida nos DOIS sentidos por quem não a construiu.** Há
+    UMA definição, `telaDaResposta()` em `roteador.mjs`: a CLI imprime exatamente ela e
+    toda trava conta exatamente ela. Em 17 perguntas, **0 ids da tela ausentes da saída do
+    processo e 0 ids impressos fora da tela** — as únicas divergências aparentes eram a
+    prosa fixa que cita V033-03 e os campos `condicoes:`/`conflita:` de claims que já
+    estão na tela, conferidas uma a uma antes de não serem chamadas de furo. Os NÚMEROS
+    continuam vindo do JSON do canário (`tela: { porSecao, secoes }`), então inflar
+    `TETO_DA_SECAO` na ferramenta não muda uma linha do que as travas cobram.
+    Reprodução: `node research/tools/auditoria-onda2f/tela.mjs`.
 45. **O painel `GAVETAS QUE PONTUARAM E NÃO ABRIRAM` nomeia uma gaveta útil em 2 de 12, e
     em 0 das 2 falhas de roteamento.** Ele é instrumento novo e real — antes a tela saía
     cheia e muda —, mas nos doze cegos só imprime gaveta que de fato contém a resposta em
@@ -1150,7 +1199,31 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     forçando `dor`, nem forçando `lesao`. Nenhuma quantidade de vaga alcança uma claim que
     está abaixo do corte de relevância dentro da própria gaveta. **É esta divergência, e o
     número 28/5, que responde por escrito a pergunta do atleta sobre a frota de modelo
-    barato** — ver `ONDA-2C.md` §0.3. **Aberta.**
+    barato** — ver `ONDA-2C.md` §0.3.
+    **REMEDIDA EM 13/8/2026 sobre TODOS os 54 canários da porta nova, e ela passou a ser a
+    divergência PRINCIPAL desta camada.** `node research/tools/auditoria-onda2f/contrato-ordenacao.mjs`
+    força, para cada id, a gaveta em que ele está ETIQUETADO (nunca a "parecida") e mede a
+    posição:
+
+    | conjunto | teto 18 (o que o atleta vê) | teto 60 (gaveta forçada) |
+    |---|---|---|
+    | P01–P18 | 7/18 canários · 31/49 ids | 11/18 · 40/49 |
+    | B01–B12 | 5/12 · 12/21 | 10/12 · 19/21 |
+    | D01–D12 | 5/12 · 23/33 | 10/12 · 29/33 |
+    | E01–E12 | 8/12 · 19/23 | 11/12 · 22/23 |
+    | **os 54** | **25/54 · 85/126** | **42/54 · 110/126** |
+
+    **O teto que vale é 18, não 60:** 60 mede um caminho que o atleta não percorre e
+    esconde 17 das 29 reprovações. Casos nomeados por posição: **F001-79 em #78 de 152**
+    em `equipamento`, **F001-30 em #35 de 335** em `setup`, **V015-12 em #34 de 57** em
+    `sono`.
+    **E a mesma medida dá o MECANISMO, por número:** na gaveta PEQUENA a resposta está no
+    topo — `strap` #2 de 20, `carga-de-treino` #1 de 17, `cinto` #5 de 56, `mobilidade`
+    #1 de 92 — e na GRANDE ela afunda. É a mesma diferença entre a gaveta que os três
+    modelos escolhem (mediana **117** claims) e a que `PESO_CORPUS` escolhe (mediana
+    **245**). **O conserto tem dois nomes: `ordenarNoTopico` e `PESO_CORPUS`**, e a trava
+    é o CONTRATO DE ORDENAÇÃO do `RECUPERACAO.md` §28.1, que nasce reprovando em 29 de 54.
+    **Aberta, e é a primeira da fila.**
 51. ~~**A bancada que produziu o veredito da auditoria nascia em diretório `gitignored`.**~~
     **RESOLVIDO em 12/8/2026, no mesmo passe que a abriu.** Os onze arquivos de medição da
     auditoria cega foram escritos em `research/tools/scan/`, que está no `.gitignore` desde
@@ -1162,7 +1235,8 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     `scan/` continua ignorado e continua sendo o lugar certo para rascunho descartável;
     **a regra que fica é a da memória do projeto: artefato caro nasce em `research/` e é
     commitado no mesmo dia.**
-52. **`grep` devolve ZERO linhas em silêncio em `research/tools/roteador.mjs`.** O arquivo
+52. ~~**`grep` devolve ZERO linhas em silêncio em `research/tools/roteador.mjs`.**~~
+    **RESOLVIDA em 13/8/2026 — ver o fim deste item.** O arquivo
     contém um byte NUL — separador deliberado de chave de memo, `${topico}\0${afins}` — e
     isso faz o `grep` tratar 93 KB de JavaScript como binário e não imprimir nada, **sem
     aviso e com exit 1**, que é indistinguível de "o símbolo não existe". A auditoria de
@@ -1171,6 +1245,11 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     este, e a divergência fica aberta porque o conserto tem dois lados ruins: trocar o
     separador mexe em código quente por razão de ferramenta, e um comentário no topo do
     arquivo não é lido por quem está usando `grep` justamente para não abrir o arquivo.
+    **RESOLVIDA em 13/8/2026:** o NUL literal virou a sequência de escape `\u0000`, com o
+    mesmo comportamento em execução, e `secoes.test.mjs` recusa a volta dele. Conferido:
+    **0 bytes NUL** em 1.708 linhas, e `grep` volta a achar `conjuntoDoTopico` (4
+    ocorrências) no arquivo. O lado ruim que o item previa — mexer em código quente por
+    razão de ferramenta — foi pago, e foi barato.
 53. **AS VARREDURAS QUE ESCOLHERAM AS CONSTANTES NÃO REPRODUZEM.** O `RECUPERACAO.md` §25
     justifica cada constante com uma varredura, e nenhuma das três bate com a bancada que o
     próprio documento cita. Remedido em 12/8 (noite), **com os D01–D12 já dentro do
@@ -1262,3 +1341,114 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     O conserto das três da `troca` não é trava e sim canário no `ROTAS.json`: nenhuma regra
     determinística chama de lixo um vocabulário de termos REAIS porém errados para a gaveta
     sem chamar `fisgada` de lixo também (é o residual já escrito na §8.43). **Aberta.**
+
+59. **A INVARIANTE DE NÃO-DILUIÇÃO É UMA TAUTOLOGIA, e o banner que ela justifica é
+    falso.** `research/tools/secoes.test.mjs` varia `tela.secoes` de 1 a 6 e conclui, em
+    1.644 comparações, que acrescentar uma gaveta nunca remove um id de outra seção. Mas
+    `responder()` passa a `rotear()` sempre `max = MAX_TOPICOS`: `tela.secoes` **não
+    decide quantas gavetas abrem** — o próprio construtor escreveu o desacoplamento e o
+    comentário que o justifica. O que as 1.644 comparações provam é
+    `lista.slice(0,n) ⊆ lista.slice(0,n+1)`, verdade sobre qualquer lista. **Modo de falha
+    nº 4 desta casa: a trava que se testa a si mesma**, no arquivo escrito para provar que
+    a invariante vale.
+    **Variando o ÚNICO botão que decide quantas gavetas abrem** — o `max` do roteamento,
+    usado dentro do passe de aviso em `roteados = linhas.filter(...).slice(0, max)` —:
+    **38 violações em 1.832 comparações, TODAS do tipo "a seção inteira sumiu"**.
+    Contra-exemplo nomeado: *"O que muda do bloco de força para o bloco de pico?"* —
+    `max=2` abre `[pico, competicao]`, `max=3` abre `[pico, taper, periodizacao]`, e
+    acrescentar uma vaga **APAGA a seção `competicao` inteira**. Idem 5→6 em *"levantar
+    peso já conta como exercício pro coração"* (`selecao-exercicio` some) e na pergunta do
+    ponto perto da axila (`lesao` some). **O banner que a CLI imprime ao atleta —
+    *"NENHUMA seção rouba vaga de outra — acrescentar gaveta só ACRESCENTA bloco"* — é
+    falso em geral.**
+    **O que a invariante SALVA, dito com o mesmo rigor, porque a metade boa também é
+    dado:** baixar `FRACAO_DO_MELHOR` de 0,8 a 0,2 (que é literalmente *abrir MAIS
+    gavetas*) deu **0 violações em 2.044** comparações, e forçar `[A]` contra `[A,B]` deu
+    **0 em 400**. A configuração embarcada nunca move o `max`. **O produto não dilui; o
+    TESTE é que não prova isso.**
+    Conserto: variar o `max` do roteamento em vez de `tela.secoes`, e então **ou** consertar
+    a não-monotonicidade do passe de aviso **ou** apagar o banner. Uma das duas, não
+    nenhuma. Reprodução: `node research/tools/auditoria-onda2f/invariante.mjs`. **Aberta.**
+
+60. **`--topic` lê UM valor e descarta o resto em silêncio, E descarta a rota inteira
+    enquanto imprime o banner que promete o contrário.** São dois defeitos no mesmo
+    parâmetro e os dois estão abertos.
+    **(a) A lista.** `--topic a b c` casa só `a`; `b` e `c` são descartados por não casarem
+    o padrão de id. Conferido antes de qualquer conclusão, como manda o modo de falha nº 5:
+    `--pergunta "<D05>" --topic convencional` e
+    `--pergunta "<D05>" --topic convencional sumo terra` têm **sha1 IDÊNTICO**
+    (`62639128209f`, 12,6 kB). Foi este artefato que produziu o achado falso da onda 2D —
+    *"abrir a gaveta certa mais uma vizinha é pior"* —, cujos dois comandos comparados eram
+    o mesmo comando. A afirmação foi riscada no `CANARIOS.json`; **a armadilha continua
+    armada**.
+    **(b) A rota.** `--pergunta X --topic t` não ACRESCENTA `t` à rota: ele **DESCARTA a
+    rota inteira** e mostra só `t`. Em E03, cinco seções viram uma. E a mesma saída imprime
+    *"NENHUMA seção rouba vaga de outra — acrescentar gaveta só ACRESCENTA bloco"*. **Modo
+    de falha nº 3 — documento e código divergindo em silêncio — dentro do arquivo que
+    documenta o modo de falha nº 3.**
+    Reprodução: `node research/tools/auditoria-onda2f/topic-parse.mjs`. **Aberta.**
+
+61. **O TETO DE 34 kB É CALIBRADO NA PERGUNTA ERRADA, e o preço declarado é o piso.**
+    `secoes.test.mjs` mede DUAS perguntas (*"o cinto pode ter mais de 13 mm…"* e a fisgada)
+    e chama a primeira de *"a pergunta mais LARGA que se mediu"*. Medindo os **63** canários
+    com id esperado pela mesma régua: **maior 40,0 kB (D01)**, mediana 32,8 kB, e
+    **24 de 63 passam de 34 kB** (D01 40,0 · C16 39,1 · B10 38,7 · P14 38,6 · B01 38,4 ·
+    D04 37,9 · E01 37,9 · D11 37,2 · E09 37,1 …) — 17 dos 51 anteriores e **7 dos 12
+    cegos**. A regra escrita —
+    *o maior teto de seção que mantém a CLI abaixo de 34 kB na pergunta mais larga* —
+    teria escolhido um `TETO_DA_SECAO` **menor** se aplicada à pergunta mais larga de
+    verdade. O ~31 kB publicado é o piso, não o topo.
+    Reprodução: `node research/tools/auditoria-onda2f/publicos.mjs`. **Aberta.**
+
+62. **O ESCAPE MANUAL DOCUMENTADO REGREDIU E NADA O MEDE.** `--topic <gaveta certa>`
+    entrega hoje **11/12 "algum" e 10/12 "todos"** nos doze cegos; o arquivo que os
+    documentava registrava os 12 saindo pela gaveta forçada. Os dois que caem:
+    **E05** — `--topic equipamento` abre 60 vagas, F001-79 (*meia de cano até a canela é
+    OBRIGATÓRIA no terra*, IPF §3.5.d) está declarada em `equipamento` e cai em **#78 de
+    152**; a saída imprime F001-80 (*"meia-calça, legging e meia de perna inteira são
+    estritamente proibidas"*) e **OMITE a regra que obriga**. Para um atleta que nunca
+    competiu, é a diferença entre passar e ser barrado na plataforma.
+    **E12** — V127-13 não é declarada em `lesao`, e a decisão *"tópico forçado não ganha
+    afim nenhuma"* apagou o único canal que a trazia: o caminho ROTEADO entrega as duas
+    metades e o FORÇADO entrega uma, **invertendo a premissa da onda**.
+    Reprodução: `node research/tools/auditoria-onda2f/cegos.mjs --forcado`. **Aberta.**
+
+63. **`TETO_LIGACAO` 8 → 80 SOBREVIVE À MUTAÇÃO E NÃO ESTAVA NA DÍVIDA DECLARADA.**
+    `montarSecaoDeGaveta` sempre passa `teto: FOCO_DA_SECAO * LIGACOES_POR_FOCO` (16), e
+    `porLigacaoDeclarada` não tem outro chamador — logo o **8 é um default inalcançável**.
+    É exatamente o defeito por que `LIGACOES_DA_SECAO` e `LADO_DA_SECAO` foram removidas no
+    mesmo dia, deixado de pé num terceiro lugar.
+    **E a dívida que ESTAVA declarada é maior do que um valor:** `LIGACOES_POR_FOCO` 4→5,
+    4→6 **e** 4→40 sobrevivem às seis travas que importam `roteador.mjs`. O relato cita só
+    o 4→40; a faixa 4–6 está sem trava, como o próprio §27.4 escreveu.
+    **Placar completo da mutação: 36 de 40 mortas**, incluindo todas as que fariam uma
+    seção inteira sumir (`MAX_TOPICOS` 5→1 e 5→4, `TETO_PARAM` 12→0,
+    `MIN_PECAS_DO_PARAM` 2→6, `FOCO_DA_SECAO` 4→0, `LIGACOES_POR_FOCO` 4→0).
+    Reprodução: `node research/tools/auditoria-onda2f/mutacao.mjs` e `mutacao2.mjs`.
+    **Aberta.**
+
+64. **O GATE MEDE UM CAMINHO QUE O PRODUTO DEIXOU DE USAR, e não diz isso.** Com a decisão
+    do `RECUPERACAO.md` §28 — o `--pergunta` determinístico vira conveniência e a escolha
+    da gaveta passa ao agente —, a linha *"roteamento OK"* do `check:kb` afirma algo sobre
+    um caminho que ninguém percorre. **Confiança falsa é pior que gate nenhum**, e esta
+    casa já registrou isso três vezes com outro nome.
+    Conserto, e ele é de UMA linha de saída: o gate tem de dizer que mede **FIDELIDADE À
+    FONTE** e **ORDENAÇÃO DENTRO DA GAVETA**, nunca *"a base responde bem"*. O que ele
+    continua garantindo, e não é pouco: os 74 termos fechados, todo `topic[]` dentro do
+    enumerado, todo id citado resolvendo — a trava contra citação fabricada fica MAIS
+    importante, porque quem cita agora é um modelo — e o contrato de ordenação do §28.1.
+    **Aberta.**
+
+65. **`regras-ipf` É GAVETA-CHAMARIZ: 8 de 143 claims do regulamento IPF a carregam** (54
+    em toda a base de 6.912). Os três modelos do caminho do agente apostaram nela em **5
+    das 12** perguntas e ela devolveu **zero id esperado nas cinco**. Não custou acerto —
+    sempre havia outra gaveta certa junto — mas queimou cerca de **um terço do orçamento de
+    comandos**. O regulamento F001 está etiquetado por ASSUNTO (`equipamento` 38,
+    `competicao` 36, `erro-comum` 33, `supino` 29, `agacho` 27, `comandos-ipf` 27) e quase
+    nunca por FONTE, então quem procura *"a regra"* abre a gaveta que tem o nome certo e o
+    conteúdo errado. **É conserto de BASE, barato, e melhora o caminho do agente sem tocar
+    em uma linha de código.** Não é retroetiquetar tudo: é decidir se `regras-ipf` significa
+    *"veio do regulamento"* (e então são 143) ou *"é uma regra de plataforma"* (e então o
+    nome está errado) — hoje ela significa as duas coisas para leitores diferentes, que é o
+    modo de falha nº 1. Reprodução: contar `topic[]` por prefixo de `src` em
+    `research/extract/F001.jsonl`. **Aberta.**

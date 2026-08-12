@@ -1,5 +1,130 @@
 # RECUPERAÇÃO — a base escondia o que tinha, e o conserto está na ferramenta
 
+> **VEREDITO — 13/08/2026 (fechamento da onda 2F). O conjunto cego E01–E12
+> rodado pela CLI de verdade, e o caminho do agente medido pela primeira vez em
+> seis ondas. 6.912 claims, orçamento de tela `18 por seção × 5 seções`.**
+>
+> ```
+>                                         algum id     todos os ids
+> CEGO   E01-E12 (13/08, nunca visto)      7 de 12       3 de 12
+> PÚBLICO P01-P18                         11 de 18       6 de 18
+> cego  B01-B12 (queimado em 12/08)        3 de 12       1 de 12
+> cego  D01-D12 (queimado em 12/08)        5 de 12       0 de 12
+>
+> OS MESMOS 12 CEGOS, pelos dois caminhos:
+>   determinístico (--pergunta sozinho)    7 de 12       3 de 12
+>   agente + glossário (3 modelos)         9 de 12    8 · 8 · 9 de 12
+>   controle: determinístico com o MESMO
+>   instrumento do agente (gavetas da
+>   rota, forçadas uma por comando,
+>   mesmo teto de 60)                      6 de 12       3 de 12
+> ```
+>
+> **A DISTÂNCIA PÚBLICO-CEGO FECHOU, e ela era o instrumento de fraude desta
+> casa.** 58 % / 25 % no cego contra 61 % / 33 % no público. Em 12/08 essa
+> distância era de 2,3×. **Isto não prova ausência de overfit**, e a razão é
+> escrita aqui em voz alta: o arquivo com os doze cegos esteve no repositório em
+> texto puro (`research/kb/CANARIOS-CEGOS-E.json`, 19 kB, mesma pasta do
+> documento do construtor) durante toda a onda, e "escondido dele" não é
+> verificável depois do fato. O arquivo foi absorvido em `CANARIOS.json` e
+> APAGADO neste commit.
+>
+> **O NÚMERO QUE MANDA NÃO É NENHUM DOS DOIS ACIMA — É O ZERO.** Dos 12 cegos,
+> **0 falham por roteamento**: em 12 de 12 a rota abre uma gaveta que CONTÉM a
+> resposta etiquetada. Os 9 fracassos são todos SOTERRAMENTO dentro da gaveta.
+> Medido por posição, com a gaveta em que o id está ETIQUETADO forçada
+> (`node research/tools/auditoria-onda2f/contrato-ordenacao.mjs`): F001-79 (meia
+> de cano até a canela é obrigatória no terra, IPF §3.5.d) é a **#78 de 152** em
+> `equipamento`; F001-30 é a **#35 de 335** em `setup`; V015-12 é a **#34 de 57**
+> em `sono`. **Pela mesma régua, 25 de 54 canários** entregam TODOS os ids dentro
+> do teto de 18 com a gaveta certa forçada — os outros 29 são ordenação pura.
+> Pelo caminho do agente
+> a conta é a mesma e mais dura: dos **69 pares roteador × id**, a causa "o
+> modelo escolheu gaveta que não contém o id" ocorreu **ZERO vezes**; os 17
+> fracassos foram **todos** gaveta certa com id abaixo do corte.
+>
+> **O CONTROLE MATA A DESCULPA DO ORÇAMENTO, e é o número mais importante desta
+> onda.** O placar bruto era injusto — o agente vê 3 telas de 60 vagas, o
+> determinístico 1 tela de 18×5. Dando ao determinístico o MESMO instrumento
+> (as gavetas que a própria rota escolheu, forçadas uma por comando, mesmo teto
+> de 60), ele vai a **6 de 12 com id e 3 de 12 completos**: **piorou**. O agente
+> não ganhou por olhar mais. Ganhou por escolher melhor.
+>
+> **O MECANISMO, e ele é aritmético.** O scorer determinístico prefere gaveta
+> GRANDE — mediana de **245 claims** nas gavetas que só ele escolheu — e os
+> modelos preferem gaveta pequena e precisa — mediana **117**. É na pequena que
+> a resposta está no topo. E07: o modelo abre `sono` (57 claims, ids em #13 e
+> #34) e leva 2/2; a rota abre `recuperacao` (368) e leva 0/2. E09: o modelo
+> abre `carga-de-treino` (13 claims, ids em #1, #3 e #8) e leva 3/3; a rota abre
+> `series-reps` e `volume` e leva 1/3. **`PESO_CORPUS` empurra para a gaveta
+> gorda, que é exatamente onde a resposta afunda.**
+>
+> **A VARIÂNCIA DE MODELO É INOFENSIVA AQUI, e isso foi medido, não suposto.**
+> Unanimidade em **8 de 12** na gaveta principal e 6 de 12 no conjunto inteiro;
+> nos 4 casos de discordância os três tiveram o mesmo placar de ids, e o único
+> desvio (E02: 1/2, 1/2, 2/2) favoreceu o discordante. Escolhas diferentes caem
+> nas mesmas claims porque a claim carrega `topic[]` múltiplo.
+>
+> **A FISGADA NÃO REGREDIU** — e era o achado mais caro desta base para este
+> atleta. As CINCO claims do limiar de dor chegam sem `--topic`, as cinco na
+> seção `dor` (V079-34 em #5, V001-06 em #9, V027-23 #28, V086-21 #30, V138-19
+> #31), e a paráfrase sem jargão entrega **5 de 5** com V079-34 em **1º de
+> `dor`**. CLI e módulo concordam nos dois casos.
+> Reprodução: `node research/tools/auditoria-onda2f/fisgada.mjs`.
+>
+> **O QUE NÃO SE SUSTENTA, e cada item tem comando.**
+>
+>   · **A INVARIANTE DE NÃO-DILUIÇÃO É UMA TAUTOLOGIA.** `secoes.test.mjs` varia
+>     `tela.secoes` de 1 a 6, mas `responder()` passa a `rotear()` sempre
+>     `max = MAX_TOPICOS` — as 1.644 comparações provam
+>     `lista.slice(0,n) ⊆ lista.slice(0,n+1)`, verdade sobre qualquer lista.
+>     Variando o ÚNICO botão que decide quantas gavetas abrem (o `max` do
+>     roteamento, usado no passe de aviso em `linhas.filter(...).slice(0, max)`):
+>     **38 violações em 1.832 comparações, todas do tipo "a seção inteira
+>     sumiu"**. Contra-exemplo nomeado: *"O que muda do bloco de força para o
+>     bloco de pico?"* — `max=2` abre `[pico, competicao]`, `max=3` abre
+>     `[pico, taper, periodizacao]`: **acrescentar uma vaga APAGA a seção
+>     `competicao` inteira.** O banner que a CLI imprime ao atleta — *"NENHUMA
+>     seção rouba vaga de outra"* — é falso em geral.
+>     `node research/tools/auditoria-onda2f/invariante.mjs`
+>     **O que a invariante salva, dito com o mesmo rigor:** baixar
+>     `FRACAO_DO_MELHOR` de 0,8 a 0,2 deu **0 violações em 2.044** comparações, e
+>     forçar `[A]` contra `[A,B]` deu **0 em 400**. A configuração embarcada
+>     nunca move o `max`: **o produto não dilui; o TESTE é que não prova isso.**
+>     Modo de falha nº 4 desta casa.
+>   · **O PREÇO FOI SUBRELATADO.** Não são ~31 kB: são até **40,0 kB** (D01),
+>     mediana 32,8 kB, e **24 de 63** canários com id esperado passam do teto de
+>     34 kB que a própria trava declara — 17 dos 51 antigos e **7 dos 12 cegos**
+>     (maior 37,9 kB, E01). A trava mede DUAS perguntas e chama uma delas de "a
+>     mais larga que se mediu" — não é.
+>     `node research/tools/auditoria-onda2f/publicos.mjs`
+>   · **O ESCAPE DOCUMENTADO REGREDIU e nada o mede.** `--topic <gaveta certa>`
+>     entrega hoje 11/12 "algum" e **10/12 "todos"**, contra os 12/12 que o
+>     arquivo dos cegos documentava. E05: `--topic equipamento` imprime F001-80
+>     (*"meia-calça, legging e meia de perna inteira são estritamente
+>     proibidas"*) e **OMITE** F001-79, que é a que OBRIGA. Para um atleta que
+>     nunca competiu, essa é a diferença entre passar e ser barrado na
+>     plataforma. `node research/tools/auditoria-onda2f/cegos.mjs --forcado`
+>   · **`--topic a b c` CONTINUA LENDO UM VALOR e descartando o resto em
+>     silêncio** — a dívida da onda 2D, reconferida por sha1 da saída
+>     (`62639128209f`, 12,6 kB, idêntico nos dois comandos). E `--topic` não
+>     ACRESCENTA a gaveta à rota: ele **DESCARTA a rota inteira** (E03: 5 seções
+>     viram 1) — enquanto imprime o banner que promete o contrário.
+>     `node research/tools/auditoria-onda2f/topic-parse.mjs`
+>   · **MUTAÇÃO: 36 de 40 mortas.** Morrem todas as que fariam uma seção sumir
+>     (`MAX_TOPICOS` 5→1 e 5→4, `TETO_PARAM` 12→0, `MIN_PECAS_DO_PARAM` 2→6,
+>     `FOCO_DA_SECAO` 4→0, `LIGACOES_POR_FOCO` 4→0). Sobrevivem 4:
+>     `LIGACOES_POR_FOCO` 4→5, 4→6 e 4→40 (dívida declarada, **faixa maior do
+>     que a relatada**) e `TETO_LIGACAO` 8→80, que **não estava declarado** — é
+>     um default inalcançável, o mesmo defeito por que `LIGACOES_DA_SECAO` e
+>     `LADO_DA_SECAO` foram removidas, deixado de pé num terceiro lugar.
+>
+> **A DECISÃO DAS SEIS ONDAS ESTÁ NO §28, e ela é (c): o problema não está onde
+> estamos cavando.** Não é (b). Ver `## 28`.
+
+<details>
+<summary>Veredito anterior — 13/08/2026 (manhã), a tela por seção e o placar auto-reportado do construtor</summary>
+
 > **VEREDITO — 13/08/2026. A tela plana virou UMA SEÇÃO POR GAVETA. 6.912
 > claims, orçamento de tela `18 claims por seção × 5 seções`.**
 >
@@ -107,6 +232,8 @@
 > ponto**: as constantes foram varridas contra os 64 canários com id esperado, e
 > os B## e D## estão nesse conjunto desde que foram publicados. O único conjunto
 > que ainda diz a verdade sobre esta camada é o que esta onda não viu.
+
+</details>
 
 <details>
 <summary>Veredito anterior — 12/08/2026 (noite), a alocação por gaveta e a auditoria cega dos D01–D12</summary>
@@ -2652,3 +2779,162 @@ sem trava.
    `c` em silêncio, e foi isso que produziu a "prova" falsa do diagnóstico desta
    onda. Não foi consertado porque mexer no roteamento não era desta onda; está
    registrado aqui para que a próxima não repita o erro de leitura.
+
+---
+
+## PARTE IX — O FECHAMENTO DA ONDA 2F (13/08/2026)
+
+## 28. A DECISÃO DAS SEIS ONDAS — é (c), e o (b) confortável seria mentira
+
+**Seis ondas de recuperação. A resposta não é (a) "resolveu, falta acabamento",
+e não é (b) "ajudou, sobrou um defeito nomeado". É (c): o problema não está onde
+estamos cavando.**
+
+O (b) é tentador porque existe um defeito nomeado de verdade — `ordenarNoTopico`
+— e o próximo passo dele é definido. Escrever (b) aqui seria correto sobre o
+defeito e falso sobre a linha de trabalho, e é exatamente a frase que faria esta
+linha continuar drenando dinheiro. **Os três números que forçam o (c):**
+
+**1. O que seis ondas consertaram já não é o que falha.** No conjunto cego
+E01–E12, **0 de 12** falham por roteamento. Em 12 de 12 a rota abre uma gaveta
+que contém a resposta etiquetada. As ondas 2A–2C atacaram roteamento (o número
+delas era 7 de 18 → 1 de 18 "não roteia para gaveta nenhuma"), e elas
+ganharam. A 2D e a 2E atacaram alocação de vagas, e a 2E ganhou também: a
+diluição entre gavetas acabou. **Sobrou o que nenhuma das seis tocou.**
+
+**2. O caminho que o produto realmente usa nunca foi medido, e quando foi, ganhou
+por mais do que o dobro em completude.** Nos mesmos 12: determinístico **3 de
+12** completos, agente com o glossário **8, 8 e 9 de 12**. Em "mostrou algum
+id", 9 contra 7. A diferença está na COMPLETUDE, que é o que o atleta recebe —
+meia resposta em E04 (o polegar) e em E12 (a variação sem leg drive) é a
+resposta ERRADA, não uma resposta parcial.
+
+**3. O controle destrói a explicação barata.** "O agente vê 180 vagas e o
+determinístico 90." Dando ao determinístico as gavetas que a própria rota
+escolheu, forçadas uma por comando, mesmo número de comandos e mesmo teto de 60:
+**6 de 12 com id, 3 de 12 completos — pior que os 7/3 da tela roteada.** O
+orçamento não era a variável. `node research/tools/auditoria-onda2f/controle-orcamento.mjs`
+
+**A causa, e ela é devastadora para a heurística.** Dos **69 pares roteador × id**
+do caminho do agente, a causa "o modelo escolheu gaveta que não contém o id"
+ocorreu **zero vezes**. Os 17 fracassos foram todos gaveta certa com o id abaixo
+do corte. O scorer determinístico prefere gaveta grande (mediana **245** claims
+nas que só ele escolheu); os modelos preferem pequena e precisa (mediana **117**),
+e é na pequena que a resposta está no topo. `PESO_CORPUS` empurra para a gaveta
+gorda, que é onde a resposta afunda.
+
+**Em uma frase:** o princípio desta casa — *onde um compilador pode verificar,
+agente não deve* — continua correto e foi aplicado no lugar errado. **O
+compilador não pode verificar a escolha da gaveta; ele PODE verificar a ordenação
+dentro dela.** Troque a trava de lugar e pare de pagar ondas para a heurística
+alcançar o que o modelo faz com 12 de 12.
+
+### 28.1 O que fazer em vez disso, em ordem, e nenhum item é "comprar corpus"
+
+1. **A TRAVA NOVA, e é a única com dentes: CONTRATO DE ORDENAÇÃO.** Para cada
+   canário, forçada a gaveta em que o id está ETIQUETADO (nunca a gaveta
+   "parecida"), o id tem de cair dentro do teto da seção. É 100 % determinístico
+   e não precisa de chave de API — é a parte do caminho que o compilador continua
+   podendo verificar depois que a escolha da gaveta sair do repositório.
+   **Medido antes de virar trava**, que é a regra que esta casa comprou caro
+   (`node research/tools/auditoria-onda2f/contrato-ordenacao.mjs`):
+
+   | conjunto | teto 18 (o que o atleta vê) | teto 60 (gaveta forçada) |
+   |---|---|---|
+   | P01–P18 | 7/18 canários · 31/49 ids | 11/18 · 40/49 |
+   | B01–B12 | 5/12 · 12/21 | 10/12 · 19/21 |
+   | D01–D12 | 5/12 · 23/33 | 10/12 · 29/33 |
+   | E01–E12 | 8/12 · 19/23 | 11/12 · 22/23 |
+   | **os 54** | **25/54 · 85/126** | **42/54 · 110/126** |
+
+   **O teto tem de ser 18, e não 60.** Uma trava calibrada em 60 mede um caminho
+   que o atleta não percorre e nasceria com 12 reprovações em vez de 29. Nos E##
+   ela reprova hoje **E01, E05, E07 e E11** — e cada reprovação vem com posição:
+   F001-79 em **#78 de 152** em `equipamento`, F001-30 em **#35 de 335** em
+   `setup`, V015-12 em **#34 de 57** em `sono`. **Um gate que já nasce vermelho é
+   um gate honesto**, e é o oposto do que esta casa vinha fazendo, que era
+   escrever a trava depois de saber que ela passa.
+
+   **E a mesma medida confirma o mecanismo por número, não por adjetivo:** na
+   gaveta PEQUENA a resposta está no topo — `strap` #2 de 20, `carga-de-treino`
+   #1 de 17, `cinto` #5 de 56, `mobilidade` #1 de 92 — e na GRANDE ela afunda:
+   `equipamento` #78 de 152, `setup` #35 de 335. É exatamente a diferença entre
+   a gaveta que os modelos escolhem (mediana 117) e a que `PESO_CORPUS` escolhe
+   (mediana 245).
+2. **Consertar `ordenarNoTopico`.** O alvo é nomeado por posição, não por
+   adjetivo: **F001-79 em #78 de 152** em `equipamento`, **F001-30 em #35 de
+   335** em `setup`, **V015-12 em #34 de 57** em `sono`. E o alvo colateral é
+   `PESO_CORPUS`, que faz a rota preferir justamente a gaveta em que a resposta
+   afunda.
+3. **Trocar o teste da invariante para o `max` do roteamento**, e então ou
+   consertar a não-monotonicidade do passe de aviso (38 violações em 1.832) ou
+   **apagar o banner** que promete ao atleta o que não vale. Uma das duas, não
+   nenhuma.
+4. **Recalibrar o teto de bytes contra o máximo MEDIDO (40,0 kB)**, não contra
+   uma pergunta escolhida a dedo. A regra escrita — *o maior teto de seção que
+   mantém a CLI abaixo de 34 kB na pergunta mais larga* — teria escolhido um
+   `TETO_DA_SECAO` menor se aplicada à pergunta mais larga de verdade.
+5. **`--topic` aceitando lista de verdade, e ACRESCENTANDO à rota em vez de
+   descartá-la.** Dívida aberta desde a onda 2D; é a armadilha que produziu um
+   achado falso inteiro, e continua armada.
+6. **Etiquetar F001 com `regras-ipf`.** Hoje **8 de 143** claims do regulamento
+   IPF carregam essa gaveta (54 em toda a base). Os três modelos apostaram nela
+   em 5 das 12 perguntas e ela devolveu zero id esperado nas cinco — não custou
+   acerto, porque sempre havia outra gaveta certa junto, mas queimou cerca de um
+   terço do orçamento de comandos. **É conserto de BASE, barato, e melhora o
+   caminho do agente sem tocar em uma linha de código.**
+7. **A linha de saída do gate tem de dizer o que ele mede.** Enquanto o
+   `check:kb` imprimir "roteamento OK", ele estará afirmando algo sobre um
+   caminho que ninguém mais usa. O que ele garante é **FIDELIDADE À FONTE** e
+   **ORDENAÇÃO DENTRO DA GAVETA** — nunca "a base responde bem".
+
+### 28.2 O que o `check:kb` deixa de poder garantir, dito em voz alta
+
+Se o passo de escolher a gaveta sai do repositório e vai para um modelo, **o
+compilador deixa de executar o caminho inteiro**. Continua garantindo, e isso não
+é pouco: que os 74 termos são fechados e todo `topic[]` de toda claim pertence ao
+enumerado; que todo id citado resolve — a trava contra citação fabricada fica
+MAIS importante, porque quem cita agora é um modelo; e o contrato de ordenação do
+§28.1.1. **Deixa de garantir a qualidade ponta a ponta da resposta.** Um gate que
+não diz isso na própria saída produz confiança falsa, que é pior que gate nenhum.
+
+### 28.3 As duas perguntas abertas do atleta, com o número na frente
+
+**PERGUNTA 1 — vale pagar uma frota de modelo barato para dar a cada uma das
+6.912 claims uma linha de "que pergunta esta claim responde"?**
+
+**Hoje, não — e o motivo é o mesmo zero.** Uma linha de "que pergunta esta claim
+responde" é um instrumento de CASAMENTO. O casamento de gaveta já está em **0
+fracassos de 69 pares**: não há o que comprar ali. A hipótese de que ela ajude
+está na segunda metade — a ordenação DENTRO da gaveta é hoje sobreposição
+literal de palavras contra uma paráfrase que, por construção, não usa a palavra
+da base (`fivela` × `cinto`, `dedão` × `polegar`, `esparadrapo` × `fita médica`).
+Uma linha na voz do atleta é exatamente o texto que casaria. **É plausível e não
+está medido, e 6.912 chamadas é caro demais para um palpite.**
+
+**O experimento que decide, e ele custa 2,9 % da compra:** escreva a linha para
+**as 199 claims da gaveta `equipamento` inteira** — a gaveta inteira, não os ids
+esperados, senão é otimizar para o visível —, ponha essa linha no texto que
+`ordenarNoTopico` pontua, e re-meça E05, E06 e E10, que são três dos nove
+soterramentos e moram lá. **Se os três virarem, a frota se paga; se não virarem,
+6.912 linhas são 6.912 linhas de ruído** e o dinheiro vai para o item 2 do
+§28.1. Nenhum dos dois resultados é adivinhável daqui.
+
+**PERGUNTA 2 — o `--pergunta` determinístico continua sendo o produto, ou o
+produto passa a ser o agente com o glossário?**
+
+**O produto passa a ser o agente com o glossário. O `--pergunta` vira
+conveniência de linha de comando.** Não é questão de gosto: são três números e um
+controle — 3/12 contra 8–9/12 em completude; 0 de 69 fracassos de roteamento do
+lado do modelo; e o controle de orçamento, que PIOROU o determinístico quando lhe
+deram o mesmo instrumento. Seis ondas foram gastas afinando a metade do problema
+que os modelos acertam de graça.
+
+**O que essa decisão NÃO significa, e o limite é parte da resposta.** "O produto é
+o agente" quer dizer o agente **mais o glossário de 74 gavetas mais a ordenação
+dentro da gaveta** — e dois dos três continuam dentro do repositório e continuam
+verificáveis por compilador. O que sai é UM passo: a escolha da gaveta. E a
+medida que sustenta isso é de **3 modelos × 12 perguntas, uma passada**, com
+variância entre modelos medida (unanimidade 8/12, e nas 4 discordâncias o placar
+de ids foi o mesmo) e variância entre repetições do MESMO modelo **não medida**.
+Antes de desligar qualquer coisa, essa segunda variância precisa de um número.

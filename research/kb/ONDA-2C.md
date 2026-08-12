@@ -16,7 +16,48 @@ multiplicar o erro por escrito, com aparência de conclusão.
 
 ---
 
-## 0. O que está aberto ANTES da lista — não é mais o roteamento, e não é mais a alocação
+## 0. O que está aberto ANTES da lista — nem roteamento, nem alocação: ORDENAÇÃO
+
+> ## ⇒ SUPERADO EM 13/08/2026. A FILA DO ITEM 0 MUDOU DE ARQUIVO.
+>
+> **O item 0 desta onda era *consertar o roteamento e a alocação*. Os dois estão
+> feitos, e o conjunto cego E01–E12 de 13/08 mediu o que sobrou:**
+>
+> ```
+> CEGO E01-E12   7 de 12 devolvem ALGUM id  ·  3 de 12 devolvem TODOS
+>                0 de 12 falham por ROTEAMENTO — em 12 de 12 a gaveta certa ABRE
+> PÚBLICO P01-P18   11 de 18  ·  6 de 18
+> ```
+>
+> **A distância público-cego, que em 12/08 era de 2,3×, fechou** (58 %/25 % contra
+> 61 %/33 %) — o que NÃO prova ausência de overfit, porque o arquivo dos doze
+> esteve no repositório em texto puro durante a onda. Os doze estão absorvidos em
+> `CANARIOS.json` como E01–E12, com o resultado medido, inclusive os nove que
+> falham.
+>
+> **E o caminho do agente foi medido pela primeira vez em seis ondas.** Três
+> modelos recebendo só as perguntas e o glossário das 74 gavetas, nos MESMOS 12:
+> **8, 8 e 9 de 12 completos contra 3 de 12 do determinístico.** O controle de
+> orçamento mata a desculpa: dando ao determinístico o mesmo instrumento, ele
+> PIORA para 6/12 e 3/12. Dos **69 pares roteador × id**, a causa *"o modelo
+> escolheu gaveta que não contém o id"* ocorreu **zero vezes**.
+>
+> **A decisão, com os números na frente e sem diplomacia, está em
+> `research/kb/RECUPERACAO.md` §28: é (c), o problema não está onde estamos
+> cavando.** O `--pergunta` determinístico vira conveniência de linha de comando;
+> o produto passa a ser o agente com o glossário; e a trava muda de lugar — o
+> compilador não pode verificar a escolha da gaveta, mas PODE verificar a
+> ordenação dentro dela, que reprova hoje em **29 de 54** canários.
+>
+> **A fila de código é a `RECUPERACAO.md` §28.1, sete itens em ordem.** O que
+> continua neste arquivo é a fila de BASE: §1 a §5 abaixo, mais o item novo
+> *etiquetar F001 com `regras-ipf`* (8 de 143 hoje — `RUNBOOK.md` §8.65), que é o
+> único conserto de base que melhora o caminho do agente sem tocar em código.
+>
+> **O texto abaixo fica como está.** Ele é o que justificou as ondas 2D e 2E, e
+> apagá-lo apagaria a razão de elas terem existido — mas **os números dele estão
+> vencidos**, e cada subseção diz onde.
+
 
 **Atualizado em 12/08/2026 (noite) pela AUDITORIA CEGA da onda 2D, com um conjunto
 cego NOVO — D01–D12. O item mudou de nome pela segunda vez, e mudou pelo número
@@ -39,7 +80,7 @@ conjunto cego mede.** O visível está **2,3 vezes** acima do cego.
 **0 de 12 e 0 de 33 ids**. A alocação por gaveta produziu ganho real, atribuível,
 e de **três ids em trinta e três**.
 
-### 0.1 O roteamento SAI da fila — ele generalizou
+### 0.1 O roteamento SAI da fila — ele generalizou  ⟨CONFIRMADO EM 13/08: 0 de 12⟩
 
 A onda de 11/08 atacou roteamento e o número de roteamento melhorou de verdade,
 inclusive fora do conjunto que ela viu: **em 10 dos 12 cegos a camada abriu uma
@@ -104,6 +145,16 @@ Divergência §8.48 do RUNBOOK — **é o item 0 da fila agora, junto com o 0.2-
 
 ### 0.2-ter O QUE SOBROU DO SOTERRAMENTO É ORDENAÇÃO DENTRO DA GAVETA
 
+> **REMEDIDO EM 13/08 sobre os 54 canários, e o diagnóstico desta subseção estava
+> CERTO — foi a única previsão das seis ondas que sobreviveu ao conjunto cego
+> seguinte.** Pela régua independente
+> (`node research/tools/auditoria-onda2f/contrato-ordenacao.mjs`), forçando a
+> gaveta em que o id está ETIQUETADO: **25 de 54 canários** entregam todos os ids
+> dentro do teto de 18 que o atleta vê, **29 não**. Os 5 de 33 de 12/08 eram a
+> ponta do número, porque estavam medidos no teto de 60 da gaveta forçada, que não
+> é o teto que o atleta enxerga.
+
+
 `node research/tools/auditoria/vale-a-frota.mjs` força, uma de cada vez, cada
 gaveta que etiqueta algum id esperado:
 
@@ -129,6 +180,43 @@ anormalidade de imagem**. Divergência §8.50.
 
 Ele perguntou se vale pagar uma frota de modelo barato para dar a cada uma das
 **6.912** claims uma linha de *"que pergunta esta claim responde"*.
+
+> ## ⇒ REESCRITA EM 13/08/2026. A RESPOSTA CONTINUA "NÃO AGORA", E A RAZÃO MUDOU
+> ## DE NOVO — pela terceira vez, e é a terceira razão diferente.
+>
+> **O número que decide agora é o mesmo ZERO do §0:** dos **69 pares roteador × id**
+> do caminho do agente, a causa *"o modelo escolheu gaveta que não contém o id"*
+> ocorreu **zero vezes**. Uma linha de *"que pergunta esta claim responde"* é um
+> instrumento de CASAMENTO, e o casamento de gaveta **já não erra**. Comprar
+> 6.912 linhas contra um número que é zero é comprar contra nada.
+>
+> **A hipótese que SOBROU, e ela é honesta:** a ordenação DENTRO da gaveta é hoje
+> sobreposição literal de palavras contra uma paráfrase que, por construção, não
+> usa a palavra da base — `fivela` × `cinto`, `dedão` × `polegar`, `esparadrapo` ×
+> `fita médica`, `durmo cada dia numa hora` × `consistência de sono`. Uma linha na
+> VOZ DO ATLETA é exatamente o texto que casaria. **É plausível, não está medido,
+> e 6.912 chamadas é caro demais para um palpite.**
+>
+> **O EXPERIMENTO QUE DECIDE, e ele custa 2,9 % da compra:** escreva a linha para
+> **as 199 claims da gaveta `equipamento` INTEIRA** — a gaveta inteira, nunca só os
+> ids esperados, senão é otimizar para o visível e a medida não vale nada —, ponha
+> essa linha no texto que `ordenarNoTopico` pontua, e re-meça **E05, E06 e E10**,
+> que são três dos nove soterramentos e moram lá. Hoje F001-79 é a **#78 de 152**
+> em `equipamento`.
+>
+> **Se os três virarem, a frota se paga. Se não virarem, 6.912 linhas são 6.912
+> linhas de ruído** e o dinheiro vai para `ordenarNoTopico` e `PESO_CORPUS`.
+> Nenhum dos dois resultados é adivinhável daqui, e é por isso que o experimento
+> existe em vez de uma opinião.
+>
+> **A regra que não mudou nas três versões:** o artefato gerado por frota **não tem
+> trava**, e a §8.43 mostrou o que acontece com artefato de julgamento sem trava —
+> 26 das 74 gavetas do glossário podiam virar lixo com os três gates verdes. Pela
+> §8.58, a trava que se conseguiria escrever recusaria lixo, não recusaria uma
+> linha REAL porém errada para aquela claim.
+
+<details>
+<summary>A versão anterior desta seção — 12/08, quando o número que decidia era 28 contra 5</summary>
 
 > **A RESPOSTA É NÃO, e o número que a decide é 28 contra 5.**
 >
@@ -180,6 +268,8 @@ falta vaga"*. A vaga foi construída. Hoje a resposta é *"não, porque 85 % dos
 nunca precisaram disso"* — e a fração que precisa está medida, nomeada por id, e
 cabe em três gavetas.
 
+</details>
+
 ### 0.4 A regra que esta onda comprou caro
 
 **Conjunto de teste publicado vira conjunto de treino.** Os P01–P18 foram escritos
@@ -208,7 +298,14 @@ escrito por quem não leu o `GLOSSARIO-TOPICOS.json` — não basta não ter lid
 **A regra de trabalho, e ela vale para os cinco itens abaixo também:** escreva o
 canário do caso ANTES de tocar em código.
 
-### 0.5 A fila do item 0, em ordem, depois da auditoria de 12/08
+### 0.5 A fila do item 0, em ordem, depois da auditoria de 12/08  ⟨VENCIDA — ver o topo do §0⟩
+
+> A fila de código de hoje é a `RECUPERACAO.md` §28.1. Desta lista de quatro, a **2**
+> (ordenação dentro da gaveta) subiu para primeira e ganhou trava proposta e número
+> (29 de 54); a **1** (§8.48, soma zero) foi absorvida pela tela por seção da onda 2E
+> e não existe mais como estava escrita — o que sobrou dela é a §8.59, a invariante
+> que é tautologia; a **3** e a **4** continuam abertas e caem para o fim.
+
 
 1. **§8.48 — a alocação é soma zero.** Canário COMPARATIVO (a mesma pergunta com N
    e com N+1 gavetas forçadas), depois o conserto. É o único defeito que a onda 2D
@@ -302,6 +399,36 @@ decidida depois do ledger é ledger para refazer.
 banalidades, e escrita antes de #4 escolhe um lado de uma contradição sem saber
 que ela existe. Toda síntese carrega `basis` com os ids que a sustentam — sem isso
 ela é prosa nova sem fonte, que é o que esta base inteira existe para não ser.
+
+---
+
+## 6. Etiquetar o regulamento IPF com `regras-ipf` (aberto em 13/08/2026)
+
+**Quantos:** hoje **8 das 143** claims do `research/extract/F001.jsonl` carregam
+`regras-ipf`; na base inteira são **54 de 6.912**.
+
+**Por que é conserto de BASE e não de código.** O F001 está etiquetado por ASSUNTO
+(`equipamento` 38, `competicao` 36, `erro-comum` 33, `supino` 29, `agacho` 27,
+`comandos-ipf` 27, `terra` 19) e quase nunca por FONTE. Quem procura *"a regra"*
+abre a gaveta que tem o nome certo e o conteúdo errado. Os três modelos do
+caminho do agente apostaram em `regras-ipf` em **5 das 12** perguntas cegas e ela
+devolveu **zero id esperado nas cinco** — não custou acerto, porque sempre havia
+outra gaveta certa junto, mas queimou cerca de **um terço do orçamento de
+comandos**. `RUNBOOK.md` §8.65.
+
+**A decisão que vem ANTES da etiqueta, e ela é o trabalho de verdade.** `regras-ipf`
+significa hoje duas coisas para leitores diferentes — *"veio do regulamento"* (e
+então são 143) e *"é uma regra de plataforma"* (e então o nome está errado, porque
+metade das claims de `comandos-ipf` e `equipamento` também são). **Escolher uma e
+escrever a escolha no `ENUMERADOS.md` é o item**; retroetiquetar sem escolher é o
+modo de falha nº 1 desta casa, copiar a convenção do vizinho e chamar de padrão.
+
+**Como se verifica que ficou certo:** `node research/tools/check-vocabulario.mjs`
+continua verde (o termo é do enumerado fechado), e a medida que importa é o
+caminho do agente re-rodado — `node research/tools/auditoria-onda2f/placar-agente.mjs`
+—, em que `regras-ipf` deve deixar de ser aposta perdida em 5 de 12. **Se o
+placar do agente não se mover, a etiqueta não era o problema e o registro tem de
+dizer isso.**
 
 ---
 

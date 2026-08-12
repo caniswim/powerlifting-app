@@ -1,0 +1,380 @@
+# E01 · determinístico
+node research/tools/check-evidence.mjs --pergunta "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha"
+
+# E02 · determinístico
+node research/tools/check-evidence.mjs --pergunta "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar"
+
+# E03 · determinístico
+node research/tools/check-evidence.mjs --pergunta "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita"
+
+# E04 · determinístico
+node research/tools/check-evidence.mjs --pergunta "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos"
+
+# E05 · determinístico
+node research/tools/check-evidence.mjs --pergunta "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo"
+
+# E06 · determinístico
+node research/tools/check-evidence.mjs --pergunta "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda"
+
+# E07 · determinístico
+node research/tools/check-evidence.mjs --pergunta "durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao"
+
+# E08 · determinístico
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso"
+
+# E09 · determinístico
+node research/tools/check-evidence.mjs --pergunta "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida"
+
+# E10 · determinístico
+node research/tools/check-evidence.mjs --pergunta "posso passar esparadrapo no dedao pra segurar melhor a barra no terra"
+
+# E11 · determinístico
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa"
+
+# E12 · determinístico
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca"
+
+# E01 · roteador 1 · gaveta dor
+node research/tools/check-evidence.mjs --pergunta "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha" --topic dor
+
+# E01 · roteador 1 · gaveta recuperacao
+node research/tools/check-evidence.mjs --pergunta "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha" --topic recuperacao
+
+# E01 · roteador 1 · gaveta lesao
+node research/tools/check-evidence.mjs --pergunta "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha" --topic lesao
+
+# E02 · roteador 1 · gaveta supino
+node research/tools/check-evidence.mjs --pergunta "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar" --topic supino
+
+# E02 · roteador 1 · gaveta ombros
+node research/tools/check-evidence.mjs --pergunta "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar" --topic ombros
+
+# E02 · roteador 1 · gaveta tecnica
+node research/tools/check-evidence.mjs --pergunta "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar" --topic tecnica
+
+# E03 · roteador 1 · gaveta supino
+node research/tools/check-evidence.mjs --pergunta "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita" --topic supino
+
+# E03 · roteador 1 · gaveta erro-comum
+node research/tools/check-evidence.mjs --pergunta "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita" --topic erro-comum
+
+# E03 · roteador 1 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita" --topic regras-ipf
+
+# E04 · roteador 1 · gaveta pegada
+node research/tools/check-evidence.mjs --pergunta "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos" --topic pegada
+
+# E04 · roteador 1 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos" --topic regras-ipf
+
+# E04 · roteador 1 · gaveta erro-comum
+node research/tools/check-evidence.mjs --pergunta "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos" --topic erro-comum
+
+# E05 · roteador 1 · gaveta equipamento
+node research/tools/check-evidence.mjs --pergunta "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo" --topic equipamento
+
+# E05 · roteador 1 · gaveta sapato
+node research/tools/check-evidence.mjs --pergunta "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo" --topic sapato
+
+# E05 · roteador 1 · gaveta terra
+node research/tools/check-evidence.mjs --pergunta "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo" --topic terra
+
+# E06 · roteador 1 · gaveta teste-de-forca
+node research/tools/check-evidence.mjs --pergunta "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda" --topic teste-de-forca
+
+# E06 · roteador 1 · gaveta equipamento
+node research/tools/check-evidence.mjs --pergunta "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda" --topic equipamento
+
+# E06 · roteador 1 · gaveta training-max
+node research/tools/check-evidence.mjs --pergunta "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda" --topic training-max
+
+# E07 · roteador 1 · gaveta sono
+node research/tools/check-evidence.mjs --pergunta "durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao" --topic sono
+
+# E07 · roteador 1 · gaveta recuperacao
+node research/tools/check-evidence.mjs --pergunta "durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao" --topic recuperacao
+
+# E08 · roteador 1 · gaveta agacho
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic agacho
+
+# E08 · roteador 1 · gaveta antropometria
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic antropometria
+
+# E08 · roteador 1 · gaveta profundidade
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic profundidade
+
+# E08 · roteador 1 · gaveta mobilidade
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic mobilidade
+
+# E09 · roteador 1 · gaveta carga-de-treino
+node research/tools/check-evidence.mjs --pergunta "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida" --topic carga-de-treino
+
+# E09 · roteador 1 · gaveta volume
+node research/tools/check-evidence.mjs --pergunta "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida" --topic volume
+
+# E09 · roteador 1 · gaveta intensidade
+node research/tools/check-evidence.mjs --pergunta "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida" --topic intensidade
+
+# E10 · roteador 1 · gaveta equipamento
+node research/tools/check-evidence.mjs --pergunta "posso passar esparadrapo no dedao pra segurar melhor a barra no terra" --topic equipamento
+
+# E10 · roteador 1 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "posso passar esparadrapo no dedao pra segurar melhor a barra no terra" --topic regras-ipf
+
+# E10 · roteador 1 · gaveta pegada
+node research/tools/check-evidence.mjs --pergunta "posso passar esparadrapo no dedao pra segurar melhor a barra no terra" --topic pegada
+
+# E11 · roteador 1 · gaveta supino
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic supino
+
+# E11 · roteador 1 · gaveta erro-comum
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic erro-comum
+
+# E11 · roteador 1 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic regras-ipf
+
+# E11 · roteador 1 · gaveta setup
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic setup
+
+# E12 · roteador 1 · gaveta ombros
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca" --topic ombros
+
+# E12 · roteador 1 · gaveta dor
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca" --topic dor
+
+# E12 · roteador 1 · gaveta selecao-exercicio
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca" --topic selecao-exercicio
+
+# E12 · roteador 1 · gaveta supino
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca" --topic supino
+
+# E01 · roteador 2 · gaveta dor
+node research/tools/check-evidence.mjs --pergunta "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha" --topic dor
+
+# E01 · roteador 2 · gaveta peito
+node research/tools/check-evidence.mjs --pergunta "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha" --topic peito
+
+# E01 · roteador 2 · gaveta recuperacao
+node research/tools/check-evidence.mjs --pergunta "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha" --topic recuperacao
+
+# E01 · roteador 2 · gaveta lesao
+node research/tools/check-evidence.mjs --pergunta "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha" --topic lesao
+
+# E02 · roteador 2 · gaveta ombros
+node research/tools/check-evidence.mjs --pergunta "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar" --topic ombros
+
+# E02 · roteador 2 · gaveta supino
+node research/tools/check-evidence.mjs --pergunta "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar" --topic supino
+
+# E02 · roteador 2 · gaveta aprendizado-motor
+node research/tools/check-evidence.mjs --pergunta "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar" --topic aprendizado-motor
+
+# E03 · roteador 2 · gaveta supino
+node research/tools/check-evidence.mjs --pergunta "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita" --topic supino
+
+# E03 · roteador 2 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita" --topic regras-ipf
+
+# E03 · roteador 2 · gaveta erro-comum
+node research/tools/check-evidence.mjs --pergunta "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita" --topic erro-comum
+
+# E04 · roteador 2 · gaveta pegada
+node research/tools/check-evidence.mjs --pergunta "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos" --topic pegada
+
+# E04 · roteador 2 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos" --topic regras-ipf
+
+# E04 · roteador 2 · gaveta erro-comum
+node research/tools/check-evidence.mjs --pergunta "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos" --topic erro-comum
+
+# E05 · roteador 2 · gaveta equipamento
+node research/tools/check-evidence.mjs --pergunta "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo" --topic equipamento
+
+# E05 · roteador 2 · gaveta sapato
+node research/tools/check-evidence.mjs --pergunta "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo" --topic sapato
+
+# E05 · roteador 2 · gaveta terra
+node research/tools/check-evidence.mjs --pergunta "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo" --topic terra
+
+# E06 · roteador 2 · gaveta teste-de-forca
+node research/tools/check-evidence.mjs --pergunta "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda" --topic teste-de-forca
+
+# E06 · roteador 2 · gaveta equipamento
+node research/tools/check-evidence.mjs --pergunta "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda" --topic equipamento
+
+# E06 · roteador 2 · gaveta competicao
+node research/tools/check-evidence.mjs --pergunta "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda" --topic competicao
+
+# E07 · roteador 2 · gaveta sono
+node research/tools/check-evidence.mjs --pergunta "durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao" --topic sono
+
+# E07 · roteador 2 · gaveta recuperacao
+node research/tools/check-evidence.mjs --pergunta "durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao" --topic recuperacao
+
+# E08 · roteador 2 · gaveta agacho
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic agacho
+
+# E08 · roteador 2 · gaveta profundidade
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic profundidade
+
+# E08 · roteador 2 · gaveta antropometria
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic antropometria
+
+# E08 · roteador 2 · gaveta mobilidade
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic mobilidade
+
+# E09 · roteador 2 · gaveta carga-de-treino
+node research/tools/check-evidence.mjs --pergunta "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida" --topic carga-de-treino
+
+# E09 · roteador 2 · gaveta volume
+node research/tools/check-evidence.mjs --pergunta "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida" --topic volume
+
+# E09 · roteador 2 · gaveta intensidade
+node research/tools/check-evidence.mjs --pergunta "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida" --topic intensidade
+
+# E10 · roteador 2 · gaveta equipamento
+node research/tools/check-evidence.mjs --pergunta "posso passar esparadrapo no dedao pra segurar melhor a barra no terra" --topic equipamento
+
+# E10 · roteador 2 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "posso passar esparadrapo no dedao pra segurar melhor a barra no terra" --topic regras-ipf
+
+# E10 · roteador 2 · gaveta pegada
+node research/tools/check-evidence.mjs --pergunta "posso passar esparadrapo no dedao pra segurar melhor a barra no terra" --topic pegada
+
+# E10 · roteador 2 · gaveta terra
+node research/tools/check-evidence.mjs --pergunta "posso passar esparadrapo no dedao pra segurar melhor a barra no terra" --topic terra
+
+# E11 · roteador 2 · gaveta erro-comum
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic erro-comum
+
+# E11 · roteador 2 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic regras-ipf
+
+# E11 · roteador 2 · gaveta supino
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic supino
+
+# E11 · roteador 2 · gaveta setup
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic setup
+
+# E12 · roteador 2 · gaveta ombros
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca" --topic ombros
+
+# E12 · roteador 2 · gaveta dor
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca" --topic dor
+
+# E12 · roteador 2 · gaveta lesao
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca" --topic lesao
+
+# E12 · roteador 2 · gaveta selecao-exercicio
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca" --topic selecao-exercicio
+
+# E01 · roteador 3 · gaveta dor
+node research/tools/check-evidence.mjs --pergunta "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha" --topic dor
+
+# E01 · roteador 3 · gaveta lesao
+node research/tools/check-evidence.mjs --pergunta "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha" --topic lesao
+
+# E01 · roteador 3 · gaveta peito
+node research/tools/check-evidence.mjs --pergunta "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha" --topic peito
+
+# E02 · roteador 3 · gaveta tecnica
+node research/tools/check-evidence.mjs --pergunta "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar" --topic tecnica
+
+# E02 · roteador 3 · gaveta ombros
+node research/tools/check-evidence.mjs --pergunta "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar" --topic ombros
+
+# E02 · roteador 3 · gaveta dor
+node research/tools/check-evidence.mjs --pergunta "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar" --topic dor
+
+# E03 · roteador 3 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita" --topic regras-ipf
+
+# E03 · roteador 3 · gaveta erro-comum
+node research/tools/check-evidence.mjs --pergunta "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita" --topic erro-comum
+
+# E03 · roteador 3 · gaveta supino
+node research/tools/check-evidence.mjs --pergunta "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita" --topic supino
+
+# E04 · roteador 3 · gaveta pegada
+node research/tools/check-evidence.mjs --pergunta "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos" --topic pegada
+
+# E04 · roteador 3 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos" --topic regras-ipf
+
+# E04 · roteador 3 · gaveta erro-comum
+node research/tools/check-evidence.mjs --pergunta "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos" --topic erro-comum
+
+# E05 · roteador 3 · gaveta equipamento
+node research/tools/check-evidence.mjs --pergunta "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo" --topic equipamento
+
+# E05 · roteador 3 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo" --topic regras-ipf
+
+# E05 · roteador 3 · gaveta terra
+node research/tools/check-evidence.mjs --pergunta "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo" --topic terra
+
+# E06 · roteador 3 · gaveta teste-de-forca
+node research/tools/check-evidence.mjs --pergunta "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda" --topic teste-de-forca
+
+# E06 · roteador 3 · gaveta equipamento
+node research/tools/check-evidence.mjs --pergunta "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda" --topic equipamento
+
+# E06 · roteador 3 · gaveta competicao
+node research/tools/check-evidence.mjs --pergunta "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda" --topic competicao
+
+# E07 · roteador 3 · gaveta sono
+node research/tools/check-evidence.mjs --pergunta "durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao" --topic sono
+
+# E07 · roteador 3 · gaveta recuperacao
+node research/tools/check-evidence.mjs --pergunta "durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao" --topic recuperacao
+
+# E08 · roteador 3 · gaveta agacho
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic agacho
+
+# E08 · roteador 3 · gaveta antropometria
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic antropometria
+
+# E08 · roteador 3 · gaveta mobilidade
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic mobilidade
+
+# E08 · roteador 3 · gaveta profundidade
+node research/tools/check-evidence.mjs --pergunta "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso" --topic profundidade
+
+# E09 · roteador 3 · gaveta carga-de-treino
+node research/tools/check-evidence.mjs --pergunta "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida" --topic carga-de-treino
+
+# E09 · roteador 3 · gaveta volume
+node research/tools/check-evidence.mjs --pergunta "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida" --topic volume
+
+# E09 · roteador 3 · gaveta intensidade
+node research/tools/check-evidence.mjs --pergunta "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida" --topic intensidade
+
+# E10 · roteador 3 · gaveta equipamento
+node research/tools/check-evidence.mjs --pergunta "posso passar esparadrapo no dedao pra segurar melhor a barra no terra" --topic equipamento
+
+# E10 · roteador 3 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "posso passar esparadrapo no dedao pra segurar melhor a barra no terra" --topic regras-ipf
+
+# E10 · roteador 3 · gaveta pegada
+node research/tools/check-evidence.mjs --pergunta "posso passar esparadrapo no dedao pra segurar melhor a barra no terra" --topic pegada
+
+# E11 · roteador 3 · gaveta erro-comum
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic erro-comum
+
+# E11 · roteador 3 · gaveta regras-ipf
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic regras-ipf
+
+# E11 · roteador 3 · gaveta supino
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic supino
+
+# E11 · roteador 3 · gaveta setup
+node research/tools/check-evidence.mjs --pergunta "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa" --topic setup
+
+# E12 · roteador 3 · gaveta lesao
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca" --topic lesao
+
+# E12 · roteador 3 · gaveta ombros
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca" --topic ombros
+
+# E12 · roteador 3 · gaveta selecao-exercicio
+node research/tools/check-evidence.mjs --pergunta "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca" --topic selecao-exercicio

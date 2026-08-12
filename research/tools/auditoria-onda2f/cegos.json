@@ -1,0 +1,14 @@
+[
+  { "id": "E01", "q": "descansar totalmente do supino ate o incomodo no peito sumir resolve ou atrapalha", "espera": ["V089-24", "V089-25"], "gaveta": ["dor", "lesao"] },
+  { "id": "E02", "q": "abrir mais o cotovelo no supino faz o ombro doer, e defeito do movimento ou e questao de acostumar", "espera": ["V167-17", "V167-18"], "gaveta": ["dor", "supino", "ombros"] },
+  { "id": "E03", "q": "eu arqueio bastante e a barra desce quase na altura das costelas de baixo, se ela raspar na fivela o juiz aceita", "espera": ["F001-37", "F001-47"], "gaveta": ["cinto", "supino", "erro-comum"] },
+  { "id": "E04", "q": "seguro a barra com o dedao por cima e nao em volta, isso passa na plataforma nos tres movimentos", "espera": ["F001-14", "F001-28"], "gaveta": ["pegada", "agacho", "supino"] },
+  { "id": "E05", "q": "o que eu tenho que vestir da metade da perna pra baixo pra puxar valendo", "espera": ["F001-79"], "gaveta": ["equipamento", "terra"] },
+  { "id": "E06", "q": "meu numero de treino nunca se repete quando eu testo em outro lugar com equipamento oficial, o que muda", "espera": ["V174-12", "V174-16"], "gaveta": ["strap", "terra", "equipamento"] },
+  { "id": "E07", "q": "durmo umas sete horas mas cada dia numa hora diferente, isso conta contra a recuperacao", "espera": ["V015-10", "V015-12"], "gaveta": ["sono", "recuperacao"] },
+  { "id": "E08", "q": "na parte de baixo do agacho parece que eu amasso contra mim mesmo e a lombar enrola no ultimo pedaco, da pra treinar isso pra fora ou e do meu osso", "espera": ["G031-37", "G031-38", "G029-17"], "gaveta": ["antropometria", "profundidade", "agacho"] },
+  { "id": "E09", "q": "uma semana tem mais series e a outra tem mais carga, existe alguma conta que ponha as duas na mesma medida", "espera": ["G008-27", "G008-29", "G008-43"], "gaveta": ["carga-de-treino", "volume", "meta-metodologia"] },
+  { "id": "E10", "q": "posso passar esparadrapo no dedao pra segurar melhor a barra no terra", "espera": ["F001-100"], "gaveta": ["equipamento", "pegada"] },
+  { "id": "E11", "q": "no supino meu pe se mexe quando eu empurro forte, isso queima a tentativa", "espera": ["F001-30"], "gaveta": ["setup", "supino"] },
+  { "id": "E12", "q": "meu ombro fica moido toda vez que supino pesado, posso fazer o programa inteiro numa versao que nao machuca", "espera": ["V127-15", "V127-13"], "gaveta": ["lesao", "dor", "selecao-exercicio"] }
+]

@@ -102,6 +102,55 @@
 > arquivo escrito para provar que as constantes foram ganhas. Removida (§8.49). **D01–D12
 > estão publicados a partir deste commit e queimados**, como os B## antes deles.
 
+> **O número da onda 2E — A TELA POR SEÇÃO (13/08/2026, manhã).** A tela plana de 40 vagas
+> virou **uma seção por gaveta**, cada uma com bloco de declaradas e bloco de afins.
+> `montarSecaoDeGaveta` não recebe as outras gavetas, então a diluição ENTRE gavetas
+> acabou por construção. Placar auto-reportado pelo construtor, que enxergava os 42
+> canários: D01–D12 de 2 para 5 em "algum id" e 0 → 0 em "todos"; B01–B12 2 → 3 e 0 → 1;
+> P01–P18 7 → 11 e 2 → 6. **A auditoria independente reproduziu esses números dígito a
+> dígito** — o relatório do construtor foi honesto até o dígito, o que não tinha
+> acontecido nas cinco ondas anteriores. **Preço:** a saída dobrou.
+
+> **O número da onda 2F (13/08/2026), e ele é o que fecha seis ondas de recuperação.
+> Conjunto cego NOVO E01–E12, escrito antes do conserto e rodado pela CLI de verdade:
+> 7 de 12 devolvem ALGUM id, 3 de 12 devolvem TODOS. No público P01–P18, na mesma
+> camada e no mesmo dia: 11 de 18 e 6 de 18.** A distância público-cego, que em 12/08 era
+> de 2,3×, fechou para 61 %/33 % contra 58 %/25 %. **Isso NÃO prova ausência de overfit**:
+> o arquivo dos doze esteve no repositório em texto puro durante a onda inteira, e
+> "escondido do construtor" não é verificável depois do fato. Os doze foram absorvidos em
+> `CANARIOS.json` como E01–E12, com o resultado medido, e o arquivo solto foi apagado.
+>
+> **O NÚMERO QUE DECIDE É UM ZERO: 0 de 12 falham por roteamento.** Em 12 de 12 a rota
+> abre uma gaveta que CONTÉM a resposta etiquetada. Os 9 fracassos são todos
+> SOTERRAMENTO. Pela régua independente (`contrato-ordenacao.mjs`), com a gaveta em que o
+> id está etiquetado forçada, **25 de 54 canários** entregam todos os ids dentro do teto
+> de 18 — os outros 29 são ordenação pura.
+>
+> **E o caminho que o produto realmente usa foi medido pela primeira vez em seis ondas.**
+> Três modelos recebendo só as perguntas e o glossário das 74 gavetas, nos MESMOS 12:
+> **8, 8 e 9 de 12 completos, contra 3 de 12 do determinístico**; 9 de 12 contra 7 em
+> "algum id". **O controle mata a desculpa do orçamento:** dando ao determinístico as
+> gavetas que a própria rota escolheu, forçadas uma por comando com o mesmo teto de 60,
+> ele vai a 6 de 12 e 3 de 12 — **piorou**. Dos 69 pares roteador × id do caminho do
+> agente, a causa "o modelo escolheu gaveta que não contém o id" ocorreu **zero vezes**.
+>
+> **A DECISÃO, e ela é (c), não (b): o problema não está onde estamos cavando.** Seis ondas
+> foram gastas afinando o ROTEAMENTO determinístico, que é a metade que os modelos acertam
+> de graça, enquanto a ordenação DENTRO da gaveta — a metade que um compilador PODE
+> verificar — nunca foi travada. O princípio da casa continua correto e foi aplicado no
+> lugar errado. **O `--pergunta` passa a ser conveniência de linha de comando; o produto
+> é o agente com o glossário.** O plano, com os sete itens em ordem e o experimento de
+> 199 claims que decide a pergunta da frota, está no `RECUPERACAO.md` §28.
+>
+> **O que a auditoria da 2F derrubou, e cada item tem comando:** a invariante de
+> não-diluição é uma **tautologia** (o teste varia `tela.secoes`, que por desenho não afeta
+> o roteamento; variando o `max` de verdade dá **38 violações em 1.832**, todas "a seção
+> inteira sumiu"); o preço não é ~31 kB e sim até **40,0 kB**, com 24 de 63 canários acima
+> do teto de 34 kB que a própria trava declara; o escape `--topic <gaveta certa>` regrediu
+> de 12/12 para **10/12** sem nada acusar. Scripts em
+> `research/tools/auditoria-onda2f/`. **E01–E12 estão publicados a partir deste commit e
+> queimados**, sétima vez que esta regra é escrita.
+
 Este arquivo é curto de propósito. O mapa do sistema está em `research/RUNBOOK.md`; o
 registro está em `SCHEMA.md`; o porquê de cada gaveta está em `ENUMERADOS.md`; como a base
 é medida está em `INSTRUMENTO.md`. Aqui está só: **onde a base está, o que foi provado, o
@@ -502,7 +551,36 @@ solta para este atleta.
 
 ## 4. O que a próxima rodada tem de atacar, em ordem
 
-> ## ⇒ A FILA DE HOJE É `research/kb/ONDA-2C.md` (10/08/2026)
+> ## ⇒ A FILA DE HOJE É `research/kb/RECUPERACAO.md` §28.1 (13/08/2026)
+>
+> **Escrita no fechamento da onda 2F, depois do quinto ataque cego E01–E12 e da primeira
+> medição do caminho do agente.** Ela substitui o item 0 da `ONDA-2C.md` — *consertar o
+> roteamento* — porque esse item **está feito e não é mais o gargalo**: 0 de 12 cegos
+> falham por roteamento. A ordem nova, e ela vale para código E para base:
+>
+>   1. **CONTRATO DE ORDENAÇÃO no `check:kb`** — dada a gaveta em que o id está
+>      etiquetado, o id tem de cair dentro do teto de 18. Nasce vermelho em **29 de 54**
+>      canários, e nasce vermelho de propósito.
+>   2. **`ordenarNoTopico` e `PESO_CORPUS`** — F001-79 em #78 de 152, F001-30 em #35 de
+>      335, V015-12 em #34 de 57.
+>   3. **A invariante:** trocar o teste para o `max` do roteamento, e então consertar a
+>      não-monotonicidade **ou apagar o banner** que promete ao atleta o que não vale.
+>   4. **O teto de bytes** recalibrado contra os 40,0 kB medidos, não contra uma pergunta
+>      escolhida.
+>   5. **`--topic` aceitando lista de verdade** e ACRESCENTANDO à rota — dívida da onda 2D,
+>      e a armadilha que já produziu um achado falso inteiro.
+>   6. **Etiquetar F001 com `regras-ipf`** (hoje 8 de 143). Conserto de BASE, barato, e
+>      melhora o caminho do agente sem tocar em código.
+>   7. **A linha de saída do gate** dizendo o que ele mede: fidelidade à fonte e ordenação
+>      dentro da gaveta, nunca "a base responde bem".
+>
+> **O que NÃO está nesta fila e continua valendo:** a triagem de banalidade (#34), os
+> fatos do atleta em `tier U` (#28), o Whisper nos `suspect` (#31) e — por último, e a
+> ordem não é negociável — o ledger e as sínteses (#25, #26). Estão na `ONDA-2C.md`, que
+> segue sendo a fila de BASE. **Reparo vem antes de síntese**, e **não ingira mais corpus:
+> o gargalo não é conteúdo, foi medido cinco vezes.**
+>
+> ### A fila anterior, `research/kb/ONDA-2C.md`
 >
 > **Escrita no fechamento da onda 2B, depois do segundo ataque cego.** Ela traz, na
 > ordem: **consertar o roteamento** (item 0 — os canários P01–P18 já estão escritos e já
