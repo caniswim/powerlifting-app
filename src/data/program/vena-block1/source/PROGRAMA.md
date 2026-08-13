@@ -21,7 +21,13 @@ estrutura, e por isso está fora da regra "só a carga varia".
 > **REGRA MESTRA DE DENOMINADOR.** Todo `%` deste arquivo é **percentual do
 > `trainingMax` CORRENTE** (`SPEC_REV2` §0.1), nunca do 1RM histórico e nunca das marcas
 > **declaradas** 250/170/268, que não aparecem em lugar nenhum deste programa. Partida:
-> **agacho 215 · supino 160 · terra 240** (`baseline.md` §4). Célula em kg é **erro de
+> **agacho 240 · supino 163 · terra 260** — as marcas **com comandos**, medidas pelo
+> atleta em 13/08/2026. Substituem a estimativa 215/160/240 de `baseline.md` §4, que vinha
+> de n = 1 no supino. ⚠️ **NÃO aplique o desconto de 92–94% a estes números**: ele converte
+> máximo de ACADEMIA em máximo técnico, e estes já são o máximo técnico — levantados com
+> comandos, pausa e padrão legal. As marcas de academia dele são 250/170/260. Aplicar o
+> desconto duas vezes põe o pico do bloco (92% do TM, RPE 8) num peso que ele repete três
+> vezes, e a tabela normativa do §0.3 deixa de fechar.. Célula em kg é **erro de
 > build**: o app recomputa em runtime.
 
 > **O QUE É O `trainingMax`, ESCRITO AQUI E NÃO EM NOTA DE EXERCÍCIO** (`SPEC_REV2` §0.1).
@@ -90,9 +96,9 @@ semanas_calibracao          = 3
 dias_por_semana_bloco       = 5
 sessoes_total               = 86
 incremento_minimo_barra_kg  = 1
-tm_partida_agacho_kg        = 215
-tm_partida_supino_kg        = 160
-tm_partida_terra_kg         = 240
+tm_partida_agacho_kg        = 240
+tm_partida_supino_kg        = 163
+tm_partida_terra_kg         = 260
 taper_dias                  = 10
 ```
 
@@ -339,7 +345,7 @@ tratamentos diferentes do mesmo protocolo.
 **Gate obrigatório entre a S3 e a S4** (`design.md` §11-A2 · SPEC §4.1): extrapolar pelas
 três âncoras, usar a **mediana** (nunca a maior), gravar em `profile.trainingMax` (não
 toca no 1RM histórico), gravar `trainingMaxInicialBloco`, e **as cargas das S4–S18
-recomputam em runtime**. Divergência > 7% contra 215/160/240 vai para a conversa semanal
+recomputam em runtime**. Divergência > 7% contra 240/163/260 vai para a conversa semanal
 **antes** de seguir.
 
 ⚠️ **PORTAS DE INVALIDAÇÃO DO GATE — as mesmas do gauge (§1.1) e da porta de R115, e
