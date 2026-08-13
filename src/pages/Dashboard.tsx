@@ -20,6 +20,7 @@ import { useSurveyTrends } from '../features/feedback/hooks/useSurveyTrends';
 import { ReadinessIndicator } from '../features/feedback/components/ReadinessIndicator';
 import { TrendSparklines } from '../features/feedback/components/TrendSparklines';
 import { AlertsBanner } from '../features/feedback/components/AlertsBanner';
+import { RestPainCard } from '../features/survey/components/RestPainCard';
 
 export default function Dashboard() {
   const storage = useStorage();
@@ -291,6 +292,11 @@ export default function Dashboard() {
             </div>
           </div>
         ) : null}
+
+        {/* Dor sem treino — a única porta que não passa por um `workoutId`. Fica
+            logo abaixo do próximo treino porque o dia que ela salva é o dia em
+            que o botão de cima não é apertado. */}
+        <RestPainCard programId={programId} weekNumber={currentWeek} />
 
         {/* Prontidão e tendências — derivadas dos surveys, sem IA */}
         {trends.hasSurveyData && (

@@ -120,7 +120,9 @@ function isoDay(n) {
  * peitoral e não colheu o log.
  */
 function weekWith(painBySession, phase = 'pre', opts = {}) {
-  const { weekIndex = 0, prev = null, firstDay = 1, chest = false, semLog = false } = opts;
+  const {
+    weekIndex = 0, prev = null, firstDay = 1, chest = false, semLog = false, restPain = [],
+  } = opts;
   const week = venaBlock1Weeks[weekIndex];
   const sessions = painBySession.map((pain, i) => ({
     schemaVersion: 1,
@@ -169,7 +171,26 @@ function weekWith(painBySession, phase = 'pre', opts = {}) {
     sessions,
     workouts: [],
     bodyweight: [],
+    restPainLogs: restPain,
   }, prev);
+}
+
+/**
+ * Um registro de dor FORA de sessão, do jeito que o app grava: por data e
+ * contexto, sem `workoutId` nenhum.
+ */
+function restPainLog(intensity, opts = {}) {
+  const { weekIndex = 0, day = 1, region = 'left_chest', context = 'repouso' } = opts;
+  const week = venaBlock1Weeks[weekIndex];
+  return {
+    id: `rp-${week.weekNumber}-${day}-${context}`,
+    date: isoDay(day).slice(0, 10),
+    programId: 'vena-block1',
+    weekNumber: week.weekNumber,
+    context,
+    painEntries: [{ region, intensity }],
+    createdAt: isoDay(day),
+  };
 }
 
 const gateFlags = (doc) => doc.flags.filter((f) => f.startsWith('GATE DE PEITORAL'));
@@ -342,6 +363,7 @@ function semanasLimpas(n, ultima = null) {
       firstDay: 1 + i * 7,
       chest: spec.chest ?? true,
       semLog: spec.semLog ?? false,
+      restPain: spec.restPain ?? [],
     });
   }
   return doc;
@@ -405,6 +427,82 @@ test('documento antigo sem o bloco `gate` degrada em vez de quebrar', () => {
     `documento sem gate não degradou para o comportamento antigo: ${JSON.stringify(s2.flags)}`);
   assert(s2.gate && s2.gate.readings.length === 2,
     'o documento novo tem de voltar a gravar o bloco mesmo vindo de um antigo');
+});
+
+// --- 1.4 Dor FORA de sessão: entra no documento e NÃO entra no gate ----------
+//
+// A separação é o desenho inteiro (`PEITO-PARECER.md` §8.2), e ela é invisível:
+// nada no tipo impede alguém de somar os registros de repouso em
+// `buildGateReadings` num refactor de boa-fé, e o app continuaria compilando e
+// levantando bandeiras — só que com um dia parado consumindo vaga da janela de 3
+// sessões e disparando degrau que a tabela do §1.2 não escreve. É por isso que
+// esta trava existe: ela é o compilador que o tipo não tem.
+//
+// A intensidade escolhida (5/10) é a mais cara possível de propósito: está ACIMA
+// do degrau que ENCERRA a sessão. Se um registro de repouso vazasse para o gate,
+// não passaria despercebido — sairia o degrau mais grave da tabela.
+
+const restPainFlags = (doc) => doc.flags.filter((f) => f.startsWith('DOR FORA DE SESSÃO'));
+const FORA_DE_SESSAO = 5;
+
+test(`registro de ${FORA_DE_SESSAO}/10 fora de sessão não altera gate.readings, gate.weeks nem degrau`, () => {
+  assert(FORA_DE_SESSAO >= LIMIAR_ENCERRA,
+    `o registro do cenário (${FORA_DE_SESSAO}/10) precisa alcançar o degrau mais grave da tabela `
+    + `(≥${LIMIAR_ENCERRA}/10) para que um vazamento seja visível`);
+
+  const semRegistro = weekWith([[], []], 'ambos', { chest: true });
+  const comRegistro = weekWith([[], []], 'ambos', {
+    chest: true,
+    restPain: [restPainLog(FORA_DE_SESSAO)],
+  });
+
+  assert(JSON.stringify(comRegistro.gate) === JSON.stringify(semRegistro.gate),
+    `o bloco do gate mudou por causa de um registro fora de sessão:\n  com:  ${JSON.stringify(comRegistro.gate)}\n  sem:  ${JSON.stringify(semRegistro.gate)}`);
+  assert(gateFlags(comRegistro).length === 0 && gateFlags(semRegistro).length === 0,
+    `um registro fora de sessão disparou degrau: ${JSON.stringify(gateFlags(comRegistro))}`);
+  assert(JSON.stringify(retornoFlags(comRegistro)) === JSON.stringify(retornoFlags(semRegistro)),
+    `o registro fora de sessão mexeu no RETORNO: ${JSON.stringify(retornoFlags(comRegistro))}`);
+
+  // E a outra metade: não sumiu. Perder o dado em silêncio era o defeito.
+  assert(comRegistro.restPain && comRegistro.restPain.n === 1,
+    `o registro não chegou ao documento: ${JSON.stringify(comRegistro.restPain)}`);
+  assert(comRegistro.restPain.peakByRegion[0].maxIntensity === FORA_DE_SESSAO,
+    `o pico fora de sessão não foi gravado: ${JSON.stringify(comRegistro.restPain)}`);
+  assert(restPainFlags(comRegistro).length === 1,
+    `o registro fora de sessão não virou bandeira própria: ${JSON.stringify(comRegistro.flags)}`);
+  assert(semRegistro.restPain === undefined,
+    'semana sem registro não pode carregar o campo');
+});
+
+test('semana SEM treino nenhum para de sair do app dizendo que não houve dor', () => {
+  // É a semana que motivou o campo: dor no peitoral, supino pulado, zero
+  // sessões. Antes disto o documento saía com `dor: []` e nada mais.
+  const doc = weekWith([], 'pre', {
+    restPain: [
+      restPainLog(FORA_DE_SESSAO),
+      restPainLog(LIMIAR, { day: 3, context: 'ao_acordar' }),
+    ],
+  });
+  assert(doc.gate.readings.length === 0 && gateFlags(doc).length === 0,
+    `semana sem sessão nenhuma não pode produzir leitura de gate: ${JSON.stringify(doc.gate)}`);
+  assert(doc.restPain.n === 2, `esperava 2 registros: ${JSON.stringify(doc.restPain)}`);
+  assert(doc.restPain.byContext.repouso.maxIntensity === FORA_DE_SESSAO
+    && doc.restPain.byContext.ao_acordar.maxIntensity === LIMIAR,
+    `os contextos não foram separados: ${JSON.stringify(doc.restPain.byContext)}`);
+  assert(restPainFlags(doc)[0] && restPainFlags(doc)[0].includes(`pico ${FORA_DE_SESSAO}/10`),
+    `a semana parada continuou muda: ${JSON.stringify(doc.flags)}`);
+});
+
+test('o RETORNO não é bloqueado pela dor fora de sessão — mas sai avisado', () => {
+  // A tabela não lê este registro, e por isso o veredito não muda. O que muda é
+  // que quem lê a bandeira vê, na mesma tela, que a linha que AUMENTA carga foi
+  // decidida sem esse dado.
+  const ultima = { pain: [[], []], restPain: [restPainLog(FORA_DE_SESSAO, { weekIndex: PAIN_GATE.retorno.semanas - 1, day: 1 + (PAIN_GATE.retorno.semanas - 1) * 7 })] };
+  const doc = semanasLimpas(PAIN_GATE.retorno.semanas, ultima);
+  assert(retornoLiberado(doc),
+    `o registro fora de sessão bloqueou o RETORNO, e a tabela não manda isso: ${JSON.stringify(doc.flags)}`);
+  assert(doc.flags.some((f) => f.includes('foi avaliado SEM ler')),
+    `o RETORNO saiu sem o aviso da dor fora de sessão: ${JSON.stringify(doc.flags)}`);
 });
 
 // --- 2. A checagem está viva -------------------------------------------------

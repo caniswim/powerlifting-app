@@ -13,6 +13,8 @@ import {
   getRecords,
   getSessionIndex,
   getWorkouts,
+  getRestPainLogs,
+  listRestPainByWeek,
 } from '../storage/index';
 import { gateLookbackWeeks } from '../../domain/painGate';
 import { buildSessionDoc, weekIdFor } from './sessionRollup';
@@ -190,6 +192,7 @@ function weekDocOrNull(programId: string, weekNumber: number, prev: WeekDoc | nu
       workouts,
       sessions: workouts.map(summarizeWorkout),
       bodyweight: getBodyweightEntries(),
+      restPainLogs: listRestPainByWeek(programId, weekNumber),
     },
     prev,
   );
@@ -248,6 +251,15 @@ export function enumerateEverything(): {
   for (const w of workouts) {
     const programId = programOf(w);
     weeks.set(`${programId}|${w.weekNumber}`, { programId, weekNumber: w.weekNumber });
+  }
+  // A semana que só tem dor fora de sessão não tem treino nenhum para enumerar,
+  // e é justamente a semana que este campo existe para não perder: sem esta
+  // passada, "Reenviar tudo" a deixaria de fora.
+  for (const log of getRestPainLogs()) {
+    weeks.set(`${log.programId}|${log.weekNumber}`, {
+      programId: log.programId,
+      weekNumber: log.weekNumber,
+    });
   }
 
   return {

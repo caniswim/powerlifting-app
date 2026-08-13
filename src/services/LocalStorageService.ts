@@ -10,6 +10,7 @@ import {
   exportAllData, importData, resetAllData,
   getPreSurveys, savePreSurvey, getPreSurveyForWorkout, getRecentPreSurveys,
   getPostSurveys, savePostSurvey, getPostSurveyForWorkout, getRecentPostSurveys,
+  getRestPainLogs, saveRestPainLog, listRestPainByWeek, listRestPainByRange,
 } from './storage/index';
 
 export class LocalStorageService implements IStorageService {
@@ -46,4 +47,8 @@ export class LocalStorageService implements IStorageService {
   savePostSurvey = savePostSurvey;
   getPostSurveyForWorkout = getPostSurveyForWorkout;
   getRecentPostSurveys = getRecentPostSurveys;
+  getRestPainLogs = getRestPainLogs;
+  saveRestPainLog = saveRestPainLog;
+  listRestPainByWeek = listRestPainByWeek;
+  listRestPainByRange = listRestPainByRange;
 }

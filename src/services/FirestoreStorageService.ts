@@ -5,6 +5,7 @@ import type {
   PersonalRecord,
   PostWorkoutSurvey,
   PreWorkoutSurvey,
+  RestPainLog,
   WorkoutLog,
 } from '../types';
 import { LocalStorageService } from './LocalStorageService';
@@ -56,6 +57,18 @@ export function createFirestoreStorageService(base: IStorageService = new LocalS
     savePostSurvey(survey: PostWorkoutSurvey): void {
       base.savePostSurvey(survey);
       markByWorkoutId(survey.workoutId);
+    },
+
+    /**
+     * A semana de um registro de dor fora de sessão vem do CARIMBO do registro,
+     * não de um treino: é uma semana sem treino que este caminho existe para
+     * salvar. Até aqui só treino e survey de treino marcavam sujeira, e por isso
+     * a semana parada nem chegava a ser reescrita — o documento continuava o de
+     * antes, dizendo que não houve dor.
+     */
+    saveRestPainLog(log: RestPainLog): void {
+      base.saveRestPainLog(log);
+      markDirty(dirty.weekKey(log.programId, log.weekNumber), 'state');
     },
 
     saveRecord(record: PersonalRecord): void {

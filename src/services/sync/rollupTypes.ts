@@ -4,6 +4,7 @@ import type {
   PainRegion,
   PercentRef,
   PlanAdherence,
+  RestPainContext,
   SquatDepth,
   StrengthPerception,
 } from '../../types';
@@ -26,15 +27,14 @@ import type { GateReading, GateWeekObservation } from '../../domain/painGate';
  *     liberá-lo. É a direção segura, e é a única razão de não bastar acrescentar
  *     campo em silêncio: reenviar as semanas antigas as reconstrói com o campo.
  *
- * ⚠️ CORREÇÃO DE COMENTÁRIO (12/08/2026). Até esta revisão o texto do item 3
- * dizia que a versão 3 nascia com `WeekDoc.restPain` — e esse campo NÃO EXISTE
- * neste arquivo. `RestPainLog` está declarado em `src/types/index.ts` e não tem
- * um consumidor; `describeRestPain`/`describeReturnWithRestPain`, em
- * `src/domain/painGate.ts`, não têm chamador. Era andaime completo sem porta, e
- * o comentário anunciava como pronto um caminho que não existe. O campo continua
- * PROPOSTO — o diff está em `research/kb/PEITO-PARECER.md` §7 —, e ele não muda
- * comportamento de gate nenhum: dor fora de sessão não entra em
- * `buildGateReadings`, não consome a janela de 3 sessões e não dispara degrau.
+ * `WeekDoc.restPain` (13/08/2026) entrou SEM bumpar a versão, e isso é
+ * deliberado: o campo é opcional, puramente aditivo, e a ausência dele é lida
+ * como "nenhum registro fora de sessão" — que é exatamente o comportamento de
+ * antes de ele existir. Não há leitura que mude de sentido em documento antigo,
+ * então não há o que reenviar. O que ele NÃO faz é o motivo de caber aqui: dor
+ * fora de sessão não entra em `buildGateReadings`, não consome a janela de 3
+ * sessões, não dispara degrau e não entra no `RETORNO`. O desenho está em
+ * `research/kb/PEITO-PARECER.md` §8.2.
  */
 export const ROLLUP_SCHEMA_VERSION = 3;
 
@@ -283,6 +283,39 @@ export interface WeekDoc {
    * migração e sem quebrar leitura.
    */
   gate?: WeekGate;
+
+  /**
+   * Dor colhida FORA de sessão (`RestPainLog`).
+   *
+   * Fica num campo PRÓPRIO, e não dentro de `pain` nem de `gate`, porque a
+   * separação é o desenho inteiro: `pain` agrega o que foi colhido dentro de
+   * treino e `gate` é a memória da tabela do §1.2, que fala de pico dentro de
+   * sessão de supino. Misturar as duas coisas faria um dia parado consumir vaga
+   * da janela de 3 sessões e disparar degrau — regra que o programa não escreve.
+   *
+   * Opcional: semana sem registro nenhum não carrega o campo, e documento
+   * gravado antes desta revisão também não. Nos dois casos a leitura é a mesma —
+   * nada a anunciar.
+   */
+  restPain?: WeekRestPain;
+}
+
+/**
+ * O que a semana viu de dor fora de sessão. Fatos, nenhum veredito — igual ao
+ * `WeekGate`, e pelo mesmo motivo: quem decide é a conversa semanal com a tabela
+ * na mão, e aqui não há tabela para consultar.
+ */
+export interface WeekRestPain {
+  /** Registros da semana (um por dia e contexto). */
+  n: number;
+  /**
+   * Por momento do dia. Os três contextos aparecem sempre, inclusive zerados: a
+   * ausência de dor ao acordar numa semana em que houve dor em repouso é um
+   * fato, e ele se perde se a gaveta vazia sumir do documento.
+   */
+  byContext: Record<RestPainContext, { n: number; maxIntensity: number }>;
+  /** Uma linha por região registrada, da mais frequente para a menos. */
+  peakByRegion: { region: PainRegion; occurrences: number; maxIntensity: number }[];
 }
 
 /**

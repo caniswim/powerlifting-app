@@ -1,4 +1,4 @@
-import type { PainRegion } from '../types';
+import type { PainRegion, RestPainContext } from '../types';
 
 /**
  * Rótulos e ORDEM DE EXIBIÇÃO das regiões de dor.
@@ -26,3 +26,19 @@ export const painRegionLabels: Record<PainRegion, string> = {
   neck: 'Pescoço',
   other: 'Outro',
 };
+
+/**
+ * Rótulos e ORDEM dos momentos de dor FORA de sessão.
+ *
+ * `Record<RestPainContext, string>` de propósito: acrescentar um contexto ao
+ * enumerado sem dar rótulo a ele reprova o `tsc`, e nenhuma lista de contextos
+ * precisa ser mantida à mão em outro arquivo — a ordem das chaves aqui é a ordem
+ * dos botões na tela e a ordem das gavetas no documento semanal.
+ */
+export const restPainContextLabels: Record<RestPainContext, string> = {
+  repouso: 'Em repouso',
+  ao_acordar: 'Ao acordar',
+  apos_esforco_cotidiano: 'Após esforço do dia',
+};
+
+export const restPainContexts = Object.keys(restPainContextLabels) as RestPainContext[];

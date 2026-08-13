@@ -5,6 +5,7 @@ import type {
   PreWorkoutSurvey,
   PostWorkoutSurvey,
   BodyweightEntry,
+  RestPainLog,
 } from '../types';
 
 export interface IStorageService {
@@ -54,4 +55,10 @@ export interface IStorageService {
   savePostSurvey(survey: PostWorkoutSurvey): void;
   getPostSurveyForWorkout(workoutId: string): PostWorkoutSurvey | undefined;
   getRecentPostSurveys(limit?: number): PostWorkoutSurvey[];
+
+  // Dor fora de sessão (sem `workoutId` — é esse o ponto)
+  getRestPainLogs(): RestPainLog[];
+  saveRestPainLog(log: RestPainLog): void;
+  listRestPainByWeek(programId: string, weekNumber: number): RestPainLog[];
+  listRestPainByRange(from: string, to: string): RestPainLog[];
 }

@@ -8,6 +8,8 @@ export const KEYS = {
   SESSION_INDEX: 'pl_session_index',
   PRE_SURVEYS: 'pl_pre_surveys',
   POST_SURVEYS: 'pl_post_surveys',
+  /** Dor FORA de sessão — indexada por data, não por treino. */
+  REST_PAIN: 'pl_rest_pain',
   /** Série temporal de peso corporal. */
   BODYWEIGHT: 'pl_bodyweight',
   /** Id do programa ativo. */

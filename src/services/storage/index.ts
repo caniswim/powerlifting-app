@@ -14,3 +14,4 @@ export {
 export { exportAllData, importData, resetAllData } from './dataTransfer';
 export { getPreSurveys, savePreSurvey, getPreSurveyForWorkout, getRecentPreSurveys, getPostSurveys, savePostSurvey, getPostSurveyForWorkout, getRecentPostSurveys } from './surveyRepository';
 export { getBodyweightEntries, saveBodyweightEntry, getLatestBodyweight, localDateKey } from './bodyweightRepository';
+export { getRestPainLogs, saveRestPainLog, listRestPainByWeek, listRestPainByRange } from './restPainRepository';

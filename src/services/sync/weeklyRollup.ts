@@ -3,15 +3,19 @@ import type {
   PainRegion,
   PlanAdherence,
   PrescribedWeek,
+  RestPainContext,
+  RestPainLog,
   StrengthPerception,
   WorkoutLog,
 } from '../../types';
 import { prescribedWeeklyVolume } from '../../domain/volumeTargets';
-import { painRegionLabels } from '../../domain/painRegions';
+import { painRegionLabels, restPainContexts } from '../../domain/painRegions';
 import {
   describeGateReturn,
   describeGateReturnGap,
   describePainGate,
+  describeRestPain,
+  describeReturnWithRestPain,
   evaluateGateReturn,
   evaluatePainGate,
   gateWindowSessions,
@@ -20,7 +24,7 @@ import {
   painGateScope,
   PAIN_GATE,
 } from '../../domain/painGate';
-import type { GateReading, GateWeekObservation } from '../../domain/painGate';
+import type { GateReading, GateWeekObservation, RestPainObservation } from '../../domain/painGate';
 import { addSet, newRollupAcc, toRollup } from './complianceRollup';
 import { ROLLUP_SCHEMA_VERSION } from './rollupTypes';
 import type {
@@ -31,6 +35,7 @@ import type {
   TopSetRef,
   WeekDoc,
   WeekGate,
+  WeekRestPain,
   WeekSessionRow,
 } from './rollupTypes';
 import { emptyLiftTotals, isWorkingSet, liftOf, weekIdFor } from './sessionRollup';
@@ -45,6 +50,15 @@ export interface WeekInput {
   workouts: WorkoutLog[];
   /** Série de peso corporal completa — a janela da semana é recortada aqui. */
   bodyweight: BodyweightEntry[];
+  /**
+   * Dor colhida FORA de sessão nesta semana do programa.
+   *
+   * Chega por fora das sessões porque não pertence a nenhuma: é o dia parado. A
+   * lista é opcional para que todo chamador antigo continue montando o mesmo
+   * documento de sempre — semana sem registro é indistinguível de semana de
+   * antes do campo, e é assim que tem de ser.
+   */
+  restPainLogs?: RestPainLog[];
 }
 
 const SURVEY_KEYS: (keyof SurveyAverages)[] = [
@@ -508,11 +522,73 @@ function buildGate(
   };
 }
 
+// ---------------------------------------------------------------------------
+// Dor FORA de sessão — o bloco que NÃO fala com o gate
+// ---------------------------------------------------------------------------
+
+/**
+ * O que a semana colheu fora de treino, agregado e sem veredito.
+ *
+ * Este bloco não toca `buildGateReadings` e não é lido por ele. É a linha
+ * inteira do desenho (`PEITO-PARECER.md` §8.2): a tabela do §1.2 conta pico
+ * DENTRO de sessão de supino, e um dia parado não é sessão. Fazer estes
+ * registros entrarem na janela seria inventar uma regra que o programa não
+ * escreve; fazê-los sumir foi o defeito que custou uma semana inteira de sintoma
+ * a este atleta. O que resta é anunciar.
+ */
+function buildRestPain(logs: RestPainLog[]): WeekRestPain {
+  const byContext = {} as Record<RestPainContext, { n: number; maxIntensity: number }>;
+  for (const context of restPainContexts) byContext[context] = { n: 0, maxIntensity: 0 };
+
+  const byRegion = new Map<PainRegion, { occurrences: number; maxIntensity: number }>();
+
+  for (const log of logs) {
+    const slot = byContext[log.context];
+    slot.n += 1;
+    for (const p of log.painEntries) {
+      slot.maxIntensity = Math.max(slot.maxIntensity, p.intensity);
+      const entry = byRegion.get(p.region) ?? { occurrences: 0, maxIntensity: 0 };
+      entry.occurrences += 1;
+      entry.maxIntensity = Math.max(entry.maxIntensity, p.intensity);
+      byRegion.set(p.region, entry);
+    }
+  }
+
+  return {
+    n: logs.length,
+    byContext,
+    peakByRegion: [...byRegion]
+      .map(([region, v]) => ({ region, ...v }))
+      .sort((a, b) => b.occurrences - a.occurrences || b.maxIntensity - a.maxIntensity),
+  };
+}
+
+/**
+ * O recorte de PEITORAL do bloco acima, que é o que a bandeira anuncia.
+ *
+ * Só peitoral porque a bandeira existe para acompanhar o tecido lesionado ao
+ * lado das linhas do §1.2 — dor de joelho num dia parado continua no documento,
+ * dentro de `restPain`, sem virar linha de bandeira. `null` quando não houve
+ * registro nenhum: semana sem dado não ganha linha dizendo que não houve dor.
+ */
+function buildRestPainObservation(logs: RestPainLog[]): RestPainObservation | null {
+  const entries = logs
+    .flatMap((l) => l.painEntries)
+    .filter((p) => painGateScope(p.region) === 'peitoral');
+  if (entries.length === 0) return null;
+
+  return {
+    registros: entries.length,
+    pico: Math.max(...entries.map((p) => p.intensity)),
+    agudo: entries.some((p) => p.acute === true),
+  };
+}
+
 /**
  * Sinalizadores determinísticos. Não são julgamento — são onde olhar primeiro.
  * A conversa semanal decide o que fazer; isto só evita que algo passe batido.
  */
-function buildFlags(doc: Omit<WeekDoc, 'flags'>): string[] {
+function buildFlags(doc: Omit<WeekDoc, 'flags'>, restPain: RestPainObservation | null): string[] {
   const flags: string[] = [];
   const { adherence, compliance, surveys, pain, bodyweight } = doc;
 
@@ -575,6 +651,20 @@ function buildFlags(doc: Omit<WeekDoc, 'flags'>): string[] {
     flags.push(describeGateReturnGap(retorno));
   }
 
+  // DOR FORA DE SESSÃO — bandeira PRÓPRIA, e o prefixo é diferente de propósito:
+  // quem varre por `GATE DE PEITORAL` está lendo a tabela do §1.2, e isto está
+  // fora dela. Anuncia; não atua. Nenhuma leitura acima muda por causa desta
+  // linha — ela é montada de `restPain`, que `evaluatePainGate` e
+  // `evaluateGateReturn` sequer recebem.
+  if (restPain) {
+    flags.push(describeRestPain(restPain));
+    // Colado ao RETORNO só quando ele saiu: a única linha da tabela que AUMENTA
+    // carga sobre o tecido lesionado foi decidida sem ler este dado, e quem lê a
+    // bandeira tem de saber disso na mesma tela. Continua sem alterar o
+    // veredito — `retorno.elegivel` já foi calculado e não é tocado aqui.
+    if (retorno.elegivel) flags.push(describeReturnWithRestPain(restPain));
+  }
+
   for (const p of pain) {
     const scope = painGateScope(p.region);
     const label = painRegionLabels[p.region] ?? p.region;
@@ -609,6 +699,7 @@ function buildFlags(doc: Omit<WeekDoc, 'flags'>): string[] {
 /** Rollup semanal completo. Nenhum consumidor precisa reabrir os logs crus. */
 export function buildWeekDoc(input: WeekInput, prev: WeekDoc | null = null): WeekDoc {
   const sessions = [...input.sessions].sort((a, b) => a.date.localeCompare(b.date));
+  const restPainLogs = [...(input.restPainLogs ?? [])].sort((a, b) => a.date.localeCompare(b.date));
   const dates = sessions.map((s) => dayOf(s.date)).sort();
   const firstDate = dates[0] ?? null;
   const lastDate = dates[dates.length - 1] ?? null;
@@ -639,7 +730,10 @@ export function buildWeekDoc(input: WeekInput, prev: WeekDoc | null = null): Wee
     sessions: buildSessionRows(sessions),
     notes: buildNotes(sessions),
     gate: buildGate(sessions, input.week.weekNumber, prev),
+    // Semana sem registro não carrega o campo: ausência e "nenhum registro" são
+    // a mesma leitura, e o documento não engorda com uma gaveta vazia.
+    ...(restPainLogs.length > 0 ? { restPain: buildRestPain(restPainLogs) } : {}),
   };
 
-  return { ...base, flags: buildFlags(base) };
+  return { ...base, flags: buildFlags(base, buildRestPainObservation(restPainLogs)) };
 }
