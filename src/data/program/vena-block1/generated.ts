@@ -3,7 +3,7 @@
  *
  * Origem: src/data/program/vena-block1/source/PROGRAMA.md
  * Gerador: scripts/build-vena-block1.mjs
- * sha256(origem): aa13c0edcf8306dc
+ * sha256(origem): 9ee6ef2d98939fc9
  *
  * 18 semanas · 86 sessões · 614 blocos de prescrição.
  * Para regenerar: npm run build:vena
@@ -11,7 +11,7 @@
 import type { PrescribedWeek } from '../../../types';
 
 /** Hash do markdown de origem que produziu este arquivo. */
-export const VENA_BLOCK1_SOURCE_HASH = 'aa13c0edcf8306dc';
+export const VENA_BLOCK1_SOURCE_HASH = '9ee6ef2d98939fc9';
 
 /** Levantamentos que exigem `trainingMax` no perfil antes de sugerir carga. */
 export const VENA_BLOCK1_REQUIRES_TRAINING_MAX = ['squat', 'bench', 'deadlift'] as const;
@@ -653,7 +653,7 @@ export const VENA_BLOCK1_PAIN_GATE: Readonly<{
       "id": "recua_degrau",
       "severidade": 2,
       "sinal": "2 eventos ≥2/10 em 3 sessões de supino",
-      "acao": "recua um degrau do eixo que mudou mais recentemente e segura 2 semanas. A duração nunca desce abaixo de 1,0 s",
+      "acao": "recua um degrau de PEC-SETS e segura 2 semanas: −1 no eixo = −2 séries reais (halter inclinado e peck deck), e PEC-RPE cai junto por derivação. Piso em 0, que é o valor da S17. A duração nunca desce abaixo de 1,0 s",
       "eventos": 2,
       "limiar": 2,
       "janelaSessoes": 3,

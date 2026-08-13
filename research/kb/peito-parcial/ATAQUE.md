@@ -3,6 +3,37 @@
 > Extraído do journal `wf_5ebac2a2-b42` depois de o agente `exposicao` morrer
 > por `API Error: The response stopped arriving`. Salvo porque só existia na memória do workflow.
 
+> ⚠️ **CORREÇÃO POSTERIOR — leia antes do JSON.** Trabalho PARCIAL de um agente que morreu no
+> meio da auditoria, preservado como REGISTRO e não como conclusão.
+> **DERRUBADO: o campo `idsFabricados` (linhas 24 a 29).** Os cinco endereços ali marcados
+> "CONFIRMADO" como inexistentes foram julgados por igualdade EXATA de timestamp — teste que
+> condena **230 dos 263** endereços do `PROGRAMA.md`, inclusive os corretos. **249 dos 263**
+> caem numa janela de 0 a 7 s da claim que citam; os cinco acusados estão a 2, 3, 4, 6 e 6 s,
+> dentro dela, e dois apontam para a claim certa. `check-enderecos.mjs` hoje resolve 264 de
+> 264. "Fabricado" era o instrumento, não o achado.
+> **SOBREVIVEU:** `[R79 @03:35]` resolve no bloco de `V079-30`/`V079-31` (medo e relesão), não
+> no limiar 2–3/10 — que é `V079-34` `@03:47`. Erro de endereço real, mas UM caso, não uma
+> classe. E `escopoTransplantado` (linhas 59 a 61) fica de pé pela metade que importa, a de
+> RÓTULO e `modo`: o §1.2 marcava `V079-34` como `[PESSOAL]` e a base grava `scope: GERAL`,
+> `modo: prescricao`. Corrigido em `src/data/program/vena-block1/source/PROGRAMA.md:491-501`.
+> **A LIÇÃO:** igualdade exata de timestamp é instrumento quebrado; a tolerância é **±7 s**, e
+> é MEDIDA (mediana do passo da grade de `at`, 15 s, dividida por dois), não chutada.
+
+> ⚠️ **SEGUNDA CORREÇÃO POSTERIOR — 13/8/2026.** **DERRUBADO: *"o total fica em 22
+> series/semana em TODAS as S1-S16"*** (campo `furos`, primeiro item, e repetido no
+> `veredito`). Remedido no gerado, contando as séries de trabalho de todo exercício com
+> `muscleMap.peito > 0` — supino pausado, floor press, supino inclinado com halter, peck
+> deck: a curva S1–S16 é **24,24,24,24,24,26,26,26,26,26,26,26,26,28,28,28**. O total
+> **SOBE de 24 a 28** e **não vale 22 em nenhuma semana**; o que rampla é `PEC-SETS`. O 22
+> é o subtotal só das duas linhas de **barra**, esse sim invariante, e o texto abaixo o
+> escreve como se fosse o total sobre o peitoral. (O mesmo item diz *"a soma é 12 por
+> construção"*: são as duas somas de par, 7 + 5, e não uma soma única.)
+> **SOBREVIVEU, e é o achado que valia:** `FP-SETS + SUP-V1 = 7` e `FP4-SETS + SUP-V4 = 5`
+> em todas as S1–S16, medido — recuar `SUP-V1`/`SUP-V4` troca pausado por floor press
+> **1:1** e o volume sobre o tecido lesionado **não cai**. A recomendação ao atleta não
+> muda. Reprodução: `node research/tools/auditoria-peito/series-peito.mjs`. Registrado em
+> `research/RUNBOOK.md` §8.78; o JSON abaixo fica **intacto**, como registro.
+
 {
  "idsFabricados": [
   "[R79 @03:35] (PROGRAMA.md §1.2) — R079 nao tem NENHUMA claim em 03:35. As 39 claims de R079 caem em 00:15/00:30/00:46/01:01/01:16/01:31/01:46/02:01/02:16/02:31/02:46/03:01/03:17/03:32/03:47/04:02/04:17. O conteudo '2-3/10' e V079-34 @03:47, e ele e scope:GERAL modo:prescricao — NAO [PESSOAL] como o §1.2 escreve. CONFIRMADO.",

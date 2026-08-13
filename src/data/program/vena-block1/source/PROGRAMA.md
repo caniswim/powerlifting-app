@@ -445,7 +445,7 @@ quais 27 a 31 pausadas no peito. Nenhum degrau desta tabela toca nas 18 de aquec
 | Sinal | Ação |
 |---|---|
 | **1 evento ≥2/10** | congela `TM_supino` **e** o degrau de exposição (`SUP-V1`, `SUP-V4`, `PAUSA-P`, `PEC-SETS`, `FP-SETS`, `FP4-SETS`, `FP-RPE`, `FP4-RPE` não sobem). **Sem recuo.** |
-| **2 eventos ≥2/10 em 3 sessões de supino** | recua um degrau do eixo **que mudou mais recentemente** e segura 2 semanas. A duração **nunca** desce abaixo de 1,0 s |
+| **2 eventos ≥2/10 em 3 sessões de supino** | recua um degrau de `PEC-SETS` e segura 2 semanas: −1 no eixo = **−2 séries reais** (halter inclinado e peck deck), e `PEC-RPE` cai junto por derivação. Piso em 0, que é o valor da S17. A duração **nunca** desce abaixo de 1,0 s |
 | **≥4/10 ou estiramento agudo** | encerra a sessão, cai ao degrau das S1–S2 por 1 semana, re-sobe **a metade da velocidade**, reporta |
 | **RETORNO** | re-sobe um degrau só após **2 semanas consecutivas com pico ≤1/10** em todas as sessões de supino |
 
@@ -454,6 +454,27 @@ cópia dele.** `scripts/gate-dor.mjs` a converte em `VENA_BLOCK1_PAIN_GATE`, e
 `src/domain/painGate.ts` a consome; `npm run check:gate` reprova o build se o
 comportamento do rollup semanal divergir dos TRÊS DEGRAUS de agravamento **ou da linha
 `RETORNO`**. Mudar um número em qualquer uma das quatro linhas muda o app no mesmo passe.
+
+⚠️ **POR QUE O 2º DEGRAU NOMEIA `PEC-SETS` (13/08/2026) — a redação anterior não reduzia
+nada.** Ela dizia *"recua um degrau do eixo que mudou mais recentemente"*. Medido contra o
+gerado, isso não tira carga do peitoral: os dois eixos de barra são **pares de soma
+constante** — `FP-SETS + SUP-V1 = 7` e `FP4-SETS + SUP-V4 = 5` em **todas** as S1–S16 —,
+então recuar supino pausado devolve uma série de floor press na proporção **1:1**. O total
+semanal de séries de TRABALHO sobre o peitoral é `22 + 2 × PEC-SETS`, medido em
+**24,24,24,24,24,26,26,26,26,26,26,26,26,28,28,28**: `PEC-SETS` é o **único** eixo que o
+move, e por isso é ele que o degrau nomeia. Reproduza com
+`node research/tools/auditoria-peito/series-peito.mjs`.
+
+⚠️ **E O QUE ESTE DEGRAU NÃO ALCANÇA, porque prometer a mais é o modo de falha da casa.**
+(a) As **18 séries de aquecimento** semanais continuam intocadas — nenhuma linha desta
+tabela chega nelas. (b) O app lê este degrau como **texto**: `scripts/gate-dor.mjs` casa só
+o verbo `recua um degrau` e **nunca extrai o eixo**, então a bandeira anuncia o recuo e
+**quem o executa é o atleta**, à mão, nas duas linhas de `peito_alongado` de D5. (c) Nas
+S1–S5 o recuo leva `PEC-SETS` de 1 a **0**, o que remove o bloco de peitoral isolado
+inteiro; 0 não é valor inventado — é o que a S17 já roda. Escolha registrada como opção
+**C** em `research/kb/PEITO-PARECER.md` §8.1, decidida pelo atleta em 13/08/2026; as
+opções A (folga de recuo no par derivado) e B (recuo por total) ficam descritas lá, com o
+custo de cada uma.
 
 ⚠️ **A JANELA É DE SESSÕES DE SUPINO, E ELA ATRAVESSA A VIRADA DE SEMANA.** *"em N sessões
 de supino"* não é "nesta semana": o `WeekDoc` carrega a cauda das leituras das semanas

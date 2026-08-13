@@ -57,8 +57,30 @@ cumpriu.
 
 Isso não é interpretação. Está escrito em duas linhas do programa
 (`FP-SETS = 7 − SUP-V1` e `FP4-SETS = 5 − SUP-V4`), o gerador **reprova o build** se a
-grade divergir disso, e a medição bate em todas as 16 semanas: 22, 22, 22, 22, 22, 22, 22,
-22, 22, 22, 22, 22, 22, 22, 22, 22.
+grade divergir disso, e a medição bate em todas as 16 semanas: as duas somas ficam em
+`FP-SETS + SUP-V1 = 7` e `FP4-SETS + SUP-V4 = 5`, sem uma exceção, e o subtotal de barra
+fica em 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22.
+
+⚠️ **Corrigido em 13/8/2026, e a correção importa para você:** o número 22 é o subtotal das
+duas linhas de **barra** (supino pausado + floor press). **O seu total semanal de séries
+sobre o peitoral não é invariante e nunca é 22 — ele SOBE ao longo do bloco, de 24 a 28
+séries por semana:**
+
+| semanas | séries de trabalho sobre o peitoral |
+|---|---|
+| S1–S5 | **24** |
+| S6–S13 | **26** |
+| S14–S16 | **28** |
+
+O que sobe é o trabalho direto (`PEC-SETS`: supino inclinado com halter + peck deck, 1 → 2
+→ 3 séries em cada uma das duas linhas). O subtotal de barra é que fica parado em 22.
+Medido no programa gerado, contando as séries de trabalho de todo exercício que carrega
+peitoral: `node research/tools/auditoria-peito/series-peito.mjs`. **Nada disso enfraquece o
+parágrafo acima** — o que trava o recuo são as duas somas de par, não o total, e elas
+continuam valendo 7 e 5 em todas as 16 semanas. A frase que caiu foi *"o volume semanal
+sobre o peitoral é invariante em 22 séries"*; a conclusão que fica de pé é **recuar supino
+pausado não alivia o seu peitoral, porque o floor press entra 1:1 no lugar** — e ainda por
+cima o total está subindo enquanto isso.
 
 Testei o recuo dos **oito** eixos que o §1.2 nomeia, em toda semana em que cada um tem valor
 anterior distinto. O resultado:
@@ -309,10 +331,52 @@ presente pede avaliação presencial. **Isto é recomendação, não rodapé.**
 
 ## 8. AS PROPOSTAS — o que eu NÃO fiz, e por quê
 
-### 8.1 A invariante das 22 séries — **decisão sua, e é a única que muda o seu treino**
+### 8.1 A invariante dos dois pares — **DECIDIDO: opção C, pelo atleta, em 13/08/2026**
 
-O problema, em uma frase: `FP-SETS = 7 − SUP-V1` e `FP4-SETS = 5 − SUP-V4` amarram o total
-em 22 por construção, então recuar supino pausado nunca reduz carga.
+✅ **IMPLEMENTADO.** O atleta escolheu a **opção C**. O 2º degrau do §1.2 do `PROGRAMA.md`
+passou a nomear `PEC-SETS`, e o `generated.ts` foi regerado; `npm run check:gate` verde,
+62 cenários. As opções A e B ficam abaixo **como registro do que foi recusado e por quê** —
+não são trabalho pendente. As duas ressalvas que a redação original desta seção fazia à C
+**caíram na medição, e as duas caíram a favor dela**:
+
+- *"só funciona da S6 em diante, antes disso `PEC-SETS` não tem valor anterior"* — **falso**.
+  A curva é `PEC-SETS` = 1 (S1–S5), 2 (S6–S13), 3 (S14–S16) e **0 na S17**. O piso 0 já é
+  valor de produção, então nas S1–S5 o recuo é 1 → 0: sai o bloco de peitoral isolado
+  inteiro, −2 séries, e todo o supino de barra fica de pé.
+- *"−2 séries é menos do que a base pede"* — verdade, mas o denominador estava errado.
+  `PEC-SETS` não é *um* eixo entre vários: `total = 22 + 2 × PEC-SETS`, logo ele é o
+  **único** eixo que move o total. −2 é tudo o que existe para tirar sem tocar na barra.
+- **Um brinde não previsto:** `PEC-RPE = 5 + PEC-SETS` (`PROGRAMA.md:309`), então o recuo
+  baixa o teto de esforço junto, de graça — 7 → 6 nas S6–S13, 8 → 7 nas S14–S16.
+
+⚠️ **E uma promessa desta seção que eu preciso desmentir, porque ela era minha.** Escrevi
+que a tabela *"é lida por máquina, então o app acompanha no mesmo passe"*. É verdade pela
+metade: `scripts/gate-dor.mjs:27` casa **só o verbo** (`/recua um degrau/i`) e **nunca
+extrai o eixo**. O texto do eixo viaja inteiro para dentro da bandeira que aparece na tela —
+confirmado em `generated.ts:656` —, mas **o app não executa o recuo**, ele o anuncia. Quem
+executa é o atleta, à mão, nas duas linhas de `peito_alongado` de D5. Como
+`trainingMaxProgression.ts` está sem chamador (§4), execução manual é o regime de tudo neste
+bloco, e nada foi perdido em relação a A ou B — mas "o app acompanha" era mais do que o
+código faz.
+
+
+
+O problema, em uma frase: `FP-SETS = 7 − SUP-V1` e `FP4-SETS = 5 − SUP-V4` amarram **dois
+pares** em soma constante — `FP-SETS + SUP-V1 = 7` e `FP4-SETS + SUP-V4 = 5`, medido, em
+todas as S1–S16 sem exceção —, então recuar supino pausado troca a série por floor press
+**1:1** e nunca reduz carga sobre o peitoral.
+
+⚠️ **Corrigido em 13/8/2026.** Esta seção se chamava *"a invariante das 22 séries"* e dizia
+que as duas derivações *"amarram o total em 22 por construção"*. **O total não é invariante
+e nunca é 22.** Medido no programa gerado, contando as séries de trabalho de todo exercício
+que carrega peitoral (supino pausado, floor press, supino inclinado com halter, peck deck),
+a curva **sobe** ao longo do bloco: **24** nas S1–S5, **26** nas S6–S13, **28** nas
+S14–S16 — de 24 a 28 séries/semana, porque `PEC-SETS` rampla 1 → 2 → 3 em cada uma das duas
+linhas de trabalho direto. O 22 era o subtotal só das duas linhas de **barra**, esse sim
+invariante nas 16 semanas, e foi lido como se fosse o total.
+Reprodução: `node research/tools/auditoria-peito/series-peito.mjs`.
+**O que a correção NÃO muda:** as duas somas de par são invariantes, o recuo é 1:1, e
+portanto as três opções abaixo continuam sendo as três saídas, com o mesmo custo cada uma.
 
 Três desenhos possíveis, com o custo de cada um. **Nenhum foi implementado.**
 

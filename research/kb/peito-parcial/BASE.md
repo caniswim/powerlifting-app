@@ -3,6 +3,21 @@
 > Extraído do journal `wf_5ebac2a2-b42` depois de o agente `exposicao` morrer
 > por `API Error: The response stopped arriving`. Salvo porque só existia na memória do workflow.
 
+> ⚠️ **CORREÇÃO POSTERIOR — leia antes do resto.** Trabalho PARCIAL de um agente que morreu no
+> meio da auditoria, preservado como REGISTRO e não como conclusão.
+> **DERRUBADO (linhas 182, 187 e 221 — eram 167, 172 e 206 antes deste bloco):** que os
+> endereços `R79 @03:35` e `[R1 @01:04]` "NÃO EXISTEM". A acusação
+> saiu de um teste de igualdade EXATA de timestamp, e esse teste condena **230 dos 263**
+> endereços do `PROGRAMA.md` — inclusive os corretos. **249 dos 263** caem numa janela de 0 a
+> 7 s da claim que citam, e os cinco endereços acusados estão a 2, 3, 4, 6 e 6 s — dentro
+> dela, e dois apontam para a claim certa. Não existe a classe "endereço fabricado".
+> **SOBREVIVEU:** `R79 @03:35` cai no bloco de `V079-30`/`V079-31` (medo e relesão), não no
+> limiar 2–3/10, que é `V079-34` `@03:47` — erro de endereço real, mas UM caso. E o achado de
+> RÓTULO: o §1.2 marcava `V079-34` como `[PESSOAL]`; a base grava `scope: GERAL`,
+> `modo: prescricao`. Corrigido em `src/data/program/vena-block1/source/PROGRAMA.md:491-501`.
+> **A LIÇÃO:** igualdade exata de timestamp é instrumento quebrado; a tolerância é **±7 s**, e
+> é MEDIDA (mediana do passo da grade de `at`, 15 s, dividida por dois), não chutada.
+
 ## RESPOSTA — o que a base manda fazer com dor leve presente no peitoral
 
 **Método:** gaveta, não texto livre. `--topic dor --limit 0` (119), `--topic lesao --modo prescricao --limit 0` (83 de 362), `--topic peito --limit 0` (31), e cruzamento com `autorregulacao`, `recuperacao`, `proximidade-da-falha`, `selecao-exercicio`, `supino`, `rom`. Todos os ids abaixo resolvem em `check-evidence.mjs` (testei uma citação inventada, `V089-28`, e a ferramenta acusou: *"NÃO EXISTE — esta citação é fabricada"*).

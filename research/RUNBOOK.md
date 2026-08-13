@@ -46,7 +46,7 @@ Antes de tocar em qualquer coisa, leia — na íntegra, não por diagonal:
 | `research/kb/CANARIOS-CANDIDATOS.json` | **Canários que ainda não passam, fora do `check:kb` de propósito.** Hoje: C20 (descanso entre séries), um `presente-escondido` de um caso que a onda 2A não usou — e ele **falha**, que é a medida honesta do alcance da camada. Roda com `check-canarios.mjs --canarios`. Só migra para o `CANARIOS.json` no dia em que ficar verde: canário vermelho de nascença dentro do build é como se desliga uma trava. |
 | `research/kb/GATE-DOR.md` | O gate de dor do §1.2 do `PROGRAMA.md`: como a tabela vira comportamento do app, o que a trava cobre e o que ela **não** cobre. |
 | `research/kb/DOR-E-TREINO.md` | O cluster que autoriza treinar com dor: o que as claims dizem mesmo (reabilitação programada, nunca dor aguda dentro da série), as `conditions` e os `conflicts` que passaram a ligá-las ao freio, e as duas coisas que a base **não** tem e que não viraram claim. Lado da base do gate do §1.2; o lado do app está em `GATE-DOR.md`. |
-| `research/kb/PEITO-PARECER.md` | **Escrito PARA O ATLETA LER**, 12/8/2026, motivado por dor leve presente em repouso no lado da ruptura de peitoral. O que fazer na semana (com a versão de cada faixa do bloco, porque a semana dele não é determinável deste repositório), **por que o recuo do gate não tira carga do peitoral**, o que a base manda com id/`modo`/`scope`, o que a base **não** sabe sobre um natural de 87 kg lendo um canal de um atleta de 120 kg, e o critério concreto de quando isto vira conversa com fisioterapeuta. Contém as duas propostas **não implementadas**: a das 22 séries (§8.1, decisão dele) e a do campo de dor em repouso (§8.2, diff completo). Absorveu `research/kb/peito-parcial/`, que foi apagado no mesmo passe para não haver duas cópias divergindo em silêncio. |
+| `research/kb/PEITO-PARECER.md` | **Escrito PARA O ATLETA LER**, 12/8/2026, motivado por dor leve presente em repouso no lado da ruptura de peitoral. O que fazer na semana (com a versão de cada faixa do bloco, porque a semana dele não é determinável deste repositório), **por que o recuo do gate não tira carga do peitoral**, o que a base manda com id/`modo`/`scope`, o que a base **não** sabe sobre um natural de 87 kg lendo um canal de um atleta de 120 kg, e o critério concreto de quando isto vira conversa com fisioterapeuta. Contém as duas propostas **não implementadas**: a dos dois pares derivados (§8.1, decisão dele — a seção se chamava "a invariante das 22 séries" e foi corrigida em 13/8, ver §8.78) e a do campo de dor em repouso (§8.2, diff completo). Absorveu `research/kb/peito-parcial/`, que foi apagado no mesmo passe para não haver duas cópias divergindo em silêncio. |
 | `research/kb/DEFEITOS-PONTUAIS.md` | Os seis defeitos nomeados de 9/8 e o conserto de cada um, inclusive o `CONFIRMADO` falso do `verify-suspects.mjs`. |
 | `research/kb/*.md` (ROSTER-CURADO, IPF-REALIDADE, PADROES-EXTERNOS, FONTES-ADICIONAIS) | Pesquisa curada, escrita à mão, com procedência linha a linha. |
 | `research/kb/PREDICOES-BLOCO1.md` | **O registro pré-comprometido do bloco 1.** 22 previsões falseáveis com prazo e com a claim que morre em cada desfecho. Só admite **anotação** a partir de 10/08/2026 — editar uma previsão é apagar a medição. Era `research/predicoes.md`, órfão; a procedência e a auditoria estão no cabeçalho dele. |
@@ -553,8 +553,10 @@ no fim.
 > (`TETO_LIGACAO` 8→80 sobrevive à mutação e NÃO estava na dívida declarada) · **64** (o
 > gate mede um caminho que o produto deixou de usar) · **65** (`regras-ipf` é
 > gaveta-chamariz: **8 de 143** claims do regulamento a carregam) ·
-> **66** (**o recuo do gate de peitoral não reduz carga: 22 séries invariantes; decisão do
-> atleta, ver `PEITO-PARECER.md` §8.1**) · **67** (o "congela" do §1.2 não congela carga) ·
+> **66** (**o recuo do gate de peitoral não reduz carga: as duas somas de par são
+> invariantes e a troca é 1:1; decisão do atleta, ver `PEITO-PARECER.md` §8.1** — o
+> "22 séries" que circulava era o subtotal de BARRA, não o total; ver §8.78) ·
+> **67** (o "congela" do §1.2 não congela carga) ·
 > **68** (dor em repouso sem porta de entrada; andaime completo) · **69** (**o módulo que
 > implementaria o congelamento e o gate S3→S4 do TM tem ZERO chamadores**) · **70**
 > (`acute` com leitor e sem escritor) · **71** (o alerta de dor da tela só lê o pré) ·
@@ -1624,3 +1626,33 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     escala do gate é `0-10` (`VENA_BLOCK1_PAIN_GATE.escala`), e o `peak: 0` só existe por
     construção, nunca por digitação — sessão limpa e sessão em que a gaveta não foi aberta
     são **indistinguíveis** no valor gravado. **Aberta.**
+
+78. ~~**"O VOLUME SEMANAL SOBRE O PEITORAL É INVARIANTE EM 22 SÉRIES POR CONSTRUÇÃO" — a
+    frase errava nas duas metades: não é invariante, e não é 22.**~~
+    **CORRIGIDA em 13/8/2026, no passe que a mediu.** A afirmação circulava em
+    `research/kb/PEITO-PARECER.md` §2 e §8.1 (*"amarram o total em 22 por construção"*) e
+    no resumo do §8 desta lista. **Medido no programa gerado**, contando as séries de
+    TRABALHO de todo exercício com `muscleMap.peito > 0` no registro do próprio app —
+    `supino_pausado_competicao`, `floor_press`, `db_press_inclinado`, `crucifixo_peck_deck`,
+    e só esses quatro dos 21 do bloco —, a curva S1–S16 é
+    **24,24,24,24,24,26,26,26,26,26,26,26,26,28,28,28**: o total **SOBE de 24 a 28** e
+    **não vale 22 em nenhuma das 16 semanas**. O que rampla é `PEC-SETS` (1 → 2 → 3 em cada
+    uma das duas linhas de `peito_alongado`); o 22 era o subtotal só das duas linhas de
+    **barra**, esse sim invariante, e foi lido como se fosse o total — o `conta-peito.mjs`
+    da onda anterior soma exatamente essas duas linhas e a prosa herdou o número sem herdar
+    o escopo. **Modo de falha nº 5 desta casa: o número reproduz, o recorte é que era
+    outro.**
+    **O QUE SOBREVIVEU, e sobrevive inteiro:** as duas derivações do
+    `src/data/program/vena-block1/source/PROGRAMA.md` (`FP-SETS = 7 − SUP-V1` e
+    `FP4-SETS = 5 − SUP-V4`) amarram **dois pares** em soma constante — medido,
+    `FP-SETS + SUP-V1 = 7` e `FP4-SETS + SUP-V4 = 5` em **todas** as S1–S16, sem exceção.
+    Logo recuar um degrau de `SUP-V1` ou `SUP-V4` adiciona uma série de floor press **1:1**
+    e **não reduz a carga total sobre o peitoral** — que é a conclusão que governa a
+    recomendação ao atleta, e ela não foi tocada. **A §8.66 continua ABERTA**; o que se
+    corrigiu aqui foi o número com que ela era contada, não o defeito.
+    Correção aplicada em `PEITO-PARECER.md` §2 e §8.1 (a seção foi renomeada de *"a
+    invariante das 22 séries"* para *"a invariante dos dois pares"*), na linha do
+    `PEITO-PARECER.md` da tabela do §2 deste runbook, no resumo da §8, e com banner de
+    correção em `research/kb/peito-parcial/ATAQUE.md` e `research/workflows/peito-fecho.js`
+    — os dois últimos são REGISTRO de rodada e o texto original fica intacto sob o banner.
+    Reprodução: `node research/tools/auditoria-peito/series-peito.mjs`.

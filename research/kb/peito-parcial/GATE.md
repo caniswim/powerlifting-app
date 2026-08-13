@@ -3,6 +3,13 @@
 > Extraído do journal `wf_5ebac2a2-b42` depois de o agente `exposicao` morrer
 > por `API Error: The response stopped arriving`. Salvo porque só existia na memória do workflow.
 
+> ⚠️ **CORREÇÃO POSTERIOR — leia antes do resto.** Trabalho PARCIAL de um agente que morreu no
+> meio da auditoria, preservado como REGISTRO e não como conclusão. Nada aqui foi derrubado
+> pela auditoria adversarial posterior: este arquivo é sobre INSTRUMENTO (o que o app coleta),
+> e não faz nenhuma acusação de endereço fabricado. A acusação que caiu — a de que endereços
+> como `R79 @03:35` e `[R1 @01:04]` "não existem" — está em `BASE.md` e em `ATAQUE.md`, e o
+> bloco de correção deles explica por quê.
+
 # O QUE O GATE NÃO ENXERGA — parecer com o código na mão
 
 **Sonda escrita e executável:** `/Users/brunnovert/Documents/Dev/powerlifting-app/research/tools/auditoria-peito/sonda-repouso.mjs`

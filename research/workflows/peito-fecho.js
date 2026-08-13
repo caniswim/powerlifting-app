@@ -54,6 +54,22 @@ O agente da exposição morreu por \`API Error\` no meio; os outros três termin
    V138-04 e V138-15 mandam DIVIDIR o volume, V001-09 diz *"less volume, too"*, V138-28 chama
    workload de *"the main controllable Factor"*.
 
+   > ⚠️ **CORREÇÃO — 13/8/2026. O achado 1 acima está errado no número, e o texto original
+   > fica onde está como registro do que foi briefado.** **DERRUBADO:** *"22 séries/semana
+   > sobre o peitoral em TODAS as S1-S16"* e *"a soma é 12 por construção"*. Remedido no
+   > gerado, contando as séries de trabalho de todo exercício com \`muscleMap.peito > 0\`
+   > (supino pausado, floor press, supino inclinado com halter, peck deck), a curva S1-S16 é
+   > **24,24,24,24,24,26,26,26,26,26,26,26,26,28,28,28** — o total **SOBE de 24 a 28** e
+   > **não vale 22 em semana nenhuma**. O 22 é o subtotal só das duas linhas de **barra**,
+   > esse sim invariante. **SOBREVIVEU:** \`FP-SETS + SUP-V1 = 7\` e \`FP4-SETS + SUP-V4 = 5\`
+   > em todas as S1-S16 — são DOIS pares, cada um invariante, e por isso recuar supino
+   > pausado troca a série por floor press **1:1** e não reduz carga sobre o peitoral. A
+   > conclusão que governa a recomendação ao atleta não muda.
+   > Reprodução: \`node research/tools/auditoria-peito/series-peito.mjs\`. Ver
+   > \`research/RUNBOOK.md\` §8.78 e \`research/kb/PEITO-PARECER.md\` §2 e §8.1.
+   > **Onde o texto abaixo disser "a invariante das 22 séries", leia "a invariante dos dois
+   > pares".**
+
 2. **Cinco endereços fabricados no §1.2:** \`[R79 @03:35]\`, \`[R1 @01:04]\` (duas vezes, para
    claims diferentes e com \`modo\` diferente), \`[R27 @05:08]\`, \`[R95 @03:10]\`,
    \`[R112 @02:10]\`. Nenhum timestamp existe. **E o motivo de sobreviverem seis ondas:**
