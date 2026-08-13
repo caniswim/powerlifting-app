@@ -127,10 +127,20 @@ const WEEK = venaBlock1Weeks[0];
  * O §1.2 manda colher o log em TRÊS momentos — pré-sessão, 1ª pausada e
  * pós-sessão. No rollup, o pré cai em `pre.pain` e o pós em `post.newPain`, e
  * são dois campos diferentes lidos por dois `??` diferentes em
- * `buildGateReadings`. Toda cena é montada nos DOIS campos: até esta revisão a
- * checagem só usava `pre`, e o gate podia ficar cego ao log pós-sessão — o
- * momento em que uma fisgada de peitoral do supino tem mais chance de aparecer —
- * com o `npm run build` inteiro verde.
+ * `buildGateReadings`. Todo degrau de agravamento é exercitado nos DOIS campos,
+ * um de cada vez: até esta revisão a checagem só usava `pre`, e o gate podia
+ * ficar cego ao log pós-sessão — o momento em que uma fisgada de peitoral do
+ * supino tem mais chance de aparecer — com o `npm run build` inteiro verde.
+ *
+ * ⚠️ `'pre'` e `'post'` isolados NÃO servem para a linha `RETORNO`, e é por isso
+ * que existe a terceira fase. `semanaLimpa` exige `fullyLoggedSessions`, e
+ * `fullyCollectedLog` (`weeklyRollup.ts`) exige `pre` **E** `post` na MESMA
+ * sessão — é a leitura literal do §1.2, que manda colher em todos os momentos
+ * que ele lista. Enquanto `phase` foi um parâmetro EXCLUSIVO, nenhuma fixture
+ * conseguia expressar uma sessão inteiramente colhida, e as duas checagens
+ * acusavam o app de não liberar um RETORNO que o domínio libera corretamente.
+ * O defeito era das fixtures, não do domínio: elas ficaram para trás quando
+ * `fullyCollectedLog` entrou.
  */
 const PHASES = ['pre', 'post'];
 
@@ -146,9 +156,27 @@ function isoDay(n) {
  * supino" para a janela do §1.2. `semLog` monta a sessão sem pesquisa nenhuma:
  * treinou peitoral e não colheu o log, que é o caso que o §1.2 proíbe e o app
  * não conseguia distinguir.
+ *
+ * ⚠️ `phase` responde DUAS perguntas diferentes, e confundi-las já custou uma
+ * conclusão errada nesta checagem. Ela diz **onde a dor cai** e, de quebra,
+ * **quais pesquisas existem** — e é a segunda que `fullyCollectedLog` lê:
+ *
+ * | fase       | `pre`            | `post`           | inteiramente colhida? |
+ * |------------|------------------|------------------|-----------------------|
+ * | `pre`      | com a dor        | AUSENTE          | não                   |
+ * | `post`     | presente, s/ dor | com a dor        | **sim**               |
+ * | `so-post`  | AUSENTE          | com a dor        | não                   |
+ * | `ambos`    | com a dor        | com a dor        | **sim**               |
+ *
+ * Repare na linha `post`: ela monta as DUAS pesquisas, porque o pré é o
+ * portador do sono/energia/estresse e existe mesmo quando não houve dor. Ela
+ * serve para provar que o gate enxerga a dor colhida no pós — não para simular
+ * meia colheita. Quem quer meia colheita do lado do pós pede `so-post`.
  */
 function session(date, painEntries, phase = 'pre', weekNumber = 1, opts = {}) {
   const { chest = false, semLog = false } = opts;
+  const semPre = semLog || phase === 'so-post';
+  const comPost = !semLog && (phase === 'post' || phase === 'so-post' || phase === 'ambos');
   return {
     schemaVersion: 2,
     updatedAt: `${date}T12:00:00.000Z`,
@@ -176,12 +204,12 @@ function session(date, painEntries, phase = 'pre', weekNumber = 1, opts = {}) {
       equipment: { belt: 0, straps: 0, kneeSleeves: 0, wristWraps: 0 },
       bars: {}, plates: {},
     },
-    pre: semLog ? null : {
+    pre: semPre ? null : {
       sleepQuality: 7, sleepHours: 8, energyLevel: 7, stressLevel: 3, motivation: 7,
-      pain: phase === 'pre' ? painEntries : [],
+      pain: phase === 'pre' || phase === 'ambos' ? painEntries : [],
       supplements: { creatine: true, protein: true, preWorkoutMeal: true },
     },
-    post: !semLog && phase === 'post'
+    post: comPost
       ? {
         sessionQuality: 7, sessionRPE: 8,
         strengthPerception: 'normal', planAdherence: 'full',
@@ -516,10 +544,18 @@ const rotuloRetorno = (b) => (b ? 'bandeira de RETORNO' : 'nenhuma bandeira de R
 const retornoSaiu = (flags) =>
   flags.some((f) => f.startsWith('RETORNO DO GATE') && !f.includes('bloqueado'));
 
-/** `n` semanas limpas encadeadas; a última pode ser sobrescrita. */
+/**
+ * `n` semanas limpas encadeadas; a última pode ser sobrescrita.
+ *
+ * A fase é `'ambos'` e isso é a condição da cena, não conveniência: uma semana
+ * só é limpa se TODA sessão de supino dela foi inteiramente colhida, e "colhida"
+ * é pré **e** pós na mesma sessão. Montar estas cenas em `'pre'` as fazia
+ * reprovar por log incompleto — que é o comportamento CERTO do app — e a
+ * reprovação era lida como se o RETORNO estivesse quebrado.
+ */
 function semanasLimpas(n, ultima = null) {
-  const specs = Array.from({ length: n }, () => ({ pain: [NO_TETO, NO_TETO] }));
-  if (ultima && specs.length > 0) specs[specs.length - 1] = ultima;
+  const specs = Array.from({ length: n }, () => ({ pain: [NO_TETO, NO_TETO], phase: 'ambos' }));
+  if (ultima && specs.length > 0) specs[specs.length - 1] = { phase: 'ambos', ...ultima };
   return chainWeeks(specs);
 }
 
@@ -587,6 +623,30 @@ expect(
   rotuloRetorno(retornoSaiu(semLogMisto.flags)),
   rotuloRetorno(false),
 );
+
+// LOG PELA METADE: a semana foi colhida, mas só num dos momentos. Estas duas
+// cenas são as que faltavam — e a falta delas é o motivo de a fixture ter
+// podido montar tudo em `'pre'` por seis revisões sem ninguém notar. O §1.2
+// manda colher em TODOS os momentos que ele lista, e `semanaLimpa` só aceita
+// sessão inteiramente colhida. Sem estas duas, afrouxar `fullyCollectedLog`
+// para um OU mantém a suíte verde e devolve a vacuidade que ela fecha: o
+// RETORNO é a ÚNICA linha do §1.2 que AUMENTA carga sobre o tecido lesionado, e
+// meia medição não pode comprá-lo.
+for (const [fase, momento] of [['pre', 'pré'], ['so-post', 'pós']]) {
+  const meioLog = semanasLimpas(retSemanas, { pain: [NO_TETO, NO_TETO], phase: fase });
+  expect(
+    `semana colhida SÓ no log ${momento}-sessão não conta como semana limpa`,
+    rotuloRetorno(retornoSaiu(meioLog.flags)),
+    rotuloRetorno(false),
+  );
+  if (!meioLog.flags.some((f) => f.startsWith('RETORNO DO GATE') && f.includes('bloqueado'))) {
+    errors.push(
+      `Semana colhida só no log ${momento}-sessão não produziu bandeira: o log pela metade `
+        + 'some em vez de ser anunciado, e o §1.2 exige o log em todos os momentos que lista.',
+    );
+  }
+}
+checked.push('log colhido em um só momento é anunciado e não compra o RETORNO');
 checked.push('a sessão sem log da semana mista é anunciada');
 if (!semLogMisto.flags.some((f) => f.startsWith('RETORNO DO GATE') && f.includes('bloqueado'))) {
   errors.push(

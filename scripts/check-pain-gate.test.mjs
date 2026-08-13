@@ -320,14 +320,23 @@ test('sem leitura de peitoral, nenhum degrau é inventado', () => {
 const retornoFlags = (doc) => doc.flags.filter((f) => f.startsWith('RETORNO DO GATE'));
 const retornoLiberado = (doc) => retornoFlags(doc).some((f) => !f.includes('bloqueado'));
 
-/** `n` semanas limpas encadeadas pelo `prev`, como o app encadeia. */
+/**
+ * `n` semanas limpas encadeadas pelo `prev`, como o app encadeia.
+ *
+ * A fase é `'ambos'` porque é isso que "semana limpa" significa no §1.2: toda
+ * sessão de supino da semana colhida em todos os momentos que ele lista.
+ * `semanaLimpa` consome `fullyLoggedSessions`, e `fullyCollectedLog` exige `pre`
+ * **E** `post` na mesma sessão. Enquanto esta fixture montava só o `pre`, ela
+ * acusava o app de não liberar um RETORNO que o domínio libera corretamente —
+ * a fixture é que ficou para trás quando `fullyCollectedLog` entrou.
+ */
 function semanasLimpas(n, ultima = null) {
   const teto = PAIN_GATE.retorno.picoMaximo;
   const limpa = teto > 0 ? dor(teto) : [];
   let doc = null;
   for (let i = 0; i < n; i += 1) {
     const spec = i === n - 1 && ultima ? ultima : { pain: [limpa, limpa] };
-    doc = weekWith(spec.pain, 'pre', {
+    doc = weekWith(spec.pain, spec.phase ?? 'ambos', {
       weekIndex: i,
       prev: doc,
       firstDay: 1 + i * 7,

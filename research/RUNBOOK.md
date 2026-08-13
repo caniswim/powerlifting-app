@@ -46,6 +46,7 @@ Antes de tocar em qualquer coisa, leia — na íntegra, não por diagonal:
 | `research/kb/CANARIOS-CANDIDATOS.json` | **Canários que ainda não passam, fora do `check:kb` de propósito.** Hoje: C20 (descanso entre séries), um `presente-escondido` de um caso que a onda 2A não usou — e ele **falha**, que é a medida honesta do alcance da camada. Roda com `check-canarios.mjs --canarios`. Só migra para o `CANARIOS.json` no dia em que ficar verde: canário vermelho de nascença dentro do build é como se desliga uma trava. |
 | `research/kb/GATE-DOR.md` | O gate de dor do §1.2 do `PROGRAMA.md`: como a tabela vira comportamento do app, o que a trava cobre e o que ela **não** cobre. |
 | `research/kb/DOR-E-TREINO.md` | O cluster que autoriza treinar com dor: o que as claims dizem mesmo (reabilitação programada, nunca dor aguda dentro da série), as `conditions` e os `conflicts` que passaram a ligá-las ao freio, e as duas coisas que a base **não** tem e que não viraram claim. Lado da base do gate do §1.2; o lado do app está em `GATE-DOR.md`. |
+| `research/kb/PEITO-PARECER.md` | **Escrito PARA O ATLETA LER**, 12/8/2026, motivado por dor leve presente em repouso no lado da ruptura de peitoral. O que fazer na semana (com a versão de cada faixa do bloco, porque a semana dele não é determinável deste repositório), **por que o recuo do gate não tira carga do peitoral**, o que a base manda com id/`modo`/`scope`, o que a base **não** sabe sobre um natural de 87 kg lendo um canal de um atleta de 120 kg, e o critério concreto de quando isto vira conversa com fisioterapeuta. Contém as duas propostas **não implementadas**: a das 22 séries (§8.1, decisão dele) e a do campo de dor em repouso (§8.2, diff completo). Absorveu `research/kb/peito-parcial/`, que foi apagado no mesmo passe para não haver duas cópias divergindo em silêncio. |
 | `research/kb/DEFEITOS-PONTUAIS.md` | Os seis defeitos nomeados de 9/8 e o conserto de cada um, inclusive o `CONFIRMADO` falso do `verify-suspects.mjs`. |
 | `research/kb/*.md` (ROSTER-CURADO, IPF-REALIDADE, PADROES-EXTERNOS, FONTES-ADICIONAIS) | Pesquisa curada, escrita à mão, com procedência linha a linha. |
 | `research/kb/PREDICOES-BLOCO1.md` | **O registro pré-comprometido do bloco 1.** 22 previsões falseáveis com prazo e com a claim que morre em cada desfecho. Só admite **anotação** a partir de 10/08/2026 — editar uma previsão é apagar a medição. Era `research/predicoes.md`, órfão; a procedência e a auditoria estão no cabeçalho dele. |
@@ -551,8 +552,20 @@ no fim.
 > `--topic <gaveta certa>` regrediu de 12/12 para **10/12** e nada o mede) · **63**
 > (`TETO_LIGACAO` 8→80 sobrevive à mutação e NÃO estava na dívida declarada) · **64** (o
 > gate mede um caminho que o produto deixou de usar) · **65** (`regras-ipf` é
-> gaveta-chamariz: **8 de 143** claims do regulamento a carregam).
-> São **43**. O plano de execução das SETE primeiras — as que decidem esta linha de
+> gaveta-chamariz: **8 de 143** claims do regulamento a carregam) ·
+> **66** (**o recuo do gate de peitoral não reduz carga: 22 séries invariantes; decisão do
+> atleta, ver `PEITO-PARECER.md` §8.1**) · **67** (o "congela" do §1.2 não congela carga) ·
+> **68** (dor em repouso sem porta de entrada; andaime completo) · **69** (**o módulo que
+> implementaria o congelamento e o gate S3→S4 do TM tem ZERO chamadores**) · **70**
+> (`acute` com leitor e sem escritor) · **71** (o alerta de dor da tela só lê o pré) ·
+> **72** (as bandeiras do gate não chegam a ação nenhuma, e o `WeekDoc` velho pode
+> recomendar re-subir degrau) · **73** (as 18 séries de aquecimento sobre o peitoral são
+> invisíveis para todo degrau) · **74** (defeito de CONTEÚDO de endereço não é decidível por
+> máquina — a trava nova cobre só o de endereço) · **75** (o terceiro momento do §1.2 não
+> tem campo) · **76** (**não existe leitura de TENDÊNCIA, e a base decide por tendência: um
+> platô em 2/10 nunca é nomeado**) · **77** (`post.newPain` só captura dor NOVA, e o quadro
+> dele é dor preexistente).
+> São **55**. O plano de execução das SETE primeiras — as que decidem esta linha de
 > trabalho — está em **`research/kb/RECUPERACAO.md` §28.1**, que é a fila de hoje; o
 > restante continua em **`research/kb/ONDA-2C.md`**
 > (o `ONDA-2B.md` é a fila anterior; o `ONDA-2.md` é a de antes dela, e os critérios de
@@ -592,6 +605,23 @@ no fim.
 > construtor não escolheu publicar, e não é regressão: **nove das dez já eram verdade
 > antes, sem estarem escritas.** O número que manda continua sendo o CEGO: **2 de 12 e
 > 3 de 33 ids**, contra 7 de 18 no conjunto público — 2,3 vezes de distância.
+>
+> **Fechamento de 12/8/2026 (fecho da onda do PEITORAL, motivada por um sintoma real do
+> atleta):** entraram **doze** — **66** a **77** —, todas abertas, e todas sobre o gate de
+> dor de peitoral e o que o app faz com ele. **Saldo: fechou zero e abriu doze**, e isso é
+> honesto: esta onda produziu MEDIDA e CORREÇÃO DE DOCUMENTO, não conserto de
+> comportamento. O que ela **fechou** não é item desta lista: o `npm run build` voltou ao
+> verde (estava vermelho no estado commitado, primeiro em `check:gate` e depois em dois
+> erros de tipo que o gate vermelho escondia); seis endereços do `PROGRAMA.md` foram
+> corrigidos com `scope` e `modo` ao lado; e nasceu `check-enderecos.mjs`, a trava que
+> faltava havia **seis ondas** (§8.74).
+> **A lição desta onda, e ela é a mais cara aqui:** *o grep vazio não é prova de ausência.*
+> A onda anterior escreveu *"grep de `congela|recua|SUP-V1` em `src/` = zero, logo nada
+> implementa congelamento"*. O grep dava **3**, e atrás dele estava
+> `trainingMaxProgression.ts` — 232 linhas corretas, com a porta do congelamento e o gate
+> S3→S4 do TM, e **zero chamadores** (§8.69). O achado verdadeiro não era *"não existe
+> código"*, era *"existe código certo que nunca executa"* — que é pior de descobrir e mais
+> fácil de consertar, e que ninguém teria visto se o grep tivesse sido acreditado.
 >
 > **A regra que esta lista compra de novo, terceira vez:** o construtor não fecha o
 > próprio item, e o relatório do construtor escolhe quais números publicar mesmo quando
@@ -1452,3 +1482,145 @@ arquivo não pode ser o lugar onde ele acontece. O trabalho está em `research/k
     nome está errado) — hoje ela significa as duas coisas para leitores diferentes, que é o
     modo de falha nº 1. Reprodução: contar `topic[]` por prefixo de `src` em
     `research/extract/F001.jsonl`. **Aberta.**
+
+66. **O RECUO DO GATE DE PEITORAL NÃO REDUZ CARGA — 22 SÉRIES DE BARRA POR SEMANA, INVARIANTES
+    NAS S1–S16.** `PROGRAMA.md:295-296` declara `FP-SETS = 7 − SUP-V1` e
+    `FP4-SETS = 5 − SUP-V4`, e `checkDerivacoes` em `scripts/build-vena-block1.mjs` **reprova
+    o build** se a grade divergir. Logo, quando o §1.2 manda *"recua um degrau"* e o eixo é
+    `SUP-V1` ou `SUP-V4` — os dois que mais se movem —, o app troca supino pausado por floor
+    press **1:1** e o total sobre o tecido lesionado não cai. Medido, recuando os oito eixos
+    nomeados em toda semana em que cada um tem valor anterior distinto: `SUP-V1` +0 em 13
+    semanas, `SUP-V4` +0 em 12, `FP-SETS`/`FP4-SETS` +0 (e recuá-los EXIGE que o pausado
+    suba), `PAUSA-P` +0, `FP-RPE`/`FP4-RPE` +0. **Um único eixo remove série: `PEC-SETS`,
+    −2, em 11 semanas.** A base manda o contrário em quatro prescrições GERAL (`V138-04`,
+    `V138-15`, `V001-09`, e `V138-28` chama workload de *"the main controllable Factor"*).
+    **Conserto NÃO aplicado de propósito: é a única coisa desta auditoria que muda o treino
+    de um atleta com lesão, e a decisão é dele.** Três opções desenhadas, com custo de cada
+    uma, em `research/kb/PEITO-PARECER.md` §8.1.
+    Reprodução: `node research/tools/auditoria-peito/conferencia-curva.mjs`. **Aberta.**
+
+67. **O "CONGELA" DO §1.2 NÃO CONGELA CARGA.** Os 8 nomes que a célula congela são os 6 de
+    `exposicao_peito` e os 2 de `parada_peito`. Ficam de fora `SUP-F`, `SUP-F-BO`,
+    `SUP-V1-PCT`, `SUP-P` (`carga_supino`) e `RPE-SUP`, `RPE-SUP-BO` (`parada_supino`).
+    Medido com o TM travado em 160 kg, o que continua subindo da S4 à S16 sob o degrau
+    *congela*: D1 volume 115,2 → 124,8 kg, top single 137,6 → 147,2 kg, back-off
+    131,2 → 137,6 kg, prática 99,2 → 107,2 kg, e `RPE-SUP` 7,5 → 8. `V138-18`
+    (GERAL/`prescricao`) manda reduzir *"both absolute weight and proximity to failure"* — o
+    degrau mais provável de disparar não toca em nenhuma das duas. **Aberta.**
+
+68. **DOR EM REPOUSO NÃO TEM PORTA DE ENTRADA, E O ANDAIME ESTÁ INTEIRO.** `PreWorkoutSurvey`
+    e `PostWorkoutSurvey` começam por `workoutId: string`; os dois únicos pontos de montagem
+    do `PainSelector` são folhas de survey de treino. Existe `RestPainLog` +
+    `RestPainContext` (`src/types/index.ts`), existem `describeRestPain` e
+    `describeReturnWithRestPain` (`src/domain/painGate.ts`) — e **nenhum tem consumidor**.
+    `WeekDoc` **não** tem campo `restPain`. O comentário de `ROLLUP_SCHEMA_VERSION = 3`
+    anunciava esse campo como pronto e foi **corrigido em 12/8/2026** para dizer que ele é
+    proposta. Consequência medida: a semana sem treino sai do app com `pain: []` — afirmando
+    que não houve dor. O diff completo, deliberadamente **sem** mudança de comportamento do
+    gate, está em `PEITO-PARECER.md` §8.2, e ele nasce com o cenário que o mata. **Aberta.**
+
+69. **`src/domain/trainingMaxProgression.ts` (232 linhas) TEM ZERO CHAMADORES.** É o único
+    módulo do app que modela o congelamento do §1.2 — a porta `degrau_de_exposicao_de_peito`
+    nomeia `SUP-V1`, `SUP-V4`, `PAUSA-P`, `PEC-SETS`, `FP-SETS`, `FP4-SETS` e torna a leitura
+    do gauge **inválida para subir** — e é também onde vivem `gravarGateSemana4` e
+    `medianaDeAncoras`, o gate S3→S4. Grep de
+    `applyGaugeReading|gravarGateSemana4|medianaDeAncoras|GAUGE_K|trainingMaxProgression`
+    fora do próprio arquivo: **1 ocorrência, e é prosa** (`research/kb/GATE-DOR.md:315`).
+    Está escrito, está correto, e nunca executa. **Arrasta um segundo defeito:** o único
+    escritor de `profile.trainingMax` é `src/pages/Settings.tsx:52`, campo digitado à mão, e
+    a linha 56 carimba `trainingMaxOrigin: 'calibrado'` para qualquer número > 0;
+    `trainingMaxInicialBloco` não é escrito em lugar nenhum, logo o teto de `×1,10` do §1.1
+    não tem denominador. **O TM de 160 kg que sustenta toda a aritmética de carga do bloco
+    não vem de calibração nenhuma.** **Aberta.**
+
+70. **`acute` (estiramento agudo) TEM LEITOR E NÃO TEM ESCRITOR.** `PainEntry.acute` existe,
+    `buildGateReadings` o lê, `painGate.ts:223` satisfaz o degrau `≥4/10 ou estiramento
+    agudo` por ele — e **não há toggle no `PainSelector`**. Grep de `acute` em
+    `src/features` e `src/components`: **zero**. Uma fisgada aguda pontuada como 3/10 dispara
+    *congela*, não *encerra a sessão*. O comentário em `src/types/index.ts` dizia que o
+    defeito estava corrigido; ele **mudou de camada**, do gerador para a UI. Nota de
+    12/8/2026: os dois tipos de `rollupTypes.ts` declaravam a entrada de dor sem `acute`
+    enquanto o campo trafegava em runtime — `tsc` reprovava, e o `check:gate` vermelho
+    escondia isso. Tipo corrigido; a porta continua faltando. **Aberta.**
+
+71. **O ALERTA DE DOR NA TELA SÓ LÊ O PRÉ-TREINO.**
+    `src/features/feedback/hooks/useSurveyTrends.ts:100` faz
+    `const allPainEntries = preSurveys.flatMap(s => s.painEntries)` e nada mais — o
+    `postSurveys` do mesmo hook nunca é lido para dor. Dor de peitoral registrada **apenas no
+    pós-treino** nunca acende alerta na tela, embora `weeklyRollup.ts` leia as duas fontes.
+    **Aberta.**
+
+72. **AS BANDEIRAS DO GATE NÃO CHEGAM A NENHUMA AÇÃO.** Elas vão para `WeekDoc.flags` no
+    Firestore e o **único** leitor é `scripts/weekly-briefing.mjs:252`, que não roda sem
+    `FIREBASE_EMAIL`/`FIREBASE_PASSWORD` — ausentes do `.env`. Na tela, o gate produz duas
+    coisas e nenhuma é ação: o rótulo inline de
+    `src/features/survey/components/PainSelector.tsx:120-126` — que promete *"o supino não
+    sobe carga nem degrau de exposição esta semana"*, e as **duas metades da promessa estão
+    quebradas**, a de carga pelo §8.67 e a de degrau pelo §8.69 — e o alerta de
+    `useSurveyTrends.ts:111`. **Nenhuma prescrição muda** (ver §8.69, o módulo que a
+    mudaria não é chamado). E o `WeekDoc` **não é reescrito** numa semana sem treino
+    (`weekKey` só é marcado sujo por `saveWorkout`/`savePreSurvey`/`savePostSurvey`), então a
+    bandeira de `RETORNO` da última semana treinada fica congelada dentro dele — e o briefing
+    não imprime `updatedAt`, logo não há como saber que o documento tem uma semana de idade.
+    **É possível hoje o briefing recomendar re-subir degrau com o atleta em dor.**
+    **Conserto proposto, e é só transporte de contexto — zero risco de treino:** o briefing
+    passa a imprimir (i) o bloco `w.gate` — leituras da janela com data e pico, a cauda que
+    atravessou a semana, as semanas do `RETORNO` com `benchSessions`/`loggedSessions`/
+    `fullyLoggedSessions`; (ii) a tabela do §1.2 lida de `VENA_BLOCK1_PAIN_GATE`; (iii)
+    `updatedAt` e a **idade do documento em dias**, com aviso explícito acima de 7; (iv) as
+    claims `prescricao` de `dor`+`lesao` que sustentam o limiar. Hoje o agente da conversa
+    recebe a string da bandeira e nenhum dos quatro, e improvisa em cima dela. **Aberta.**
+
+73. **AS 18 SÉRIES DE AQUECIMENTO SOBRE O PEITORAL SÃO INVISÍVEIS PARA TODO DEGRAU E PARA A
+    REGRA R3.** Medido no gerado: 18 séries de aquecimento por semana tocam o peitoral,
+    invariantes nas 16 semanas, **14 delas de supino pausado** (D1:3, D2:6, D3:2, D4:3) — e o
+    §2.2 manda pausa de 1,0 s *"INCLUSIVE NOS 3 AQUECIMENTOS"*. A exposição real é de **42 a
+    46 séries/semana**, das quais 27 a 31 pausadas no peito. R3 (*"supino ≥ 22
+    séries/semana"*) e todo o debate do gate contam só o trabalho. Declarado no §1.2 em
+    12/8/2026; **nenhum degrau as toca.** **Aberta.**
+
+74. **DEFEITO DE ENDEREÇO ≠ DEFEITO DE CONTEÚDO, E SÓ O PRIMEIRO É DECIDÍVEL POR MÁQUINA.**
+    `research/tools/check-enderecos.mjs` entrou no `check:kb` em 12/8/2026 e reprova o build
+    quando um `[Rnn @mm:ss]` do `PROGRAMA.md` aponta para fonte inexistente ou para um buraco
+    da grade (264 endereços, 264 resolvem hoje). A tolerância de ±7 s é **medida** — mediana
+    dos intervalos entre marcas do corpus, 15 s, dividida por dois — e não chutada: uma onda
+    anterior testou igualdade exata e condenou **230 de 263** endereços corretos, 87 % do
+    documento, quase publicando isso como "endereços fabricados".
+    **O que a trava NÃO vê, e é o que mais custou:** endereço que resolve para o bloco errado
+    dentro da mesma fonte; rótulo `[GERAL]`/`[PESSOAL]` trocado; claim `opiniao`/`mecanismo`
+    sustentando prescrição. Os três exigem **ler a claim**, e ficam como leitura humana desta
+    lista — não escondidos atrás de um número que parece medição. Os seis endereços do
+    `PROGRAMA.md` com defeito de conteúdo foram corrigidos no mesmo passe (`PEITO-PARECER.md`
+    §8.3). **Aberta** (a parte não automatizável).
+
+75. **O TERCEIRO MOMENTO DO §1.2 NÃO EXISTE EM CAMPO NENHUM.** A seção declara três coletas —
+    pré-sessão · **1ª série pausada com carga de trabalho** · pós-sessão — e o app tem dois
+    campos. Nada em `src/types` casa `pausada|midSession|intraSession`. O momento que falta é
+    o único que mede o tecido **sob carga em posição alongada**, o de maior valor
+    diagnóstico. `check:gate` passa mesmo assim porque trava tabela↔rollup, e o rollup só
+    conhece dois. Nota relacionada, e é deliberada: `collectedLog` é **OU** (pré *ou* pós)
+    para os degraus de agravamento — errar para o lado de olhar demais — e `semanaLimpa`
+    exige o **E**, porque o `RETORNO` é a única linha que aumenta carga. Essa assimetria está
+    certa e travada; o terceiro momento é que falta. **Aberta.**
+
+76. **NÃO EXISTE LEITURA DE TENDÊNCIA EM `painGate.ts`, E A BASE DECIDE POR TENDÊNCIA.**
+    `evaluatePainGate` é teste de limiar; `evaluateGateReturn` conta semanas com
+    `peak <= picoMaximo`, que é outro teste de limiar. **Nenhuma função compara o pico desta
+    semana com o da anterior**, e não há uma única aritmética de tempo decorrido no arquivo
+    (grep de `new Date|Date.now|getTime` = 0), logo um evento de três meses atrás pesa igual
+    a um de ontem. A base é unânime e é `prescricao` GERAL na direção oposta: `V086-21`
+    (*"symptoms should be trending better over time"*), `V027-26` (*"trending down over
+    time"*) e `V027-28`, que conta **platô como falha**, não só piora. Consequência medida:
+    um platô em 2/10 por seis semanas dispara `congela` toda semana, **sem nunca escalar e
+    sem nunca ser nomeado como platô** — que é literalmente o modo de falha `[PESSOAL]`
+    (`V027-25`) que o §1.2 existe para evitar. O instrumento é cego exatamente para o modo de
+    falha que ele existe para pegar. **Aberta.**
+
+77. **`post.newPain` SÓ CAPTURA DOR *NOVA*, E O QUADRO DO ATLETA É DOR PREEXISTENTE.**
+    `buildGateReadings` lê `sess.post?.newPain`, que vem de `hasNewPain` na folha de
+    pós-treino. Dor que já estava e não mudou — o quadro dele — **não é dor nova**, e nada
+    garante que seja registrada no pós. Não há campo de "dor pós-sessão absoluta".
+    Defeito irmão, menor: `PainEntry.intensity` está documentado como `1-10` enquanto a
+    escala do gate é `0-10` (`VENA_BLOCK1_PAIN_GATE.escala`), e o `peak: 0` só existe por
+    construção, nunca por digitação — sessão limpa e sessão em que a gaveta não foi aberta
+    são **indistinguíveis** no valor gravado. **Aberta.**

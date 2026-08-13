@@ -93,6 +93,9 @@ import {
   MAX_TOPICOS, FRACAO_DO_MELHOR,
 } from './roteador.mjs';
 import { carregarGlossario, indexarGlossario, catalogoDeTopicos } from './glossario.mjs';
+import {
+  parsearEndereco, toleranciaDaGrade, resolverEndereco, indexarPorFonte,
+} from './enderecos.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 const EXTRACT = join(ROOT, 'research/extract');
@@ -197,6 +200,22 @@ const ids = process.argv
   .slice(2)
   .filter((a) => /^[A-Z]\d{3}-\d+$/.test(a));
 
+/**
+ * ENDEREÇOS `[Rnn @mm:ss]` — o formato que esta ferramenta descartava em SILÊNCIO.
+ *
+ * O `PROGRAMA.md` não cita a base por id: cita por endereço. O filtro acima só
+ * reconhece `Vnnn-nn`, então `check-evidence.mjs "R79 @03:35" V089-25` imprimia
+ * "Resolvendo 1 id(s)" — o endereço ia para o lixo sem uma linha de aviso, e é
+ * por isso que cinco endereços errados do §1.2 sobreviveram a seis ondas.
+ *
+ * A regra de resolução (e por que a tolerância é medida da grade, não chutada)
+ * está inteira no cabeçalho de `enderecos.mjs`, com a medição que a sustenta.
+ */
+const enderecos = process.argv
+  .slice(2)
+  .map(parsearEndereco)
+  .filter(Boolean);
+
 if (!existsSync(EXTRACT)) {
   console.error(`✗ ${EXTRACT} não existe`);
   process.exit(2);
@@ -255,6 +274,62 @@ if (ids.length > 0) {
     } else {
       console.log(`✓ ${mostrar(c)}`);
     }
+  }
+}
+
+if (enderecos.length > 0) {
+  const { passo, tolerancia } = toleranciaDaGrade(claims);
+  const porSrc = indexarPorFonte(claims);
+
+  console.log(
+    `\nResolvendo ${enderecos.length} endereço(s) [Rnn @mm:ss] contra ${claims.length} claims.`,
+  );
+  console.log(
+    `Grade de \`at\` medida no corpus: passo mediano de ${passo} s; `
+      + `tolerância = metade = ±${tolerancia} s.`,
+  );
+  console.log(
+    'O endereço cita o instante FALADO e a claim guarda o início do BLOCO: '
+      + 'exigir igualdade\nseria condenar a maioria dos endereços corretos. '
+      + 'Leia o `scope` e o `modo` abaixo — o\ndefeito mais caro destes endereços '
+      + 'nunca foi o segundo errado, foi o rótulo errado.\n',
+  );
+
+  for (const e of enderecos) {
+    const r = resolverEndereco(e, porSrc.get(e.src), tolerancia);
+
+    if (r.veredito === 'sem-fonte') {
+      console.log(`✗ ${e.original}  FONTE ${e.src} NÃO EXISTE na base — descarte a evidência\n`);
+      saiuRuim = true;
+      continue;
+    }
+
+    if (r.veredito === 'fora-de-faixa') {
+      const perto = r.proximas
+        .map((x) => `${x.claim.src}@${x.claim.at} (${x.claim.id}, ${x.distancia}s)`)
+        .join(' · ');
+      console.log(
+        `✗ ${e.original}  FORA DE FAIXA — nenhuma claim de ${e.src} a ±${tolerancia} s desta marca.`,
+      );
+      console.log(`    mais próximas: ${perto}`);
+      console.log(
+        '    Isto NÃO é o mesmo que "fabricado": a claim que o texto cita pode existir e\n'
+          + '    estar em outra marca. Confira as vizinhas acima e corrija o endereço para o id.\n',
+      );
+      saiuRuim = true;
+      continue;
+    }
+
+    const exato = r.dentro.some((x) => x.distancia === 0);
+    console.log(
+      `✓ ${e.original}  →  ${r.dentro.length} claim(s) no bloco `
+        + `(${exato ? 'marca exata' : `a ${r.dentro[0].distancia}s da marca citada`}):`,
+    );
+    for (const x of r.dentro) console.log(compacto(x.claim));
+    console.log(
+      '    ⚠️ O endereço resolve. Isso NÃO garante que o texto que o cita atribuiu o\n'
+        + '    `scope` e o `modo` certos, nem que citou a claim certa DENTRO do bloco.\n',
+    );
   }
 }
 
@@ -815,10 +890,10 @@ if (filtrando) {
  */
 if (buscaTermo && !arg('--grep')) imprimirRoteamento(buscaTermo, { comoComplemento: true });
 
-if (ids.length === 0 && !filtrando && !perguntaTermo && !listarTopicos) {
-  console.error('nada a fazer: passe ids (V014-03), uma pergunta (--pergunta), a lista de gavetas'
-    + ' (--topicos), uma busca (--grep/--busca) ou um filtro (--topic/--modo/--scope/--tier/--genero),'
-    + ' ou --vocab <topico>');
+if (ids.length === 0 && enderecos.length === 0 && !filtrando && !perguntaTermo && !listarTopicos) {
+  console.error('nada a fazer: passe ids (V014-03), endereços ("R79 @03:47"), uma pergunta'
+    + ' (--pergunta), a lista de gavetas (--topicos), uma busca (--grep/--busca) ou um filtro'
+    + ' (--topic/--modo/--scope/--tier/--genero), ou --vocab <topico>');
   process.exit(2);
 }
 

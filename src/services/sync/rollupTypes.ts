@@ -4,7 +4,6 @@ import type {
   PainRegion,
   PercentRef,
   PlanAdherence,
-  RestPainContext,
   SquatDepth,
   StrengthPerception,
 } from '../../types';
@@ -20,12 +19,22 @@ import type { GateReading, GateWeekObservation } from '../../domain/painGate';
  *     (janela truncada na semana, retorno indisponível) em vez de quebrar.
  *     Nenhum campo foi removido e nenhuma migração destrutiva é necessária.
  *
- * 3 — `WeekDoc.restPain`: dor registrada FORA de sessão. Também opcional, também
- *     sem migração — mas a versão sobe porque `gate.weeks[].fullyLoggedSessions`
- *     nasce aqui e MUDA leitura: documento gravado na versão 2 não tem o campo,
- *     e a ausência é lida como zero, o que BLOQUEIA o `RETORNO` em vez de
+ * 3 — `gate.weeks[].fullyLoggedSessions`: quantas sessões de supino da semana
+ *     colheram pré **E** pós. Opcional e sem migração destrutiva, mas a versão
+ *     sobe porque MUDA leitura: documento gravado na versão 2 não tem o campo, e
+ *     a ausência é lida como zero, o que BLOQUEIA o `RETORNO` em vez de
  *     liberá-lo. É a direção segura, e é a única razão de não bastar acrescentar
  *     campo em silêncio: reenviar as semanas antigas as reconstrói com o campo.
+ *
+ * ⚠️ CORREÇÃO DE COMENTÁRIO (12/08/2026). Até esta revisão o texto do item 3
+ * dizia que a versão 3 nascia com `WeekDoc.restPain` — e esse campo NÃO EXISTE
+ * neste arquivo. `RestPainLog` está declarado em `src/types/index.ts` e não tem
+ * um consumidor; `describeRestPain`/`describeReturnWithRestPain`, em
+ * `src/domain/painGate.ts`, não têm chamador. Era andaime completo sem porta, e
+ * o comentário anunciava como pronto um caminho que não existe. O campo continua
+ * PROPOSTO — o diff está em `research/kb/PEITO-PARECER.md` §7 —, e ele não muda
+ * comportamento de gate nenhum: dor fora de sessão não entra em
+ * `buildGateReadings`, não consome a janela de 3 sessões e não dispara degrau.
  */
 export const ROLLUP_SCHEMA_VERSION = 3;
 
@@ -97,13 +106,26 @@ export interface ExerciseSummary {
   notes?: string;
 }
 
+/**
+ * `acute` viaja junto da entrada de dor porque `sessionRollup` copia
+ * `pre.painEntries` inteiro (`pain: pre.painEntries ?? []`) e `buildGateReadings`
+ * lê `p.acute` para satisfazer o degrau `≥4/10 **ou estiramento agudo**`. Até
+ * esta revisão os dois tipos aqui declaravam só `{ region, intensity }`, então o
+ * campo trafegava em runtime e o tipo dizia que não existia — `tsc` reprovava a
+ * leitura e o build ficava vermelho depois do `check:gate`. Opcional: registro
+ * gravado antes disso não tem o campo, e ausência é `false`, nunca "não sei".
+ *
+ * ⚠️ O campo continua SEM ESCRITOR na interface: não há toggle no `PainSelector`.
+ * A célula do estiramento agudo tem leitor e não tem porta de entrada — está em
+ * `research/kb/PEITO-PARECER.md` §7 e no `RUNBOOK.md` §8 como não resolvido.
+ */
 export interface PreSummary {
   sleepQuality: number;
   sleepHours: number;
   energyLevel: number;
   stressLevel: number;
   motivation: number;
-  pain: { region: PainRegion; intensity: number }[];
+  pain: { region: PainRegion; intensity: number; acute?: boolean }[];
   supplements: { creatine: boolean; protein: boolean; preWorkoutMeal: boolean };
 }
 
@@ -113,7 +135,7 @@ export interface PostSummary {
   strengthPerception: StrengthPerception;
   planAdherence: PlanAdherence;
   adherenceReason?: string;
-  newPain: { region: PainRegion; intensity: number }[];
+  newPain: { region: PainRegion; intensity: number; acute?: boolean }[];
   pumpRating?: number;
   notes?: string;
 }

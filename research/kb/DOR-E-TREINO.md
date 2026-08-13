@@ -10,6 +10,18 @@
 > de cada `at`. Onde a base não tem a resposta, este arquivo diz que não tem — e não
 > preenche.
 
+> **ATUALIZADO EM 2026-08-12, pela onda do peitoral.** As duas divergências que o §7
+> deixava abertas **foram fechadas** (o rótulo `[PESSOAL]` falso do `[R79]` e o endereço
+> errado), e com elas nasceu a trava que faltava havia seis ondas — ver o fim do §7.
+> Entraram três achados novos que mudam como este cluster deve ser lido, e o maior é este:
+> **a base não tem uma única prescrição sobre peitoral + dor** (2 claims em 6.912, ambas
+> não-prescrição), logo tudo aqui é lesão genérica transplantada para o peitoral.
+>
+> **Este arquivo é o lado da BASE.** O lado do app está em `GATE-DOR.md`. O documento
+> escrito **para o atleta ler**, com o que fazer na semana, por que o recuo do gate não tira
+> carga do peitoral e quando isto vira conversa com fisioterapeuta, é
+> **`research/kb/PEITO-PARECER.md`**.
+
 ---
 
 ## 1. A pergunta que decidia tudo, e a resposta
@@ -449,20 +461,67 @@ já cita `[R27 @05:08]` como o modo de falha a evitar; agora `V027-25` — a cla
 trecho — está ligada por `conflicts` às três permissões, **nos dois sentidos**, e carrega
 os tópicos `supino` e `peito`. Quem chegar por qualquer uma das cinco pontas vê as outras.
 
-### Duas divergências que ficam ABERTAS, e são de outro dono
+### ~~Duas divergências que ficam ABERTAS, e são de outro dono~~ — FECHADAS EM 12/08/2026
 
-1. **`[R79]` está rotulado `[PESSOAL]` no `PROGRAMA.md` §1.2 e `scope: GERAL` na base.**
+1. ~~**`[R79]` está rotulado `[PESSOAL]` no `PROGRAMA.md` §1.2 e `scope: GERAL` na base.**~~
    Reli o verbatim inteiro: *"Anecdotally, I have found that two to three out of 10 pain
    level is a good amount to push at though ultimately **adjust to what you need** for your
    symptoms to improve over time"*. Ele não descreve o que faz — ele recomenda, e endereça
-   o ouvinte. **`GERAL` está certo; o rótulo do `PROGRAMA.md` está errado**, e erra na
-   direção conservadora (desconta a claim, não afrouxa nada). De quebra, o `@03:35` do §1.2
-   aponta um bloco antes do trecho: a frase está em `[03:47]`.
-2. **Não editei o `PROGRAMA.md`.** Ele estava com modificações não commitadas no momento
-   deste passe, é lido por máquina (`scripts/gate-dor.mjs` → `VENA_BLOCK1_PAIN_GATE`) e é a
-   fonte do `generated.ts`. Mexer nele em paralelo com outro dono é o jeito de a tabela do
-   gate divergir do app em silêncio, que é o defeito que o §1.2 existe para não repetir. O
-   conserto é de uma palavra e está especificado acima.
+   o ouvinte. **`GERAL` está certo; o rótulo do `PROGRAMA.md` estava errado**, e errava na
+   direção conservadora (descontava a claim, não afrouxava nada). De quebra, o `@03:35` do
+   §1.2 apontava um bloco antes do trecho: a frase está em `[03:47]`.
+   **CORRIGIDO em 12/08/2026.** O §1.2 agora escreve `V079-34` `[R79 @03:47]`
+   `scope: GERAL` `modo: prescricao`, e declara a consequência que este arquivo previu:
+   descartar o 2–3/10 por ser "pessoal" **não tinha base**, e a escolha do 2/10 é
+   preferência conservadora, sustentada por outro caminho (`V138-19` é `opiniao`; e as
+   condições `V027-23`, `V079-39`, `V086-20`, `V086-22` empilham cautela).
+2. ~~**Não editei o `PROGRAMA.md`.**~~ **Editado em 12/08/2026**, por quem era o dono do
+   arquivo naquele passe, com `npm run build:vena` no mesmo commit para a tabela e o
+   `generated.ts` não divergirem — que era exatamente o risco que este item registrava.
+
+### E a trava que faltava, que é por que este item viveu tanto
+
+O rótulo errado do `[R79 @03:35]` sobreviveu a **seis** ondas de auditoria, e não foi por
+falta de gente olhando: `check-evidence.mjs` filtrava a linha de comando por
+`/^[A-Z]\d{3}-\d+$/`, e **todo endereço `[Rnn @mm:ss]` caía fora EM SILÊNCIO**. Passar
+`"R79 @03:35"` junto de um id imprimia *"Resolvendo 1 id(s)"*. A trava não enxergava o
+formato pelo qual o `PROGRAMA.md` — o documento que vira treino — cita esta base.
+
+Fechado em 12/08/2026 em duas peças:
+
+- `research/tools/enderecos.mjs` resolve `[Rnn @mm:ss]` com tolerância **medida** (mediana
+  do passo da grade de `at` no corpus, 15 s → ±7 s). A tolerância não é gentileza: o `at`
+  guarda o início do BLOCO e o documento cita o instante FALADO, então o erro esperado não é
+  zero. **Igualdade exata condena 230 dos 263 endereços do próprio `PROGRAMA.md`** — 87 % —,
+  e uma onda anterior quase publicou esse número como "endereços fabricados".
+- `research/tools/check-enderecos.mjs` entrou no `npm run check:kb` e **reprova o build**
+  quando um endereço aponta para fonte inexistente ou para um buraco da grade. Hoje: 264
+  endereços, 264 resolvem.
+
+**O que a trava deliberadamente NÃO cobre**, e fica como leitura humana no `RUNBOOK.md`
+§8.74: endereço que resolve para o bloco errado dentro da mesma fonte, rótulo
+`[GERAL]`/`[PESSOAL]` trocado, e claim `opiniao`/`mecanismo` sustentando prescrição. Os três
+exigem ler a claim, e são exatamente os três que custaram caro aqui.
+
+### O que a onda do peitoral (12/08/2026) acrescentou a este cluster
+
+Três coisas que mudam a leitura do §7 acima e não estavam escritas em lugar nenhum:
+
+1. **A base não tem NENHUMA prescrição sobre peitoral + dor.** `topic: peito` ∩
+   (`dor` ∪ `lesao`) = **2 claims em 6.912**, e as duas são não-prescrição: `V027-25`
+   (`PESSOAL`/`anedota`) e `V095-24` (`GERAL`/`opiniao`). Toda instrução deste cluster
+   aplicada ao peitoral é **lesão genérica transplantada**. É legítimo e é o melhor que
+   existe — e é um transplante **maior** que o `PESSOAL → GERAL` que este arquivo vigia.
+   Agora está declarado no §1.2 e no `PEITO-PARECER.md` §6.
+2. **`V089-24` e `V089-25` são sobre TENDINITE**, e as duas estão na mesma marca
+   (`R089@03:17`). A ressalva de diagnóstico que uma onda anterior aplicou corretamente a
+   `V089-24` **não** foi aplicada a `V089-25`, sobre a qual repousava todo o argumento
+   *"pausa é o contorno"*. Vale para as duas. O atleta não tem esse diagnóstico.
+3. **A regra do bíceps do §1.2** (*"dor referida no bíceps entra no log de peitoral"*) está
+   ancorada em `V095-23` (`mecanismo`) + `V095-24` (`opiniao`), **zero prescrição** — e é
+   regra operacional, decide se o gate dispara. Procurei a prescrição que a sustentasse: não
+   existe. Ela continua valendo porque errar para o lado de registrar é o lado seguro, e
+   agora está marcada no `PROGRAMA.md` como **decisão de desenho, não derivação**.
 
 ---
 
@@ -654,6 +713,20 @@ mesmo vídeo e leva ao mesmo lugar. E `--grep doctor|diagnos|MRI|surgeon` contin
 - **O que NÃO foi verificado por mim:** se o §1.2 do `PROGRAMA.md` foi editado por outro
   agente durante este passe — ele já estava sujo quando comecei. Quem for aplicar o conserto
   de uma palavra do §7-1 tem de reler o parágrafo antes.
+  **Resolvido em 12/08/2026:** o §1.2 foi editado, com `npm run build:vena` no mesmo passe,
+  e o conserto do §7-1 está aplicado. Ver o §7 riscado.
+- **Passe de 12/08/2026 (onda do peitoral):** este arquivo ganhou o aviso do cabeçalho, o
+  §7 riscado com o fechamento das duas divergências, a seção da trava de endereços e a dos
+  três achados novos. **Nenhuma claim foi tocada** — a base continua em 6.912. O que mudou
+  fora daqui: `PROGRAMA.md` §1.1 e §1.2 (endereços, `scope`, `modo`, e três declarações de
+  "decisão de desenho"), `research/tools/check-evidence.mjs` (passa a enxergar
+  `[Rnn @mm:ss]`), `research/tools/enderecos.mjs` + `check-enderecos.mjs` +
+  `enderecos.test.mjs` (novos, no `check:kb`), `scripts/check-pain-gate*.mjs` (as fixtures
+  que não conseguiam expressar uma sessão com pré **e** pós, e que deixavam o build
+  vermelho) e `src/services/sync/rollupTypes.ts` (um comentário que mentia e dois tipos que
+  omitiam `acute`). **`research/kb/peito-parcial/` foi APAGADO** depois de o que importava
+  dele estar no `PEITO-PARECER.md` e no `RUNBOOK.md` §8.66–8.75 — duas cópias divergem em
+  silêncio, e essa é a regra desta casa.
 - **Limite declarado, e vale para tudo acima:** o determinismo aqui prova **fidelidade à
   fonte** — que cada `verbatim` está na transcrição, que cada id resolve, que nenhuma aresta
   fecha ciclo. **Ele não prova que a fonte está certa.** As nove claims desta família são
