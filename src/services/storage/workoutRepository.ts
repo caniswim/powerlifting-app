@@ -1,3 +1,5 @@
+import { workoutTrainedAt } from '../../domain/workoutTime';
+import { getRecords } from './recordRepository';
 import type { WorkoutLog } from '../../types';
 import { getItem, setItem, KEYS } from './core';
 
@@ -30,14 +32,20 @@ export function getLastCompletedWorkout(): {
   sessionIndex?: number;
   programId?: string;
 } | null {
+  // Lido UMA vez: `workoutTrainedAt` consulta os PRs para datar sessões antigas,
+  // e chamá-lo dentro do comparador liga uma leitura de storage a cada par.
+  const prStamps = getRecords();
   const workouts = getWorkouts()
     .filter((w) => w.completed)
-    .sort((a, b) => new Date(b.completedAt || b.date).getTime() - new Date(a.completedAt || a.date).getTime());
+    .sort((a, b) => new Date(workoutTrainedAt(b, prStamps)).getTime() - new Date(workoutTrainedAt(a, prStamps)).getTime());
 
   if (workouts.length === 0) return null;
 
   const last = workouts[0];
-  const date = last.completedAt || last.date;
+  // O instante do ESFORÇO, não o do clique em encerrar. Com carimbo por série
+  // isto é a primeira série; sem ele degrada para `completedAt`, que é o que o
+  // app já usava.
+  const date = workoutTrainedAt(last, prStamps);
 
   if (last.dayIndex !== undefined) {
     return { date, dayIndex: last.dayIndex, sessionIndex: last.sessionIndex, programId: last.programId };
@@ -48,7 +56,7 @@ export function getLastCompletedWorkout(): {
   // (arms_shoulders aparece duas vezes, então indexOf sozinho é ambíguo).
   const sameWeekWorkouts = workouts
     .filter((w) => w.weekNumber === last.weekNumber)
-    .sort((a, b) => new Date(a.completedAt || a.date).getTime() - new Date(b.completedAt || b.date).getTime());
+    .sort((a, b) => new Date(workoutTrainedAt(a, prStamps)).getTime() - new Date(workoutTrainedAt(b, prStamps)).getTime());
 
   const dayOrder: string[] = ['squat_emphasis', 'bench_emphasis', 'arms_shoulders', 'deadlift_emphasis', 'bench_volume', 'arms_shoulders'];
 
@@ -72,9 +80,14 @@ export function getRecentPerformances(
   exerciseId: string,
   limit = 3
 ): { weight: number; reps: number; rpe: number; e1rm: number; date: string }[] {
+  const prRecords = getRecords();
   const workouts = getWorkouts()
     .filter((w) => w.completed)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    // Ordenava por `date`, que é a ABERTURA do log: sessão aberta no dia 16 e
+    // treinada no 17 aparecia no histórico antes de uma treinada no dia 16.
+    .sort((a, b) =>
+      new Date(workoutTrainedAt(b, prRecords)).getTime()
+      - new Date(workoutTrainedAt(a, prRecords)).getTime());
 
   const performances: { weight: number; reps: number; rpe: number; e1rm: number; date: string }[] = [];
 
@@ -92,7 +105,9 @@ export function getRecentPerformances(
             reps: bestSet.reps,
             rpe: bestSet.rpe,
             e1rm: bestSet.e1rm,
-            date: workout.date,
+            // `workout.date` é a ABERTURA do log, não o esforço: o histórico
+            // datava a carga pelo dia em que a tela foi aberta.
+            date: workoutTrainedAt(workout, prRecords),
           });
         }
         break;

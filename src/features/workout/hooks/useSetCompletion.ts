@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { calculateE1RM } from '../../../utils/calculations';
 import { useStorage } from '../../../contexts/StorageContext';
 import { isExerciseDone } from './useWorkoutSession';
+import { unlockRestAlert } from '../../../services/restAlert';
 import type { ExerciseLog, SetCompliance, SetLog, SetSegmentLog, WorkoutLog } from '../../../types';
 
 export interface SetInputValues {
@@ -193,6 +194,10 @@ export function useSetCompletion(
   }, [workout, editingSet, editWeight, editReps, editRPE, setWorkout, storage]);
 
   const completeSet = useCallback(() => {
+    // Destrava o áudio DENTRO do gesto — é a única janela em que o iOS deixa.
+    // Este toque é o mesmo que abre o cronômetro, então o alerta que ele vai
+    // disparar daqui a 3 min já nasce com som. Idempotente e barato.
+    unlockRestAlert();
     if (!workout) return;
 
     const exercises = [...workout.exercises];
@@ -228,6 +233,9 @@ export function useSetCompletion(
       e1rm,
       completed: true,
       isPR,
+      // Hora REAL do esforço. Sem isto, a única testemunha de quando o treino
+      // aconteceu era o PR — e só para quem bateu recorde. Ver `workoutTime.ts`.
+      completedAt: new Date().toISOString(),
       ...(isTimed || seconds > 0 ? { durationSec: seconds } : {}),
       ...(hasSegments ? { segments: input.segments } : {}),
       ...(compliance ? { compliance } : {}),

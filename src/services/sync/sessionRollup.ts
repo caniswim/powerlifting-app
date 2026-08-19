@@ -1,3 +1,4 @@
+import { workoutInstants } from '../../domain/workoutTime';
 import type {
   AthleteProfile,
   ExerciseLog,
@@ -223,8 +224,12 @@ export function buildSessionDoc(
   const tonnage = round(exercises.reduce((sum, ex) => sum + ex.tonnage, 0));
 
   const durationMin =
-    workout.startedAt && workout.completedAt
-      ? Math.round((new Date(workout.completedAt).getTime() - new Date(workout.startedAt).getTime()) / 60000)
+    // ANTES: `completedAt - startedAt`, que mede o tempo entre ABRIR e FECHAR a
+    // tela. Sessão aberta 16/08 e fechada 17/08 saía com 1.995 min (33 h), e 4
+    // das 7 sessões do bloco 1 passaram de 13 h por esse caminho. Agora mede de
+    // primeira a última série; sem carimbo, `null` — ausente é melhor que falso.
+    workoutInstants(workout).durationMin !== null
+      ? workoutInstants(workout).durationMin
       : null;
 
   return {

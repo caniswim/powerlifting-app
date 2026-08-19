@@ -170,6 +170,22 @@ export interface SetLog {
   prescribed?: PrescribedSet;
   /** Padrão de competição desta série. Opcional e retrocompatível. */
   compliance?: SetCompliance;
+  /**
+   * Instante em que a série foi REGISTRADA, ISO 8601.
+   *
+   * É a única testemunha de quando o treino aconteceu de fato. Até esta
+   * revisão, a data da sessão era carimbada na CRIAÇÃO do log
+   * (`useWorkoutSession.createWorkoutFromPlan`) e o encerramento podia cair
+   * um ou dois dias depois — sessão aberta 16/08 de manhã, treinada 17/08 à
+   * noite, e todo consumidor lia 16/08. Os PRs já guardavam hora real; as
+   * séries comuns não guardavam nada, e por isso a verdade só existia para o
+   * subconjunto que bateu recorde.
+   *
+   * Opcional porque série gravada antes desta revisão não tem o campo. Quem
+   * lê deve degradar para `completedAt` da sessão e só então para `date` —
+   * ver `workoutInstants` em `src/domain/workoutTime.ts`.
+   */
+  completedAt?: string;
 }
 
 export interface ExercisePrescription {
@@ -480,7 +496,37 @@ export type PainRegion =
   | 'left_hip' | 'right_hip'
   | 'left_elbow' | 'right_elbow'
   | 'left_wrist' | 'right_wrist'
+  | 'left_thigh' | 'right_thigh'
+  | 'left_hamstring' | 'right_hamstring'
+  | 'left_glute' | 'right_glute'
+  | 'left_adductor' | 'right_adductor'
+  | 'left_calf' | 'right_calf'
   | 'neck' | 'other';
+
+/**
+ * NATUREZA do tecido que dói — a pergunta que a intensidade não responde.
+ *
+ * Dor muscular tardia depois de 4×3 a 180 kg e tendinite de bíceps são
+ * fenômenos diferentes com condutas OPOSTAS: a primeira é esperada, resolve
+ * sozinha em 24–72 h e não pede mudança nenhuma de carga; a segunda piora com
+ * frequência e volume, não com intensidade, e ignorá-la custa semanas. Até
+ * esta revisão o log tratava as duas como o mesmo número numa escala de 0–10,
+ * e o único jeito de distingui-las era escrever no texto livre — foi
+ * literalmente o que aconteceu em 18/08/2026, quando "Leve dor no tendão do
+ * bíceps esquerdo" entrou como `region: 'other', intensity: 2` e a palavra
+ * "tendão" só sobreviveu porque havia campo de notas.
+ *
+ * `nao_sei` é opção de primeira classe e não preguiça de UI: obrigar o atleta
+ * a escolher um tecido que ele não sabe identificar produz dado ERRADO, que é
+ * pior que dado ausente. Quem lê o documento semanal precisa distinguir "não
+ * classificou" de "classificou como muscular".
+ *
+ * ⚠️ Isto NÃO entra no gate do §1.2. A tabela governa pico dentro de sessão de
+ * supino e não tem célula para natureza de tecido; fazer este campo disparar
+ * degrau seria inventar regra que o programa não escreve. Ele existe para a
+ * conversa semanal decidir com o dado na mão.
+ */
+export type PainNature = 'muscular' | 'tendao' | 'articular' | 'nervo' | 'nao_sei';
 
 export interface PainEntry {
   region: PainRegion;
@@ -509,6 +555,15 @@ export interface PainEntry {
    * e ausência é `false` — nunca "não sei".
    */
   acute?: boolean;
+  /**
+   * Que tecido dói. Ver `PainNature`.
+   *
+   * Opcional e retrocompatível: entrada gravada antes desta revisão não tem o
+   * campo, e a ausência é **desconhecida**, não `muscular`. Nenhum consumidor
+   * pode assumir um default aqui — `undefined` e `'nao_sei'` são a mesma
+   * informação para quem lê, e os dois são diferentes de uma classificação.
+   */
+  nature?: PainNature;
 }
 
 /**
@@ -546,6 +601,18 @@ export interface RestPainLog {
   weekNumber: number;
   context: RestPainContext;
   painEntries: PainEntry[];
+  /**
+   * Há quantos dias dói, na conta do atleta.
+   *
+   * É o segundo discriminador clínico depois de `PainNature`, e é barato: dor
+   * muscular tardia tem prazo (24–72 h) e some sozinha; a que passa de uma
+   * semana parada não é mais dor de treino, seja qual for o número na escala.
+   * Sem este campo, dois registros de "coxa 4/10" são indistinguíveis mesmo
+   * quando um tem dois dias e o outro tem três semanas.
+   *
+   * Opcional: quem não sabe não deve chutar, e registro antigo não tem.
+   */
+  sinceDays?: number;
   notes?: string;
   createdAt: string;
 }

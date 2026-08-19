@@ -31,6 +31,7 @@ export function RestPainSheet({ programId, weekNumber, onSubmit, onCancel }: Res
   // Começa em SIM: ninguém abre esta tela para anunciar que está sem dor.
   const [hasPain, setHasPain] = useState(true);
   const [painEntries, setPainEntries] = useState<PainEntry[]>([]);
+  const [sinceDays, setSinceDays] = useState<number | undefined>(undefined);
   const [notes, setNotes] = useState('');
 
   const handleSubmit = () => {
@@ -41,6 +42,7 @@ export function RestPainSheet({ programId, weekNumber, onSubmit, onCancel }: Res
       weekNumber,
       context,
       painEntries,
+      ...(sinceDays !== undefined ? { sinceDays } : {}),
       ...(notes.trim() ? { notes: notes.trim() } : {}),
       createdAt: new Date().toISOString(),
     });
@@ -94,6 +96,42 @@ export function RestPainSheet({ programId, weekNumber, onSubmit, onCancel }: Res
               painEntries={painEntries}
               onPainEntriesChange={setPainEntries}
             />
+          </div>
+
+          {/*
+            HÁ QUANTOS DIAS. É o segundo discriminador depois do tecido, e o mais
+            barato: dor muscular tardia tem prazo e some sozinha; a que passa de
+            uma semana parada não é mais dor de treino. Sem ele, "coxa 4/10" de
+            dois dias e de três semanas são o mesmo registro.
+            Opcional de propósito — quem não sabe não deve chutar.
+          */}
+          <div className="space-y-2">
+            <label className="text-xs font-display font-semibold tracking-wider uppercase text-text-muted">
+              Há quanto tempo
+            </label>
+            <div className="grid grid-cols-3 gap-2">
+              {([
+                [0, 'Hoje'],
+                [1, '1 dia'],
+                [2, '2 dias'],
+                [3, '3 dias'],
+                [7, '~1 semana'],
+                [14, '+ de 1 sem'],
+              ] as const).map(([value, label]) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => setSinceDays(sinceDays === value ? undefined : value)}
+                  className={`h-11 rounded border font-display text-xs font-semibold transition-all ${
+                    sinceDays === value
+                      ? 'bg-accent-gold/20 border-accent-gold/40 text-accent-gold'
+                      : 'bg-bg-input border-border text-text-muted hover:bg-bg-tertiary'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="space-y-2">

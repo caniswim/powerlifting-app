@@ -9,7 +9,7 @@ import { BodyweightSection } from '../features/settings/components/BodyweightSec
 import { CloudSyncSection } from '../features/settings/components/CloudSyncSection';
 import { AnthropometrySection } from '../features/settings/components/AnthropometrySection';
 
-const APP_VERSION = '1.3.0';
+const APP_VERSION = '1.4.0';
 
 export default function Settings() {
   const storage = useStorage();

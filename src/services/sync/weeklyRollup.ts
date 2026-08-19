@@ -1,5 +1,6 @@
 import type {
   BodyweightEntry,
+  PainNature,
   PainRegion,
   PlanAdherence,
   PrescribedWeek,
@@ -541,22 +542,39 @@ function buildRestPain(logs: RestPainLog[]): WeekRestPain {
   for (const context of restPainContexts) byContext[context] = { n: 0, maxIntensity: 0 };
 
   const byRegion = new Map<PainRegion, { occurrences: number; maxIntensity: number }>();
+  // `null` é chave de primeira classe: entrada sem tecido classificado é um
+  // fato sobre o preenchimento do log, e some se for colapsada em `nao_sei`.
+  const byNature = new Map<PainNature | null, { occurrences: number; maxIntensity: number }>();
+  let maxSinceDays: number | null = null;
 
   for (const log of logs) {
     const slot = byContext[log.context];
     slot.n += 1;
+    if (log.sinceDays !== undefined) {
+      maxSinceDays = maxSinceDays === null ? log.sinceDays : Math.max(maxSinceDays, log.sinceDays);
+    }
     for (const p of log.painEntries) {
       slot.maxIntensity = Math.max(slot.maxIntensity, p.intensity);
       const entry = byRegion.get(p.region) ?? { occurrences: 0, maxIntensity: 0 };
       entry.occurrences += 1;
       entry.maxIntensity = Math.max(entry.maxIntensity, p.intensity);
       byRegion.set(p.region, entry);
+
+      const key = p.nature ?? null;
+      const nat = byNature.get(key) ?? { occurrences: 0, maxIntensity: 0 };
+      nat.occurrences += 1;
+      nat.maxIntensity = Math.max(nat.maxIntensity, p.intensity);
+      byNature.set(key, nat);
     }
   }
 
   return {
     n: logs.length,
     byContext,
+    maxSinceDays,
+    byNature: [...byNature]
+      .map(([nature, v]) => ({ nature, ...v }))
+      .sort((a, b) => b.occurrences - a.occurrences),
     peakByRegion: [...byRegion]
       .map(([region, v]) => ({ region, ...v }))
       .sort((a, b) => b.occurrences - a.occurrences || b.maxIntensity - a.maxIntensity),

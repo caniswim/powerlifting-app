@@ -4,6 +4,7 @@ import type {
   PainRegion,
   PercentRef,
   PlanAdherence,
+  PainNature,
   RestPainContext,
   SquatDepth,
   StrengthPerception,
@@ -125,7 +126,7 @@ export interface PreSummary {
   energyLevel: number;
   stressLevel: number;
   motivation: number;
-  pain: { region: PainRegion; intensity: number; acute?: boolean }[];
+  pain: { region: PainRegion; intensity: number; acute?: boolean; nature?: PainNature }[];
   supplements: { creatine: boolean; protein: boolean; preWorkoutMeal: boolean };
 }
 
@@ -135,7 +136,7 @@ export interface PostSummary {
   strengthPerception: StrengthPerception;
   planAdherence: PlanAdherence;
   adherenceReason?: string;
-  newPain: { region: PainRegion; intensity: number; acute?: boolean }[];
+  newPain: { region: PainRegion; intensity: number; acute?: boolean; nature?: PainNature }[];
   pumpRating?: number;
   notes?: string;
 }
@@ -316,6 +317,24 @@ export interface WeekRestPain {
   byContext: Record<RestPainContext, { n: number; maxIntensity: number }>;
   /** Uma linha por região registrada, da mais frequente para a menos. */
   peakByRegion: { region: PainRegion; occurrences: number; maxIntensity: number }[];
+  /**
+   * Contagem por TECIDO, e o `null` é a gaveta que mais importa.
+   *
+   * Sem esta linha, o documento semanal diz "coxa 4/10, 3 registros" e a
+   * conversa não tem como separar dor muscular tardia de tendinite — as duas
+   * pedem condutas opostas e cabem no mesmo número. `null` conta o que NÃO foi
+   * classificado, e ele é diferente de `nao_sei`: um é ausência de resposta, o
+   * outro é a resposta "não sei". Colapsá-los esconderia quanto do log está
+   * sendo preenchido pela metade.
+   */
+  byNature: { nature: PainNature | null; occurrences: number; maxIntensity: number }[];
+  /**
+   * Maior `sinceDays` registrado na semana, ou `null` se ninguém informou.
+   *
+   * É o sinal de cronicidade: dor de treino tem prazo, e a que atravessa
+   * semanas parada não é mais dor de treino.
+   */
+  maxSinceDays: number | null;
 }
 
 /**

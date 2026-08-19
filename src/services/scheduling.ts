@@ -63,10 +63,31 @@ export function getRestDaysAfterSession(sessionIndex: number, programId?: string
   return session?.day.restDaysAfter ?? 1;
 }
 
+/**
+ * Meia-noite LOCAL do dia de um instante — ou de uma data `YYYY-MM-DD`.
+ *
+ * `new Date('2026-08-17')` é interpretado como meia-noite **UTC**, que em
+ * America/Sao_Paulo é 16/08 às 21h. O `.getDate()` seguinte devolvia 16, e todo
+ * cálculo de descanso alimentado por uma data pura errava um dia inteiro, para
+ * menos — liberando treino na véspera do recomendado, em silêncio.
+ *
+ * Estava dormente porque os chamadores passam ISO completo. Mas `localDateKey()`
+ * produz exatamente `YYYY-MM-DD` e já alimenta dor fora de treino e peso
+ * corporal; bastava alguém ligar um dos dois a esta função. Consertado na
+ * entrada, não em cada chamador.
+ */
+function localMidnight(value: string): Date {
+  const dateOnly = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+  const d = dateOnly
+    ? new Date(Number(dateOnly[1]), Number(dateOnly[2]) - 1, Number(dateOnly[3]))
+    : new Date(value);
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
 export function getNextTrainingDate(lastWorkoutDate: string, restDays: number): Date {
-  const next = new Date(lastWorkoutDate);
+  const next = localMidnight(lastWorkoutDate);
   next.setDate(next.getDate() + restDays + 1);
-  next.setHours(0, 0, 0, 0);
   return next;
 }
 

@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Timer, X } from 'lucide-react';
 import { formatDuration } from '../../../domain/setTypeLabels';
+import { fireRestDoneAlert } from '../../../services/restAlert';
+import { useWakeLock } from '../../../hooks/useWakeLock';
 
 interface RestTimerProps {
   /** Descanso prescrito, em segundos. */
@@ -27,6 +29,26 @@ export function RestTimer({ targetSec, label, startedAt, onDismiss }: RestTimerP
 
   const remaining = targetSec - elapsed;
   const done = remaining <= 0;
+
+  /**
+   * O alerta dispara UMA vez, no cruzamento do zero.
+   *
+   * `done` é recalculado a cada tick, então avisar sempre que ele for verdadeiro
+   * bipa de segundo em segundo. E o ref nasce com o estado do PRIMEIRO render:
+   * um cronômetro que já venceu enquanto o app estava fechado remonta vencido, e
+   * bipar aí seria avisar de um descanso que terminou há dez minutos.
+   */
+  const alerted = useRef(done);
+  useEffect(() => {
+    if (done && !alerted.current) {
+      alerted.current = true;
+      fireRestDoneAlert();
+    }
+  }, [done]);
+
+  // Tela acesa só ENQUANTO descansa. Depois do bipe não há mais o que esperar, e
+  // segurar o lock à toa é bateria queimada no meio de um treino.
+  useWakeLock(!done);
   const progress = Math.min(100, (elapsed / targetSec) * 100);
 
   return (

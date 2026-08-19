@@ -5,6 +5,7 @@ import { exerciseNames } from '../../../data/exerciseMuscleMap';
 import { getSessionData, getTotalSessions } from '../../../data/programData';
 import { buildSetPlan } from '../../../domain/setPlan';
 import { getExercise } from '../../../domain/exerciseRegistry';
+import { isStaleOpenSession, localDayOf } from '../../../domain/workoutTime';
 import type {
   PrescribedWeek,
   PrescribedExercise,
@@ -32,6 +33,13 @@ export interface WorkoutSessionState {
   addExtraExercise: (exerciseId: string) => void;
   updateExerciseNotes: (notes: string) => void;
   swapExerciseVariation: (exerciseId: string, exerciseName: string) => void;
+  /**
+   * Dia local em que a sessão retomada foi ABERTA, quando esse dia já passou.
+   * `null` quando não há ambiguidade. Ver `isStaleOpenSession`.
+   */
+  staleOpenedOn: string | null;
+  claimSessionIsToday: () => void;
+  keepSessionDate: () => void;
 }
 
 /** Séries que precisam estar completas para o treino terminar (aquecimento é opcional). */
@@ -102,6 +110,8 @@ export function useWorkoutSession(
   const [workout, setWorkout] = useState<WorkoutLog | null>(null);
   const [loading, setLoading] = useState(true);
   const [programComplete, setProgramComplete] = useState(false);
+  /** Dia local em que a sessão retomada foi ABERTA, se ele já passou. */
+  const [staleOpenedOn, setStaleOpenedOn] = useState<string | null>(null);
   const [activeExIdx, setActiveExIdx] = useState(0);
   const [activeSetIdx, setActiveSetIdx] = useState(0);
   const [showNotes, setShowNotes] = useState(false);
@@ -142,6 +152,12 @@ export function useWorkoutSession(
       );
 
       if (existingToday) {
+        // Sessão aberta num dia LOCAL anterior e retomada hoje. Não corrige
+        // sozinha: o app não sabe se o atleta abriu na véspera e treinou hoje,
+        // ou se treinou na véspera e esqueceu de encerrar. Só as duas leituras
+        // levam a datas diferentes, e uma delas passou a valer o dia de
+        // descanso que o programa manda. Quem sabe é ele; a tela pergunta.
+        setStaleOpenedOn(isStaleOpenSession(existingToday) ? localDayOf(existingToday.startedAt ?? existingToday.date) : null);
         setWorkout(existingToday);
         const exIdx = existingToday.exercises.findIndex(
           (ex) => !ex.skipped && ex.sets.some((s) => !s.completed),
@@ -181,6 +197,27 @@ export function useWorkoutSession(
       startedAt: new Date().toISOString(),
     };
   }
+
+  /**
+   * O atleta declarou que o treino é HOJE, não do dia em que a tela foi aberta.
+   *
+   * Reescreve a abertura em vez de inventar um carimbo por série: as séries
+   * ainda não registradas vão nascer com a hora certa sozinhas, e as já
+   * registradas mantêm a hora em que de fato aconteceram. Nada é apagado.
+   */
+  const claimSessionIsToday = useCallback(() => {
+    setStaleOpenedOn(null);
+    setWorkout((prev) => {
+      if (!prev) return prev;
+      const now = new Date().toISOString();
+      const updated: WorkoutLog = { ...prev, date: now, startedAt: now };
+      storage.saveWorkout(updated);
+      return updated;
+    });
+  }, [storage]);
+
+  /** O atleta confirmou que treinou no dia da abertura. Só some o aviso. */
+  const keepSessionDate = useCallback(() => setStaleOpenedOn(null), []);
 
   const skipExercise = useCallback(() => {
     if (!workout) return;
@@ -276,5 +313,8 @@ export function useWorkoutSession(
     addExtraExercise,
     updateExerciseNotes,
     swapExerciseVariation,
+    staleOpenedOn,
+    claimSessionIsToday,
+    keepSessionDate,
   };
 }

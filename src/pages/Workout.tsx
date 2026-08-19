@@ -105,6 +105,51 @@ export default function Workout() {
     );
   }
 
+  // --- Sessão aberta em outro dia ---
+  // Vem ANTES do aviso de descanso de propósito: enquanto a data desta sessão
+  // for ambígua, o descanso calculado a partir dela também é. Perguntar primeiro
+  // é o que impede o app de afirmar uma data que ele não sabe.
+  if (session.staleOpenedOn) {
+    const [y, m, d] = session.staleOpenedOn.split('-');
+    return (
+      <div className="min-h-screen bg-bg-primary">
+        <div className="max-w-lg mx-auto px-4 pt-6 space-y-4">
+          <div className="bg-accent-blue/10 border border-accent-blue/40 rounded-lg p-6 space-y-4">
+            <div className="flex items-center gap-3">
+              <AlertTriangle size={24} className="text-accent-blue flex-shrink-0" />
+              <h2 className="text-lg font-display font-bold text-accent-blue uppercase tracking-wider">
+                Sessão de outro dia
+              </h2>
+            </div>
+            <p className="text-sm text-text-secondary font-display leading-relaxed">
+              Esta sessão foi aberta em{' '}
+              <span className="text-text-primary font-semibold">{`${d}/${m}/${y}`}</span> e não
+              foi encerrada. Quando você treinou?
+            </p>
+            <p className="text-[11px] leading-snug text-text-muted">
+              A resposta define a data do treino — e é dela que sai o dia de descanso que o
+              programa manda respeitar depois dele.
+            </p>
+            <div className="flex flex-col gap-2">
+              <button
+                onClick={session.claimSessionIsToday}
+                className="h-12 bg-accent-blue/20 border border-accent-blue/40 rounded-lg font-display font-semibold text-sm text-accent-blue uppercase tracking-wider"
+              >
+                Estou treinando agora
+              </button>
+              <button
+                onClick={session.keepSessionDate}
+                className="h-12 bg-bg-card border border-border rounded-lg font-display font-semibold text-sm text-text-secondary uppercase tracking-wider"
+              >
+                {`Treinei em ${d}/${m}`}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // --- Rest Warning ---
   if (
     restWarning.showRestWarning &&
@@ -133,6 +178,29 @@ export default function Workout() {
               </span>
               . Treinar antes pode comprometer a recuperação.
             </p>
+
+            {/*
+              A CONTA, aberta. Sem isto o aviso pede confiança cega numa data —
+              e quando o histórico mostrava a sessão no dia da ABERTURA, o aviso
+              parecia errado e era dispensado. Mostrar o último treino e o
+              descanso que o programa manda torna o número conferível: quem
+              discorda agora discorda de um fato, não de um palpite.
+            */}
+            {restWarning.lastTrainedAt && restWarning.restDays !== null && (
+              <p className="text-[11px] leading-snug text-text-muted border-t border-accent-gold/20 pt-3">
+                Último treino em{' '}
+                <span className="text-text-secondary font-semibold">
+                  {formatDate(new Date(restWarning.lastTrainedAt))}
+                </span>
+                {' · '}o programa pede{' '}
+                <span className="text-text-secondary font-semibold">
+                  {restWarning.restDays === 0
+                    ? 'nenhum dia'
+                    : `${restWarning.restDays} dia${restWarning.restDays > 1 ? 's' : ''}`}
+                </span>{' '}
+                de descanso depois dele.
+              </p>
+            )}
             <div className="flex gap-2">
               <button
                 onClick={() => navigate('/')}
