@@ -1,4 +1,5 @@
 import { workoutInstants } from '../../domain/workoutTime';
+import { getRecords } from '../storage/recordRepository';
 import type {
   AthleteProfile,
   ExerciseLog,
@@ -223,20 +224,20 @@ export function buildSessionDoc(
   const setsCompleted = exercises.reduce((sum, ex) => sum + ex.setsCompleted, 0);
   const tonnage = round(exercises.reduce((sum, ex) => sum + ex.tonnage, 0));
 
-  const durationMin =
-    // ANTES: `completedAt - startedAt`, que mede o tempo entre ABRIR e FECHAR a
-    // tela. Sessão aberta 16/08 e fechada 17/08 saía com 1.995 min (33 h), e 4
-    // das 7 sessões do bloco 1 passaram de 13 h por esse caminho. Agora mede de
-    // primeira a última série; sem carimbo, `null` — ausente é melhor que falso.
-    workoutInstants(workout).durationMin !== null
-      ? workoutInstants(workout).durationMin
-      : null;
+  // ANTES: `completedAt - startedAt`, que mede o tempo entre ABRIR e FECHAR a
+  // tela. Sessão aberta 16/08 e fechada 17/08 saía com 1.995 min (33 h), e 4 das
+  // 7 sessões do bloco 1 passaram de 13 h por esse caminho. Agora mede de
+  // primeira a última série; sem carimbo, `null` — ausente é melhor que falso.
+  const instants = workoutInstants(workout, getRecords());
+  const durationMin = instants.durationMin;
 
   return {
     schemaVersion: ROLLUP_SCHEMA_VERSION,
     updatedAt: new Date().toISOString(),
     id: workout.id,
-    date: workout.date,
+    // O dia do ESFORÇO. `workout.date` é a abertura em log gravado antes de a
+    // escrita ser corrigida, e é ela que datava o doc que alimenta o briefing.
+    date: instants.trainedAt,
     programId,
     weekId: weekIdFor(programId, workout.weekNumber),
     weekNumber: workout.weekNumber,

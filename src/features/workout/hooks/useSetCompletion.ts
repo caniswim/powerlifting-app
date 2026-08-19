@@ -244,6 +244,15 @@ export function useSetCompletion(
     exercises[activeExIdx] = exercise;
     const updatedWorkout: WorkoutLog = { ...workout, exercises };
 
+    // A RAIZ, consertada na escrita: `date` nascia na CRIAÇÃO do log, e criar
+    // não é treinar. A primeira série completada é o momento em que o treino
+    // deixa de ser hipótese, e é ele que a data deve nomear. `startedAt`
+    // continua guardando a abertura — nada é perdido, só deixa de ser confundido.
+    const jaTinhaSerie = workout.exercises.some((ex) =>
+      ex.sets.some((st) => st.completed),
+    );
+    if (!jaTinhaSerie) updatedWorkout.date = new Date().toISOString();
+
     if (isPR && weight > 0) {
       storage.saveRecord({
         exerciseId,

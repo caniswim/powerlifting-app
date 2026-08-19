@@ -2,16 +2,37 @@ import { KEYS, OBSOLETE_KEYS, scheduleSyncToOPFS, setItem, getItem } from './cor
 import { clearOPFS } from '../opfs';
 import { getWorkouts } from './workoutRepository';
 import { getRecords } from './recordRepository';
+import { workoutTrainedAt } from '../../domain/workoutTime';
 import { getProfile } from './profileRepository';
 import { getCurrentWeek, getActiveProgramId, runMigrations, SCHEMA_VERSION } from './sessionManager';
 import { getPreSurveys, getPostSurveys } from './surveyRepository';
 import { getBodyweightEntries } from './bodyweightRepository';
 import { getRestPainLogs } from './restPainRepository';
 
+/**
+ * Os treinos com a data do ESFORÇO, não a da abertura da tela.
+ *
+ * O export é o artefato que sai do app para ser lido por fora — backup, troca de
+ * aparelho, e a conversa de análise que decide o próximo bloco. Deixar `date`
+ * como o instante de CRIAÇÃO do log fazia o arquivo afirmar que a sessão de
+ * 17/08 aconteceu no dia 16, e quem lê o arquivo não tem como saber que não.
+ *
+ * A escrita já nasce certa a partir desta versão (a primeira série carimba
+ * `date`); isto existe para o histórico anterior, que continua no storage com a
+ * data velha e é resolvido na leitura por `workoutTrainedAt`.
+ *
+ * NADA é perdido: `startedAt` continua guardando a abertura, e a operação é
+ * idempotente — reimportar e reexportar devolve o mesmo valor.
+ */
+function workoutsForExport() {
+  const records = getRecords();
+  return getWorkouts().map((w) => ({ ...w, date: workoutTrainedAt(w, records) }));
+}
+
 export function exportAllData(): string {
   return JSON.stringify({
     schemaVersion: SCHEMA_VERSION,
-    workouts: getWorkouts(),
+    workouts: workoutsForExport(),
     records: getRecords(),
     profile: getProfile(),
     currentWeek: getCurrentWeek(),
