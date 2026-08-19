@@ -890,11 +890,32 @@ if (filtrando) {
  */
 if (buscaTermo && !arg('--grep')) imprimirRoteamento(buscaTermo, { comoComplemento: true });
 
+/**
+ * `process.exitCode`, e NÃO `process.exit()` — a saída era truncada em pipe.
+ *
+ * Quando o stdout é um pipe (todo `execFileSync`, todo `| tee`, todo redirect
+ * para arquivo), o Node escreve de forma ASSÍNCRONA. `process.exit()` derruba o
+ * processo na hora e descarta o que ainda não drenou — e esta CLI emite cerca de
+ * mil `console.log` antes de chegar aqui.
+ *
+ * Foi o que reprovou `secoes.test.mjs` na Vercel em 19/08/2026, e só lá: a tela
+ * da fisgada saía com 22,8 kB contra 28,4 kB, com o FIM faltando, então ids que
+ * `perguntar()` havia calculado não apareciam na saída do subprocesso. O que
+ * fecha o diagnóstico é que a MESMA execução reportou "119 perguntas reais e
+ * 1849 comparações de seção", número idêntico ao daqui: a recuperação nunca
+ * divergiu — só a impressão dela é que se perdia. Descartados por medição:
+ * mudança no app (a base não importa nada de `src/`), locale, `localeCompare`
+ * (0 divergências em 6912 ids), ordem de `readdir`, versão de Node/ICU (22.14 e
+ * 26.7 dão o mesmo byte a byte) e clone incompleto.
+ *
+ * Atribuir o código e deixar o Node encerrar sozinho drena o stdout antes de
+ * sair. Os códigos são os mesmos: 2 para "nada a fazer", 1 para reprovação.
+ */
 if (ids.length === 0 && enderecos.length === 0 && !filtrando && !perguntaTermo && !listarTopicos) {
   console.error('nada a fazer: passe ids (V014-03), endereços ("R79 @03:47"), uma pergunta'
     + ' (--pergunta), a lista de gavetas (--topicos), uma busca (--grep/--busca) ou um filtro'
     + ' (--topic/--modo/--scope/--tier/--genero), ou --vocab <topico>');
-  process.exit(2);
+  process.exitCode = 2;
+} else {
+  process.exitCode = saiuRuim ? 1 : 0;
 }
-
-process.exit(saiuRuim ? 1 : 0);
