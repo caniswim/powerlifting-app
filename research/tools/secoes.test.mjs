@@ -530,17 +530,36 @@ const PARAFRASE = 'senti uma pontada nível 3 de 10 no peito na 3ª série do su
       return (saida.match(/verbatim:/g) ?? []).length >= 2 * gavetas;
     })(),
     'a saída virou índice puro — DETALHE_ROTEADO foi a zero');
-  ok('CUSTO: e a CLI imprime a tela INTEIRA — todo id de `tela` aparece na saída',
-    (() => {
-      const saida = execFileSync(
-        process.execPath,
-        [join(ROOT, 'research/tools/check-evidence.mjs'), '--pergunta', FISGADA],
-        { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 },
-      );
-      const r = perguntar(FISGADA);
-      return [...r.idsMostrados].every((i) => saida.includes(i));
-    })(),
-    'calcular sem imprimir faz o canário passar por linha que não está na tela');
+  {
+    const saida = execFileSync(
+      process.execPath,
+      [join(ROOT, 'research/tools/check-evidence.mjs'), '--pergunta', FISGADA],
+      { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 },
+    );
+    const r = perguntar(FISGADA);
+    const tela = [...r.idsMostrados];
+    const faltando = tela.filter((i) => !saida.includes(i));
+    /**
+     * A DICA CARREGA O DIAGNÓSTICO, e não só a moral da história.
+     *
+     * Este caso reprovou em 19/08/2026 na Vercel e passava em toda máquina local
+     * — inclusive num clone limpo e sob Node 22 e 26. A mensagem antiga dizia o
+     * que o defeito SIGNIFICA e nada do que ele É, então cada rodada de
+     * investigação custava um deploy inteiro para descobrir um número.
+     *
+     * O que está aqui é o mínimo que separa as hipóteses vivas: o tamanho da
+     * saída (a mesma execução relatou 22,8 kB lá contra 28,4 kB aqui), quantos
+     * ids a tela calculou, quais faltaram, e o começo da saída — que revela de
+     * imediato se a pergunta chegou íntegra ao subprocesso, já que ela carrega
+     * acento e viaja por `argv`.
+     */
+    ok('CUSTO: e a CLI imprime a tela INTEIRA — todo id de `tela` aparece na saída',
+      faltando.length === 0,
+      'calcular sem imprimir faz o canário passar por linha que não está na tela'
+      + ` · saída ${Buffer.byteLength(saida, 'utf8')} B`
+      + ` · tela ${tela.length} ids, faltando ${faltando.length}: ${faltando.slice(0, 15).join(' ')}`
+      + ` · primeiras linhas da CLI: ${JSON.stringify(saida.split('\n').slice(0, 4).join(' | ').slice(0, 400))}`);
+  }
 }
 
 // ── O BYTE NUL, que fez `grep` mentir em silêncio por três rodadas ───────────
