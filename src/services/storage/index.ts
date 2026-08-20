@@ -1,5 +1,5 @@
 export { initStorage } from './init';
-export { getWorkouts, saveWorkout, getWorkoutsByWeek, getRecentPerformances, getLastWeightForExercise, getLastCompletedWorkout } from './workoutRepository';
+export { getWorkouts, saveWorkout, getWorkoutsByWeek, getRecentPerformances, getLastWeightForExercise, getLastGearForExercise, getLastCompletedWorkout } from './workoutRepository';
 export { getRecords, saveRecord, getRecordForExercise, recalculateRecord } from './recordRepository';
 export { getProfile, saveProfile } from './profileRepository';
 export {

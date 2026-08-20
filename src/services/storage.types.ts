@@ -1,4 +1,5 @@
 import type {
+  SetCompliance,
   WorkoutLog,
   PersonalRecord,
   AthleteProfile,
@@ -16,6 +17,8 @@ export interface IStorageService {
   getLastCompletedWorkout(): { date: string; dayIndex: number; sessionIndex?: number; programId?: string } | null;
   getRecentPerformances(exerciseId: string, limit?: number): { weight: number; reps: number; rpe: number; e1rm: number; date: string }[];
   getLastWeightForExercise(exerciseId: string): number | null;
+  /** Barra e anilha da última vez que este exercício foi registrado. */
+  getLastGearForExercise(exerciseId: string): Pick<SetCompliance, 'bar' | 'plates'> | null;
 
   // Records
   getRecords(): PersonalRecord[];

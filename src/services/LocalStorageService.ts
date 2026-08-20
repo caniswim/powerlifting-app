@@ -1,7 +1,7 @@
 import type { IStorageService } from './storage.types';
 import {
   getWorkouts, saveWorkout, getWorkoutsByWeek, getLastCompletedWorkout,
-  getRecentPerformances, getLastWeightForExercise,
+  getRecentPerformances, getLastWeightForExercise, getLastGearForExercise,
   getRecords, saveRecord, getRecordForExercise, recalculateRecord,
   getProfile, saveProfile,
   getBodyweightEntries, saveBodyweightEntry, getLatestBodyweight,
@@ -20,6 +20,7 @@ export class LocalStorageService implements IStorageService {
   getLastCompletedWorkout = getLastCompletedWorkout;
   getRecentPerformances = getRecentPerformances;
   getLastWeightForExercise = getLastWeightForExercise;
+  getLastGearForExercise = getLastGearForExercise;
   getRecords = getRecords;
   saveRecord = saveRecord;
   getRecordForExercise = getRecordForExercise;

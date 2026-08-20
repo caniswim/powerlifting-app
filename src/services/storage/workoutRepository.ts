@@ -1,6 +1,6 @@
 import { workoutTrainedAt } from '../../domain/workoutTime';
 import { getRecords } from './recordRepository';
-import type { WorkoutLog } from '../../types';
+import type { SetCompliance, WorkoutLog } from '../../types';
 import { getItem, setItem, KEYS } from './core';
 
 export function getWorkouts(): WorkoutLog[] {
@@ -116,6 +116,47 @@ export function getRecentPerformances(
   }
 
   return performances;
+}
+
+/**
+ * Barra e anilha usadas pela última vez NESTE exercício, em sessões anteriores.
+ *
+ * Material é propriedade do ginásio e do exercício, não da série: o terra sai
+ * sempre da mesma barra de whip alto, o supino da mesma anilha grossa. Obrigar
+ * a reescolher a cada sessão é atrito que faz o campo ficar vazio — e vazio no
+ * histórico não é "não usou", é "não sabemos", que é o que tira a carga da
+ * comparação com o padrão calibrado.
+ */
+export function getLastGearForExercise(
+  exerciseId: string
+): Pick<SetCompliance, 'bar' | 'plates'> | null {
+  const prRecords = getRecords();
+  const workouts = getWorkouts()
+    .filter((w) => w.completed)
+    .sort((a, b) =>
+      new Date(workoutTrainedAt(b, prRecords)).getTime()
+      - new Date(workoutTrainedAt(a, prRecords)).getTime());
+
+  // Barra e anilha são procuradas separadamente: uma sessão pode ter registrado
+  // só a barra, e cair fora por isso perderia o dado que existe.
+  const gear: Pick<SetCompliance, 'bar' | 'plates'> = {};
+
+  for (const workout of workouts) {
+    // De trás para frente — sessão, exercício e série: o mais recente vence.
+    for (let e = workout.exercises.length - 1; e >= 0; e--) {
+      const exercise = workout.exercises[e];
+      if (exercise.exerciseId !== exerciseId) continue;
+      for (let i = exercise.sets.length - 1; i >= 0; i--) {
+        const set = exercise.sets[i];
+        if (!set.completed || !set.compliance) continue;
+        if (!gear.bar && set.compliance.bar) gear.bar = set.compliance.bar;
+        if (!gear.plates && set.compliance.plates) gear.plates = set.compliance.plates;
+        if (gear.bar && gear.plates) return gear;
+      }
+    }
+  }
+
+  return gear.bar || gear.plates ? gear : null;
 }
 
 // Last weight used for an exercise

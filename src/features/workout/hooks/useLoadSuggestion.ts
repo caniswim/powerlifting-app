@@ -179,11 +179,19 @@ export function useLoadSuggestion(): SetInputState {
       .slice(0, setIdx)
       .reverse()
       .find((s) => s.completed && s.compliance);
-    const gear = lastJudged?.compliance ?? gearRef.current;
+    const sessionGear = lastJudged?.compliance ?? gearRef.current;
+    // Barra e anilha do último registro DESTE exercício. Vencem `gearRef`, que
+    // guarda a última série da sessão e pode ser de outro exercício: o terra
+    // depois do agachamento não sai da barra que ficou selecionada no rack.
+    // Perdem para uma escolha feita nesta sessão neste exercício — trocar a
+    // barra no meio do treino não pode ser desfeito pelo histórico.
+    const priorGear = storage.getLastGearForExercise(exercise.exerciseId);
+    const bar = lastJudged?.compliance?.bar ?? priorGear?.bar ?? sessionGear.bar;
+    const plates = lastJudged?.compliance?.plates ?? priorGear?.plates ?? sessionGear.plates;
     const inherited: SetCompliance = {
-      ...(gear.equipment ? { equipment: gear.equipment } : {}),
-      ...(gear.bar ? { bar: gear.bar } : {}),
-      ...(gear.plates ? { plates: gear.plates } : {}),
+      ...(sessionGear.equipment ? { equipment: sessionGear.equipment } : {}),
+      ...(bar ? { bar } : {}),
+      ...(plates ? { plates } : {}),
     };
     gearRef.current = inherited;
     setInputCompliance(inherited);
