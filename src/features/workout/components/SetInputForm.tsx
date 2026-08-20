@@ -1,4 +1,4 @@
-import { getRPEColor, getRIRText } from '../../../domain/rpe';
+import { RPE_SCALE, getRPEColor, getRIRText } from '../../../domain/rpe';
 import { setTypeBadgeClass, setTypeLabels } from '../../../domain/setTypeLabels';
 import { allowsZeroLoad, getExercise } from '../../../domain/exerciseRegistry';
 import { isJudgedLift } from '../../../domain/competitionStandard';
@@ -6,8 +6,6 @@ import { CompetitionStandardPanel } from './CompetitionStandardPanel';
 import { equipmentIncrement, exerciseEquipment } from '../../../data/exerciseMuscleMap';
 import type { LoadSuggestion } from '../../../utils/calculations';
 import type { ExerciseLog, PersonalRecord, SetCompliance, SetSegmentLog } from '../../../types';
-
-const RPE_VALUES = [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10];
 
 interface SetInputFormProps {
   exercise: ExerciseLog;
@@ -296,7 +294,7 @@ export function SetInputForm({
               RPE (Alvo: {plan?.rpe ?? exercise.prescribedRPE})
             </label>
             <div className="flex flex-wrap gap-1.5">
-              {RPE_VALUES.map((rpe) => {
+              {RPE_SCALE.map((rpe) => {
                 const isSelected = inputRPE === rpe;
                 return (
                   <button

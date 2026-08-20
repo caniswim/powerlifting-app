@@ -1,9 +1,7 @@
-import { getRPEColor, getRIRText } from '../../../domain/rpe';
+import { RPE_SCALE, getRPEColor, getRIRText } from '../../../domain/rpe';
 import { calculateE1RM } from '../../../utils/calculations';
 import { useStorage } from '../../../contexts/StorageContext';
 import type { ExerciseLog } from '../../../types';
-
-const RPE_VALUES = [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10];
 
 interface SetEditSheetProps {
   exercise: ExerciseLog;
@@ -131,7 +129,7 @@ export function SetEditSheet({
             RPE
           </label>
           <div className="flex flex-wrap gap-1.5">
-            {RPE_VALUES.map((rpe) => {
+            {RPE_SCALE.map((rpe) => {
               const isSelected = editRPE === rpe;
               return (
                 <button

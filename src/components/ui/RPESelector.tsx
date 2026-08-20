@@ -1,6 +1,4 @@
-import { getRPEColor } from '../../domain/rpe';
-
-const RPE_VALUES = [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10];
+import { RPE_SCALE, getRPEColor } from '../../domain/rpe';
 
 interface RPESelectorProps {
   value: number;
@@ -17,7 +15,7 @@ export function RPESelector({ value, onChange, target }: RPESelectorProps) {
         </div>
       )}
       <div className="flex flex-wrap gap-1">
-        {RPE_VALUES.map((rpe) => (
+        {RPE_SCALE.map((rpe) => (
           <button
             key={rpe}
             type="button"
